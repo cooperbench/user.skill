@@ -202,35 +202,96 @@ def main():
         try:
             return fn(*a)
         except Exception as e:  # subprocess.TimeoutExpired, transport errors, parse errors
-            print(f"  score-call failed ({type(e).__name__}); skipped", flush=True)
             return default
 
-    print("judging...")
-    def judge_one(r):
-        c, s, rl = safe(V.judge, r["real"], r["generated"], r["repo"], default=(None, None, None))
-        r["judge_content"], r["judge_style"], r["judge_realism"] = c, s, rl
-        return r
-    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
-        list(as_completed([ex.submit(judge_one, r) for r in records if r["generated"]]))
+    # ---- checkpointed scoring ----------------------------------------------------------------
+    # One scoring pass makes ~3.5k CLI calls (judge + move labels); the usage window rarely covers
+    # them all, and rate-limited calls come back None. So we CACHE every computed value to sidecar
+    # files and only compute what is still missing — rerun --score-only across windows until full.
+    # Move labels (needed by the misprediction analysis) are computed BEFORE judge scores so they
+    # win the window.
+    import threading
+    SCORE_FIELDS = ("judge_content", "judge_style", "judge_realism", "pred_act")
+    scores_path = RESULTS / f"scores_tasks_{args.mode}.jsonl"
+    realacts_path = RESULTS / f"realacts_tasks_{args.mode}.json"
 
-    print("labeling moves...")
-    real_acts = {}
+    def rkey(r):
+        return f'{r["slug"]}|{r["point_id"]}|{r["cond"]}'
+
+    # load caches
+    real_acts = json.loads(realacts_path.read_text()) if realacts_path.exists() else {}
+    cache = {}
+    if scores_path.exists():
+        for line in scores_path.read_text().splitlines():
+            e = safe(json.loads, line, default=None)
+            if not e:
+                continue
+            slot = cache.setdefault(e["k"], {})
+            for f in SCORE_FIELDS:
+                if e.get(f) is not None:
+                    slot[f] = e[f]
+    for r in records:
+        for f, v in cache.get(rkey(r), {}).items():
+            r[f] = v
+
+    lock = threading.Lock()
+    sfh = scores_path.open("a")
+    def persist(r):
+        with lock:
+            sfh.write(json.dumps({"k": rkey(r), **{f: r.get(f) for f in SCORE_FIELDS}},
+                                 ensure_ascii=False) + "\n")
+            sfh.flush()
+
+    # 1) real move label per unique point (cheapest + most important); skip already-cached
+    todo_real = [pid for pid in pmeta if not real_acts.get(pid)]
+    print(f"labeling real moves: {len(todo_real)}/{len(pmeta)} missing")
     def label_real(pid):
         p = pmeta.get(pid, {})
         return pid, (p.get("gold_move") or safe(V.speech_act, p.get("real", ""), p.get("prev_agent", "")))
-    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
-        for fut in as_completed([ex.submit(label_real, pid) for pid in pmeta]):
-            pid, act = fut.result()
-            real_acts[pid] = act
+    if todo_real:
+        with ThreadPoolExecutor(max_workers=args.parallel) as ex:
+            for fut in as_completed([ex.submit(label_real, pid) for pid in todo_real]):
+                pid, act = fut.result()
+                if act:
+                    real_acts[pid] = act
+        realacts_path.write_text(json.dumps(real_acts, ensure_ascii=False))
 
-    def label_gen(r):
-        pa = pmeta.get(r["point_id"], {}).get("prev_agent", "")
-        r["pred_act"] = safe(V.speech_act, r["generated"], pa)
-        r["real_act"] = real_acts.get(r["point_id"])
-        r["act_match"] = (r["pred_act"] is not None and r["pred_act"] == r["real_act"])
+    # 2) per-record: predicted move first (feeds E2-E5), then judge axes; compute only if missing
+    def score_one(r):
+        changed = False
+        if r.get("pred_act") is None and r["generated"]:
+            pa = pmeta.get(r["point_id"], {}).get("prev_agent", "")
+            pv = safe(V.speech_act, r["generated"], pa)
+            if pv is not None:
+                r["pred_act"] = pv
+                changed = True
+        if r.get("judge_realism") is None and r["generated"]:
+            c, s, rl = safe(V.judge, r["real"], r["generated"], r["repo"], default=(None, None, None))
+            if rl is not None:
+                r["judge_content"], r["judge_style"], r["judge_realism"] = c, s, rl
+                changed = True
+        if changed:
+            persist(r)
         return r
-    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
-        list(as_completed([ex.submit(label_gen, r) for r in records if r["generated"]]))
+    todo_score = [r for r in records if r["generated"]
+                  and (r.get("pred_act") is None or r.get("judge_realism") is None)]
+    print(f"scoring records: {len(todo_score)}/{len(records)} need pred_act and/or judge")
+    if todo_score:
+        with ThreadPoolExecutor(max_workers=args.parallel) as ex:
+            list(as_completed([ex.submit(score_one, r) for r in todo_score]))
+    sfh.close()
+
+    # 3) attach real_act + act_match to every record from the (now updated) cache
+    for r in records:
+        r["real_act"] = real_acts.get(r["point_id"])
+        r["act_match"] = (r.get("pred_act") is not None and r.get("pred_act") == r.get("real_act"))
+
+    # report remaining gaps so the caller knows whether another --score-only pass is needed
+    miss_real = sum(1 for r in records if not r.get("real_act"))
+    miss_pred = sum(1 for r in records if not r.get("pred_act"))
+    miss_judge = sum(1 for r in records if r.get("judge_realism") is None)
+    print(f"after pass: missing real_act={miss_real} pred_act={miss_pred} judge={miss_judge} "
+          f"(of {len(records)}) — rerun --score-only if nonzero")
 
     # ---- aggregate (validation_results shape) ----
     def agg(rows, key):
