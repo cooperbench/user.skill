@@ -196,9 +196,18 @@ def main():
         for point in by_dev[slug]:
             pmeta[f"{point['session_id']}#{point['turn_index']}"] = point
 
+    # A single slow/timed-out CLI call (e.g. a long non-English classification hitting the 90s
+    # subprocess timeout) must NEVER kill the whole scoring pass — degrade it to None instead.
+    def safe(fn, *a, default=None):
+        try:
+            return fn(*a)
+        except Exception as e:  # subprocess.TimeoutExpired, transport errors, parse errors
+            print(f"  score-call failed ({type(e).__name__}); skipped", flush=True)
+            return default
+
     print("judging...")
     def judge_one(r):
-        c, s, rl = V.judge(r["real"], r["generated"], r["repo"])
+        c, s, rl = safe(V.judge, r["real"], r["generated"], r["repo"], default=(None, None, None))
         r["judge_content"], r["judge_style"], r["judge_realism"] = c, s, rl
         return r
     with ThreadPoolExecutor(max_workers=args.parallel) as ex:
@@ -208,7 +217,7 @@ def main():
     real_acts = {}
     def label_real(pid):
         p = pmeta.get(pid, {})
-        return pid, (p.get("gold_move") or V.speech_act(p.get("real", ""), p.get("prev_agent", "")))
+        return pid, (p.get("gold_move") or safe(V.speech_act, p.get("real", ""), p.get("prev_agent", "")))
     with ThreadPoolExecutor(max_workers=args.parallel) as ex:
         for fut in as_completed([ex.submit(label_real, pid) for pid in pmeta]):
             pid, act = fut.result()
@@ -216,7 +225,7 @@ def main():
 
     def label_gen(r):
         pa = pmeta.get(r["point_id"], {}).get("prev_agent", "")
-        r["pred_act"] = V.speech_act(r["generated"], pa)
+        r["pred_act"] = safe(V.speech_act, r["generated"], pa)
         r["real_act"] = real_acts.get(r["point_id"])
         r["act_match"] = (r["pred_act"] is not None and r["pred_act"] == r["real_act"])
         return r
