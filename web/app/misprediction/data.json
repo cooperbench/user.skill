@@ -1,31 +1,640 @@
 {
- "meta": {
-  "users": 20,
-  "points": 1511,
-  "sources": [
-   {
-    "file": "validation_tasks_folder.json",
-    "mode": "folder",
-    "n": 1515,
-    "labelled": 1511
-   }
-  ]
- },
  "cats": [
   "approve",
   "critical",
   "directive",
   "inquiry"
  ],
+ "folder": {
+  "meta": {
+   "users": 20,
+   "points": 1511,
+   "mode": "folder"
+  },
+  "adjudication": {
+   "n_adjudicated": 25,
+   "reasonable_rate": 0.12,
+   "error_type_counts": {
+    "hallucinated_content": 5,
+    "generic_not_specific": 3,
+    "task_completion_substitution": 17
+   },
+   "homogeneity_share": 0.8,
+   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+  },
+  "worst": [
+   {
+    "slug": "cyyeh",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m\nduckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m",
+    "generated": "commit and push",
+    "judge_realism": 2,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "フローチャートの例のmermaidが表示されていません",
+    "generated": "/commit",
+    "judge_realism": 2,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "malkoG",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "Commit fine-grained",
+    "generated": "1",
+    "judge_realism": 0,
+    "error_type": "generic_not_specific",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "actually we have not yet released anything. I am tempted to manually wipe the db. (delete everything) generate new migrations from scratch (so we have only 1 single migration) and then rbeuild db, and via the CLI manually upload all previous sessions.w hat do you think?",
+    "generated": "commit, push and create a PR, merge when passed",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "create pr",
+    "generated": "わかりました",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "hutusi",
+    "real_cat": "critical",
+    "pred_cat": "approve",
+    "real": "A few more issues I'm noticing:\n\nProfile ownership is ambiguous in the UI. There's no visual indication of whether a given profile belongs to an online account or is a purely local player. From the user's side, the two are indistinguishable.\nOnline profiles appear to be visible without signing in. When not logged in, I can still see online profiles — they shouldn't be reachable in a signed-out state. Please verify whether this is a real leak or just a display issue.\nJoining an online world fails with a timeout: couldn't join: join timed out. This looks like a server-side / deployment problem on Fly.io rather than a client bug. Please investigate the Fly.io deployment — check whether the game server is actually running, reachable, and accepting WebSocket connections (logs, health, region, and whether the machine has scaled/stopped).",
+    "generated": "ok",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "malkoG",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "For article detail page, do we render image assets??????",
+    "generated": "/ghpr",
+    "judge_realism": 3,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
+    "generated": "yes, and then commit, push and create a PR, merge when passed",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "nosman",
+    "real_cat": "critical",
+    "pred_cat": "approve",
+    "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
+    "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "FSM1",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "I think that the full desktop e2e in CI should also be added as one of the gates for this phase",
+    "generated": "you good bro?",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context` and restarted the api server, but I dont seem to see the logfile",
+    "generated": "commit, push and create a PR, merge when passed",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "cyyeh",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "now the issue is that query result content is too wide",
+    "generated": "commit",
+    "judge_realism": 5,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   }
+  ],
+  "e2": {
+   "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
+   "by_condition": {
+    "distilled": {
+     "n": 503,
+     "real_marginal": {
+      "approve": 0.151,
+      "critical": 0.175,
+      "directive": 0.507,
+      "inquiry": 0.167
+     },
+     "pred_marginal": {
+      "approve": 0.185,
+      "critical": 0.058,
+      "directive": 0.654,
+      "inquiry": 0.103
+     },
+     "pred_minus_real": {
+      "approve": 0.034,
+      "critical": -0.117,
+      "directive": 0.147,
+      "inquiry": -0.064
+     },
+     "human->task": 131,
+     "task->human": 40,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 91
+    },
+    "generic": {
+     "n": 505,
+     "real_marginal": {
+      "approve": 0.15,
+      "critical": 0.174,
+      "directive": 0.505,
+      "inquiry": 0.17
+     },
+     "pred_marginal": {
+      "approve": 0.16,
+      "critical": 0.059,
+      "directive": 0.521,
+      "inquiry": 0.259
+     },
+     "pred_minus_real": {
+      "approve": 0.01,
+      "critical": -0.115,
+      "directive": 0.016,
+      "inquiry": 0.089
+     },
+     "human->task": 95,
+     "task->human": 82,
+     "flow_sign_test_p": 0.3671,
+     "net_toward_task": 13
+    },
+    "wrong": {
+     "n": 503,
+     "real_marginal": {
+      "approve": 0.151,
+      "critical": 0.175,
+      "directive": 0.505,
+      "inquiry": 0.169
+     },
+     "pred_marginal": {
+      "approve": 0.276,
+      "critical": 0.05,
+      "directive": 0.588,
+      "inquiry": 0.085
+     },
+     "pred_minus_real": {
+      "approve": 0.125,
+      "critical": -0.125,
+      "directive": 0.083,
+      "inquiry": -0.083
+     },
+     "human->task": 133,
+     "task->human": 28,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 105
+    }
+   },
+   "real_act_marginal_all": {
+    "approve": 0.151,
+    "critical": 0.175,
+    "directive": 0.507,
+    "inquiry": 0.167
+   }
+  },
+  "e3": {
+   "distilled": {
+    "n_users": 20,
+    "spread_real": 0.2793,
+    "spread_pred": 0.2435,
+    "pred_minus_real": -0.0358,
+    "perm_p": 0.3535,
+    "collapse": true
+   },
+   "generic": {
+    "n_users": 20,
+    "spread_real": 0.2801,
+    "spread_pred": 0.1995,
+    "pred_minus_real": -0.0806,
+    "perm_p": 0.0117,
+    "collapse": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "spread_real": 0.2793,
+    "spread_pred": 0.2552,
+    "pred_minus_real": -0.0241,
+    "perm_p": 0.5017,
+    "collapse": true
+   }
+  },
+  "e4": {
+   "distilled": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1973,
+    "mean_dist_to_median_pred": 0.2509,
+    "mean_pred_minus_real": 0.0536,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0386,
+    "shrinks_to_median": false
+   },
+   "generic": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1991,
+    "mean_dist_to_median_pred": 0.1856,
+    "mean_pred_minus_real": -0.0135,
+    "n_users_shrinking": 10,
+    "wilcoxon_p": 0.6274,
+    "shrinks_to_median": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1982,
+    "mean_dist_to_median_pred": 0.2525,
+    "mean_pred_minus_real": 0.0543,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0364,
+    "shrinks_to_median": false
+   }
+  },
+  "e5": {
+   "by_condition": {
+    "distilled": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2512,
+     "judge_style": 38.391,
+     "judge_realism": 34.332,
+     "judge_content": 31.013
+    },
+    "generic": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2149,
+     "judge_style": 36.63,
+     "judge_realism": 38.719,
+     "judge_content": 31.786
+    },
+    "wrong": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2679,
+     "judge_style": 34.209,
+     "judge_realism": 31.283,
+     "judge_content": 29.106
+    }
+   },
+   "verdict": "surface_only",
+   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
+  }
+ },
+ "inline": {
+  "meta": {
+   "users": 20,
+   "points": 1482,
+   "mode": "inline"
+  },
+  "adjudication": {
+   "n_adjudicated": 25,
+   "reasonable_rate": 0.12,
+   "error_type_counts": {
+    "task_completion_substitution": 22,
+    "generic_not_specific": 1,
+    "hallucinated_content": 2
+   },
+   "homogeneity_share": 0.92,
+   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+  },
+  "worst": [
+   {
+    "slug": "jeevanpillay",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "omit anything any related to the core dev-lifecycle changes",
+    "generated": "proceed",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": true
+   },
+   {
+    "slug": "jdsingh122918",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "lets start with approach A",
+    "generated": "B",
+    "judge_realism": 0,
+    "error_type": "task_completion_substitution",
+    "reasonable": true
+   },
+   {
+    "slug": "FSM1",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "/compact",
+    "generated": "ok",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": true
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "前回と同一の内容です。変更点がありません。\n\n前回挙げた3点の未対処事項を改めて整理します。対処していただければ公開できる水準になると思います。\n\n---\n\n**1. 素朴アプローチとポリシーの認可ルールが暗黙に変わっている（269行目付近）**\n\n素朴版の `authorizeUpdate` は「作成者 or プロジェクトメンバー（メンバーであれば誰でもOK）」です。改善版の `TaskPolicy` は「作成者 or オーナー or エディター（閲覧者は不可）」です。これは認可ルール自体のリファクタではなく、ルールの厳格化です。読者は「ポリシーオブジェクトに移しただけ」と思って読むのに、実は判定基準が変わっている。素朴→改善の接続部分に「ポリシーオブジェクトに移行する際に、メンバーシップの有無ではなくロールに基づく判定に変更しています」と一文入れてください。\n\n**2. クエリ側の Handler コードがない（448〜501行目）**\n\n`TaskVisibility` をどこで生成して Handler に渡すのかが不明です。コマンド側では `Delete` Handler のコードで claims → actor の変換と UseCase 呼び出しまで示しています。クエリ側にも同等の Handler コード（role取得 → `NewTaskVisibility(role)` → `toTaskResponse` の呼び出し）を足せば、記事全体の対称性が揃います。\n\n**3. まとめの散文が6主張を1段落に詰め込んでいる（618行目）**\n\nテーブルで3レベルの整理はできているので、その後の散文は「各層の責務を分けることが最も重要」という一点に絞って、残りは削るか別文に分けると、締まりが良くなります。\n\n---\n\nこの3点以外は公開に問題ないレベルです。",
+    "generated": "確認しました。PRをマージしてください。",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "jeevanpillay",
+    "real_cat": "inquiry",
+    "pred_cat": "approve",
+    "real": "question, consiering that we havent gotten apple dev account setup how can we deploy?",
+    "generated": "okay got it. proceed",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "robouden",
+    "real_cat": "critical",
+    "pred_cat": "approve",
+    "real": "Can you fix this?",
+    "generated": "Great!!",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "alishakawaguchi",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "do I need to increment the versions so it doesn't mess with current users?",
+    "generated": "push",
+    "judge_realism": 3,
+    "error_type": "generic_not_specific",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "No, I'm actually thinking that we're trying because most of the dashboards are powered by the analytics table, and whenever we want to add a new agent we need to still have a single source for all analytical queries in the frontend. So we need to have the base session, and then we have agent-specific sessions that add specific fields. The analytics session, or the analytics table, basically only gets from the agent-specific sessions materialized from there, so everything is still in an MV. And if there are some analytical things that are specific to an agent, we just add them as specific columns, and then not all analytic sessions have that trait.",
+    "generated": "yes do it",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "shuold we also delete/Users/marc/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill",
+    "generated": "apply to CI first",
+    "judge_realism": 5,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "PRにレビューコメントがあるので確認して修正してください",
+    "generated": "はい",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "Soph",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "target: error: GH013: Repository rule violations found for refs/entire/checkpoints/5T/01KVBJD96J55PB4WRH2EADBE5T.\ntarget:\ntarget: - GITHUB PUSH PROTECTION\ntarget:   —————————————————————————————————————————\ntarget:     Resolve the following violations before pushing again\ntarget:\ntarget:     - Timed out validating Secrets detected, please try again\ntarget:\ntarget: error: GH013: Repository rule violations found for refs/entire/checkpoints/5T/01KVBJD9ZCNC48MJD4DSRGPN5T.\ntarget:\ntarget: - GITHUB PUSH PROTECTION\ntarget:   —————————————————————————————————————————\ntarget:     Resolve the following violations before pushing again\ntarget:\ntarget:     - Timed out validating Secrets detected, please try again\ntarget:\nerror: replicate: replicate: bootstrap execute: push target refs: report-status: command error on refs/entire/checkpoints/2Y/01KVBHQG88946KVY2MYW6RKW2Y: push declined due to repository rule violations\nexit status 1",
+    "generated": "let's do both",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "cyyeh",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "docker build -t YOUR_REGISTRY/duckdb-data-agent:latest -f backend/Dockerfile .\ndocker build -t REDACTED:latest ./sidecar\ndocker push YOUR_REGISTRY/duckdb-data-agent:latest\ndocker push REDACTED:latest\n\nhow to setup local registry in mac for k8s deployment",
+    "generated": "create a PR",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   }
+  ],
+  "e2": {
+   "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
+   "by_condition": {
+    "distilled": {
+     "n": 495,
+     "real_marginal": {
+      "approve": 0.135,
+      "critical": 0.172,
+      "directive": 0.515,
+      "inquiry": 0.178
+     },
+     "pred_marginal": {
+      "approve": 0.275,
+      "critical": 0.057,
+      "directive": 0.527,
+      "inquiry": 0.141
+     },
+     "pred_minus_real": {
+      "approve": 0.139,
+      "critical": -0.115,
+      "directive": 0.012,
+      "inquiry": -0.036
+     },
+     "human->task": 126,
+     "task->human": 51,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 75
+    },
+    "generic": {
+     "n": 491,
+     "real_marginal": {
+      "approve": 0.136,
+      "critical": 0.175,
+      "directive": 0.511,
+      "inquiry": 0.177
+     },
+     "pred_marginal": {
+      "approve": 0.253,
+      "critical": 0.067,
+      "directive": 0.442,
+      "inquiry": 0.238
+     },
+     "pred_minus_real": {
+      "approve": 0.116,
+      "critical": -0.108,
+      "directive": -0.069,
+      "inquiry": 0.061
+     },
+     "human->task": 105,
+     "task->human": 82,
+     "flow_sign_test_p": 0.1074,
+     "net_toward_task": 23
+    },
+    "wrong": {
+     "n": 496,
+     "real_marginal": {
+      "approve": 0.135,
+      "critical": 0.175,
+      "directive": 0.51,
+      "inquiry": 0.179
+     },
+     "pred_marginal": {
+      "approve": 0.312,
+      "critical": 0.048,
+      "directive": 0.508,
+      "inquiry": 0.131
+     },
+     "pred_minus_real": {
+      "approve": 0.177,
+      "critical": -0.127,
+      "directive": -0.002,
+      "inquiry": -0.048
+     },
+     "human->task": 131,
+     "task->human": 44,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 87
+    }
+   },
+   "real_act_marginal_all": {
+    "approve": 0.135,
+    "critical": 0.172,
+    "directive": 0.515,
+    "inquiry": 0.178
+   }
+  },
+  "e3": {
+   "distilled": {
+    "n_users": 20,
+    "spread_real": 0.282,
+    "spread_pred": 0.3133,
+    "pred_minus_real": 0.0313,
+    "perm_p": 0.2635,
+    "collapse": false
+   },
+   "generic": {
+    "n_users": 20,
+    "spread_real": 0.2828,
+    "spread_pred": 0.2587,
+    "pred_minus_real": -0.0241,
+    "perm_p": 0.4148,
+    "collapse": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "spread_real": 0.2859,
+    "spread_pred": 0.3093,
+    "pred_minus_real": 0.0235,
+    "perm_p": 0.6157,
+    "collapse": false
+   }
+  },
+  "e4": {
+   "distilled": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1939,
+    "mean_dist_to_median_pred": 0.2816,
+    "mean_pred_minus_real": 0.0877,
+    "n_users_shrinking": 3,
+    "wilcoxon_p": 0.0025,
+    "shrinks_to_median": false
+   },
+   "generic": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1927,
+    "mean_dist_to_median_pred": 0.2235,
+    "mean_pred_minus_real": 0.0308,
+    "n_users_shrinking": 11,
+    "wilcoxon_p": 0.3317,
+    "shrinks_to_median": false
+   },
+   "wrong": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1968,
+    "mean_dist_to_median_pred": 0.3006,
+    "mean_pred_minus_real": 0.1038,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0057,
+    "shrinks_to_median": false
+   }
+  },
+  "e5": {
+   "by_condition": {
+    "distilled": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2469,
+     "judge_style": 39.065,
+     "judge_realism": 34.565,
+     "judge_content": 31.901
+    },
+    "generic": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2547,
+     "judge_style": 38.525,
+     "judge_realism": 36.945,
+     "judge_content": 33.287
+    },
+    "wrong": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2793,
+     "judge_style": 34.319,
+     "judge_realism": 31.869,
+     "judge_content": 30.381
+    }
+   },
+   "verdict": "flat",
+   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
+  }
+ },
+ "meta": {
+  "users": 20,
+  "points": 1511,
+  "mode": "folder"
+ },
  "adjudication": {
   "n_adjudicated": 25,
   "reasonable_rate": 0.12,
   "error_type_counts": {
-   "hallucinated_content": 7,
+   "hallucinated_content": 5,
    "generic_not_specific": 3,
-   "task_completion_substitution": 15
+   "task_completion_substitution": 17
   },
-  "homogeneity_share": 0.72,
+  "homogeneity_share": 0.8,
   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
  },
  "worst": [
@@ -35,6 +644,16 @@
    "pred_cat": "directive",
    "real": "seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m\nduckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m",
    "generated": "commit and push",
+   "judge_realism": 2,
+   "error_type": "hallucinated_content",
+   "reasonable": false
+  },
+  {
+   "slug": "135yshr",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real": "フローチャートの例のmermaidが表示されていません",
+   "generated": "/commit",
    "judge_realism": 2,
    "error_type": "hallucinated_content",
    "reasonable": false
@@ -57,16 +676,6 @@
    "generated": "commit, push and create a PR, merge when passed",
    "judge_realism": 2,
    "error_type": "task_completion_substitution",
-   "reasonable": true
-  },
-  {
-   "slug": "135yshr",
-   "real_cat": "critical",
-   "pred_cat": "directive",
-   "real": "フローチャートの例のmermaidが表示されていません",
-   "generated": "/commit",
-   "judge_realism": 2,
-   "error_type": "hallucinated_content",
    "reasonable": false
   },
   {
@@ -90,16 +699,6 @@
    "reasonable": false
   },
   {
-   "slug": "nosman",
-   "real_cat": "critical",
-   "pred_cat": "approve",
-   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
-   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
-   "judge_realism": 2,
-   "error_type": "task_completion_substitution",
-   "reasonable": false
-  },
-  {
    "slug": "malkoG",
    "real_cat": "inquiry",
    "pred_cat": "directive",
@@ -116,6 +715,16 @@
    "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
    "generated": "yes, and then commit, push and create a PR, merge when passed",
    "judge_realism": 3,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "nosman",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
+   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
+   "judge_realism": 2,
    "error_type": "task_completion_substitution",
    "reasonable": false
   },
