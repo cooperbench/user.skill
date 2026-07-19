@@ -275,6 +275,14 @@ _CLI_FAILURE_MARKERS = (
     "overloaded",
     "service unavailable",
     "internal server error",
+    # transport / connectivity errors the CLI prints as the "response" (not model text)
+    "api error",
+    "connection closed mid-response",
+    "unable to connect to api",
+    "the response above may be incomplete",
+    "request timed out",
+    "econnreset",
+    "socket hang up",
 )
 
 
