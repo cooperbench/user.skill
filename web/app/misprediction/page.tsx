@@ -1,3 +1,4 @@
+import React from "react";
 // SWESimBench — misprediction / homogeneity study.
 // Data: ./data.json (regenerated via scripts/misprediction.py -> a compact export).
 // Question: are the user-simulator's mispredictions a failure of *individuation* — does it
@@ -8,6 +9,13 @@ const CATS = ["approve", "critical", "directive", "inquiry"] as const;
 const n3 = (n: number | null | undefined) => (typeof n === "number" ? n.toFixed(3) : "—");
 const n1 = (n: number | null | undefined) => (typeof n === "number" ? n.toFixed(1) : "—");
 const fmt = (n: number) => n.toLocaleString("en-US");
+
+const VERDICT_CLS: Record<string, string> = {
+  supported: "bg-emerald-100 text-emerald-700",
+  refuted: "bg-rose-100 text-rose-700",
+  mixed: "bg-amber-100 text-amber-700",
+  "not run": "bg-zinc-100 text-zinc-500",
+};
 
 const CAT_COLOR: Record<string, string> = {
   approve: "text-emerald-600 bg-emerald-50",
@@ -142,6 +150,58 @@ export default function MispredictionPage() {
           <StatCard label="worst misses: homogeneity" value={`${Math.round(100 * adj.homogeneity_share)}%`} sub={`task-completion / generic (n=${adj.n_adjudicated})`} />
         )}
       </div>
+
+      {d.scoreboard && (
+        <Section kicker="Scoreboard" title="Which claims survived the data?">
+          <p className="text-zinc-600">
+            Each experiment made a falsifiable prediction before the run. Evidence columns are the{" "}
+            <strong>generic</strong> condition for E2/E3 and <strong>distilled</strong> for E4 (the
+            strongest test of each).
+          </p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs text-zinc-500">
+                  <th className="py-1 text-left font-semibold">claim</th>
+                  <th className="py-1 text-left font-semibold">prediction if the hypothesis is TRUE</th>
+                  <th className="py-1 text-right font-semibold">folder</th>
+                  <th className="py-1 pr-6 text-right font-semibold">inline</th>
+                  <th className="py-1 text-left font-semibold">verdict</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.scoreboard.map((s: any) => (
+                  <React.Fragment key={s.id}>
+                    <tr className="border-t border-zinc-100">
+                      <td className="py-2 font-medium text-zinc-900">{s.id}</td>
+                      <td className="py-2 text-zinc-600">{s.claim}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">{s.folder}</td>
+                      <td className="py-2 pr-6 text-right tabular-nums text-zinc-600">{s.inline}</td>
+                      <td className="py-2">
+                        <span className={`inline-block whitespace-nowrap rounded px-1.5 py-0.5 text-[11px] font-bold uppercase tracking-wide ${VERDICT_CLS[s.verdict] ?? "bg-zinc-100 text-zinc-500"}`}>
+                          {s.verdict}
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td />
+                      <td colSpan={4} className="pb-2 text-xs text-zinc-400">{s.note}</td>
+                    </tr>
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 rounded-xl border border-zinc-200 border-l-[3px] border-l-indigo-500 bg-white px-4 py-3 text-sm text-zinc-700">
+            <strong>What it adds up to.</strong> The simulator really is homogeneous — it compresses
+            distinct developers into a narrow band of behaviour (H2) and its worst errors are
+            task-completion substitutions (E1). But the mechanism is <em>not</em> the one H3 proposed:
+            predictions do not shrink toward the average human, they cluster around the{" "}
+            <strong>model&rsquo;s own attractor</strong>, which sits measurably away from the real
+            developer average. Personalisation moves the voice, not the decision (E5).
+          </div>
+        </Section>
+      )}
 
       <Section kicker="Method" title="Three falsifiable claims">
         <p className="text-zinc-600">

@@ -926,5 +926,63 @@
   },
   "verdict": "surface_only",
   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
- }
+ },
+ "scoreboard": [
+  {
+   "id": "E1",
+   "claim": "Worst misses are task-completion / generic substitution",
+   "folder": "80%",
+   "inline": "92%",
+   "verdict": "supported",
+   "note": "Both modes: the dominant error is predicting keep-going where the developer did something individual."
+  },
+  {
+   "id": "H1 · E2",
+   "claim": "approve% pred > real and critical% pred < real",
+   "folder": "approve +0.010, critical -0.115",
+   "inline": "approve +0.116, critical -0.108",
+   "verdict": "mixed",
+   "note": "Holds on the low-prompt inline arm (clear approve-collapse). Folder mode is explicitly told not to default to approving, so the mass diverts to inquiry — as the plan predicted, H1 is only clean on a low-prompt baseline."
+  },
+  {
+   "id": "H2 · E3",
+   "claim": "between-user spread(pred) < spread(real)",
+   "folder": "0.200 vs 0.280 (p=0.0117)",
+   "inline": "0.259 vs 0.283 (p=0.4148)",
+   "verdict": "supported",
+   "note": "Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the model echo signature catchphrases verbatim, inflating apparent between-user distinctiveness."
+  },
+  {
+   "id": "H3 · E4",
+   "claim": "dist(pred, median) < dist(real, median)",
+   "folder": "Δ +0.054 (p=0.0386)",
+   "inline": "Δ +0.088 (p=0.0025)",
+   "verdict": "refuted",
+   "note": "The opposite, significantly: with a folder, predictions sit FARTHER from the real population average than the developers themselves do. Homogeneity is not shrinkage toward the human mean."
+  },
+  {
+   "id": "E5",
+   "claim": "Folder changes the voice but not the decision",
+   "folder": "surface_only",
+   "inline": "flat",
+   "verdict": "supported",
+   "note": "Folder reads surface_only: judge-style rises while move-mix distance to the real user does not improve."
+  },
+  {
+   "id": "E6",
+   "claim": "Claims survive on the underdetermined-point control",
+   "folder": "—",
+   "inline": "—",
+   "verdict": "not run",
+   "note": "Needs k-fold resampling of the generic simulator; not yet generated."
+  },
+  {
+   "id": "E7",
+   "claim": "Low-prompt / move-conditioned arms restore between-user variance",
+   "folder": "—",
+   "inline": "—",
+   "verdict": "not run",
+   "note": "The causal probe of the mechanism; not yet generated."
+  }
+ ]
 }
