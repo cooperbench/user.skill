@@ -194,11 +194,11 @@
   "n_adjudicated": 25,
   "reasonable_rate": 0.12,
   "error_type_counts": {
-   "hallucinated_content": 7,
+   "hallucinated_content": 5,
    "generic_not_specific": 3,
-   "task_completion_substitution": 15
+   "task_completion_substitution": 17
   },
-  "homogeneity_share": 0.72,
+  "homogeneity_share": 0.8,
   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
  },
  "E1_worst_k": [
@@ -214,6 +214,22 @@
    "judge_content": 0,
    "real": "seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m\nduckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m",
    "generated": "commit and push",
+   "severity": 1.98,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
+  },
+  {
+   "slug": "135yshr",
+   "point_id": "e2469ccd-9066-4bdb-97e4-33435c656a0f#42",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 2,
+   "judge_content": 0,
+   "real": "フローチャートの例のmermaidが表示されていません",
+   "generated": "/commit",
    "severity": 1.98,
    "reasonable": false,
    "error_type": "hallucinated_content"
@@ -247,24 +263,8 @@
    "real": "actually we have not yet released anything. I am tempted to manually wipe the db. (delete everything) generate new migrations from scratch (so we have only 1 single migration) and then rbeuild db, and via the CLI manually upload all previous sessions.w hat do you think?",
    "generated": "commit, push and create a PR, merge when passed",
    "severity": 1.98,
-   "reasonable": true,
-   "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "135yshr",
-   "point_id": "e2469ccd-9066-4bdb-97e4-33435c656a0f#42",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "directive",
-   "real_act": "critical",
-   "pred_act": "directive",
-   "judge_realism": 2,
-   "judge_content": 0,
-   "real": "フローチャートの例のmermaidが表示されていません",
-   "generated": "/commit",
-   "severity": 1.98,
    "reasonable": false,
-   "error_type": "hallucinated_content"
+   "error_type": "task_completion_substitution"
   },
   {
    "slug": "135yshr",
@@ -299,22 +299,6 @@
    "error_type": "task_completion_substitution"
   },
   {
-   "slug": "nosman",
-   "point_id": "8720bcb1-e0cc-4ed8-bb89-5b15956a0921#75",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "approve",
-   "real_act": "critical",
-   "pred_act": "approve",
-   "judge_realism": 2,
-   "judge_content": 5,
-   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
-   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
-   "severity": 1.98,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
    "slug": "malkoG",
    "point_id": "cd87a744-7e19-434d-9fa1-c33a0f9e690f#261",
    "repo": "the project",
@@ -343,6 +327,22 @@
    "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
    "generated": "yes, and then commit, push and create a PR, merge when passed",
    "severity": 1.97,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "nosman",
+   "point_id": "8720bcb1-e0cc-4ed8-bb89-5b15956a0921#75",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 2,
+   "judge_content": 5,
+   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
+   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
+   "severity": 1.98,
    "reasonable": false,
    "error_type": "task_completion_substitution"
   },
@@ -423,7 +423,7 @@
    "real": "check the code reviews on the pr",
    "generated": "ok",
    "severity": 1.95,
-   "reasonable": false,
+   "reasonable": true,
    "error_type": "task_completion_substitution"
   },
   {
@@ -439,7 +439,7 @@
    "real": "let's make some improvements: 1. on the welcome page, show sign in (no create account on begin) and play local, it prompts user can choose sign in online or play locally without online account (anonymous or something), user should choose. 2, in the sign in or create account page, do not show the local profile under the box, it will misunderstand user. 3. after user signed in, do not show the \"play locally\" button, he can choose a profile to play online worlds or signleplayer worlder. 4. if I run a localhost \"bun run dev\", I can play local without config the database url or auth url. now it shows error if I do not config the db: Error: DATABASE_URL is not set — see .env.example. what do you think?",
    "generated": "what features do you think we can add to make the game more fun?",
    "severity": 1.95,
-   "reasonable": true,
+   "reasonable": false,
    "error_type": "generic_not_specific"
   },
   {
@@ -472,7 +472,7 @@
    "generated": "Good",
    "severity": 1.95,
    "reasonable": false,
-   "error_type": "task_completion_substitution"
+   "error_type": "hallucinated_content"
   },
   {
    "slug": "melagiri",
@@ -504,7 +504,7 @@
    "generated": "1",
    "severity": 1.95,
    "reasonable": false,
-   "error_type": "hallucinated_content"
+   "error_type": "task_completion_substitution"
   },
   {
    "slug": "penso",
@@ -523,6 +523,22 @@
    "error_type": "task_completion_substitution"
   },
   {
+   "slug": "alishakawaguchi",
+   "point_id": "95047199-69f0-49a5-9432-18cba428ecec#144",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 6,
+   "judge_content": 5,
+   "real": "do I need to increment the versions so it doesn't mess with current users?",
+   "generated": "push",
+   "severity": 1.94,
+   "reasonable": true,
+   "error_type": "task_completion_substitution"
+  },
+  {
    "slug": "robouden",
    "point_id": "5a84b50a-3f17-46f4-8e95-84451c4abbc4#90",
    "repo": "the project",
@@ -536,23 +552,7 @@
    "generated": "export CODEBERG_TOKEN=xxxx",
    "severity": 1.94,
    "reasonable": false,
-   "error_type": "hallucinated_content"
-  },
-  {
-   "slug": "alishakawaguchi",
-   "point_id": "95047199-69f0-49a5-9432-18cba428ecec#144",
-   "repo": "the project",
-   "real_cat": "inquiry",
-   "pred_cat": "directive",
-   "real_act": "inquiry",
-   "pred_act": "directive",
-   "judge_realism": 6,
-   "judge_content": 5,
-   "real": "do I need to increment the versions so it doesn't mess with current users?",
-   "generated": "push",
-   "severity": 1.94,
-   "reasonable": false,
-   "error_type": "hallucinated_content"
+   "error_type": "task_completion_substitution"
   },
   {
    "slug": "135yshr",

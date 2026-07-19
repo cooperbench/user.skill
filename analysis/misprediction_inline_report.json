@@ -1,0 +1,606 @@
+{
+ "sources": [
+  {
+   "file": "validation_tasks_inline.json",
+   "mode": "inline",
+   "n": 1485,
+   "labelled": 1482
+  }
+ ],
+ "n_records": 1485,
+ "n_move_labelled": 1482,
+ "categories": [
+  "approve",
+  "critical",
+  "directive",
+  "inquiry"
+ ],
+ "severity": "severity = cat_mismatch(1) + (100 - realism_or_content)/100, ranked desc",
+ "E2_marginal_confusion": {
+  "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
+  "by_condition": {
+   "distilled": {
+    "n": 495,
+    "real_marginal": {
+     "approve": 0.135,
+     "critical": 0.172,
+     "directive": 0.515,
+     "inquiry": 0.178
+    },
+    "pred_marginal": {
+     "approve": 0.275,
+     "critical": 0.057,
+     "directive": 0.527,
+     "inquiry": 0.141
+    },
+    "pred_minus_real": {
+     "approve": 0.139,
+     "critical": -0.115,
+     "directive": 0.012,
+     "inquiry": -0.036
+    },
+    "human->task": 126,
+    "task->human": 51,
+    "flow_sign_test_p": 0.0,
+    "net_toward_task": 75
+   },
+   "generic": {
+    "n": 491,
+    "real_marginal": {
+     "approve": 0.136,
+     "critical": 0.175,
+     "directive": 0.511,
+     "inquiry": 0.177
+    },
+    "pred_marginal": {
+     "approve": 0.253,
+     "critical": 0.067,
+     "directive": 0.442,
+     "inquiry": 0.238
+    },
+    "pred_minus_real": {
+     "approve": 0.116,
+     "critical": -0.108,
+     "directive": -0.069,
+     "inquiry": 0.061
+    },
+    "human->task": 105,
+    "task->human": 82,
+    "flow_sign_test_p": 0.1074,
+    "net_toward_task": 23
+   },
+   "wrong": {
+    "n": 496,
+    "real_marginal": {
+     "approve": 0.135,
+     "critical": 0.175,
+     "directive": 0.51,
+     "inquiry": 0.179
+    },
+    "pred_marginal": {
+     "approve": 0.312,
+     "critical": 0.048,
+     "directive": 0.508,
+     "inquiry": 0.131
+    },
+    "pred_minus_real": {
+     "approve": 0.177,
+     "critical": -0.127,
+     "directive": -0.002,
+     "inquiry": -0.048
+    },
+    "human->task": 131,
+    "task->human": 44,
+    "flow_sign_test_p": 0.0,
+    "net_toward_task": 87
+   }
+  },
+  "real_act_marginal_all": {
+   "approve": 0.135,
+   "critical": 0.172,
+   "directive": 0.515,
+   "inquiry": 0.178
+  }
+ },
+ "E3_variance_collapse": {
+  "hypothesis": "spread_pred < spread_real (predictions cluster across users)",
+  "by_condition": {
+   "distilled": {
+    "n_users": 20,
+    "spread_real": 0.282,
+    "spread_pred": 0.3133,
+    "pred_minus_real": 0.0313,
+    "perm_p": 0.2635,
+    "collapse": false
+   },
+   "generic": {
+    "n_users": 20,
+    "spread_real": 0.2828,
+    "spread_pred": 0.2587,
+    "pred_minus_real": -0.0241,
+    "perm_p": 0.4148,
+    "collapse": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "spread_real": 0.2859,
+    "spread_pred": 0.3093,
+    "pred_minus_real": 0.0235,
+    "perm_p": 0.6157,
+    "collapse": false
+   }
+  }
+ },
+ "E4_median_regression": {
+  "hypothesis": "pred closer to population median than real (shrinkage)",
+  "by_condition": {
+   "distilled": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1939,
+    "mean_dist_to_median_pred": 0.2816,
+    "mean_pred_minus_real": 0.0877,
+    "n_users_shrinking": 3,
+    "wilcoxon_p": 0.0025,
+    "shrinks_to_median": false
+   },
+   "generic": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1927,
+    "mean_dist_to_median_pred": 0.2235,
+    "mean_pred_minus_real": 0.0308,
+    "n_users_shrinking": 11,
+    "wilcoxon_p": 0.3317,
+    "shrinks_to_median": false
+   },
+   "wrong": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1968,
+    "mean_dist_to_median_pred": 0.3006,
+    "mean_pred_minus_real": 0.1038,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0057,
+    "shrinks_to_median": false
+   }
+  }
+ },
+ "E5_decision_vs_surface": {
+  "by_condition": {
+   "distilled": {
+    "n_users": 20,
+    "move_dist_to_real": 0.2469,
+    "judge_style": 39.065,
+    "judge_realism": 34.565,
+    "judge_content": 31.901
+   },
+   "generic": {
+    "n_users": 20,
+    "move_dist_to_real": 0.2547,
+    "judge_style": 38.525,
+    "judge_realism": 36.945,
+    "judge_content": 33.287
+   },
+   "wrong": {
+    "n_users": 20,
+    "move_dist_to_real": 0.2793,
+    "judge_style": 34.319,
+    "judge_realism": 31.869,
+    "judge_content": 30.381
+   }
+  },
+  "verdict": "flat",
+  "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
+ },
+ "E1_adjudication_summary": {
+  "n_adjudicated": 25,
+  "reasonable_rate": 0.12,
+  "error_type_counts": {
+   "task_completion_substitution": 22,
+   "generic_not_specific": 1,
+   "hallucinated_content": 2
+  },
+  "homogeneity_share": 0.92,
+  "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+ },
+ "E1_worst_k": [
+  {
+   "slug": "jeevanpillay",
+   "point_id": "3d829aeb-a54b-4814-8988-0867aa386bd3#26",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 2,
+   "judge_content": 5,
+   "real": "omit anything any related to the core dev-lifecycle changes",
+   "generated": "proceed",
+   "severity": 1.98,
+   "reasonable": true,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "jdsingh122918",
+   "point_id": "9c79c99e-b470-42b7-bd40-f7c4d9e6547b#36",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 0,
+   "judge_content": 0,
+   "real": "lets start with approach A",
+   "generated": "B",
+   "severity": 2.0,
+   "reasonable": true,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "FSM1",
+   "point_id": "a4ed1cb9-4e4c-4d71-bc03-3c2c6b4e70a3#668",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 3,
+   "judge_content": 5,
+   "real": "/compact",
+   "generated": "ok",
+   "severity": 1.97,
+   "reasonable": true,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "135yshr",
+   "point_id": "5d70c437-3168-4c82-86d1-46b5790e02d3#343",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 3,
+   "judge_content": 5,
+   "real": "前回と同一の内容です。変更点がありません。\n\n前回挙げた3点の未対処事項を改めて整理します。対処していただければ公開できる水準になると思います。\n\n---\n\n**1. 素朴アプローチとポリシーの認可ルールが暗黙に変わっている（269行目付近）**\n\n素朴版の `authorizeUpdate` は「作成者 or プロジェクトメンバー（メンバーであれば誰でもOK）」です。改善版の `TaskPolicy` は「作成者 or オーナー or エディター（閲覧者は不可）」です。これは認可ルール自体のリファクタではなく、ルールの厳格化です。読者は「ポリシーオブジェクトに移しただけ」と思って読むのに、実は判定基準が変わっている。素朴→改善の接続部分に「ポリシーオブジェクトに移行する際に、メンバーシップの有無ではなくロールに基づく判定に変更しています」と一文入れてください。\n\n**2. クエリ側の Handler コードがない（448〜501行目）**\n\n`TaskVisibility` をどこで生成して Handler に渡すのかが不明です。コマンド側では `Delete` Handler のコードで claims → actor の変換と UseCase 呼び出しまで示しています。クエリ側にも同等の Handler コード（role取得 → `NewTaskVisibility(role)` → `toTaskResponse` の呼び出し）を足せば、記事全体の対称性が揃います。\n\n**3. まとめの散文が6主張を1段落に詰め込んでいる（618行目）**\n\nテーブルで3レベルの整理はできているので、その後の散文は「各層の責務を分けることが最も重要」という一点に絞って、残りは削るか別文に分けると、締まりが良くなります。\n\n---\n\nこの3点以外は公開に問題ないレベルです。",
+   "generated": "確認しました。PRをマージしてください。",
+   "severity": 1.97,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "jeevanpillay",
+   "point_id": "f7bead76-f5ac-4407-9075-e981ba832c1e#106",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "approve",
+   "real_act": "inquiry",
+   "pred_act": "approve",
+   "judge_realism": 2,
+   "judge_content": 8,
+   "real": "question, consiering that we havent gotten apple dev account setup how can we deploy?",
+   "generated": "okay got it. proceed",
+   "severity": 1.98,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "robouden",
+   "point_id": "316718bd-c95e-4dbb-ab74-6f7e7e2ac00c#80",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 3,
+   "judge_content": 5,
+   "real": "Can you fix this?",
+   "generated": "Great!!",
+   "severity": 1.97,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "alishakawaguchi",
+   "point_id": "95047199-69f0-49a5-9432-18cba428ecec#144",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 3,
+   "judge_content": 5,
+   "real": "do I need to increment the versions so it doesn't mess with current users?",
+   "generated": "push",
+   "severity": 1.97,
+   "reasonable": false,
+   "error_type": "generic_not_specific"
+  },
+  {
+   "slug": "KeKs0r",
+   "point_id": "dba28125-46ba-467a-b242-0d9273683a0d#52",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "No, I'm actually thinking that we're trying because most of the dashboards are powered by the analytics table, and whenever we want to add a new agent we need to still have a single source for all analytical queries in the frontend. So we need to have the base session, and then we have agent-specific sessions that add specific fields. The analytics session, or the analytics table, basically only gets from the agent-specific sessions materialized from there, so everything is still in an MV. And if there are some analytical things that are specific to an agent, we just add them as specific columns, and then not all analytic sessions have that trait.",
+   "generated": "yes do it",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "KeKs0r",
+   "point_id": "dba28125-46ba-467a-b242-0d9273683a0d#61",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "shuold we also delete/Users/marc/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill",
+   "generated": "apply to CI first",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
+  },
+  {
+   "slug": "135yshr",
+   "point_id": "af0fa6f0-c694-4a2f-889f-dcc05e6017d9#107",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 8,
+   "real": "PRにレビューコメントがあるので確認して修正してください",
+   "generated": "はい",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "Soph",
+   "point_id": "76731dd6-65de-4d92-be87-716b3e380099#251",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 8,
+   "real": "target: error: GH013: Repository rule violations found for refs/entire/checkpoints/5T/01KVBJD96J55PB4WRH2EADBE5T.\ntarget:\ntarget: - GITHUB PUSH PROTECTION\ntarget:   —————————————————————————————————————————\ntarget:     Resolve the following violations before pushing again\ntarget:\ntarget:     - Timed out validating Secrets detected, please try again\ntarget:\ntarget: error: GH013: Repository rule violations found for refs/entire/checkpoints/5T/01KVBJD9ZCNC48MJD4DSRGPN5T.\ntarget:\ntarget: - GITHUB PUSH PROTECTION\ntarget:   —————————————————————————————————————————\ntarget:     Resolve the following violations before pushing again\ntarget:\ntarget:     - Timed out validating Secrets detected, please try again\ntarget:\nerror: replicate: replicate: bootstrap execute: push target refs: report-status: command error on refs/entire/checkpoints/2Y/01KVBHQG88946KVY2MYW6RKW2Y: push declined due to repository rule violations\nexit status 1",
+   "generated": "let's do both",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "cyyeh",
+   "point_id": "e8bf05ea-c8a5-41f0-a1cb-439907ebf6d8#18",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 0,
+   "real": "docker build -t YOUR_REGISTRY/duckdb-data-agent:latest -f backend/Dockerfile .\ndocker build -t REDACTED:latest ./sidecar\ndocker push YOUR_REGISTRY/duckdb-data-agent:latest\ndocker push REDACTED:latest\n\nhow to setup local registry in mac for k8s deployment",
+   "generated": "create a PR",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "khaong",
+   "point_id": "26fd10e5-9929-4364-b5e7-540290e8931b#161",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 10,
+   "real": "we have merge conflicts with origin/main - please fixup",
+   "generated": "go up",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "henryph24",
+   "point_id": "2dee35c5-5a1f-49fa-8dd9-9ff88b81cad6#10",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "approve",
+   "real_act": "inquiry",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 2,
+   "real": "what is this writing implying: \" (∗/∗∗/∗∗∗ for p<0.05/0.01/0.001)\"",
+   "generated": "ok good",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "Soph",
+   "point_id": "9c38fcfa-92c9-437b-a244-5fa0b1dda745#587",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "1. Medium: the new POST retry logic still does not cover the real receive-pack push path, because that body is built with io.MultiReader and is therefore not\n     rewindable. In internal/gitproto/smarthttp.go:279, helper retry only runs when body implements io.Seeker. But the actual push request in internal/\n     gitproto/push.go:153 constructs body = io.MultiReader(body, packData), which will not satisfy io.Seeker. So a target that allows anonymous receive-pack\n     discovery but requires auth on the POST will still fail on the first push attempt with no helper retry. The new tests exercise PostRPC(...,\n     []byte(\"0000\"), ...), which is rewindable, but not the production push body shape.",
+   "generated": "looks good, let me take a look at the PR",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "khaong",
+   "point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#12",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "That's wrong! I want you to update the .opencode/plugins/entire.ts plugin such that it uses the CLI in this repository. Can you undo all of the changes you did before?",
+   "generated": "looks good, commit and push",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "malkoG",
+   "point_id": "caa050b2-1b3e-4b51-b127-5b2497cfbda3#65",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 2,
+   "real": "I updated graphql api",
+   "generated": "2",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
+  },
+  {
+   "slug": "marcus-sa",
+   "point_id": "0d5d0695-673b-4371-bc85-b6131024a97d#8",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 10,
+   "real": "Stop hook feedback:\nPrompt hook condition was not met: I cannot assess what to log without access to the Brain MCP tools. The system message indicates these tools should be available, but they are not in my current function set. Please verify that the Brain MCP service is running and the tools are properly connected before I can log decisions, observations, and suggestions from this session.",
+   "generated": "yes",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "khaong",
+   "point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#21",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 8,
+   "real": "There's a comment on the PR:\n\ncallHookSync explicitly runs the Entire command with cwd=directory, but the async callHook does not. If OpenCode is started from a different working directory, the async hooks may run outside the repo and fail to resolve the git/worktree root. Make callHook run with the same working directory (e.g., set cwd to directory on the spawned command). \n\nCan we find the code where we're generating the opencode plugin and fixing that in the code that generates the plugin as well as in the newly added plugin?",
+   "generated": "looks good, ty",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "melagiri",
+   "point_id": "f5bac496-5c8b-4a3b-9983-1bfa7f6ef8b9#18",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 8,
+   "real": "run an audit on the plans and see how many stale docs are present and verify the existing implementation status against plans..",
+   "generated": "ok",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "melagiri",
+   "point_id": "f16cdd69-67a1-4f75-ac82-ac8267ca01f3#83",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "approve",
+   "real_act": "inquiry",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 0,
+   "real": "explain me what we are building like i am a 15 year old",
+   "generated": "yes",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "armelhbobdad",
+   "point_id": "6f290fda-8776-49b3-9c82-013fa78c06dd#1334",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 2,
+   "real": "what about  - export_count > 500 threshold — the last [PENDING VALIDATION] marker; validates naturally on a 500+-export single-package target?",
+   "generated": "2.0.0",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "oddessentials",
+   "point_id": "af671b50-6bc8-46c4-89f4-cb0b16455d07#8",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 8,
+   "real": "Is this true and is it a problem from your perspective? The new review-time pipeline can report outdated review-time values after a normal extract run that omits --include-comments, because previously stamped PRs remain marked as covered\n  even though their thread data was not refreshed. That is a correctness issue for the new metrics.\n\n  Review comment:\n\n  - [P1] Invalidate old review-time coverage when skipping --include-comments — E:\\projects\\ado-git-repo-insights\\src\\ado_git_repo_insights\\cli.py:762-765\n    When extract runs without --include-comments, this branch deliberately leaves existing comments_extracted_at values untouched for PRs that were refreshed in the current run. If one of\n    those PRs received new approvals or thread changes since the last thread-enabled extraction, _generate_weekly_rollups() will still include its old review_time_minutes because it only\n    checks comments_extracted_at IS NOT NULL. In that common incremental-update scenario, the patch silently publishes stale review-time metrics for already-covered PRs instead of\n    suppressing them until comments are refreshed again.",
+   "generated": "PR description looks good. commit all changes and then we will plan for PR submission.",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "FSM1",
+   "point_id": "59294466-bbe3-43a0-8de0-b4a62f17d726#77",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 6,
+   "judge_content": 5,
+   "real": "I think that the full desktop e2e in CI should also be added as one of the gates for this phase",
+   "generated": "you good bro?",
+   "severity": 1.94,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "KeKs0r",
+   "point_id": "749b987f-95f0-4166-9cd2-1cc81fd41086#12",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 6,
+   "judge_content": 8,
+   "real": "okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context` and restarted the api server, but I dont seem to see the logfile",
+   "generated": "commit and push",
+   "severity": 1.94,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  }
+ ]
+}
