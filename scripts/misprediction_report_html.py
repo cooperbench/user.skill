@@ -16,6 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 IN = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "analysis" / "misprediction_report.json"
 OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "analysis" / "misprediction.html"
+# optional 3rd arg: a second-mode report (e.g. inline) to render a folder-vs-inline comparison.
+CMP = Path(sys.argv[3]) if len(sys.argv) > 3 else ROOT / "analysis" / "misprediction_inline_report.json"
 CATS = ["approve", "critical", "directive", "inquiry"]
 
 
@@ -179,6 +181,38 @@ def main():
             e3_bars += bar(v["spread_pred"], e3max, f'predicted · {c}',
                            "p<.05" if v["perm_p"] < 0.05 else "", "#818cf8")
 
+    # ---- folder-vs-inline comparison (optional second report) ----
+    compare_section = ""
+    this_mode = (r.get("sources") or [{}])[0].get("mode", "folder")
+    if CMP.exists() and CMP.resolve() != IN.resolve():
+        cr = json.loads(CMP.read_text())
+        cmode = (cr.get("sources") or [{}])[0].get("mode", "inline")
+        def hl(rep):
+            g = rep["E3_variance_collapse"]["by_condition"].get("generic", {})
+            a = rep.get("E1_adjudication_summary") or {}
+            e5r = rep["E5_decision_vs_surface"]
+            return g, a, e5r
+        rows = ""
+        for label, rep in [(this_mode, r), (cmode, cr)]:
+            g, a, e5r = hl(rep)
+            sig = "p&lt;.05" if (g.get("perm_p") or 1) < 0.05 else f'p={num(g.get("perm_p"),2)}'
+            rows += (f'<tr><td class="k">{esc(label)}</td>'
+                     f'<td class="num">{num(g.get("spread_pred"),3)} vs {num(g.get("spread_real"),3)}</td>'
+                     f'<td class="num">{sig}</td>'
+                     f'<td>{esc(e5r.get("verdict"))}</td>'
+                     f'<td class="num">{int(100*a["homogeneity_share"]) if a.get("homogeneity_share") is not None else "—"}%</td></tr>')
+        compare_section = (
+            '<section><div class="kicker">Folder vs inline</div>'
+            '<h2>Two ways to read the folder into the simulator</h2>'
+            '<p><b>folder</b> = the agent reads <code>users/&lt;slug&gt;/</code> itself (product flow); '
+            '<b>inline</b> = the folder text is pasted into the prompt (controlled). They diverge: inline '
+            'reproduces signature catchphrases verbatim, which <em>inflates</em> apparent between-user '
+            'distinctiveness — so its variance-collapse is masked (E3) — yet E4 shows that distinctiveness '
+            'points <em>away</em> from the real user, and its worst misses are even more homogeneity-driven.</p>'
+            '<table><thead><tr><th>mode</th><th class="num">H2 generic spread (pred vs real)</th>'
+            '<th class="num">perm p</th><th>E5 verdict</th><th class="num">E1 homogeneity</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></section>')
+
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SWESimBench — Misprediction &amp; Homogeneity</title>
@@ -286,6 +320,8 @@ keep-going where the real developer did something individual) and <b>generic-not
 {e1_html}
 <div class="conv"><div class="h">developer</div><div class="h">REAL message</div><div class="h">SIMULATED prediction</div>
 {worst_html}</div></section>
+
+{compare_section}
 
 <section><div class="kicker">E2 · marginals</div>
 <h2>Marginal skew &amp; move confusion <span class="tag">H1, descriptive</span></h2>
