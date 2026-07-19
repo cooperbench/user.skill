@@ -1,118 +1,162 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Misprediction & Homogeneity Study</title>
+<title>SWESimBench — Misprediction &amp; Homogeneity</title>
 <style>
- body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 1060px;
-        margin: 2rem auto; padding: 0 1rem; color: #1a1a2e; line-height: 1.55; }
- h1 { border-bottom: 3px solid #7c3aed; padding-bottom: .4rem; }
- h2 { margin-top: 2.4rem; color: #4c1d95; border-bottom: 1px solid #e3d9f7; padding-bottom: .2rem; }
- h3 { margin-top: 1.6rem; color: #4c1d95; }
- table { border-collapse: collapse; width: 100%; margin: .7rem 0 1.2rem; font-size: .87rem; }
- th, td { text-align: left; padding: .38rem .55rem; border-bottom: 1px solid #e3e6ef; vertical-align: top; }
- th { background: #f7f3ff; }
- td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
- .note { background: #f5f0ff; border-left: 4px solid #7c3aed; padding: .6rem 1rem; border-radius: 4px; }
- .warn { background: #fff7ed; border-left: 4px solid #f0883e; padding: .6rem 1rem; border-radius: 4px; margin:1rem 0; }
- .twin { display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0; }
- .stat { flex:1 1 180px; background:#f0f4ff; border-radius:10px; padding:.9rem 1.1rem; }
- .stat .bn { font-size:1.7rem; font-weight:800; color:#4361ee; }
- .stat.up .bn { color:#16a34a; } .stat .bl { font-size:.8rem; color:#555; }
- .legend { font-size:.78rem; color:#666; margin:.2rem 0; }
- .mv { display:inline-block; font-size:.66rem; text-transform:uppercase; border-radius:3px; padding:0 5px; margin-bottom:3px; font-weight:700; }
- table.sess td { font-size:.82rem; }
- table.sess td.ag { background:#f6f6fb; color:#666; font-size:.76rem; width:10%; }
- table.sess td.ur { width:45%; background:#fbf7ff; border-left:3px solid #7c3aed; }
- table.sess td.us { width:45%; background:#f0f9ff; border-left:3px solid #0ea5e9; }
- code { background:#f2eefc; padding:0 .3rem; border-radius:3px; font-size:.85em; }
- .hy { font-weight:600; color:#4c1d95; }
-</style></head><body>
+ :root { --zinc900:#18181b; --zinc700:#3f3f46; --zinc600:#52525b; --zinc500:#71717a;
+          --zinc400:#a1a1aa; --zinc200:#e4e4e7; --zinc100:#f4f4f5; --zinc50:#fafafa;
+          --indigo:#6366f1; --indigo400:#818cf8; }
+ * { box-sizing: border-box; }
+ body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
+        background:var(--zinc50); color:var(--zinc900); line-height:1.55; margin:0;
+        -webkit-font-smoothing:antialiased; }
+ main { max-width:56rem; margin:0 auto; padding:3.5rem 1.5rem; }
+ code { font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace; font-size:.85em;
+        background:var(--zinc100); padding:.05rem .3rem; border-radius:4px; }
+ nav { display:flex; align-items:center; justify-content:space-between; font-size:.875rem; }
+ nav .brand { font-weight:600; }
+ nav .links { display:flex; gap:1rem; align-items:center; color:var(--zinc500); }
+ nav .links a { color:var(--zinc500); text-decoration:none; } nav .links a:hover { color:var(--zinc900); }
+ .pill { background:var(--zinc900); color:#fff; border-radius:5px; padding:.1rem .45rem; font-size:.72rem; font-weight:500; }
+ h1 { font-size:1.85rem; font-weight:600; letter-spacing:-.02em; margin:2rem 0 0; }
+ .lede { color:var(--zinc600); max-width:42rem; margin-top:.8rem; }
+ .meta { color:var(--zinc400); font-size:.8rem; margin-top:.7rem; }
+ .callout { margin-top:1.5rem; border:1px solid var(--zinc200); background:#fff; border-left:3px solid var(--indigo);
+        border-radius:10px; padding:.75rem 1rem; font-size:.9rem; color:var(--zinc700); }
+ .callout.warn { border-left-color:#f59e0b; }
+ .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; margin-top:2rem; }
+ @media(min-width:720px) { .cards { grid-template-columns:repeat(5,1fr); } }
+ .stat { border:1px solid var(--zinc200); background:#fff; border-radius:12px; padding:1rem 1.15rem; }
+ .stat .bn { font-size:1.9rem; font-weight:600; letter-spacing:-.02em; }
+ .stat .bn .vs { font-size:.9rem; font-weight:500; color:var(--zinc400); margin-left:.35rem; }
+ .stat .bn .verdict { font-size:1.1rem; text-transform:capitalize; }
+ .stat .bl { font-size:.82rem; font-weight:500; color:var(--zinc600); margin-top:.25rem; }
+ .stat .bs { font-size:.72rem; color:var(--zinc400); margin-top:.1rem; }
+ section { margin-top:3rem; }
+ .kicker { font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--indigo); }
+ h2 { font-size:1.3rem; font-weight:600; letter-spacing:-.01em; margin:.25rem 0 0; }
+ h2 .tag { font-size:.72rem; font-weight:500; color:var(--zinc400); text-transform:none; letter-spacing:0; }
+ section p { color:var(--zinc600); margin-top:.6rem; }
+ ul { color:var(--zinc600); } li { margin:.35rem 0; }
+ .hy { color:var(--zinc900); font-weight:600; }
+ table { border-collapse:collapse; width:100%; margin-top:1rem; font-size:.85rem; }
+ th, td { text-align:left; padding:.5rem .6rem; border-top:1px solid var(--zinc100); vertical-align:top; color:var(--zinc600); }
+ thead th { border-top:0; color:var(--zinc500); font-weight:600; font-size:.78rem; }
+ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+ td.k { color:var(--zinc900); font-weight:500; }
+ .flag { display:inline-block; font-size:.7rem; padding:0 .35rem; border-radius:4px; background:#eef2ff; color:var(--indigo); }
+ .mv { display:inline-block; font-size:.64rem; text-transform:uppercase; letter-spacing:.03em;
+        border-radius:4px; padding:.05rem .35rem; font-weight:700; }
+ .barrow { display:flex; align-items:center; gap:.75rem; margin:.35rem 0; }
+ .barlab { width:11rem; flex:none; text-align:right; font-size:.78rem; color:var(--zinc500); }
+ .bartrack { position:relative; height:1.5rem; flex:1; background:var(--zinc100); border-radius:5px; }
+ .barfill { height:1.5rem; border-radius:5px; }
+ .barval { position:absolute; inset:0 auto 0 .5rem; display:flex; align-items:center; font-size:.75rem;
+        font-weight:500; color:var(--zinc700); font-variant-numeric:tabular-nums; }
+ .barval span { color:var(--indigo); margin-left:.3rem; font-weight:600; }
+ .conv { display:grid; grid-template-columns:6rem 1fr 1fr; gap:.5rem; margin-top:1rem; font-size:.82rem; }
+ .conv .h { font-weight:600; color:var(--zinc500); font-size:.75rem; }
+ .conv .who { color:var(--zinc400); font-size:.75rem; }
+ .conv .real { border-left:2px solid var(--zinc300,#d4d4d8); padding-left:.6rem; }
+ .conv .pred { border-left:2px solid var(--indigo400); padding-left:.6rem; }
+ .conv .cell { padding:.4rem .1rem; border-top:1px solid var(--zinc100); }
+ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--zinc200); color:var(--zinc400); font-size:.8rem; }
+</style></head><body><main>
+
+<nav>
+  <span class="brand">SWESimBench</span>
+  <div class="links"><span class="pill">misprediction</span>
+    <a href="https://swesimbench.vercel.app">v2 dataset</a>
+    <a href="https://swesimbench.vercel.app/v1">v1 leaderboard →</a></div>
+</nav>
 
 <h1>Are the simulator's mispredictions <em>homogeneity</em>?</h1>
-<p><b>Hypothesis.</b> LLMs are trained to complete tasks, not to imitate humans, so they are
-systematically homogeneous — defaulting to task-driving behaviour instead of deciding from an
-individual developer's differences. If true, a user-simulator's errors should cluster on the
-human, individual moves (pushing back, interrupting, asking, redirecting) and regress everyone
-toward one "average developer".</p>
+<p class="lede"><b>Hypothesis.</b> LLMs are trained to complete tasks, not to imitate humans — so
+they are systematically homogeneous, defaulting to task-driving behaviour instead of deciding from
+an individual developer's differences. If true, a user-simulator's errors should cluster on the
+human, friction-y moves (pushing back, interrupting, asking, redirecting) and regress every
+developer toward one "average" one.</p>
+<p class="meta">Generated from <code>misprediction_report.json</code> · validation_tasks_folder.json (1511 labelled, folder)</p>
+<div class="callout"><b>Powered run.</b> 20 developers · 1,511 move-labelled held-out points from the in-repo <code>tasks/</code> cohort (no S3). Folder mode is the product flow; inline mode is scored separately.</div>
 
-<p class="legend">Generated from <code>misprediction_report.json</code> · sources: validation_tasks_folder.json (1511 labelled, folder) ·
-1511 move-labelled prediction points.</p>
-<div class="note"><b>Powered run.</b> 20 developers, 1511 move-labelled prediction points, drawn from the in-repo <code>tasks/</code> held-out cohort (no S3). Folder mode = the product flow; inline mode is scored separately.</div>
+<div class="cards"><div class="stat"><div class="bn">20</div><div class="bl">developers</div><div class=bs>held-out tasks/ cohort</div></div><div class="stat"><div class="bn">1,511</div><div class="bl">labelled points</div><div class=bs>move-classified</div></div><div class="stat"><div class="bn">0.20<span class="vs">vs 0.28</span></div><div class="bl">between-user move-mix spread</div><div class=bs>predicted (generic) vs real</div></div><div class="stat"><div class="bn">72%</div><div class="bl">worst misses are homogeneity-type</div><div class=bs>task-completion / generic (n=25)</div></div><div class="stat"><div class="bn"><span class="verdict">surface_only</span></div><div class="bl">E5: decision vs. surface</div><div class=bs>does the folder change the decision?</div></div></div>
 
-<div class="twin"><div class="stat up"><div class="bn">72%</div><div class="bl">of worst misses are task-completion / generic substitution (homogeneity share, n=25)</div></div><div class="stat"><div class="bn">12%</div><div class="bl">of the worst misses are plausible-for-someone (reasonable rate)</div></div><div class="stat"><div class="bn">0.20 vs 0.28</div><div class="bl">between-user spread: predicted (generic) vs real move-mix</div></div><div class="stat"><div class="bn" style="font-size:1.2rem">surface_only</div><div class="bl">E5 verdict: does the folder move the decision or only the surface?</div></div></div>
-
-<h2>Method</h2>
-<p>Each held-out point has the real next message plus a simulated one under three conditions —
-<b>distilled</b> (the user's own folder), <b>generic</b> (no folder / pure task prior), and
+<section><div class="kicker">Method</div>
+<h2>Three falsifiable claims</h2>
+<p>Each held-out point carries the real next message plus a simulated one under three conditions —
+<b>distilled</b> (the user's own folder), <b>generic</b> (no folder / pure task prior) and
 <b>wrong</b> (a different user's folder). Every message is labelled with a conversational
-<b>move</b>, folded to four categories: <span class="mv" style="background:#16a34a22;color:#16a34a">approve</span> accept/permit · <span class="mv" style="background:#dc262622;color:#dc2626">critical</span>
-assert something is wrong · <span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span> tell the agent what to do next · <span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span>
-ask for an answer. The hypothesis becomes three falsifiable claims:</p>
+<b>move</b>, folded to four categories: <span class="mv" style="background:#16a34a14;color:#16a34a">approve</span> accept · <span class="mv" style="background:#e11d4814;color:#e11d48">critical</span> assert
+something is wrong · <span class="mv" style="background:#6366f114;color:#6366f1">directive</span> say what to do next · <span class="mv" style="background:#0ea5e914;color:#0ea5e9">inquiry</span> ask for an
+answer.</p>
 <ul>
-<li><span class="hy">H1 — central attractor (secondary).</span> Predictions over-produce
-approve/directive and under-produce critical/inquiry. <em>Prompt-sensitive:</em> our simulator is
-told "do NOT default to approving", so on the product simulator this is descriptive, not a clean test.</li>
-<li><span class="hy">H2 — between-user variance collapse (primary).</span> Predicted per-user
-move-mixes are more alike than real ones — the model doesn't spread across individuals.</li>
-<li><span class="hy">H3 — regression to the median developer (primary).</span> Each user's
-predicted mix sits closer to the population average than their real mix does.</li>
-</ul>
+<li><span class="hy">H1 — central attractor</span> <span class="flag">secondary</span> predictions
+over-produce approve/directive, under-produce critical/inquiry. Prompt-sensitive (our simulator is
+told not to default to approving), so descriptive here.</li>
+<li><span class="hy">H2 — between-user variance collapse</span> <span class="flag">primary</span>
+predicted per-user move-mixes are more alike than real ones.</li>
+<li><span class="hy">H3 — regression to the median developer</span> <span class="flag">primary</span>
+each user's predicted mix sits closer to the population average than their real mix.</li>
+</ul></section>
 
-<h2>E1 — worst-K misprediction audit</h2>
-<p>The worst mispredictions (move mismatch × low realism), each LLM-adjudicated for whether the
-prediction was <em>reasonable-for-someone</em> and what kind of error it is. The homogeneity
-signature is a high share of <b>task-completion substitution</b> (predicted keep-going where the
-real developer did something individual) and <b>generic-not-specific</b>.</p>
-<table><tr><th>error type</th><th class="num">count</th></tr><tr><td>task_completion_substitution</td><td class="num">15</td></tr><tr><td>hallucinated_content</td><td class="num">7</td></tr><tr><td>generic_not_specific</td><td class="num">3</td></tr></table><p class="legend">high reasonable_rate + high homogeneity_share = misses are &#x27;plausible in general, wrong for this person&#x27; (supports the hypothesis)</p>
-<table class="sess"><tr><th>user</th><th>REAL developer message</th><th>SIMULATED prediction</th></tr>
-<tr><td class="ag">cyyeh<br><span class="legend">R2</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m
-duckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>commit and push<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=False</div></td></tr><tr><td class="ag">malkoG<br><span class="legend">R0</span></td><td class="ur"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>Commit fine-grained</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>1<div class="legend">verdict: <b>generic_not_specific</b> · reasonable=False</div></td></tr><tr><td class="ag">KeKs0r<br><span class="legend">R2</span></td><td class="ur"><span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span><br>actually we have not yet released anything. I am tempted to manually wipe the db. (delete everything) generate new migrations from scratch (so we have only 1 single migration) and then rbeuild db, and via the CLI manuall</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>commit, push and create a PR, merge when passed<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=True</div></td></tr><tr><td class="ag">135yshr<br><span class="legend">R2</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>フローチャートの例のmermaidが表示されていません</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>/commit<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=False</div></td></tr><tr><td class="ag">135yshr<br><span class="legend">R2</span></td><td class="ur"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>create pr</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>わかりました<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">hutusi<br><span class="legend">R2</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>A few more issues I&#x27;m noticing:
+<section><div class="kicker">E1 · direct audit</div>
+<h2>Worst mispredictions <span class="tag">move mismatch × low realism, LLM-adjudicated</span></h2>
+<p>The homogeneity signature is a high share of <b>task-completion substitution</b> (predicted
+keep-going where the real developer did something individual) and <b>generic-not-specific</b>.</p>
+<table><thead><tr><th>error type</th><th class="num">count</th></tr></thead><tbody><tr><td class="k">task_completion_substitution <span class=flag>homogeneity</span></td><td class="num">15</td></tr><tr><td class="k">hallucinated_content</td><td class="num">7</td></tr><tr><td class="k">generic_not_specific <span class=flag>homogeneity</span></td><td class="num">3</td></tr></tbody></table>
+<div class="conv"><div class="h">developer</div><div class="h">REAL message</div><div class="h">SIMULATED prediction</div>
+<div class="cell"><div class="k">cyyeh</div><div class="who">realism 2</div></div><div class="cell real"><span class="mv" style="background:#e11d4814;color:#e11d48">critical</span><div>seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m
+duckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0         </div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>commit and push</div><div class="who" style="margin-top:.3rem">→ <b>hallucinated_content</b> · reasonable=False</div></div><div class="cell"><div class="k">malkoG</div><div class="who">realism 0</div></div><div class="cell real"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>Commit fine-grained</div></div><div class="cell pred"><span class="mv" style="background:#16a34a14;color:#16a34a">approve</span><div>1</div><div class="who" style="margin-top:.3rem">→ <b>generic_not_specific</b> · reasonable=False</div></div><div class="cell"><div class="k">KeKs0r</div><div class="who">realism 2</div></div><div class="cell real"><span class="mv" style="background:#0ea5e914;color:#0ea5e9">inquiry</span><div>actually we have not yet released anything. I am tempted to manually wipe the db. (delete everything) generate new migrations from scratch (so we have only 1 single migration) and then rbeuild db, and</div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>commit, push and create a PR, merge when passed</div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=True</div></div><div class="cell"><div class="k">135yshr</div><div class="who">realism 2</div></div><div class="cell real"><span class="mv" style="background:#e11d4814;color:#e11d48">critical</span><div>フローチャートの例のmermaidが表示されていません</div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>/commit</div><div class="who" style="margin-top:.3rem">→ <b>hallucinated_content</b> · reasonable=False</div></div><div class="cell"><div class="k">135yshr</div><div class="who">realism 2</div></div><div class="cell real"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>create pr</div></div><div class="cell pred"><span class="mv" style="background:#16a34a14;color:#16a34a">approve</span><div>わかりました</div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=False</div></div><div class="cell"><div class="k">hutusi</div><div class="who">realism 2</div></div><div class="cell real"><span class="mv" style="background:#e11d4814;color:#e11d48">critical</span><div>A few more issues I&#x27;m noticing:
 
-Profile ownership is ambiguous in the UI. There&#x27;s no visual indication of whether a given profile belongs to an online account or is a purely local player. From the user&#x27;s side, the two a</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>ok<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">nosman<br><span class="legend">R2</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>When you say &quot;a checkpoint taller than the terminal&quot;, what exactly does that mean? the green bars should only be 1 row regardless.</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he test<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">malkoG<br><span class="legend">R3</span></td><td class="ur"><span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span><br>For article detail page, do we render image assets??????</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>/ghpr<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=False</div></td></tr><tr><td class="ag">KeKs0r<br><span class="legend">R3</span></td><td class="ur"><span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span><br>i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>yes, and then commit, push and create a PR, merge when passed<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">FSM1<br><span class="legend">R5</span></td><td class="ur"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>I think that the full desktop e2e in CI should also be added as one of the gates for this phase</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>you good bro?<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">KeKs0r<br><span class="legend">R5</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context` and restarted the api server, but I dont seem to see the logfile</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>commit, push and create a PR, merge when passed<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">cyyeh<br><span class="legend">R5</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>now the issue is that query result content is too wide</td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>commit<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=False</div></td></tr>
-</table>
+Profile ownership is ambiguous in the UI. There&#x27;s no visual indication of whether a given profile belongs to an online account or is a purely local player. From the us</div></div><div class="cell pred"><span class="mv" style="background:#16a34a14;color:#16a34a">approve</span><div>ok</div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=False</div></div><div class="cell"><div class="k">nosman</div><div class="who">realism 2</div></div><div class="cell real"><span class="mv" style="background:#e11d4814;color:#e11d48">critical</span><div>When you say &quot;a checkpoint taller than the terminal&quot;, what exactly does that mean? the green bars should only be 1 row regardless.</div></div><div class="cell pred"><span class="mv" style="background:#16a34a14;color:#16a34a">approve</span><div>good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is </div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=False</div></div><div class="cell"><div class="k">malkoG</div><div class="who">realism 3</div></div><div class="cell real"><span class="mv" style="background:#0ea5e914;color:#0ea5e9">inquiry</span><div>For article detail page, do we render image assets??????</div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>/ghpr</div><div class="who" style="margin-top:.3rem">→ <b>hallucinated_content</b> · reasonable=False</div></div><div class="cell"><div class="k">KeKs0r</div><div class="who">realism 3</div></div><div class="cell real"><span class="mv" style="background:#0ea5e914;color:#0ea5e9">inquiry</span><div>i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?</div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>yes, and then commit, push and create a PR, merge when passed</div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=False</div></div><div class="cell"><div class="k">FSM1</div><div class="who">realism 5</div></div><div class="cell real"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>I think that the full desktop e2e in CI should also be added as one of the gates for this phase</div></div><div class="cell pred"><span class="mv" style="background:#16a34a14;color:#16a34a">approve</span><div>you good bro?</div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=False</div></div><div class="cell"><div class="k">KeKs0r</div><div class="who">realism 5</div></div><div class="cell real"><span class="mv" style="background:#e11d4814;color:#e11d48">critical</span><div>okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context` and restarted the api server, but I dont seem to see the logfile</div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>commit, push and create a PR, merge when passed</div><div class="who" style="margin-top:.3rem">→ <b>task_completion_substitution</b> · reasonable=False</div></div><div class="cell"><div class="k">cyyeh</div><div class="who">realism 5</div></div><div class="cell real"><span class="mv" style="background:#e11d4814;color:#e11d48">critical</span><div>now the issue is that query result content is too wide</div></div><div class="cell pred"><span class="mv" style="background:#6366f114;color:#6366f1">directive</span><div>commit</div><div class="who" style="margin-top:.3rem">→ <b>hallucinated_content</b> · reasonable=False</div></div></div></section>
 
-<h2>E2 — marginal skew &amp; move confusion <span class="legend">(H1, descriptive)</span></h2>
+<section><div class="kicker">E2 · marginals</div>
+<h2>Marginal skew &amp; move confusion <span class="tag">H1, descriptive</span></h2>
 <p>Predicted-minus-real share per category, and net flow between human and task moves.
 direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm</p>
-<table><tr><th>condition</th><th class="num">approve</th><th class="num">critical</th><th class="num">directive</th><th class="num">inquiry</th>
-<th class="num">human→task / task→human</th><th class="num">sign p</th></tr>
-<tr><td>distilled</td><td class="num"><span style="color:#7c3aed">+0.034</span></td><td class="num"><span style="color:#7c3aed">-0.117</span></td><td class="num"><span style="color:#7c3aed">+0.147</span></td><td class="num"><span style="color:#7c3aed">-0.064</span></td><td class="num">131→ / ←40</td><td class="num">0.000</td></tr><tr><td>generic</td><td class="num"><span style="color:#7c3aed">+0.010</span></td><td class="num"><span style="color:#7c3aed">-0.115</span></td><td class="num"><span style="color:#7c3aed">+0.016</span></td><td class="num"><span style="color:#7c3aed">+0.089</span></td><td class="num">95→ / ←82</td><td class="num">0.367</td></tr><tr><td>wrong</td><td class="num"><span style="color:#7c3aed">+0.125</span></td><td class="num"><span style="color:#7c3aed">-0.125</span></td><td class="num"><span style="color:#7c3aed">+0.083</span></td><td class="num"><span style="color:#7c3aed">-0.083</span></td><td class="num">133→ / ←28</td><td class="num">0.000</td></tr></table>
+<table><thead><tr><th>condition</th><th class="num">approve</th><th class="num">critical</th><th class="num">directive</th><th class="num">inquiry</th>
+<th class="num">human→task / ←</th><th class="num">sign p</th></tr></thead><tbody>
+<tr><td class="k">distilled</td><td class="num"><span style="color:#6366f1">+0.034</span></td><td class="num"><span style="color:#6366f1">-0.117</span></td><td class="num"><span style="color:#6366f1">+0.147</span></td><td class="num"><span style="color:#6366f1">-0.064</span></td><td class="num">131→ / ←40</td><td class="num">0.000</td></tr><tr><td class="k">generic</td><td class="num"><span style="color:#6366f1">+0.010</span></td><td class="num"><span style="color:#6366f1">-0.115</span></td><td class="num"><span style="color:#6366f1">+0.016</span></td><td class="num"><span style="color:#6366f1">+0.089</span></td><td class="num">95→ / ←82</td><td class="num">0.367</td></tr><tr><td class="k">wrong</td><td class="num"><span style="color:#6366f1">+0.125</span></td><td class="num"><span style="color:#6366f1">-0.125</span></td><td class="num"><span style="color:#6366f1">+0.083</span></td><td class="num"><span style="color:#6366f1">-0.083</span></td><td class="num">133→ / ←28</td><td class="num">0.000</td></tr></tbody></table></section>
 
-<h2>E3 — between-user variance collapse <span class="legend">(H2, primary)</span></h2>
-<p>Mean pairwise total-variation distance between users' move-mixes. Hypothesis: predicted spread
-&lt; real spread (predictions cluster). Paired permutation test.</p>
-<table><tr><th>condition</th><th class="num">users</th><th class="num">spread real</th>
-<th class="num">spread pred</th><th class="num">Δ (pred−real)</th><th class="num">perm p</th><th>collapse?</th></tr>
-<tr><td>distilled</td><td class="num">20</td><td class="num">0.279</td><td class="num">0.243</td><td class="num"><span style="color:#16a34a">-0.036</span></td><td class="num">0.353</td><td>collapse ✓</td></tr><tr><td>generic</td><td class="num">20</td><td class="num">0.280</td><td class="num">0.200</td><td class="num"><span style="color:#16a34a">-0.081</span></td><td class="num">0.012</td><td>collapse ✓</td></tr><tr><td>wrong</td><td class="num">20</td><td class="num">0.279</td><td class="num">0.255</td><td class="num"><span style="color:#16a34a">-0.024</span></td><td class="num">0.502</td><td>collapse ✓</td></tr></table>
+<section><div class="kicker">E3 · primary result</div>
+<h2>Between-user variance collapse <span class="tag">H2</span></h2>
+<p>Mean pairwise total-variation distance between developers' move-mixes. If the model captured
+individual differences, predicted spread would match real spread; homogeneity predicts a
+<b>narrower</b> predicted spread. Lower bar = developers look more alike.</p>
+<div style="margin:1.2rem 0"><div class="barrow"><div class="barlab">real developers</div><div class="bartrack"><div class="barfill" style="width:99.7%;background:#3f3f46"></div><div class="barval">0.279 <span>actual</span></div></div></div><div class="barrow"><div class="barlab">predicted · distilled</div><div class="bartrack"><div class="barfill" style="width:86.9%;background:#818cf8"></div><div class="barval">0.243</div></div></div><div class="barrow"><div class="barlab">predicted · generic</div><div class="bartrack"><div class="barfill" style="width:71.2%;background:#818cf8"></div><div class="barval">0.200 <span>p&lt;.05</span></div></div></div><div class="barrow"><div class="barlab">predicted · wrong</div><div class="bartrack"><div class="barfill" style="width:91.1%;background:#818cf8"></div><div class="barval">0.255</div></div></div></div>
+<table><thead><tr><th>condition</th><th class="num">users</th><th class="num">spread real</th>
+<th class="num">spread pred</th><th class="num">Δ</th><th class="num">perm p</th><th>collapse?</th></tr></thead><tbody>
+<tr><td class="k">distilled</td><td class="num">20</td><td class="num">0.279</td><td class="num">0.243</td><td class="num"><span style="color:#16a34a">-0.036</span></td><td class="num">0.353</td><td>collapse ✓</td></tr><tr><td class="k">generic</td><td class="num">20</td><td class="num">0.280</td><td class="num">0.200</td><td class="num"><span style="color:#16a34a">-0.081</span></td><td class="num">0.012</td><td>collapse ✓</td></tr><tr><td class="k">wrong</td><td class="num">20</td><td class="num">0.279</td><td class="num">0.255</td><td class="num"><span style="color:#16a34a">-0.024</span></td><td class="num">0.502</td><td>collapse ✓</td></tr></tbody></table></section>
 
-<h2>E4 — regression to the median developer <span class="legend">(H3, primary)</span></h2>
-<p>Distance from each user's mix to the population-average mix, real vs predicted. Hypothesis:
-predicted is closer to the median (shrinkage). Wilcoxon signed-rank.</p>
-<table><tr><th>condition</th><th class="num">users</th><th class="num">dist→median real</th>
-<th class="num">dist→median pred</th><th class="num">Δ (pred−real)</th><th class="num">wilcoxon p</th><th>shrinks?</th></tr>
-<tr><td>distilled</td><td class="num">20</td><td class="num">0.197</td><td class="num">0.251</td><td class="num"><span style="color:#991b1b">+0.054</span></td><td class="num">0.039</td><td>—</td></tr><tr><td>generic</td><td class="num">20</td><td class="num">0.199</td><td class="num">0.186</td><td class="num"><span style="color:#16a34a">-0.013</span></td><td class="num">0.627</td><td>shrinks ✓</td></tr><tr><td>wrong</td><td class="num">20</td><td class="num">0.198</td><td class="num">0.253</td><td class="num"><span style="color:#991b1b">+0.054</span></td><td class="num">0.036</td><td>—</td></tr></table>
+<section><div class="kicker">E4 · primary result</div>
+<h2>Regression to the median developer <span class="tag">H3</span></h2>
+<p>Distance from each user's mix to the population-average mix, real vs predicted. Shrinkage toward
+the median (predicted closer than real) supports homogeneity. Wilcoxon signed-rank.</p>
+<table><thead><tr><th>condition</th><th class="num">users</th><th class="num">dist→median real</th>
+<th class="num">dist→median pred</th><th class="num">Δ</th><th class="num">wilcoxon p</th><th>shrinks?</th></tr></thead><tbody>
+<tr><td class="k">distilled</td><td class="num">20</td><td class="num">0.197</td><td class="num">0.251</td><td class="num"><span style="color:#e11d48">+0.054</span></td><td class="num">0.039</td><td>—</td></tr><tr><td class="k">generic</td><td class="num">20</td><td class="num">0.199</td><td class="num">0.186</td><td class="num"><span style="color:#16a34a">-0.013</span></td><td class="num">0.627</td><td>shrinks ✓</td></tr><tr><td class="k">wrong</td><td class="num">20</td><td class="num">0.198</td><td class="num">0.253</td><td class="num"><span style="color:#e11d48">+0.054</span></td><td class="num">0.036</td><td>—</td></tr></tbody></table></section>
 
-<h2>E5 — decision vs. surface</h2>
-<p>Does the distilled folder change the <em>decision</em> (move-mix distance to the real user) or
-only the <em>surface</em> (judge style)? <b>surface_only</b> —
-surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user</p>
-<table><tr><th>condition</th><th class="num">users</th><th class="num">move dist→real</th>
-<th class="num">judge style</th><th class="num">judge realism</th><th class="num">judge content</th></tr>
-<tr><td>distilled</td><td class="num">20</td><td class="num">0.251</td><td class="num">38.4</td><td class="num">34.3</td><td class="num">31.0</td></tr><tr><td>generic</td><td class="num">20</td><td class="num">0.215</td><td class="num">36.6</td><td class="num">38.7</td><td class="num">31.8</td></tr><tr><td>wrong</td><td class="num">20</td><td class="num">0.268</td><td class="num">34.2</td><td class="num">31.3</td><td class="num">29.1</td></tr></table>
+<section><div class="kicker">E5 · decision vs. surface</div>
+<h2>Does the folder change the decision or only the voice?</h2>
+<p>Verdict: <b>surface_only</b>. surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user <code>move dist→real</code> is
+the move-mix distance to the real user (lower = better decisions); <code>judge style</code> is
+surface voice.</p>
+<table><thead><tr><th>condition</th><th class="num">users</th><th class="num">move dist→real</th>
+<th class="num">judge style</th><th class="num">judge realism</th><th class="num">judge content</th></tr></thead><tbody>
+<tr><td class="k">distilled</td><td class="num">20</td><td class="num">0.251</td><td class="num">38.4</td><td class="num">34.3</td><td class="num">31.0</td></tr><tr><td class="k">generic</td><td class="num">20</td><td class="num">0.215</td><td class="num">36.6</td><td class="num">38.7</td><td class="num">31.8</td></tr><tr><td class="k">wrong</td><td class="num">20</td><td class="num">0.268</td><td class="num">34.2</td><td class="num">31.3</td><td class="num">29.1</td></tr></tbody></table></section>
 
-<h2>Experiment catalog &amp; next steps</h2>
-<p>E1–E5 above run offline over the validation records. Two more, needing new generation, remain:</p>
+<section><div class="kicker">Next</div>
+<h2>Experiments still to run</h2>
 <ul>
-<li><b>E6 — underdetermination control.</b> Resample the generic simulator k× per point; drop
-high-entropy (unpredictable) points and re-run E2–E5. The distribution-level claims (H2/H3) should
-survive on the determined subset — that separates homogeneity from a low prediction ceiling.</li>
-<li><b>E7 — causal probe.</b> Compare the simulator under (i) default, (ii) an explicit "imitate
-THIS human, do not optimise the task" instruction, and (iii) move-conditioned sampling from the
-user's real prior (<code>validate.py --move-conditioned --move-source sample</code>). If (ii)/(iii)
-restore critical% and between-user variance, the homogeneity is an objective/prompt artifact, not a
-capability ceiling — the strongest test of the mechanism in the hypothesis.</li>
-</ul>
-<div class="note">Reproduce: <code>python3 scripts/misprediction.py --adjudicate</code> then
-<code>python3 scripts/misprediction_report_html.py</code>. Point <code>--results</code> at the
-~57-user <code>validation_results*.json</code> for the powered result.</div>
+<li><b>E6 — underdetermination control.</b> Resample the generic simulator k× per point, drop
+high-entropy (unpredictable) points, re-run E2–E5. Distribution-level claims should survive on the
+determined subset — separating homogeneity from a low prediction ceiling.</li>
+<li><b>E7 — causal probe.</b> Compare (i) default, (ii) an explicit "imitate THIS human, do not
+optimise the task" instruction, and (iii) move-conditioned sampling from the user's real prior
+(<code>validate.py --move-conditioned</code>). If (ii)/(iii) restore critical% and between-user
+variance, the homogeneity is a prompt/objective artifact, not a capability ceiling.</li>
+</ul></section>
 
-</body></html>
+<footer>Reproduce: <code>python3 scripts/misprediction.py --adjudicate</code> →
+<code>python3 scripts/misprediction_report_html.py</code>. Part of SWESimBench.</footer>
+
+</main></body></html>
