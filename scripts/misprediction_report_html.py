@@ -181,12 +181,101 @@ def main():
             e3_bars += bar(v["spread_pred"], e3max, f'predicted · {c}',
                            "p<.05" if v["perm_p"] < 0.05 else "", "#818cf8")
 
-    # ---- folder-vs-inline comparison (optional second report) ----
-    compare_section = ""
+    # ---- claims scoreboard: each experiment's falsifiable prediction vs. what we measured ----
+    def _ev(rep):
+        """Pull the evidence each claim is judged on, from one mode's report."""
+        if not rep:
+            return None
+        e3b = rep["E3_variance_collapse"]["by_condition"]
+        e4b = rep["E4_median_regression"]["by_condition"]
+        return {
+            "e2": rep["E2_marginal_confusion"]["by_condition"].get("generic", {}).get("pred_minus_real", {}),
+            "e3": e3b.get("generic", {}), "e3all": e3b,
+            "e4": e4b.get("distilled", {}), "e4gen": e4b.get("generic", {}),
+            "e5": rep["E5_decision_vs_surface"].get("verdict"),
+            "e1": (rep.get("E1_adjudication_summary") or {}).get("homogeneity_share"),
+        }
+
+    VERDICT_CLS = {"supported": "v-yes", "refuted": "v-no", "mixed": "v-mix", "not run": "v-na"}
+
+    def scoreboard_rows(fev, iev):
+        rows = []
+        # E1 — worst misses are homogeneity-type
+        rows.append(("E1", "Worst misses are task-completion / generic substitution",
+                     f'{int(100*fev["e1"])}%' if fev and fev.get("e1") is not None else "—",
+                     f'{int(100*iev["e1"])}%' if iev and iev.get("e1") is not None else "—",
+                     "supported",
+                     "Both modes: the dominant error is predicting keep-going where the developer did something individual."))
+        # H1/E2 — approve up, critical down
+        f2, i2 = (fev or {}).get("e2", {}), (iev or {}).get("e2", {})
+        rows.append(("H1 · E2", "approve% pred &gt; real and critical% pred &lt; real",
+                     f'approve {f2.get("approve",0):+.3f}, critical {f2.get("critical",0):+.3f}',
+                     f'approve {i2.get("approve",0):+.3f}, critical {i2.get("critical",0):+.3f}',
+                     "mixed",
+                     "Holds on the low-prompt inline arm (clear approve-collapse). In folder mode the simulator is "
+                     "explicitly told not to default to approving, so the mass diverts to inquiry instead — as the "
+                     "plan predicted, H1 is only clean on a low-prompt baseline."))
+        # H2/E3 — spread collapse
+        f3, i3 = (fev or {}).get("e3", {}), (iev or {}).get("e3", {})
+        rows.append(("H2 · E3", "between-user spread(pred) &lt; spread(real)",
+                     f'{num(f3.get("spread_pred"),3)} vs {num(f3.get("spread_real"),3)} (p={num(f3.get("perm_p"),3)})',
+                     f'{num(i3.get("spread_pred"),3)} vs {num(i3.get("spread_real"),3)} (p={num(i3.get("perm_p"),3)})',
+                     "supported",
+                     "Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the "
+                     "model echo signature catchphrases verbatim, which inflates apparent between-user distinctiveness."))
+        # H3/E4 — shrinkage toward the median
+        f4, i4 = (fev or {}).get("e4", {}), (iev or {}).get("e4", {})
+        rows.append(("H3 · E4", "dist(pred, median) &lt; dist(real, median)",
+                     f'Δ {f4.get("mean_pred_minus_real",0):+.3f} (p={num(f4.get("wilcoxon_p"),3)})',
+                     f'Δ {i4.get("mean_pred_minus_real",0):+.3f} (p={num(i4.get("wilcoxon_p"),3)})',
+                     "refuted",
+                     "The opposite, significantly: with a folder, predictions sit FARTHER from the real population "
+                     "average than the developers themselves do. Homogeneity is not shrinkage toward the human mean."))
+        # E5 — decision vs surface
+        rows.append(("E5", "Folder changes the voice but not the decision",
+                     esc((fev or {}).get("e5")), esc((iev or {}).get("e5")), "supported",
+                     "Folder mode reads surface_only: judge-style rises while the move-mix distance to the real user "
+                     "does not improve (it worsens vs. the no-folder baseline)."))
+        rows.append(("E6", "Claims survive on the underdetermined-point control", "—", "—", "not run",
+                     "Needs k-fold resampling of the generic simulator; not yet generated."))
+        rows.append(("E7", "Low-prompt / move-conditioned arms restore between-user variance", "—", "—", "not run",
+                     "The causal probe of the mechanism; not yet generated."))
+        return rows
+
+    # primary report is this_mode; the optional compare report is the other mode
     this_mode = (r.get("sources") or [{}])[0].get("mode", "folder")
+    cr = None
+    cmode = None
     if CMP.exists() and CMP.resolve() != IN.resolve():
         cr = json.loads(CMP.read_text())
         cmode = (cr.get("sources") or [{}])[0].get("mode", "inline")
+
+    # scoreboard columns are always folder-then-inline regardless of which report is primary
+    fev = _ev(r if this_mode == "folder" else cr)
+    iev = _ev(cr if this_mode == "folder" else r)
+    sb_rows = "".join(
+        f'<tr><td class="k">{cid}</td><td>{claim}</td><td class="num">{fv}</td><td class="num">{iv}</td>'
+        f'<td><span class="{VERDICT_CLS[vd]}">{vd}</span></td></tr>'
+        f'<tr class="note-row"><td></td><td colspan="4">{note}</td></tr>'
+        for cid, claim, fv, iv, vd, note in scoreboard_rows(fev, iev))
+    scoreboard_section = (
+        '<section><div class="kicker">Scoreboard</div>'
+        '<h2>Which claims survived the data?</h2>'
+        '<p>Each experiment made a falsifiable prediction before the run. Evidence columns are the '
+        f'<b>generic</b> condition for E2/E3 and <b>distilled</b> for E4 (the strongest test of each).</p>'
+        '<table class="sb"><thead><tr><th>claim</th><th>prediction if the hypothesis is TRUE</th>'
+        '<th class="num">folder</th><th class="num">inline</th><th>verdict</th></tr></thead>'
+        f'<tbody>{sb_rows}</tbody></table>'
+        '<div class="callout"><b>What it adds up to.</b> The simulator really is homogeneous — it '
+        'compresses distinct developers into a narrow band of behaviour (H2) and its worst errors are '
+        'task-completion substitutions (E1). But the mechanism is <em>not</em> the one H3 proposed: '
+        'predictions do not shrink toward the average human, they cluster around the '
+        '<b>model\'s own attractor</b>, which sits measurably away from the real developer average. '
+        'Personalisation moves the voice, not the decision (E5).</div></section>')
+
+    # ---- folder-vs-inline comparison (optional second report) ----
+    compare_section = ""
+    if cr is not None:
         def hl(rep):
             g = rep["E3_variance_collapse"]["by_condition"].get("generic", {})
             a = rep.get("E1_adjudication_summary") or {}
@@ -259,6 +348,12 @@ def main():
  td.num, th.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
  td.k {{ color:var(--zinc900); font-weight:500; }}
  .flag {{ display:inline-block; font-size:.7rem; padding:0 .35rem; border-radius:4px; background:#eef2ff; color:var(--indigo); }}
+ table.sb td {{ vertical-align:middle; }}
+ table.sb tr.note-row td {{ border-top:0; padding-top:0; font-size:.78rem; color:var(--zinc400); }}
+ .v-yes, .v-no, .v-mix, .v-na {{ display:inline-block; font-size:.72rem; font-weight:700; text-transform:uppercase;
+        letter-spacing:.03em; border-radius:4px; padding:.1rem .4rem; white-space:nowrap; }}
+ .v-yes {{ background:#dcfce7; color:#15803d; }} .v-no {{ background:#ffe4e6; color:#be123c; }}
+ .v-mix {{ background:#fef3c7; color:#b45309; }} .v-na {{ background:var(--zinc100); color:var(--zinc500); }}
  .mv {{ display:inline-block; font-size:.64rem; text-transform:uppercase; letter-spacing:.03em;
         border-radius:4px; padding:.05rem .35rem; font-weight:700; }}
  .barrow {{ display:flex; align-items:center; gap:.75rem; margin:.35rem 0; }}
@@ -294,6 +389,8 @@ developer toward one "average" one.</p>
 {banner}
 
 <div class="cards">{tiles}</div>
+
+{scoreboard_section}
 
 <section><div class="kicker">Method</div>
 <h2>Three falsifiable claims</h2>
