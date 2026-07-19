@@ -146,6 +146,7 @@ export default function V2Page() {
         <div className="flex gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">v2 dataset</span>
           <a href="/samples" className="hover:text-zinc-900">message samples</a>
+          <a href="/misprediction" className="hover:text-zinc-900">misprediction</a>
           <a href="/v1" className="hover:text-zinc-900">v1 leaderboard →</a>
         </div>
       </nav>
