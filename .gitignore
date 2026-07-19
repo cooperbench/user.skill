@@ -15,3 +15,5 @@ bench/profileopt/experiments/condagree_multi/train_turns.json
 
 .private/
 users_atK/
+results/scores_tasks_*.jsonl
+results/realacts_tasks_*.json
