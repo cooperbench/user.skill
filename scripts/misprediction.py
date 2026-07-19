@@ -155,6 +155,31 @@ def wilcoxon(diffs):
 
 # ---------- experiments ----------
 
+def a_move_accuracy(records):
+    """Metric A — individual-level accuracy: how often the predicted move equals the real move,
+    per condition. Reported against the majority-class baseline (always predict the most common
+    real move), because the move distribution is heavily skewed toward `directive`: an accuracy
+    below that baseline means the simulator is worse than a constant predictor."""
+    labelled = [r for r in records if r.get("real_act") and r.get("pred_act")]
+    reals = [cat(r["real_act"]) for r in labelled if cat(r["real_act"])]
+    if not reals:
+        return None
+    top, top_n = Counter(reals).most_common(1)[0]
+    out = {"baseline_class": top, "baseline_accuracy": round(top_n / len(reals), 3), "by_condition": {}}
+    for cond in CONDS:
+        rows = [r for r in labelled if r.get("cond") == cond]
+        if not rows:
+            continue
+        hit = sum(1 for r in rows if cat(r["real_act"]) and cat(r["real_act"]) == cat(r["pred_act"]))
+        acc = hit / len(rows)
+        out["by_condition"][cond] = {
+            "n": len(rows), "accuracy": round(acc, 3),
+            "vs_baseline": round(acc - out["baseline_accuracy"], 3),
+            "beats_baseline": acc > out["baseline_accuracy"],
+        }
+    return out
+
+
 def e2_marginal_confusion(records):
     """H1 (descriptive): marginal skew + net flow between task and human categories."""
     reals = [cat(r["real_act"]) for r in records if r.get("cond") == "distilled" and r.get("real_act")]
@@ -402,6 +427,7 @@ def main():
         "n_move_labelled": labelled,
         "categories": CATS,
         "severity": SEVERITY_HELP,
+        "A_move_accuracy": a_move_accuracy(records),
         "E2_marginal_confusion": e2_marginal_confusion(records),
         "E3_variance_collapse": e3_variance_collapse(records),
         "E4_median_regression": e4_median_regression(records),

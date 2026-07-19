@@ -203,6 +203,39 @@ def main():
             e3_bars += bar(v["spread_pred"], e3max, f'predicted · {c}',
                            "p<.05" if v["perm_p"] < 0.05 else "", "#818cf8")
 
+    # ---- metrics primer: the three families every experiment is expressed in ----
+    a_f = r.get("A_move_accuracy")
+    a_rows = ""
+    if a_f:
+        for c, v in a_f.get("by_condition", {}).items():
+            a_rows += (f'<tr><td class="k">{esc(c)}</td><td class="num">{v["n"]}</td>'
+                       f'<td class="num">{num(v["accuracy"],3)}</td>'
+                       f'<td class="num">{signed(v["vs_baseline"], good_negative=False)}</td>'
+                       f'<td>{"beats baseline" if v["beats_baseline"] else "below baseline"}</td></tr>')
+    metrics_section = (
+        '<section><div class="kicker">Metrics</div>'
+        '<h2>Three families of measurement</h2>'
+        '<p>Every experiment below is expressed in one of three metric families. Naming them up front '
+        'makes it explicit what each claim is actually measuring — and they can disagree.</p>'
+        '<ul class="defs">'
+        '<li><b>A · individual-level accuracy</b> — per held-out point, does the predicted <em>move</em> '
+        'equal the real move? A single right/wrong per turn, averaged.</li>'
+        '<li><b>B · population-level distribution</b> — total-variation distance (TVD) between two move '
+        '<em>distributions</em>: between two developers, between one developer and their own prediction, '
+        'or between the whole real population and the whole predicted population. Says nothing about any '
+        'individual turn.</li>'
+        '<li><b>C · LLM-as-a-judge</b> — a judge scores each predicted message against the real one for '
+        '<em>style</em> (surface voice) and <em>content</em> (intent/substance), plus realism.</li>'
+        '</ul>'
+        + (('<p style="margin-top:1rem"><b>Metric A, measured.</b> Move accuracy against the '
+            f'majority-class baseline (always predict <code>{esc(a_f["baseline_class"])}</code> = '
+            f'{num(a_f["baseline_accuracy"],3)}). The real move distribution is heavily skewed, so this '
+            'baseline is the bar that matters — and no condition clears it:</p>'
+            '<table><thead><tr><th>condition</th><th class="num">n</th><th class="num">move accuracy</th>'
+            '<th class="num">vs baseline</th><th>verdict</th></tr></thead>'
+            f'<tbody>{a_rows}</tbody></table>') if a_f else '')
+        + '</section>')
+
     # ---- claims scoreboard: each experiment's falsifiable prediction vs. what we measured ----
     def _ev(rep):
         """Pull the evidence each claim is judged on, from one mode's report."""
@@ -223,45 +256,45 @@ def main():
     def scoreboard_rows(fev, iev):
         rows = []
         # E1 — worst misses are homogeneity-type
-        rows.append(("E1", "Worst misses are task-completion / generic substitution",
+        rows.append(("E1 <span class='mfam'>A+C</span>", "Worst misses are task-completion / generic substitution",
                      f'{int(100*fev["e1"])}%' if fev and fev.get("e1") is not None else "—",
                      f'{int(100*iev["e1"])}%' if iev and iev.get("e1") is not None else "—",
                      "supported",
-                     "Both modes: the dominant error is predicting keep-going where the developer did something individual."))
+                     "<b>A+C:</b> misses are ranked by move mismatch (A) weighted by low judge-realism (C), then labelled. Both modes: the dominant error is predicting keep-going where the developer did something individual."))
         # H1/E2 — approve up, critical down
         f2, i2 = (fev or {}).get("e2", {}), (iev or {}).get("e2", {})
-        rows.append(("H1 · E2", "approve% pred &gt; real and critical% pred &lt; real",
+        rows.append(("H1 · E2 <span class='mfam'>B</span>", "approve% pred &gt; real and critical% pred &lt; real",
                      f'approve {f2.get("approve",0):+.3f}, critical {f2.get("critical",0):+.3f}',
                      f'approve {i2.get("approve",0):+.3f}, critical {i2.get("critical",0):+.3f}',
                      "mixed",
-                     "Holds on the low-prompt inline arm (clear approve-collapse). In folder mode the simulator is "
+                     "<b>B:</b> compares the whole real population's move distribution to the whole predicted one. Holds on the low-prompt inline arm (clear approve-collapse). In folder mode the simulator is "
                      "explicitly told not to default to approving, so the mass diverts to inquiry instead — as the "
                      "plan predicted, H1 is only clean on a low-prompt baseline."))
         # H2/E3 — spread collapse
         f3, i3 = (fev or {}).get("e3", {}), (iev or {}).get("e3", {})
-        rows.append(("H2 · E3", "between-user spread(pred) &lt; spread(real)",
+        rows.append(("H2 · E3 <span class='mfam'>B</span>", "between-user spread(pred) &lt; spread(real)",
                      f'{num(f3.get("spread_pred"),3)} vs {num(f3.get("spread_real"),3)} (p={num(f3.get("perm_p"),3)})',
                      f'{num(i3.get("spread_pred"),3)} vs {num(i3.get("spread_real"),3)} (p={num(i3.get("perm_p"),3)})',
                      "supported",
-                     "Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the "
+                     "<b>B:</b> mean pairwise TVD between <em>developers'</em> move distributions, predicted vs real. Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the "
                      "model echo signature catchphrases verbatim, which inflates apparent between-user distinctiveness."))
         # H3/E4 — shrinkage toward the median
         f4, i4 = (fev or {}).get("e4", {}), (iev or {}).get("e4", {})
-        rows.append(("H3 · E4", "dist(pred, median) &lt; dist(real, median)",
+        rows.append(("H3 · E4 <span class='mfam'>B</span>", "dist(pred, median) &lt; dist(real, median)",
                      f'Δ {f4.get("mean_pred_minus_real",0):+.3f} (p={num(f4.get("wilcoxon_p"),3)})',
                      f'Δ {i4.get("mean_pred_minus_real",0):+.3f} (p={num(i4.get("wilcoxon_p"),3)})',
                      "refuted",
-                     "The opposite, significantly: with a folder, predictions sit FARTHER from the real population "
+                     "<b>B:</b> TVD from each developer's distribution to the population-average distribution. The opposite, significantly: with a folder, predictions sit FARTHER from the real population "
                      "average than the developers themselves do. Homogeneity is not shrinkage toward the human mean."))
         # E5 — decision vs surface
-        rows.append(("E5", "Folder changes the voice but not the decision",
+        rows.append(("E5 <span class='mfam'>B+C</span>", "Folder changes the voice but not the decision",
                      esc((fev or {}).get("e5")), esc((iev or {}).get("e5")), "supported",
-                     "Folder mode reads surface_only: judge-style rises while the move-mix distance to the real user "
+                     "<b>B+C:</b> per-developer TVD (own distribution vs own prediction) set against judge style/content (C). Folder mode reads surface_only: judge-style rises while the move-mix distance to the real user "
                      "does not improve (it worsens vs. the no-folder baseline)."))
-        rows.append(("E6", "Claims survive on the underdetermined-point control", "—", "—", "not run",
-                     "Needs k-fold resampling of the generic simulator; not yet generated."))
-        rows.append(("E7", "Low-prompt / move-conditioned arms restore between-user variance", "—", "—", "not run",
-                     "The causal probe of the mechanism; not yet generated."))
+        rows.append(("E6 <span class='mfam'>A+B</span>", "Claims survive on the underdetermined-point control", "—", "—", "not run",
+                     "<b>A+B:</b> would re-run the accuracy and distribution tests on determined points only. Needs k-fold resampling of the generic simulator; not yet generated."))
+        rows.append(("E7 <span class='mfam'>B</span>", "Low-prompt / move-conditioned arms restore between-user variance", "—", "—", "not run",
+                     "<b>B:</b> would re-measure between-developer spread under low-prompt / move-conditioned arms. The causal probe of the mechanism; not yet generated."))
         return rows
 
     # primary report is this_mode; the optional compare report is the other mode
@@ -371,6 +404,8 @@ def main():
  td.k {{ color:var(--zinc900); font-weight:500; }}
  .flag {{ display:inline-block; font-size:.7rem; padding:0 .35rem; border-radius:4px; background:#eef2ff; color:var(--indigo); }}
  ul.defs {{ margin:.6rem 0 0; padding-left:1.1rem; font-size:.85rem; }}
+ .mfam {{ display:inline-block; margin-left:.3rem; font-size:.62rem; font-weight:700; letter-spacing:.04em;
+        background:var(--zinc100); color:var(--zinc500); border-radius:4px; padding:0 .3rem; vertical-align:middle; }}
  ul.defs li {{ margin:.22rem 0; }}
  table.sb td {{ vertical-align:middle; }}
  table.sb tr.note-row td {{ border-top:0; padding-top:0; font-size:.78rem; color:var(--zinc400); }}
@@ -413,6 +448,8 @@ developer toward one "average" one.</p>
 {banner}
 
 <div class="cards">{tiles}</div>
+
+{metrics_section}
 
 {scoreboard_section}
 
