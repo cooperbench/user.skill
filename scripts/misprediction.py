@@ -358,8 +358,15 @@ def load(paths):
             continue
         d = json.loads(p.read_text())
         recs = d.get("records", [])
+        # drop generations that are CLI/transport error strings, not model text (they otherwise
+        # dominate the worst-K audit and skew move distributions). Uses the shared filter.
+        import validate as _V
+        n_raw = len(recs)
+        recs = [r for r in recs if not _V.is_cli_failure(r.get("generated", ""))]
+        dropped = n_raw - len(recs)
         labelled = sum(1 for r in recs if r.get("real_act") and r.get("pred_act"))
-        print(f"loaded {p.name}: {len(recs)} records, {labelled} move-labelled  (mode={d.get('mode')})")
+        print(f"loaded {p.name}: {len(recs)} records ({dropped} CLI-failures dropped), "
+              f"{labelled} move-labelled  (mode={d.get('mode')})")
         for r in recs:
             r.setdefault("_src", p.name)
         records += recs

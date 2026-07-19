@@ -47,7 +47,7 @@ def main():
     n_lab = r.get("n_move_labelled", 0)
     cohort_users = max((v.get("n_users", 0) for v in r["E3_variance_collapse"]["by_condition"].values()
                         if isinstance(v, dict)), default=0)
-    smoke = cohort_users < 30
+    smoke = n_lab < 300  # a real powered run has >1k labelled points; the 9-user smoke has ~160
 
     adj = r.get("E1_adjudication_summary")
     e2 = r["E2_marginal_confusion"]
@@ -148,9 +148,13 @@ def main():
     smoke_banner = ("" if not smoke else
                     f'<div class="warn"><b>Smoke run — underpowered.</b> These numbers are from a '
                     f'{cohort_users}-user cohort ({n_lab} labelled points), enough to exercise the '
-                    f'pipeline but not to conclude. The powered result needs the ~57-user validation '
-                    f'run (prepped on branch <code>kevin</code>). Read the E1 adjudication and E5 '
-                    f'verdict as indicative; treat E3/E4 permutation/Wilcoxon p-values as not-yet-significant.</div>')
+                    f'pipeline but not to conclude. Read E1/E5 as indicative; treat E3/E4 p-values as '
+                    f'not-yet-significant.</div>')
+    if not smoke:
+        smoke_banner = (f'<div class="note"><b>Powered run.</b> {cohort_users} developers, {n_lab} '
+                        f'move-labelled prediction points, drawn from the in-repo <code>tasks/</code> '
+                        f'held-out cohort (no S3). Folder mode = the product flow; inline mode is '
+                        f'scored separately.</div>')
 
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
