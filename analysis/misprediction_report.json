@@ -16,6 +16,30 @@
   "inquiry"
  ],
  "severity": "severity = cat_mismatch(1) + (100 - realism_or_content)/100, ranked desc",
+ "A_move_accuracy": {
+  "baseline_class": "directive",
+  "baseline_accuracy": 0.506,
+  "by_condition": {
+   "distilled": {
+    "n": 503,
+    "accuracy": 0.465,
+    "vs_baseline": -0.041,
+    "beats_baseline": false
+   },
+   "generic": {
+    "n": 505,
+    "accuracy": 0.43,
+    "vs_baseline": -0.076,
+    "beats_baseline": false
+   },
+   "wrong": {
+    "n": 503,
+    "accuracy": 0.445,
+    "vs_baseline": -0.061,
+    "beats_baseline": false
+   }
+  }
+ },
  "E2_marginal_confusion": {
   "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
   "by_condition": {
@@ -192,16 +216,32 @@
  },
  "E1_adjudication_summary": {
   "n_adjudicated": 25,
-  "reasonable_rate": 0.12,
+  "reasonable_rate": 0.08,
   "error_type_counts": {
-   "hallucinated_content": 5,
-   "generic_not_specific": 3,
-   "task_completion_substitution": 17
+   "task_completion_substitution": 17,
+   "hallucinated_content": 6,
+   "generic_not_specific": 2
   },
-  "homogeneity_share": 0.8,
+  "homogeneity_share": 0.76,
   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
  },
  "E1_worst_k": [
+  {
+   "slug": "135yshr",
+   "point_id": "66be45b5-57c9-422c-b8a8-30c7e968f6fa#44",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 2,
+   "judge_content": 5,
+   "real": "create pr",
+   "generated": "わかりました",
+   "severity": 1.98,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
   {
    "slug": "cyyeh",
    "point_id": "3de90de6-cbe5-40a3-a6c5-b3f9cf41e0ad#44",
@@ -214,22 +254,6 @@
    "judge_content": 0,
    "real": "seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m\nduckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m",
    "generated": "commit and push",
-   "severity": 1.98,
-   "reasonable": false,
-   "error_type": "hallucinated_content"
-  },
-  {
-   "slug": "135yshr",
-   "point_id": "e2469ccd-9066-4bdb-97e4-33435c656a0f#42",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "directive",
-   "real_act": "critical",
-   "pred_act": "directive",
-   "judge_realism": 2,
-   "judge_content": 0,
-   "real": "フローチャートの例のmermaidが表示されていません",
-   "generated": "/commit",
    "severity": 1.98,
    "reasonable": false,
    "error_type": "hallucinated_content"
@@ -248,7 +272,7 @@
    "generated": "1",
    "severity": 2.0,
    "reasonable": false,
-   "error_type": "generic_not_specific"
+   "error_type": "task_completion_substitution"
   },
   {
    "slug": "KeKs0r",
@@ -268,19 +292,19 @@
   },
   {
    "slug": "135yshr",
-   "point_id": "66be45b5-57c9-422c-b8a8-30c7e968f6fa#44",
+   "point_id": "e2469ccd-9066-4bdb-97e4-33435c656a0f#42",
    "repo": "the project",
-   "real_cat": "directive",
-   "pred_cat": "approve",
-   "real_act": "directive",
-   "pred_act": "approve",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
    "judge_realism": 2,
-   "judge_content": 5,
-   "real": "create pr",
-   "generated": "わかりました",
+   "judge_content": 0,
+   "real": "フローチャートの例のmermaidが表示されていません",
+   "generated": "/commit",
    "severity": 1.98,
    "reasonable": false,
-   "error_type": "task_completion_substitution"
+   "error_type": "hallucinated_content"
   },
   {
    "slug": "hutusi",
@@ -294,6 +318,22 @@
    "judge_content": 5,
    "real": "A few more issues I'm noticing:\n\nProfile ownership is ambiguous in the UI. There's no visual indication of whether a given profile belongs to an online account or is a purely local player. From the user's side, the two are indistinguishable.\nOnline profiles appear to be visible without signing in. When not logged in, I can still see online profiles — they shouldn't be reachable in a signed-out state. Please verify whether this is a real leak or just a display issue.\nJoining an online world fails with a timeout: couldn't join: join timed out. This looks like a server-side / deployment problem on Fly.io rather than a client bug. Please investigate the Fly.io deployment — check whether the game server is actually running, reachable, and accepting WebSocket connections (logs, health, region, and whether the machine has scaled/stopped).",
    "generated": "ok",
+   "severity": 1.98,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "nosman",
+   "point_id": "8720bcb1-e0cc-4ed8-bb89-5b15956a0921#75",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 2,
+   "judge_content": 5,
+   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
+   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
    "severity": 1.98,
    "reasonable": false,
    "error_type": "task_completion_substitution"
@@ -315,38 +355,6 @@
    "error_type": "hallucinated_content"
   },
   {
-   "slug": "KeKs0r",
-   "point_id": "5adc09ef-6b36-4b4c-8809-46b049f964ab#26",
-   "repo": "the project",
-   "real_cat": "inquiry",
-   "pred_cat": "directive",
-   "real_act": "inquiry",
-   "pred_act": "directive",
-   "judge_realism": 3,
-   "judge_content": 5,
-   "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
-   "generated": "yes, and then commit, push and create a PR, merge when passed",
-   "severity": 1.97,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "nosman",
-   "point_id": "8720bcb1-e0cc-4ed8-bb89-5b15956a0921#75",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "approve",
-   "real_act": "critical",
-   "pred_act": "approve",
-   "judge_realism": 2,
-   "judge_content": 5,
-   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
-   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
-   "severity": 1.98,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
    "slug": "FSM1",
    "point_id": "59294466-bbe3-43a0-8de0-b4a62f17d726#77",
    "repo": "the project",
@@ -359,6 +367,22 @@
    "real": "I think that the full desktop e2e in CI should also be added as one of the gates for this phase",
    "generated": "you good bro?",
    "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "KeKs0r",
+   "point_id": "5adc09ef-6b36-4b4c-8809-46b049f964ab#26",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 3,
+   "judge_content": 5,
+   "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
+   "generated": "yes, and then commit, push and create a PR, merge when passed",
+   "severity": 1.97,
    "reasonable": false,
    "error_type": "task_completion_substitution"
   },
@@ -377,22 +401,6 @@
    "severity": 1.95,
    "reasonable": false,
    "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "cyyeh",
-   "point_id": "42ec3a84-77e7-4490-85a0-a0e4641fc23f#29",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "directive",
-   "real_act": "critical",
-   "pred_act": "directive",
-   "judge_realism": 5,
-   "judge_content": 5,
-   "real": "now the issue is that query result content is too wide",
-   "generated": "commit",
-   "severity": 1.95,
-   "reasonable": false,
-   "error_type": "hallucinated_content"
   },
   {
    "slug": "robouden",
@@ -423,7 +431,23 @@
    "real": "check the code reviews on the pr",
    "generated": "ok",
    "severity": 1.95,
-   "reasonable": true,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "cyyeh",
+   "point_id": "42ec3a84-77e7-4490-85a0-a0e4641fc23f#29",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "now the issue is that query result content is too wide",
+   "generated": "commit",
+   "severity": 1.95,
+   "reasonable": false,
    "error_type": "task_completion_substitution"
   },
   {
@@ -439,7 +463,7 @@
    "real": "let's make some improvements: 1. on the welcome page, show sign in (no create account on begin) and play local, it prompts user can choose sign in online or play locally without online account (anonymous or something), user should choose. 2, in the sign in or create account page, do not show the local profile under the box, it will misunderstand user. 3. after user signed in, do not show the \"play locally\" button, he can choose a profile to play online worlds or signleplayer worlder. 4. if I run a localhost \"bun run dev\", I can play local without config the database url or auth url. now it shows error if I do not config the db: Error: DATABASE_URL is not set — see .env.example. what do you think?",
    "generated": "what features do you think we can add to make the game more fun?",
    "severity": 1.95,
-   "reasonable": false,
+   "reasonable": true,
    "error_type": "generic_not_specific"
   },
   {
@@ -491,22 +515,6 @@
    "error_type": "generic_not_specific"
   },
   {
-   "slug": "malkoG",
-   "point_id": "2bf43b98-d5b4-4b39-8e3f-df41dee8392c#44",
-   "repo": "the project",
-   "real_cat": "directive",
-   "pred_cat": "approve",
-   "real_act": "directive",
-   "pred_act": "approve",
-   "judge_realism": 5,
-   "judge_content": 0,
-   "real": "run git pull upstream main",
-   "generated": "1",
-   "severity": 1.95,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
    "slug": "penso",
    "point_id": "ed791c89-3b1f-46b9-8e56-2d948f24f0e5#1357",
    "repo": "the project",
@@ -523,34 +531,18 @@
    "error_type": "task_completion_substitution"
   },
   {
-   "slug": "alishakawaguchi",
-   "point_id": "95047199-69f0-49a5-9432-18cba428ecec#144",
-   "repo": "the project",
-   "real_cat": "inquiry",
-   "pred_cat": "directive",
-   "real_act": "inquiry",
-   "pred_act": "directive",
-   "judge_realism": 6,
-   "judge_content": 5,
-   "real": "do I need to increment the versions so it doesn't mess with current users?",
-   "generated": "push",
-   "severity": 1.94,
-   "reasonable": true,
-   "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "robouden",
-   "point_id": "5a84b50a-3f17-46f4-8e95-84451c4abbc4#90",
+   "slug": "malkoG",
+   "point_id": "2bf43b98-d5b4-4b39-8e3f-df41dee8392c#44",
    "repo": "the project",
    "real_cat": "directive",
    "pred_cat": "approve",
    "real_act": "directive",
    "pred_act": "approve",
-   "judge_realism": 6,
-   "judge_content": 8,
-   "real": "Please check other repos in Safecast folder to see how it can be done.. No need for the token..",
-   "generated": "export CODEBERG_TOKEN=xxxx",
-   "severity": 1.94,
+   "judge_realism": 5,
+   "judge_content": 0,
+   "real": "run git pull upstream main",
+   "generated": "1",
+   "severity": 1.95,
    "reasonable": false,
    "error_type": "task_completion_substitution"
   },
@@ -599,8 +591,40 @@
    "real": "/compact",
    "generated": "hmmm yeah i think option 1 is the right call for T1 - force re-navigation from root and re-rotate fresh. the alternative of needing the child write key at resume time is a non-starter, we can't assume the resuming party holds it.\n\nwhat i want to nail down: how expensive is re-keying from root on a deep tree? if depth can reach 4-5 in realistic usage, a full re-rotation from root on every mid-walk crash could be brutal. is there a way to scope it to just the dirty subtree below the crash point, or does the key chain mean you genuinely have to start from root every time?",
    "severity": 1.92,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
+  },
+  {
+   "slug": "alishakawaguchi",
+   "point_id": "95047199-69f0-49a5-9432-18cba428ecec#144",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 6,
+   "judge_content": 5,
+   "real": "do I need to increment the versions so it doesn't mess with current users?",
+   "generated": "push",
+   "severity": 1.94,
    "reasonable": true,
    "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "robouden",
+   "point_id": "5a84b50a-3f17-46f4-8e95-84451c4abbc4#90",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 6,
+   "judge_content": 8,
+   "real": "Please check other repos in Safecast folder to see how it can be done.. No need for the token..",
+   "generated": "export CODEBERG_TOKEN=xxxx",
+   "severity": 1.94,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
   }
  ]
 }
