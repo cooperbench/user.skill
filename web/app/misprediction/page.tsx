@@ -81,6 +81,9 @@ export default function MispredictionPage() {
   const e5 = d.e5.by_condition as Record<string, any>;
   const conds = ["distilled", "generic", "wrong"];
 
+  // folder-vs-inline comparison (both modes exported into data.json)
+  const modes = [d.folder, d.inline].filter(Boolean) as any[];
+
   const e3Items = Object.entries(e3).filter(([, v]: any) => "spread_pred" in v) as [string, any][];
   const spreadMax = Math.max(...e3Items.flatMap(([, v]) => [v.spread_real, v.spread_pred]), 0.01);
   const barRows = e3Items.length
@@ -112,7 +115,7 @@ export default function MispredictionPage() {
           Are the simulator&rsquo;s mispredictions <em>homogeneity</em>?
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          <strong>Hypothesis.</strong> LLMs are trained to complete tasks, not to imitate humans — so
+          <strong>Hypothesis.</strong>{" "}LLMs are trained to complete tasks, not to imitate humans — so
           they are systematically homogeneous, defaulting to task-driving behaviour instead of deciding
           from an individual developer&rsquo;s differences. If true, a user-simulator&rsquo;s errors
           should cluster on the human, friction-y moves (pushing back, interrupting, asking, redirecting)
@@ -225,6 +228,53 @@ export default function MispredictionPage() {
           ))}
         </div>
       </Section>
+
+      {modes.length === 2 && (
+        <Section kicker="Folder vs inline" title="Two ways to read the folder into the simulator">
+          <p className="text-zinc-600">
+            <strong>folder</strong> = the agent reads <code className="font-mono text-xs">users/&lt;slug&gt;/</code>{" "}
+            itself (product flow); <strong>inline</strong> = the folder text is pasted into the prompt
+            (controlled). They diverge: inline reproduces signature catchphrases verbatim, which{" "}
+            <em>inflates</em> apparent between-user distinctiveness — masking the variance-collapse (E3) —
+            yet E4 shows that distinctiveness points <em>away</em> from the real user, and its worst
+            misses are even more homogeneity-driven.
+          </p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs text-zinc-500">
+                  <th className="py-1 text-left font-semibold">mode</th>
+                  <th className="py-1 text-right font-semibold">H2 generic spread (pred vs real)</th>
+                  <th className="py-1 text-right font-semibold">perm p</th>
+                  <th className="py-1 text-left font-semibold">E5 verdict</th>
+                  <th className="py-1 text-right font-semibold">E1 homogeneity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {modes.map((mm) => {
+                  const g = mm.e3?.generic ?? {};
+                  const a = mm.adjudication ?? {};
+                  return (
+                    <tr key={mm.meta.mode} className="border-t border-zinc-100">
+                      <td className="py-2 font-medium text-zinc-700">{mm.meta.mode}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">
+                        {n3(g.spread_pred)} <span className="text-zinc-400">vs {n3(g.spread_real)}</span>
+                      </td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">
+                        {g.perm_p < 0.05 ? <span className="font-semibold text-indigo-500">{n3(g.perm_p)}</span> : n3(g.perm_p)}
+                      </td>
+                      <td className="py-2 text-zinc-600">{mm.e5?.verdict}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">
+                        {a.homogeneity_share != null ? `${Math.round(100 * a.homogeneity_share)}%` : "—"}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+      )}
 
       <Section kicker="E3 · primary result" title="Between-user variance collapse">
         <p className="text-zinc-600">
