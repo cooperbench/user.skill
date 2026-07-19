@@ -89,16 +89,38 @@ def main():
                   "does the folder change the decision?")
 
     # ---- E1 error-type summary table ----
+    # Definitions mirror ADJUDICATE_PROMPT in scripts/misprediction.py — keep in sync.
+    ERROR_TYPES = [
+        ("task_completion_substitution", True,
+         "predicted a keep-going / approve / new-task move where the real developer pushed back, "
+         "interrupted, or redirected"),
+        ("generic_not_specific", True,
+         "the right <em>kind</em> of move, but not how <em>this</em> developer would have made it"),
+        ("hallucinated_content", False,
+         "invents facts or requests that are not grounded in the session"),
+        ("underdetermined", False,
+         "both messages are equally plausible — the real one was genuinely unpredictable"),
+        ("other", False, "anything else"),
+    ]
     e1_html = ""
     if adj:
         cts = adj.get("error_type_counts", {})
-        homog_types = {"task_completion_substitution", "generic_not_specific"}
+        homog_types = {k for k, h, _ in ERROR_TYPES if h}
+        defs = "".join(
+            f'<li><b>{esc(k)}</b>{" <span class=flag>homogeneity</span>" if h else ""} — {d}</li>'
+            for k, h, d in ERROR_TYPES)
         rows = "".join(
             f'<tr><td class="k">{esc(k)}{" <span class=flag>homogeneity</span>" if k in homog_types else ""}</td>'
             f'<td class="num">{v}</td></tr>'
             for k, v in sorted(cts.items(), key=lambda x: -x[1]))
-        e1_html = (f'<table><thead><tr><th>error type</th><th class="num">count</th></tr></thead>'
-                   f'<tbody>{rows}</tbody></table>')
+        e1_html = (
+            '<p>An adjudicator labels each miss with one error type. The two marked '
+            '<span class="flag">homogeneity</span> are the ones that indicate a failure of '
+            '<em>individuation</em> — the prediction is reasonable for <em>some</em> developer, just '
+            'not this one; the rest are ordinary failure modes.</p>'
+            f'<ul class="defs">{defs}</ul>'
+            f'<table><thead><tr><th>error type</th><th class="num">count</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table>')
 
     # ---- worst-K examples (site .conv grid) ----
     def wrow(x):
@@ -348,6 +370,8 @@ def main():
  td.num, th.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
  td.k {{ color:var(--zinc900); font-weight:500; }}
  .flag {{ display:inline-block; font-size:.7rem; padding:0 .35rem; border-radius:4px; background:#eef2ff; color:var(--indigo); }}
+ ul.defs {{ margin:.6rem 0 0; padding-left:1.1rem; font-size:.85rem; }}
+ ul.defs li {{ margin:.22rem 0; }}
  table.sb td {{ vertical-align:middle; }}
  table.sb tr.note-row td {{ border-top:0; padding-top:0; font-size:.78rem; color:var(--zinc400); }}
  .v-yes, .v-no, .v-mix, .v-na {{ display:inline-block; font-size:.72rem; font-weight:700; text-transform:uppercase;
