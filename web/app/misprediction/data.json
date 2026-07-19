@@ -984,5 +984,32 @@
    "verdict": "not run",
    "note": "The causal probe of the mechanism; not yet generated."
   }
+ ],
+ "error_types": [
+  {
+   "id": "task_completion_substitution",
+   "homogeneity": true,
+   "desc": "predicted a keep-going / approve / new-task move where the real developer pushed back, interrupted, or redirected"
+  },
+  {
+   "id": "generic_not_specific",
+   "homogeneity": true,
+   "desc": "the right kind of move, but not how this developer would have made it"
+  },
+  {
+   "id": "hallucinated_content",
+   "homogeneity": false,
+   "desc": "invents facts or requests that are not grounded in the session"
+  },
+  {
+   "id": "underdetermined",
+   "homogeneity": false,
+   "desc": "both messages are equally plausible — the real one was genuinely unpredictable"
+  },
+  {
+   "id": "other",
+   "homogeneity": false,
+   "desc": "anything else"
+  }
  ]
 }

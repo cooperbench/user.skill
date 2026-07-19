@@ -233,10 +233,25 @@ export default function MispredictionPage() {
 
       <Section kicker="E1 · direct audit" title="Worst mispredictions">
         <p className="text-zinc-600">
-          The worst mispredictions (move mismatch × low realism), each LLM-adjudicated. The homogeneity
-          signature is a high share of <strong>task-completion substitution</strong> (predicted keep-going
-          where the real developer did something individual) and <strong>generic-not-specific</strong>.
+          The worst mispredictions (move mismatch × low realism), each LLM-adjudicated with one error
+          type. The two marked{" "}
+          <span className="rounded bg-indigo-50 px-1.5 text-xs text-indigo-600">homogeneity</span>{" "}
+          indicate a failure of <em>individuation</em> — the prediction is reasonable for <em>some</em>{" "}
+          developer, just not this one; the rest are ordinary failure modes.
         </p>
+        {d.error_types && (
+          <ul className="mt-3 space-y-1 text-sm text-zinc-600">
+            {d.error_types.map((e: any) => (
+              <li key={e.id}>
+                <span className="font-semibold text-zinc-800">{e.id}</span>
+                {e.homogeneity && (
+                  <span className="ml-2 rounded bg-indigo-50 px-1.5 text-xs text-indigo-600">homogeneity</span>
+                )}{" "}
+                — {e.desc}
+              </li>
+            ))}
+          </ul>
+        )}
         {adj && (
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
