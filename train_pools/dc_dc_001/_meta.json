@@ -1,0 +1,5101 @@
+{
+  "developer": "dc:dc_001",
+  "slug": "dc_dc_001",
+  "Tstar": "2026-05-25T23:56:43.310Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 727,
+  "n_human_turns": 11490,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "019c3049-1cf2-7682-82eb-8e6b4e97327a",
+      "ts": "2026-02-06T00:11:36.972Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-02-06T00:15:40.898000Z"
+    },
+    {
+      "sid": "019c31a9-3ae9-7c30-9f94-ac51dc8d1e5d",
+      "ts": "2026-02-06T06:35:08.694Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 21,
+      "max_turn_ts": "2026-02-06T12:23:16.167000Z"
+    },
+    {
+      "sid": "019c3212-6988-7c00-9730-e069b950a18b",
+      "ts": "2026-02-06T08:30:01.781Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-02-06T08:31:57.152000Z"
+    },
+    {
+      "sid": "019c3e18-4d58-73c1-944e-df1628a96260",
+      "ts": "2026-02-08T16:31:46.038Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 27,
+      "max_turn_ts": "2026-02-09T10:39:23.621000Z"
+    },
+    {
+      "sid": "019c476d-2522-70b1-8d1e-2b044ada8af6",
+      "ts": "2026-02-10T12:01:19.215Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-02-10T13:15:25.720000Z"
+    },
+    {
+      "sid": "019c47a7-69c1-79b1-bcb6-722b648f9a97",
+      "ts": "2026-02-10T13:05:04.136Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 39,
+      "max_turn_ts": "2026-02-14T05:14:19.647000Z"
+    },
+    {
+      "sid": "d2e9fb54-1396-4bde-b7e5-5a6f7c8bfb1f",
+      "ts": "2026-02-13T02:59:50.087Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 74,
+      "max_turn_ts": "2026-02-13T09:49:47.612000Z"
+    },
+    {
+      "sid": "019c55c6-c550-7fd3-b650-092fe02ff220",
+      "ts": "2026-02-13T06:53:43.789Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T06:54:30.728000Z"
+    },
+    {
+      "sid": "019c5668-d461-75f1-836f-e155a5a7b886",
+      "ts": "2026-02-13T09:51:16.498Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 22,
+      "max_turn_ts": "2026-02-13T11:38:43.097000Z"
+    },
+    {
+      "sid": "0f98b186-5cf6-4a67-bfd2-2ae0a2353c98",
+      "ts": "2026-02-14T03:14:57.027Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-02-14T03:30:49.264000Z"
+    },
+    {
+      "sid": "019c5a28-23be-7e20-b715-beffccc34c36",
+      "ts": "2026-02-14T03:18:47.972Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-02-14T03:22:15.538000Z"
+    },
+    {
+      "sid": "019c5a29-eec8-7ba2-9314-fa4263434bac",
+      "ts": "2026-02-14T03:20:24.412Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T04:44:16.980000Z"
+    },
+    {
+      "sid": "afca1542-f6ba-4332-93a8-3b7097216413",
+      "ts": "2026-02-14T08:28:15.555Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-14T09:30:14.880000Z"
+    },
+    {
+      "sid": "019c5b5f-03a3-7ad3-a243-e63d5c252f3f",
+      "ts": "2026-02-14T08:58:19.052Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-02-14T09:27:36.336000Z"
+    },
+    {
+      "sid": "2c5c7978-fa8c-4c10-9b78-a87a4e3c26a7",
+      "ts": "2026-02-18T13:06:10.963Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-02-18T14:21:29.601000Z"
+    },
+    {
+      "sid": "297ac8a3-4b6c-425f-aa9a-3e762f75c080",
+      "ts": "2026-02-18T14:23:54.594Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 17,
+      "max_turn_ts": "2026-02-18T15:00:20.705000Z"
+    },
+    {
+      "sid": "019c7148-92ab-7462-b987-03b1fa45217b",
+      "ts": "2026-02-18T15:05:17.959Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T15:11:50.036000Z"
+    },
+    {
+      "sid": "019c714d-ac25-7d21-a8f1-504685b2283a",
+      "ts": "2026-02-18T15:10:56.296Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T15:13:21.737000Z"
+    },
+    {
+      "sid": "019c7158-4a8b-7720-a656-520d062be8ed",
+      "ts": "2026-02-18T15:22:42.423Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-02-19T02:25:39.964000Z"
+    },
+    {
+      "sid": "44b64563-e831-4082-a067-6a333c764aaa",
+      "ts": "2026-02-19T02:52:16.194Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-19T02:52:54.439000Z"
+    },
+    {
+      "sid": "08e1688c-0765-4640-a512-3ccbecad0d19",
+      "ts": "2026-02-20T14:14:24.268Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T14:24:27.598000Z"
+    },
+    {
+      "sid": "efd72d12-33be-4956-8052-390298afebd3",
+      "ts": "2026-02-21T15:14:25.427Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-02-21T15:22:02.700000Z"
+    },
+    {
+      "sid": "e5a51d5c-1e9a-43d7-8b45-10565f4b513f",
+      "ts": "2026-02-21T16:36:30.456Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-21T16:39:19.281000Z"
+    },
+    {
+      "sid": "019c8337-3015-7aa1-948d-e100cf508d80",
+      "ts": "2026-02-22T02:39:33.385Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-02-23T09:54:18.547000Z"
+    },
+    {
+      "sid": "c827695a-4253-4337-bc86-cebe4b64c0ce",
+      "ts": "2026-02-22T04:32:37.458Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T04:33:45.316000Z"
+    },
+    {
+      "sid": "019c89ef-892d-7523-b0c5-f626bc15a802",
+      "ts": "2026-02-23T09:59:08.363Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 16,
+      "max_turn_ts": "2026-02-23T11:42:34.749000Z"
+    },
+    {
+      "sid": "0c028f76-62db-47f6-adc3-3a6261b43c88",
+      "ts": "2026-02-24T03:13:48.409Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 38,
+      "max_turn_ts": "2026-02-24T07:54:43.512000Z"
+    },
+    {
+      "sid": "9c8ff72b-122f-405a-9a6e-6abebdd395a4",
+      "ts": "2026-02-24T07:54:43.509Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-02-24T11:13:44.274000Z"
+    },
+    {
+      "sid": "019c8f64-76db-7193-8148-84cb8d70de05",
+      "ts": "2026-02-24T11:24:19.585Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-02-25T02:57:40.777000Z"
+    },
+    {
+      "sid": "019c92bb-a15f-7fe3-816f-5b7140f99aa5",
+      "ts": "2026-02-25T02:58:22.063Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 45,
+      "max_turn_ts": "2026-02-26T11:12:35.711000Z"
+    },
+    {
+      "sid": "d476a091-bcac-4960-bdeb-4768b6f97764",
+      "ts": "2026-02-25T03:16:29.990Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T03:38:24.710000Z"
+    },
+    {
+      "sid": "019c92e3-4030-7303-ab0a-d1f278e58875",
+      "ts": "2026-02-25T03:41:57.486Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 31,
+      "max_turn_ts": "2026-02-26T08:22:43.336000Z"
+    },
+    {
+      "sid": "dd811d86-9ecd-4117-a48a-2f471960e4e0",
+      "ts": "2026-02-25T06:51:28.101Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-25T06:56:08.956000Z"
+    },
+    {
+      "sid": "53172d54-c140-4ee6-8d58-f783a758e0ea",
+      "ts": "2026-02-25T06:58:36.630Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-02-26T08:44:42.012000Z"
+    },
+    {
+      "sid": "bb8b9b50-8a78-4c8c-96d5-f388cb5828b7",
+      "ts": "2026-02-25T09:32:37.463Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T09:33:22.543000Z"
+    },
+    {
+      "sid": "36ebfae3-def6-4c48-a5de-0f058afd0cc8",
+      "ts": "2026-02-26T06:32:32.003Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-02-26T06:32:56.279000Z"
+    },
+    {
+      "sid": "019c99a2-d06b-71d0-b976-406465bb5302",
+      "ts": "2026-02-26T11:08:30.340Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-02-26T12:19:55.769000Z"
+    },
+    {
+      "sid": "019c99c6-d7de-7781-8b06-e2ac2c223e8c",
+      "ts": "2026-02-26T12:29:55.496Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-02-26T12:40:54.097000Z"
+    },
+    {
+      "sid": "6ec587c5-c59f-43a7-822b-8f8ba111d722",
+      "ts": "2026-03-06T11:16:12.155Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-03-06T11:46:06.580000Z"
+    },
+    {
+      "sid": "d8c7c07c-a190-4694-ab32-a34ee061e437",
+      "ts": "2026-03-06T11:16:51.551Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 24,
+      "max_turn_ts": "2026-03-07T02:57:44.565000Z"
+    },
+    {
+      "sid": "e54e0c9e-61f9-4263-9f84-a94ecb9ad923",
+      "ts": "2026-03-06T11:17:01.875Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T11:18:00.733000Z"
+    },
+    {
+      "sid": "d9b9bdb1-cd37-4463-8188-239d2113910c",
+      "ts": "2026-03-06T11:17:04.275Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T11:17:13.463000Z"
+    },
+    {
+      "sid": "e5eb9700-0d02-41cf-9678-43996457b0c4",
+      "ts": "2026-03-06T11:56:38.877Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T11:56:43.453000Z"
+    },
+    {
+      "sid": "8da81c92-ad68-4748-8277-9773c7b01771",
+      "ts": "2026-03-07T00:56:10.873Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-07T00:57:30.072000Z"
+    },
+    {
+      "sid": "14c579b0-1f87-412b-9d1c-51b03f99f45e",
+      "ts": "2026-03-07T02:37:55.822Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-03-07T02:48:22.494000Z"
+    },
+    {
+      "sid": "af1af229-458e-43f0-8c38-cfdc66006c4d",
+      "ts": "2026-03-07T10:19:23.145Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 12,
+      "max_turn_ts": "2026-03-07T12:42:53.627000Z"
+    },
+    {
+      "sid": "355ac8a3-052d-492b-a00a-574fae2dea7e",
+      "ts": "2026-03-07T10:21:05.073Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-07T10:28:05.149000Z"
+    },
+    {
+      "sid": "b559fa68-3626-4050-ab32-b35a35b565b7",
+      "ts": "2026-03-07T14:55:42.672Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-07T15:15:52.527000Z"
+    },
+    {
+      "sid": "d287ddbc-e4a1-4786-8885-cba9b829574d",
+      "ts": "2026-03-07T15:24:46.186Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 15,
+      "max_turn_ts": "2026-03-08T05:29:51.501000Z"
+    },
+    {
+      "sid": "41ae1c57-25da-4115-b011-6f1cac3b8f7c",
+      "ts": "2026-03-08T04:03:48.981Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-08T04:12:46.191000Z"
+    },
+    {
+      "sid": "c43abd9c-e8bf-4bcf-9a93-d2b2dba21a16",
+      "ts": "2026-03-08T04:41:33.013Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-08T04:42:17.927000Z"
+    },
+    {
+      "sid": "019cd12a-d7ad-7c82-9fa0-234f296ee845",
+      "ts": "2026-03-09T05:56:26.936Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-03-09T07:04:52.350000Z"
+    },
+    {
+      "sid": "019cd143-50f8-75c1-9557-395ef5dd713d",
+      "ts": "2026-03-09T06:23:10.182Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-03-09T06:52:14.964000Z"
+    },
+    {
+      "sid": "019cd18d-39d9-7552-8c3f-be4a84047dcf",
+      "ts": "2026-03-09T07:43:48.987Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-09T07:47:59.296000Z"
+    },
+    {
+      "sid": "019cd19a-0228-7803-b72f-7330ddc1ff3d",
+      "ts": "2026-03-09T07:57:50.937Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-09T08:00:04.429000Z"
+    },
+    {
+      "sid": "019cd6c1-bc2a-7691-817c-2c3a3a2a1e2c",
+      "ts": "2026-03-10T07:59:08.257Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-03-10T08:04:59.726000Z"
+    },
+    {
+      "sid": "019cd6be-a35a-70d0-a1d8-9caefa64bd5b",
+      "ts": "2026-03-10T08:00:34.033Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-10T08:00:48.131000Z"
+    },
+    {
+      "sid": "019cdc0b-3594-7bc3-9345-574cf336362b",
+      "ts": "2026-03-11T08:37:39.207Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 15,
+      "max_turn_ts": "2026-03-11T17:59:12.224000Z"
+    },
+    {
+      "sid": "019cdfc8-5aa6-72d2-94e5-d5da01ff1bfd",
+      "ts": "2026-03-12T02:03:03.479Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 28,
+      "max_turn_ts": "2026-03-12T15:55:14.756000Z"
+    },
+    {
+      "sid": "019cdfd4-9042-7dd2-a3ea-67ff3d74cbe0",
+      "ts": "2026-03-12T02:16:35.852Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-12T02:21:02.920000Z"
+    },
+    {
+      "sid": "019cdff4-145a-7c63-b4c6-8cd1361861c1",
+      "ts": "2026-03-12T02:50:42.515Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T02:50:44.280000Z"
+    },
+    {
+      "sid": "019cdff4-f139-7433-8ea7-fb8d392fea29",
+      "ts": "2026-03-12T02:51:38.842Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-03-12T17:33:00.859000Z"
+    },
+    {
+      "sid": "019ce13d-9cfe-7b03-bd2d-63e8add06a2e",
+      "ts": "2026-03-12T08:51:27.668Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-03-12T17:32:15.929000Z"
+    },
+    {
+      "sid": "120b7592-7fbe-49e0-8b4c-e5f24638cee6",
+      "ts": "2026-03-12T14:45:46.918Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T14:47:34.355000Z"
+    },
+    {
+      "sid": "019ce294-6cf9-7bb2-ba4a-cad8023313fd",
+      "ts": "2026-03-12T15:05:15.931Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-03-12T15:36:11.522000Z"
+    },
+    {
+      "sid": "019ce299-a491-7363-a35a-fd6ce674a4ed",
+      "ts": "2026-03-12T15:10:54.956Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 47,
+      "max_turn_ts": "2026-03-13T03:35:05.878000Z"
+    },
+    {
+      "sid": "019ce2a7-20b7-75d2-a3dd-191e1469d122",
+      "ts": "2026-03-12T15:25:30.776Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T15:31:38.153000Z"
+    },
+    {
+      "sid": "019ce2a7-214b-79b0-b9ce-0339498703b7",
+      "ts": "2026-03-12T15:25:30.802Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T15:30:12.794000Z"
+    },
+    {
+      "sid": "019ce2a7-20b1-7d53-94ad-fcb762729749",
+      "ts": "2026-03-12T15:25:30.813Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T15:31:18.426000Z"
+    },
+    {
+      "sid": "019ce2b3-41cd-7c80-b2db-6f71ae56c086",
+      "ts": "2026-03-12T15:38:44.422Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-03-12T15:40:17.755000Z"
+    },
+    {
+      "sid": "019ce2bc-645d-7d01-a393-4e651ddb6dcc",
+      "ts": "2026-03-12T15:48:44.435Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-29T12:44:37.588000Z"
+    },
+    {
+      "sid": "019ce2c1-44c5-7421-9eef-c38ee5d23162",
+      "ts": "2026-03-12T15:54:40.982Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-03-12T16:40:33.932000Z"
+    },
+    {
+      "sid": "019ce2f6-8e28-7381-837e-2efb0c831faf",
+      "ts": "2026-03-12T16:53:28.383Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-12T16:57:58.415000Z"
+    },
+    {
+      "sid": "019ce308-e8ca-7b63-8fb0-ba5df5d1d666",
+      "ts": "2026-03-12T17:12:27.214Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T17:12:48.072000Z"
+    },
+    {
+      "sid": "f8a2b51c-d45c-44ec-8f59-0d15387e1799",
+      "ts": "2026-03-14T01:32:57.679Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-14T12:29:55.662000Z"
+    },
+    {
+      "sid": "9a60d2be-071e-4005-b357-98f34710ea99",
+      "ts": "2026-03-14T12:34:08.561Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-14T12:35:10.082000Z"
+    },
+    {
+      "sid": "16f9be8a-1bdc-4398-93d6-bd3efeb46c87",
+      "ts": "2026-03-15T09:51:15.723Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-03-15T14:16:28.795000Z"
+    },
+    {
+      "sid": "12966b77-2acd-4676-9aae-509eb43e7832",
+      "ts": "2026-03-15T11:26:27.704Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-15T11:30:29.887000Z"
+    },
+    {
+      "sid": "019cf4c1-efe8-7620-b421-772d6f6db255",
+      "ts": "2026-03-16T03:48:42.589Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 251,
+      "max_turn_ts": "2026-04-25T14:57:27.666000Z"
+    },
+    {
+      "sid": "eb8459ed-d4ef-4e75-b587-0f74b5f8e604",
+      "ts": "2026-03-16T09:49:53.350Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-16T09:50:04.492000Z"
+    },
+    {
+      "sid": "9f360a42-5b3c-4c4e-8f35-2f23dc4adf89",
+      "ts": "2026-03-17T04:03:51.201Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-17T04:04:04.850000Z"
+    },
+    {
+      "sid": "23b95af1-ef16-460e-8481-820a2ad00f2a",
+      "ts": "2026-03-17T04:03:55.371Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-17T04:04:27.717000Z"
+    },
+    {
+      "sid": "9e583efa-17b8-489c-8cb9-fc00653e9e58",
+      "ts": "2026-03-17T06:32:30.859Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 16,
+      "max_turn_ts": "2026-03-17T13:05:26.185000Z"
+    },
+    {
+      "sid": "019d0081-c82a-7793-b2a6-39232359ce76",
+      "ts": "2026-03-18T10:38:53.561Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-03-18T10:52:25.771000Z"
+    },
+    {
+      "sid": "019d0099-e8ab-77b2-abab-ac290c4984fa",
+      "ts": "2026-03-18T10:59:48.181Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-18T11:18:35.518000Z"
+    },
+    {
+      "sid": "019d009a-37af-7651-b8dd-a34ba8592b29",
+      "ts": "2026-03-18T11:00:25.829Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-03-18T11:09:36.843000Z"
+    },
+    {
+      "sid": "019d00a4-3ba3-7182-be39-6b136bd49e06",
+      "ts": "2026-03-18T11:11:31.704Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-03-18T12:06:16.927000Z"
+    },
+    {
+      "sid": "019d00cd-717c-7560-9a48-0db86e49fc82",
+      "ts": "2026-03-18T11:56:01.063Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-03-18T12:00:13.301000Z"
+    },
+    {
+      "sid": "019d00dd-83db-77f3-b7f3-0287b84835de",
+      "ts": "2026-03-18T12:14:03.457Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 29,
+      "max_turn_ts": "2026-03-18T14:46:16.618000Z"
+    },
+    {
+      "sid": "019d0103-2a49-75f0-b48b-595ed359127b",
+      "ts": "2026-03-18T12:55:17.248Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-18T13:05:01.628000Z"
+    },
+    {
+      "sid": "019d0171-4029-75f3-931c-2bd18ea3a77a",
+      "ts": "2026-03-18T14:55:06.587Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-03-18T15:03:50.650000Z"
+    },
+    {
+      "sid": "f986afd6-6861-4373-a102-87962d2b3b77",
+      "ts": "2026-03-19T02:45:56.755Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-19T02:50:27.788000Z"
+    },
+    {
+      "sid": "cc4e285c-7a71-4557-b8d6-93d59bb4e96d",
+      "ts": "2026-03-19T02:46:05.290Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T02:46:35.869000Z"
+    },
+    {
+      "sid": "9aae189f-903c-43ec-ade0-b167261c3229",
+      "ts": "2026-03-19T02:46:08.018Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T02:46:56.127000Z"
+    },
+    {
+      "sid": "1fe95982-40c1-4eb2-b093-645723796275",
+      "ts": "2026-03-19T02:49:22.624Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T02:49:44.825000Z"
+    },
+    {
+      "sid": "165e32e3-8164-4cf6-af5e-aad3f9ccaeb7",
+      "ts": "2026-03-19T02:49:26.738Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T02:49:49.143000Z"
+    },
+    {
+      "sid": "19a5b8a8-1987-4412-9822-f7b18b10e577",
+      "ts": "2026-03-19T02:49:28.989Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T02:50:10.444000Z"
+    },
+    {
+      "sid": "8372e327-acab-4387-9112-421b2a4eaa1b",
+      "ts": "2026-03-19T02:52:32.961Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 32,
+      "max_turn_ts": "2026-03-20T03:06:17.473000Z"
+    },
+    {
+      "sid": "0d021eac-fdf8-428f-9e4e-eed13f91134d",
+      "ts": "2026-03-19T12:04:25.594Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 29,
+      "max_turn_ts": "2026-03-20T07:25:01.033000Z"
+    },
+    {
+      "sid": "7f424461-96cc-4319-8740-b7644ade821f",
+      "ts": "2026-03-19T13:39:14.941Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-19T13:45:10.505000Z"
+    },
+    {
+      "sid": "35f9d9a9-759d-4cd4-940e-773dd7494f9d",
+      "ts": "2026-03-20T03:06:13.822Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T03:06:18.407000Z"
+    },
+    {
+      "sid": "c5357376-8fdd-4033-ab72-2cc0299005a1",
+      "ts": "2026-03-20T03:38:11.283Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-20T03:47:49.662000Z"
+    },
+    {
+      "sid": "d19195bd-33fb-4736-8d00-9864a2a7d827",
+      "ts": "2026-03-20T04:11:22.582Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T04:12:52.215000Z"
+    },
+    {
+      "sid": "ddf73df9-e25f-45cf-b7da-6618bb8142db",
+      "ts": "2026-03-20T04:11:47.267Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T04:12:23.873000Z"
+    },
+    {
+      "sid": "2c7b1634-9748-4787-8b1f-5d91ca71a97d",
+      "ts": "2026-03-20T04:17:17.398Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-20T04:19:01.419000Z"
+    },
+    {
+      "sid": "c3b86ac8-eff5-41f6-89ec-3c12c1ed3b62",
+      "ts": "2026-03-20T06:46:17.165Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T06:46:19.005000Z"
+    },
+    {
+      "sid": "4879d7a4-d5e4-44ca-9029-4195e342b26d",
+      "ts": "2026-03-20T07:25:15.977Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T07:25:17.570000Z"
+    },
+    {
+      "sid": "86831c79-a348-49a2-8706-22ec4fa14bf8",
+      "ts": "2026-03-20T09:55:16.039Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-20T10:07:20.718000Z"
+    },
+    {
+      "sid": "eae0aab2-a2ab-47d5-a0bd-9b7701c2f826",
+      "ts": "2026-03-20T10:14:29.898Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-20T10:27:40.775000Z"
+    },
+    {
+      "sid": "019d0f22-925d-7592-ade0-2cae82bbb79c",
+      "ts": "2026-03-21T06:44:30.994Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 12,
+      "max_turn_ts": "2026-03-21T15:34:56.286000Z"
+    },
+    {
+      "sid": "019d0f81-0dc6-75f2-82c1-84740b3477d8",
+      "ts": "2026-03-21T08:26:54.081Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-21T09:08:35.629000Z"
+    },
+    {
+      "sid": "019d0fa7-a0d8-7992-aec6-c050c0332497",
+      "ts": "2026-03-21T09:09:03.689Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-21T09:09:17.594000Z"
+    },
+    {
+      "sid": "019d1030-6622-7f90-b153-a708c38c3293",
+      "ts": "2026-03-21T11:38:41.105Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-21T11:49:37.082000Z"
+    },
+    {
+      "sid": "019d15b4-d978-7121-b4f6-092e9ddf8668",
+      "ts": "2026-03-22T13:21:21.658Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-03-22T13:44:13.592000Z"
+    },
+    {
+      "sid": "9b758eca-c242-48d9-90ab-a2a93a32d5f8",
+      "ts": "2026-03-23T02:54:28.891Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-23T03:00:36.261000Z"
+    },
+    {
+      "sid": "fded8ebf-af9b-4d2a-99c3-430c7c697243",
+      "ts": "2026-03-23T03:57:59.295Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 15,
+      "max_turn_ts": "2026-03-23T13:46:11.804000Z"
+    },
+    {
+      "sid": "b4ca495d-9f45-4067-83ea-d6325bee4378",
+      "ts": "2026-03-23T04:05:00.506Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T04:07:54.425000Z"
+    },
+    {
+      "sid": "2a90c82c-dcbd-44a7-b348-7f88544d5fe0",
+      "ts": "2026-03-23T05:03:10.551Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-03-23T05:03:12.369000Z"
+    },
+    {
+      "sid": "019d19c0-6746-71d0-83e7-5babe30c9ca6",
+      "ts": "2026-03-23T08:12:22.540Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 12,
+      "max_turn_ts": "2026-03-23T09:21:22.958000Z"
+    },
+    {
+      "sid": "f14c3fa8-eae0-41ff-814d-2c6f05db95cd",
+      "ts": "2026-03-23T13:16:27.611Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T13:18:19.718000Z"
+    },
+    {
+      "sid": "019d1af7-83e6-7583-9a90-f5aba7887dba",
+      "ts": "2026-03-23T13:52:13.328Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T14:24:54.682000Z"
+    },
+    {
+      "sid": "019d1f0c-f680-7372-98fd-ba05d1a20c63",
+      "ts": "2026-03-24T08:53:58.149Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T08:53:59.369000Z"
+    },
+    {
+      "sid": "019d1f3d-ce8c-7433-8e91-b854aac722bf",
+      "ts": "2026-03-24T09:47:44.644Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T09:48:07.159000Z"
+    },
+    {
+      "sid": "019d1f3f-0082-7671-a357-47f6b56eb62e",
+      "ts": "2026-03-24T09:48:37.282Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-03-24T10:12:40.691000Z"
+    },
+    {
+      "sid": "019d2322-5b38-7e63-8b99-a5e1e4d613b0",
+      "ts": "2026-03-25T03:55:55.769Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-03-25T04:16:11.197000Z"
+    },
+    {
+      "sid": "7dc41c81-a89f-4844-8f6f-caf93c94c9c7",
+      "ts": "2026-03-25T08:30:35.095Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T08:31:07.264000Z"
+    },
+    {
+      "sid": "ba6cf5a2-7104-4e16-9baa-517d4421557b",
+      "ts": "2026-03-25T08:30:38.645Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T08:31:09.108000Z"
+    },
+    {
+      "sid": "8b7a48cc-ea26-42e9-afb3-266f9c2e6591",
+      "ts": "2026-03-25T08:36:23.298Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T08:37:25.729000Z"
+    },
+    {
+      "sid": "1e807c69-7988-48e2-8871-9a066801cae0",
+      "ts": "2026-03-25T08:36:23.304Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T08:37:30.566000Z"
+    },
+    {
+      "sid": "019d24a0-7a9e-7923-a431-871aeaa3b7da",
+      "ts": "2026-03-25T10:53:26.452Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T10:55:44.572000Z"
+    },
+    {
+      "sid": "82448718-24b7-4298-9866-77e80721071a",
+      "ts": "2026-03-25T11:04:52.273Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:05:38.706000Z"
+    },
+    {
+      "sid": "c4315e62-b66f-485d-8395-6f0feafaf042",
+      "ts": "2026-03-25T11:04:59.313Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:06:45.930000Z"
+    },
+    {
+      "sid": "251add65-d642-45c7-88e9-d17ea11f17ab",
+      "ts": "2026-03-25T11:29:41.011Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:30:55.937000Z"
+    },
+    {
+      "sid": "a6e8319e-e2b1-4a29-8210-42347392b999",
+      "ts": "2026-03-25T11:29:50.870Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:31:41.826000Z"
+    },
+    {
+      "sid": "5067329c-a54e-4745-9efc-7348aca2c621",
+      "ts": "2026-03-25T11:30:00.857Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:32:06.755000Z"
+    },
+    {
+      "sid": "46912e0b-4f30-41e9-9c3d-c994deeef708",
+      "ts": "2026-03-25T11:38:14.022Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:39:21.633000Z"
+    },
+    {
+      "sid": "9d0c859f-b37b-4690-9b89-570171f0f394",
+      "ts": "2026-03-25T11:39:08.139Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:39:21.040000Z"
+    },
+    {
+      "sid": "0217e974-38bc-464f-b857-fd6ab4af4e49",
+      "ts": "2026-03-25T11:41:33.648Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T11:42:48.526000Z"
+    },
+    {
+      "sid": "f7c28c68-aaba-4ebe-84ed-3ccd5686ba5b",
+      "ts": "2026-03-25T14:02:55.690Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-25T14:11:02.515000Z"
+    },
+    {
+      "sid": "f1e4a8a3-3886-4512-921c-5cb4f00af6fe",
+      "ts": "2026-03-26T03:32:35.804Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T03:32:58.183000Z"
+    },
+    {
+      "sid": "23be0465-6b7f-4e14-ac60-140474107678",
+      "ts": "2026-03-26T03:39:48.813Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T03:40:05.441000Z"
+    },
+    {
+      "sid": "813253b4-10d4-4d8e-a064-61f55003d4b9",
+      "ts": "2026-03-26T03:39:50.597Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T03:40:04.647000Z"
+    },
+    {
+      "sid": "9fa8217b-deb4-46c7-97ad-9804db7cc952",
+      "ts": "2026-03-26T03:39:56.293Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T03:40:06.896000Z"
+    },
+    {
+      "sid": "86c4e209-130a-4d20-9cce-66af5a8af5bb",
+      "ts": "2026-03-26T04:02:58.247Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T04:03:52.954000Z"
+    },
+    {
+      "sid": "0f3ead74-9289-4222-b541-c0f6fecbb83f",
+      "ts": "2026-03-26T04:03:09.070Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T04:03:42.161000Z"
+    },
+    {
+      "sid": "3b9722e8-8346-40f5-879d-e897e9523913",
+      "ts": "2026-03-26T04:50:18.010Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T04:50:28.712000Z"
+    },
+    {
+      "sid": "3f9b129c-ce2a-4a81-81b8-ac9c856079c9",
+      "ts": "2026-03-26T07:09:19.585Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-03-26T07:09:19.591000Z"
+    },
+    {
+      "sid": "288f0f86-dbd0-4778-8b85-3c2a38ab2171",
+      "ts": "2026-03-26T12:42:44.405Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T12:43:29.222000Z"
+    },
+    {
+      "sid": "1bbffbb4-e283-47ef-affe-4411fc08c20d",
+      "ts": "2026-03-26T12:48:08.062Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T12:49:08.996000Z"
+    },
+    {
+      "sid": "8721c412-c143-46f0-84ef-8144e3d4d859",
+      "ts": "2026-03-26T12:48:15.409Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T12:49:01.929000Z"
+    },
+    {
+      "sid": "7ee5e327-dfa2-49e4-909e-ada0fafa5835",
+      "ts": "2026-03-26T12:49:48.275Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T12:49:52.684000Z"
+    },
+    {
+      "sid": "e5f53d0d-a7c5-454d-815a-d616f4bfcf11",
+      "ts": "2026-03-26T14:24:19.827Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:24:32.493000Z"
+    },
+    {
+      "sid": "098a2de8-1ce7-4959-bfcf-438b884a5ca4",
+      "ts": "2026-03-26T14:24:25.141Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:25:17.470000Z"
+    },
+    {
+      "sid": "f84ed2b0-5f95-4cd3-bf0c-3c3b8bee1fc9",
+      "ts": "2026-03-26T14:25:17.192Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:30:43.983000Z"
+    },
+    {
+      "sid": "bc75582f-0203-4e68-b0c5-40997dc1ff46",
+      "ts": "2026-03-26T14:25:17.201Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:25:29.808000Z"
+    },
+    {
+      "sid": "ab5a67ae-a98a-4c4f-9369-add3ae286186",
+      "ts": "2026-03-26T14:25:33.035Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:26:07.551000Z"
+    },
+    {
+      "sid": "264cf7c7-4100-4618-8c3d-bbc672bf33eb",
+      "ts": "2026-03-26T14:25:33.041Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:27:27.739000Z"
+    },
+    {
+      "sid": "c74aa2be-82a8-461d-9efa-ba8cacee5d4f",
+      "ts": "2026-03-26T14:25:33.048Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:27:00.994000Z"
+    },
+    {
+      "sid": "aa6c4c04-24e5-4d08-ba0c-e5b45df7af55",
+      "ts": "2026-03-26T14:25:33.054Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:30:36.045000Z"
+    },
+    {
+      "sid": "ec67d8ee-ccb8-4736-ab3c-cef3e28d73c3",
+      "ts": "2026-03-26T14:33:27.320Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:34:02.167000Z"
+    },
+    {
+      "sid": "06887278-223f-4cb3-9032-672bb80094e2",
+      "ts": "2026-03-26T14:33:30.407Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:33:43.548000Z"
+    },
+    {
+      "sid": "b6643b66-9cd3-47af-b2a6-51e010ef080a",
+      "ts": "2026-03-26T14:33:35.302Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-27T07:59:41.188000Z"
+    },
+    {
+      "sid": "d4aef3d8-5968-4f75-86ad-7a21ff978707",
+      "ts": "2026-03-26T14:48:38.857Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:50:10.668000Z"
+    },
+    {
+      "sid": "414b0cfe-857e-48cd-98c2-d95d37a29f06",
+      "ts": "2026-03-26T14:48:50.494Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T14:51:50.352000Z"
+    },
+    {
+      "sid": "931c2535-0ac2-472a-88bd-c2ba338b4e97",
+      "ts": "2026-03-26T15:57:06.249Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 38,
+      "max_turn_ts": "2026-03-27T03:34:55.658000Z"
+    },
+    {
+      "sid": "fa16616f-a406-4e94-bd2b-c2456121df89",
+      "ts": "2026-03-26T18:16:42.303Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 90,
+      "max_turn_ts": "2026-03-28T05:11:06.152000Z"
+    },
+    {
+      "sid": "f3e8e77e-4bef-4c6d-bfa6-813a8a53d376",
+      "ts": "2026-03-27T03:31:21.434Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-03-27T03:39:16.453000Z"
+    },
+    {
+      "sid": "22ffcc4e-53e9-4cdf-bd7b-a22c40aaae23",
+      "ts": "2026-03-27T07:14:18.248Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-27T07:33:00.825000Z"
+    },
+    {
+      "sid": "6627ffab-1cfc-4ce4-9af9-a4249d89f821",
+      "ts": "2026-03-27T08:09:30.024Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T08:09:42.239000Z"
+    },
+    {
+      "sid": "a43e55dd-ad14-4b21-85ee-2824af1a5489",
+      "ts": "2026-03-27T08:10:47.273Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T08:10:54.463000Z"
+    },
+    {
+      "sid": "eafd8d84-9fc9-42c6-973d-56cd5c99e496",
+      "ts": "2026-03-27T08:11:59.933Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T08:13:00.202000Z"
+    },
+    {
+      "sid": "d615aa49-248b-426f-af50-ab228edcd40b",
+      "ts": "2026-03-27T08:13:50.487Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-27T08:15:30.456000Z"
+    },
+    {
+      "sid": "631a4ea6-ac28-4474-8a2e-e8b8b2c80258",
+      "ts": "2026-03-27T08:25:51.561Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T08:26:35.084000Z"
+    },
+    {
+      "sid": "56d5c896-f089-450b-b0c0-d170002a4d41",
+      "ts": "2026-03-27T10:41:04.497Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 30,
+      "max_turn_ts": "2026-03-27T13:12:38.744000Z"
+    },
+    {
+      "sid": "aebc88e9-969b-4b64-bd8e-1e6daf0abe1e",
+      "ts": "2026-03-27T11:08:00.500Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:08:56.796000Z"
+    },
+    {
+      "sid": "84e6cc9f-9925-463b-b6a9-4adaf588ba68",
+      "ts": "2026-03-27T11:08:00.772Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:09:00.826000Z"
+    },
+    {
+      "sid": "412fb4a4-2e2b-4d75-8986-b8ca7d37847e",
+      "ts": "2026-03-27T11:08:02.270Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:09:10.727000Z"
+    },
+    {
+      "sid": "0675508c-8983-47f2-88ca-6ebcc7819545",
+      "ts": "2026-03-27T11:08:03.379Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:09:10.675000Z"
+    },
+    {
+      "sid": "272beaf4-8d5f-48f0-bf87-6fed2b2dcefe",
+      "ts": "2026-03-27T11:10:22.454Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:11:21.225000Z"
+    },
+    {
+      "sid": "5660a2e4-c1f4-42ed-be4f-d07bc7a209cd",
+      "ts": "2026-03-27T11:10:23.470Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:11:39.620000Z"
+    },
+    {
+      "sid": "d53ec662-9690-422f-a9a9-5bcfe9571b2b",
+      "ts": "2026-03-27T11:10:24.575Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:11:53.802000Z"
+    },
+    {
+      "sid": "caf6091d-0658-45da-8af8-ed8509fdfd9a",
+      "ts": "2026-03-27T11:10:25.144Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T11:11:38.015000Z"
+    },
+    {
+      "sid": "7a0283e0-07c3-4f6c-ae15-4cdd3179470b",
+      "ts": "2026-03-27T13:16:59.385Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-27T13:31:55.652000Z"
+    },
+    {
+      "sid": "019d2fae-3786-7bc1-84f4-074e43360ae7",
+      "ts": "2026-03-27T14:24:03.562Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 11,
+      "max_turn_ts": "2026-03-27T16:04:09.553000Z"
+    },
+    {
+      "sid": "d19eba53-fb64-41ec-acbb-81f45abdd1bf",
+      "ts": "2026-03-27T15:42:27.725Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-27T16:02:49.733000Z"
+    },
+    {
+      "sid": "019d300b-8c70-71d0-9fbd-654163907343",
+      "ts": "2026-03-27T16:06:05.498Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-03-28T04:07:39.627000Z"
+    },
+    {
+      "sid": "34935ebd-bda6-4f3b-bbb1-ea41c6c534b7",
+      "ts": "2026-03-27T16:55:53.627Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-27T16:57:19.697000Z"
+    },
+    {
+      "sid": "0e4d9c79-9c38-40be-a29b-3327a4d45127",
+      "ts": "2026-03-28T04:12:51.438Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-03-28T04:30:17.409000Z"
+    },
+    {
+      "sid": "e3d5cd59-eee9-44ba-9ebf-580fb1cb4529",
+      "ts": "2026-03-28T05:12:03.142Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-28T05:25:52.863000Z"
+    },
+    {
+      "sid": "019d3529-5372-7f80-bd5c-0eaad843669f",
+      "ts": "2026-03-28T15:56:44.578Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-28T15:58:04.798000Z"
+    },
+    {
+      "sid": "019d3596-8629-7cb3-af61-d2ea6605fd74",
+      "ts": "2026-03-28T17:56:05.491Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-30T18:25:44.368000Z"
+    },
+    {
+      "sid": "019d378c-649b-79c0-a92a-dfa8cc184f1e",
+      "ts": "2026-03-29T03:04:02.033Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 20,
+      "max_turn_ts": "2026-03-29T04:23:58.563000Z"
+    },
+    {
+      "sid": "019d37ed-4003-76f3-aae3-71ada4d50f6c",
+      "ts": "2026-03-29T04:49:59.317Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-03-29T08:44:16.789000Z"
+    },
+    {
+      "sid": "a36f16e2-90b9-4e0f-8b6a-e9873d13b764",
+      "ts": "2026-03-29T14:02:31.071Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 23,
+      "max_turn_ts": "2026-03-29T15:45:52.617000Z"
+    },
+    {
+      "sid": "d907a7b8-f24e-49e5-9cbb-d223cac18e6a",
+      "ts": "2026-03-29T14:08:09.497Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 11,
+      "max_turn_ts": "2026-03-29T14:47:12.468000Z"
+    },
+    {
+      "sid": "6e11596f-006e-4fd6-b158-b3f1ca50ecd4",
+      "ts": "2026-03-29T14:56:30.129Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-03-29T15:20:14.428000Z"
+    },
+    {
+      "sid": "689df88b-e877-4df4-b0a3-7a1f0ed6e60a",
+      "ts": "2026-03-29T15:29:27.393Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2025,
+      "max_turn_ts": "2026-04-12T12:26:38.191000Z"
+    },
+    {
+      "sid": "00cf5e34-daa1-4629-90e1-5c7fb1f832d9",
+      "ts": "2026-03-29T17:30:05.111Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-03-29T17:31:50.329000Z"
+    },
+    {
+      "sid": "3f91a6c5-a7fb-4b9a-b388-87a1d5cb981f",
+      "ts": "2026-03-29T18:14:15.515Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-29T18:14:20.443000Z"
+    },
+    {
+      "sid": "ac88abda-1811-4493-ab01-daeb56895fec",
+      "ts": "2026-03-29T18:15:24.815Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 53,
+      "max_turn_ts": "2026-04-13T10:41:47.094000Z"
+    },
+    {
+      "sid": "ac88abda-1811-4493-ab01-daeb56895fec:subagents",
+      "ts": "2026-03-29T18:20:47.582Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-03-29T19:24:13.529000Z"
+    },
+    {
+      "sid": "019d3b00-a79d-7ae0-8e5b-4bebec8c1297",
+      "ts": "2026-03-29T19:09:59.938Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-03-29T19:15:20.869000Z"
+    },
+    {
+      "sid": "019d3d02-62fe-7640-a718-ba227ec26349",
+      "ts": "2026-03-30T04:31:30.261Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-03-30T04:50:00.083000Z"
+    },
+    {
+      "sid": "019d3d15-284e-7bf3-b5ba-0ba5b626fb66",
+      "ts": "2026-03-30T04:51:53.504Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 18,
+      "max_turn_ts": "2026-04-13T12:35:18.242000Z"
+    },
+    {
+      "sid": "f3c2e821-206f-4643-94cd-45c71602e59d",
+      "ts": "2026-03-30T05:05:21.328Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T05:05:30.179000Z"
+    },
+    {
+      "sid": "0f1db7cc-d61c-445a-afdb-152eb6fb649e",
+      "ts": "2026-03-30T19:12:19.615Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T19:13:32.245000Z"
+    },
+    {
+      "sid": "59e90a5e-5f85-4981-9131-06baff1e516f",
+      "ts": "2026-03-31T04:37:03.786Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 31,
+      "max_turn_ts": "2026-03-31T07:50:42.360000Z"
+    },
+    {
+      "sid": "007d10b7-8f20-4df2-8521-fc3f2b82d506",
+      "ts": "2026-03-31T08:05:36.461Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-03-31T08:55:00.940000Z"
+    },
+    {
+      "sid": "019d44c8-9b82-7ff3-b9f6-e8c5bd33787e",
+      "ts": "2026-03-31T16:44:54.176Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-03-31T16:45:06.795000Z"
+    },
+    {
+      "sid": "019d44d9-54b1-7981-a602-a211d6f6920a",
+      "ts": "2026-03-31T17:03:15.551Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-03-31T17:36:04.529000Z"
+    },
+    {
+      "sid": "019d4816-5e8a-7892-aaa1-5708876d60e2",
+      "ts": "2026-04-01T08:09:47.551Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-04-01T08:16:10.716000Z"
+    },
+    {
+      "sid": "019d4840-9376-7eb1-ad5f-1a47beb85f9d",
+      "ts": "2026-04-01T08:55:12.737Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-01T09:16:36.333000Z"
+    },
+    {
+      "sid": "019d4e3f-71a7-7c13-88fa-99afdefeabaa",
+      "ts": "2026-04-02T12:52:19.152Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-02T12:58:37.400000Z"
+    },
+    {
+      "sid": "019d4e42-933d-7b30-9056-80ac3b8fbe2a",
+      "ts": "2026-04-02T12:54:39.197Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-02T12:57:49.936000Z"
+    },
+    {
+      "sid": "019d5159-ad2e-7ed0-8c31-2786e25758ad",
+      "ts": "2026-04-03T03:19:16.111Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-03T06:59:13.910000Z"
+    },
+    {
+      "sid": "998700bd-1391-4e6f-bef8-b8d95b502f9b",
+      "ts": "2026-04-03T15:46:37.964Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-03T15:53:02.376000Z"
+    },
+    {
+      "sid": "019d54dc-a4d7-7a40-b1d3-4c3c9ca728e1",
+      "ts": "2026-04-03T19:41:06.876Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-03T19:43:03.880000Z"
+    },
+    {
+      "sid": "019d59ab-5f76-7a92-b813-2b5a41f3bfd8",
+      "ts": "2026-04-04T18:05:14.560Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 15,
+      "max_turn_ts": "2026-04-06T16:54:49.938000Z"
+    },
+    {
+      "sid": "019d59ac-05f8-7ce2-a075-b1bc4516eca8",
+      "ts": "2026-04-04T18:05:40.869Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-04T18:06:08.125000Z"
+    },
+    {
+      "sid": "019d59ad-6add-7da1-bec2-2d69f09261eb",
+      "ts": "2026-04-04T18:07:34.002Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-04T18:09:35.385000Z"
+    },
+    {
+      "sid": "019d59b4-4aa1-7c03-9414-7b1bccff9ae2",
+      "ts": "2026-04-04T18:14:59.740Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-04T18:15:50.113000Z"
+    },
+    {
+      "sid": "019d59b6-aee0-7320-9878-dd883dcdfceb",
+      "ts": "2026-04-04T18:17:19.608Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 16,
+      "max_turn_ts": "2026-04-04T19:31:35.392000Z"
+    },
+    {
+      "sid": "a2dba67b-d697-445e-9a4a-f24d6b85443a",
+      "ts": "2026-04-05T09:38:21.539Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 62,
+      "max_turn_ts": "2026-04-05T23:51:24.982000Z"
+    },
+    {
+      "sid": "a2dba67b-d697-445e-9a4a-f24d6b85443a:subagents",
+      "ts": "2026-04-05T16:44:55.540Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-05T16:49:48.091000Z"
+    },
+    {
+      "sid": "019d5ecb-ab39-76b2-981c-3907e5a8410c",
+      "ts": "2026-04-05T17:58:39.688Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-05T17:59:47.032000Z"
+    },
+    {
+      "sid": "019d5ecd-5884-7360-9808-b0ca1be85116",
+      "ts": "2026-04-05T18:01:13.162Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 27,
+      "max_turn_ts": "2026-04-05T22:13:58.288000Z"
+    },
+    {
+      "sid": "b54fbc16-c8bc-475c-bdc9-fa90ba0ac38c",
+      "ts": "2026-04-06T05:41:04.819Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-06T05:47:56.037000Z"
+    },
+    {
+      "sid": "019d6178-ad16-77f0-8b9b-a3911d99ad49",
+      "ts": "2026-04-06T06:26:31.857Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T06:26:49.149000Z"
+    },
+    {
+      "sid": "019d6387-930e-7082-aca9-9084c450a5a7",
+      "ts": "2026-04-06T16:02:55.807Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 11,
+      "max_turn_ts": "2026-04-06T17:28:39.594000Z"
+    },
+    {
+      "sid": "019d63be-b911-75a2-91d1-1d9798953c0c",
+      "ts": "2026-04-06T17:02:20.515Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-07T18:58:58.880000Z"
+    },
+    {
+      "sid": "019d63e4-60f9-7b63-82e7-d1e49963a91a",
+      "ts": "2026-04-06T17:43:53.471Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 68,
+      "max_turn_ts": "2026-04-07T15:16:10.461000Z"
+    },
+    {
+      "sid": "e61fa407-dcc1-4cbf-b1fd-366c2cf26766",
+      "ts": "2026-04-06T18:03:39.709Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-04-06T20:48:57.694000Z"
+    },
+    {
+      "sid": "019d685a-644c-7a63-b29b-370a3e36c690",
+      "ts": "2026-04-07T14:30:54.219Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-07T14:47:21.264000Z"
+    },
+    {
+      "sid": "019d685a-a537-7603-8939-fed8181b6bbb",
+      "ts": "2026-04-07T14:31:04.290Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-07T14:31:55.545000Z"
+    },
+    {
+      "sid": "019d6c07-366b-71d0-9791-e089b7cddf61",
+      "ts": "2026-04-08T07:38:33.156Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 70,
+      "max_turn_ts": "2026-04-08T10:04:29.906000Z"
+    },
+    {
+      "sid": "019dbb8b-384d-78c1-891f-289dd25f318c",
+      "ts": "2026-04-08T10:14:58.798Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T18:12:41.555000Z"
+    },
+    {
+      "sid": "019d6c96-d4e4-7c12-9ab5-cdf9f65d47e0",
+      "ts": "2026-04-08T10:15:20.134Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-08T11:10:12.540000Z"
+    },
+    {
+      "sid": "019d71be-7e33-7482-bcf2-ae99ebaa39e8",
+      "ts": "2026-04-09T10:17:06.796Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-04-09T13:47:52.452000Z"
+    },
+    {
+      "sid": "019d71c5-74e1-74d0-8673-ecafb6c7b173",
+      "ts": "2026-04-09T10:24:19.182Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-09T10:27:41.290000Z"
+    },
+    {
+      "sid": "019d71d3-c9e4-7873-babf-781f01c7f0df",
+      "ts": "2026-04-09T10:39:58.450Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-04-09T10:42:10.147000Z"
+    },
+    {
+      "sid": "019d71d3-ca3b-7a42-9608-ca08c7b4d165",
+      "ts": "2026-04-09T10:39:58.541Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-09T10:42:22.081000Z"
+    },
+    {
+      "sid": "998bd5ff-3f2a-47c0-a3c4-1a382b716395",
+      "ts": "2026-04-10T11:10:12.503Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-04-10T11:44:04.594000Z"
+    },
+    {
+      "sid": "019d78ab-6d04-7ab2-9b8e-79dd3cb444c5",
+      "ts": "2026-04-10T18:36:44.098Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-04-10T18:55:11.891000Z"
+    },
+    {
+      "sid": "019d7bcd-3c28-75c1-880e-ba8034e5d41f",
+      "ts": "2026-04-11T09:09:23.385Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-11T09:14:09.905000Z"
+    },
+    {
+      "sid": "019d7cbb-ee62-70e1-9375-4684396e228d",
+      "ts": "2026-04-11T13:29:59.401Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-11T14:51:41.029000Z"
+    },
+    {
+      "sid": "a58a58ba-4c1e-4921-9ff1-ffafec323af0",
+      "ts": "2026-04-11T20:13:04.953Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 95,
+      "max_turn_ts": "2026-04-12T08:59:55.105000Z"
+    },
+    {
+      "sid": "a58a58ba-4c1e-4921-9ff1-ffafec323af0:subagents",
+      "ts": "2026-04-11T20:13:22.647Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-11T20:16:24.165000Z"
+    },
+    {
+      "sid": "71887001-f998-490b-8201-d607fad6a618",
+      "ts": "2026-04-12T05:00:38.396Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-12T05:06:58.962000Z"
+    },
+    {
+      "sid": "019d80ec-6092-7ae1-90cd-ab9ac3e38e9f",
+      "ts": "2026-04-12T09:01:38.652Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 62,
+      "max_turn_ts": "2026-04-13T03:51:55.180000Z"
+    },
+    {
+      "sid": "50240ede-2a4b-4d4b-b1db-2d885fdca440",
+      "ts": "2026-04-13T03:52:28.086Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 59,
+      "max_turn_ts": "2026-04-13T12:51:26.652000Z"
+    },
+    {
+      "sid": "50240ede-2a4b-4d4b-b1db-2d885fdca440:subagents",
+      "ts": "2026-04-13T03:53:01.531Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-13T12:46:53.022000Z"
+    },
+    {
+      "sid": "019d8558-d9d6-7592-b9b8-3f15b88091d1",
+      "ts": "2026-04-13T05:38:28.958Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-13T05:41:19.543000Z"
+    },
+    {
+      "sid": "fe050260-faa5-4aa2-bcf6-492e1648e9c0:subagents",
+      "ts": "2026-04-13T14:07:32.629Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-13T14:11:11.347000Z"
+    },
+    {
+      "sid": "61e02938-8036-49e4-b9d3-b3766c7b7ae3",
+      "ts": "2026-04-13T14:11:18.259Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 807,
+      "max_turn_ts": "2026-04-19T11:02:33.001000Z"
+    },
+    {
+      "sid": "61e02938-8036-49e4-b9d3-b3766c7b7ae3:subagents",
+      "ts": "2026-04-13T14:11:29.539Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 80,
+      "max_turn_ts": "2026-04-19T10:07:47.841000Z"
+    },
+    {
+      "sid": "019d8ff9-c29f-7c81-a334-ea3677a16913",
+      "ts": "2026-04-15T07:10:21.084Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 64,
+      "max_turn_ts": "2026-04-16T08:31:43.655000Z"
+    },
+    {
+      "sid": "019d9018-c99a-7ca2-85b2-e9588ed85946",
+      "ts": "2026-04-15T07:43:56.726Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-15T08:00:13.649000Z"
+    },
+    {
+      "sid": "019d90aa-1488-70b0-80ab-18dd19c46cfc",
+      "ts": "2026-04-15T10:22:59.875Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 22,
+      "max_turn_ts": "2026-04-15T13:09:18.570000Z"
+    },
+    {
+      "sid": "019d9145-977e-7613-a9f2-3f9936edcea1",
+      "ts": "2026-04-15T13:12:41.729Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-04-15T13:24:10.827000Z"
+    },
+    {
+      "sid": "57d58a5e-d835-4022-8e27-b1b8b95feecc",
+      "ts": "2026-04-15T14:16:17.097Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-04-16T02:18:26.445000Z"
+    },
+    {
+      "sid": "00f84bab-f08a-4330-894c-dd7d49ee04a4",
+      "ts": "2026-04-16T14:39:48.980Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-16T14:40:54.997000Z"
+    },
+    {
+      "sid": "5dcf9421-1041-443a-b568-b0ba80c143d0",
+      "ts": "2026-04-16T23:53:13.652Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-04-21T11:53:54.394000Z"
+    },
+    {
+      "sid": "019d9b6b-9dd3-76e0-a48f-fd1314cfb0a7",
+      "ts": "2026-04-17T12:32:19.848Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 11,
+      "max_turn_ts": "2026-04-17T16:14:31.159000Z"
+    },
+    {
+      "sid": "019d9f17-437a-7f52-abb7-05693953e123",
+      "ts": "2026-04-18T05:36:49.745Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-18T07:22:29.008000Z"
+    },
+    {
+      "sid": "065158f2-ddf6-49e4-84f2-30f29a96057a",
+      "ts": "2026-04-18T11:43:57.000Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 20,
+      "max_turn_ts": "2026-04-19T05:40:46.940000Z"
+    },
+    {
+      "sid": "019da569-6beb-76b1-a228-3f4b919f95c8",
+      "ts": "2026-04-19T11:04:55.105Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 71,
+      "max_turn_ts": "2026-04-20T10:30:46.159000Z"
+    },
+    {
+      "sid": "eb995352-e14d-4e86-864c-85f8349196ed",
+      "ts": "2026-04-20T08:30:49.031Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 38,
+      "max_turn_ts": "2026-04-20T14:18:05.824000Z"
+    },
+    {
+      "sid": "eb995352-e14d-4e86-864c-85f8349196ed:subagents",
+      "ts": "2026-04-20T08:41:03.304Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-20T08:56:35.222000Z"
+    },
+    {
+      "sid": "c0899c56-8957-4bba-8534-c2cb7c1c1dfe",
+      "ts": "2026-04-20T11:43:09.424Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 209,
+      "max_turn_ts": "2026-04-21T16:58:02.541000Z"
+    },
+    {
+      "sid": "c0899c56-8957-4bba-8534-c2cb7c1c1dfe:subagents",
+      "ts": "2026-04-20T11:46:24.595Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 15,
+      "max_turn_ts": "2026-04-21T03:41:36.364000Z"
+    },
+    {
+      "sid": "a33915a6-cdb9-4741-8389-37518eceb1a0",
+      "ts": "2026-04-21T06:48:27.875Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 69,
+      "max_turn_ts": "2026-04-21T14:54:06.049000Z"
+    },
+    {
+      "sid": "a33915a6-cdb9-4741-8389-37518eceb1a0:subagents",
+      "ts": "2026-04-21T10:38:34.823Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T10:40:16.602000Z"
+    },
+    {
+      "sid": "019db003-c469-7f00-a8be-6b91e1f35340",
+      "ts": "2026-04-21T12:29:38.387Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-21T12:31:52.685000Z"
+    },
+    {
+      "sid": "019db00a-a2aa-7471-8387-1c252f1b75f1",
+      "ts": "2026-04-21T12:36:30.580Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-21T12:42:50.563000Z"
+    },
+    {
+      "sid": "1d4a46b7-4b40-47c2-a5f8-86cc6f278515",
+      "ts": "2026-04-21T14:47:14.078Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-21T15:36:38.330000Z"
+    },
+    {
+      "sid": "36805c07-a97b-4e41-878d-70feb700b55f",
+      "ts": "2026-04-21T16:58:53.998Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-21T17:06:32.073000Z"
+    },
+    {
+      "sid": "fe63b268-b776-4b6f-a37a-3c0ffb38e589",
+      "ts": "2026-04-21T17:06:37.599Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 79,
+      "max_turn_ts": "2026-04-21T22:05:51.313000Z"
+    },
+    {
+      "sid": "fe63b268-b776-4b6f-a37a-3c0ffb38e589:subagents",
+      "ts": "2026-04-21T17:07:43.779Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-21T20:55:35.913000Z"
+    },
+    {
+      "sid": "019db142-a8ec-7931-a3aa-9bf57379e6bf",
+      "ts": "2026-04-21T18:17:11.764Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T18:17:24.126000Z"
+    },
+    {
+      "sid": "47888e17-2078-4685-b89a-942cada0adef",
+      "ts": "2026-04-21T18:32:01.354Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-21T19:13:12.704000Z"
+    },
+    {
+      "sid": "019db177-b7c7-77c0-91cb-2ddb68ae106c",
+      "ts": "2026-04-21T19:15:16.109Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T19:15:26.707000Z"
+    },
+    {
+      "sid": "019db1ad-fd06-7810-b571-e5010e903b24",
+      "ts": "2026-04-21T20:15:01.781Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 41,
+      "max_turn_ts": "2026-04-22T08:38:40.955000Z"
+    },
+    {
+      "sid": "638009c8-f92e-4962-b07b-2bdb97732065",
+      "ts": "2026-04-21T20:45:50.581Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-21T20:47:50.020000Z"
+    },
+    {
+      "sid": "e77c4fbc-0c81-4512-8eec-873dc089dd21",
+      "ts": "2026-04-22T06:33:21.141Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 219,
+      "max_turn_ts": "2026-04-23T15:12:08.368000Z"
+    },
+    {
+      "sid": "e77c4fbc-0c81-4512-8eec-873dc089dd21:subagents",
+      "ts": "2026-04-22T06:34:46.415Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-04-23T12:57:42.202000Z"
+    },
+    {
+      "sid": "019db5bf-c95c-75a3-bf78-497054d62681",
+      "ts": "2026-04-22T15:12:41.052Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-04-27T05:40:56.133000Z"
+    },
+    {
+      "sid": "86b0c4c5-600e-41c2-a17f-33c688197f72",
+      "ts": "2026-04-22T17:09:14.471Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-22T17:29:46.433000Z"
+    },
+    {
+      "sid": "019db648-a203-7691-822d-51862fef1c24",
+      "ts": "2026-04-22T17:42:16.039Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 38,
+      "max_turn_ts": "2026-04-26T16:42:47.947000Z"
+    },
+    {
+      "sid": "51e1b727-4682-433d-a7b5-e3c2c0bc9566",
+      "ts": "2026-04-22T17:46:30.907Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-04-23T07:41:29.988000Z"
+    },
+    {
+      "sid": "019db6ae-1f73-7f12-87b6-b21183f85d32",
+      "ts": "2026-04-22T19:33:16.449Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-22T20:20:33.837000Z"
+    },
+    {
+      "sid": "019db886-5528-7400-aa75-db047c8c11e4",
+      "ts": "2026-04-23T04:08:33.580Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-23T04:20:49.599000Z"
+    },
+    {
+      "sid": "629407f3-2d37-4de9-a55d-6af8b9f9136b",
+      "ts": "2026-04-23T04:20:55.863Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T04:21:20.798000Z"
+    },
+    {
+      "sid": "c8038021-5dfc-457e-a06d-af6af2ec1164",
+      "ts": "2026-04-23T04:23:28.841Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-23T04:46:17.366000Z"
+    },
+    {
+      "sid": "019db8df-a38d-7392-8a2f-db40ce4e3c00",
+      "ts": "2026-04-23T05:45:59.130Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-23T06:13:18.511000Z"
+    },
+    {
+      "sid": "019db900-e90d-7d51-aa9f-3c86b3cc82a9",
+      "ts": "2026-04-23T06:22:36.201Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T06:24:03.892000Z"
+    },
+    {
+      "sid": "019db90e-cbe7-7380-a033-748b2e28284f",
+      "ts": "2026-04-23T06:37:37.108Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 16,
+      "max_turn_ts": "2026-04-23T07:24:16.814000Z"
+    },
+    {
+      "sid": "64ac6ca8-78dd-44f3-9dfc-341b75a35fed",
+      "ts": "2026-04-23T07:00:12.817Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-23T07:01:06.850000Z"
+    },
+    {
+      "sid": "b525782a-38ce-4e10-9e75-2ad1f7608e6b",
+      "ts": "2026-04-23T07:02:54.178Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T07:03:01.794000Z"
+    },
+    {
+      "sid": "c06ae118-afee-4e4b-9194-f983d4c5edc6",
+      "ts": "2026-04-23T07:25:09.584Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T07:25:15.520000Z"
+    },
+    {
+      "sid": "a2bb5bf3-c735-47a4-8c09-66ea5463cef6",
+      "ts": "2026-04-23T07:26:59.664Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T07:27:45.867000Z"
+    },
+    {
+      "sid": "1bef3fa7-8262-489b-8ca8-9961e42b63dc",
+      "ts": "2026-04-23T07:48:24.943Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-23T07:51:28.935000Z"
+    },
+    {
+      "sid": "3ccb8f52-5aa8-416c-8d6d-365c80df20d5",
+      "ts": "2026-04-23T08:35:40.766Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T08:35:50.747000Z"
+    },
+    {
+      "sid": "d230c494-6772-4ef7-b29d-e410d976c9bc",
+      "ts": "2026-04-23T08:36:10.281Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T08:36:21.708000Z"
+    },
+    {
+      "sid": "700bc0f8-fb1f-4c88-883f-338e0ca37744",
+      "ts": "2026-04-23T08:46:05.635Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T08:46:09.161000Z"
+    },
+    {
+      "sid": "dcd6efc0-3ca2-4e2f-86f0-103231f17907",
+      "ts": "2026-04-23T08:46:58.666Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T08:47:04.040000Z"
+    },
+    {
+      "sid": "0d935ff6-53cd-407c-8dd3-17812289e76a",
+      "ts": "2026-04-23T08:47:16.833Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T08:47:22.771000Z"
+    },
+    {
+      "sid": "0804a8b0-e542-4757-99c1-178c545944a1",
+      "ts": "2026-04-23T09:01:12.935Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-04-23T15:18:23.711000Z"
+    },
+    {
+      "sid": "bfcb9ab5-8e3b-474f-928a-5b858a7845a1",
+      "ts": "2026-04-23T10:43:20.613Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-23T10:47:04.868000Z"
+    },
+    {
+      "sid": "94171422-a97f-4114-86a3-8235a1b8b311",
+      "ts": "2026-04-23T12:05:53.593Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 55,
+      "max_turn_ts": "2026-04-23T18:00:23.783000Z"
+    },
+    {
+      "sid": "019dbaf9-694b-7303-81ba-b4ce8180a8be",
+      "ts": "2026-04-23T15:33:35.877Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-23T15:41:59.504000Z"
+    },
+    {
+      "sid": "f1023609-b1cd-44e0-9d29-85fe7cd94dee",
+      "ts": "2026-04-23T16:09:31.503Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 163,
+      "max_turn_ts": "2026-04-25T05:10:27.044000Z"
+    },
+    {
+      "sid": "f1023609-b1cd-44e0-9d29-85fe7cd94dee:subagents",
+      "ts": "2026-04-23T16:37:07.988Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T04:58:19.677000Z"
+    },
+    {
+      "sid": "4fc53ed9-9706-4144-99cd-0859bceed7db",
+      "ts": "2026-04-23T16:48:47.364Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-23T16:51:03.791000Z"
+    },
+    {
+      "sid": "4dfb2c3a-80d8-41d3-a342-ed0d7d776ce6",
+      "ts": "2026-04-23T18:10:28.742Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-23T18:13:19.257000Z"
+    },
+    {
+      "sid": "019dbb8c-c6e5-7341-8170-51b3b9a71f6b",
+      "ts": "2026-04-23T18:14:24.467Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T18:15:41.782000Z"
+    },
+    {
+      "sid": "d9743fc6-753d-4d05-92f8-9bbf6f4d31a8",
+      "ts": "2026-04-24T03:44:15.423Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-24T04:09:03.532000Z"
+    },
+    {
+      "sid": "019dbd9d-8711-7211-bdd0-11a1ec21fbd3",
+      "ts": "2026-04-24T03:51:55.520Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T03:52:07.734000Z"
+    },
+    {
+      "sid": "019dbd9d-ef92-7982-a13c-cc52a699b055",
+      "ts": "2026-04-24T03:52:24.547Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T03:52:28.872000Z"
+    },
+    {
+      "sid": "34f489d0-f6ca-4313-9474-7a0a9bb59af2",
+      "ts": "2026-04-24T03:58:32.166Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-24T09:16:20.514000Z"
+    },
+    {
+      "sid": "b1f7ad17-d878-488d-b69c-7231d1ac7e70",
+      "ts": "2026-04-24T05:37:53.259Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-04-24T10:41:15.881000Z"
+    },
+    {
+      "sid": "50ebc5e0-05f8-44ac-8022-c1aea1525596",
+      "ts": "2026-04-24T08:49:13.723Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-24T08:52:16.160000Z"
+    },
+    {
+      "sid": "019dbeb7-2d3a-7803-bf90-1ceca1c09afc",
+      "ts": "2026-04-24T08:59:32.944Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-24T09:02:18.103000Z"
+    },
+    {
+      "sid": "019dbebd-11d0-7c40-8385-0aa402ce1742",
+      "ts": "2026-04-24T09:06:59.035Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 11,
+      "max_turn_ts": "2026-04-24T09:37:19.495000Z"
+    },
+    {
+      "sid": "c7cdbf41-461a-4d2d-8000-7f7d0f005934",
+      "ts": "2026-04-24T09:16:50.335Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-24T09:17:47.202000Z"
+    },
+    {
+      "sid": "019dbeca-64a1-7832-8127-354c4c083382",
+      "ts": "2026-04-24T09:20:41.931Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T09:21:22.192000Z"
+    },
+    {
+      "sid": "019dbecb-e098-7f90-b797-1d2a47327caa",
+      "ts": "2026-04-24T09:22:08.426Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-24T09:27:45.608000Z"
+    },
+    {
+      "sid": "019dbece-409f-78b3-8a41-5b06c2a540d0",
+      "ts": "2026-04-24T09:24:41.293Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T09:27:59.292000Z"
+    },
+    {
+      "sid": "019dbf16-3f0d-7661-941d-d37e59f2151d",
+      "ts": "2026-04-24T10:43:21.074Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T10:43:29.752000Z"
+    },
+    {
+      "sid": "019dc012-89e2-7251-9fae-0e1cd285fa24",
+      "ts": "2026-04-24T15:18:59.030Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-24T15:19:30.254000Z"
+    },
+    {
+      "sid": "007f9f41-ff15-43b0-a397-8837b873e923",
+      "ts": "2026-04-24T16:14:53.255Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-24T16:20:37.895000Z"
+    },
+    {
+      "sid": "ee9a04ba-49ce-4e3c-9041-859157e9bad1",
+      "ts": "2026-04-24T16:23:39.707Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-24T17:00:50.905000Z"
+    },
+    {
+      "sid": "ee9a04ba-49ce-4e3c-9041-859157e9bad1:subagents",
+      "ts": "2026-04-24T16:26:07.176Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-24T16:59:57.555000Z"
+    },
+    {
+      "sid": "019dc055-990e-7673-8647-f305840f3850",
+      "ts": "2026-04-24T16:32:12.131Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-25T10:41:17.976000Z"
+    },
+    {
+      "sid": "7cb946eb-4134-499f-a51e-3b2a34cd9a89",
+      "ts": "2026-04-25T04:23:36.230Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T04:23:51.713000Z"
+    },
+    {
+      "sid": "019dc313-0422-7213-a31f-28dc8595bff0",
+      "ts": "2026-04-25T05:20:37.553Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 71,
+      "max_turn_ts": "2026-04-25T15:55:08.997000Z"
+    },
+    {
+      "sid": "019dc455-638e-7852-8b2a-60dfe0f5fadf",
+      "ts": "2026-04-25T06:24:37.453Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T11:10:32.974000Z"
+    },
+    {
+      "sid": "ca378075-3d9a-4b30-a571-657c0b1f04a0",
+      "ts": "2026-04-25T10:42:20.251Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 154,
+      "max_turn_ts": "2026-04-26T14:17:12.948000Z"
+    },
+    {
+      "sid": "019dc44f-a7fc-7c13-b7a5-4a892575ad74",
+      "ts": "2026-04-25T11:04:57.949Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T11:16:26.758000Z"
+    },
+    {
+      "sid": "045c2ab8-bdd7-45ee-a234-eb065f94c07a",
+      "ts": "2026-04-25T11:50:11.663Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T11:51:18.705000Z"
+    },
+    {
+      "sid": "35a0c068-67c1-4b00-a457-7f62daf0cba4",
+      "ts": "2026-04-25T14:31:00.974Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-25T14:52:30.880000Z"
+    },
+    {
+      "sid": "35a0c068-67c1-4b00-a457-7f62daf0cba4:subagents",
+      "ts": "2026-04-25T14:39:45.073Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-25T14:50:33.832000Z"
+    },
+    {
+      "sid": "e21bcb6f-3391-4aa6-900e-5910d8bbcebc:subagents",
+      "ts": "2026-04-25T14:59:59.659Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-04-26T12:45:51.358000Z"
+    },
+    {
+      "sid": "2ab1cd1e-cbc5-4601-b2bc-03cb843afd70",
+      "ts": "2026-04-25T16:22:59.169Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 32,
+      "max_turn_ts": "2026-04-26T07:29:15.729000Z"
+    },
+    {
+      "sid": "2ab1cd1e-cbc5-4601-b2bc-03cb843afd70:subagents",
+      "ts": "2026-04-25T16:30:31.336Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-26T06:39:38.164000Z"
+    },
+    {
+      "sid": "019dc5e8-c91b-7c33-8039-84f7e38fb719",
+      "ts": "2026-04-25T18:32:12.687Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 31,
+      "max_turn_ts": "2026-04-26T06:11:17.404000Z"
+    },
+    {
+      "sid": "019dc5ea-a84c-7bd1-be60-dce258ef0bba",
+      "ts": "2026-04-25T18:33:03.333Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T18:42:35.149000Z"
+    },
+    {
+      "sid": "019dc5ea-a85b-7481-af0e-b22f02263055",
+      "ts": "2026-04-25T18:33:03.361Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T18:41:26.314000Z"
+    },
+    {
+      "sid": "019dc5ea-a86f-7b32-8d25-8abee0d44e5e",
+      "ts": "2026-04-25T18:33:03.458Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T18:45:41.155000Z"
+    },
+    {
+      "sid": "019dc5ec-7603-74b3-a5c7-d0890389e38f",
+      "ts": "2026-04-25T18:35:09.891Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T18:47:48.977000Z"
+    },
+    {
+      "sid": "019dc5ef-0125-72c2-8efd-4a903f4a7529",
+      "ts": "2026-04-25T18:37:48.224Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T18:40:13.025000Z"
+    },
+    {
+      "sid": "019dc5f3-fbe1-7b22-820f-3a114e905b79",
+      "ts": "2026-04-25T18:43:26.381Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T18:46:10.093000Z"
+    },
+    {
+      "sid": "019dc605-2523-73f2-a013-f294c0476552",
+      "ts": "2026-04-25T19:02:45.510Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-25T19:10:00.694000Z"
+    },
+    {
+      "sid": "019dc64b-6089-7ca0-84d9-b7d1b336dd6f",
+      "ts": "2026-04-25T20:18:41.960Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T20:21:03.260000Z"
+    },
+    {
+      "sid": "019dc64b-7831-7833-8651-828c488341c1",
+      "ts": "2026-04-25T20:18:48.014Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T20:20:55.951000Z"
+    },
+    {
+      "sid": "019dc64b-96ba-76d2-ac01-c9713907ccd7",
+      "ts": "2026-04-25T20:18:55.834Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T20:23:28.870000Z"
+    },
+    {
+      "sid": "019dc7ea-dc38-74a1-8668-00ea7fa20e46",
+      "ts": "2026-04-26T03:52:31.058Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T03:59:39.281000Z"
+    },
+    {
+      "sid": "019dc7ea-fd84-7b61-a954-3bd96978b5bd",
+      "ts": "2026-04-26T03:52:39.577Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T04:03:29.263000Z"
+    },
+    {
+      "sid": "019dc829-0a97-7f61-9924-41a3f2d95fac",
+      "ts": "2026-04-26T05:00:26.165Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T05:07:30.319000Z"
+    },
+    {
+      "sid": "89b39226-1852-494c-b8f5-87fb581a2528",
+      "ts": "2026-04-26T07:56:13.660Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-26T07:58:29.366000Z"
+    },
+    {
+      "sid": "89b39226-1852-494c-b8f5-87fb581a2528:subagents",
+      "ts": "2026-04-26T07:57:32.308Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-26T07:58:29.366000Z"
+    },
+    {
+      "sid": "019dc8cd-1274-7982-ad12-a37ab653a96f",
+      "ts": "2026-04-26T07:59:36.957Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 42,
+      "max_turn_ts": "2026-04-26T18:22:04.017000Z"
+    },
+    {
+      "sid": "3f3ea73c-9721-408f-a833-4be459b2a25f",
+      "ts": "2026-04-26T08:37:31.624Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-26T08:40:38.383000Z"
+    },
+    {
+      "sid": "a020b3d3-3d52-47f6-aaa5-126da7e41841",
+      "ts": "2026-04-26T09:58:17.171Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T10:02:20.382000Z"
+    },
+    {
+      "sid": "0da5887e-8e41-4fac-b990-2d4160d69a70",
+      "ts": "2026-04-26T16:48:53.026Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-26T16:50:50.032000Z"
+    },
+    {
+      "sid": "4ef587d9-67ab-463c-b42d-817ab092ada2",
+      "ts": "2026-04-26T16:50:52.286Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T16:50:54.931000Z"
+    },
+    {
+      "sid": "0d42b1d0-ae1c-4540-b888-3a896bc4a144",
+      "ts": "2026-04-26T16:52:03.943Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 240,
+      "max_turn_ts": "2026-04-27T21:32:31.664000Z"
+    },
+    {
+      "sid": "02e97c42-2514-496e-ba6e-aeeb86cc245a",
+      "ts": "2026-04-26T16:57:55.898Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-26T17:00:06.910000Z"
+    },
+    {
+      "sid": "32b8b0ca-bf15-4988-89e0-f81119995b50",
+      "ts": "2026-04-26T17:00:32.698Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-27T05:39:01.177000Z"
+    },
+    {
+      "sid": "4356ac03-425b-4ec6-9c9b-528e7f5b30e8",
+      "ts": "2026-04-26T17:17:00.049Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T17:17:02.865000Z"
+    },
+    {
+      "sid": "483a897f-c0e6-4ab0-be3c-f0b1f03ffee4",
+      "ts": "2026-04-26T17:17:15.939Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T17:17:24.047000Z"
+    },
+    {
+      "sid": "667612b2-da1b-4cd6-a18c-b67ff8ea8c28",
+      "ts": "2026-04-26T18:42:41.270Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T18:42:54.362000Z"
+    },
+    {
+      "sid": "1d322c2d-1a16-4bf2-a5c0-adbf23b027e2",
+      "ts": "2026-04-26T18:43:14.562Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-26T18:52:14.644000Z"
+    },
+    {
+      "sid": "6464b41d-aa47-4840-be71-4af27588b6c3",
+      "ts": "2026-04-26T18:52:34.822Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T18:53:03.787000Z"
+    },
+    {
+      "sid": "03d011ff-988e-43cc-8955-ec6fca4a36d1",
+      "ts": "2026-04-26T21:15:54.283Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-26T21:25:28.469000Z"
+    },
+    {
+      "sid": "bde6894a-2aef-46f2-98aa-f708108435bd",
+      "ts": "2026-04-26T22:18:31.279Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-26T22:24:08.881000Z"
+    },
+    {
+      "sid": "0b49e2fc-e36b-4681-a0a4-bddd8cfc6b55",
+      "ts": "2026-04-27T05:35:43.011Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-27T07:47:19.359000Z"
+    },
+    {
+      "sid": "6b8cd51f-bf7f-45ac-ad36-6e021aa57af2",
+      "ts": "2026-04-27T05:44:50.969Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-27T05:47:18.026000Z"
+    },
+    {
+      "sid": "0fba72fd-b66d-403c-955c-a84e1b0e2910",
+      "ts": "2026-04-27T06:05:37.291Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-27T06:59:43.892000Z"
+    },
+    {
+      "sid": "019dcd90-e8e6-7a53-8f60-789397b9e3aa",
+      "ts": "2026-04-27T06:12:01.053Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:12:27.538000Z"
+    },
+    {
+      "sid": "019dcd91-9017-7002-901a-4965d47c554f",
+      "ts": "2026-04-27T06:12:43.329Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-27T07:02:07.065000Z"
+    },
+    {
+      "sid": "07ceb5c1-2a9a-4075-af15-02c7b02ad4ec",
+      "ts": "2026-04-27T07:27:45.693Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 18,
+      "max_turn_ts": "2026-04-27T08:51:04.337000Z"
+    },
+    {
+      "sid": "92b5e489-70d4-4b9e-96be-2749f5819cb7",
+      "ts": "2026-04-27T08:38:40.135Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-27T08:44:34.020000Z"
+    },
+    {
+      "sid": "7b9f394b-302d-42b7-9a58-44ca3dde5f1a",
+      "ts": "2026-04-27T11:50:30.969Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 45,
+      "max_turn_ts": "2026-04-27T14:31:50.966000Z"
+    },
+    {
+      "sid": "7b9f394b-302d-42b7-9a58-44ca3dde5f1a:subagents",
+      "ts": "2026-04-27T11:55:57.691Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 42,
+      "max_turn_ts": "2026-04-27T13:45:27.139000Z"
+    },
+    {
+      "sid": "0b40ff8c-ae60-4d9e-919e-05f1de3309a6",
+      "ts": "2026-04-27T13:25:45.529Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-27T13:36:54.015000Z"
+    },
+    {
+      "sid": "bf4eb073-d41c-4613-8a3c-dca0af8bcb21",
+      "ts": "2026-04-27T17:31:53.480Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-04-27T17:39:14.352000Z"
+    },
+    {
+      "sid": "c173a633-77f9-479c-a1d5-fd6bc3e664d7",
+      "ts": "2026-04-27T21:08:00.423Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 105,
+      "max_turn_ts": "2026-04-28T17:17:29.049000Z"
+    },
+    {
+      "sid": "c173a633-77f9-479c-a1d5-fd6bc3e664d7:subagents",
+      "ts": "2026-04-27T21:12:44.363Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:16:29.707000Z"
+    },
+    {
+      "sid": "572b2062-e209-48fc-83ff-261acbe1cc8e",
+      "ts": "2026-04-27T22:02:43.991Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-27T22:07:42.720000Z"
+    },
+    {
+      "sid": "b8771a6d-b237-4757-afcf-ae5a37331a78",
+      "ts": "2026-04-28T06:27:23.679Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T06:27:38.778000Z"
+    },
+    {
+      "sid": "a2f6f756-ca84-470f-8dc5-0c8c4321beb3",
+      "ts": "2026-04-28T13:42:40.013Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T13:42:42.687000Z"
+    },
+    {
+      "sid": "69dd03bc-b96c-45bc-9285-64f2b1c20f83",
+      "ts": "2026-04-28T13:54:59.953Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-28T13:58:07.088000Z"
+    },
+    {
+      "sid": "e857881c-712a-4f9d-bad4-ef11a9cd8c8a",
+      "ts": "2026-04-28T15:28:41.898Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-04-28T15:33:18.559000Z"
+    },
+    {
+      "sid": "870b3faf-66ba-443b-87e7-4884b889c46e",
+      "ts": "2026-04-28T16:51:10.752Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-28T16:53:38.784000Z"
+    },
+    {
+      "sid": "822fa711-778b-4818-b932-8cd6ca45deb7",
+      "ts": "2026-04-28T17:19:34.877Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-28T17:55:48.324000Z"
+    },
+    {
+      "sid": "019dd520-0ca8-7e41-b522-d9125c1a365a",
+      "ts": "2026-04-28T17:25:42.018Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-28T17:30:06.416000Z"
+    },
+    {
+      "sid": "c2e615b5-ef0a-4c75-adf0-b1077e1e2e09",
+      "ts": "2026-04-28T19:43:07.473Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 96,
+      "max_turn_ts": "2026-04-30T21:40:30.358000Z"
+    },
+    {
+      "sid": "44872bcc-06b6-4c5e-a648-34cfc1b17250",
+      "ts": "2026-04-28T19:49:48.056Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T19:50:05.926000Z"
+    },
+    {
+      "sid": "c2e615b5-ef0a-4c75-adf0-b1077e1e2e09:subagents",
+      "ts": "2026-04-28T19:52:43.153Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 39,
+      "max_turn_ts": "2026-04-30T19:09:23.061000Z"
+    },
+    {
+      "sid": "65c6969a-b7e0-4d4c-86f3-3df3c8e20c3f",
+      "ts": "2026-04-28T21:11:07.236Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T21:11:10.257000Z"
+    },
+    {
+      "sid": "019dd949-2902-7b41-898b-b8307197ac5e",
+      "ts": "2026-04-29T12:49:07.438Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-29T12:50:19.119000Z"
+    },
+    {
+      "sid": "76f3fa2c-f12e-4e32-8a58-71a3688d03ea",
+      "ts": "2026-04-29T12:51:17.143Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-04-29T13:45:41.944000Z"
+    },
+    {
+      "sid": "76f3fa2c-f12e-4e32-8a58-71a3688d03ea:subagents",
+      "ts": "2026-04-29T12:55:30.254Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-04-29T13:39:00.280000Z"
+    },
+    {
+      "sid": "0a4a5b7e-2915-4b43-9ce4-18a981ecd084",
+      "ts": "2026-04-29T13:14:00.121Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-04-29T13:21:24.381000Z"
+    },
+    {
+      "sid": "019dd97f-5ea4-76a1-af1a-9787f8fa3c1a",
+      "ts": "2026-04-29T13:48:24.748Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-29T13:49:27.260000Z"
+    },
+    {
+      "sid": "019dd981-1152-73e0-b72e-a24b6926dd05",
+      "ts": "2026-04-29T13:50:12.922Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-29T13:51:34.910000Z"
+    },
+    {
+      "sid": "ed27b960-95ec-4599-8955-31fd2978ca69",
+      "ts": "2026-04-30T05:10:53.582Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-30T05:10:56.443000Z"
+    },
+    {
+      "sid": "ceea752a-cc5e-4286-915d-fae521dd4db8",
+      "ts": "2026-04-30T16:00:54.138Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-04-30T19:02:44.512000Z"
+    },
+    {
+      "sid": "891053aa-cfb7-4c30-a01d-f5a9490edff0",
+      "ts": "2026-04-30T16:13:33.920Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-30T16:16:29.799000Z"
+    },
+    {
+      "sid": "1deb88b1-624d-4a99-bd39-1af8fcbe861b",
+      "ts": "2026-04-30T19:03:21.805Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-30T19:04:27.836000Z"
+    },
+    {
+      "sid": "0a7c70db-b950-4d81-a475-b76cc8a1e4cb",
+      "ts": "2026-04-30T20:40:49.024Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-04-30T21:05:27.890000Z"
+    },
+    {
+      "sid": "0a7c70db-b950-4d81-a475-b76cc8a1e4cb:subagents",
+      "ts": "2026-04-30T20:41:06.897Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-04-30T20:52:41.814000Z"
+    },
+    {
+      "sid": "fee4fe38-85cb-4e15-a8b5-b4c55daddfa6",
+      "ts": "2026-04-30T21:18:49.711Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-04-30T21:19:08.671000Z"
+    },
+    {
+      "sid": "019de0aa-9d10-74c1-9603-dea40e985eab",
+      "ts": "2026-04-30T23:12:53.031Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 126,
+      "max_turn_ts": "2026-05-04T17:46:20.865000Z"
+    },
+    {
+      "sid": "019de202-b548-7972-8d86-adbf887908bb",
+      "ts": "2026-05-01T05:28:59.907Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-05-01T06:04:53.735000Z"
+    },
+    {
+      "sid": "019de31e-0795-7cf2-aab9-15fa032b310f",
+      "ts": "2026-05-01T10:38:15.873Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-01T10:38:23.865000Z"
+    },
+    {
+      "sid": "019de796-f2a2-7500-be32-593e52d7ae02",
+      "ts": "2026-05-02T07:28:52.794Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-02T07:29:23.150000Z"
+    },
+    {
+      "sid": "019de83c-2b32-73b1-a6e5-9e7c2a0a6d0e",
+      "ts": "2026-05-02T10:29:21.664Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-02T10:29:33.183000Z"
+    },
+    {
+      "sid": "019de852-912e-73f3-865c-9201594fd03e",
+      "ts": "2026-05-02T10:53:38.496Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-02T10:53:50.202000Z"
+    },
+    {
+      "sid": "cf95338c-6834-47b9-8b31-0ca886bc755e",
+      "ts": "2026-05-03T06:56:09.141Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 138,
+      "max_turn_ts": "2026-05-04T07:49:04.812000Z"
+    },
+    {
+      "sid": "75310aef-3848-4b4b-82ce-d4315f6c9aef",
+      "ts": "2026-05-03T07:28:54.893Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-03T07:36:31.452000Z"
+    },
+    {
+      "sid": "cf95338c-6834-47b9-8b31-0ca886bc755e:subagents",
+      "ts": "2026-05-03T07:42:27.458Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-03T23:27:35.356000Z"
+    },
+    {
+      "sid": "019dedeb-048e-7d32-9bdd-2a4d67d57de2",
+      "ts": "2026-05-03T12:59:27.281Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 58,
+      "max_turn_ts": "2026-05-04T18:50:48.959000Z"
+    },
+    {
+      "sid": "403388e9-7b89-460a-960a-1b40a0e2fa51",
+      "ts": "2026-05-03T22:07:17.500Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-03T22:11:30.001000Z"
+    },
+    {
+      "sid": "cedd9fbf-8579-44cd-8880-55fd3aea4bb5",
+      "ts": "2026-05-04T11:41:28.256Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-05-04T12:21:22.977000Z"
+    },
+    {
+      "sid": "85f01fd8-4e97-42b4-b4e5-8375497bfac7",
+      "ts": "2026-05-04T11:43:33.836Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-04T11:43:57.345000Z"
+    },
+    {
+      "sid": "cedd9fbf-8579-44cd-8880-55fd3aea4bb5:subagents",
+      "ts": "2026-05-04T11:45:57.722Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-04T12:01:15.603000Z"
+    },
+    {
+      "sid": "62a54ca4-0f24-47ad-893e-292f30fc3d1a",
+      "ts": "2026-05-04T12:22:27.967Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-04T12:49:17.771000Z"
+    },
+    {
+      "sid": "847e7361-bc4f-497e-a527-dec856cc40a6",
+      "ts": "2026-05-04T12:30:41.187Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-04T12:32:37.734000Z"
+    },
+    {
+      "sid": "019df2f9-add7-7332-a401-1a27e1f05601",
+      "ts": "2026-05-04T12:32:22.705Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-12T03:04:29.269000Z"
+    },
+    {
+      "sid": "019df2fb-aef1-7ec3-b62c-daf74f50f2a4",
+      "ts": "2026-05-04T12:35:04.753Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 116,
+      "max_turn_ts": "2026-05-18T21:32:20.314000Z"
+    },
+    {
+      "sid": "019df2fd-e70d-7933-a1a0-63ae918dd9d8",
+      "ts": "2026-05-04T12:36:59.515Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T12:38:54.960000Z"
+    },
+    {
+      "sid": "019df2fd-f70a-72d3-ae6e-39d4e9b09603",
+      "ts": "2026-05-04T12:37:03.532Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T12:39:13.913000Z"
+    },
+    {
+      "sid": "019df2fe-0811-7cd2-a491-db34a734f85d",
+      "ts": "2026-05-04T12:37:07.892Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T12:40:48.003000Z"
+    },
+    {
+      "sid": "019df302-cd84-7873-8a46-3bcf047293e0",
+      "ts": "2026-05-04T12:42:20.648Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T12:44:55.478000Z"
+    },
+    {
+      "sid": "019df303-029f-7850-ab24-11429b66e394",
+      "ts": "2026-05-04T12:42:34.204Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T12:44:05.041000Z"
+    },
+    {
+      "sid": "019df36e-619c-7e43-bf66-a96a20dae781",
+      "ts": "2026-05-04T14:39:50.881Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T14:43:54.126000Z"
+    },
+    {
+      "sid": "019df36f-31a0-7b81-9bb2-e98e55805ee1",
+      "ts": "2026-05-04T14:40:44.143Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T14:41:53.830000Z"
+    },
+    {
+      "sid": "019df36f-8f0f-7c90-8906-d1de4dc86883",
+      "ts": "2026-05-04T14:41:08.041Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T14:44:11.287000Z"
+    },
+    {
+      "sid": "019df36f-e84e-7750-b5a0-4a8c4f531a9c",
+      "ts": "2026-05-04T14:41:30.953Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T14:43:20.469000Z"
+    },
+    {
+      "sid": "019df37c-9b7f-7b20-88dd-dc2fcfe12835",
+      "ts": "2026-05-04T14:55:23.210Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-04T15:14:40.871000Z"
+    },
+    {
+      "sid": "019df3a1-2601-7611-9648-557d19993aec",
+      "ts": "2026-05-04T15:35:26.700Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-04T16:14:50.911000Z"
+    },
+    {
+      "sid": "019df3a9-1b10-7322-a927-a189433d2dd6",
+      "ts": "2026-05-04T15:43:59.704Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T15:45:46.041000Z"
+    },
+    {
+      "sid": "019df3a9-1b23-74b3-8b9c-54b94367ed92",
+      "ts": "2026-05-04T15:43:59.917Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T15:45:12.558000Z"
+    },
+    {
+      "sid": "019df3a9-1b77-79e2-a8a1-8036e631a628",
+      "ts": "2026-05-04T15:44:00.006Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T15:45:47.779000Z"
+    },
+    {
+      "sid": "019df3b0-27ff-7903-92b9-c35941f84dbf",
+      "ts": "2026-05-04T15:51:41.478Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T15:53:29.800000Z"
+    },
+    {
+      "sid": "019df3bb-8e25-78f1-911a-f3365da016bc",
+      "ts": "2026-05-04T16:04:08.585Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:05:36.247000Z"
+    },
+    {
+      "sid": "019df3bb-8e56-7503-9073-193dcdcb1273",
+      "ts": "2026-05-04T16:04:08.610Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:05:29.842000Z"
+    },
+    {
+      "sid": "019df3bb-8e81-7073-8b4e-ba0e9199286a",
+      "ts": "2026-05-04T16:04:08.852Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:06:04.566000Z"
+    },
+    {
+      "sid": "019df3c1-e449-7002-901a-f55a4c5a4bdd",
+      "ts": "2026-05-04T16:11:13.625Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-04T16:12:33.041000Z"
+    },
+    {
+      "sid": "019df3c6-d366-75f0-99a2-5c7f3f2fd2f2",
+      "ts": "2026-05-04T16:16:27.261Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:19:30.220000Z"
+    },
+    {
+      "sid": "019df3c6-d3b4-7582-b0f6-4460b5d8706b",
+      "ts": "2026-05-04T16:16:27.600Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:17:03.231000Z"
+    },
+    {
+      "sid": "019df3c6-d3cf-7c11-b527-5fe8aed25fb9",
+      "ts": "2026-05-04T16:16:27.677Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:18:52.055000Z"
+    },
+    {
+      "sid": "019df3ce-91c5-7c72-b512-855d65478bb6",
+      "ts": "2026-05-04T16:24:54.720Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:26:34.211000Z"
+    },
+    {
+      "sid": "019df3ce-9216-7191-a358-fd92f19b793f",
+      "ts": "2026-05-04T16:24:54.834Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:26:01.250000Z"
+    },
+    {
+      "sid": "019df3ce-9246-7a50-bb38-c83771c825d3",
+      "ts": "2026-05-04T16:24:55.009Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:25:38.586000Z"
+    },
+    {
+      "sid": "019df3d0-5eba-72e2-9207-a15f5e80fb11",
+      "ts": "2026-05-04T16:26:52.632Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:28:06.401000Z"
+    },
+    {
+      "sid": "019df3d3-bec5-7361-8f74-4a8b655b787f",
+      "ts": "2026-05-04T16:30:33.790Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:32:10.770000Z"
+    },
+    {
+      "sid": "019df3d9-193b-7752-8794-45be2a4215a0",
+      "ts": "2026-05-04T16:36:24.803Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:38:10.215000Z"
+    },
+    {
+      "sid": "019df3d9-196d-7643-8bca-9ca5917c1883",
+      "ts": "2026-05-04T16:36:24.866Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:37:29.370000Z"
+    },
+    {
+      "sid": "019df3d9-19a6-7240-91b7-034fe3e7c9fb",
+      "ts": "2026-05-04T16:36:25.044Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:37:36.658000Z"
+    },
+    {
+      "sid": "019df3e2-3211-76b1-b898-9bb115f2409e",
+      "ts": "2026-05-04T16:46:20.955Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:48:30.677000Z"
+    },
+    {
+      "sid": "019df3e2-3237-74d1-95db-1e8409188df5",
+      "ts": "2026-05-04T16:46:20.990Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:48:02.329000Z"
+    },
+    {
+      "sid": "019df3e2-3265-7341-8120-673aee79c5eb",
+      "ts": "2026-05-04T16:46:21.235Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:48:21.334000Z"
+    },
+    {
+      "sid": "4d346bc2-69c7-4659-b87d-d4ac96f5b080",
+      "ts": "2026-05-04T16:59:15.535Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 68,
+      "max_turn_ts": "2026-05-05T18:32:08.832000Z"
+    },
+    {
+      "sid": "019df412-a502-7e00-826a-7b6f7239ac97",
+      "ts": "2026-05-04T17:39:16.259Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T17:40:58.503000Z"
+    },
+    {
+      "sid": "019df412-a553-70b2-bec9-ba687b33f903",
+      "ts": "2026-05-04T17:39:16.265Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T17:43:15.660000Z"
+    },
+    {
+      "sid": "019df412-a5b2-7c92-a635-8059c4d7ccaf",
+      "ts": "2026-05-04T17:39:16.726Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T17:42:46.706000Z"
+    },
+    {
+      "sid": "019df41b-6fde-7701-bae9-7104c7f2a0d5",
+      "ts": "2026-05-04T17:48:52.437Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T17:51:02.747000Z"
+    },
+    {
+      "sid": "019df41b-7029-7ad2-a461-e3553cd616cc",
+      "ts": "2026-05-04T17:48:52.765Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T17:50:12.962000Z"
+    },
+    {
+      "sid": "019df41b-7004-7730-aca9-6113f7794c02",
+      "ts": "2026-05-04T17:48:52.818Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T17:53:04.787000Z"
+    },
+    {
+      "sid": "019df432-5550-7f82-b401-45ed04b1b61d",
+      "ts": "2026-05-04T18:13:52.767Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T18:15:23.256000Z"
+    },
+    {
+      "sid": "019df432-6244-7443-843c-2d6851febbcb",
+      "ts": "2026-05-04T18:13:56.048Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T18:16:26.837000Z"
+    },
+    {
+      "sid": "019df432-726c-70e0-a033-3ecc108dffb1",
+      "ts": "2026-05-04T18:14:00.206Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T18:17:01.640000Z"
+    },
+    {
+      "sid": "019df455-738b-7833-95d8-a040bc0e2591",
+      "ts": "2026-05-04T18:52:14.371Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T18:53:38.724000Z"
+    },
+    {
+      "sid": "019df456-80c3-70a1-9cfa-15dda93523a1",
+      "ts": "2026-05-04T18:53:23.180Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-04T19:56:24.581000Z"
+    },
+    {
+      "sid": "019df456-b7ae-7dd1-ac17-f14f3c9f0bea",
+      "ts": "2026-05-04T18:53:37.251Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T19:00:49.553000Z"
+    },
+    {
+      "sid": "019df462-34b9-78f2-90bd-f2dd7a0915e4",
+      "ts": "2026-05-04T19:06:41.573Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 8,
+      "max_turn_ts": "2026-05-04T19:21:28.644000Z"
+    },
+    {
+      "sid": "c5c059d0-bd2d-42f2-a22c-0cfb9e4accd4",
+      "ts": "2026-05-04T19:22:44.407Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-05T09:31:18.787000Z"
+    },
+    {
+      "sid": "bdb0d950-fbaf-4e2d-993f-b5199f5107f1",
+      "ts": "2026-05-04T19:23:57.036Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 40,
+      "max_turn_ts": "2026-05-05T05:07:40.110000Z"
+    },
+    {
+      "sid": "bdb0d950-fbaf-4e2d-993f-b5199f5107f1:subagents",
+      "ts": "2026-05-04T19:44:12.496Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-04T20:47:07.156000Z"
+    },
+    {
+      "sid": "019df49e-c9a1-7082-a08c-93283d77bc23",
+      "ts": "2026-05-04T20:12:20.604Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:13:46.156000Z"
+    },
+    {
+      "sid": "019df49e-c9f7-7dc2-ab4c-86c0ff1fc594",
+      "ts": "2026-05-04T20:12:20.605Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:13:27.744000Z"
+    },
+    {
+      "sid": "019df49e-ca37-7580-9a6a-6e577abb7cc4",
+      "ts": "2026-05-04T20:12:20.896Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:13:59.283000Z"
+    },
+    {
+      "sid": "019df4a2-fd00-7c23-8d43-60646cf76b7c",
+      "ts": "2026-05-04T20:16:55.889Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:18:33.123000Z"
+    },
+    {
+      "sid": "019df4a2-fd2b-7303-862d-263a84ca6f1a",
+      "ts": "2026-05-04T20:16:55.899Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:18:14.279000Z"
+    },
+    {
+      "sid": "019df4a2-fd89-73f0-8b83-927b0b793881",
+      "ts": "2026-05-04T20:16:56.251Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:18:11.438000Z"
+    },
+    {
+      "sid": "019df4a6-4ff9-7061-ad51-68dd4e72b3e2",
+      "ts": "2026-05-04T20:20:33.573Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:21:44.999000Z"
+    },
+    {
+      "sid": "019df4a6-503a-7310-b1aa-0677fa28e704",
+      "ts": "2026-05-04T20:20:33.600Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:22:17.787000Z"
+    },
+    {
+      "sid": "019df4a6-5091-7d02-83b3-471378578012",
+      "ts": "2026-05-04T20:20:33.748Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:21:24.670000Z"
+    },
+    {
+      "sid": "019df4a9-a3f1-73b0-adc2-a9c73ec5cb03",
+      "ts": "2026-05-04T20:24:11.678Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:25:45.562000Z"
+    },
+    {
+      "sid": "019df4a9-a412-74c1-bf66-34faf930844a",
+      "ts": "2026-05-04T20:24:11.679Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:25:54.261000Z"
+    },
+    {
+      "sid": "019df4b8-3ee9-7941-86ce-5ba4cbf8a75a",
+      "ts": "2026-05-04T20:40:09.071Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:40:59.697000Z"
+    },
+    {
+      "sid": "019df4b8-3eb1-76b0-8775-a3e18a6c3f15",
+      "ts": "2026-05-04T20:40:09.105Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:42:03.604000Z"
+    },
+    {
+      "sid": "019df4b8-3f2c-7501-9709-a93743a0297f",
+      "ts": "2026-05-04T20:40:09.427Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:41:31.639000Z"
+    },
+    {
+      "sid": "019df4ba-f81f-79b1-bdc8-87027b300816",
+      "ts": "2026-05-04T20:43:07.476Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:44:43.655000Z"
+    },
+    {
+      "sid": "019df4ba-f86a-7353-b02a-d545868b0e3d",
+      "ts": "2026-05-04T20:43:07.808Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:44:10.441000Z"
+    },
+    {
+      "sid": "019df4ba-f8bc-7761-b335-c0e04cb3cb2d",
+      "ts": "2026-05-04T20:43:07.819Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:44:43.353000Z"
+    },
+    {
+      "sid": "019df4bd-8e4a-7b32-b462-b4e8667aef4b",
+      "ts": "2026-05-04T20:45:56.888Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:47:15.847000Z"
+    },
+    {
+      "sid": "019df4bd-8e66-7b42-a17a-2a71e766b389",
+      "ts": "2026-05-04T20:45:56.907Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:47:22.328000Z"
+    },
+    {
+      "sid": "019df4bd-8e8d-7391-9251-88db2837801c",
+      "ts": "2026-05-04T20:45:56.916Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:47:07.847000Z"
+    },
+    {
+      "sid": "019df4bf-1eb5-78a3-90b8-bf9e95f0b0e6",
+      "ts": "2026-05-04T20:47:39.391Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:49:03.071000Z"
+    },
+    {
+      "sid": "019df4bf-1eca-7960-a9f7-9c6cae4107f3",
+      "ts": "2026-05-04T20:47:39.398Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:48:52.436000Z"
+    },
+    {
+      "sid": "019df4bf-1f12-7791-aabe-29fd564821df",
+      "ts": "2026-05-04T20:47:39.415Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:49:33.038000Z"
+    },
+    {
+      "sid": "019df4c1-6dbb-7563-97f1-8ffba76416b1",
+      "ts": "2026-05-04T20:50:10.680Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:51:35.366000Z"
+    },
+    {
+      "sid": "019df4c1-6d82-75b0-811d-53ef58ca4080",
+      "ts": "2026-05-04T20:50:10.689Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:51:32.340000Z"
+    },
+    {
+      "sid": "019df4c1-6dff-7172-9e93-64759476ea18",
+      "ts": "2026-05-04T20:50:10.704Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:51:07.378000Z"
+    },
+    {
+      "sid": "019df4c3-603a-7ea1-899a-96cdb0de5c2a",
+      "ts": "2026-05-04T20:52:18.305Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:53:18.655000Z"
+    },
+    {
+      "sid": "019df4c3-6065-7c93-b040-e6bbbdc775b0",
+      "ts": "2026-05-04T20:52:18.457Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:53:57.490000Z"
+    },
+    {
+      "sid": "019df4c3-60ad-7860-b7da-cbcdfc53086c",
+      "ts": "2026-05-04T20:52:18.457Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T20:54:17.653000Z"
+    },
+    {
+      "sid": "019df4d3-3550-7670-af6b-9b94e91b0eca",
+      "ts": "2026-05-04T21:09:36.054Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T21:10:31.665000Z"
+    },
+    {
+      "sid": "019df4d3-359f-7231-b7a4-598590eb7f24",
+      "ts": "2026-05-04T21:09:36.056Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T21:10:44.001000Z"
+    },
+    {
+      "sid": "019df4d3-35e5-7382-81a3-0cf943d38a1b",
+      "ts": "2026-05-04T21:09:36.077Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T21:12:07.142000Z"
+    },
+    {
+      "sid": "019df4d6-2970-7741-9a4d-ea0efea1a586",
+      "ts": "2026-05-04T21:12:49.470Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T21:13:51.886000Z"
+    },
+    {
+      "sid": "019df683-ce12-7500-84c8-e01926d24cb4",
+      "ts": "2026-05-05T05:02:06.576Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:06:19.428000Z"
+    },
+    {
+      "sid": "019df684-65e2-7c90-9217-ac684e749d3f",
+      "ts": "2026-05-05T05:02:45.426Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:06:20.454000Z"
+    },
+    {
+      "sid": "019df688-c472-7dd2-8967-b18ad4d35c0e",
+      "ts": "2026-05-05T05:07:31.773Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:10:09.611000Z"
+    },
+    {
+      "sid": "019df689-0ea7-7ab1-a97b-5dfeee3abb19",
+      "ts": "2026-05-05T05:08:28.334Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:09:06.385000Z"
+    },
+    {
+      "sid": "019df68a-a9a1-77b3-b57d-5b4c1b5a655b",
+      "ts": "2026-05-05T05:09:37.981Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 165,
+      "max_turn_ts": "2026-05-06T19:04:49.190000Z"
+    },
+    {
+      "sid": "019df69f-4104-7fc0-911f-fbe013676187",
+      "ts": "2026-05-05T05:32:05.280Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:35:33.814000Z"
+    },
+    {
+      "sid": "019df69f-5c22-7ef1-b0eb-e5f6fea644dd",
+      "ts": "2026-05-05T05:32:12.221Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:36:44.692000Z"
+    },
+    {
+      "sid": "019df69f-767c-7d63-964d-89568d781692",
+      "ts": "2026-05-05T05:32:18.971Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:35:21.648000Z"
+    },
+    {
+      "sid": "019df6a0-35d5-7790-8d25-9336067572c0",
+      "ts": "2026-05-05T05:33:07.960Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:36:21.188000Z"
+    },
+    {
+      "sid": "019df6a0-4a69-7ce3-bdf8-05ebb9a37dfd",
+      "ts": "2026-05-05T05:33:13.222Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:34:33.127000Z"
+    },
+    {
+      "sid": "019df6a0-64d9-73d2-be34-bcd0eb8c4588",
+      "ts": "2026-05-05T05:33:20.049Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T05:35:12.818000Z"
+    },
+    {
+      "sid": "019df9ce-6a0f-7eb0-847f-556c5e57eba1",
+      "ts": "2026-05-05T20:22:27.826Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T20:25:32.895000Z"
+    },
+    {
+      "sid": "019df9ce-9477-7572-b872-f795b5ae1d91",
+      "ts": "2026-05-05T20:22:38.678Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T20:26:37.305000Z"
+    },
+    {
+      "sid": "019df9ce-bb99-76f1-a3d7-f20a471ffeee",
+      "ts": "2026-05-05T20:22:48.771Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T20:29:51.842000Z"
+    },
+    {
+      "sid": "019df9db-5364-7401-b4ca-921ded099d61",
+      "ts": "2026-05-05T20:36:33.961Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T20:43:20.206000Z"
+    },
+    {
+      "sid": "019df9db-636e-78e3-ae01-e49ddc32fdb3",
+      "ts": "2026-05-05T20:36:38.023Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-05T20:44:42.272000Z"
+    },
+    {
+      "sid": "f14538e1-8215-4ce5-b007-4a298c0dd4e9",
+      "ts": "2026-05-05T21:03:38.169Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 19,
+      "max_turn_ts": "2026-05-06T05:49:54.606000Z"
+    },
+    {
+      "sid": "019dfc29-697c-73f3-81c8-be650aba33cb",
+      "ts": "2026-05-06T07:21:05.865Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:27:33.910000Z"
+    },
+    {
+      "sid": "019dfc29-83fe-7e83-a04d-9c7d6961d657",
+      "ts": "2026-05-06T07:21:12.613Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:25:58.078000Z"
+    },
+    {
+      "sid": "019dfc29-99a3-7551-9059-7a76d9863991",
+      "ts": "2026-05-06T07:21:18.105Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:25:50.014000Z"
+    },
+    {
+      "sid": "019dfc37-a7c4-7c60-acac-c97d49d278f9",
+      "ts": "2026-05-06T07:36:39.315Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:42:16.014000Z"
+    },
+    {
+      "sid": "019dfc37-bcbf-7411-bede-1258804f9dfd",
+      "ts": "2026-05-06T07:36:44.607Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:39:16.618000Z"
+    },
+    {
+      "sid": "019dfc37-d775-7c33-8975-5eab77cb4637",
+      "ts": "2026-05-06T07:36:51.480Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:43:13.788000Z"
+    },
+    {
+      "sid": "019dfc37-ee6a-7b43-8263-7e059ffe9161",
+      "ts": "2026-05-06T07:36:57.308Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T07:41:07.760000Z"
+    },
+    {
+      "sid": "019dfc64-1394-7b11-bccc-6fed3e0a56f6",
+      "ts": "2026-05-06T08:25:10.565Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:26:30.135000Z"
+    },
+    {
+      "sid": "019dfc64-347e-7100-9758-5af91781d593",
+      "ts": "2026-05-06T08:25:18.931Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:28:33.264000Z"
+    },
+    {
+      "sid": "019dfc64-4c60-7102-8f4c-079335b57cf7",
+      "ts": "2026-05-06T08:25:25.067Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:26:33.568000Z"
+    },
+    {
+      "sid": "019dfc6a-5da0-7292-82f7-7f166438eb9a",
+      "ts": "2026-05-06T08:32:02.630Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:38:14.696000Z"
+    },
+    {
+      "sid": "019dfc6a-5d7d-7970-b272-c684177cdc56",
+      "ts": "2026-05-06T08:32:02.636Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:34:42.561000Z"
+    },
+    {
+      "sid": "019dfc6a-5de8-7580-b836-aa450e9a18a1",
+      "ts": "2026-05-06T08:32:02.737Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:34:25.178000Z"
+    },
+    {
+      "sid": "019dfc73-4cea-7121-8991-9cfba6ab496a",
+      "ts": "2026-05-06T08:41:48.212Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:45:03.486000Z"
+    },
+    {
+      "sid": "019dfc73-4d1f-78a1-a9ed-5d73f5c82eff",
+      "ts": "2026-05-06T08:41:48.214Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:53:41.878000Z"
+    },
+    {
+      "sid": "019dfc73-4d42-7c30-9f6e-2cf27d91bdac",
+      "ts": "2026-05-06T08:41:48.291Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T08:44:51.347000Z"
+    },
+    {
+      "sid": "019dfce5-edf2-7b21-a921-8c85953e5b32",
+      "ts": "2026-05-06T10:47:00.641Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T10:49:37.634000Z"
+    },
+    {
+      "sid": "019dfce5-ee29-7600-8c4a-6b71d2bbf63c",
+      "ts": "2026-05-06T10:47:00.720Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T10:51:23.073000Z"
+    },
+    {
+      "sid": "019dfce5-eeae-7b02-96ee-6824d3a3d739",
+      "ts": "2026-05-06T10:47:00.750Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T10:49:00.801000Z"
+    },
+    {
+      "sid": "019dfcf0-f015-7cb0-8897-a9c5557e1138",
+      "ts": "2026-05-06T10:59:02.048Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:00:39.851000Z"
+    },
+    {
+      "sid": "019dfcf0-f035-7fd3-aa49-c9cbebbe49ee",
+      "ts": "2026-05-06T10:59:02.053Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:01:22.761000Z"
+    },
+    {
+      "sid": "019dfcf0-f08a-7bc0-8d8e-e3be045f5082",
+      "ts": "2026-05-06T10:59:02.396Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:03:43.608000Z"
+    },
+    {
+      "sid": "019dfcfa-7ca4-70f3-ba74-b74a0a89b778",
+      "ts": "2026-05-06T11:09:27.775Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:11:50.102000Z"
+    },
+    {
+      "sid": "019dfcfa-7d73-76d3-bb4b-b74bbba10e57",
+      "ts": "2026-05-06T11:09:28.251Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:15:05.692000Z"
+    },
+    {
+      "sid": "019dfcfa-7d41-7e72-8e24-01b00aecdd4f",
+      "ts": "2026-05-06T11:09:28.257Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:12:00.929000Z"
+    },
+    {
+      "sid": "019dfe6e-02bd-7ba3-a0f8-2a9fab4a783f",
+      "ts": "2026-05-06T17:55:15.996Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T17:58:57.940000Z"
+    },
+    {
+      "sid": "019dfe6e-02ec-7d43-9ec9-bd381d76e4f0",
+      "ts": "2026-05-06T17:55:16.008Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T17:56:49.039000Z"
+    },
+    {
+      "sid": "019dfe6e-034d-7521-b716-5d94168a0153",
+      "ts": "2026-05-06T17:55:16.112Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T17:57:38.913000Z"
+    },
+    {
+      "sid": "019dfe82-d57b-74a0-9791-1303dcc33080",
+      "ts": "2026-05-06T18:18:00.697Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:19:37.285000Z"
+    },
+    {
+      "sid": "019dfe82-d5f3-7341-af53-dc2c0725eecf",
+      "ts": "2026-05-06T18:18:00.705Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:19:00.546000Z"
+    },
+    {
+      "sid": "019dfe82-d5af-7fe2-a1af-9ad962ee27b6",
+      "ts": "2026-05-06T18:18:00.707Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:19:56.145000Z"
+    },
+    {
+      "sid": "019dfe87-9ff9-7210-8d1d-1c9cf56ca504",
+      "ts": "2026-05-06T18:23:14.670Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:24:42.296000Z"
+    },
+    {
+      "sid": "019dfe87-a022-7531-9cd8-8506f2bec2a8",
+      "ts": "2026-05-06T18:23:14.685Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:25:46.240000Z"
+    },
+    {
+      "sid": "019dfe87-a06b-71d0-8501-55cc40a2da89",
+      "ts": "2026-05-06T18:23:14.984Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:24:34.807000Z"
+    },
+    {
+      "sid": "019dfe8c-359b-7a53-9c93-9ec41886db6d",
+      "ts": "2026-05-06T18:28:15.108Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T18:29:23.277000Z"
+    },
+    {
+      "sid": "d852c48c-f221-4c51-956e-141b61001d94",
+      "ts": "2026-05-06T20:46:23.950Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-06T20:51:20.097000Z"
+    },
+    {
+      "sid": "5324f0cd-3351-476c-9f32-73f062c68b5e",
+      "ts": "2026-05-06T23:36:00.201Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-06T23:39:19.372000Z"
+    },
+    {
+      "sid": "e02ff1a6-ea62-4a08-8d1a-a3919397fe63",
+      "ts": "2026-05-06T23:41:29.712Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:43:05.653000Z"
+    },
+    {
+      "sid": "7629b32d-bb88-45c3-ab19-9d4b3d0beabc",
+      "ts": "2026-05-07T10:29:12.602Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 16,
+      "max_turn_ts": "2026-05-07T11:17:25.761000Z"
+    },
+    {
+      "sid": "019e0235-937d-7090-bbef-d47a1dd9f769",
+      "ts": "2026-05-07T11:32:06.351Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:33:53.551000Z"
+    },
+    {
+      "sid": "019e0235-93ac-7be3-93d8-3f245a3b9c05",
+      "ts": "2026-05-07T11:32:06.352Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:33:04.937000Z"
+    },
+    {
+      "sid": "019e0235-c138-7bb1-8052-ff82e7f0da93",
+      "ts": "2026-05-07T11:32:18.038Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:34:58.260000Z"
+    },
+    {
+      "sid": "019e0235-c16e-7982-bb21-5dbed7077303",
+      "ts": "2026-05-07T11:32:18.049Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:35:47.397000Z"
+    },
+    {
+      "sid": "019e024b-7e43-7c72-b594-9c7ebd0043db",
+      "ts": "2026-05-07T11:56:02.793Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:58:43.946000Z"
+    },
+    {
+      "sid": "019e024b-7ea6-7e20-8b22-ec7d47136334",
+      "ts": "2026-05-07T11:56:02.793Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:59:36.471000Z"
+    },
+    {
+      "sid": "019e024b-7ecc-7d92-addf-f59c26c269a9",
+      "ts": "2026-05-07T11:56:03.068Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:58:18.665000Z"
+    },
+    {
+      "sid": "019e024b-7f5b-7d31-9cf8-c189279fffc7",
+      "ts": "2026-05-07T11:56:03.071Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:58:41.517000Z"
+    },
+    {
+      "sid": "019e0256-9f52-7ad3-9f44-66559147b69b",
+      "ts": "2026-05-07T12:08:12.018Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T12:10:41.193000Z"
+    },
+    {
+      "sid": "019e0256-a010-76a1-9897-fd9e1bbc890c",
+      "ts": "2026-05-07T12:08:12.211Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T12:10:58.856000Z"
+    },
+    {
+      "sid": "019e0256-a0cb-7261-9c13-a2a4c1a7aaad",
+      "ts": "2026-05-07T12:08:12.468Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T12:11:19.483000Z"
+    },
+    {
+      "sid": "019e0256-a0bb-7a30-853f-cc7e689c4b63",
+      "ts": "2026-05-07T12:08:12.470Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T12:14:35.974000Z"
+    },
+    {
+      "sid": "0c7b6088-e848-44b2-b853-3a267a47342f:subagents",
+      "ts": "2026-05-07T13:36:44.469Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 33,
+      "max_turn_ts": "2026-05-08T23:44:11.983000Z"
+    },
+    {
+      "sid": "019e03ab-3738-7e43-8df4-da8f53d570a8",
+      "ts": "2026-05-07T18:20:13.191Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:22:28.680000Z"
+    },
+    {
+      "sid": "019e03ab-3766-7691-8306-cd36f3f93867",
+      "ts": "2026-05-07T18:20:13.196Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:23:40.471000Z"
+    },
+    {
+      "sid": "019e03ab-380b-7692-ad01-cf70c66ea8bf",
+      "ts": "2026-05-07T18:20:13.348Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:25:16.110000Z"
+    },
+    {
+      "sid": "019e03ab-37a0-7741-b3a3-f9a38f3ab0ff",
+      "ts": "2026-05-07T18:20:13.349Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:22:46.407000Z"
+    },
+    {
+      "sid": "019e03b7-c975-7e12-bc7d-63973b41d157",
+      "ts": "2026-05-07T18:33:57.094Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:36:21.311000Z"
+    },
+    {
+      "sid": "019e03b7-c9c2-7f13-9bc5-08b8685e501c",
+      "ts": "2026-05-07T18:33:57.106Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:34:56.428000Z"
+    },
+    {
+      "sid": "019e03b8-1e20-78f2-a65e-b8f1f6adf5c5",
+      "ts": "2026-05-07T18:34:18.718Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:37:41.712000Z"
+    },
+    {
+      "sid": "019e03b8-1e4e-7a10-b341-0c00abe3eae9",
+      "ts": "2026-05-07T18:34:18.738Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:37:32.669000Z"
+    },
+    {
+      "sid": "019e03bf-297a-7511-bf91-c12e71a0b306",
+      "ts": "2026-05-07T18:42:00.435Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:43:44.894000Z"
+    },
+    {
+      "sid": "019e03bf-291e-7793-b9a5-d5636449aead",
+      "ts": "2026-05-07T18:42:00.467Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:45:33.396000Z"
+    },
+    {
+      "sid": "019e03bf-29b8-7393-af6e-2f2a3d7fd39d",
+      "ts": "2026-05-07T18:42:00.514Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:43:56.403000Z"
+    },
+    {
+      "sid": "019e03bf-29fa-7eb1-988a-e5ff577913c7",
+      "ts": "2026-05-07T18:42:00.535Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T18:42:49.917000Z"
+    },
+    {
+      "sid": "56f94066-aa01-417f-8b5b-e4e851312f83",
+      "ts": "2026-05-07T18:56:26.280Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 20,
+      "max_turn_ts": "2026-05-14T00:55:08.068000Z"
+    },
+    {
+      "sid": "56f94066-aa01-417f-8b5b-e4e851312f83:subagents",
+      "ts": "2026-05-07T19:15:13.856Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 40,
+      "max_turn_ts": "2026-05-14T00:53:40.169000Z"
+    },
+    {
+      "sid": "019e0441-540e-7ce0-8160-a70dbf1a6199",
+      "ts": "2026-05-07T21:04:13.627Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T21:04:28.848000Z"
+    },
+    {
+      "sid": "019e0482-e132-70e1-82a5-d7f3359c15eb",
+      "ts": "2026-05-07T22:17:09.350Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-07T22:50:03.036000Z"
+    },
+    {
+      "sid": "13119021-142f-409b-9fa4-1303db24036b",
+      "ts": "2026-05-07T22:48:41.031Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 17,
+      "max_turn_ts": "2026-05-08T00:58:08.573000Z"
+    },
+    {
+      "sid": "fbc5b4b5-cb83-4613-8caf-d7347f855c8b",
+      "ts": "2026-05-07T22:56:07.051Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-08T00:57:27.435000Z"
+    },
+    {
+      "sid": "13119021-142f-409b-9fa4-1303db24036b:subagents",
+      "ts": "2026-05-07T23:14:17.869Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T23:14:53.412000Z"
+    },
+    {
+      "sid": "f74f9da6-e75e-45a0-a6c2-8db497fd7a49",
+      "ts": "2026-05-08T21:07:11.732Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-08T21:12:48.685000Z"
+    },
+    {
+      "sid": "62125fce-b935-49b4-b365-2121d2fd30b1",
+      "ts": "2026-05-09T13:38:38.936Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 336,
+      "max_turn_ts": "2026-05-11T11:04:42.328000Z"
+    },
+    {
+      "sid": "62125fce-b935-49b4-b365-2121d2fd30b1:subagents",
+      "ts": "2026-05-09T13:44:31.917Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 20,
+      "max_turn_ts": "2026-05-11T02:28:13.124000Z"
+    },
+    {
+      "sid": "af922484-d532-44b6-a37b-c43385e1f3b2",
+      "ts": "2026-05-09T17:26:50.336Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-09T17:32:12.053000Z"
+    },
+    {
+      "sid": "af922484-d532-44b6-a37b-c43385e1f3b2:subagents",
+      "ts": "2026-05-09T17:27:53.878Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-09T17:28:30.700000Z"
+    },
+    {
+      "sid": "019e12d4-eaa3-7061-b078-680fa3149052",
+      "ts": "2026-05-10T17:00:14.430Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-10T17:00:32.927000Z"
+    },
+    {
+      "sid": "de0a5e11-2c86-4265-b367-156c66d5018d",
+      "ts": "2026-05-10T18:38:11.270Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-10T19:08:11.082000Z"
+    },
+    {
+      "sid": "de0a5e11-2c86-4265-b367-156c66d5018d:subagents",
+      "ts": "2026-05-10T19:03:18.431Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-10T19:05:56.379000Z"
+    },
+    {
+      "sid": "f253de50-aa19-4626-a422-2012b4bd0282",
+      "ts": "2026-05-11T04:12:46.672Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 24,
+      "max_turn_ts": "2026-05-12T04:09:33.174000Z"
+    },
+    {
+      "sid": "030aa909-6c95-4549-9a58-2a6be92a2bb3",
+      "ts": "2026-05-11T10:54:24.082Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-11T11:12:10.470000Z"
+    },
+    {
+      "sid": "266a08f4-8c08-4373-910c-13677df1fd49",
+      "ts": "2026-05-11T11:14:34.069Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 124,
+      "max_turn_ts": "2026-05-11T20:33:06.928000Z"
+    },
+    {
+      "sid": "266a08f4-8c08-4373-910c-13677df1fd49:subagents",
+      "ts": "2026-05-11T11:23:44.447Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-05-11T18:57:07.737000Z"
+    },
+    {
+      "sid": "f56e7a29-d92d-4688-91fb-59fdb99ed575",
+      "ts": "2026-05-11T11:31:27.295Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-11T11:37:46.611000Z"
+    },
+    {
+      "sid": "f56e7a29-d92d-4688-91fb-59fdb99ed575:subagents",
+      "ts": "2026-05-11T11:31:40.713Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-11T11:32:14.223000Z"
+    },
+    {
+      "sid": "6fa48333-5d70-4f16-a2e4-44b704b89d5e",
+      "ts": "2026-05-11T20:32:50.157Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-11T20:54:58.802000Z"
+    },
+    {
+      "sid": "eed3aebd-384e-4234-9477-8201fb1a791c",
+      "ts": "2026-05-11T20:35:49.403Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 626,
+      "max_turn_ts": "2026-05-12T15:11:08.085000Z"
+    },
+    {
+      "sid": "b43c958b-d881-4607-aad9-1be4aecb160c",
+      "ts": "2026-05-11T20:55:05.180Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-11T20:55:14.506000Z"
+    },
+    {
+      "sid": "b0a83749-978e-47bc-9087-329c208a7463",
+      "ts": "2026-05-12T03:08:26.206Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-12T03:09:33.088000Z"
+    },
+    {
+      "sid": "675e2cb8-b365-4064-b8e2-58c0e73aa34b",
+      "ts": "2026-05-12T03:11:14.232Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-12T03:12:50.747000Z"
+    },
+    {
+      "sid": "4d95aa7c-96b4-4818-8ed0-a343af72f760",
+      "ts": "2026-05-12T03:13:17.725Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-12T03:16:59.662000Z"
+    },
+    {
+      "sid": "f3729840-87da-49cb-814b-54af7558ab30",
+      "ts": "2026-05-12T05:14:18.093Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-12T15:13:09.154000Z"
+    },
+    {
+      "sid": "9fd97409-fb03-495b-934a-1b5f5cffbd0a",
+      "ts": "2026-05-12T07:03:21.692Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 22,
+      "max_turn_ts": "2026-05-12T16:17:09.265000Z"
+    },
+    {
+      "sid": "9fd97409-fb03-495b-934a-1b5f5cffbd0a:subagents",
+      "ts": "2026-05-12T07:19:22.791Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 13,
+      "max_turn_ts": "2026-05-12T07:45:28.529000Z"
+    },
+    {
+      "sid": "019e1d01-9b23-7d03-a5b8-94fdfb6b0f3e",
+      "ts": "2026-05-12T16:25:07.057Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 21,
+      "max_turn_ts": "2026-05-12T20:33:54.624000Z"
+    },
+    {
+      "sid": "e5c68b27-4c18-4bde-8ef0-8814af0b458d",
+      "ts": "2026-05-12T19:15:03.657Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 533,
+      "max_turn_ts": "2026-05-14T20:58:24.124000Z"
+    },
+    {
+      "sid": "019e1e5e-a3f7-7ac1-b919-6187f4cfa755",
+      "ts": "2026-05-12T22:46:25.614Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-05-12T23:19:44.010000Z"
+    },
+    {
+      "sid": "e5c68b27-4c18-4bde-8ef0-8814af0b458d:subagents",
+      "ts": "2026-05-12T22:46:39.717Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 22,
+      "max_turn_ts": "2026-05-14T11:41:58.325000Z"
+    },
+    {
+      "sid": "019e1e62-400a-72d1-b7e5-25b2b3cf0f1e",
+      "ts": "2026-05-12T22:50:16.002Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T22:53:52.763000Z"
+    },
+    {
+      "sid": "019e1e62-52c4-7da2-a58e-64483a84e69e",
+      "ts": "2026-05-12T22:50:20.776Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T22:51:51.855000Z"
+    },
+    {
+      "sid": "019e1e62-6450-7cc0-8818-3f0ccfb3ba80",
+      "ts": "2026-05-12T22:50:25.263Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T22:51:51.858000Z"
+    },
+    {
+      "sid": "fdd263e0-a9a4-4c05-90d3-28e574752573",
+      "ts": "2026-05-12T23:49:05.216Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-12T23:52:41.468000Z"
+    },
+    {
+      "sid": "019e231e-22ce-7953-b348-dbe7b67a5055",
+      "ts": "2026-05-13T20:54:40.906Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 36,
+      "max_turn_ts": "2026-05-14T00:49:34.475000Z"
+    },
+    {
+      "sid": "019e24ff-8636-7082-b552-1f66ca7c5fab",
+      "ts": "2026-05-14T05:39:47.245Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-14T05:44:00.499000Z"
+    },
+    {
+      "sid": "1e452ae8-7b8c-45e3-918e-59833df0328a",
+      "ts": "2026-05-14T20:10:01.401Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-15T00:27:59.047000Z"
+    },
+    {
+      "sid": "0702b7d1-e04f-4761-bfed-0b2abb529167",
+      "ts": "2026-05-15T00:19:16.241Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 22,
+      "max_turn_ts": "2026-05-15T03:27:31.004000Z"
+    },
+    {
+      "sid": "019e299c-7d66-7fe0-9636-3de567a3ece7",
+      "ts": "2026-05-15T03:10:36.579Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 20,
+      "max_turn_ts": "2026-05-23T04:45:46.514000Z"
+    },
+    {
+      "sid": "69d9db97-8879-4cf9-9113-b78a3aad60dd",
+      "ts": "2026-05-15T03:20:30.980Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-05-15T03:33:28.250000Z"
+    },
+    {
+      "sid": "c698b603-0244-4827-8350-9102adeb4004",
+      "ts": "2026-05-15T04:17:16.488Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-15T04:38:30.458000Z"
+    },
+    {
+      "sid": "c698b603-0244-4827-8350-9102adeb4004:subagents",
+      "ts": "2026-05-15T04:26:48.691Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-15T04:30:18.208000Z"
+    },
+    {
+      "sid": "20f7ab28-043f-41b0-a155-f9fad08142b8",
+      "ts": "2026-05-15T06:31:36.929Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-15T06:33:06.872000Z"
+    },
+    {
+      "sid": "c0b80650-84bc-4569-8119-365c8edacedd",
+      "ts": "2026-05-15T06:33:04.600Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-05-15T07:30:21.896000Z"
+    },
+    {
+      "sid": "57a4ace5-5f9d-49b2-99f7-35ed00a91ab1",
+      "ts": "2026-05-15T06:37:42.714Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-15T07:12:55.078000Z"
+    },
+    {
+      "sid": "019e2a87-75c8-7603-bd22-be9cc4534c9a",
+      "ts": "2026-05-15T07:26:38.225Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 38,
+      "max_turn_ts": "2026-05-15T20:36:02.248000Z"
+    },
+    {
+      "sid": "019e2aa9-2ff4-75b1-9c41-5e09b7b05ca4",
+      "ts": "2026-05-15T08:03:11.535Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T08:08:48.345000Z"
+    },
+    {
+      "sid": "019e2aa9-712f-7790-81b5-fe7e92fb4139",
+      "ts": "2026-05-15T08:03:28.210Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T08:07:46.123000Z"
+    },
+    {
+      "sid": "019e2aa9-9cc5-7633-9e45-a7d3eb1b0899",
+      "ts": "2026-05-15T08:03:39.366Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T08:06:07.167000Z"
+    },
+    {
+      "sid": "e1e37cb8-31b4-4c5f-b105-3fa770228ca6",
+      "ts": "2026-05-15T20:41:27.345Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T20:42:17.681000Z"
+    },
+    {
+      "sid": "019e2d6b-a9f8-77b3-9f7f-32cc440805e7",
+      "ts": "2026-05-15T20:55:38.770Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 81,
+      "max_turn_ts": "2026-05-18T06:29:25.101000Z"
+    },
+    {
+      "sid": "019e2d86-087e-7b21-88bf-9ebeddc30a69",
+      "ts": "2026-05-15T21:23:39.053Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-15T21:29:49.107000Z"
+    },
+    {
+      "sid": "019e2dac-21de-73f3-b30e-0866cadc7af7",
+      "ts": "2026-05-15T22:05:27.243Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T22:05:32.935000Z"
+    },
+    {
+      "sid": "019e2f21-7aa8-7660-880e-a4b043e3895e",
+      "ts": "2026-05-16T04:53:09.853Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-16T06:02:46.105000Z"
+    },
+    {
+      "sid": "700fd9b5-a38f-4eea-bff6-659aa0f111f6",
+      "ts": "2026-05-16T15:29:48.828Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-16T18:27:46.979000Z"
+    },
+    {
+      "sid": "019e3224-2e51-77e2-a497-c29fda036c71",
+      "ts": "2026-05-16T18:55:06.099Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T18:55:23.952000Z"
+    },
+    {
+      "sid": "019e3277-a792-7042-9adc-ad442e6c42e6",
+      "ts": "2026-05-16T20:26:25.146Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 29,
+      "max_turn_ts": "2026-05-17T03:42:34.636000Z"
+    },
+    {
+      "sid": "019e3278-ed8c-7f80-a13c-2d69f3b374c5",
+      "ts": "2026-05-16T20:27:26.556Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:31:40.943000Z"
+    },
+    {
+      "sid": "019e3278-edfc-7f53-a824-bcd80586973c",
+      "ts": "2026-05-16T20:27:26.627Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:32:48.834000Z"
+    },
+    {
+      "sid": "019e3278-ee1a-78b3-a1fc-b0af9692f1f2",
+      "ts": "2026-05-16T20:27:26.660Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:34:00.006000Z"
+    },
+    {
+      "sid": "019e3278-ee3d-7062-96d3-a94e572ebaf3",
+      "ts": "2026-05-16T20:27:26.689Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:33:24.366000Z"
+    },
+    {
+      "sid": "019e3287-6a3d-7300-a762-d599003e342a",
+      "ts": "2026-05-16T20:43:15.936Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:44:28.460000Z"
+    },
+    {
+      "sid": "019e3287-6aae-7e20-b73a-73247036ae29",
+      "ts": "2026-05-16T20:43:16.051Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:44:51.464000Z"
+    },
+    {
+      "sid": "019e3287-6acd-7100-b7c6-7576493f75ad",
+      "ts": "2026-05-16T20:43:16.096Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:44:24.149000Z"
+    },
+    {
+      "sid": "019e3287-6af7-7683-8b49-04e6b33e4d95",
+      "ts": "2026-05-16T20:43:16.133Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:45:48.036000Z"
+    },
+    {
+      "sid": "019e328c-f39e-7b60-92c0-42b4b79f0b4c",
+      "ts": "2026-05-16T20:49:18.786Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:52:18.206000Z"
+    },
+    {
+      "sid": "019e328c-f417-76d3-b4f1-600df43aa117",
+      "ts": "2026-05-16T20:49:18.905Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:53:14.640000Z"
+    },
+    {
+      "sid": "019e328c-f433-76d3-8244-84dc854aaeff",
+      "ts": "2026-05-16T20:49:18.936Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:52:23.686000Z"
+    },
+    {
+      "sid": "019e328c-f454-7451-bd29-c70755f3b3da",
+      "ts": "2026-05-16T20:49:18.967Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T20:51:07.194000Z"
+    },
+    {
+      "sid": "019e3295-9634-74d2-8e90-ea15d814b326",
+      "ts": "2026-05-16T20:58:44.700Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T21:03:28.600000Z"
+    },
+    {
+      "sid": "019e3295-9654-70a3-8308-bcef606e0bb1",
+      "ts": "2026-05-16T20:58:44.731Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T21:02:05.347000Z"
+    },
+    {
+      "sid": "019e3295-9676-76e3-a431-3492f66d53a0",
+      "ts": "2026-05-16T20:58:44.762Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T21:01:11.439000Z"
+    },
+    {
+      "sid": "019e32a9-dca3-7b33-8b6a-5eef9dc397d1",
+      "ts": "2026-05-16T21:20:58.218Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T21:22:30.548000Z"
+    },
+    {
+      "sid": "019e331f-36b1-7721-af15-ef696b7b5c89",
+      "ts": "2026-05-16T23:29:04.214Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-16T23:51:57.799000Z"
+    },
+    {
+      "sid": "019e331f-4cbe-71a1-9bfa-6213682ca244",
+      "ts": "2026-05-16T23:29:09.857Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-16T23:51:19.634000Z"
+    },
+    {
+      "sid": "019e33a6-01e4-75f0-8016-980fce5b1f8b",
+      "ts": "2026-05-17T01:56:18.057Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T02:01:33.354000Z"
+    },
+    {
+      "sid": "019e33a6-1b3e-76d3-ac50-a0d9f28f118b",
+      "ts": "2026-05-17T01:56:24.547Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T02:02:48.881000Z"
+    },
+    {
+      "sid": "b4f4718e-9789-4373-aafd-b7416fee3bdf",
+      "ts": "2026-05-17T04:08:16.053Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 67,
+      "max_turn_ts": "2026-05-17T19:28:22.831000Z"
+    },
+    {
+      "sid": "b4f4718e-9789-4373-aafd-b7416fee3bdf:subagents",
+      "ts": "2026-05-17T10:16:17.353Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 18,
+      "max_turn_ts": "2026-05-17T17:50:17.335000Z"
+    },
+    {
+      "sid": "019e35c3-0fb6-7312-b03e-10ad9b5f886b",
+      "ts": "2026-05-17T11:47:20.547Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-17T18:04:49.358000Z"
+    },
+    {
+      "sid": "019e389f-6f9c-7a52-b92b-2154ee36f219",
+      "ts": "2026-05-18T01:07:25.068Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-18T01:11:56.262000Z"
+    },
+    {
+      "sid": "019e396e-85c6-72a2-98a3-8cab9d0e1fc9",
+      "ts": "2026-05-18T04:53:32.855Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-18T05:23:48.042000Z"
+    },
+    {
+      "sid": "019e3985-1e27-7880-945f-148313b33538",
+      "ts": "2026-05-18T05:18:06.004Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-18T05:21:02.737000Z"
+    },
+    {
+      "sid": "019e3985-1ea2-7020-9cd7-cb6aaf26e007",
+      "ts": "2026-05-18T05:18:06.107Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-18T05:20:03.298000Z"
+    },
+    {
+      "sid": "019e3985-1e68-7250-9254-8750193ff982",
+      "ts": "2026-05-18T05:18:06.118Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-18T05:22:35.456000Z"
+    },
+    {
+      "sid": "1363d054-d3a6-4c8e-b4b0-a99e5cf6e96a",
+      "ts": "2026-05-18T06:27:06.970Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-05-18T07:53:35.933000Z"
+    },
+    {
+      "sid": "019e3cf3-c5a3-74e0-b1a0-0f93789040d9",
+      "ts": "2026-05-18T21:17:51.240Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 11,
+      "max_turn_ts": "2026-05-18T21:53:12.819000Z"
+    },
+    {
+      "sid": "d27e5736-03e3-4b5d-ba03-0b186449ce16",
+      "ts": "2026-05-20T00:54:37.410Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 7,
+      "max_turn_ts": "2026-05-20T01:01:10.278000Z"
+    },
+    {
+      "sid": "d27e5736-03e3-4b5d-ba03-0b186449ce16:subagents",
+      "ts": "2026-05-20T00:54:48.094Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T00:55:23.189000Z"
+    },
+    {
+      "sid": "fee15f70-ec3d-4b24-b6b5-ac94153fa937",
+      "ts": "2026-05-20T10:01:24.469Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-20T10:21:44.794000Z"
+    },
+    {
+      "sid": "fee15f70-ec3d-4b24-b6b5-ac94153fa937:subagents",
+      "ts": "2026-05-20T10:03:07.078Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-20T10:04:27.948000Z"
+    },
+    {
+      "sid": "dd34ed72-7b61-4812-b736-47812868b9c9",
+      "ts": "2026-05-20T10:23:27.328Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 43,
+      "max_turn_ts": "2026-05-21T21:00:31.395000Z"
+    },
+    {
+      "sid": "dd34ed72-7b61-4812-b736-47812868b9c9:subagents",
+      "ts": "2026-05-20T19:35:27.892Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-20T20:42:27.675000Z"
+    },
+    {
+      "sid": "3cc920fe-75c8-4bfa-b181-2e5debc3ec3e",
+      "ts": "2026-05-20T19:57:40.699Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-20T20:26:57.937000Z"
+    },
+    {
+      "sid": "3cc920fe-75c8-4bfa-b181-2e5debc3ec3e:subagents",
+      "ts": "2026-05-20T19:58:38.871Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 9,
+      "max_turn_ts": "2026-05-20T20:01:27.631000Z"
+    },
+    {
+      "sid": "1c970d40-8536-471d-8ae5-0c830b358e2d",
+      "ts": "2026-05-21T21:20:42.525Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-21T22:52:38.858000Z"
+    },
+    {
+      "sid": "019e4cc1-1703-76b2-bbce-962220e01e7d",
+      "ts": "2026-05-21T22:56:23.852Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-05-24T18:57:15.722000Z"
+    },
+    {
+      "sid": "46db5369-d522-4cc3-95aa-3f38600aa4fd",
+      "ts": "2026-05-22T12:56:43.891Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 4,
+      "max_turn_ts": "2026-05-22T13:18:55.695000Z"
+    },
+    {
+      "sid": "4968a434-0342-4fc5-9e99-055843ce7bf2",
+      "ts": "2026-05-22T12:57:59.898Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 42,
+      "max_turn_ts": "2026-05-22T15:41:28.093000Z"
+    },
+    {
+      "sid": "a20752ed-3e20-4423-82cb-5a6766f7d79e",
+      "ts": "2026-05-22T20:37:12.790Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-22T20:37:25.780000Z"
+    },
+    {
+      "sid": "35074fbb-0814-45dc-a1c8-806eba524bee",
+      "ts": "2026-05-22T20:37:58.313Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-22T20:38:12.461000Z"
+    },
+    {
+      "sid": "019e521c-e5c7-7eb2-9b16-cc21e2e94d35",
+      "ts": "2026-05-22T23:54:58.481Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 6,
+      "max_turn_ts": "2026-05-23T00:35:06.700000Z"
+    },
+    {
+      "sid": "2f292d6c-5402-482e-8559-b5c420ced1e6",
+      "ts": "2026-05-23T21:08:36.945Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-25T08:44:59.849000Z"
+    },
+    {
+      "sid": "2ef03dc7-09f5-409a-8a46-80305aa7203a",
+      "ts": "2026-05-23T21:16:59.009Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-23T21:26:29.306000Z"
+    },
+    {
+      "sid": "019e56b7-7c83-7a00-8a13-8838a231b7cc",
+      "ts": "2026-05-23T21:22:16.582Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T22:21:42.825000Z"
+    },
+    {
+      "sid": "019e56bd-20b4-7f30-b1d3-becb732a1fe4",
+      "ts": "2026-05-23T21:28:15.854Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:28:46.456000Z"
+    },
+    {
+      "sid": "019e56bd-31c4-7810-877a-7b61dc450728",
+      "ts": "2026-05-23T21:28:20.236Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:29:49.772000Z"
+    },
+    {
+      "sid": "019e56bd-43d5-7a52-9719-5246cc70fac7",
+      "ts": "2026-05-23T21:28:24.867Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:29:38.765000Z"
+    },
+    {
+      "sid": "019e56bf-291a-7bb2-9c1a-cc5b61759bfa",
+      "ts": "2026-05-23T21:30:29.076Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:31:05.689000Z"
+    },
+    {
+      "sid": "019e56bf-40e3-7e20-8b11-2f949c3bc594",
+      "ts": "2026-05-23T21:30:35.164Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:30:49.145000Z"
+    },
+    {
+      "sid": "019e56c0-6458-7a50-89c3-f288c536e1b1",
+      "ts": "2026-05-23T21:31:49.777Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:32:32.804000Z"
+    },
+    {
+      "sid": "019e56c0-7775-7793-a930-f70183506237",
+      "ts": "2026-05-23T21:31:54.672Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:33:05.027000Z"
+    },
+    {
+      "sid": "019e56c1-f3e9-7dd2-961e-84f4cad1130c",
+      "ts": "2026-05-23T21:33:32.074Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:34:19.040000Z"
+    },
+    {
+      "sid": "019e56c2-0432-7ee1-9aac-4efe57e14788",
+      "ts": "2026-05-23T21:33:36.242Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 5,
+      "max_turn_ts": "2026-05-23T21:34:11.200000Z"
+    },
+    {
+      "sid": "019e56f1-a3f2-7290-bc13-0918e9ae6292",
+      "ts": "2026-05-23T22:25:37.563Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-23T22:40:06.497000Z"
+    },
+    {
+      "sid": "3669237e-855d-4d88-9d2f-c0e5de671158",
+      "ts": "2026-05-23T22:32:40.527Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 22,
+      "max_turn_ts": "2026-05-24T09:08:57.452000Z"
+    },
+    {
+      "sid": "019e594e-95db-7461-8e5e-08b3aba7b65e",
+      "ts": "2026-05-24T09:26:59.185Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 14,
+      "max_turn_ts": "2026-05-24T16:15:38.416000Z"
+    },
+    {
+      "sid": "019e5aa6-0eb5-71d3-8d84-9ed67f936676",
+      "ts": "2026-05-24T15:41:32.961Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-24T15:41:35.801000Z"
+    },
+    {
+      "sid": "8aff4617-61ea-4088-b473-b015adc2f9c6",
+      "ts": "2026-05-24T15:58:54.452Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-24T16:08:15.793000Z"
+    },
+    {
+      "sid": "c8ebbf36-134f-4b90-86d9-40ad9b6def27",
+      "ts": "2026-05-24T16:05:33.921Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 84,
+      "max_turn_ts": "2026-05-25T09:40:31.375000Z"
+    },
+    {
+      "sid": "c8ebbf36-134f-4b90-86d9-40ad9b6def27:subagents",
+      "ts": "2026-05-24T16:10:38.163Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 18,
+      "max_turn_ts": "2026-05-25T05:00:15.116000Z"
+    },
+    {
+      "sid": "d0fa24fa-8010-4f83-ac4b-d11befa50581",
+      "ts": "2026-05-25T00:44:23.808Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 10,
+      "max_turn_ts": "2026-05-25T01:04:17.418000Z"
+    },
+    {
+      "sid": "684008ca-b2bd-4ab7-bca6-1ef64457b28b",
+      "ts": "2026-05-25T01:15:57.032Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 32,
+      "max_turn_ts": "2026-05-25T04:22:02.780000Z"
+    },
+    {
+      "sid": "9495715e-9caa-498e-b845-ec6a9fca331b",
+      "ts": "2026-05-25T01:16:57.291Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-25T01:18:25.302000Z"
+    },
+    {
+      "sid": "684008ca-b2bd-4ab7-bca6-1ef64457b28b:subagents",
+      "ts": "2026-05-25T01:40:39.293Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 3,
+      "max_turn_ts": "2026-05-25T02:05:12.333000Z"
+    },
+    {
+      "sid": "4383a8eb-600a-4ca5-a639-5f473f7b279c",
+      "ts": "2026-05-25T01:57:46.152Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T01:57:55.272000Z"
+    },
+    {
+      "sid": "a3430ab1-1fc7-48d2-b76a-0d1f797b8e2a",
+      "ts": "2026-05-25T03:14:39.496Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-25T03:15:20.450000Z"
+    },
+    {
+      "sid": "cf05a8f0-62b2-4780-bce8-4017443fc0e3",
+      "ts": "2026-05-25T20:43:21.062Z",
+      "repo": "Quaxicron/dataclaw-zhiyaowang",
+      "n": 2,
+      "max_turn_ts": "2026-05-25T20:44:09.661000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

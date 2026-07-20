@@ -1,8 +1,0 @@
-{
-  "point_id": "019ea996-98c7-7ee0-b15a-2f1455aa06ff#224",
-  "developer": "gh:yyovil",
-  "condition": "noprofile",
-  "real": "Now we need to mk the [README.md](.agents/skills/vercel-react-view-transitions/README.md) look very simplistic now. We also need to explicitly warn users that the software is still building.",
-  "prev_agent": "Pushed the README screenshot change to `upstream/main`.\n\nRemote commit: `2711aaf Add themed README screenshots`\n\nI did this from a temp clone so the push included only:\n\n- `README.md`\n- `yyork-light.png`\n- `yyork-dark.png`\n\nI did not push the unrelated local `main` commit `02a49b9`. The first direct push from this checkout was blocked by the pre-push hook because `go` is not on this shell’s `PATH`, so I isolated the docs-only commit instead.\n\nLocal note: your working checkout still has unstaged `README.md` edits from before, and local `main` is now divergent from `upstream/main`.\n\n::git-stage{cwd=\"/home/<USER>/Projects/yyork\"}\n::git-commit{cwd=\"/home/<USER>/Projects/yyork\"}\n::git-push{cwd=\"/home/<USER>/Projects/yyork\" branch=\"main\"}\n\n<oai-mem-citation>\n<citation_entries>\nMEMORY.md:270-296|note=[used yyork upstream push isolation and verification guidance]\nMEMORY.md:227-239|note=[confirmed yyork upstream repo target context]\n</citation_entries>\n<rollout_ids>\n019ea094-ea7f-7700-8962-5f6091e2db2a\n019ea040-5a03-7fb3-a991-b81bba0a429f\n</rollout_ids>\n</oai-mem-citation>",
-  "gold_move": null
-}

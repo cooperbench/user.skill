@@ -1,8 +1,0 @@
-{
-  "point_id": "019eaaa1-3e1c-77b3-8dec-e31240606f5a#402",
-  "developer": "gh:yyovil",
-  "condition": "noprofile",
-  "real": "# In app browser:\n- The user has the in-app browser open.\n- Current URL: https://yyork.localhost/terminal/5pcyw3\n\n## My request for Codex:\nif you will toggle the filetree (expand/collapse), you will observe the shift in the buttons position because of padding diff.\nuse the iab skill to find out and then fix it after observing the anomaly.",
-  "prev_agent": "Because the padding was the same, but the content inside the header was not.\n\nOpen tree: preview header contains only the filename text, so height is roughly `16px line-height + 12px + 12px`.\n\nClosed tree: preview header also contained the 36x36 “Show file tree” button in normal flex flow, so the row became `36px button + 12px + 12px`. That made it look like the header padding changed.\n\nI fixed it by taking that collapsed-state button out of layout flow while keeping it visually inside the header at 36x36:\n[canvas-panel.tsx](/home/<USER>/Projects/yyork/web/src/features/home/<USER>/organisms/canvas-panel.tsx:419)\n[app.css](/home/<USER>/Projects/yyork/web/src/styles/app.css:335)\n\nChecks passed: `git diff --check`, `pnpm --dir web exec tsc --noEmit`, and `pnpm --dir web run lint`.\n\n<oai-mem-citation>\n<citation_entries>\nMEMORY.md:80-80|note=[yyork Files tab CodeView and file tree context]\nMEMORY.md:51-52|note=[yyork local preview route context]\n</citation_entries>\n<rollout_ids>\n</rollout_ids>\n</oai-mem-citation>",
-  "gold_move": null
-}

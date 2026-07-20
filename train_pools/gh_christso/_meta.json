@@ -1,0 +1,187 @@
+{
+  "developer": "gh:christso",
+  "slug": "gh_christso",
+  "Tstar": "2026-07-04T07:22:29.199772656Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 25,
+  "n_human_turns": 459,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "f6b7329a-914c-4f62-8090-4e29b032b173",
+      "ts": "2026-03-25T00:35:58.214044863Z",
+      "repo": "EntityProcess/agentv",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T00:37:10.611000Z"
+    },
+    {
+      "sid": "2dd48f89-3552-42c7-9b15-f8119890ecb3",
+      "ts": "2026-03-25T02:20:39.487227772Z",
+      "repo": "EntityProcess/agentv",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T03:00:12.262000Z"
+    },
+    {
+      "sid": "acc53d32-5580-4747-9273-e2acff2ba566",
+      "ts": "2026-03-25T02:20:42.725526605Z",
+      "repo": "EntityProcess/agentv",
+      "n": 2,
+      "max_turn_ts": "2026-03-25T02:23:33.691000Z"
+    },
+    {
+      "sid": "019ed50c-2fb3-7002-a384-360bea6e7f04",
+      "ts": "2026-06-17T10:33:18.86595353Z",
+      "repo": "EntityProcess/agentv",
+      "n": 6,
+      "max_turn_ts": "2026-06-17T10:34:51.357000Z"
+    },
+    {
+      "sid": "019ed836-b1da-78f1-8a0c-e598363d10f4",
+      "ts": "2026-06-18T01:07:30.456654282Z",
+      "repo": "EntityProcess/agentv",
+      "n": 2,
+      "max_turn_ts": "2026-06-18T01:07:28.994000Z"
+    },
+    {
+      "sid": "019ed917-1cf7-72a3-92f5-c0aa98fb134e",
+      "ts": "2026-06-18T05:14:36.681919906Z",
+      "repo": "EntityProcess/agentv",
+      "n": 2,
+      "max_turn_ts": "2026-06-18T05:15:17.587000Z"
+    },
+    {
+      "sid": "019ed893-d2a6-7c30-a8b8-5a8a49cfa23e",
+      "ts": "2026-06-18T07:58:39.534903163Z",
+      "repo": "EntityProcess/agentv",
+      "n": 17,
+      "max_turn_ts": "2026-06-18T07:28:30.694000Z"
+    },
+    {
+      "sid": "019ed936-c4f5-7a21-ad41-d1eed95dc4df",
+      "ts": "2026-06-18T07:58:42.191845974Z",
+      "repo": "EntityProcess/agentv",
+      "n": 8,
+      "max_turn_ts": "2026-06-18T07:59:14.247000Z"
+    },
+    {
+      "sid": "019ed9f4-6510-7fc0-8643-6d434f193bd0",
+      "ts": "2026-06-18T09:27:51.156255598Z",
+      "repo": "EntityProcess/agentv",
+      "n": 8,
+      "max_turn_ts": "2026-06-18T09:30:25.626000Z"
+    },
+    {
+      "sid": "019ed99c-d00d-7613-b2e7-d2f512f78afd",
+      "ts": "2026-06-18T10:06:10.801642907Z",
+      "repo": "EntityProcess/agentv",
+      "n": 9,
+      "max_turn_ts": "2026-06-18T10:05:43.213000Z"
+    },
+    {
+      "sid": "019eecb9-cc3a-73c2-814a-dd4f8ced7545",
+      "ts": "2026-06-22T11:28:13.794635273Z",
+      "repo": "EntityProcess/agentv",
+      "n": 65,
+      "max_turn_ts": "2026-06-22T11:29:52.213000Z"
+    },
+    {
+      "sid": "019ee806-d388-7483-8379-6bd746934098",
+      "ts": "2026-06-22T22:51:21.91995686Z",
+      "repo": "EntityProcess/agentv",
+      "n": 61,
+      "max_turn_ts": "2026-06-21T23:04:25.333000Z"
+    },
+    {
+      "sid": "019eef3d-abd1-72e1-ab99-dcdb259027c5",
+      "ts": "2026-06-22T22:51:23.917330334Z",
+      "repo": "EntityProcess/agentv",
+      "n": 26,
+      "max_turn_ts": "2026-06-22T22:51:00.908000Z"
+    },
+    {
+      "sid": "019efedf-a8dc-7b20-ba1d-f1c6ff7ea96e",
+      "ts": "2026-06-26T01:35:50.287109561Z",
+      "repo": "EntityProcess/agentv",
+      "n": 10,
+      "max_turn_ts": "2026-06-26T01:36:10.535000Z"
+    },
+    {
+      "sid": "019efc87-fa98-7971-91df-0c9512a065da",
+      "ts": "2026-06-26T01:40:09.775582868Z",
+      "repo": "EntityProcess/agentv",
+      "n": 13,
+      "max_turn_ts": "2026-06-25T09:47:56.014000Z"
+    },
+    {
+      "sid": "019f03e0-321f-7eb2-83cc-b54ecd71be23",
+      "ts": "2026-06-26T13:36:26.220488729Z",
+      "repo": "EntityProcess/agentv",
+      "n": 10,
+      "max_turn_ts": "2026-06-26T13:37:19.921000Z"
+    },
+    {
+      "sid": "019f05f8-7f53-7492-a941-83098e16765c",
+      "ts": "2026-06-26T22:25:29.33635981Z",
+      "repo": "EntityProcess/agentv",
+      "n": 6,
+      "max_turn_ts": "2026-06-26T22:26:56.856000Z"
+    },
+    {
+      "sid": "019f01c5-9cd1-7013-83ac-7d07dc86faba",
+      "ts": "2026-06-27T03:32:50.118897423Z",
+      "repo": "EntityProcess/agentv",
+      "n": 85,
+      "max_turn_ts": "2026-06-26T22:05:36.287000Z"
+    },
+    {
+      "sid": "019f0675-387a-79c2-9e8d-ceb8a30657c9",
+      "ts": "2026-06-27T03:32:52.16736344Z",
+      "repo": "EntityProcess/agentv",
+      "n": 3,
+      "max_turn_ts": "2026-06-27T03:32:26.763000Z"
+    },
+    {
+      "sid": "019f0d8c-469a-77e2-95d8-c9e0c11db147",
+      "ts": "2026-06-30T13:33:47.752517532Z",
+      "repo": "EntityProcess/agentv",
+      "n": 63,
+      "max_turn_ts": "2026-06-29T01:52:03.360000Z"
+    },
+    {
+      "sid": "019f1111-d27a-7922-bc85-6667a164e1c3",
+      "ts": "2026-06-30T13:33:51.591072528Z",
+      "repo": "EntityProcess/agentv",
+      "n": 36,
+      "max_turn_ts": "2026-06-29T08:26:35.984000Z"
+    },
+    {
+      "sid": "019f15f7-b472-7bc3-8651-5547781e25cf",
+      "ts": "2026-06-30T13:33:52.896610592Z",
+      "repo": "EntityProcess/agentv",
+      "n": 3,
+      "max_turn_ts": "2026-06-30T07:14:30.216000Z"
+    },
+    {
+      "sid": "019f17a5-6d3f-7470-9097-c70f6cefe936",
+      "ts": "2026-06-30T13:33:57.5020854Z",
+      "repo": "EntityProcess/agentv",
+      "n": 13,
+      "max_turn_ts": "2026-06-30T11:09:55.959000Z"
+    },
+    {
+      "sid": "019f1d64-a048-7e10-8a4d-fd6b9e9d7b34",
+      "ts": "2026-07-01T11:59:24.903823778Z",
+      "repo": "EntityProcess/agentv",
+      "n": 5,
+      "max_turn_ts": "2026-07-01T12:04:08.461000Z"
+    },
+    {
+      "sid": "019f1de1-ca1d-7261-9e32-4d51380144e6",
+      "ts": "2026-07-01T14:17:52.722314905Z",
+      "repo": "EntityProcess/agentv",
+      "n": 4,
+      "max_turn_ts": "2026-07-01T14:19:23.703000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

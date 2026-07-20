@@ -1,0 +1,152 @@
+{
+  "developer": "gh:MohammedMqat",
+  "slug": "gh_MohammedMqat",
+  "Tstar": "2026-04-20T18:26:52.540309255Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 20,
+  "n_human_turns": 411,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "9ce5aa71-e07e-4451-af7a-514d9f9ad09f",
+      "ts": "2026-03-28T17:39:53.601904446Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 2,
+      "max_turn_ts": "2026-03-28T17:39:56.843000Z"
+    },
+    {
+      "sid": "0b29073c-5f9c-4122-8292-35f9fbaf6dd0",
+      "ts": "2026-03-30T21:01:04.657200113Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 5,
+      "max_turn_ts": "2026-03-30T21:01:06.907000Z"
+    },
+    {
+      "sid": "2a4d97fd-e47d-4046-8f85-d47182743a66",
+      "ts": "2026-03-30T21:01:04.682675353Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T20:10:24.069000Z"
+    },
+    {
+      "sid": "db224c9a-51dd-4cd3-9240-16fdcfa07684",
+      "ts": "2026-03-30T21:01:04.850532602Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 78,
+      "max_turn_ts": "2026-03-30T20:18:27.928000Z"
+    },
+    {
+      "sid": "12b1189d-1bf5-42b6-899d-4aed9bec7aa7",
+      "ts": "2026-03-30T21:24:39.273278554Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T21:14:18.065000Z"
+    },
+    {
+      "sid": "4da21f6b-21d2-4164-a8fe-38a0b883f90e",
+      "ts": "2026-04-10T17:07:16.894338519Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 4,
+      "max_turn_ts": "2026-04-10T17:07:18.635000Z"
+    },
+    {
+      "sid": "d2ee7e36-8b68-4394-bd19-8150c72b329b",
+      "ts": "2026-04-10T17:07:16.995228693Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 11,
+      "max_turn_ts": "2026-04-10T16:50:36.621000Z"
+    },
+    {
+      "sid": "171b00db-5958-4197-a482-bcddedbb0fa0",
+      "ts": "2026-04-10T19:56:07.311789244Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 6,
+      "max_turn_ts": "2026-04-10T19:56:16.535000Z"
+    },
+    {
+      "sid": "6b2e24aa-ef72-4251-a2cd-8887cbb60a52",
+      "ts": "2026-04-10T20:24:59.900910005Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 1,
+      "max_turn_ts": "2026-04-10T20:21:12.108000Z"
+    },
+    {
+      "sid": "73651b39-3efc-449c-88cc-946284fefabf",
+      "ts": "2026-04-10T20:43:06.42365025Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 7,
+      "max_turn_ts": "2026-04-08T20:42:51.242000Z"
+    },
+    {
+      "sid": "a9d7c3b4-b1e5-4369-9f59-3b01861004af",
+      "ts": "2026-04-11T18:09:51.515461693Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 6,
+      "max_turn_ts": "2026-04-11T18:09:45.926000Z"
+    },
+    {
+      "sid": "b2fcc734-76f8-4658-8f19-aea41c1d0f01",
+      "ts": "2026-04-12T19:36:16.171704942Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 1,
+      "max_turn_ts": "2026-04-12T19:29:52.755000Z"
+    },
+    {
+      "sid": "b6041bb7-e5c5-46fe-9602-f99648a1a1bd",
+      "ts": "2026-04-12T19:36:16.194830303Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 1,
+      "max_turn_ts": "2026-04-12T19:23:40.359000Z"
+    },
+    {
+      "sid": "02b5c347-cd11-4f80-a05f-7a83def877ab",
+      "ts": "2026-04-12T20:48:39.168631592Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 3,
+      "max_turn_ts": "2026-04-12T20:05:58.519000Z"
+    },
+    {
+      "sid": "297ea729-edb8-48e2-af3d-393d7fe33463",
+      "ts": "2026-04-12T20:48:42.26790695Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 14,
+      "max_turn_ts": "2026-04-12T20:48:46.777000Z"
+    },
+    {
+      "sid": "7d4015b9-b044-48e5-86c3-3e3443af8564",
+      "ts": "2026-04-17T20:37:53.384495043Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 189,
+      "max_turn_ts": "2026-04-17T20:38:05.832000Z"
+    },
+    {
+      "sid": "6f5923b5-2363-4da1-b80d-d9d4dd7fb28c",
+      "ts": "2026-04-18T19:21:08.503198573Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T17:26:33.753000Z"
+    },
+    {
+      "sid": "b690c5a9-de77-414a-9f07-c9734b0f54cd",
+      "ts": "2026-04-19T17:44:00.649308323Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 76,
+      "max_turn_ts": "2026-04-19T17:44:14.728000Z"
+    },
+    {
+      "sid": "329d72db-9c2c-44c0-a99e-df30e3aa0b44",
+      "ts": "2026-04-19T21:45:32.999058767Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T21:08:57.867000Z"
+    },
+    {
+      "sid": "6197faee-f1b1-4dc7-b562-a00258fecf0a",
+      "ts": "2026-04-19T21:45:39.067744687Z",
+      "repo": "MohammedMqat/mal-clone",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T21:45:55.412000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

@@ -1,0 +1,117 @@
+{
+  "developer": "gh:kmiki0",
+  "slug": "gh_kmiki0",
+  "Tstar": "2026-05-28T23:25:39.554886878Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 15,
+  "n_human_turns": 702,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "77c02cc3-04e9-46b1-8f02-3bb3282489b7",
+      "ts": "2026-03-17T13:26:21.172717853Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 15,
+      "max_turn_ts": "2026-03-16T14:51:39.281000Z"
+    },
+    {
+      "sid": "f4499f2e-b1a0-4604-b841-47bffbc8a129",
+      "ts": "2026-03-17T13:26:24.809477557Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 13,
+      "max_turn_ts": "2026-03-16T15:32:54.249000Z"
+    },
+    {
+      "sid": "9aa32823-4e9b-4a9f-a2c7-7402dd18cd43",
+      "ts": "2026-03-18T15:14:46.604082053Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 7,
+      "max_turn_ts": "2026-03-18T15:15:58.092000Z"
+    },
+    {
+      "sid": "afd97f7a-4485-4b52-9ce2-00685b6edc9c",
+      "ts": "2026-03-18T15:14:47.053579762Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 12,
+      "max_turn_ts": "2026-03-17T13:27:26.255000Z"
+    },
+    {
+      "sid": "9670f3e7-bb2c-41e8-83c6-d10aad4d8fb8",
+      "ts": "2026-03-22T11:17:18.855893391Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 32,
+      "max_turn_ts": "2026-03-20T06:58:22.531000Z"
+    },
+    {
+      "sid": "7d277faa-cf4c-44a4-aed1-62a90a6ba0c3",
+      "ts": "2026-03-27T09:40:07.94902496Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 64,
+      "max_turn_ts": "2026-03-27T07:42:11.775000Z"
+    },
+    {
+      "sid": "f25d6f96-c64a-4f0e-b170-670368ad6c34",
+      "ts": "2026-03-27T09:40:09.207068851Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 46,
+      "max_turn_ts": "2026-03-25T12:49:40.147000Z"
+    },
+    {
+      "sid": "35b2b752-d7b5-4419-b9e9-451e1ea88b1a",
+      "ts": "2026-03-28T10:35:27.227226766Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 130,
+      "max_turn_ts": "2026-03-27T09:57:42.152000Z"
+    },
+    {
+      "sid": "a9394fda-bb31-42e3-981b-2636ad000b44",
+      "ts": "2026-04-01T05:31:44.912141343Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 70,
+      "max_turn_ts": "2026-03-31T06:11:25.039000Z"
+    },
+    {
+      "sid": "1ed44dc8-7f20-4ec7-a768-c04d52077f37",
+      "ts": "2026-04-01T05:37:15.376268437Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 28,
+      "max_turn_ts": "2026-03-31T16:27:02.785000Z"
+    },
+    {
+      "sid": "44f03779-a8c2-4169-8f8e-eb54a6e08702",
+      "ts": "2026-04-07T14:45:33.237101904Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 103,
+      "max_turn_ts": "2026-04-01T16:27:31.711000Z"
+    },
+    {
+      "sid": "6f22b34e-1e20-40e4-ad04-68d7b824e149",
+      "ts": "2026-04-12T15:33:52.04841996Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 157,
+      "max_turn_ts": "2026-04-11T08:59:50.052000Z"
+    },
+    {
+      "sid": "e59f977c-1583-4cbb-b690-f1688d05ce61",
+      "ts": "2026-04-12T15:34:42.004789204Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 10,
+      "max_turn_ts": "2026-04-12T15:35:18.228000Z"
+    },
+    {
+      "sid": "a60e4b42-b564-4771-b76d-2b142c1989a1",
+      "ts": "2026-04-25T01:59:52.939280102Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 11,
+      "max_turn_ts": "2026-04-25T01:59:58.347000Z"
+    },
+    {
+      "sid": "e3b89572-c48b-4fef-917d-803038c07a58",
+      "ts": "2026-04-25T01:59:52.960362139Z",
+      "repo": "kmiki0/flowmaid",
+      "n": 4,
+      "max_turn_ts": "2026-04-24T12:21:13.605000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

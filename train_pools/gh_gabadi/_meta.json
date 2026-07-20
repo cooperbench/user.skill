@@ -1,0 +1,971 @@
+{
+  "developer": "gh:gabadi",
+  "slug": "gh_gabadi",
+  "Tstar": "2026-06-23T07:54:45.43635Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 137,
+  "n_human_turns": 774,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "ca39a164-fa0b-443b-ae3c-f9e528d2f7a4",
+      "ts": "2026-06-08T05:45:34.527687Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-08T05:42:19.164000Z"
+    },
+    {
+      "sid": "139360c7-f1fd-497c-abad-6b0de934cc6e",
+      "ts": "2026-06-08T22:39:02.957645Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-08T06:08:16.874000Z"
+    },
+    {
+      "sid": "54435ab8-1d19-4b07-9cc2-2d20502b4bdc",
+      "ts": "2026-06-08T22:39:03.662505Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 8,
+      "max_turn_ts": "2026-06-08T06:06:00.811000Z"
+    },
+    {
+      "sid": "a112a9eb-4dd7-466f-9717-b6a751505466",
+      "ts": "2026-06-08T22:39:04.134128Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-08T06:22:11.666000Z"
+    },
+    {
+      "sid": "cdcbc791-87af-418e-9568-a80f7b35ffe6",
+      "ts": "2026-06-08T22:39:04.729922Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-08T06:12:27.607000Z"
+    },
+    {
+      "sid": "e4a4d1ed-28c3-4e6b-9ecd-f8a91e026f17",
+      "ts": "2026-06-08T22:39:05.170643Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-08T06:08:57.288000Z"
+    },
+    {
+      "sid": "ea5ee23a-2cb8-4e98-9990-1762b44994dd",
+      "ts": "2026-06-08T22:39:05.66044Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-08T21:04:16.615000Z"
+    },
+    {
+      "sid": "46df6797-a493-456a-a713-764ee6eedc16",
+      "ts": "2026-06-08T23:17:43.769011Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-08T23:12:44.164000Z"
+    },
+    {
+      "sid": "980b6edf-db55-4c57-bde2-46530d2a8926",
+      "ts": "2026-06-09T02:34:14.629518Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T02:38:07.486000Z"
+    },
+    {
+      "sid": "ee3407c4-dbf8-4150-be44-9f65eb962321",
+      "ts": "2026-06-09T03:30:42.643262Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-09T03:32:50.843000Z"
+    },
+    {
+      "sid": "3f8666fe-fab0-4e32-b4fd-2a4d390271a1",
+      "ts": "2026-06-09T03:42:30.680046Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T03:44:20.180000Z"
+    },
+    {
+      "sid": "61de2ef8-602c-477e-8dff-40e722e31c94",
+      "ts": "2026-06-09T06:15:27.853187Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T01:33:20.210000Z"
+    },
+    {
+      "sid": "145348d4-db99-4d20-b691-f598daa096c3",
+      "ts": "2026-06-09T06:15:41.345559Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 5,
+      "max_turn_ts": "2026-06-09T04:00:31.705000Z"
+    },
+    {
+      "sid": "2fd432d8-fdde-4994-ad0c-5378d06741da",
+      "ts": "2026-06-09T06:15:43.104274Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-09T03:09:03.550000Z"
+    },
+    {
+      "sid": "68cd9712-4942-487b-aec1-6f3f15ee7a34",
+      "ts": "2026-06-09T06:15:44.829755Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-09T03:19:34.460000Z"
+    },
+    {
+      "sid": "80deabf4-902e-4bee-8324-761a700083cd",
+      "ts": "2026-06-09T06:15:46.326064Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-09T03:30:35.817000Z"
+    },
+    {
+      "sid": "8e1cd8df-d63f-4298-b30e-bd6fced8cd48",
+      "ts": "2026-06-09T06:15:48.079963Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-09T03:26:39.097000Z"
+    },
+    {
+      "sid": "8f5b5112-8033-4422-ad17-3e7fd818a224",
+      "ts": "2026-06-09T06:15:50.594177Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 13,
+      "max_turn_ts": "2026-06-09T02:00:20.045000Z"
+    },
+    {
+      "sid": "ad1d9c05-4c8e-487b-9561-ff23dd7fcc68",
+      "ts": "2026-06-09T06:15:52.743698Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T02:27:46.277000Z"
+    },
+    {
+      "sid": "e4f85f1b-5f64-4346-87bc-f166e1d36491",
+      "ts": "2026-06-09T06:15:54.615788Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T03:21:06.127000Z"
+    },
+    {
+      "sid": "ff840237-0b79-4bca-8608-fed45969bd30",
+      "ts": "2026-06-09T06:15:56.582356Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T03:51:40.513000Z"
+    },
+    {
+      "sid": "1aaca1b3-32c6-48b5-ba7e-033330ad1275",
+      "ts": "2026-06-09T06:31:30.843755Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T06:31:50.065000Z"
+    },
+    {
+      "sid": "16992ed4-5887-401c-8720-d927307d9397",
+      "ts": "2026-06-09T07:25:08.388783Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-09T07:25:02.473000Z"
+    },
+    {
+      "sid": "84a604ea-dbbf-4cd9-a2cc-9f6713040bf6",
+      "ts": "2026-06-09T07:32:46.242787Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-09T06:25:38.751000Z"
+    },
+    {
+      "sid": "e4bd143f-e467-479d-979f-258b83211e30",
+      "ts": "2026-06-09T07:32:47.364208Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-09T06:48:00.547000Z"
+    },
+    {
+      "sid": "bc9dc66b-d31d-43c9-93d5-5a512a8faffe",
+      "ts": "2026-06-09T07:37:02.772891Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T06:19:46.904000Z"
+    },
+    {
+      "sid": "14dd1b2b-bfd8-47f0-96ee-0f1ec02f29ab",
+      "ts": "2026-06-09T17:51:17.932637Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 32,
+      "max_turn_ts": "2026-06-09T08:00:11.943000Z"
+    },
+    {
+      "sid": "22e7daa0-31e1-4923-955f-85f01fb9d1f8",
+      "ts": "2026-06-09T17:51:18.605378Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-09T07:34:24.175000Z"
+    },
+    {
+      "sid": "42891814-f67a-4f49-8c7b-2397f639f6ce",
+      "ts": "2026-06-09T17:51:19.153621Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T07:46:38.247000Z"
+    },
+    {
+      "sid": "4466de3c-92ba-4147-99d4-d707993a777d",
+      "ts": "2026-06-09T17:51:19.863145Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T08:42:12.580000Z"
+    },
+    {
+      "sid": "5aeb56a2-7fe1-4987-9675-e1d180659cb7",
+      "ts": "2026-06-09T17:51:20.435526Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 74,
+      "max_turn_ts": "2026-06-09T13:31:10.762000Z"
+    },
+    {
+      "sid": "697a7db3-02d1-42b8-b168-0041eac0ce6a",
+      "ts": "2026-06-09T17:51:21.098355Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 21,
+      "max_turn_ts": "2026-06-09T08:10:27.436000Z"
+    },
+    {
+      "sid": "84fbef40-bf13-4aed-b27f-3c98a94ea745",
+      "ts": "2026-06-09T17:51:21.744072Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T07:39:10.551000Z"
+    },
+    {
+      "sid": "af30cc18-df8f-4db2-8cf3-871062ec9401",
+      "ts": "2026-06-09T17:51:22.390516Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-09T08:25:01.093000Z"
+    },
+    {
+      "sid": "c9e68f35-849c-46a2-bf98-61cc1a2aeff8",
+      "ts": "2026-06-10T01:24:46.282575Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T01:24:34.757000Z"
+    },
+    {
+      "sid": "9bf855fb-43f8-4a79-bad2-87265fa7d7e9",
+      "ts": "2026-06-10T03:29:40.173389Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T03:30:10.150000Z"
+    },
+    {
+      "sid": "b13e9020-ca16-4871-a6ad-55d6a9e50ef5",
+      "ts": "2026-06-10T03:29:40.737256Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 13,
+      "max_turn_ts": "2026-06-10T03:23:11.298000Z"
+    },
+    {
+      "sid": "28104b59-2b68-4292-9b32-1eb2e7bb479f",
+      "ts": "2026-06-10T03:36:42.342Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 5,
+      "max_turn_ts": "2026-06-10T01:54:26.152000Z"
+    },
+    {
+      "sid": "3ebb8723-12b9-4804-bfde-7d6deb3a1af2",
+      "ts": "2026-06-10T03:36:43.002339Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T02:03:20.349000Z"
+    },
+    {
+      "sid": "55e69730-8c3f-4dbf-850c-9939c3ba08b7",
+      "ts": "2026-06-10T03:36:43.668454Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T01:34:04.375000Z"
+    },
+    {
+      "sid": "61ecb2a0-6172-486e-bae5-be3502b4356c",
+      "ts": "2026-06-10T03:36:44.526386Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T01:10:39.879000Z"
+    },
+    {
+      "sid": "6a85d548-5d4d-4a1b-a26b-0cbe4daf3737",
+      "ts": "2026-06-10T03:36:45.168649Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T01:24:55.954000Z"
+    },
+    {
+      "sid": "be64f74b-998c-4897-a27e-ec83d67d7957",
+      "ts": "2026-06-10T03:36:45.839251Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 5,
+      "max_turn_ts": "2026-06-10T01:20:07.607000Z"
+    },
+    {
+      "sid": "90ea9434-782b-417a-af18-6d02d737d89f",
+      "ts": "2026-06-10T06:56:07.098347Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T06:55:29.851000Z"
+    },
+    {
+      "sid": "ef500406-65bf-43b0-b094-2cbe99238d86",
+      "ts": "2026-06-10T06:59:33.677564Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T06:59:21.167000Z"
+    },
+    {
+      "sid": "186e47a5-9afa-4cb8-806e-28f35ec03ee1",
+      "ts": "2026-06-10T13:00:08.210067Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 43,
+      "max_turn_ts": "2026-06-10T09:11:47.798000Z"
+    },
+    {
+      "sid": "51a65e0b-76f5-4e5f-9749-99e114628dd8",
+      "ts": "2026-06-10T13:00:08.92454Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T07:50:16.393000Z"
+    },
+    {
+      "sid": "6131f50c-4e99-4c71-bee8-1f40cfda73da",
+      "ts": "2026-06-10T13:00:09.490674Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T08:09:41.750000Z"
+    },
+    {
+      "sid": "87ff305d-b222-47b4-b7e5-f1527bfb1275",
+      "ts": "2026-06-10T13:00:10.205868Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 22,
+      "max_turn_ts": "2026-06-10T08:42:52.203000Z"
+    },
+    {
+      "sid": "9472a55c-a70e-466c-aa78-9f4829123be8",
+      "ts": "2026-06-10T13:00:10.983096Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T08:01:53.510000Z"
+    },
+    {
+      "sid": "a44da9a3-4a07-4b33-9d06-876389ed33d0",
+      "ts": "2026-06-10T13:00:11.683363Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 8,
+      "max_turn_ts": "2026-06-10T12:54:30.235000Z"
+    },
+    {
+      "sid": "dc5c86c9-5e72-42c6-9650-a62b5351b3d4",
+      "ts": "2026-06-10T13:00:12.448172Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 17,
+      "max_turn_ts": "2026-06-10T08:21:09.025000Z"
+    },
+    {
+      "sid": "dcb71837-621a-49ce-a071-43295d092dac",
+      "ts": "2026-06-10T13:00:14.879582Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T09:04:51.215000Z"
+    },
+    {
+      "sid": "e4c2d9df-1484-4c6b-b176-bc2d0e00af3a",
+      "ts": "2026-06-10T13:00:15.677738Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 6,
+      "max_turn_ts": "2026-06-10T07:35:18.643000Z"
+    },
+    {
+      "sid": "ee0a13bd-d7d1-46a3-b3a4-3a17d467653d",
+      "ts": "2026-06-10T13:00:16.424625Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T07:54:24.139000Z"
+    },
+    {
+      "sid": "9a70f223-0d6f-48ed-8738-a3535c07cc2a",
+      "ts": "2026-06-10T14:37:45.89512Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 7,
+      "max_turn_ts": "2026-06-10T14:42:07.943000Z"
+    },
+    {
+      "sid": "5d099da4-f29a-4f8d-bdfe-00f29eddb6aa",
+      "ts": "2026-06-10T17:48:16.632287Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T17:50:08.358000Z"
+    },
+    {
+      "sid": "12f14034-3e5f-4412-afc4-70aef02620a0",
+      "ts": "2026-06-10T17:58:33.634753Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T18:00:22.214000Z"
+    },
+    {
+      "sid": "4c0588ba-a7f2-4792-b6b1-128a8482f018",
+      "ts": "2026-06-10T19:35:10.85706Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T19:38:38.451000Z"
+    },
+    {
+      "sid": "e7502661-6db2-4163-a309-f52d82d208de",
+      "ts": "2026-06-10T20:54:34.611226Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 5,
+      "max_turn_ts": "2026-06-10T20:57:00.772000Z"
+    },
+    {
+      "sid": "d3d91abd-7d91-41de-8fff-89c77eecde39",
+      "ts": "2026-06-10T21:19:00.937672Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T21:20:54.298000Z"
+    },
+    {
+      "sid": "f228f880-421c-4579-bd69-551a2becb739",
+      "ts": "2026-06-10T21:25:43.351588Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T21:27:59.023000Z"
+    },
+    {
+      "sid": "170a1e54-78fe-4147-87a5-2276f6a0dc77",
+      "ts": "2026-06-10T22:16:43.859999Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 10,
+      "max_turn_ts": "2026-06-09T04:03:50.536000Z"
+    },
+    {
+      "sid": "b30d1707-43de-47a3-821e-921aa1368e23",
+      "ts": "2026-06-10T22:16:55.187006Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T16:41:05.650000Z"
+    },
+    {
+      "sid": "26e266d6-5b02-45f3-bffa-dcf253a3ca18",
+      "ts": "2026-06-10T23:38:54.49285Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T23:38:41.624000Z"
+    },
+    {
+      "sid": "eb2c8f9d-2c3b-4ea5-b3e6-781749968268",
+      "ts": "2026-06-10T23:53:51.214725Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T23:55:56.730000Z"
+    },
+    {
+      "sid": "42c33157-8a3e-4328-b1a4-fb62b5a5e8e9",
+      "ts": "2026-06-11T01:37:30.545095Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T22:19:27.096000Z"
+    },
+    {
+      "sid": "3e156943-590d-47a1-8a0f-e84aa6f2f9e7",
+      "ts": "2026-06-11T01:47:00.306338Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T22:19:52.748000Z"
+    },
+    {
+      "sid": "ad462c24-5753-4887-87bc-ead4f94c5efd",
+      "ts": "2026-06-11T01:51:15.315937Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-11T01:51:55.147000Z"
+    },
+    {
+      "sid": "2a3171de-3431-4d00-a131-052f35df515c",
+      "ts": "2026-06-11T04:40:20.144489Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T16:41:22.208000Z"
+    },
+    {
+      "sid": "3056c45f-d660-4661-9f88-06cbd12d0998",
+      "ts": "2026-06-11T04:40:21.064316Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-11T01:29:53.357000Z"
+    },
+    {
+      "sid": "309f0412-194f-4050-98e3-16864b68cd08",
+      "ts": "2026-06-11T04:40:21.931Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-11T01:39:55.236000Z"
+    },
+    {
+      "sid": "43ee39af-5088-4d27-b288-dc6ce042a031",
+      "ts": "2026-06-11T04:40:24.634032Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 5,
+      "max_turn_ts": "2026-06-10T21:14:17.821000Z"
+    },
+    {
+      "sid": "4d4e6d7f-c82f-4eaa-bc05-55e5c1981d39",
+      "ts": "2026-06-11T04:40:25.576246Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T20:48:10.498000Z"
+    },
+    {
+      "sid": "6501609c-4c0c-4e85-a26b-96e697251fdc",
+      "ts": "2026-06-11T04:40:26.415884Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-11T01:40:49.221000Z"
+    },
+    {
+      "sid": "6ab89db3-cec2-422e-8c7f-0cb0b6174b62",
+      "ts": "2026-06-11T04:40:27.22578Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T18:46:17.730000Z"
+    },
+    {
+      "sid": "6c569cdb-79c7-48cf-ada5-fd6ff919f906",
+      "ts": "2026-06-11T04:40:28.031998Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-11T00:03:28.109000Z"
+    },
+    {
+      "sid": "7309db63-bddf-4657-8c3e-1fbd95414f04",
+      "ts": "2026-06-11T04:40:29.457938Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T18:31:05.903000Z"
+    },
+    {
+      "sid": "9dcede62-85fa-4265-a8e3-0a94074a8c63",
+      "ts": "2026-06-11T04:40:30.181981Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-11T01:48:14.799000Z"
+    },
+    {
+      "sid": "9f2208b2-c3be-40a6-8a79-38ea134973d4",
+      "ts": "2026-06-11T04:40:31.456204Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T17:41:17.507000Z"
+    },
+    {
+      "sid": "b72b89f4-b60b-4fb4-a8d4-0eab43cde215",
+      "ts": "2026-06-11T04:40:33.064813Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T15:08:57.527000Z"
+    },
+    {
+      "sid": "bc870a57-92c9-401f-afc2-7b5c2efad836",
+      "ts": "2026-06-11T04:40:34.089934Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T21:36:32.065000Z"
+    },
+    {
+      "sid": "bce79221-b15f-4ed3-8949-98296366c42e",
+      "ts": "2026-06-11T04:40:35.001919Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 4,
+      "max_turn_ts": "2026-06-10T14:27:00.010000Z"
+    },
+    {
+      "sid": "c18a0443-adae-4a80-9e4d-59c126dd4867",
+      "ts": "2026-06-11T04:40:35.931726Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 8,
+      "max_turn_ts": "2026-06-10T17:34:26.937000Z"
+    },
+    {
+      "sid": "c43f834e-effb-4365-b404-9bfc0ae262c2",
+      "ts": "2026-06-11T04:40:36.759535Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 20,
+      "max_turn_ts": "2026-06-11T03:50:59.874000Z"
+    },
+    {
+      "sid": "cd44914f-23dc-48fc-bb18-76d75c135559",
+      "ts": "2026-06-11T04:40:37.824411Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T15:56:16.878000Z"
+    },
+    {
+      "sid": "cebda689-2117-472a-9562-0567b78c6a2e",
+      "ts": "2026-06-11T04:40:38.880418Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T14:10:08.180000Z"
+    },
+    {
+      "sid": "cf40ff06-857a-422d-9570-775b475c04c5",
+      "ts": "2026-06-11T04:40:39.949996Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T14:52:12.041000Z"
+    },
+    {
+      "sid": "d2bd7558-a8d3-45f2-9847-f9df79cb48d7",
+      "ts": "2026-06-11T04:40:40.816724Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T23:51:01.161000Z"
+    },
+    {
+      "sid": "dbe71f4a-9299-4be9-84a2-e20836d73836",
+      "ts": "2026-06-11T04:40:41.542487Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-11T01:48:25.530000Z"
+    },
+    {
+      "sid": "ea838524-b8db-477c-a51d-ca675db9f9fe",
+      "ts": "2026-06-11T04:40:42.854636Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T15:34:42.347000Z"
+    },
+    {
+      "sid": "f6aea956-f521-45ad-bbe2-fcb4a7e22e55",
+      "ts": "2026-06-11T04:40:43.553838Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 6,
+      "max_turn_ts": "2026-06-10T23:23:24.728000Z"
+    },
+    {
+      "sid": "f702f8a9-6b86-4103-8181-14add6828f72",
+      "ts": "2026-06-11T04:40:44.537334Z",
+      "repo": "gabadi/gabadi-tetris",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T14:04:08.786000Z"
+    },
+    {
+      "sid": "cc0695f3-af62-402d-8377-1542fd564ead",
+      "ts": "2026-06-15T02:22:25.620311Z",
+      "repo": "gabadi/swarm-forge",
+      "n": 10,
+      "max_turn_ts": "2026-06-15T02:22:48.145000Z"
+    },
+    {
+      "sid": "82f96fe7-3314-4aba-842a-67a942c95b67",
+      "ts": "2026-06-15T04:08:19.900407Z",
+      "repo": "gabadi/swarm-forge",
+      "n": 12,
+      "max_turn_ts": "2026-06-15T04:08:08.713000Z"
+    },
+    {
+      "sid": "000768a0-19d4-4cd7-85d6-416fd1e5825c",
+      "ts": "2026-06-16T04:34:15.153252Z",
+      "repo": "gabadi/drywall",
+      "n": 6,
+      "max_turn_ts": "2026-06-16T04:34:26.997000Z"
+    },
+    {
+      "sid": "3047ad02-3cc9-4a73-a17c-db61183e2637",
+      "ts": "2026-06-16T06:58:54.233885Z",
+      "repo": "gabadi/drywall",
+      "n": 2,
+      "max_turn_ts": "2026-06-16T07:02:43.534000Z"
+    },
+    {
+      "sid": "e1257b49-0c96-419d-85cd-a34520d3fe1e",
+      "ts": "2026-06-17T03:04:25.254267Z",
+      "repo": "gabadi/drywall",
+      "n": 26,
+      "max_turn_ts": "2026-06-17T03:04:19.321000Z"
+    },
+    {
+      "sid": "fb43a566-1bed-48e7-ad75-e1eec0531272",
+      "ts": "2026-06-17T04:25:43.752079Z",
+      "repo": "gabadi/drywall",
+      "n": 51,
+      "max_turn_ts": "2026-06-17T04:25:52.331000Z"
+    },
+    {
+      "sid": "d866bc4a-1f5d-46e7-8ba1-fc19bd24e584",
+      "ts": "2026-06-17T04:27:36.312969Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-17T04:27:47.553000Z"
+    },
+    {
+      "sid": "3aa635a4-88db-4b37-b4ae-2274e60c481d",
+      "ts": "2026-06-17T17:53:08.125949Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-16T04:50:36.532000Z"
+    },
+    {
+      "sid": "7ac4552c-bbbc-42b6-942e-1ff1441be247",
+      "ts": "2026-06-17T17:53:09.19377Z",
+      "repo": "gabadi/drywall",
+      "n": 2,
+      "max_turn_ts": "2026-06-17T05:18:01.759000Z"
+    },
+    {
+      "sid": "a675d102-d21a-46f9-9e6a-e4e00227828d",
+      "ts": "2026-06-17T17:53:10.428633Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-17T06:17:21.001000Z"
+    },
+    {
+      "sid": "298dd241-a367-4e73-bdec-87a06231a90b",
+      "ts": "2026-06-19T00:10:23.433384Z",
+      "repo": "gabadi/drywall",
+      "n": 12,
+      "max_turn_ts": "2026-06-19T00:11:02.687000Z"
+    },
+    {
+      "sid": "fbf77daa-d234-4ff2-8bc2-aec5abc56fbb",
+      "ts": "2026-06-19T07:37:14.249759Z",
+      "repo": "gabadi/drywall",
+      "n": 5,
+      "max_turn_ts": "2026-06-19T07:39:16.120000Z"
+    },
+    {
+      "sid": "226e5003-ad39-4562-9ed4-49dd0f07eee9",
+      "ts": "2026-06-19T07:53:10.560853Z",
+      "repo": "gabadi/drywall",
+      "n": 4,
+      "max_turn_ts": "2026-06-19T07:55:07.112000Z"
+    },
+    {
+      "sid": "f2929516-effe-4434-a02c-4569b5c8352f",
+      "ts": "2026-06-19T07:57:40.699877Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-19T07:58:32.320000Z"
+    },
+    {
+      "sid": "9f51ae50-eae7-4148-a05d-16eda52a5cab",
+      "ts": "2026-06-19T08:24:48.164109Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-19T07:11:59.018000Z"
+    },
+    {
+      "sid": "c01492bf-e25d-4c04-90cd-79eba5e938df",
+      "ts": "2026-06-21T00:20:08.535762Z",
+      "repo": "gabadi/drywall",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T00:20:35.939000Z"
+    },
+    {
+      "sid": "59082165-ec58-491b-b278-24e99b2d1cec",
+      "ts": "2026-06-21T03:01:10.205896Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-21T03:03:48.046000Z"
+    },
+    {
+      "sid": "cd539689-6f5e-42db-986b-1c1f1249857f",
+      "ts": "2026-06-21T04:15:44.584439Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-19T07:18:04.301000Z"
+    },
+    {
+      "sid": "13abb9b2-a239-4e74-8563-ec4ff840e192",
+      "ts": "2026-06-21T06:10:17.027959Z",
+      "repo": "gabadi/drywall",
+      "n": 2,
+      "max_turn_ts": "2026-06-21T03:09:24.529000Z"
+    },
+    {
+      "sid": "afdf5692-db7c-4979-a811-7c5efd6ff189",
+      "ts": "2026-06-21T06:10:25.898931Z",
+      "repo": "gabadi/drywall",
+      "n": 13,
+      "max_turn_ts": "2026-06-21T00:03:22.630000Z"
+    },
+    {
+      "sid": "ca7ffb05-6213-4c90-bd00-6c83407f5c79",
+      "ts": "2026-06-21T06:10:27.769241Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-21T04:02:28.377000Z"
+    },
+    {
+      "sid": "dc39fd1d-1487-4be4-8e7c-5fc4338f7e20",
+      "ts": "2026-06-21T06:10:32.978258Z",
+      "repo": "gabadi/drywall",
+      "n": 7,
+      "max_turn_ts": "2026-06-21T04:32:17.824000Z"
+    },
+    {
+      "sid": "cd1fedb9-ccf8-4ea9-80a9-f688b5733499",
+      "ts": "2026-06-21T07:03:39.924714Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-21T07:06:04.992000Z"
+    },
+    {
+      "sid": "7a378935-941a-4693-a9b4-d2d2a9f505e5",
+      "ts": "2026-06-21T13:14:00.348555Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-21T08:29:44.637000Z"
+    },
+    {
+      "sid": "f3ac0a8b-c4b6-4449-9d03-d047d5fef98b",
+      "ts": "2026-06-21T13:14:04.499683Z",
+      "repo": "gabadi/drywall",
+      "n": 2,
+      "max_turn_ts": "2026-06-21T13:10:46.440000Z"
+    },
+    {
+      "sid": "979a6ef6-23d1-4b44-81f1-7f7f71c98d29",
+      "ts": "2026-06-21T16:05:25.868949Z",
+      "repo": "gabadi/drywall",
+      "n": 11,
+      "max_turn_ts": "2026-06-21T16:02:26.916000Z"
+    },
+    {
+      "sid": "c5e8d278-c766-4ef8-ac17-9ebc08f308c7",
+      "ts": "2026-06-21T16:31:25.218386Z",
+      "repo": "gabadi/drywall",
+      "n": 6,
+      "max_turn_ts": "2026-06-21T09:34:32.536000Z"
+    },
+    {
+      "sid": "178101ab-fb94-46a7-9c36-ff63a64c6497",
+      "ts": "2026-06-21T16:58:41.459648Z",
+      "repo": "gabadi/drywall",
+      "n": 7,
+      "max_turn_ts": "2026-06-21T17:01:05.749000Z"
+    },
+    {
+      "sid": "6cfc6d2b-e6a7-4da1-b707-f5d227fc8002",
+      "ts": "2026-06-21T18:01:17.009684Z",
+      "repo": "gabadi/drywall",
+      "n": 2,
+      "max_turn_ts": "2026-06-21T18:02:19.517000Z"
+    },
+    {
+      "sid": "958efd07-c293-4183-a7b5-e06c2747b643",
+      "ts": "2026-06-21T20:19:10.993216Z",
+      "repo": "gabadi/drywall",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T20:10:54.222000Z"
+    },
+    {
+      "sid": "e0372d67-f293-4b4e-a098-3f12565b0d74",
+      "ts": "2026-06-21T20:19:11.988326Z",
+      "repo": "gabadi/drywall",
+      "n": 27,
+      "max_turn_ts": "2026-06-21T20:00:29.223000Z"
+    },
+    {
+      "sid": "94a98bee-d74f-4b75-b860-e82cb524caa8",
+      "ts": "2026-06-21T20:23:47.415985Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-21T20:24:01.010000Z"
+    },
+    {
+      "sid": "35fd8608-c170-491b-ba40-8b39a5a5e645",
+      "ts": "2026-06-21T20:32:41.050932Z",
+      "repo": "gabadi/drywall",
+      "n": 2,
+      "max_turn_ts": "2026-06-21T20:33:02.458000Z"
+    },
+    {
+      "sid": "02cb44cf-d9c4-4fd0-a925-a1be943e695e",
+      "ts": "2026-06-21T21:00:33.678252Z",
+      "repo": "gabadi/drywall",
+      "n": 9,
+      "max_turn_ts": "2026-06-21T21:00:43.200000Z"
+    },
+    {
+      "sid": "1de26cb4-2b23-4258-9548-b8aa216de47c",
+      "ts": "2026-06-21T21:29:22.751484Z",
+      "repo": "gabadi/drywall",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T21:30:55.559000Z"
+    },
+    {
+      "sid": "09f8495d-f009-40fc-8117-ba7c7ea23002",
+      "ts": "2026-06-21T21:51:04.104198Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-21T21:51:42.194000Z"
+    },
+    {
+      "sid": "d82cc8b6-542d-4645-9d86-56fbaa43349e",
+      "ts": "2026-06-21T22:13:17.333246Z",
+      "repo": "gabadi/drywall",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T22:03:22.731000Z"
+    },
+    {
+      "sid": "f8623d29-61de-4629-b92d-954d448f67c5",
+      "ts": "2026-06-21T22:17:07.753894Z",
+      "repo": "gabadi/drywall",
+      "n": 3,
+      "max_turn_ts": "2026-06-21T22:17:20.057000Z"
+    },
+    {
+      "sid": "09ea26f4-8709-40c3-ad68-26f80515627d",
+      "ts": "2026-06-22T02:17:06.399554Z",
+      "repo": "gabadi/drywall",
+      "n": 14,
+      "max_turn_ts": "2026-06-22T02:17:01.887000Z"
+    },
+    {
+      "sid": "e9ed0d5e-8075-4b83-b9e6-ba9945fbadb3",
+      "ts": "2026-06-22T03:19:13.909595Z",
+      "repo": "gabadi/crap4py",
+      "n": 8,
+      "max_turn_ts": "2026-06-22T03:19:22.583000Z"
+    },
+    {
+      "sid": "e1bc4d7c-9832-42da-b388-d22c27cc5200",
+      "ts": "2026-06-22T03:30:01.37323Z",
+      "repo": "gabadi/crap4py",
+      "n": 3,
+      "max_turn_ts": "2026-06-22T03:30:08.564000Z"
+    },
+    {
+      "sid": "07f1de1c-82a3-4dd2-8508-85b99d956e66",
+      "ts": "2026-06-22T03:51:24.49523Z",
+      "repo": "gabadi/crap4py",
+      "n": 1,
+      "max_turn_ts": "2026-06-22T03:51:39.332000Z"
+    },
+    {
+      "sid": "962bf2e0-0112-4246-b9d3-d0146522431c",
+      "ts": "2026-06-22T17:04:03.377714Z",
+      "repo": "gabadi/drywall",
+      "n": 1,
+      "max_turn_ts": "2026-06-22T17:04:08.189000Z"
+    },
+    {
+      "sid": "40f9401a-0793-4be6-b882-a4c65e7e38c5",
+      "ts": "2026-06-23T06:34:17.080953Z",
+      "repo": "gabadi/crap4py",
+      "n": 1,
+      "max_turn_ts": "2026-06-23T05:40:28.936000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

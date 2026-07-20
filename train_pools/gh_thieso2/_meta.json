@@ -1,0 +1,992 @@
+{
+  "developer": "gh:thieso2",
+  "slug": "gh_thieso2",
+  "Tstar": "2026-05-06T05:12:16.183138159Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 140,
+  "n_human_turns": 1121,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "27047749-2364-43d7-8ea6-7da6fdfc8f74",
+      "ts": "2026-02-12T15:03:33.007905Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-12T15:03:32.614000Z"
+    },
+    {
+      "sid": "9d43ebb0-29c6-4ae3-b7d4-589a99b85792",
+      "ts": "2026-02-12T15:49:33.651048Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-12T15:49:33.237000Z"
+    },
+    {
+      "sid": "e8d3a73e-71d2-4387-9016-57ac1daeea00",
+      "ts": "2026-02-12T16:12:24.808578Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T16:12:24.512000Z"
+    },
+    {
+      "sid": "6c24d9a0-0162-4217-b1bd-449cb8913e1e",
+      "ts": "2026-02-12T16:24:05.427664Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 9,
+      "max_turn_ts": "2026-02-12T16:19:53.061000Z"
+    },
+    {
+      "sid": "d05b859c-3975-4c63-8b93-c8df2e9658d9",
+      "ts": "2026-02-12T16:37:14.219612Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-02-12T16:37:13.798000Z"
+    },
+    {
+      "sid": "a49ee1a6-f969-4def-9902-80af61577008",
+      "ts": "2026-02-12T16:45:36.861055Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T16:45:36.496000Z"
+    },
+    {
+      "sid": "b2931ac1-eaa0-49f6-9fd3-0c9bd07d743e",
+      "ts": "2026-02-12T17:42:38.485776Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-12T17:42:38.079000Z"
+    },
+    {
+      "sid": "551bb262-3222-49c1-b813-176b13f58554",
+      "ts": "2026-02-12T18:40:30.505083Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 9,
+      "max_turn_ts": "2026-02-12T18:32:47.977000Z"
+    },
+    {
+      "sid": "056b673a-1152-473c-94f9-46b813f79bbf",
+      "ts": "2026-02-13T04:52:52.718786Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 12,
+      "max_turn_ts": "2026-02-12T19:23:34.690000Z"
+    },
+    {
+      "sid": "1d2830d9-e604-4d80-b403-7fb72a690e45",
+      "ts": "2026-02-13T04:52:53.22449Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-12T20:52:50.331000Z"
+    },
+    {
+      "sid": "92013a1a-f979-48e5-a8d1-8a6096b9daab",
+      "ts": "2026-02-13T05:33:56.707163Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 14,
+      "max_turn_ts": "2026-02-13T05:33:55.506000Z"
+    },
+    {
+      "sid": "96188a37-a21d-410d-be38-f7bbcf26bb8a",
+      "ts": "2026-02-13T05:37:29.02577Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T05:37:28.444000Z"
+    },
+    {
+      "sid": "f06313a3-6295-4da8-93e5-3957c86775aa",
+      "ts": "2026-02-13T06:28:14.17733Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-02-13T06:28:13.846000Z"
+    },
+    {
+      "sid": "1851e526-c6e5-4b68-bf6b-b6f7f7fc9b5a",
+      "ts": "2026-02-13T07:32:17.332966Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-13T07:32:16.840000Z"
+    },
+    {
+      "sid": "021e92d0-262e-4feb-ae71-53d3d1c860b3",
+      "ts": "2026-02-13T07:55:29.033891Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T07:42:22.287000Z"
+    },
+    {
+      "sid": "454acf77-4e88-4df3-982e-699cee9a8115",
+      "ts": "2026-02-13T07:55:29.174981Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-02-13T07:42:47.893000Z"
+    },
+    {
+      "sid": "c8d98b52-8f39-4918-b537-826707ded717",
+      "ts": "2026-02-13T07:55:38.96053Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T07:55:38.530000Z"
+    },
+    {
+      "sid": "243a3c76-ac8c-48f9-9aeb-dd0f757219ad",
+      "ts": "2026-02-13T09:30:40.746451Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T09:30:40.305000Z"
+    },
+    {
+      "sid": "118698ac-8e4a-4f78-8358-57bafa970ad9",
+      "ts": "2026-02-13T12:28:24.226594Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 11,
+      "max_turn_ts": "2026-02-13T12:28:23.670000Z"
+    },
+    {
+      "sid": "2f569fc1-7eb3-40a9-9ba3-984c2430ccbb",
+      "ts": "2026-02-13T12:38:45.556084Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T12:38:45.103000Z"
+    },
+    {
+      "sid": "da0ad752-483c-4641-b217-5e8e504b9f37",
+      "ts": "2026-02-13T15:01:18.334274Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 40,
+      "max_turn_ts": "2026-02-13T15:01:17.618000Z"
+    },
+    {
+      "sid": "3f395c1e-7882-4f2c-a7b8-5d6c9813f2da",
+      "ts": "2026-02-13T15:40:15.652531Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T15:27:39.800000Z"
+    },
+    {
+      "sid": "94c5b113-bc63-4e4e-b44b-8ff1fd1898b3",
+      "ts": "2026-02-13T15:40:38.564991Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-13T15:40:38.280000Z"
+    },
+    {
+      "sid": "aa4a4e9c-b92c-46ac-a03d-6a2c97d032b3",
+      "ts": "2026-02-13T16:36:17.026554Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 9,
+      "max_turn_ts": "2026-02-13T16:36:16.428000Z"
+    },
+    {
+      "sid": "fa44cec4-681f-4ded-ac43-326bf25b0e6e",
+      "ts": "2026-02-13T19:02:39.011353Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 11,
+      "max_turn_ts": "2026-02-13T19:02:38.458000Z"
+    },
+    {
+      "sid": "6cfc4873-f0a1-4cb9-b7f6-57a7c501aeb9",
+      "ts": "2026-02-13T19:36:50.014338Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T19:36:49.425000Z"
+    },
+    {
+      "sid": "f04e4aec-897d-4638-a350-b37a490b91e4",
+      "ts": "2026-02-13T19:57:48.911108Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T19:57:48.430000Z"
+    },
+    {
+      "sid": "0c039098-943b-443b-af03-80955bb239dc",
+      "ts": "2026-02-13T20:01:27.322808Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T20:01:26.639000Z"
+    },
+    {
+      "sid": "8bbe5e59-333c-4dd6-9b21-339d8497f6f9",
+      "ts": "2026-02-13T20:11:22.331948Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-13T19:59:44.305000Z"
+    },
+    {
+      "sid": "235a000c-32d8-4995-8e38-1f118e894288",
+      "ts": "2026-02-13T20:36:42.296604Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T20:36:41.753000Z"
+    },
+    {
+      "sid": "51420503-05b5-4a38-b59f-95ff2773f9a3",
+      "ts": "2026-02-13T20:59:01.390232Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T20:55:37.840000Z"
+    },
+    {
+      "sid": "292e16e3-b90f-4a38-801b-6658af224c63",
+      "ts": "2026-02-13T21:04:57.790993Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-13T21:04:56.807000Z"
+    },
+    {
+      "sid": "660c8564-00fa-4de6-beb6-1a5be6b95826",
+      "ts": "2026-02-14T05:29:27.489814Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 11,
+      "max_turn_ts": "2026-02-14T05:29:26.741000Z"
+    },
+    {
+      "sid": "78809d85-2066-4c48-8f76-f38363d8ccdd",
+      "ts": "2026-02-14T06:53:12.494514Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 23,
+      "max_turn_ts": "2026-02-14T06:53:11.940000Z"
+    },
+    {
+      "sid": "5e98cdb4-1b98-49ff-ad6c-e4fb5d897bdf",
+      "ts": "2026-02-14T07:59:53.456406Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 10,
+      "max_turn_ts": "2026-02-14T07:59:52.846000Z"
+    },
+    {
+      "sid": "dcf19c3c-af3f-4503-9252-9fe514b06d4a",
+      "ts": "2026-02-14T09:03:40.306384Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 12,
+      "max_turn_ts": "2026-02-14T09:03:39.642000Z"
+    },
+    {
+      "sid": "39ed5781-d2c7-489e-89c1-6b8d9e345ed6",
+      "ts": "2026-02-14T09:06:25.618077Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-14T09:06:25.162000Z"
+    },
+    {
+      "sid": "65608944-a65a-4d7b-8007-cd727ce38798",
+      "ts": "2026-02-14T09:14:01.256879Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-14T09:14:00.918000Z"
+    },
+    {
+      "sid": "348a171f-495c-4a27-84c1-1e409b984a75",
+      "ts": "2026-02-14T11:22:39.214192Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-14T11:17:30.329000Z"
+    },
+    {
+      "sid": "fff4798b-391e-4fd6-b36e-6f450a71d045",
+      "ts": "2026-02-14T11:37:58.48762Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-14T11:33:54.060000Z"
+    },
+    {
+      "sid": "08cb7cd3-275e-44e6-9d18-6b34cb197a1a",
+      "ts": "2026-02-14T11:58:25.633615Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T11:58:25.184000Z"
+    },
+    {
+      "sid": "d5e1546f-2499-4a0b-95d8-0f830b1317b6",
+      "ts": "2026-02-14T12:29:03.082701Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-14T12:29:02.524000Z"
+    },
+    {
+      "sid": "86a1085e-1abb-4c1e-8c41-0041e9874709",
+      "ts": "2026-02-15T14:52:42.072012Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 15,
+      "max_turn_ts": "2026-02-15T14:52:41.005000Z"
+    },
+    {
+      "sid": "4ba4e355-06b3-4a3d-80e9-9d41946b4f21",
+      "ts": "2026-02-15T16:16:58.756603Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-15T16:16:58.040000Z"
+    },
+    {
+      "sid": "1faff572-0f1b-486d-8730-52a1a9ae5ca4",
+      "ts": "2026-02-17T15:10:09.709451Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 14,
+      "max_turn_ts": "2026-02-15T16:51:33.206000Z"
+    },
+    {
+      "sid": "bd08acdb-b028-437b-bdd6-4e44c81f7350",
+      "ts": "2026-02-17T15:10:09.964665Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-16T17:05:10.917000Z"
+    },
+    {
+      "sid": "ccd5e0f9-f16a-49b9-8414-e96ed586f82a",
+      "ts": "2026-02-17T15:13:07.062536Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-17T15:13:06.501000Z"
+    },
+    {
+      "sid": "6c51ae8c-c1a0-4f6a-bbb2-70bb7b6c5e03",
+      "ts": "2026-02-17T20:05:58.505297Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 14,
+      "max_turn_ts": "2026-02-17T20:05:57.919000Z"
+    },
+    {
+      "sid": "1977ee79-78d2-485c-ae4b-f0f4bc21835f",
+      "ts": "2026-02-18T04:28:55.908908Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T04:28:55.336000Z"
+    },
+    {
+      "sid": "d68a4429-f322-42fa-b68f-b6826af6a13b",
+      "ts": "2026-02-18T10:37:16.274223Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 34,
+      "max_turn_ts": "2026-02-18T10:37:15.426000Z"
+    },
+    {
+      "sid": "55b5dd09-24fe-489a-a6c4-05c3b1a08141",
+      "ts": "2026-02-19T07:06:35.0184Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-19T05:03:58.541000Z"
+    },
+    {
+      "sid": "7f4d09f1-2b30-4fcb-a200-2029d6f57856",
+      "ts": "2026-02-19T07:06:35.107072Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-19T04:44:43.478000Z"
+    },
+    {
+      "sid": "f20b0af4-94d8-4b47-a2ed-29c51a1909f5",
+      "ts": "2026-02-19T07:06:35.272197Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-19T04:46:38.303000Z"
+    },
+    {
+      "sid": "d7e4a472-c8f1-4173-8135-06ce93cd5e06",
+      "ts": "2026-02-19T07:07:16.360693Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 9,
+      "max_turn_ts": "2026-02-19T07:07:15.866000Z"
+    },
+    {
+      "sid": "38319af8-6675-4f71-8d9e-72b50ad0daae",
+      "ts": "2026-02-19T09:57:52.913013Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-19T09:57:52.527000Z"
+    },
+    {
+      "sid": "a007ad70-1975-4795-826d-1a760d43cdf3",
+      "ts": "2026-02-19T10:16:35.752486Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 16,
+      "max_turn_ts": "2026-02-19T10:16:34.906000Z"
+    },
+    {
+      "sid": "daf60c2b-f976-46c2-a97b-527ba5e33af3",
+      "ts": "2026-02-19T13:32:41.963458Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-19T13:32:41.253000Z"
+    },
+    {
+      "sid": "08e08229-41a7-45e0-b701-d7143d946b8c",
+      "ts": "2026-02-19T14:05:31.887057Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-19T14:05:31.541000Z"
+    },
+    {
+      "sid": "890bd234-4dc3-452e-be8f-4a265554f365",
+      "ts": "2026-02-19T15:46:43.226863Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-19T15:46:42.792000Z"
+    },
+    {
+      "sid": "e40c344e-4486-4b4c-8eb3-9ae753f56637",
+      "ts": "2026-02-19T16:28:47.601896Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-02-19T16:28:47.174000Z"
+    },
+    {
+      "sid": "27c16c81-180c-4e19-b14a-7b3914e8c7f9",
+      "ts": "2026-02-19T19:03:35.481032Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-19T17:21:03.530000Z"
+    },
+    {
+      "sid": "9e64ccf5-f384-466b-a451-8bd5c60206ac",
+      "ts": "2026-02-20T07:19:34.903524Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 26,
+      "max_turn_ts": "2026-02-20T05:05:21.012000Z"
+    },
+    {
+      "sid": "e31d40a5-271c-4833-9655-b5ed3595e276",
+      "ts": "2026-02-20T07:23:45.957586Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 12,
+      "max_turn_ts": "2026-02-20T07:23:45.327000Z"
+    },
+    {
+      "sid": "db511143-40c1-48cc-b0be-0a8d26bfb406",
+      "ts": "2026-02-20T10:57:03.634664Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-20T10:57:03.260000Z"
+    },
+    {
+      "sid": "f8835f3f-5ae2-4b89-8578-19e36aa94a94",
+      "ts": "2026-02-20T19:01:45.189601Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 22,
+      "max_turn_ts": "2026-02-20T19:01:42.730000Z"
+    },
+    {
+      "sid": "80734f5d-b937-4b07-a5bb-8fe066254a2e",
+      "ts": "2026-02-21T08:57:29.023216Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-21T08:40:20.211000Z"
+    },
+    {
+      "sid": "88d832af-172e-40b3-ba24-3e2858ddc4fd",
+      "ts": "2026-02-21T08:57:29.083062Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-02-20T19:07:08.554000Z"
+    },
+    {
+      "sid": "664afff5-da61-4090-8906-db529ed28488",
+      "ts": "2026-02-21T12:39:00.557646Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-21T12:38:59.983000Z"
+    },
+    {
+      "sid": "c8376c74-21b4-4862-ad62-19cc41c9303c",
+      "ts": "2026-02-21T14:18:44.209852Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 28,
+      "max_turn_ts": "2026-02-21T13:47:21.392000Z"
+    },
+    {
+      "sid": "872f1872-39c9-416b-baa4-de0c356271d9",
+      "ts": "2026-02-21T14:18:46.637517Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-21T14:18:46.322000Z"
+    },
+    {
+      "sid": "7f6910ed-730a-491b-bd16-e32f4f4bd5f3",
+      "ts": "2026-02-21T14:30:46.44679Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-21T14:27:31.212000Z"
+    },
+    {
+      "sid": "339e2472-b96d-4a2b-9301-86ddf8d540c8",
+      "ts": "2026-02-21T15:42:37.690189Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 11,
+      "max_turn_ts": "2026-02-21T15:42:37.027000Z"
+    },
+    {
+      "sid": "09ad9cc0-74e6-4361-91c6-20815b7c2565",
+      "ts": "2026-02-21T16:02:04.752702Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 19,
+      "max_turn_ts": "2026-02-21T16:02:04.167000Z"
+    },
+    {
+      "sid": "6e7c3c9f-f2a4-482a-9085-6220f97d8215",
+      "ts": "2026-02-21T16:07:43.479171Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-21T16:07:42.729000Z"
+    },
+    {
+      "sid": "b1ef265e-96d6-4c03-a261-cc3d4dbb3100",
+      "ts": "2026-02-21T16:31:23.83621Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 9,
+      "max_turn_ts": "2026-02-21T16:31:23.384000Z"
+    },
+    {
+      "sid": "26d46785-2e10-478d-9642-9a0894786c64",
+      "ts": "2026-02-21T17:47:14.08428Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 11,
+      "max_turn_ts": "2026-02-21T17:47:13.497000Z"
+    },
+    {
+      "sid": "e0f133b9-ef08-413b-a791-c433583ea5e6",
+      "ts": "2026-02-21T18:01:09.59043Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 28,
+      "max_turn_ts": "2026-02-21T18:01:08.954000Z"
+    },
+    {
+      "sid": "4092b9f3-4789-4819-9969-7ec089c4836b",
+      "ts": "2026-02-21T19:02:21.301608Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-21T19:02:20.715000Z"
+    },
+    {
+      "sid": "c904e8af-a9fe-49ea-9aaa-9438a8b84d60",
+      "ts": "2026-02-22T07:33:58.317087Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 9,
+      "max_turn_ts": "2026-02-22T06:42:04.837000Z"
+    },
+    {
+      "sid": "ff428f3d-62fe-42e3-950a-5f51b84c7611",
+      "ts": "2026-02-22T07:33:58.515666Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T07:14:29.833000Z"
+    },
+    {
+      "sid": "971bd6a8-9811-4ddd-b1fd-a9edeb85db9d",
+      "ts": "2026-02-22T09:09:16.1602Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 21,
+      "max_turn_ts": "2026-02-22T09:09:15.704000Z"
+    },
+    {
+      "sid": "cb3ee4b9-83fa-4513-b6cd-5f9cfb4d766a",
+      "ts": "2026-02-22T10:43:36.410871Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-22T10:43:35.655000Z"
+    },
+    {
+      "sid": "6b718dae-89d7-47e4-9aa9-d409c024722d",
+      "ts": "2026-02-22T13:06:36.319451Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T13:06:35.588000Z"
+    },
+    {
+      "sid": "3fbf8a9a-6aac-4add-b2b7-12f86bbbcac2",
+      "ts": "2026-02-22T14:22:04.234664Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T14:22:03.623000Z"
+    },
+    {
+      "sid": "ad79e67c-68be-4db6-b1eb-87f1d766481a",
+      "ts": "2026-02-22T17:57:21.726284Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-22T17:56:34.246000Z"
+    },
+    {
+      "sid": "7f869daa-8465-49c9-af09-c4e91f8e5dd2",
+      "ts": "2026-02-22T17:57:43.925959Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T17:57:43.453000Z"
+    },
+    {
+      "sid": "366dc3d5-8b90-4a9d-a6af-077c3e2f2636",
+      "ts": "2026-02-22T18:21:48.011837Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T18:21:47.577000Z"
+    },
+    {
+      "sid": "749330e4-a09f-4de7-a8cb-03f908489e6b",
+      "ts": "2026-02-22T19:05:12.319575Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T19:05:11.811000Z"
+    },
+    {
+      "sid": "6d005203-fad0-404d-a323-a143772054b2",
+      "ts": "2026-02-22T21:21:33.952568Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 11,
+      "max_turn_ts": "2026-02-22T21:21:32.977000Z"
+    },
+    {
+      "sid": "a6a58d97-b8a0-4124-a655-20c46342f7fd",
+      "ts": "2026-02-23T07:29:57.029189Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-02-23T07:29:56.124000Z"
+    },
+    {
+      "sid": "9603c2ed-15b6-40b4-a4a6-24f868cc36f0",
+      "ts": "2026-02-23T10:17:59.023979Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-02-23T10:17:58.599000Z"
+    },
+    {
+      "sid": "3332de19-23c3-4bc5-99dc-8b31c9b0190a",
+      "ts": "2026-03-02T07:45:38.590741Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-03-02T07:45:37.847000Z"
+    },
+    {
+      "sid": "b5fb28e7-0cde-4f65-9ab4-49b792912e55",
+      "ts": "2026-03-03T06:35:11.760103Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-03-03T06:35:10.918000Z"
+    },
+    {
+      "sid": "d745aedf-2de6-4673-bb4c-038a0ce286b7",
+      "ts": "2026-03-03T07:14:09.040288Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-03-03T07:14:08.400000Z"
+    },
+    {
+      "sid": "ad7c9d32-4bdb-406b-8d10-5f15d84b5019",
+      "ts": "2026-03-03T07:48:05.403832Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-03-03T07:48:04.923000Z"
+    },
+    {
+      "sid": "d7f93195-97b8-43c8-b9c1-e5cf665dd7b6",
+      "ts": "2026-03-03T16:47:35.59684Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-03-03T16:47:34.984000Z"
+    },
+    {
+      "sid": "f545e7d8-b603-4596-89dc-862a09d3c544",
+      "ts": "2026-03-03T19:09:10.590993Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-03-03T19:09:09.988000Z"
+    },
+    {
+      "sid": "f2f0caeb-54ff-4f82-8daf-f1311df5cdda",
+      "ts": "2026-03-06T16:11:48.863237Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 18,
+      "max_turn_ts": "2026-03-06T15:38:15.884000Z"
+    },
+    {
+      "sid": "c93de87c-485e-4d6d-a378-3a2d3ce77840",
+      "ts": "2026-03-06T16:54:59.436381Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 17,
+      "max_turn_ts": "2026-03-06T16:54:58.658000Z"
+    },
+    {
+      "sid": "5714e445-d925-4585-ae5e-8a7759392238",
+      "ts": "2026-03-07T07:26:16.378794Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-03-07T07:26:15.233000Z"
+    },
+    {
+      "sid": "6766e8c3-0e2f-4abb-a5cf-ed15086b5d54",
+      "ts": "2026-03-07T15:27:14.641932Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 50,
+      "max_turn_ts": "2026-03-07T15:27:13.426000Z"
+    },
+    {
+      "sid": "77dfd7fc-22a8-4d7b-b5ff-7b8b1879dd51",
+      "ts": "2026-03-07T16:59:47.156762Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 22,
+      "max_turn_ts": "2026-03-07T16:59:46.421000Z"
+    },
+    {
+      "sid": "d01b090f-765b-41ff-ba65-041461dd0668",
+      "ts": "2026-03-07T17:11:27.368959Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-03-07T17:08:55.050000Z"
+    },
+    {
+      "sid": "87da4a76-638b-4206-98ca-5667490ff57b",
+      "ts": "2026-03-07T17:42:36.170386Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-03-07T17:42:35.652000Z"
+    },
+    {
+      "sid": "60bafc56-3832-4518-a300-ae7d0727cc69",
+      "ts": "2026-03-07T19:06:39.90056Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-03-07T18:09:42.577000Z"
+    },
+    {
+      "sid": "95536d23-54d9-4c01-bf4f-437b4b642b0b",
+      "ts": "2026-03-07T19:06:49.919246Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-03-07T19:06:49.483000Z"
+    },
+    {
+      "sid": "3d6feca5-c036-4004-af4b-32c2681444cd",
+      "ts": "2026-03-07T19:57:00.788719Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-03-07T19:57:00.345000Z"
+    },
+    {
+      "sid": "59cad604-fcd1-422c-9fed-f053242bfb14",
+      "ts": "2026-03-07T21:27:32.114265Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 13,
+      "max_turn_ts": "2026-03-07T21:27:31.281000Z"
+    },
+    {
+      "sid": "1c101d38-c344-43aa-a145-ffe07b98abbb",
+      "ts": "2026-03-08T07:39:32.585846Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 12,
+      "max_turn_ts": "2026-03-08T07:39:31.859000Z"
+    },
+    {
+      "sid": "ee0f9b5c-bde6-458a-a684-8f98d825f46f",
+      "ts": "2026-03-08T10:39:40.304758Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-03-08T08:52:41.318000Z"
+    },
+    {
+      "sid": "e1f7aa81-31f5-4f2b-8475-31ca428e5664",
+      "ts": "2026-03-08T10:58:22.335708Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-03-08T10:58:21.563000Z"
+    },
+    {
+      "sid": "636fa95d-2bc4-49cf-9bfd-22670c3bdf5f",
+      "ts": "2026-03-08T14:59:17.413926Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 13,
+      "max_turn_ts": "2026-03-08T14:38:28.296000Z"
+    },
+    {
+      "sid": "c63fa026-ab19-4cdd-8f45-0a9525452c51",
+      "ts": "2026-03-09T08:27:02.828602Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 30,
+      "max_turn_ts": "2026-03-09T08:27:01.765000Z"
+    },
+    {
+      "sid": "cdb6e1c9-7e57-4566-beb3-0f6e855730ba",
+      "ts": "2026-03-10T17:51:35.357242Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-03-10T17:16:10.263000Z"
+    },
+    {
+      "sid": "c5f2147d-0561-4565-a63e-d83a35336fe7",
+      "ts": "2026-03-10T17:51:58.969936Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 2,
+      "max_turn_ts": "2026-03-10T17:51:58.346000Z"
+    },
+    {
+      "sid": "3264a5e4-9f19-4485-b8b1-14cf7d9e5e94",
+      "ts": "2026-03-10T19:34:37.456388Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-03-10T18:37:56.748000Z"
+    },
+    {
+      "sid": "0286f8cb-497d-4c89-9fc2-48925dd3f28f",
+      "ts": "2026-03-10T19:34:59.060046Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-03-10T19:34:58.519000Z"
+    },
+    {
+      "sid": "b8f611c8-0a81-4ac2-958a-f4a92dfb1bea",
+      "ts": "2026-03-24T16:32:30.621113Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 22,
+      "max_turn_ts": "2026-03-24T16:32:29.932000Z"
+    },
+    {
+      "sid": "2d4cf361-1170-472f-a309-f2c87c8c8e57",
+      "ts": "2026-03-25T05:27:27.828943Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-03-25T05:27:27.254000Z"
+    },
+    {
+      "sid": "ed244393-f29a-47dd-b134-7640360a9915",
+      "ts": "2026-03-25T07:39:55.116115Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-03-25T07:39:54.519000Z"
+    },
+    {
+      "sid": "6faea8bd-02d5-4118-a588-ed8322395299",
+      "ts": "2026-03-27T09:30:07.63662Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T08:45:16.466000Z"
+    },
+    {
+      "sid": "06853842-e0a1-4212-a1e6-26ca79243a46",
+      "ts": "2026-03-27T10:54:44.744257Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 14,
+      "max_turn_ts": "2026-03-27T10:54:40.306000Z"
+    },
+    {
+      "sid": "53ee8c25-ff7b-4d0b-97a8-d0a304d3a92d",
+      "ts": "2026-03-28T22:05:02.67542Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 5,
+      "max_turn_ts": "2026-03-28T22:04:59.154000Z"
+    },
+    {
+      "sid": "3bca097c-273c-4dc4-919f-e0e577d2f7e1",
+      "ts": "2026-03-30T13:23:43.504579Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-03-30T10:03:49.586000Z"
+    },
+    {
+      "sid": "6f3c45d2-4df5-465c-a575-b80052395c6b",
+      "ts": "2026-03-30T15:13:52.026518Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 24,
+      "max_turn_ts": "2026-03-30T15:13:48.197000Z"
+    },
+    {
+      "sid": "08a19fd1-5772-47a3-b6e3-e923261fbc7d",
+      "ts": "2026-04-02T09:51:06.300324Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 12,
+      "max_turn_ts": "2026-04-02T09:51:02.796000Z"
+    },
+    {
+      "sid": "32d69744-ab8b-4e81-aa23-14f4e348b4e9",
+      "ts": "2026-04-16T16:58:49.913358Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 16,
+      "max_turn_ts": "2026-04-16T16:58:46.128000Z"
+    },
+    {
+      "sid": "0be5d6a0-e384-461e-9fbd-71a9334d09e1",
+      "ts": "2026-04-16T19:33:31.02074Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-04-16T19:28:09.308000Z"
+    },
+    {
+      "sid": "8c84d9af-3702-4476-ac37-230de7256853",
+      "ts": "2026-04-16T19:33:51.812149Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 4,
+      "max_turn_ts": "2026-04-16T19:33:48.257000Z"
+    },
+    {
+      "sid": "259bcfa7-d8a9-4bd7-93fe-3c0ce9d65fb2",
+      "ts": "2026-04-17T09:50:45.408071Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T09:50:41.770000Z"
+    },
+    {
+      "sid": "f89d95e2-9b41-44b2-b5ac-0c37cf1773a8",
+      "ts": "2026-04-17T14:55:58.756583Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T14:55:54.536000Z"
+    },
+    {
+      "sid": "a57a1ed0-744c-489b-9d40-b3aa0ea38825",
+      "ts": "2026-04-17T16:18:10.672113896Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 13,
+      "max_turn_ts": "2026-04-17T15:23:50.161000Z"
+    },
+    {
+      "sid": "a191c7cf-78f0-4119-9d67-ffd71431eabf",
+      "ts": "2026-04-17T17:01:54.46733083Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 10,
+      "max_turn_ts": "2026-04-17T17:02:04.889000Z"
+    },
+    {
+      "sid": "fa76f0f8-f05f-4742-8f9f-801c9e2fdc12",
+      "ts": "2026-04-17T18:05:44.350705095Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T18:06:45.910000Z"
+    },
+    {
+      "sid": "222dc79d-91d3-4fdc-9793-e2f214a90c77",
+      "ts": "2026-04-20T07:46:15.565341Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 10,
+      "max_turn_ts": "2026-04-20T07:46:52.641000Z"
+    },
+    {
+      "sid": "df4dd3cd-45f7-4230-a56e-2a89076d3057",
+      "ts": "2026-04-20T07:52:57.059105396Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-04-17T20:07:10.047000Z"
+    },
+    {
+      "sid": "6211e6cc-417c-4b8e-b38a-eb2093ca0729",
+      "ts": "2026-04-20T10:19:23.266043181Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 6,
+      "max_turn_ts": "2026-04-20T10:19:26.752000Z"
+    },
+    {
+      "sid": "c9fd7a7c-a629-41d3-a11c-01599d6f150d",
+      "ts": "2026-04-21T17:26:21.310026341Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 10,
+      "max_turn_ts": "2026-04-21T17:26:32.147000Z"
+    },
+    {
+      "sid": "019df935-f813-7cf3-8d83-20c1dc261589",
+      "ts": "2026-05-05T18:19:32.970268935Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 8,
+      "max_turn_ts": "2026-05-05T18:19:16.199000Z"
+    },
+    {
+      "sid": "183f2bc3-53a9-4497-86ed-729d26d57a76",
+      "ts": "2026-05-06T04:26:32.160392954Z",
+      "repo": "thieso2/Sandcastle",
+      "n": 17,
+      "max_turn_ts": "2026-05-06T04:26:54.845000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

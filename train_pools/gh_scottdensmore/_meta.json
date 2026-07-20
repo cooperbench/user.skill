@@ -1,0 +1,82 @@
+{
+  "developer": "gh:scottdensmore",
+  "slug": "gh_scottdensmore",
+  "Tstar": "2026-07-05T18:47:23.238481Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 10,
+  "n_human_turns": 427,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "c4eaab7c-2442-4244-aea0-55099028299b",
+      "ts": "2026-05-25T22:47:10.608867Z",
+      "repo": "scottdensmore/my-first-commit",
+      "n": 6,
+      "max_turn_ts": "2026-05-25T22:46:57.759000Z"
+    },
+    {
+      "sid": "c5508f23-68ad-4ad4-aaa7-d78ccbc9f10a",
+      "ts": "2026-05-26T03:38:41.116099Z",
+      "repo": "scottdensmore/Cakebrew",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T03:25:28.575000Z"
+    },
+    {
+      "sid": "ff0f4123-0c71-4068-92ca-4e7a2399c8d7",
+      "ts": "2026-05-26T03:38:41.265954Z",
+      "repo": "scottdensmore/Cakebrew",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T03:28:15.749000Z"
+    },
+    {
+      "sid": "a22e27bd-7ce5-4bdb-b1b8-083a9eedbb19",
+      "ts": "2026-05-31T19:11:33.906893Z",
+      "repo": "scottdensmore/contactmanager",
+      "n": 54,
+      "max_turn_ts": "2026-05-31T19:11:54.941000Z"
+    },
+    {
+      "sid": "ba2ab0f0-ce9b-4bac-9162-77faef473111",
+      "ts": "2026-06-06T17:37:01.49728Z",
+      "repo": "scottdensmore/contactmanager",
+      "n": 4,
+      "max_turn_ts": "2026-06-06T17:37:25.025000Z"
+    },
+    {
+      "sid": "b400d7ae-ba0d-4b65-b5d5-ba94f28f0cbc",
+      "ts": "2026-06-07T00:55:56.804096Z",
+      "repo": "scottdensmore/contactmanager",
+      "n": 2,
+      "max_turn_ts": "2026-06-07T00:56:53.754000Z"
+    },
+    {
+      "sid": "5ea1dbe6-8812-489a-b85a-b1b21cf14a47",
+      "ts": "2026-06-09T01:10:00.811086Z",
+      "repo": "scottdensmore/contactmanager",
+      "n": 44,
+      "max_turn_ts": "2026-06-07T17:54:03.779000Z"
+    },
+    {
+      "sid": "3fc447f6-9127-4021-a991-95c38b13d35c",
+      "ts": "2026-06-09T03:24:36.270683Z",
+      "repo": "scottdensmore/travel-app",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T03:27:22.387000Z"
+    },
+    {
+      "sid": "cf4d666e-6b48-4888-87ac-5046a29f09b9",
+      "ts": "2026-06-19T23:57:48.008026Z",
+      "repo": "scottdensmore/MovieSwiftUI",
+      "n": 3,
+      "max_turn_ts": "2026-06-19T23:47:44.451000Z"
+    },
+    {
+      "sid": "2cae28a4-28e8-4bfa-9225-7682543f3664",
+      "ts": "2026-06-30T05:05:30.286047Z",
+      "repo": "scottdensmore/MovieSwiftUI",
+      "n": 311,
+      "max_turn_ts": "2026-06-30T05:06:38.806000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

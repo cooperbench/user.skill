@@ -1,0 +1,705 @@
+{
+  "developer": "gh:hutusi",
+  "slug": "gh_hutusi",
+  "Tstar": "2026-07-05T01:40:05.192724Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 99,
+  "n_human_turns": 1694,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "22db4cc7-3a8d-47f9-8aee-843343c96c31",
+      "ts": "2026-03-02T12:04:50.675471Z",
+      "repo": "hutusi/amytis",
+      "n": 16,
+      "max_turn_ts": "2026-03-02T11:57:25.498000Z"
+    },
+    {
+      "sid": "3b6cb501-a37a-462a-9683-9fa6ca43f894",
+      "ts": "2026-03-02T12:39:55.858246Z",
+      "repo": "hutusi/amytis",
+      "n": 10,
+      "max_turn_ts": "2026-03-02T12:39:58.694000Z"
+    },
+    {
+      "sid": "63dfa74a-67ff-4264-a147-b2db99bebd31",
+      "ts": "2026-03-02T13:15:06.297031Z",
+      "repo": "hutusi/amytis",
+      "n": 4,
+      "max_turn_ts": "2026-03-02T13:15:08.221000Z"
+    },
+    {
+      "sid": "103a94c7-40d8-413a-aef8-c6b19a19ce01",
+      "ts": "2026-03-02T21:46:32.784689Z",
+      "repo": "hutusi/amytis",
+      "n": 2,
+      "max_turn_ts": "2026-03-02T21:46:36.262000Z"
+    },
+    {
+      "sid": "163302c1-854d-4c1f-b63b-d551d8cecf46",
+      "ts": "2026-03-03T05:48:33.560000+00:00",
+      "repo": "?",
+      "n": 23,
+      "max_turn_ts": "2026-03-03T20:51:37.666000Z"
+    },
+    {
+      "sid": "1fbe0976-5d23-4331-a694-506d23771356",
+      "ts": "2026-03-04T20:49:42.122663Z",
+      "repo": "hutusi/amytis",
+      "n": 29,
+      "max_turn_ts": "2026-03-04T20:49:49.322000Z"
+    },
+    {
+      "sid": "1a84c7ac-c6ec-4673-b9a6-cf88f6bdb641",
+      "ts": "2026-03-05T12:03:31.522134Z",
+      "repo": "hutusi/amytis",
+      "n": 11,
+      "max_turn_ts": "2026-03-05T12:03:39.705000Z"
+    },
+    {
+      "sid": "eaa62f5c-a7dc-4bf7-b291-7a72708edde4",
+      "ts": "2026-03-05T12:28:05.047513Z",
+      "repo": "hutusi/amytis",
+      "n": 3,
+      "max_turn_ts": "2026-03-05T12:28:11.486000Z"
+    },
+    {
+      "sid": "50a0cbc7-150f-4467-9f6c-c1b1b9c3101a",
+      "ts": "2026-03-05T12:41:02.628999Z",
+      "repo": "hutusi/amytis",
+      "n": 5,
+      "max_turn_ts": "2026-03-04T22:51:47.313000Z"
+    },
+    {
+      "sid": "c6f315bb-5b5f-4de3-a29e-ba73946900cd",
+      "ts": "2026-03-05T12:44:28.532028Z",
+      "repo": "hutusi/amytis",
+      "n": 3,
+      "max_turn_ts": "2026-03-05T12:44:34.977000Z"
+    },
+    {
+      "sid": "3cb609ed-c516-4919-88bf-5c730ac3d32c",
+      "ts": "2026-03-05T22:27:38.408129Z",
+      "repo": "hutusi/amytis",
+      "n": 15,
+      "max_turn_ts": "2026-03-05T22:27:45.603000Z"
+    },
+    {
+      "sid": "61eac3c9-e799-4fcc-9d9a-5581acf964bf",
+      "ts": "2026-03-06T01:22:21.300435Z",
+      "repo": "hutusi/amytis",
+      "n": 12,
+      "max_turn_ts": "2026-03-06T01:22:23.785000Z"
+    },
+    {
+      "sid": "48e9c026-da3f-4c54-b17a-d76948536bc1",
+      "ts": "2026-03-06T01:46:59.840815Z",
+      "repo": "hutusi/amytis",
+      "n": 4,
+      "max_turn_ts": "2026-03-06T01:47:12.615000Z"
+    },
+    {
+      "sid": "06f1e1ba-6082-4b4f-bf1d-82a2c75149b9",
+      "ts": "2026-03-06T13:32:55.412838Z",
+      "repo": "hutusi/amytis",
+      "n": 12,
+      "max_turn_ts": "2026-03-06T13:32:58.477000Z"
+    },
+    {
+      "sid": "e6b95eed-db4b-4d51-b37d-302093eb1fe9",
+      "ts": "2026-03-06T14:15:30.118375Z",
+      "repo": "hutusi/amytis",
+      "n": 11,
+      "max_turn_ts": "2026-03-06T14:15:34.292000Z"
+    },
+    {
+      "sid": "e702e383-4c31-4024-8085-cd28baf79fd8",
+      "ts": "2026-03-07T03:04:06.101803Z",
+      "repo": "hutusi/amytis",
+      "n": 29,
+      "max_turn_ts": "2026-03-07T03:04:09.685000Z"
+    },
+    {
+      "sid": "f3e49d1d-8e26-43e3-a315-38a5adcd0580",
+      "ts": "2026-03-07T03:38:13.968062Z",
+      "repo": "hutusi/amytis",
+      "n": 15,
+      "max_turn_ts": "2026-03-06T12:43:53.382000Z"
+    },
+    {
+      "sid": "0430fa98-1e3b-4b80-89b3-ddfd41747038",
+      "ts": "2026-03-07T04:58:13.58439Z",
+      "repo": "hutusi/amytis",
+      "n": 16,
+      "max_turn_ts": "2026-03-07T04:58:30.788000Z"
+    },
+    {
+      "sid": "ef75ceb3-937a-4af5-bea0-f32c854e2414",
+      "ts": "2026-03-07T06:50:02.06461Z",
+      "repo": "hutusi/amytis",
+      "n": 13,
+      "max_turn_ts": "2026-03-07T06:50:04.182000Z"
+    },
+    {
+      "sid": "24339b4a-cb92-4065-aa17-3444a97ad914",
+      "ts": "2026-03-07T08:08:41.617000+00:00",
+      "repo": "?",
+      "n": 15,
+      "max_turn_ts": "2026-03-07T11:36:55.735000Z"
+    },
+    {
+      "sid": "c3ba90f3-2c1e-4799-8754-045c8c191639",
+      "ts": "2026-03-07T09:50:52.334000+00:00",
+      "repo": "?",
+      "n": 13,
+      "max_turn_ts": "2026-03-07T11:56:49.501000Z"
+    },
+    {
+      "sid": "02eb13dc-16c2-437e-8490-b1aa62171dca",
+      "ts": "2026-03-07T20:10:40.029707Z",
+      "repo": "hutusi/amytis",
+      "n": 18,
+      "max_turn_ts": "2026-03-07T20:10:48.474000Z"
+    },
+    {
+      "sid": "da66deea-dc8f-4f06-b032-3ec83e8575aa",
+      "ts": "2026-03-07T22:32:20.572683Z",
+      "repo": "hutusi/amytis",
+      "n": 7,
+      "max_turn_ts": "2026-03-07T22:32:23.155000Z"
+    },
+    {
+      "sid": "368801ca-a471-4a08-89fb-332864d72c15",
+      "ts": "2026-03-08T02:48:52.975919Z",
+      "repo": "hutusi/amytis",
+      "n": 13,
+      "max_turn_ts": "2026-03-08T02:49:13.239000Z"
+    },
+    {
+      "sid": "de879ebc-6fd8-4eee-bfe1-5b88f39d03a4",
+      "ts": "2026-03-08T06:04:36.694175Z",
+      "repo": "hutusi/amytis",
+      "n": 20,
+      "max_turn_ts": "2026-03-08T06:04:54.122000Z"
+    },
+    {
+      "sid": "bbf8618c-5f8c-415a-8371-e82b282ccd93",
+      "ts": "2026-03-08T08:13:49.97585Z",
+      "repo": "hutusi/amytis",
+      "n": 16,
+      "max_turn_ts": "2026-03-08T08:13:55.269000Z"
+    },
+    {
+      "sid": "a74cbf2d-24be-4caf-93f5-f6ae7886aa9a",
+      "ts": "2026-03-08T09:46:54.055278Z",
+      "repo": "hutusi/amytis",
+      "n": 17,
+      "max_turn_ts": "2026-03-08T09:47:02.342000Z"
+    },
+    {
+      "sid": "f1044880-f862-49ed-af7e-1362c0f6d4eb",
+      "ts": "2026-03-10T05:40:13.941785Z",
+      "repo": "hutusi/amytis",
+      "n": 2,
+      "max_turn_ts": "2026-03-10T05:39:44.460000Z"
+    },
+    {
+      "sid": "f6077fc3-6b6e-4637-ab21-0f948f62df94",
+      "ts": "2026-03-10T11:09:46.130401Z",
+      "repo": "hutusi/amytis",
+      "n": 38,
+      "max_turn_ts": "2026-03-09T08:39:46.332000Z"
+    },
+    {
+      "sid": "e3714eda-1ed1-4fab-b9ae-d59bb23a0966",
+      "ts": "2026-03-10T23:44:00.117185Z",
+      "repo": "hutusi/amytis",
+      "n": 18,
+      "max_turn_ts": "2026-03-10T23:44:07.153000Z"
+    },
+    {
+      "sid": "51899cd7-71f9-4ad6-8f3a-e4f332ec59ee",
+      "ts": "2026-03-11T23:10:31.700014Z",
+      "repo": "hutusi/amytis",
+      "n": 5,
+      "max_turn_ts": "2026-03-11T23:10:38.930000Z"
+    },
+    {
+      "sid": "3dbeafac-6666-4acd-8ac1-69d443f1e064",
+      "ts": "2026-03-14T10:27:25.29878Z",
+      "repo": "hutusi/ovid-app",
+      "n": 20,
+      "max_turn_ts": "2026-03-14T10:27:31.495000Z"
+    },
+    {
+      "sid": "f3ead4d9-265b-49df-83e8-cfaa70364444",
+      "ts": "2026-03-14T12:38:45.644974Z",
+      "repo": "hutusi/ovid-app",
+      "n": 10,
+      "max_turn_ts": "2026-03-14T12:38:53.946000Z"
+    },
+    {
+      "sid": "ec84c889-39b6-4748-a7e3-1d91d8906436",
+      "ts": "2026-03-15T03:55:01.287693Z",
+      "repo": "hutusi/ovid-app",
+      "n": 85,
+      "max_turn_ts": "2026-03-15T03:55:22.827000Z"
+    },
+    {
+      "sid": "7b210d78-ee4d-4a86-9b7e-5b961745dc87",
+      "ts": "2026-03-15T13:03:14.811385Z",
+      "repo": "hutusi/ovid-app",
+      "n": 101,
+      "max_turn_ts": "2026-03-15T13:03:19.053000Z"
+    },
+    {
+      "sid": "cad3cdc9-7f8b-4b3f-8a49-597feaaf0d65",
+      "ts": "2026-03-15T22:44:07.467702Z",
+      "repo": "hutusi/ovid-app",
+      "n": 30,
+      "max_turn_ts": "2026-03-15T22:44:20.980000Z"
+    },
+    {
+      "sid": "50d7b24a-4d03-4a47-9c74-10e39e1df889",
+      "ts": "2026-03-16T14:34:57.006675Z",
+      "repo": "hutusi/ovid-app",
+      "n": 24,
+      "max_turn_ts": "2026-03-16T14:16:23.612000Z"
+    },
+    {
+      "sid": "7364b151-7525-4c1d-a981-178490d50552",
+      "ts": "2026-03-16T21:30:25.534965Z",
+      "repo": "hutusi/ovid-app",
+      "n": 10,
+      "max_turn_ts": "2026-03-16T21:30:29.736000Z"
+    },
+    {
+      "sid": "9558e00d-071a-4950-9d4d-a1dcf98934fa",
+      "ts": "2026-05-08T05:50:24.990153Z",
+      "repo": "ainaive/agentcenter",
+      "n": 41,
+      "max_turn_ts": "2026-05-08T05:50:56.670000Z"
+    },
+    {
+      "sid": "97f6d50e-dbf3-4d70-ae6a-3a33889c36e7",
+      "ts": "2026-05-09T01:12:21.384787Z",
+      "repo": "ainaive/agentcenter",
+      "n": 51,
+      "max_turn_ts": "2026-05-09T01:13:00.096000Z"
+    },
+    {
+      "sid": "540533df-d99a-42bf-a26f-340dbdd0e54b",
+      "ts": "2026-05-09T08:22:56.177842Z",
+      "repo": "ainaive/agentcenter",
+      "n": 60,
+      "max_turn_ts": "2026-05-09T08:22:41.424000Z"
+    },
+    {
+      "sid": "7d58f0df-89c0-488d-ad48-3f25db67138b",
+      "ts": "2026-05-09T17:14:29.779224Z",
+      "repo": "ainaive/agentcenter",
+      "n": 13,
+      "max_turn_ts": "2026-05-09T17:15:07.752000Z"
+    },
+    {
+      "sid": "605cad09-0434-47c5-a80f-eaa9d079fa41",
+      "ts": "2026-05-10T03:22:10.100706Z",
+      "repo": "ainaive/agentcenter",
+      "n": 61,
+      "max_turn_ts": "2026-05-10T03:22:13.050000Z"
+    },
+    {
+      "sid": "763320e2-4685-4ef0-8bea-f01986ec01b3",
+      "ts": "2026-05-11T08:09:29.248029Z",
+      "repo": "ainaive/agentcenter",
+      "n": 23,
+      "max_turn_ts": "2026-05-11T08:09:42.206000Z"
+    },
+    {
+      "sid": "7b2e2df9-c1b6-4cad-aa50-263609dc6c6a",
+      "ts": "2026-05-13T02:31:02.673432Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 53,
+      "max_turn_ts": "2026-05-13T00:39:21.627000Z"
+    },
+    {
+      "sid": "7cac47ca-813b-4b80-9a5c-9b4c1b2f40ab",
+      "ts": "2026-05-13T05:57:35.994275Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 18,
+      "max_turn_ts": "2026-05-13T05:59:34.144000Z"
+    },
+    {
+      "sid": "9bddaece-50a8-46fc-8223-297e87425025",
+      "ts": "2026-05-13T12:49:43.478196Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 7,
+      "max_turn_ts": "2026-05-13T02:03:14.110000Z"
+    },
+    {
+      "sid": "ed432a47-ed47-4fe2-8cd0-017bb734ae6a",
+      "ts": "2026-05-13T12:52:00.830936Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 20,
+      "max_turn_ts": "2026-05-13T12:52:12.994000Z"
+    },
+    {
+      "sid": "ed083026-22f4-4e40-a81c-bd023ab3848c",
+      "ts": "2026-05-15T03:28:30.348105Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 31,
+      "max_turn_ts": "2026-05-15T02:35:28.576000Z"
+    },
+    {
+      "sid": "f5ee70a8-9019-487b-9e5d-1ce080bd99c3",
+      "ts": "2026-05-18T08:27:07.35256Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 14,
+      "max_turn_ts": "2026-05-16T07:35:04.150000Z"
+    },
+    {
+      "sid": "562db428-d06f-47a9-bf0a-a3edf72ff3a9",
+      "ts": "2026-05-18T08:59:05.916021Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 13,
+      "max_turn_ts": "2026-05-18T08:59:21.230000Z"
+    },
+    {
+      "sid": "c26a6f6f-2de0-49eb-9927-9c8a6bb23f24",
+      "ts": "2026-05-18T14:27:09.181773Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 37,
+      "max_turn_ts": "2026-05-18T14:27:15.057000Z"
+    },
+    {
+      "sid": "cda0ffe2-fc04-492e-8e9b-dbe92b5cc893",
+      "ts": "2026-05-19T13:53:36.427572Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 18,
+      "max_turn_ts": "2026-05-19T13:53:46.684000Z"
+    },
+    {
+      "sid": "6d76a0a1-1efb-47d6-b57f-0232d8dcd773",
+      "ts": "2026-05-20T09:06:33.249615Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 6,
+      "max_turn_ts": "2026-05-20T09:06:58.358000Z"
+    },
+    {
+      "sid": "5a687021-33fa-44b9-a314-cd84cf5d20bb",
+      "ts": "2026-05-20T23:21:00.804342Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 12,
+      "max_turn_ts": "2026-05-20T23:21:29.524000Z"
+    },
+    {
+      "sid": "8f9fec62-c9b1-437a-bf89-6900771bfbfd",
+      "ts": "2026-05-22T03:16:54.888341Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 6,
+      "max_turn_ts": "2026-05-22T03:17:24.487000Z"
+    },
+    {
+      "sid": "df0956e2-0d8c-4234-966b-6c016ebca190",
+      "ts": "2026-05-22T07:32:56.468142Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 6,
+      "max_turn_ts": "2026-05-22T07:33:02.572000Z"
+    },
+    {
+      "sid": "c710d4ee-f364-4c18-aa95-b82c094a2a34",
+      "ts": "2026-05-23T00:52:45.409472Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 24,
+      "max_turn_ts": "2026-05-23T00:53:09.188000Z"
+    },
+    {
+      "sid": "7ef464ad-60ea-4ada-9fe2-59c41ffcd41a",
+      "ts": "2026-05-24T11:46:16.629166Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 1,
+      "max_turn_ts": "2026-05-24T11:46:24.998000Z"
+    },
+    {
+      "sid": "696574e9-adca-427b-85d5-e9ff6c842e6e",
+      "ts": "2026-05-25T05:47:00.99887Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 6,
+      "max_turn_ts": "2026-05-25T05:47:16.364000Z"
+    },
+    {
+      "sid": "ad97225b-e610-4feb-846a-d9713c030512",
+      "ts": "2026-05-25T09:01:32.703954Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 13,
+      "max_turn_ts": "2026-05-25T09:01:35.791000Z"
+    },
+    {
+      "sid": "ad0c3134-bc82-4320-90f2-1d93692cac19",
+      "ts": "2026-05-26T01:48:21.19384Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 16,
+      "max_turn_ts": "2026-05-23T02:55:06.518000Z"
+    },
+    {
+      "sid": "c4ea0e6d-7955-4a48-8604-dcc7aba6c9a5",
+      "ts": "2026-05-26T13:55:49.232191Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 18,
+      "max_turn_ts": "2026-05-26T10:11:50.575000Z"
+    },
+    {
+      "sid": "44acbe86-352c-4942-a197-b34fa539bbdd",
+      "ts": "2026-05-27T13:04:39.971255Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 25,
+      "max_turn_ts": "2026-05-27T13:04:50.456000Z"
+    },
+    {
+      "sid": "2f1631e5-b073-4184-a874-96529f415a7b",
+      "ts": "2026-06-04T09:02:56.199446Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 6,
+      "max_turn_ts": "2026-06-04T09:04:09.789000Z"
+    },
+    {
+      "sid": "6b34baca-edbf-4aa9-a56f-a5e938ac635d",
+      "ts": "2026-06-07T22:55:09.013453Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 16,
+      "max_turn_ts": "2026-06-07T21:21:57.785000Z"
+    },
+    {
+      "sid": "9a6b310b-3c05-4985-b43f-cf9b10b8bedc",
+      "ts": "2026-06-08T09:30:36.230008Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 27,
+      "max_turn_ts": "2026-06-08T09:14:06.251000Z"
+    },
+    {
+      "sid": "27220543-3bf3-4fc6-ab7b-7992e7d1f54b",
+      "ts": "2026-06-08T13:13:12.740573Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 17,
+      "max_turn_ts": "2026-06-08T13:14:26.578000Z"
+    },
+    {
+      "sid": "b39a7302-46b1-4db9-980b-b545170f710a",
+      "ts": "2026-06-08T21:36:25.302717Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 15,
+      "max_turn_ts": "2026-06-08T21:36:33.987000Z"
+    },
+    {
+      "sid": "78804777-4157-46ad-8d64-842eef13f6d9",
+      "ts": "2026-06-08T22:48:13.916257Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 2,
+      "max_turn_ts": "2026-06-08T23:19:59.594000Z"
+    },
+    {
+      "sid": "1f30557d-76d8-4ae7-9fc6-0a6eb6f565be",
+      "ts": "2026-06-10T09:32:34.091594Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 9,
+      "max_turn_ts": "2026-06-10T09:32:54.030000Z"
+    },
+    {
+      "sid": "d616a1b8-efd2-4bf3-a6a1-668f3e8c24c0",
+      "ts": "2026-06-13T02:18:08.861183Z",
+      "repo": "hutusi/monecraft",
+      "n": 11,
+      "max_turn_ts": "2026-06-13T01:38:14.440000Z"
+    },
+    {
+      "sid": "eaf2abbd-6ba1-43d1-988b-aacb9f025ce4",
+      "ts": "2026-06-13T06:32:54.13299Z",
+      "repo": "hutusi/monecraft",
+      "n": 16,
+      "max_turn_ts": "2026-06-13T04:05:58.845000Z"
+    },
+    {
+      "sid": "372ccbdb-b975-4213-a529-7681d70a1fc7",
+      "ts": "2026-06-13T06:55:41.801081Z",
+      "repo": "hutusi/monecraft",
+      "n": 3,
+      "max_turn_ts": "2026-06-13T06:55:51.541000Z"
+    },
+    {
+      "sid": "e2fc6b63-8357-4ed9-b4cc-94b55fc71192",
+      "ts": "2026-06-13T11:30:38.741741Z",
+      "repo": "hutusi/monecraft",
+      "n": 20,
+      "max_turn_ts": "2026-06-13T11:30:48.378000Z"
+    },
+    {
+      "sid": "1d7019e5-88ed-4642-88a7-d0dfd2a7885d",
+      "ts": "2026-06-13T13:40:06.298436Z",
+      "repo": "hutusi/monecraft",
+      "n": 6,
+      "max_turn_ts": "2026-06-13T13:41:00.034000Z"
+    },
+    {
+      "sid": "45c0676c-8bbd-45fe-8f73-64d454b67cd0",
+      "ts": "2026-06-13T23:06:36.938276Z",
+      "repo": "hutusi/monecraft",
+      "n": 3,
+      "max_turn_ts": "2026-06-13T23:06:48.196000Z"
+    },
+    {
+      "sid": "575d903c-fef2-439c-aad2-b56323eb6ddd",
+      "ts": "2026-06-14T01:46:40.803399Z",
+      "repo": "hutusi/monecraft",
+      "n": 11,
+      "max_turn_ts": "2026-06-14T01:48:11.677000Z"
+    },
+    {
+      "sid": "9335ee3c-e5df-44c0-99be-d4f7cf7ea8c5",
+      "ts": "2026-06-14T02:25:46.510631Z",
+      "repo": "hutusi/monecraft",
+      "n": 3,
+      "max_turn_ts": "2026-06-14T02:26:13.081000Z"
+    },
+    {
+      "sid": "42c92057-1586-458a-aafa-4421814e2de6",
+      "ts": "2026-06-14T06:19:43.552595Z",
+      "repo": "hutusi/monecraft",
+      "n": 10,
+      "max_turn_ts": "2026-06-14T06:19:51.337000Z"
+    },
+    {
+      "sid": "15d11480-b111-40ed-afcb-55b50a1977a3",
+      "ts": "2026-06-14T11:04:57.798942Z",
+      "repo": "hutusi/monecraft",
+      "n": 11,
+      "max_turn_ts": "2026-06-14T09:47:23.515000Z"
+    },
+    {
+      "sid": "40fe2413-5cec-4eb1-8df5-963ddd4de2f0",
+      "ts": "2026-06-14T12:45:26.936831Z",
+      "repo": "hutusi/monecraft",
+      "n": 4,
+      "max_turn_ts": "2026-06-14T12:22:14.358000Z"
+    },
+    {
+      "sid": "bbba162e-90dd-42e9-b503-21fe4860c889",
+      "ts": "2026-06-18T02:30:04.831528Z",
+      "repo": "ainaive/agentcenter-nuxt",
+      "n": 14,
+      "max_turn_ts": "2026-06-18T02:29:49.229000Z"
+    },
+    {
+      "sid": "6ba5df66-45b4-4fbd-9326-96c489f36921",
+      "ts": "2026-06-19T10:22:34.733041Z",
+      "repo": "hutusi/monecraft",
+      "n": 10,
+      "max_turn_ts": "2026-06-14T13:35:39.362000Z"
+    },
+    {
+      "sid": "a4369548-bcb5-437a-a9cf-d2fd6e84f9ef",
+      "ts": "2026-06-20T02:46:54.51919Z",
+      "repo": "hutusi/monecraft",
+      "n": 20,
+      "max_turn_ts": "2026-06-20T02:07:05.643000Z"
+    },
+    {
+      "sid": "4957a98a-ae20-4c62-b28e-a28c1e40d699",
+      "ts": "2026-06-20T13:56:00.171883Z",
+      "repo": "hutusi/monecraft",
+      "n": 11,
+      "max_turn_ts": "2026-06-20T13:56:31Z"
+    },
+    {
+      "sid": "e9337cff-0791-413d-ba5e-d844b4e3b3a1",
+      "ts": "2026-06-21T02:24:57.417228Z",
+      "repo": "hutusi/monecraft",
+      "n": 13,
+      "max_turn_ts": "2026-06-20T11:21:36.761000Z"
+    },
+    {
+      "sid": "1800237e-6b80-499a-b9d2-d1160f587bef",
+      "ts": "2026-06-21T09:45:35.068662Z",
+      "repo": "hutusi/monecraft",
+      "n": 19,
+      "max_turn_ts": "2026-06-21T08:45:33.174000Z"
+    },
+    {
+      "sid": "9ad24e19-d20e-48d5-8e29-95c6c31f363b",
+      "ts": "2026-06-28T07:58:52.997814Z",
+      "repo": "hutusi/monecraft",
+      "n": 12,
+      "max_turn_ts": "2026-06-21T13:19:44.532000Z"
+    },
+    {
+      "sid": "3d82d4da-9c5d-48c8-a795-248d6965eac3",
+      "ts": "2026-06-28T12:52:19.966811Z",
+      "repo": "hutusi/monecraft",
+      "n": 17,
+      "max_turn_ts": "2026-06-28T11:51:40.482000Z"
+    },
+    {
+      "sid": "34685084-7e91-4e2a-ba54-7a1729b88a50",
+      "ts": "2026-06-29T11:17:00.980801Z",
+      "repo": "hutusi/monecraft",
+      "n": 10,
+      "max_turn_ts": "2026-06-29T10:52:35.084000Z"
+    },
+    {
+      "sid": "c2173938-138a-4b34-8ee8-b6c8429013e2",
+      "ts": "2026-06-29T12:47:52.032219Z",
+      "repo": "hutusi/monecraft",
+      "n": 2,
+      "max_turn_ts": "2026-06-29T12:48:29.653000Z"
+    },
+    {
+      "sid": "6aff0716-f3fe-4fd7-872d-e2f69826d061",
+      "ts": "2026-06-30T02:20:32.583054Z",
+      "repo": "hutusi/monecraft",
+      "n": 14,
+      "max_turn_ts": "2026-06-30T02:21:05.731000Z"
+    },
+    {
+      "sid": "3ab63f3a-0b42-49b5-b394-ea26d901c39d",
+      "ts": "2026-07-02T21:20:41.75165Z",
+      "repo": "hutusi/monecraft",
+      "n": 3,
+      "max_turn_ts": "2026-07-02T21:20:58.757000Z"
+    },
+    {
+      "sid": "386ca73e-2f44-4d9f-ad4a-9e78bd2f63e0",
+      "ts": "2026-07-03T01:45:10.790591Z",
+      "repo": "hutusi/monecraft",
+      "n": 2,
+      "max_turn_ts": "2026-07-03T01:46:59.899000Z"
+    },
+    {
+      "sid": "7a168c40-1645-4914-8312-8f3aaf0fbeb6",
+      "ts": "2026-07-04T05:40:24.523305Z",
+      "repo": "hutusi/monecraft",
+      "n": 32,
+      "max_turn_ts": "2026-07-04T01:29:54.500000Z"
+    },
+    {
+      "sid": "06215f56-7610-4968-9d54-f273e7775740",
+      "ts": "2026-07-04T12:09:55.144828Z",
+      "repo": "hutusi/monecraft",
+      "n": 14,
+      "max_turn_ts": "2026-07-04T11:09:58.145000Z"
+    },
+    {
+      "sid": "9d9fe046-f715-4a3d-bf2a-9bd98356707e",
+      "ts": "2026-07-04T14:55:03.601002Z",
+      "repo": "hutusi/monecraft",
+      "n": 20,
+      "max_turn_ts": "2026-07-04T14:07:42.550000Z"
+    },
+    {
+      "sid": "eb5db53f-9767-470c-a602-04f32e6e5ab6",
+      "ts": "2026-07-05T01:07:27.669991Z",
+      "repo": "hutusi/monecraft",
+      "n": 3,
+      "max_turn_ts": "2026-07-05T01:07:43.286000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

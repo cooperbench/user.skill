@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "userbench/135yshr__b4924a51"
+description = "Predict the developer's next message given the conversation so far."
+authors = []
+keywords = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+
+[metadata]
+author_name = "userbench"
+category = "user-simulation"
+tags = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+developer = "gh:135yshr"
+point_id = "8cc7be31-4413-406a-ad96-3c673a73182c#19"
+condition = "noprofile"
+legacy_task_id = "gh_135yshr__b4924a51"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

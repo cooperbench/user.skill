@@ -1,8 +1,0 @@
-{
-  "point_id": "019db120-17ca-72f0-b43e-29796378a0c5#310",
-  "developer": "gh:bradleygibsongit",
-  "condition": "noprofile",
-  "real": "I just want to file name there not the entire path plus the -> this",
-  "prev_agent": "Because Pierre is reading the filename from the patch header we generate, and for this chat surface we’re feeding it an absolute filesystem path. In [FileChangeDiffCard.tsx](</home/<USER>/Projects/Active Projects/nucleus-desktop/apps/desktop/src/features/chat/components/FileChangeDiffCard.tsx:66>) the synthetic patch builder does things like: - `+++ b/${path}` - `--- a/${path}` But in chat, `path` is coming through as an absolute path from [timelineActivity.ts](</home/<USER>/Projects/Active Projects/nucleus-desktop/apps/desktop/src/features/chat/components/timelineActivity.ts:15>) and the actual payload is something like: - `/home/<USER>/Projects/Active Projects/peerwager/package.json` So Pierre ends up seeing: - `b//home/<USER>/...` That’s why the header shows both the raw absolute path shape and the git-style `b/` prefix jammed onto it. It’s basically a git-relative patch convention being applied to an absolute local path.",
-  "gold_move": null
-}

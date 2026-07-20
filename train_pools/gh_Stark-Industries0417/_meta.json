@@ -1,0 +1,1111 @@
+{
+  "developer": "gh:Stark-Industries0417",
+  "slug": "gh_Stark-Industries0417",
+  "Tstar": "2026-02-17T18:29:38.596708Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 157,
+  "n_human_turns": 1278,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "7ad31c26-9708-4bd2-bbd5-9a3c977380c2",
+      "ts": "2026-02-05T10:33:11.270334Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-05T10:30:49.673000Z"
+    },
+    {
+      "sid": "abc0b1d7-b597-47f5-8c2a-fbffce4d853a",
+      "ts": "2026-02-05T10:40:43.556056Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 6,
+      "max_turn_ts": "2026-02-05T10:39:41.739000Z"
+    },
+    {
+      "sid": "34b1e2a4-8cec-4bb9-94a0-ec9e9c639c8e",
+      "ts": "2026-02-05T11:47:15.512806Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-05T11:46:49.483000Z"
+    },
+    {
+      "sid": "8c816805-24e2-4871-ac94-e97ce23993c1",
+      "ts": "2026-02-05T11:52:26.75888Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-05T11:50:55.740000Z"
+    },
+    {
+      "sid": "595f7a87-dd6e-4eb7-943a-b2b009259be7",
+      "ts": "2026-02-05T11:58:05.452164Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-05T11:57:50.335000Z"
+    },
+    {
+      "sid": "9265dc4e-fa94-4c08-9932-fca495724501",
+      "ts": "2026-02-05T12:02:38.953078Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-05T12:01:34.557000Z"
+    },
+    {
+      "sid": "c3afafd7-9a94-4316-80d3-ad6f8a1e4d80",
+      "ts": "2026-02-05T12:15:17.606395Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-05T12:13:29.842000Z"
+    },
+    {
+      "sid": "419f42f0-2fa1-44cc-8b4d-babf59901513",
+      "ts": "2026-02-06T01:53:24.461132Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 6,
+      "max_turn_ts": "2026-02-06T01:49:10.766000Z"
+    },
+    {
+      "sid": "e8106766-ab6a-43ed-8849-77d5114eaff1",
+      "ts": "2026-02-06T04:16:58.816121Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-06T04:16:25.689000Z"
+    },
+    {
+      "sid": "af74d9e0-6474-4284-85e7-2edd27abf21e",
+      "ts": "2026-02-06T04:53:06.831745Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 24,
+      "max_turn_ts": "2026-02-06T04:51:15.910000Z"
+    },
+    {
+      "sid": "15a48867-a078-4afc-afaa-c00798fc36e8",
+      "ts": "2026-02-06T05:14:57.708553Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-05T12:25:39.518000Z"
+    },
+    {
+      "sid": "531e0007-8fdd-4e98-a526-3f675a2b8f16",
+      "ts": "2026-02-06T05:18:40.762237Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-06T05:15:41.898000Z"
+    },
+    {
+      "sid": "75c838dd-10e3-40cf-8df3-17f9955149f8",
+      "ts": "2026-02-06T05:44:21.874767Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-06T05:30:26.110000Z"
+    },
+    {
+      "sid": "7a3cf82d-9284-4b61-9e6b-d409226efa84",
+      "ts": "2026-02-06T05:51:45.627971Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-02-06T05:51:30.101000Z"
+    },
+    {
+      "sid": "6da7d497-00e2-460d-a6b4-d280e0314cfd",
+      "ts": "2026-02-06T06:52:27.809016Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-06T06:50:52.849000Z"
+    },
+    {
+      "sid": "127e9cd1-0deb-4a7c-ba1a-ba4ecd375b90",
+      "ts": "2026-02-06T08:52:34.398308Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-06T08:50:05.148000Z"
+    },
+    {
+      "sid": "9b76dc0f-dc1b-4822-ac56-53cfa3fbc032",
+      "ts": "2026-02-06T08:56:49.513055Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-06T08:56:26.430000Z"
+    },
+    {
+      "sid": "07d86da7-2e39-4276-a0d5-7b46a85b8750",
+      "ts": "2026-02-06T09:35:24.70174Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-06T09:33:01.677000Z"
+    },
+    {
+      "sid": "768de5d6-9fad-475b-8a4f-dfa7ddc01bb0",
+      "ts": "2026-02-06T10:09:02.199863Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-06T10:08:23.510000Z"
+    },
+    {
+      "sid": "d19ec7f9-dfaf-4c65-a9ad-ab56240f23d8",
+      "ts": "2026-02-07T00:29:02.250331Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-07T00:27:05.621000Z"
+    },
+    {
+      "sid": "0c275b1b-9732-433e-9e70-9b7bfdb578a3",
+      "ts": "2026-02-07T03:46:48.557254Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 54,
+      "max_turn_ts": "2026-02-07T03:38:59.887000Z"
+    },
+    {
+      "sid": "030e1e67-6bf0-492d-8bd3-cc3383ec93ab",
+      "ts": "2026-02-07T04:02:27.102849Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 10,
+      "max_turn_ts": "2026-02-07T03:55:21.547000Z"
+    },
+    {
+      "sid": "2956cee6-6153-4ba6-ba24-3b7f3257549c",
+      "ts": "2026-02-08T03:44:48.550258Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-08T03:43:53.089000Z"
+    },
+    {
+      "sid": "da15b15f-a573-4523-abcb-fdd6c9a4e2a2",
+      "ts": "2026-02-08T03:55:20.080546Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-08T03:54:12.412000Z"
+    },
+    {
+      "sid": "2b945d54-dd2b-4f60-b3b0-7b0252349003",
+      "ts": "2026-02-08T05:39:37.991987Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-08T05:38:59.006000Z"
+    },
+    {
+      "sid": "1a289c77-a9da-491d-954a-2df7f0dd6a17",
+      "ts": "2026-02-08T09:12:37.392761Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 32,
+      "max_turn_ts": "2026-02-07T23:26:44.863000Z"
+    },
+    {
+      "sid": "03a1382e-ecd5-42c4-b3d4-5c659e165904",
+      "ts": "2026-02-08T09:22:36.773179Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 34,
+      "max_turn_ts": "2026-02-07T06:26:06.018000Z"
+    },
+    {
+      "sid": "b6b20c21-d3cb-42a4-9a55-bb2dbb2212e4",
+      "ts": "2026-02-08T11:40:26.565566Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 12,
+      "max_turn_ts": "2026-02-08T11:27:47.753000Z"
+    },
+    {
+      "sid": "e0cf01c8-a5c1-4d96-8137-81b8c2be9359",
+      "ts": "2026-02-08T11:59:32.377242Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-08T11:59:15.175000Z"
+    },
+    {
+      "sid": "75a1a0f1-e0f8-4f3a-bca5-50167cdf0a53",
+      "ts": "2026-02-09T02:29:08.28114Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-09T01:54:55.290000Z"
+    },
+    {
+      "sid": "1284c080-f9cd-45f8-9942-ff58f5c517e5",
+      "ts": "2026-02-09T06:27:59.313772Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 75,
+      "max_turn_ts": "2026-02-09T05:42:16.420000Z"
+    },
+    {
+      "sid": "79eb9f8a-232c-4a72-a26b-4b4520ef2152",
+      "ts": "2026-02-09T06:35:44.03123Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T06:28:24.719000Z"
+    },
+    {
+      "sid": "28596a79-6247-4bc2-a031-f5848b31e039",
+      "ts": "2026-02-09T07:10:09.912756Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-09T07:09:28.102000Z"
+    },
+    {
+      "sid": "5a6312ee-5752-4b7a-9ad2-6c3b1b5f4c8a",
+      "ts": "2026-02-09T07:13:00.310065Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T07:11:50.612000Z"
+    },
+    {
+      "sid": "cfd57c28-f61a-42df-8ddf-d99b94586ea3",
+      "ts": "2026-02-09T07:23:18.324028Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T05:52:09.996000Z"
+    },
+    {
+      "sid": "d50aed65-f324-43f2-8c95-9edd32b25b32",
+      "ts": "2026-02-09T07:23:18.689286Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-09T02:25:11.208000Z"
+    },
+    {
+      "sid": "9e2434f3-c800-4ed9-b78e-e494ef59bd78",
+      "ts": "2026-02-09T07:27:22.932969Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-02-09T07:27:11.881000Z"
+    },
+    {
+      "sid": "afb1dd35-5084-4acb-84b8-59b9d3c48d3e",
+      "ts": "2026-02-09T07:31:03.654205Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 8,
+      "max_turn_ts": "2026-02-09T07:30:44.404000Z"
+    },
+    {
+      "sid": "61cb3ba8-484b-4a21-bf99-34f7dc361170",
+      "ts": "2026-02-09T07:42:18.457779Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-09T07:42:09.848000Z"
+    },
+    {
+      "sid": "43c87127-491b-488e-a553-95aa3f0414ac",
+      "ts": "2026-02-09T08:25:51.887553Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-09T08:22:05.564000Z"
+    },
+    {
+      "sid": "c4a6d0ff-2c86-4f56-8509-c4737bcb5768",
+      "ts": "2026-02-09T08:49:59.974624Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-09T08:49:59.397000Z"
+    },
+    {
+      "sid": "1c341e47-b281-4cb7-82da-3ad6d3013b7f",
+      "ts": "2026-02-09T10:33:55.781623Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-09T10:14:24.060000Z"
+    },
+    {
+      "sid": "7ef17b32-b369-4858-bf72-eab23db52601",
+      "ts": "2026-02-09T10:50:46.982731Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-09T10:50:46.480000Z"
+    },
+    {
+      "sid": "69847031-200c-4c30-baad-1ab1aab0c8ab",
+      "ts": "2026-02-09T10:54:19.512579Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-09T10:54:02.228000Z"
+    },
+    {
+      "sid": "0240bd7a-75c0-4610-8e14-089e984d6001",
+      "ts": "2026-02-09T11:28:00.855373Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-09T11:28:00.132000Z"
+    },
+    {
+      "sid": "e4599950-b028-44fb-a2d5-ca8caffa2c3d",
+      "ts": "2026-02-09T12:35:34.562672Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 11,
+      "max_turn_ts": "2026-02-09T11:57:45.525000Z"
+    },
+    {
+      "sid": "27cea022-4cdb-4ef6-b69f-7c858dc48c41",
+      "ts": "2026-02-09T13:49:30.993527Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 12,
+      "max_turn_ts": "2026-02-09T13:48:31.075000Z"
+    },
+    {
+      "sid": "ce24e94d-ea12-40cb-9b87-ceb55770af78",
+      "ts": "2026-02-09T19:03:57.597303Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T19:02:27.394000Z"
+    },
+    {
+      "sid": "e4d2c72e-cd24-427e-a02f-360e7a284090",
+      "ts": "2026-02-09T23:45:04.120999Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-08T23:49:37.378000Z"
+    },
+    {
+      "sid": "0a76fbfe-d767-433e-b4b1-a39e044f21e8",
+      "ts": "2026-02-10T03:01:55.255393Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T03:01:39.795000Z"
+    },
+    {
+      "sid": "23986045-ec24-48ac-8531-832bf31b9053",
+      "ts": "2026-02-10T03:33:15.849112Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-08T23:45:16.148000Z"
+    },
+    {
+      "sid": "3ae3ab59-52bc-413d-ad30-02b165c91785",
+      "ts": "2026-02-10T03:33:16.333585Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-10T03:27:26.567000Z"
+    },
+    {
+      "sid": "7ff991f5-9a8b-4e94-ae66-40204bc3049b",
+      "ts": "2026-02-10T03:33:16.764532Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-09T23:07:27.110000Z"
+    },
+    {
+      "sid": "d46bf731-66ab-4dd4-83e4-e764cf54f818",
+      "ts": "2026-02-10T03:33:17.11066Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-10T03:31:26.556000Z"
+    },
+    {
+      "sid": "a0927dd5-61a3-4802-a716-4480286f16d4",
+      "ts": "2026-02-10T05:45:08.586542Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 13,
+      "max_turn_ts": "2026-02-10T05:44:55.161000Z"
+    },
+    {
+      "sid": "9d440bfc-a64f-43be-aa10-10a3764a59ea",
+      "ts": "2026-02-10T06:25:00.265115Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-10T06:24:41.989000Z"
+    },
+    {
+      "sid": "170cebcc-4cb9-42aa-a322-6e590fc9db0d",
+      "ts": "2026-02-10T08:37:40.062031Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 10,
+      "max_turn_ts": "2026-02-10T07:39:13.794000Z"
+    },
+    {
+      "sid": "377c739d-2463-4e96-a4bc-d06fbb4c3e3e",
+      "ts": "2026-02-10T09:54:40.245774Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-10T09:52:46.958000Z"
+    },
+    {
+      "sid": "2a55af89-4e4f-4460-b18f-42a07287ae76",
+      "ts": "2026-02-10T15:55:17.155407Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 20,
+      "max_turn_ts": "2026-02-10T15:49:34.420000Z"
+    },
+    {
+      "sid": "e5933dce-dc0c-4367-9158-04a9eadedc83",
+      "ts": "2026-02-10T17:43:14.055863Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-10T17:32:09.071000Z"
+    },
+    {
+      "sid": "ba517c53-22ac-41fe-8d0b-aad3b421f359",
+      "ts": "2026-02-10T18:16:59.681233Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T17:48:41.574000Z"
+    },
+    {
+      "sid": "277dae78-39d1-4703-aeec-74104e4b1585",
+      "ts": "2026-02-10T23:33:31.790129Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-10T05:31:25.904000Z"
+    },
+    {
+      "sid": "aa4038a5-34b6-41e4-8541-9cca654dcbc5",
+      "ts": "2026-02-11T00:45:29.415647Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-02-11T00:11:09.126000Z"
+    },
+    {
+      "sid": "e5a72190-7808-4cc0-9b23-1fe10104ea1e",
+      "ts": "2026-02-11T00:45:29.886319Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-11T00:32:08.792000Z"
+    },
+    {
+      "sid": "9e44573d-4eb8-4de0-8659-418f3c68706d",
+      "ts": "2026-02-11T03:14:48.04987Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-11T00:49:55.773000Z"
+    },
+    {
+      "sid": "f8190a9b-031b-49a6-b513-b27e9629d222",
+      "ts": "2026-02-11T10:09:38.040332Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T10:07:46.327000Z"
+    },
+    {
+      "sid": "a09df891-c504-4318-a9ac-3685982583e6",
+      "ts": "2026-02-11T12:06:26.80179Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-11T12:05:46.756000Z"
+    },
+    {
+      "sid": "ea0a65af-b639-46be-b158-dc1a4c599799",
+      "ts": "2026-02-11T12:48:08.998421Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T12:45:44.299000Z"
+    },
+    {
+      "sid": "5a69ca08-eee5-4626-ac94-c23483e262cb",
+      "ts": "2026-02-11T14:04:32.548393Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 8,
+      "max_turn_ts": "2026-02-11T14:04:31.820000Z"
+    },
+    {
+      "sid": "2cfdacb8-9317-430f-8975-0709d2837d1c",
+      "ts": "2026-02-11T15:21:37.82417Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 15,
+      "max_turn_ts": "2026-02-11T15:19:48.145000Z"
+    },
+    {
+      "sid": "00ef13bd-99a1-4001-a829-09985a069ab2",
+      "ts": "2026-02-11T15:52:15.256658Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-11T15:47:57.419000Z"
+    },
+    {
+      "sid": "7f2fbf27-0a44-42e3-94a1-4bfb5b48f071",
+      "ts": "2026-02-11T15:59:15.943258Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T21:06:19.953000Z"
+    },
+    {
+      "sid": "cd46624d-fbea-4097-aaf8-2f63c3db0818",
+      "ts": "2026-02-11T16:12:33.409504Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T16:09:35.949000Z"
+    },
+    {
+      "sid": "fe1ffae3-f297-4dc1-9b9d-8a2b49059af7",
+      "ts": "2026-02-11T16:15:38.050104Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-11T16:13:45.526000Z"
+    },
+    {
+      "sid": "6dccd523-72ba-4cb2-b043-2422d5fa2cda",
+      "ts": "2026-02-11T16:56:02.582807Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 9,
+      "max_turn_ts": "2026-02-11T16:56:01.827000Z"
+    },
+    {
+      "sid": "78368290-ee0b-474f-8052-bb65a9a581d6",
+      "ts": "2026-02-11T18:47:24.004079Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-11T18:47:23.472000Z"
+    },
+    {
+      "sid": "47fd13df-2018-45de-8102-afe43bbc5e17",
+      "ts": "2026-02-11T19:09:02.844793Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 8,
+      "max_turn_ts": "2026-02-11T19:08:14.729000Z"
+    },
+    {
+      "sid": "e59f0f58-7444-45a2-81a4-d280e6fb0430",
+      "ts": "2026-02-11T19:47:46.855722Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-11T19:47:31.550000Z"
+    },
+    {
+      "sid": "2a80b8d9-b65a-4c2e-8bf4-0df4958640fd",
+      "ts": "2026-02-12T05:37:41.075994Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-11T03:05:42.784000Z"
+    },
+    {
+      "sid": "4f8c1176-7025-4530-a860-c6fc4c63a150",
+      "ts": "2026-02-12T05:37:41.544865Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-12T04:15:55.715000Z"
+    },
+    {
+      "sid": "533ff7a3-d390-41ff-b9e8-1b09fb4c2fe2",
+      "ts": "2026-02-12T05:37:42.21997Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T04:07:11.431000Z"
+    },
+    {
+      "sid": "22c5d52e-9602-4ffe-aaa1-0265b115ef3d",
+      "ts": "2026-02-12T12:19:45.909205Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-12T12:19:04.698000Z"
+    },
+    {
+      "sid": "2aeee101-92bd-4b51-a063-4f47cd58f907",
+      "ts": "2026-02-12T13:20:44.19643Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 22,
+      "max_turn_ts": "2026-02-12T13:20:42.262000Z"
+    },
+    {
+      "sid": "85f99978-1851-42ee-9aac-0c9fe2e61b70",
+      "ts": "2026-02-12T13:41:11.964726Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 16,
+      "max_turn_ts": "2026-02-12T13:04:43.786000Z"
+    },
+    {
+      "sid": "ece0c335-b191-4284-8ae5-19a49fa8c576",
+      "ts": "2026-02-12T14:00:55.766171Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T13:49:08.644000Z"
+    },
+    {
+      "sid": "ae68c513-db90-451f-940d-804a1d3d0986",
+      "ts": "2026-02-12T14:01:06.246365Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-12T14:01:05.531000Z"
+    },
+    {
+      "sid": "8897bd54-16f4-4a28-8e23-cb187c639e40",
+      "ts": "2026-02-12T14:14:53.207363Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T14:14:52.539000Z"
+    },
+    {
+      "sid": "56de1726-04db-4439-a5f5-190cdb62f2dc",
+      "ts": "2026-02-12T15:14:53.807534Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-12T15:09:12.437000Z"
+    },
+    {
+      "sid": "266b3f40-6f1d-491c-aeca-825cbb3fcbc5",
+      "ts": "2026-02-12T16:15:55.703981Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 13,
+      "max_turn_ts": "2026-02-12T16:15:51.372000Z"
+    },
+    {
+      "sid": "7656c478-fe43-4309-ab60-16f66beceb9b",
+      "ts": "2026-02-12T16:43:52.37276Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T16:43:51.691000Z"
+    },
+    {
+      "sid": "45ba035c-93ee-46e8-b83c-9d8a3a1cb05b",
+      "ts": "2026-02-12T17:17:16.039546Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-12T17:17:15.019000Z"
+    },
+    {
+      "sid": "45f2ccfd-0915-42eb-9164-09d13a9dd8ee",
+      "ts": "2026-02-12T20:40:38.820883Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 10,
+      "max_turn_ts": "2026-02-12T20:34:38.467000Z"
+    },
+    {
+      "sid": "a1d04b39-c7d2-47c4-aec6-d0118b0f71c6",
+      "ts": "2026-02-13T08:48:35.961702Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T17:51:39.359000Z"
+    },
+    {
+      "sid": "e75fc7f5-30dc-4288-a579-5e1c14a107f8",
+      "ts": "2026-02-13T08:48:43.498726Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T08:48:42.787000Z"
+    },
+    {
+      "sid": "d563fb6b-39cf-4895-bb5f-681c33e58bbc",
+      "ts": "2026-02-13T09:03:54.510275Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T09:01:49.047000Z"
+    },
+    {
+      "sid": "2577a596-e227-47e1-bea8-752f792cbc24",
+      "ts": "2026-02-13T09:42:28.326099Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T09:34:30.772000Z"
+    },
+    {
+      "sid": "006568a5-6793-4fe0-ac98-1ddb8d2ba23b",
+      "ts": "2026-02-13T10:58:47.012317Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-02-12T14:35:07.947000Z"
+    },
+    {
+      "sid": "7aa4bfa8-4970-452c-9f43-5adba81a0617",
+      "ts": "2026-02-13T10:58:49.936855Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-02-12T13:07:58.640000Z"
+    },
+    {
+      "sid": "47782795-7bea-4028-97f1-55a3ac6d8927",
+      "ts": "2026-02-13T14:52:04.046926Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 41,
+      "max_turn_ts": "2026-02-13T11:31:50.598000Z"
+    },
+    {
+      "sid": "acdd84ab-e724-42c8-925d-420b2a4f1861",
+      "ts": "2026-02-13T14:56:50.265604Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T14:56:49.558000Z"
+    },
+    {
+      "sid": "4ddad80c-b9d6-490f-bd13-3f41ed52caf5",
+      "ts": "2026-02-13T22:28:29.624574Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 42,
+      "max_turn_ts": "2026-02-13T22:24:13.348000Z"
+    },
+    {
+      "sid": "ee5c333e-c930-416a-bbba-e1bcbccf3794",
+      "ts": "2026-02-14T14:59:43.384394Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T14:56:36.284000Z"
+    },
+    {
+      "sid": "f4237e82-ca7b-48a3-bfed-36548f3e4f6b",
+      "ts": "2026-02-14T14:59:44.682483Z",
+      "repo": "?",
+      "n": 55,
+      "max_turn_ts": "2026-02-14T13:38:20.737000Z"
+    },
+    {
+      "sid": "35d98d6f-1ef4-4028-9b65-62628a240453",
+      "ts": "2026-02-14T21:28:22.540068Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-14T15:59:16.154000Z"
+    },
+    {
+      "sid": "e8811ad6-93d9-4ee6-997d-2447a5d496f3",
+      "ts": "2026-02-15T08:07:33.364037Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 22,
+      "max_turn_ts": "2026-02-15T08:08:04.962000Z"
+    },
+    {
+      "sid": "4de02c81-2bd4-4ea2-9370-f1f32de9248e",
+      "ts": "2026-02-15T08:49:02.188698Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 9,
+      "max_turn_ts": "2026-02-15T09:10:01.816000Z"
+    },
+    {
+      "sid": "08940314-9e93-46b1-a598-06bada65ed55",
+      "ts": "2026-02-15T14:18:21.741583Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 22,
+      "max_turn_ts": "2026-01-23T16:08:11.916000Z"
+    },
+    {
+      "sid": "220c8e1c-18de-4039-8d22-658ecf89acdc",
+      "ts": "2026-02-15T14:18:22.266416Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-01-23T10:06:17.536000Z"
+    },
+    {
+      "sid": "9fd328aa-ecda-4618-b1ed-047b284117c6",
+      "ts": "2026-02-15T14:18:22.654641Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-01-23T10:48:57.822000Z"
+    },
+    {
+      "sid": "b5f6af67-9cd0-42bb-8323-9ac99badee2d",
+      "ts": "2026-02-15T14:18:23.747254Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-01-24T15:36:53.022000Z"
+    },
+    {
+      "sid": "f736da47-b2ca-4f86-bb32-a1bbe582e464",
+      "ts": "2026-02-15T14:18:24.214776Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-01-25T11:09:20.498000Z"
+    },
+    {
+      "sid": "379ab089-c458-45de-8bb7-fcd1c607b8c7",
+      "ts": "2026-02-15T14:18:25.44409Z",
+      "repo": "bytes032/cli",
+      "n": 9,
+      "max_turn_ts": "2026-02-09T18:05:24.186000Z"
+    },
+    {
+      "sid": "9f26971d-da0a-46db-b911-e156aad9548e",
+      "ts": "2026-02-15T14:18:29.348175Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-09T16:14:24.316000Z"
+    },
+    {
+      "sid": "a318ad73-17a2-4575-845d-8952a1e5958b",
+      "ts": "2026-02-15T14:18:30.877769Z",
+      "repo": "bytes032/cli",
+      "n": 18,
+      "max_turn_ts": "2026-02-02T00:26:17.648000Z"
+    },
+    {
+      "sid": "4a364c97-9dde-4a98-a973-26edea2c0e8b",
+      "ts": "2026-02-15T15:58:38.261182Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 38,
+      "max_turn_ts": "2026-02-15T15:54:41.836000Z"
+    },
+    {
+      "sid": "fdd24234-3c2a-4958-91ed-59c63b12ba1e",
+      "ts": "2026-02-15T20:37:45.496627Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 30,
+      "max_turn_ts": "2026-02-15T20:37:23.003000Z"
+    },
+    {
+      "sid": "32ba4784-dda9-482a-9d1f-ed540c5d64f0",
+      "ts": "2026-02-16T02:34:40.909159Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-16T02:34:48.137000Z"
+    },
+    {
+      "sid": "db5aa0fe-00eb-4229-b732-999961c11c77",
+      "ts": "2026-02-16T12:04:01.309774Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T12:03:58.611000Z"
+    },
+    {
+      "sid": "34de7f83-0473-45b7-a94f-53aa41b3108c",
+      "ts": "2026-02-16T14:08:29.39768Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-01-22T19:46:59.318000Z"
+    },
+    {
+      "sid": "375d5d79-9c13-419d-a5fd-72421f2af713",
+      "ts": "2026-02-16T14:08:30.458918Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-01-22T19:35:58.434000Z"
+    },
+    {
+      "sid": "8ee504de-7ee5-43bc-9e8c-db2d5ec5a9e6",
+      "ts": "2026-02-16T14:08:30.919049Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-01-22T19:54:16.955000Z"
+    },
+    {
+      "sid": "94e68429-3fb7-4f6c-9915-65ada4c33908",
+      "ts": "2026-02-16T14:08:31.25293Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-01-22T20:25:07.326000Z"
+    },
+    {
+      "sid": "ab8c5aa0-e11b-4b16-9be3-c470a9483829",
+      "ts": "2026-02-16T14:08:31.603822Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 4,
+      "max_turn_ts": "2026-01-22T16:07:06.851000Z"
+    },
+    {
+      "sid": "b8c1e7e5-21c1-45b4-ae1d-ec10463aa4d5",
+      "ts": "2026-02-16T14:08:31.92639Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-01-22T20:19:10.003000Z"
+    },
+    {
+      "sid": "be437104-4a61-49d9-b754-592ad3e357ce",
+      "ts": "2026-02-16T14:08:32.492557Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 5,
+      "max_turn_ts": "2026-01-22T15:48:10.420000Z"
+    },
+    {
+      "sid": "c35cf82b-0486-4d17-94d7-7fa36376faff",
+      "ts": "2026-02-16T14:08:33.995851Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 18,
+      "max_turn_ts": "2026-01-22T17:45:10.883000Z"
+    },
+    {
+      "sid": "f36e9487-32ca-4c29-9163-93f97b36e2f9",
+      "ts": "2026-02-16T14:08:35.488626Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 12,
+      "max_turn_ts": "2026-01-22T15:23:53.557000Z"
+    },
+    {
+      "sid": "6113e919-67d3-417b-b525-c63700228d19",
+      "ts": "2026-02-16T14:08:36.820746Z",
+      "repo": "bytes032/cli",
+      "n": 62,
+      "max_turn_ts": "2026-01-23T21:14:33.530000Z"
+    },
+    {
+      "sid": "4fec7ea0-3335-43ec-a178-d4ab47d5aef3",
+      "ts": "2026-02-16T14:08:37.310721Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-01-26T20:53:22.538000Z"
+    },
+    {
+      "sid": "5dd7775c-3161-4ad5-bf25-eb59a6ffa8e6",
+      "ts": "2026-02-16T14:08:37.70175Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-01-26T20:03:58.635000Z"
+    },
+    {
+      "sid": "b42aaf1f-96ad-4f7a-9f52-783eb0847649",
+      "ts": "2026-02-16T14:08:38.620058Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 21,
+      "max_turn_ts": "2026-01-26T17:28:00.171000Z"
+    },
+    {
+      "sid": "87a7858d-3f94-4c65-a2d5-307e9337b041",
+      "ts": "2026-02-16T14:08:38.965969Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-01-27T08:57:41.562000Z"
+    },
+    {
+      "sid": "3ffa426f-86e4-4180-b321-fdf4a1ca7a91",
+      "ts": "2026-02-16T14:08:39.838749Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T14:07:43.682000Z"
+    },
+    {
+      "sid": "4ded0de6-8acf-40a5-ba46-7f9bb1ad903c",
+      "ts": "2026-02-16T14:08:40.425993Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 8,
+      "max_turn_ts": "2026-01-30T21:10:00.157000Z"
+    },
+    {
+      "sid": "562589bd-5a9f-4bdf-8aed-cbfce44490ba",
+      "ts": "2026-02-16T14:08:40.796633Z",
+      "repo": "bytes032/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-09T20:31:20.623000Z"
+    },
+    {
+      "sid": "8c00ac51-4fbb-417c-ac2b-0fd595a5c296",
+      "ts": "2026-02-16T14:08:41.189234Z",
+      "repo": "bytes032/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T19:20:16.096000Z"
+    },
+    {
+      "sid": "b6b83817-c584-4561-86a0-bd4f974e7274",
+      "ts": "2026-02-16T14:08:41.506289Z",
+      "repo": "bytes032/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T19:14:40.891000Z"
+    },
+    {
+      "sid": "bc3bf53b-19fe-4209-b30a-a1acffaf6703",
+      "ts": "2026-02-16T14:08:41.808744Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-01-28T21:52:53.514000Z"
+    },
+    {
+      "sid": "e5fcdc73-b9fc-4991-b532-6bf8440fd12d",
+      "ts": "2026-02-16T14:08:42.193134Z",
+      "repo": "bytes032/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-09T18:52:01.932000Z"
+    },
+    {
+      "sid": "f744aef5-5139-4c21-91e5-3f44ce902105",
+      "ts": "2026-02-16T14:08:42.630296Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 6,
+      "max_turn_ts": "2026-01-29T19:38:03.991000Z"
+    },
+    {
+      "sid": "fe0cdcc5-cd91-4041-8742-e375aca7f56e",
+      "ts": "2026-02-16T14:08:42.963608Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-09T18:57:23.762000Z"
+    },
+    {
+      "sid": "204c995d-6516-4125-9c1d-b149771d6d19",
+      "ts": "2026-02-16T15:53:21.253789Z",
+      "repo": "?",
+      "n": 18,
+      "max_turn_ts": "2026-02-16T15:51:56.526000Z"
+    },
+    {
+      "sid": "ccf29704-cd4a-466f-bb1b-fd287f717450",
+      "ts": "2026-02-16T16:04:51.663474Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T16:01:56.784000Z"
+    },
+    {
+      "sid": "4cfca9ed-4a40-4ce3-a9c6-ad13bc6065df",
+      "ts": "2026-02-16T16:34:27.331135Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 15,
+      "max_turn_ts": "2026-02-16T16:33:22.268000Z"
+    },
+    {
+      "sid": "edc4ed19-ea35-4391-b4aa-77c2974407c8",
+      "ts": "2026-02-16T18:16:18.750038Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T18:19:14.400000Z"
+    },
+    {
+      "sid": "46661ccd-b9b9-46be-8570-807185e3b9e4",
+      "ts": "2026-02-16T20:42:32.461605Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 8,
+      "max_turn_ts": "2026-02-16T18:29:28.030000Z"
+    },
+    {
+      "sid": "e9745036-1ce7-4716-9307-e96dfbe8c0d8",
+      "ts": "2026-02-16T20:42:33.230841Z",
+      "repo": "?",
+      "n": 28,
+      "max_turn_ts": "2026-02-16T20:40:32.298000Z"
+    },
+    {
+      "sid": "c010174c-a7cd-4bcc-b7d4-61258d6c463f",
+      "ts": "2026-02-17T01:49:56.885503Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 20,
+      "max_turn_ts": "2026-02-16T02:11:50.171000Z"
+    },
+    {
+      "sid": "545b45d4-729e-4d0b-8e6b-45cb65d43f00",
+      "ts": "2026-02-17T01:57:53.704366Z",
+      "repo": "bytes032/cli",
+      "n": 4,
+      "max_turn_ts": "2026-02-10T04:04:02.445000Z"
+    },
+    {
+      "sid": "8f74bfe9-2936-4853-8f96-490ec4795e42",
+      "ts": "2026-02-17T01:57:55.010915Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 7,
+      "max_turn_ts": "2026-02-17T01:57:47.987000Z"
+    },
+    {
+      "sid": "41438f62-4e41-4f92-818c-13d41f59a686",
+      "ts": "2026-02-17T09:16:25.497194Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-17T09:16:20.203000Z"
+    },
+    {
+      "sid": "781eb8d6-8104-41a8-9d75-778c1c92ce88",
+      "ts": "2026-02-17T12:10:37.037058Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 16,
+      "max_turn_ts": "2026-02-17T12:09:56.647000Z"
+    },
+    {
+      "sid": "807b2f2d-993d-4044-b331-2887f028b6a2",
+      "ts": "2026-02-17T14:11:13.260791Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-17T14:09:12.229000Z"
+    },
+    {
+      "sid": "15f99783-ab13-4526-902c-0ca770a5d70e",
+      "ts": "2026-02-17T15:21:18.53569Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 16,
+      "max_turn_ts": "2026-01-28T22:18:05.585000Z"
+    },
+    {
+      "sid": "710de790-2721-4f6a-a24d-f76248fc28f9",
+      "ts": "2026-02-17T17:03:19.661758Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 1,
+      "max_turn_ts": "2026-02-17T15:50:52.680000Z"
+    },
+    {
+      "sid": "7f705a62-996f-4ec4-a655-114059d6470c",
+      "ts": "2026-02-17T18:29:36.500757Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 2,
+      "max_turn_ts": "2026-02-17T18:29:03.449000Z"
+    },
+    {
+      "sid": "cad1e5c5-5469-49fb-85e5-3a72ff8ddd62",
+      "ts": "2026-02-17T18:29:36.838848Z",
+      "repo": "Stark-Industries0417/cli",
+      "n": 3,
+      "max_turn_ts": "2026-02-17T16:36:13.393000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

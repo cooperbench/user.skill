@@ -1,0 +1,565 @@
+{
+  "developer": "gh:singampalliveerendra",
+  "slug": "gh_singampalliveerendra",
+  "Tstar": "2026-06-26T10:35:18.389932723Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 79,
+  "n_human_turns": 742,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "011b189c-1b4c-44e8-9b38-419b64361aa6",
+      "ts": "2026-04-20T07:03:28.558571938Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 2,
+      "max_turn_ts": "2026-04-20T05:10:27.304000Z"
+    },
+    {
+      "sid": "b7e25a3f-13af-4cb2-993a-430f56bce720",
+      "ts": "2026-04-20T18:28:02.871628908Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-04-20T18:22:02.512000Z"
+    },
+    {
+      "sid": "187ffd29-8715-435f-9863-e10c90659d73",
+      "ts": "2026-04-22T03:31:26.464280498Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 42,
+      "max_turn_ts": "2026-04-16T07:29:37.247000Z"
+    },
+    {
+      "sid": "19a42aef-2c92-4b1c-90ff-bcafca0b942c",
+      "ts": "2026-04-22T03:31:26.639970527Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 7,
+      "max_turn_ts": "2026-04-16T10:25:48.626000Z"
+    },
+    {
+      "sid": "77fc2f58-60cd-42e3-a140-efc592e8128e",
+      "ts": "2026-04-22T03:31:27.084208537Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 5,
+      "max_turn_ts": "2026-04-22T03:17:40.437000Z"
+    },
+    {
+      "sid": "eb2775c9-1fd3-4173-b50c-698ac924cb4d",
+      "ts": "2026-04-22T03:31:27.467993978Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-04-21T17:14:01.873000Z"
+    },
+    {
+      "sid": "20169b33-cf93-44de-9742-69a4d3884a22",
+      "ts": "2026-04-22T07:34:18.609026445Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 7,
+      "max_turn_ts": "2026-04-22T03:42:49.642000Z"
+    },
+    {
+      "sid": "da4b6520-56f0-4756-a5ff-466dc083b087",
+      "ts": "2026-04-22T07:34:18.775305871Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-04-22T07:13:23.820000Z"
+    },
+    {
+      "sid": "7b4627cd-5669-4b47-bd0a-e58a3132617a",
+      "ts": "2026-04-22T17:24:39.16944552Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-04-22T17:20:10.573000Z"
+    },
+    {
+      "sid": "6cd74578-e970-48cd-876f-c46444bec26c",
+      "ts": "2026-04-23T11:59:26.562469095Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 19,
+      "max_turn_ts": "2026-04-23T11:56:04.058000Z"
+    },
+    {
+      "sid": "7a09a00f-59a1-45b0-98b9-1d0a3daba420",
+      "ts": "2026-04-24T08:45:57.712042612Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 6,
+      "max_turn_ts": "2026-04-24T08:46:32.417000Z"
+    },
+    {
+      "sid": "f16f9700-6f4e-4e2c-8dda-4b9be6912757",
+      "ts": "2026-04-25T09:45:03.522554684Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 12,
+      "max_turn_ts": "2026-04-25T09:45:22.861000Z"
+    },
+    {
+      "sid": "9b8e5d4c-9ca5-4226-9bf7-a8c601c8e40b",
+      "ts": "2026-04-28T13:30:59.637827088Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 17,
+      "max_turn_ts": "2026-04-28T13:22:18.366000Z"
+    },
+    {
+      "sid": "c7019dc5-a5c2-4e37-84c6-a3c0b6c16ce6",
+      "ts": "2026-04-28T13:31:00.915181221Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 12,
+      "max_turn_ts": "2026-04-28T04:58:56.308000Z"
+    },
+    {
+      "sid": "e8fe0755-91dd-4dd3-a3e9-1ebd2157672f",
+      "ts": "2026-04-28T13:31:02.748861726Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 10,
+      "max_turn_ts": "2026-04-27T15:11:47.834000Z"
+    },
+    {
+      "sid": "04ac97e7-5625-4070-b169-ce6b0086562f",
+      "ts": "2026-04-30T11:10:37.944299382Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 17,
+      "max_turn_ts": "2026-04-30T06:28:33.148000Z"
+    },
+    {
+      "sid": "f1a6bd9e-f296-4b97-8f95-63157bd53c49",
+      "ts": "2026-04-30T11:57:22.292719078Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 11,
+      "max_turn_ts": "2026-04-30T11:57:35.841000Z"
+    },
+    {
+      "sid": "7cf58b01-f1c7-4ce2-ad27-072798ea33e2",
+      "ts": "2026-05-01T12:29:11.147623632Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 2,
+      "max_turn_ts": "2026-05-01T12:29:26.461000Z"
+    },
+    {
+      "sid": "956cf771-aa3c-40d1-b019-d7d47269ab86",
+      "ts": "2026-05-01T12:29:11.268424321Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-05-01T04:58:15.616000Z"
+    },
+    {
+      "sid": "06d5e243-2bdc-4142-90b2-e491298b4fc6",
+      "ts": "2026-05-03T07:39:05.811732951Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-05-03T07:43:53.897000Z"
+    },
+    {
+      "sid": "dc9c31b6-09a4-49a7-8e01-6bd1ec72d999",
+      "ts": "2026-05-04T10:21:32.156893089Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-05-04T10:21:57.919000Z"
+    },
+    {
+      "sid": "14cefffc-cab9-4c9b-98ac-12e5697434e4",
+      "ts": "2026-05-08T13:42:54.409187265Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-05-06T03:24:22.234000Z"
+    },
+    {
+      "sid": "7a6aaaaf-7f8a-495a-9a66-4b6152eec242",
+      "ts": "2026-05-08T13:42:58.462520494Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 17,
+      "max_turn_ts": "2026-05-05T10:01:09.542000Z"
+    },
+    {
+      "sid": "d7ef9406-2a08-42bd-a773-6c3aec4d4b33",
+      "ts": "2026-05-08T13:43:02.444069925Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 14,
+      "max_turn_ts": "2026-05-08T13:43:31.696000Z"
+    },
+    {
+      "sid": "5228bcc7-6b95-423a-92a4-ad726d0ab2b8",
+      "ts": "2026-05-11T11:46:14.859929828Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 13,
+      "max_turn_ts": "2026-05-10T15:11:07.679000Z"
+    },
+    {
+      "sid": "0897aaf7-a8d2-4384-8086-05b8e1fd122c",
+      "ts": "2026-05-11T13:55:11.6658797Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 13,
+      "max_turn_ts": "2026-05-11T13:55:22.999000Z"
+    },
+    {
+      "sid": "fac31e04-d2ad-41d2-b515-37f00b1ab72b",
+      "ts": "2026-05-12T09:11:14.433085796Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 16,
+      "max_turn_ts": "2026-05-12T09:11:26.218000Z"
+    },
+    {
+      "sid": "0842e1c5-7aa8-4220-bd79-9e682f0a6952",
+      "ts": "2026-05-13T09:02:57.516382725Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-05-13T07:10:41.331000Z"
+    },
+    {
+      "sid": "9db10308-9704-4061-a25a-3865d52affeb",
+      "ts": "2026-05-13T09:03:02.86964095Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 14,
+      "max_turn_ts": "2026-05-13T09:03:36.546000Z"
+    },
+    {
+      "sid": "aa42dcbb-3e0b-4aa2-af95-bd5e41d3df83",
+      "ts": "2026-05-19T20:21:58.534626411Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 5,
+      "max_turn_ts": "2026-05-19T08:28:45.807000Z"
+    },
+    {
+      "sid": "d665d438-7669-4d97-b1d8-d9f42146546b",
+      "ts": "2026-05-19T20:22:05.244176549Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-05-15T16:07:32.084000Z"
+    },
+    {
+      "sid": "b45bd19b-e227-410c-8581-f83855ed8112",
+      "ts": "2026-05-19T20:54:11.624404312Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 13,
+      "max_turn_ts": "2026-05-19T20:51:10.964000Z"
+    },
+    {
+      "sid": "0708793f-9e01-4d4b-9e71-acd505fda837",
+      "ts": "2026-05-21T18:38:09.3461926Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-05-21T18:35:27.606000Z"
+    },
+    {
+      "sid": "4243efa9-1455-4d46-adda-0531f05c67e6",
+      "ts": "2026-05-23T17:06:41.71804863Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 37,
+      "max_turn_ts": "2026-05-22T20:24:43.299000Z"
+    },
+    {
+      "sid": "e266c86e-7c31-4e32-9285-b27e90fe30e5",
+      "ts": "2026-05-23T17:06:45.455171291Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 2,
+      "max_turn_ts": "2026-05-23T10:40:35.661000Z"
+    },
+    {
+      "sid": "c1996994-44a0-44d3-b4bd-49a8cbe57822",
+      "ts": "2026-05-23T17:35:25.97277803Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 21,
+      "max_turn_ts": "2026-05-23T17:35:42.110000Z"
+    },
+    {
+      "sid": "73be6d60-e239-440f-832c-20bbc87e0dfb",
+      "ts": "2026-05-30T19:18:49.012406202Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 16,
+      "max_turn_ts": "2026-05-27T18:29:22.804000Z"
+    },
+    {
+      "sid": "e5123ed1-5672-4a40-904c-787eb829ddf6",
+      "ts": "2026-05-30T19:18:53.913894377Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 5,
+      "max_turn_ts": "2026-05-27T17:48:44.604000Z"
+    },
+    {
+      "sid": "cdd6261e-6197-4ba5-840a-bf91f78a8442",
+      "ts": "2026-06-03T10:19:22.774281751Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 2,
+      "max_turn_ts": "2026-06-03T07:16:02.062000Z"
+    },
+    {
+      "sid": "f33ae1f4-49d1-4b00-aff7-acd000e5eddb",
+      "ts": "2026-06-03T10:19:24.434493477Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 15,
+      "max_turn_ts": "2026-05-30T19:19:41.275000Z"
+    },
+    {
+      "sid": "5792a73d-1e31-4ddf-9425-b4c31b3c1607",
+      "ts": "2026-06-11T07:28:52.158698205Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 2,
+      "max_turn_ts": "2026-06-04T11:11:11.024000Z"
+    },
+    {
+      "sid": "7a14b253-1abc-4cbf-89b1-b0884daac757",
+      "ts": "2026-06-11T07:36:11.486481314Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-06-04T10:37:24.129000Z"
+    },
+    {
+      "sid": "2237dde5-b8d4-4c74-819a-43d91581c865",
+      "ts": "2026-06-13T07:30:59.133909155Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 7,
+      "max_turn_ts": "2026-06-11T07:36:28.026000Z"
+    },
+    {
+      "sid": "224d4e2c-0a9a-4b01-ac5f-b1a2d7bc922d",
+      "ts": "2026-06-13T07:31:02.842788916Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 6,
+      "max_turn_ts": "2026-06-13T07:31:41.589000Z"
+    },
+    {
+      "sid": "9ca55f00-9e48-46a0-acb7-f88ba5393bb5",
+      "ts": "2026-06-13T07:31:03.466654045Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 17,
+      "max_turn_ts": "2026-06-07T11:24:11.669000Z"
+    },
+    {
+      "sid": "a2ab1246-23ef-4873-a0fc-f6d8d9812ca6",
+      "ts": "2026-06-13T07:31:06.020211173Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-06-11T16:08:21.972000Z"
+    },
+    {
+      "sid": "a491acee-2766-499f-bd00-30e58ec985ab",
+      "ts": "2026-06-13T17:20:39.876899373Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-06-13T09:35:26.234000Z"
+    },
+    {
+      "sid": "b04e0df0-a4f0-4546-b906-322ec6f76616",
+      "ts": "2026-06-13T17:20:49.967438229Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 40,
+      "max_turn_ts": "2026-06-13T17:21:15.497000Z"
+    },
+    {
+      "sid": "d51f736f-d9c2-4f30-8e62-dc1002a92f5b",
+      "ts": "2026-06-13T17:20:50.155409253Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-06-13T06:36:30.470000Z"
+    },
+    {
+      "sid": "366a56e2-790b-481d-a2fa-f100da861946",
+      "ts": "2026-06-17T09:24:44.741555174Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-06-16T08:04:07.863000Z"
+    },
+    {
+      "sid": "39b3f3a1-e323-4fa1-8483-86b62a248613",
+      "ts": "2026-06-17T09:24:45.100633116Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 6,
+      "max_turn_ts": "2026-06-16T03:13:12.080000Z"
+    },
+    {
+      "sid": "a5f4c282-6f1e-4e45-862e-c5f83cba4e5d",
+      "ts": "2026-06-17T09:24:45.274744058Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 5,
+      "max_turn_ts": "2026-06-16T13:04:01.449000Z"
+    },
+    {
+      "sid": "a9aae61b-4a55-4f27-b7c0-22d7e61b6fa7",
+      "ts": "2026-06-17T09:24:45.52450814Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-06-16T19:18:09.333000Z"
+    },
+    {
+      "sid": "e27a787e-dab5-4c84-a306-9f93f06815a7",
+      "ts": "2026-06-17T09:24:45.67422059Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-06-16T18:36:12.455000Z"
+    },
+    {
+      "sid": "063eaf23-a22a-424c-afb5-7b7bc63180a8",
+      "ts": "2026-06-17T12:19:46.616593487Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 9,
+      "max_turn_ts": "2026-06-17T12:20:08.672000Z"
+    },
+    {
+      "sid": "f3b49fe3-416f-468c-ab7d-ce41af4cd9fa",
+      "ts": "2026-06-18T09:27:04.685067428Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 8,
+      "max_turn_ts": "2026-06-18T09:27:24.772000Z"
+    },
+    {
+      "sid": "a0fe0fa6-9ddc-4569-a5c9-2a274622c948",
+      "ts": "2026-06-18T10:49:19.626673264Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 16,
+      "max_turn_ts": "2026-06-18T10:46:45.705000Z"
+    },
+    {
+      "sid": "8c11599d-7c61-4b31-9359-26304c0be27d",
+      "ts": "2026-06-18T20:21:58.124094956Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 11,
+      "max_turn_ts": "2026-06-18T20:22:38.478000Z"
+    },
+    {
+      "sid": "060ef332-b6dd-4b87-9b83-ec26de23ba73",
+      "ts": "2026-06-19T10:43:40.122851688Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 9,
+      "max_turn_ts": "2026-06-19T10:43:52.234000Z"
+    },
+    {
+      "sid": "b76c81be-eb21-43a3-8ac2-b14137681e62",
+      "ts": "2026-06-19T12:23:30.585975263Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 9,
+      "max_turn_ts": "2026-06-19T12:23:50.065000Z"
+    },
+    {
+      "sid": "0f400acc-7d71-4fbd-bc9d-0bd09a5e2d80",
+      "ts": "2026-06-20T07:01:03.341381476Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 10,
+      "max_turn_ts": "2026-06-20T07:01:19.683000Z"
+    },
+    {
+      "sid": "3141ce9c-b7e5-4b87-b7b5-942c7f91ead4",
+      "ts": "2026-06-20T13:57:09.072355253Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 2,
+      "max_turn_ts": "2026-06-20T14:00:58.868000Z"
+    },
+    {
+      "sid": "b89a8de5-d4fd-4c56-8c76-632995764266",
+      "ts": "2026-06-20T14:29:02.662416468Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 8,
+      "max_turn_ts": "2026-06-20T11:32:13.019000Z"
+    },
+    {
+      "sid": "661d1a8c-ea8f-4862-b9c7-300618acb215",
+      "ts": "2026-06-21T14:17:57.467403621Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 15,
+      "max_turn_ts": "2026-06-20T15:34:19.979000Z"
+    },
+    {
+      "sid": "5d1e9b6f-4809-40d6-b8f9-353c28d24d6d",
+      "ts": "2026-06-21T15:45:45.317959524Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 22,
+      "max_turn_ts": "2026-06-21T15:46:14.483000Z"
+    },
+    {
+      "sid": "b90e6b23-83d6-4293-8025-f517dece44d0",
+      "ts": "2026-06-21T15:45:45.642402492Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 6,
+      "max_turn_ts": "2026-06-21T15:18:32.491000Z"
+    },
+    {
+      "sid": "d475506f-a95c-474b-9a8a-ffbd16ed2acb",
+      "ts": "2026-06-21T15:45:45.960194083Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T10:06:51.075000Z"
+    },
+    {
+      "sid": "fb6ef3d4-be38-42d9-bf0b-fdfaa3e375db",
+      "ts": "2026-06-21T15:45:46.589174661Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 10,
+      "max_turn_ts": "2026-06-21T11:16:38.835000Z"
+    },
+    {
+      "sid": "e305a8b2-1a24-4f55-9c78-13138b2370b7",
+      "ts": "2026-06-23T07:12:38.399449595Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 19,
+      "max_turn_ts": "2026-06-23T07:13:09.258000Z"
+    },
+    {
+      "sid": "0b004281-2785-4400-8b88-834329f3a8b7",
+      "ts": "2026-06-23T09:30:27.997738369Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 3,
+      "max_turn_ts": "2026-06-23T09:30:58.448000Z"
+    },
+    {
+      "sid": "12b2dc49-721e-4cfd-b1b0-d84ec3f8f2eb",
+      "ts": "2026-06-25T04:15:04.948518937Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 4,
+      "max_turn_ts": "2026-06-24T05:28:43.562000Z"
+    },
+    {
+      "sid": "b9249999-9cad-43dd-8305-64b718962f05",
+      "ts": "2026-06-25T04:15:05.618660431Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 16,
+      "max_turn_ts": "2026-06-24T10:36:05.371000Z"
+    },
+    {
+      "sid": "beff3616-842d-49e2-8a11-7a2494bce0f6",
+      "ts": "2026-06-25T04:15:05.803974408Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 11,
+      "max_turn_ts": "2026-06-24T04:26:28.128000Z"
+    },
+    {
+      "sid": "40ae46b1-8200-45bc-ab14-1e412bff94ab",
+      "ts": "2026-06-25T05:11:56.609715296Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-06-25T05:09:22.835000Z"
+    },
+    {
+      "sid": "c3124449-167f-48b7-bfa0-8a2db08be6ef",
+      "ts": "2026-06-25T11:02:29.383640534Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 10,
+      "max_turn_ts": "2026-06-25T06:43:28.889000Z"
+    },
+    {
+      "sid": "64e6dea2-4454-4132-837d-4df02a938928",
+      "ts": "2026-06-25T12:17:48.799687967Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 26,
+      "max_turn_ts": "2026-06-25T12:18:27.194000Z"
+    },
+    {
+      "sid": "168f910f-036a-43a7-b4ff-f9c4bcd003a3",
+      "ts": "2026-06-26T04:32:40.648902565Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 7,
+      "max_turn_ts": "2026-06-26T04:32:50.885000Z"
+    },
+    {
+      "sid": "7404107f-0764-4d33-b1b4-98a16de33836",
+      "ts": "2026-06-26T07:16:25.3948724Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 5,
+      "max_turn_ts": "2026-06-26T06:09:35.744000Z"
+    },
+    {
+      "sid": "40c07203-a3ab-48bf-bd8a-47c9d0d0f7dd",
+      "ts": "2026-06-26T10:35:15.238119385Z",
+      "repo": "singampalliveerendra/your_family_farmer",
+      "n": 1,
+      "max_turn_ts": "2026-06-26T09:04:55.084000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

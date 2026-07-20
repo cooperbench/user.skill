@@ -1,0 +1,1356 @@
+{
+  "developer": "gh:fcamblor",
+  "slug": "gh_fcamblor",
+  "Tstar": "2026-05-19T15:56:37.464377Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 192,
+  "n_human_turns": 501,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "3542f389-b09d-478f-a462-fc8e6c03b5e9",
+      "ts": "2026-04-17T11:12:10.302123Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T11:12:18.556000Z"
+    },
+    {
+      "sid": "3ae9611f-3bdb-4ba6-b692-ca0f8ebf9831",
+      "ts": "2026-04-17T11:42:18.89197Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 10,
+      "max_turn_ts": "2026-04-17T11:42:21.864000Z"
+    },
+    {
+      "sid": "36ca540f-0ecd-4b51-abca-d0e745b4224c",
+      "ts": "2026-04-17T11:47:14.037627Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T11:46:41.554000Z"
+    },
+    {
+      "sid": "8c75d465-d6d3-4f3f-8a5a-7a06d12aed65",
+      "ts": "2026-04-17T12:15:48.066427Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T12:16:01.283000Z"
+    },
+    {
+      "sid": "46d6a514-6dac-4abd-b803-c3957238943a",
+      "ts": "2026-04-17T12:30:56.363925Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T12:31:34.371000Z"
+    },
+    {
+      "sid": "74c052e9-7431-47a2-8ed0-b412f4217a2f",
+      "ts": "2026-04-17T12:32:56.714459Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-17T12:33:03.392000Z"
+    },
+    {
+      "sid": "fa096b03-e448-4f70-af16-71783043983a",
+      "ts": "2026-04-17T12:49:57.259319Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T12:50:01.448000Z"
+    },
+    {
+      "sid": "6943d675-f088-49e3-a233-6b7f9df3863a",
+      "ts": "2026-04-17T13:06:41.265111Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T13:06:52.873000Z"
+    },
+    {
+      "sid": "6ca1ea3b-1df8-4888-8413-b4c9cd9112d5",
+      "ts": "2026-04-17T14:01:49.747469Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T14:01:54.795000Z"
+    },
+    {
+      "sid": "9e19e1e1-37d0-4360-8b8e-e8d1c0e754e6",
+      "ts": "2026-04-17T15:23:57.087309Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T15:24:04.981000Z"
+    },
+    {
+      "sid": "ebee5cf0-f376-4862-987b-59c745b60b80",
+      "ts": "2026-04-17T15:23:58.149184Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 8,
+      "max_turn_ts": "2026-04-17T13:40:19.098000Z"
+    },
+    {
+      "sid": "cd48f8b6-468b-41a2-9ebf-ee48780050eb",
+      "ts": "2026-04-17T15:30:24.023331Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T15:30:33.237000Z"
+    },
+    {
+      "sid": "d662909c-9cf0-4160-b539-6a892672fec6",
+      "ts": "2026-04-17T16:08:35.004436Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 9,
+      "max_turn_ts": "2026-04-17T16:09:45.443000Z"
+    },
+    {
+      "sid": "faa8fdf2-fc6d-4b53-b515-20d512796965",
+      "ts": "2026-04-17T16:18:50.259862Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T16:18:56.388000Z"
+    },
+    {
+      "sid": "7a52b30b-cacd-4914-b30d-4a4cf2bb7ae3",
+      "ts": "2026-04-17T16:39:17.724192Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T16:39:28.938000Z"
+    },
+    {
+      "sid": "0e988bfd-24e5-4417-9786-3260a04921d0",
+      "ts": "2026-04-17T16:47:10.852259Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T16:47:33.530000Z"
+    },
+    {
+      "sid": "2c1b2417-a0a8-43e0-93ad-dc3687d7fbec",
+      "ts": "2026-04-17T20:26:48.773558Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T20:26:58.043000Z"
+    },
+    {
+      "sid": "c8854f18-b54c-408e-89cf-5fcaf4f4ce54",
+      "ts": "2026-04-17T20:30:34.957447Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 13,
+      "max_turn_ts": "2026-04-17T14:06:46.366000Z"
+    },
+    {
+      "sid": "82b094cf-3f50-4dd7-a38f-627a8665b770",
+      "ts": "2026-04-17T21:19:26.997665Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-17T20:03:14.887000Z"
+    },
+    {
+      "sid": "8da622a3-06f2-485c-8b69-59361c41cacf",
+      "ts": "2026-04-17T21:19:27.177855Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T20:17:30.426000Z"
+    },
+    {
+      "sid": "a9a56f4b-ee31-4698-9b32-e5390a7c792f",
+      "ts": "2026-04-17T21:19:30.811485Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T21:19:47.452000Z"
+    },
+    {
+      "sid": "de988978-ac59-486b-b332-e2832407daf8",
+      "ts": "2026-04-17T21:33:02.851164Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T21:33:20.318000Z"
+    },
+    {
+      "sid": "023232bf-9a7d-4898-96d2-4f3f3128a2ed",
+      "ts": "2026-04-17T21:47:50.432659Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T21:48:08.704000Z"
+    },
+    {
+      "sid": "b2f5e015-0e78-490a-97ce-bbd41fab9e9c",
+      "ts": "2026-04-17T22:07:40.932755Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T22:07:53.148000Z"
+    },
+    {
+      "sid": "43f8934e-bed9-48ff-98b3-ad49ceff64c1",
+      "ts": "2026-04-17T22:11:53.172576Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:11:57.505000Z"
+    },
+    {
+      "sid": "b767c390-0b80-4732-ad5c-2030f3c0bd20",
+      "ts": "2026-04-17T22:12:34.911679Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:14:29.037000Z"
+    },
+    {
+      "sid": "9f0cb8fd-afd8-4258-84c8-ecb13b76184c",
+      "ts": "2026-04-17T22:12:38.941527Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:12:47.099000Z"
+    },
+    {
+      "sid": "99d5ae5d-bd9b-456c-9a84-fb4fc63570f1",
+      "ts": "2026-04-17T22:13:20.617713Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:13:31.354000Z"
+    },
+    {
+      "sid": "9e199eb4-8692-4831-8839-f20af8d71021",
+      "ts": "2026-04-17T22:16:29.344125Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:16:41.523000Z"
+    },
+    {
+      "sid": "5c037b1a-a301-4969-a742-dbdc26da543c",
+      "ts": "2026-04-17T22:16:54.882156Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:17:06.525000Z"
+    },
+    {
+      "sid": "bc971df4-8dc6-4968-a59f-e792d375ddaf",
+      "ts": "2026-04-17T22:25:55.563903Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:26:00.318000Z"
+    },
+    {
+      "sid": "9d025928-f7a4-4015-9a8c-c1e2895c0194",
+      "ts": "2026-04-17T22:26:49.865725Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:27:02.114000Z"
+    },
+    {
+      "sid": "49aa3587-b215-4a67-ad35-2ef0367cbf02",
+      "ts": "2026-04-17T22:26:56.376161Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:26:40.868000Z"
+    },
+    {
+      "sid": "7db23b04-79fb-4261-9c87-d4745b2aec56",
+      "ts": "2026-04-17T22:27:03.202693Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:27:09.371000Z"
+    },
+    {
+      "sid": "58c14676-5317-4003-b84b-78b7c212b238",
+      "ts": "2026-04-17T22:29:26.916034Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:29:37.985000Z"
+    },
+    {
+      "sid": "21e036ba-613d-4211-8157-feb667fbaa68",
+      "ts": "2026-04-17T22:29:55.272683Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T22:30:21.446000Z"
+    },
+    {
+      "sid": "a8402ff3-eb05-4737-9ce6-aa1eaf9620aa",
+      "ts": "2026-04-17T22:30:22.281138Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:30:25.022000Z"
+    },
+    {
+      "sid": "732996a6-1666-43f0-aea8-83567ef5ea7a",
+      "ts": "2026-04-17T22:31:44.477292Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:31:34.057000Z"
+    },
+    {
+      "sid": "02071faf-1cac-4adc-a51c-eeeca1ad1c09",
+      "ts": "2026-04-17T22:40:45.642212Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:37:33.742000Z"
+    },
+    {
+      "sid": "ad6721ad-d876-4343-8046-771bb767a517",
+      "ts": "2026-04-17T23:02:58.439733Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:47:21.596000Z"
+    },
+    {
+      "sid": "b810329f-f0c4-4a60-92b3-a80bb1770908",
+      "ts": "2026-04-17T23:02:58.45796Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T22:54:16.781000Z"
+    },
+    {
+      "sid": "9268e0c8-0ea3-4227-941c-06d3d1e38f83",
+      "ts": "2026-04-17T23:03:09.371142Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T23:02:45.845000Z"
+    },
+    {
+      "sid": "92ca1fe9-f16f-4b80-b321-7f1177c885f7",
+      "ts": "2026-04-17T23:16:57.177893Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T23:17:03.161000Z"
+    },
+    {
+      "sid": "56947288-932c-422a-ab91-561d02dff52c",
+      "ts": "2026-04-17T23:26:27.594647Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T23:26:44.908000Z"
+    },
+    {
+      "sid": "bcda5f1b-156a-46db-ab2c-95fe2a2f39c6",
+      "ts": "2026-04-18T06:49:48.929544Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T06:49:57.795000Z"
+    },
+    {
+      "sid": "208c9a57-35bd-458d-8847-82e98249c371",
+      "ts": "2026-04-18T06:57:09.064563Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-18T06:57:18.994000Z"
+    },
+    {
+      "sid": "05edf116-0e57-48f4-99c9-18e3903a9fcc",
+      "ts": "2026-04-18T10:09:01.675456Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-18T07:39:32.301000Z"
+    },
+    {
+      "sid": "b223426a-3bbf-4e7a-b399-0d796cbbf9d8",
+      "ts": "2026-04-18T14:26:22.76489Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-18T14:28:11.770000Z"
+    },
+    {
+      "sid": "fd273c66-007a-4076-82f4-d8824c2b5159",
+      "ts": "2026-04-18T14:39:15.680607Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T14:39:25.911000Z"
+    },
+    {
+      "sid": "efa9d2b7-021a-4771-8ed6-610b6379aaae",
+      "ts": "2026-04-18T14:51:31.907405Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T14:51:52.345000Z"
+    },
+    {
+      "sid": "3a65fdd7-ceca-45c0-82ab-4322af393790",
+      "ts": "2026-04-18T15:01:25.391146Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T15:02:29.315000Z"
+    },
+    {
+      "sid": "d3ed0d3d-5df2-4396-8c4a-a3b97f3f682c",
+      "ts": "2026-04-18T15:17:29.575581Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T15:17:39.268000Z"
+    },
+    {
+      "sid": "d6315e75-8b4a-4112-9082-f7ba3d87ac2a",
+      "ts": "2026-04-18T15:25:19.135236Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T15:25:31.929000Z"
+    },
+    {
+      "sid": "32097515-85c6-410f-977b-cbf93cd7d778",
+      "ts": "2026-04-18T17:18:41.652418Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T17:18:13.802000Z"
+    },
+    {
+      "sid": "2d330f62-ec40-477d-98dd-ff4ab6c688c4",
+      "ts": "2026-04-18T17:23:57.741506Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T17:24:37.505000Z"
+    },
+    {
+      "sid": "1a6e8b27-3d65-46b2-aa45-aea1f6fd74d1",
+      "ts": "2026-04-18T19:31:57.882624Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-18T17:52:26.813000Z"
+    },
+    {
+      "sid": "d6bfd4b6-5d5d-468d-8bcf-2c374e689919",
+      "ts": "2026-04-18T19:37:24.996757Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T17:20:06.200000Z"
+    },
+    {
+      "sid": "e95a16d9-5de0-448e-8737-4cfe777c3302",
+      "ts": "2026-04-18T19:37:25.022634Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T17:22:20.374000Z"
+    },
+    {
+      "sid": "b64ee546-5aab-4017-9822-556736cea817",
+      "ts": "2026-04-18T20:05:04.958444Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-18T20:05:13.245000Z"
+    },
+    {
+      "sid": "e358aa87-d47f-4ddc-a3a5-b44ae06d4f92",
+      "ts": "2026-04-18T20:05:05.007553Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T19:56:40.662000Z"
+    },
+    {
+      "sid": "0445cfca-f5e6-4411-bca9-be8c0ad85510",
+      "ts": "2026-04-18T20:06:15.205786Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T10:46:06.233000Z"
+    },
+    {
+      "sid": "1174360e-1631-481d-a0ef-bb87944a874a",
+      "ts": "2026-04-18T20:06:19.520558Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-17T13:25:16.047000Z"
+    },
+    {
+      "sid": "4aff8f74-3024-4e55-b498-8cab98cb64a9",
+      "ts": "2026-04-18T20:06:20.661511Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-18T17:22:50.410000Z"
+    },
+    {
+      "sid": "5d79735c-295c-43bd-bfc5-d11d6b5097d6",
+      "ts": "2026-04-18T20:06:21.849903Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 12,
+      "max_turn_ts": "2026-04-18T10:11:33.390000Z"
+    },
+    {
+      "sid": "838d6e20-c18e-4182-9da3-2da0cfb611ca",
+      "ts": "2026-04-18T20:06:22.484697Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 6,
+      "max_turn_ts": "2026-04-18T17:44:03.455000Z"
+    },
+    {
+      "sid": "f56052c7-e3c3-4158-8c77-d565d3ff9415",
+      "ts": "2026-04-18T20:06:27.606658Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T17:22:41.211000Z"
+    },
+    {
+      "sid": "ffa53b7a-f7f0-4e7a-af59-3151a30b54dd",
+      "ts": "2026-04-18T20:06:28.646886Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 7,
+      "max_turn_ts": "2026-04-17T20:43:29.198000Z"
+    },
+    {
+      "sid": "77d63700-b561-475f-b3e8-b7f1fcf3601a",
+      "ts": "2026-04-18T20:32:26.337946Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T20:32:34.808000Z"
+    },
+    {
+      "sid": "d4b25eaf-90b9-4765-a230-dc0c53b8519e",
+      "ts": "2026-04-18T20:38:16.906525Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T20:29:55.254000Z"
+    },
+    {
+      "sid": "270b58d9-743f-44fe-acb7-157d2f633253",
+      "ts": "2026-04-18T20:46:52.668368Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T20:22:04.537000Z"
+    },
+    {
+      "sid": "9c10a8f2-bd80-46a7-ae1b-530144297e68",
+      "ts": "2026-04-18T20:46:56.104369Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T20:47:15.314000Z"
+    },
+    {
+      "sid": "97fc1364-34c6-4ea7-92a1-cd1127d738b4",
+      "ts": "2026-04-18T20:55:38.44557Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-18T20:55:55.096000Z"
+    },
+    {
+      "sid": "5ad85df1-db76-44dc-9207-1e50530ee80a",
+      "ts": "2026-04-18T21:34:56.363579Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-18T21:35:13.059000Z"
+    },
+    {
+      "sid": "17f8da69-12cd-4fc6-92bf-ca7b8bbd2f1c",
+      "ts": "2026-04-18T21:52:14.603328Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T21:52:28.828000Z"
+    },
+    {
+      "sid": "1d06a9f6-0e32-45f8-91cf-9d98e91d750d",
+      "ts": "2026-04-18T22:17:08.028071Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T22:17:17.990000Z"
+    },
+    {
+      "sid": "c3e664f8-ef4d-4bfd-80d3-403a89f2b81a",
+      "ts": "2026-04-18T22:18:44.115637Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-18T22:18:50.414000Z"
+    },
+    {
+      "sid": "d06db80e-0a1c-477e-8be6-5933dbfe3d30",
+      "ts": "2026-04-18T22:26:28.932149Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T22:26:45.023000Z"
+    },
+    {
+      "sid": "28c17b88-6bb9-4ca0-94fb-5fe5566293a2",
+      "ts": "2026-04-18T22:43:06.472852Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-18T22:43:24.648000Z"
+    },
+    {
+      "sid": "70da1f5a-a5f8-4d0a-8ecb-68082be1787e",
+      "ts": "2026-04-18T22:47:46.052507Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T22:47:51.339000Z"
+    },
+    {
+      "sid": "cf20981c-b653-4803-9b57-7407bdf92836",
+      "ts": "2026-04-18T22:47:46.369078Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T20:37:42.222000Z"
+    },
+    {
+      "sid": "94ff6c69-530c-45d0-9442-81bc8d389ab3",
+      "ts": "2026-04-18T23:00:23.563374Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-18T22:59:27.188000Z"
+    },
+    {
+      "sid": "6e3692a6-66c6-4627-826c-9405c65edb19",
+      "ts": "2026-04-18T23:05:16.004342Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T23:04:35.843000Z"
+    },
+    {
+      "sid": "cc97f225-f603-408b-89c3-6da0057f9eb5",
+      "ts": "2026-04-18T23:13:46.522582Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-18T23:14:01.864000Z"
+    },
+    {
+      "sid": "7129975a-76ac-4960-a0b8-0d0c1dd10f2c",
+      "ts": "2026-04-18T23:29:45.036557Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T23:29:52.186000Z"
+    },
+    {
+      "sid": "d2a2489a-8bea-40b7-9d74-7ca16c2bb2ce",
+      "ts": "2026-04-19T11:53:37.381844Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T11:54:21.314000Z"
+    },
+    {
+      "sid": "41d26888-47f5-4446-ae8a-bccfe50db95c",
+      "ts": "2026-04-19T12:06:12.320317Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-19T12:01:04.204000Z"
+    },
+    {
+      "sid": "c05dad9b-ef04-413b-9170-bc79c3923c01",
+      "ts": "2026-04-19T12:06:37.420229Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T12:07:12.697000Z"
+    },
+    {
+      "sid": "58885006-2481-43f6-a0f5-7047b7f74686",
+      "ts": "2026-04-19T12:16:07.361698Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T12:16:23.237000Z"
+    },
+    {
+      "sid": "ca52dc02-c487-42ab-bee1-05bdb361b11b",
+      "ts": "2026-04-19T12:17:00.940025Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T12:17:19.905000Z"
+    },
+    {
+      "sid": "23e4390d-de2a-450c-8b50-01ee7a3e1336",
+      "ts": "2026-04-19T12:17:32.377847Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T12:17:51.068000Z"
+    },
+    {
+      "sid": "80acaa13-1d31-41f9-a0e8-cfa7ceca524f",
+      "ts": "2026-04-19T13:09:36.770035Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T13:12:52.087000Z"
+    },
+    {
+      "sid": "5c6b518c-2410-4d74-8117-bc6a1ad381f8",
+      "ts": "2026-04-19T13:11:15.708439Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T13:12:40.916000Z"
+    },
+    {
+      "sid": "805537f6-dd89-4180-8a52-70eb781d5066",
+      "ts": "2026-04-19T14:19:05.364688Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T14:20:10.500000Z"
+    },
+    {
+      "sid": "d6175b83-a09f-4ef3-90d6-0e47a9c7b809",
+      "ts": "2026-04-19T14:21:40.17709Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T14:23:49.183000Z"
+    },
+    {
+      "sid": "f72e2280-c86f-4651-97cc-18d665e04053",
+      "ts": "2026-04-19T14:29:04.116926Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T14:29:54.384000Z"
+    },
+    {
+      "sid": "ec42991a-edb4-4911-ac4c-5b25d6a629f1",
+      "ts": "2026-04-19T20:02:25.598893Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T20:02:43.162000Z"
+    },
+    {
+      "sid": "ed0dda1a-1e3c-4f06-826d-5032ba79bd49",
+      "ts": "2026-04-19T20:08:29.751156Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-19T20:08:59.074000Z"
+    },
+    {
+      "sid": "e6af6d85-31c0-4804-bf75-3a5d21d437a3",
+      "ts": "2026-04-19T20:08:32.965725Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T20:08:55.745000Z"
+    },
+    {
+      "sid": "4a9ba276-04fe-46d6-a2c2-449abb30fb56",
+      "ts": "2026-04-19T20:12:24.911695Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T20:13:25.817000Z"
+    },
+    {
+      "sid": "861be90e-842d-4e8b-a468-9d7eb1ff952d",
+      "ts": "2026-04-19T23:18:17.798344Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T23:18:35.358000Z"
+    },
+    {
+      "sid": "0dd3cb74-2fd8-4eb7-b156-1b02b46aa470",
+      "ts": "2026-04-19T23:29:05.589784Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-19T23:29:12.892000Z"
+    },
+    {
+      "sid": "264d0a62-55f8-4518-a405-5641b66f8680",
+      "ts": "2026-04-19T23:31:37.840515Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-19T23:31:56.672000Z"
+    },
+    {
+      "sid": "a18b9746-0c1b-4f7e-b113-9a7c7363756c",
+      "ts": "2026-04-20T00:08:52.62955Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-20T00:08:59.707000Z"
+    },
+    {
+      "sid": "3bb9c5b9-12fa-434d-8faa-2e4cb44d62c0",
+      "ts": "2026-04-20T00:12:14.714888Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-20T00:12:08.899000Z"
+    },
+    {
+      "sid": "fc6941a4-b608-458b-9d13-0ce501c84bb1",
+      "ts": "2026-04-20T00:13:07.926699Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-20T00:13:16.037000Z"
+    },
+    {
+      "sid": "14ec920d-177e-45a7-b3d7-ed353a63d2d1",
+      "ts": "2026-04-20T07:04:02.936866Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-20T07:04:11.168000Z"
+    },
+    {
+      "sid": "a11c47e4-0a9e-43a1-b509-8e3c19c1e2d2",
+      "ts": "2026-04-20T09:41:44.376787Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 6,
+      "max_turn_ts": "2026-04-20T09:41:54.560000Z"
+    },
+    {
+      "sid": "2c849657-5883-4593-a0e0-7cae34838c5c",
+      "ts": "2026-04-20T11:58:50.35698Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-20T11:58:56.495000Z"
+    },
+    {
+      "sid": "15c4c458-420b-40c9-a7e2-c1a6e3398dec",
+      "ts": "2026-04-20T13:26:12.815968Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-20T13:26:20.188000Z"
+    },
+    {
+      "sid": "ba907ae1-c878-484f-bb27-8073033e0cf1",
+      "ts": "2026-04-20T13:34:29.871431Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-20T13:34:37.759000Z"
+    },
+    {
+      "sid": "7955c4c2-3f4f-4e5f-91d2-c539d680bbf9",
+      "ts": "2026-04-20T13:42:01.067038Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-20T13:42:05.800000Z"
+    },
+    {
+      "sid": "1fbded5b-5c24-4ceb-9550-4102ef88fa2f",
+      "ts": "2026-04-20T14:08:41.794404Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-20T14:08:46.419000Z"
+    },
+    {
+      "sid": "c956d4b3-8078-48b3-8b6c-c51555305aaf",
+      "ts": "2026-04-20T14:12:32.78401Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-20T14:12:34.761000Z"
+    },
+    {
+      "sid": "a31b4198-060a-4459-a54c-af9d7c35d3be",
+      "ts": "2026-04-20T14:51:56.270885Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 6,
+      "max_turn_ts": "2026-04-20T14:52:07.369000Z"
+    },
+    {
+      "sid": "37c9f1a2-ab73-48be-810b-1a9a6ef24897",
+      "ts": "2026-04-21T19:45:28.190246Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 9,
+      "max_turn_ts": "2026-04-21T19:45:34.188000Z"
+    },
+    {
+      "sid": "5a470dae-33c3-419a-a299-1ef3efb31ab8",
+      "ts": "2026-04-21T21:16:57.173003Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-21T21:17:04.239000Z"
+    },
+    {
+      "sid": "06dbe6a2-307a-4fb9-9aad-3d3321764d11",
+      "ts": "2026-04-22T00:33:31.351426Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-21T22:31:32.481000Z"
+    },
+    {
+      "sid": "686806d2-14b3-4ff1-8607-c54692d58b32",
+      "ts": "2026-04-22T00:33:31.427731Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T22:08:37.160000Z"
+    },
+    {
+      "sid": "6aeab38b-e672-4a2e-a78d-56d938c3f90a",
+      "ts": "2026-04-22T00:33:31.716891Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 8,
+      "max_turn_ts": "2026-04-21T22:06:08.664000Z"
+    },
+    {
+      "sid": "8ceac57a-3b36-4e09-871c-7b995b842862",
+      "ts": "2026-04-22T00:33:31.73678Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T22:07:35.884000Z"
+    },
+    {
+      "sid": "c6789578-54cc-426f-b2c5-3935dd4b15f0",
+      "ts": "2026-04-22T00:33:35.314191Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-22T00:33:42.246000Z"
+    },
+    {
+      "sid": "0cbb600e-e8f5-44fe-8c26-a8366fa82ee2",
+      "ts": "2026-04-24T14:40:43.203873Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T14:08:21.468000Z"
+    },
+    {
+      "sid": "3a5f01d1-1abb-4756-b351-ebef7a435f92",
+      "ts": "2026-04-24T14:40:43.80494Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-24T14:07:09.017000Z"
+    },
+    {
+      "sid": "7d693d18-9e9d-4dea-8953-213ead6226de",
+      "ts": "2026-04-24T14:40:46.913532Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T14:40:50.948000Z"
+    },
+    {
+      "sid": "ae7f04bf-ab40-4315-9ca2-2f519164058e",
+      "ts": "2026-04-24T14:40:47.546704Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T14:28:03.611000Z"
+    },
+    {
+      "sid": "ca6bcb40-a73c-4fdd-892d-d0cb6044445b",
+      "ts": "2026-04-24T19:26:04.019464Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-04-24T19:23:36.400000Z"
+    },
+    {
+      "sid": "87ef8b68-116d-46e4-8053-65cd916b1b6e",
+      "ts": "2026-04-25T16:50:29.833115Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-25T16:50:39.102000Z"
+    },
+    {
+      "sid": "77d7954d-b558-4c21-8f0a-54c0669e1f2b",
+      "ts": "2026-04-25T19:14:26.697337Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 10,
+      "max_turn_ts": "2026-04-25T17:43:21.194000Z"
+    },
+    {
+      "sid": "d54a9289-c2e4-468f-9c90-5b0a1706e902",
+      "ts": "2026-04-25T19:14:30.092757Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T19:14:37.829000Z"
+    },
+    {
+      "sid": "bf169288-31f7-4471-a834-7f335dc59c27",
+      "ts": "2026-04-25T19:31:07.445639Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T19:31:12.449000Z"
+    },
+    {
+      "sid": "7406b1c1-ffed-4f5c-9d2b-635c7402d0f1",
+      "ts": "2026-04-25T19:32:28.783806Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T19:32:36.266000Z"
+    },
+    {
+      "sid": "ace6a439-2165-4e3a-82a4-40ad35e7b0fb",
+      "ts": "2026-04-25T19:47:21.337785Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T19:46:50.950000Z"
+    },
+    {
+      "sid": "b8c00acd-835c-4976-8924-cf8208215202",
+      "ts": "2026-04-25T20:11:41.924739Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 6,
+      "max_turn_ts": "2026-04-25T20:11:48.357000Z"
+    },
+    {
+      "sid": "61e5dce9-6c12-4953-ab9c-373a74a41d59",
+      "ts": "2026-04-25T23:54:43.634605Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T23:54:51.510000Z"
+    },
+    {
+      "sid": "8f4c7af8-6e9f-4fa1-b52e-a6889e695597",
+      "ts": "2026-04-26T00:07:10.741743Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T00:07:16.648000Z"
+    },
+    {
+      "sid": "7e17d310-7747-46af-ab79-7e55c4cf90d3",
+      "ts": "2026-04-26T01:15:10.929192Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-26T01:15:17.801000Z"
+    },
+    {
+      "sid": "51fb239d-029f-4e84-8433-e842304e0037",
+      "ts": "2026-04-26T01:35:19.064027Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T01:31:35.860000Z"
+    },
+    {
+      "sid": "ca15149e-149d-4eae-a13c-916036344400",
+      "ts": "2026-04-26T01:35:22.169757Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T01:35:39.303000Z"
+    },
+    {
+      "sid": "1d8cda60-04ac-4ea7-b76e-e19570714cde",
+      "ts": "2026-04-26T02:30:41.46773Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T02:20:45.784000Z"
+    },
+    {
+      "sid": "cfc9d12e-2d82-4d1e-9329-60580756adb3",
+      "ts": "2026-04-26T02:30:44.82481Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-04-26T02:30:48.165000Z"
+    },
+    {
+      "sid": "d54efc08-e171-42ee-be50-68f847971fd7",
+      "ts": "2026-04-26T02:42:57.210565Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-26T02:42:31.310000Z"
+    },
+    {
+      "sid": "5bcf4be8-7c35-46f9-874e-8720a5cf5ee4",
+      "ts": "2026-04-26T03:20:00.865042Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T03:20:07.241000Z"
+    },
+    {
+      "sid": "5a970c1c-6916-4cb5-b08f-789f33c6bf17",
+      "ts": "2026-04-26T12:43:54.903933Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-26T12:44:03.057000Z"
+    },
+    {
+      "sid": "6fd8d4e3-5f21-4d82-b543-d5e0670fa012",
+      "ts": "2026-04-26T12:43:55.096451Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T10:13:18.196000Z"
+    },
+    {
+      "sid": "6a2ad836-5044-4fc6-b2e1-1563290ebfdb",
+      "ts": "2026-04-26T16:04:12.902124Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T16:04:24.055000Z"
+    },
+    {
+      "sid": "94ae7429-e81a-4b6a-8dd1-bfa65388eb4f",
+      "ts": "2026-04-26T17:06:53.041632Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T17:06:58.374000Z"
+    },
+    {
+      "sid": "90e30291-68c4-4747-a82b-9062bba93ddf",
+      "ts": "2026-04-26T23:18:17.375093Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-26T23:18:23.932000Z"
+    },
+    {
+      "sid": "32d2973a-31c6-4904-b91b-13c86b2100a6",
+      "ts": "2026-04-26T23:32:20.862143Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:32:48.600000Z"
+    },
+    {
+      "sid": "27b33c77-d03e-45ed-85e4-fbeb28a3b6ad",
+      "ts": "2026-04-26T23:57:40.966724Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-04-26T23:57:47.329000Z"
+    },
+    {
+      "sid": "2db262d6-b319-45b7-8960-d733c386df40",
+      "ts": "2026-04-28T08:18:21.690937Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-28T08:18:28.995000Z"
+    },
+    {
+      "sid": "7f5975b8-efe3-49f8-b8aa-be16eb067190",
+      "ts": "2026-04-28T09:00:30.438609Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-04-28T09:00:40.566000Z"
+    },
+    {
+      "sid": "b98dd1ae-82d6-4ae7-a093-9ebaba5dc089",
+      "ts": "2026-04-28T09:29:48.927576Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T09:30:05.329000Z"
+    },
+    {
+      "sid": "2ca85f19-567a-49d4-a580-743f9b96bb67",
+      "ts": "2026-04-28T09:53:23.476984Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T09:53:31.785000Z"
+    },
+    {
+      "sid": "3dfc42cc-3541-4ad8-8e5d-90081fcac65e",
+      "ts": "2026-05-04T11:59:33.098456Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-05-04T11:59:38.821000Z"
+    },
+    {
+      "sid": "97ee4fa7-9721-457d-838e-b95d9e89876c",
+      "ts": "2026-05-06T13:16:15.838242Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 5,
+      "max_turn_ts": "2026-05-06T13:15:58.844000Z"
+    },
+    {
+      "sid": "ae922e86-1e48-43e6-ac09-5700813ec2de",
+      "ts": "2026-05-06T19:43:57.362559Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 12,
+      "max_turn_ts": "2026-05-06T19:44:05.691000Z"
+    },
+    {
+      "sid": "63351904-1eee-4090-9d61-739276730f6a",
+      "ts": "2026-05-06T22:37:07.555727Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 18,
+      "max_turn_ts": "2026-05-06T22:37:11.724000Z"
+    },
+    {
+      "sid": "080bdd7c-8a89-4286-8ba5-f71bc205fa0a",
+      "ts": "2026-05-06T23:48:15.210616Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 9,
+      "max_turn_ts": "2026-05-06T22:56:56.495000Z"
+    },
+    {
+      "sid": "1f514b83-0f00-40bd-a880-775d91fa1145",
+      "ts": "2026-05-06T23:48:15.514646Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:33:26.218000Z"
+    },
+    {
+      "sid": "3c5e7655-99bd-41db-8716-ccceea0d482f",
+      "ts": "2026-05-06T23:48:18.700615Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:48:26.993000Z"
+    },
+    {
+      "sid": "626f953f-6273-42c3-a853-502e8dfe910f",
+      "ts": "2026-05-06T23:48:19.008786Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:39:27.849000Z"
+    },
+    {
+      "sid": "6cc2c984-5bcf-47ed-8efd-327299e98f96",
+      "ts": "2026-05-06T23:48:19.347029Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:04:08.635000Z"
+    },
+    {
+      "sid": "8319cd7f-ffb5-4b5a-beb6-cb944b0825cb",
+      "ts": "2026-05-06T23:48:19.656526Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T22:59:29.710000Z"
+    },
+    {
+      "sid": "94089398-8507-4361-b298-633d4c493b83",
+      "ts": "2026-05-06T23:48:19.96823Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:43:06.247000Z"
+    },
+    {
+      "sid": "958c8833-4ca1-4f39-8b3b-ff8b56162dcc",
+      "ts": "2026-05-06T23:48:20.270491Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T23:29:58.023000Z"
+    },
+    {
+      "sid": "37b0013b-cd48-4f1f-8450-ffe935852bf8",
+      "ts": "2026-05-07T00:49:31.241383Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-05-07T00:49:37.933000Z"
+    },
+    {
+      "sid": "c6ea20e4-6e8f-4020-8cf3-e77d6ad71bba",
+      "ts": "2026-05-07T01:33:36.641082Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T01:33:47.954000Z"
+    },
+    {
+      "sid": "ffa52c38-54e9-4525-8ed0-0786ff195d64",
+      "ts": "2026-05-07T01:34:08.176056Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-05-07T01:34:20.301000Z"
+    },
+    {
+      "sid": "0b23c06e-ac97-4472-bb59-d8f9ae34436f",
+      "ts": "2026-05-07T01:40:31.863359Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T01:40:38.428000Z"
+    },
+    {
+      "sid": "0ac8aafa-6ee5-4262-9165-c613fca0d658",
+      "ts": "2026-05-07T02:05:19.982588Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T02:05:42.775000Z"
+    },
+    {
+      "sid": "9d6af5a0-d409-412c-84cf-4a3dd10e8265",
+      "ts": "2026-05-07T14:56:25.883599Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T14:56:34.708000Z"
+    },
+    {
+      "sid": "aadca99d-3f7b-4fa4-afe7-67e2444ef690",
+      "ts": "2026-05-07T15:50:45.876575Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T15:52:19.500000Z"
+    },
+    {
+      "sid": "f47762de-4a8f-41e8-b934-8ef7bee9fe50",
+      "ts": "2026-05-07T22:47:40.198305Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-05-07T22:47:55.278000Z"
+    },
+    {
+      "sid": "47739557-1e7d-4400-8d74-e4e0cbfc7ee9",
+      "ts": "2026-05-07T23:00:44.760169Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 9,
+      "max_turn_ts": "2026-05-07T23:00:52.752000Z"
+    },
+    {
+      "sid": "68d7b5ec-f34f-469b-9632-e87eae29df66",
+      "ts": "2026-05-09T15:56:15.159185Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-05-09T15:56:22.275000Z"
+    },
+    {
+      "sid": "ab5fec2c-72c2-44dd-9776-c4892d84b4fb",
+      "ts": "2026-05-11T14:10:42.890728Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 8,
+      "max_turn_ts": "2026-05-11T14:10:50.866000Z"
+    },
+    {
+      "sid": "e197ca3a-91fa-43c5-9c82-8f0b47cb91f8",
+      "ts": "2026-05-12T06:50:04.069008Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 4,
+      "max_turn_ts": "2026-05-12T06:50:12.435000Z"
+    },
+    {
+      "sid": "017461e1-d4fa-407f-8244-670562ec7fd5",
+      "ts": "2026-05-12T07:13:20.581158Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-05-12T07:13:28.542000Z"
+    },
+    {
+      "sid": "97432cb3-d081-41db-aa26-d9ec1cc53b32",
+      "ts": "2026-05-12T09:00:49.715373Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 2,
+      "max_turn_ts": "2026-05-12T09:00:58.759000Z"
+    },
+    {
+      "sid": "ff0fd450-a797-4e70-be4f-0119cba57d82",
+      "ts": "2026-05-12T09:00:49.993904Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T08:11:44.034000Z"
+    },
+    {
+      "sid": "d2d5b169-218f-4af0-a4c6-f85c87f62e5d",
+      "ts": "2026-05-12T09:15:00.296007Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T09:15:03.714000Z"
+    },
+    {
+      "sid": "8236daee-6968-4b12-be13-764b7f29b425",
+      "ts": "2026-05-12T11:08:51.820949Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-05-12T11:09:01.157000Z"
+    },
+    {
+      "sid": "e9af779e-e123-47a7-bee9-bb1e002f6520",
+      "ts": "2026-05-12T11:20:42.850043Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T11:20:46.518000Z"
+    },
+    {
+      "sid": "41523a67-aef8-4bfd-b881-e8a4d208494a",
+      "ts": "2026-05-12T13:43:30.585868Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-05-12T13:43:38.467000Z"
+    },
+    {
+      "sid": "a08b8bab-dc52-4724-807c-19e9fdc83701",
+      "ts": "2026-05-12T14:26:03.376803Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 7,
+      "max_turn_ts": "2026-05-12T14:26:23.523000Z"
+    },
+    {
+      "sid": "abf7b438-6986-4586-bd32-fc5c5cdc9ccd",
+      "ts": "2026-05-12T15:21:15.830458Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 3,
+      "max_turn_ts": "2026-05-12T15:21:47.084000Z"
+    },
+    {
+      "sid": "bc0144ec-246b-4005-8504-e3673aec198b",
+      "ts": "2026-05-12T16:26:22.956566Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T16:26:29.335000Z"
+    },
+    {
+      "sid": "eb2c4ac4-a503-4c94-8abc-7ceb68ececea",
+      "ts": "2026-05-13T07:48:58.100798Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 6,
+      "max_turn_ts": "2026-05-13T07:49:03.235000Z"
+    },
+    {
+      "sid": "0419c7d3-dc98-4c98-a07d-2ae496ea93ca",
+      "ts": "2026-05-13T09:32:21.478205Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-13T09:32:32.278000Z"
+    },
+    {
+      "sid": "0db19844-46bc-42f0-9cb5-a378f4d12700",
+      "ts": "2026-05-13T12:49:25.808476Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-13T12:49:34.698000Z"
+    },
+    {
+      "sid": "5d4c8c94-bcbd-432f-a90c-a435d61e7deb",
+      "ts": "2026-05-19T11:09:38.269584Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T11:09:45.088000Z"
+    },
+    {
+      "sid": "ecf1199f-eae7-41ed-9976-ab0be6461952",
+      "ts": "2026-05-19T11:19:30.913484Z",
+      "repo": "fcamblor/mac-ai-trackers",
+      "n": 6,
+      "max_turn_ts": "2026-05-19T11:19:37.870000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

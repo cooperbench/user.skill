@@ -1,8 +1,0 @@
-{
-  "point_id": "019ee1c8-108d-7121-b530-fe18eceebdcf#138",
-  "developer": "gh:blackgirlbytes",
-  "condition": "noprofile",
-  "real": "# In app browser:\n- The user has the in-app browser open.\n- Current URL: http://127.0.0.1:5174/\n\n## My request for Codex:\nokay lets commit and push these changes to main. however, do not commit and push the booth setup guide",
-  "prev_agent": "Added the manual refresh button.\n\nIt now lives beside `Back` on the leaderboard board in [src/leaderboardPanel.js](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/leaderboardPanel.js:45), uses the same guarded refresh path as the auto-refresh, disables/spins while a refresh is in flight, and has an accessible label. Styling is in [src/style.css](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/style.css:3312), including the mobile sizing.\n\nVerified with `npm test`, `npm run build`, and a browser check at `/leaderboard` on desktop and mobile widths. Vite is running at [http://127.0.0.1:5174/](http://127.0.0.1:5174/).",
-  "gold_move": null
-}

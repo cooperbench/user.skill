@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "userbench/kmiki0__2a36c043"
+description = "Predict the developer's next message given the conversation so far."
+authors = []
+keywords = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+
+[metadata]
+author_name = "userbench"
+category = "user-simulation"
+tags = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+developer = "gh:kmiki0"
+point_id = "8e98b6fc-065f-4e79-bd8d-8beea25b1045#633"
+condition = "noprofile"
+legacy_task_id = "gh_kmiki0__2a36c043"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

@@ -1,0 +1,222 @@
+{
+  "developer": "gh:achildrenmile",
+  "slug": "gh_achildrenmile",
+  "Tstar": "2026-03-09T13:16:35.040907847Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 30,
+  "n_human_turns": 524,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "4e278bfd-44ea-4de4-96bf-215a5b0b9f0b",
+      "ts": "2026-02-10T18:37:28.903617239Z",
+      "repo": "achildrenmile/stralisolutionsweb",
+      "n": 5,
+      "max_turn_ts": "2026-02-10T18:34:06.089000Z"
+    },
+    {
+      "sid": "f9bd5a6d-10d8-4de9-9a5a-237334bb4a5d",
+      "ts": "2026-02-10T18:56:01.374851566Z",
+      "repo": "achildrenmile/qslcardgenerator",
+      "n": 21,
+      "max_turn_ts": "2026-02-10T18:23:02.933000Z"
+    },
+    {
+      "sid": "9f379318-5428-4374-abc5-325c7c96ba77",
+      "ts": "2026-02-10T19:06:23.708673487Z",
+      "repo": "achildrenmile/stralisolutionsweb",
+      "n": 3,
+      "max_turn_ts": "2026-02-10T19:06:21.956000Z"
+    },
+    {
+      "sid": "4fad57e0-08c3-465e-b5c7-b843989b5a46",
+      "ts": "2026-02-15T11:41:39.178830195Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 7,
+      "max_turn_ts": "2026-02-15T11:31:33.827000Z"
+    },
+    {
+      "sid": "2a33c1f0-1609-4959-9904-91ae778bddda",
+      "ts": "2026-02-15T12:20:05.052546697Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 4,
+      "max_turn_ts": "2026-02-15T12:16:04.934000Z"
+    },
+    {
+      "sid": "461ccc04-e951-4f15-b21f-f1c732dd3667",
+      "ts": "2026-02-16T11:25:34.519680397Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 58,
+      "max_turn_ts": "2026-02-16T11:23:37.770000Z"
+    },
+    {
+      "sid": "e0ab8722-350a-4e36-83d7-22c437ec33cd",
+      "ts": "2026-02-16T14:23:04.515424852Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 41,
+      "max_turn_ts": "2026-02-16T14:01:27.014000Z"
+    },
+    {
+      "sid": "dc8a8949-5565-4a85-a67a-3cadf10e1936",
+      "ts": "2026-02-16T18:13:55.572219217Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 31,
+      "max_turn_ts": "2026-02-16T18:07:50.914000Z"
+    },
+    {
+      "sid": "6a216e27-0036-4285-9be7-fe9753b90aca",
+      "ts": "2026-02-16T18:58:35.82275196Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 12,
+      "max_turn_ts": "2026-02-16T18:43:45.706000Z"
+    },
+    {
+      "sid": "f3619e03-9d1e-4cfc-95cc-2af785639c53",
+      "ts": "2026-02-16T19:54:44.159018692Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 9,
+      "max_turn_ts": "2026-02-16T19:49:52.953000Z"
+    },
+    {
+      "sid": "fea1333a-a7e9-44e5-9a3d-9e6e2cf0c4e3",
+      "ts": "2026-02-17T18:27:55.381937012Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 51,
+      "max_turn_ts": "2026-02-17T18:16:49.434000Z"
+    },
+    {
+      "sid": "4c1e3894-0bc3-419e-9f2e-7e10e56c39fc",
+      "ts": "2026-02-22T10:32:03.221168859Z",
+      "repo": "achildrenmile/bosarsa",
+      "n": 50,
+      "max_turn_ts": "2026-02-22T09:54:30.246000Z"
+    },
+    {
+      "sid": "4849ecfe-4e93-422b-996b-b8f58af9f376",
+      "ts": "2026-02-22T12:40:45.932555443Z",
+      "repo": "achildrenmile/bosarsa",
+      "n": 17,
+      "max_turn_ts": "2026-02-22T12:37:42.078000Z"
+    },
+    {
+      "sid": "51d77d03-ff76-4de4-8d35-84063d592642",
+      "ts": "2026-02-24T07:20:56.264930312Z",
+      "repo": "achildrenmile/bandwacht",
+      "n": 9,
+      "max_turn_ts": "2026-02-24T06:38:52.371000Z"
+    },
+    {
+      "sid": "9debb5bf-5624-47a4-937e-28a8fd569b7c",
+      "ts": "2026-02-24T08:02:30.567847547Z",
+      "repo": "achildrenmile/bandwacht",
+      "n": 3,
+      "max_turn_ts": "2026-02-24T07:42:34.697000Z"
+    },
+    {
+      "sid": "c67bd7de-0cec-4aa6-959e-5315006f65c8",
+      "ts": "2026-02-24T14:08:11.458553406Z",
+      "repo": "achildrenmile/bandwacht",
+      "n": 11,
+      "max_turn_ts": "2026-02-24T13:56:16.722000Z"
+    },
+    {
+      "sid": "c07c318a-714f-426b-913b-221c8e7bc899",
+      "ts": "2026-02-24T14:10:19.069297737Z",
+      "repo": "achildrenmile/bandwacht",
+      "n": 2,
+      "max_turn_ts": "2026-02-24T14:10:15.784000Z"
+    },
+    {
+      "sid": "33d8e7b4-37c8-4a39-9bf1-1d2b56aa8be3",
+      "ts": "2026-02-24T19:14:30.80444383Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 73,
+      "max_turn_ts": "2026-02-24T17:52:50.581000Z"
+    },
+    {
+      "sid": "7d36dfe9-1644-4da7-aeb9-ef74a092d12c",
+      "ts": "2026-02-24T19:27:03.567654405Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 9,
+      "max_turn_ts": "2026-02-24T19:27:02.588000Z"
+    },
+    {
+      "sid": "47641f8a-2768-48b1-80d1-f5ce1ff72e81",
+      "ts": "2026-02-24T20:13:30.032384981Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T19:48:13.751000Z"
+    },
+    {
+      "sid": "6a97a4cc-3b28-4ddc-90a0-a07287463f2a",
+      "ts": "2026-02-24T20:13:30.441065704Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 5,
+      "max_turn_ts": "2026-02-24T19:40:10.921000Z"
+    },
+    {
+      "sid": "8fe1ab72-5959-4535-87e9-f9e120378f3d",
+      "ts": "2026-02-24T20:13:31.054184794Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 5,
+      "max_turn_ts": "2026-02-24T19:58:33.143000Z"
+    },
+    {
+      "sid": "013e9a46-7047-41cf-9e91-46c53d5aca1f",
+      "ts": "2026-02-25T06:49:29.918017542Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 12,
+      "max_turn_ts": "2026-02-25T06:36:32.291000Z"
+    },
+    {
+      "sid": "96d8ab46-33fc-42f9-b250-da5ea8eafd3a",
+      "ts": "2026-02-25T07:36:19.373689052Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 4,
+      "max_turn_ts": "2026-02-25T07:30:00.894000Z"
+    },
+    {
+      "sid": "d9f35ffc-1637-4992-a696-d51accfa31c2",
+      "ts": "2026-02-25T07:47:55.170982782Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 5,
+      "max_turn_ts": "2026-02-25T07:42:10.175000Z"
+    },
+    {
+      "sid": "d40b7114-7701-4b28-b9dd-b300e7aa9394",
+      "ts": "2026-02-25T09:56:54.534816236Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 13,
+      "max_turn_ts": "2026-02-25T08:48:59.489000Z"
+    },
+    {
+      "sid": "9ff48ab2-2ddc-4f81-a10f-8f3836db2506",
+      "ts": "2026-03-02T09:30:17.411445781Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 18,
+      "max_turn_ts": "2026-03-01T19:34:43.029000Z"
+    },
+    {
+      "sid": "abcc5a4f-9583-427f-85cf-1c4283b3d576",
+      "ts": "2026-03-02T22:03:18.456703266Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 14,
+      "max_turn_ts": "2026-03-02T21:48:42.684000Z"
+    },
+    {
+      "sid": "ccf13571-f85b-4be8-b142-9e5e060af664",
+      "ts": "2026-03-02T23:23:28.686910023Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 16,
+      "max_turn_ts": "2026-03-02T23:16:07.811000Z"
+    },
+    {
+      "sid": "613e732b-201d-4dba-84de-089659d98cfc",
+      "ts": "2026-03-03T08:48:06.618094329Z",
+      "repo": "achildrenmile/bosarsalog",
+      "n": 12,
+      "max_turn_ts": "2026-03-03T08:48:04.545000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

@@ -1,0 +1,1657 @@
+{
+  "developer": "gh:armelhbobdad",
+  "slug": "gh_armelhbobdad",
+  "Tstar": "2026-05-27T00:26:22.497279646Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 235,
+  "n_human_turns": 2180,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "9690f538-1d94-4ce8-9da5-f5de35921bb4",
+      "ts": "2026-02-25T11:05:24.340447502Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T11:05:28.440000Z"
+    },
+    {
+      "sid": "cd39fc70-a2b5-4a57-8ef1-a353e62968be",
+      "ts": "2026-02-25T20:13:56.332000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 11,
+      "max_turn_ts": "2026-02-25T20:59:56.252000Z"
+    },
+    {
+      "sid": "85e00622-177a-480b-9251-5fac6210171e",
+      "ts": "2026-03-02T20:43:04.404192201Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-02-27T17:08:06.447000Z"
+    },
+    {
+      "sid": "6fa436f2-a3cf-4eb7-99fd-260c431f321e",
+      "ts": "2026-03-02T20:43:48.689460894Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-03-02T20:43:14.499000Z"
+    },
+    {
+      "sid": "8a9767f5-0b22-418d-97d2-be453a349adf",
+      "ts": "2026-03-02T21:43:52.680400924Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-03-02T21:44:04.757000Z"
+    },
+    {
+      "sid": "b064986b-acf1-42b9-93a5-e6ae6ef716fd",
+      "ts": "2026-03-06T11:52:53.761202923Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 21,
+      "max_turn_ts": "2026-03-06T11:53:01.313000Z"
+    },
+    {
+      "sid": "3085ae95-8847-4dd0-8c9c-8c85bee4ace0",
+      "ts": "2026-03-06T14:07:41.861693672Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-03-06T14:07:50.240000Z"
+    },
+    {
+      "sid": "88f4b20f-112a-4204-a94b-34daa9e7ef75",
+      "ts": "2026-03-06T14:50:24.334163154Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 12,
+      "max_turn_ts": "2026-03-06T14:50:30.198000Z"
+    },
+    {
+      "sid": "0c24d52c-be50-454e-bf80-4c3f2482a440",
+      "ts": "2026-03-06T15:03:02.912000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-03-07T05:50:40.349000Z"
+    },
+    {
+      "sid": "53914eaa-60cb-49e5-b2c3-ba7853f95a2a",
+      "ts": "2026-03-07T06:16:38.588830025Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-03-07T06:16:45.450000Z"
+    },
+    {
+      "sid": "c8eacccf-52fa-41af-8d12-1e64db4a81d5",
+      "ts": "2026-03-08T17:08:43.702206606Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-03-08T17:08:51.413000Z"
+    },
+    {
+      "sid": "e21259de-5cf3-4ae3-89ee-4f13081f4f3a",
+      "ts": "2026-03-08T17:08:46.94179766Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 51,
+      "max_turn_ts": "2026-03-08T16:33:38.080000Z"
+    },
+    {
+      "sid": "94721c6d-b20d-46b5-bed2-b54d83a5695d",
+      "ts": "2026-03-08T17:17:07.254000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 24,
+      "max_turn_ts": "2026-03-08T19:18:20.618000Z"
+    },
+    {
+      "sid": "dc111b2e-26e2-4294-b357-d68998d17e29",
+      "ts": "2026-03-12T08:38:01.342000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 15,
+      "max_turn_ts": "2026-03-12T10:10:06.949000Z"
+    },
+    {
+      "sid": "f08d2d61-715e-4240-9235-ca7527b454fc",
+      "ts": "2026-03-12T10:10:46.446000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 21,
+      "max_turn_ts": "2026-03-12T11:03:10.394000Z"
+    },
+    {
+      "sid": "1d55014d-826f-45d3-853c-3a0fb959873f",
+      "ts": "2026-03-12T11:26:00.577156476Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 9,
+      "max_turn_ts": "2026-03-12T11:26:05.393000Z"
+    },
+    {
+      "sid": "50c39513-ccff-4cdf-8eeb-5e8b2152b83d",
+      "ts": "2026-03-12T19:18:49.164000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-03-12T19:49:29.368000Z"
+    },
+    {
+      "sid": "8dc61f82-5e33-4dab-a915-c1dd2bf9eb4a",
+      "ts": "2026-03-12T21:35:04.840000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-03-12T22:08:16.114000Z"
+    },
+    {
+      "sid": "ab76d8a4-f2db-4edf-b0d8-3db49c023fa3",
+      "ts": "2026-03-12T22:09:21.785000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 9,
+      "max_turn_ts": "2026-03-12T22:39:44.572000Z"
+    },
+    {
+      "sid": "20ad60c8-f1a0-40e9-83f4-cdd6b66d3585",
+      "ts": "2026-03-12T22:41:38.308000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-03-12T22:52:50.703000Z"
+    },
+    {
+      "sid": "f3903d23-810e-480c-9286-de851f731896",
+      "ts": "2026-03-14T07:11:58.390000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 19,
+      "max_turn_ts": "2026-03-14T10:46:34.621000Z"
+    },
+    {
+      "sid": "f7db8770-bd28-4b70-90d3-ad73d7684d19",
+      "ts": "2026-03-14T10:03:27.447088629Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-03-02T21:21:12.003000Z"
+    },
+    {
+      "sid": "afbc6f08-e122-4ebf-8b05-220f81376010",
+      "ts": "2026-03-14T11:24:43.914000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 15,
+      "max_turn_ts": "2026-03-14T12:16:36.900000Z"
+    },
+    {
+      "sid": "d7eb78cb-cfa7-4356-aa35-00385eb307ea",
+      "ts": "2026-03-14T13:06:16.085000+00:00",
+      "repo": "?",
+      "n": 26,
+      "max_turn_ts": "2026-03-14T14:53:50.824000Z"
+    },
+    {
+      "sid": "4b49f25f-8b5c-454e-b401-2764ec321c55",
+      "ts": "2026-03-14T15:32:52.147000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-03-14T16:47:32.298000Z"
+    },
+    {
+      "sid": "cd39e8a2-d771-4f53-b5e7-ff1c13596429",
+      "ts": "2026-03-14T16:51:02.261000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 23,
+      "max_turn_ts": "2026-03-15T14:39:18.470000Z"
+    },
+    {
+      "sid": "f02270cc-e9ef-4ef2-8c3e-9a8bc08845d4",
+      "ts": "2026-03-15T14:42:31.166000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 24,
+      "max_turn_ts": "2026-03-16T16:48:11.596000Z"
+    },
+    {
+      "sid": "04bed52e-adc8-429c-aab1-a555f681fc3b",
+      "ts": "2026-03-17T14:33:41.665905015Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 24,
+      "max_turn_ts": "2026-03-17T13:54:37.284000Z"
+    },
+    {
+      "sid": "8d778566-d8da-4444-98c6-f619f05b0f8b",
+      "ts": "2026-03-17T14:42:45.09988693Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 13,
+      "max_turn_ts": "2026-03-17T14:42:55.710000Z"
+    },
+    {
+      "sid": "93a586f0-cdb8-451b-8193-7b9cd008a854",
+      "ts": "2026-03-17T16:53:16.207000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-03-17T17:01:08.610000Z"
+    },
+    {
+      "sid": "f95a5101-efca-4aa4-82db-d7831947080e",
+      "ts": "2026-03-17T18:32:50.297000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 15,
+      "max_turn_ts": "2026-03-17T19:26:09.877000Z"
+    },
+    {
+      "sid": "9a6f1e36-c96e-4260-a8f2-1914cbc9ee85",
+      "ts": "2026-03-18T15:24:48.022871508Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-03-18T15:24:54.286000Z"
+    },
+    {
+      "sid": "eeab160e-2b71-427b-8b44-546f08e8b077",
+      "ts": "2026-03-18T16:19:29.762000+00:00",
+      "repo": "?",
+      "n": 153,
+      "max_turn_ts": "2026-03-18T18:00:23.488000Z"
+    },
+    {
+      "sid": "4e52ff0b-6eb9-4b22-b091-852f772c9a12",
+      "ts": "2026-03-19T20:54:56.408000+00:00",
+      "repo": "?",
+      "n": 15,
+      "max_turn_ts": "2026-03-19T21:31:34.870000Z"
+    },
+    {
+      "sid": "ed979521-d7e8-4e7b-aefa-431e6752c249",
+      "ts": "2026-03-19T21:43:52.157000+00:00",
+      "repo": "?",
+      "n": 74,
+      "max_turn_ts": "2026-03-19T22:16:45.197000Z"
+    },
+    {
+      "sid": "0b634d46-721f-4bdc-bbce-c2fae1f402be",
+      "ts": "2026-03-21T14:50:52.86533466Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-03-21T14:51:36.223000Z"
+    },
+    {
+      "sid": "5b37e4d1-7e7f-40a7-bcb9-cadb40f6b932",
+      "ts": "2026-03-21T14:53:26.649000+00:00",
+      "repo": "?",
+      "n": 5,
+      "max_turn_ts": "2026-03-21T15:20:34.056000Z"
+    },
+    {
+      "sid": "28dd7259-aded-4f4a-90cb-540849b25278",
+      "ts": "2026-03-21T15:23:12.570000+00:00",
+      "repo": "?",
+      "n": 176,
+      "max_turn_ts": "2026-03-21T18:15:04.740000Z"
+    },
+    {
+      "sid": "1125c0b2-92cb-4788-ab97-55a87bb1aeae",
+      "ts": "2026-03-25T15:02:44.679000+00:00",
+      "repo": "?",
+      "n": 26,
+      "max_turn_ts": "2026-03-25T17:46:30.944000Z"
+    },
+    {
+      "sid": "a6dc3697-2ffe-4d8b-8406-4e49e277cb3f",
+      "ts": "2026-03-25T22:09:39.63878862Z",
+      "repo": "?",
+      "n": 35,
+      "max_turn_ts": "2026-04-08T20:47:41.770000Z"
+    },
+    {
+      "sid": "071da5de-9a95-4d10-9d29-831855f6d48f",
+      "ts": "2026-03-26T05:40:51.241824085Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 10,
+      "max_turn_ts": "2026-03-26T05:39:35.604000Z"
+    },
+    {
+      "sid": "6252f3ff-487b-4b79-a0df-6b3c2d457311",
+      "ts": "2026-03-26T05:41:02.412670822Z",
+      "repo": "?",
+      "n": 30,
+      "max_turn_ts": "2026-03-25T21:50:05.268000Z"
+    },
+    {
+      "sid": "ead2bf35-7795-4f21-a221-de287c84b8b7",
+      "ts": "2026-03-26T05:41:08.694544223Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T05:41:17.190000Z"
+    },
+    {
+      "sid": "c38f1f2c-580a-4b9a-b5b2-00d5c88fd910",
+      "ts": "2026-03-26T06:00:40.667848676Z",
+      "repo": "?",
+      "n": 116,
+      "max_turn_ts": "2026-03-26T06:00:50.002000Z"
+    },
+    {
+      "sid": "50c0d796-15b4-43b4-be99-29ca6893d41a",
+      "ts": "2026-03-26T17:24:28.854487097Z",
+      "repo": "?",
+      "n": 70,
+      "max_turn_ts": "2026-03-26T08:48:10.087000Z"
+    },
+    {
+      "sid": "084142d8-b7da-432e-bf56-a94e3af5fed6",
+      "ts": "2026-03-26T19:16:10.092040266Z",
+      "repo": "?",
+      "n": 68,
+      "max_turn_ts": "2026-03-26T19:16:23.874000Z"
+    },
+    {
+      "sid": "358248ec-882e-487d-a021-5286c8aef69b",
+      "ts": "2026-03-27T19:52:58.495983091Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 21,
+      "max_turn_ts": "2026-03-27T19:53:02.998000Z"
+    },
+    {
+      "sid": "f4c959a6-9fa8-404f-8b47-dc714f5668f9",
+      "ts": "2026-03-27T20:28:39.686000+00:00",
+      "repo": "?",
+      "n": 37,
+      "max_turn_ts": "2026-03-27T20:58:56.381000Z"
+    },
+    {
+      "sid": "25062908-4190-4d06-9a1d-4fcab58e29f9",
+      "ts": "2026-03-27T22:11:24.683000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-03-27T22:22:17.820000Z"
+    },
+    {
+      "sid": "bbe0dacf-f031-40d6-855e-a33605abbbc2",
+      "ts": "2026-03-27T22:58:35.858000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-03-27T23:40:11.809000Z"
+    },
+    {
+      "sid": "57da5f29-a36f-45bf-9e5a-bba1918e08d2",
+      "ts": "2026-03-28T10:42:02.484024427Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-03-28T10:42:10.811000Z"
+    },
+    {
+      "sid": "83bc4309-168a-405c-b722-7ab376885b10",
+      "ts": "2026-03-28T11:39:11.112945614Z",
+      "repo": "?",
+      "n": 16,
+      "max_turn_ts": "2026-03-28T11:39:16.434000Z"
+    },
+    {
+      "sid": "3b38d19f-bcd9-42cd-97f9-e820bd09cc9a",
+      "ts": "2026-03-28T12:23:35.653803437Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-03-28T12:23:44.418000Z"
+    },
+    {
+      "sid": "ba453d79-7738-4a3e-bbf5-e568fa280088",
+      "ts": "2026-03-28T13:40:18.987000+00:00",
+      "repo": "?",
+      "n": 4,
+      "max_turn_ts": "2026-03-28T15:11:05.575000Z"
+    },
+    {
+      "sid": "cae24d59-b157-41b2-81c3-8784b99911c1",
+      "ts": "2026-03-28T23:23:33.692000+00:00",
+      "repo": "?",
+      "n": 5,
+      "max_turn_ts": "2026-03-29T08:55:48.666000Z"
+    },
+    {
+      "sid": "3b2d5ed8-1cf4-4668-8b6e-30b253eebfe0",
+      "ts": "2026-03-29T08:58:10.940000+00:00",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-03-29T09:47:59.163000Z"
+    },
+    {
+      "sid": "2f19541e-6b64-473d-a4fb-adb743324cda",
+      "ts": "2026-03-29T11:18:12.584000+00:00",
+      "repo": "?",
+      "n": 5,
+      "max_turn_ts": "2026-03-29T11:38:16.088000Z"
+    },
+    {
+      "sid": "d4eb7ae3-c37e-4ea8-9d38-2b662144b930",
+      "ts": "2026-03-29T11:50:50.083000+00:00",
+      "repo": "?",
+      "n": 5,
+      "max_turn_ts": "2026-03-29T12:03:08.060000Z"
+    },
+    {
+      "sid": "f65b64b9-06a6-4bb5-a409-430d6d651e56",
+      "ts": "2026-03-29T16:09:26.444000+00:00",
+      "repo": "?",
+      "n": 12,
+      "max_turn_ts": "2026-03-29T17:39:53.604000Z"
+    },
+    {
+      "sid": "8400401b-9f13-4736-b8b6-a9d34b94e8c8",
+      "ts": "2026-04-04T12:55:37.495476646Z",
+      "repo": "?",
+      "n": 8,
+      "max_turn_ts": "2026-04-04T12:43:59.135000Z"
+    },
+    {
+      "sid": "f1e9e00f-936e-4b7d-bf13-562a3988683b",
+      "ts": "2026-04-04T13:08:26.838500522Z",
+      "repo": "?",
+      "n": 15,
+      "max_turn_ts": "2026-04-03T15:15:48.267000Z"
+    },
+    {
+      "sid": "9afd7494-762d-4316-aff4-53ce1a2b7b24",
+      "ts": "2026-04-04T13:25:53.609298488Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-04-04T13:25:57.916000Z"
+    },
+    {
+      "sid": "1db2c344-9c60-4712-b057-265ddc1410c7",
+      "ts": "2026-04-04T14:53:37.02139303Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 13,
+      "max_turn_ts": "2026-03-29T20:47:21.128000Z"
+    },
+    {
+      "sid": "1b5a3b90-ba2a-4633-990e-807b64eb2526",
+      "ts": "2026-04-04T16:05:33.25603881Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 20,
+      "max_turn_ts": "2026-04-04T15:40:03.508000Z"
+    },
+    {
+      "sid": "9d47a694-5729-4e0c-98e9-857083329169",
+      "ts": "2026-04-04T18:19:00.616663066Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-04T17:09:25.242000Z"
+    },
+    {
+      "sid": "154de094-db4b-4e01-9b87-4c28057badd6",
+      "ts": "2026-04-04T19:00:39.064242535Z",
+      "repo": "?",
+      "n": 17,
+      "max_turn_ts": "2026-04-04T19:00:47.333000Z"
+    },
+    {
+      "sid": "39f742c3-79d1-49d3-85d5-67491a1a8ea6",
+      "ts": "2026-04-05T10:05:22.914163235Z",
+      "repo": "?",
+      "n": 8,
+      "max_turn_ts": "2026-04-05T10:05:31.672000Z"
+    },
+    {
+      "sid": "a8605cbd-94fa-4a54-af48-6c036b657c60",
+      "ts": "2026-04-05T10:43:43.710345083Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-04-05T10:43:50.777000Z"
+    },
+    {
+      "sid": "d30e9458-c95a-46bd-ac6d-badf1d09f6a2",
+      "ts": "2026-04-06T11:48:23.858399814Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-04-06T11:48:34.601000Z"
+    },
+    {
+      "sid": "265da5a2-beb9-4c3f-981b-f03b23f4c519",
+      "ts": "2026-04-06T19:01:24.746479934Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 10,
+      "max_turn_ts": "2026-04-06T19:01:35.073000Z"
+    },
+    {
+      "sid": "30d3c0a0-8b83-4fdf-8af6-a889741b7ecd",
+      "ts": "2026-04-06T19:23:18.304235562Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-04-06T19:23:25.809000Z"
+    },
+    {
+      "sid": "85e92848-9bda-48bf-ad52-b272dca932de",
+      "ts": "2026-04-07T21:52:08.859453744Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-07T21:52:31.643000Z"
+    },
+    {
+      "sid": "77e6554e-dda4-492c-8ce6-cf9dc506aca7",
+      "ts": "2026-04-08T06:27:48.716434063Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-08T06:30:02.845000Z"
+    },
+    {
+      "sid": "ada0c9ed-99cf-4263-90f7-1418125d0221",
+      "ts": "2026-04-08T06:40:33.004558847Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-08T06:40:53.160000Z"
+    },
+    {
+      "sid": "41be470f-226d-45b9-98ae-e3d166af080d",
+      "ts": "2026-04-08T07:14:43.434898517Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-08T07:14:53.308000Z"
+    },
+    {
+      "sid": "0eef4199-d8c0-446f-9f5e-d16d12860083",
+      "ts": "2026-04-08T08:57:38.809377323Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-04-08T08:58:16.583000Z"
+    },
+    {
+      "sid": "94d64be2-ff70-405d-bb7e-812042b48f28",
+      "ts": "2026-04-08T19:16:01.003659939Z",
+      "repo": "?",
+      "n": 13,
+      "max_turn_ts": "2026-04-08T19:16:16.954000Z"
+    },
+    {
+      "sid": "f91cf4d2-1b71-4a98-a77f-464647caccb6",
+      "ts": "2026-04-09T09:50:49.438141607Z",
+      "repo": "?",
+      "n": 34,
+      "max_turn_ts": "2026-04-09T09:51:04.652000Z"
+    },
+    {
+      "sid": "c7d65e8d-f49b-48ee-8523-73336f0f6b00",
+      "ts": "2026-04-09T13:29:21.06829663Z",
+      "repo": "?",
+      "n": 34,
+      "max_turn_ts": "2026-04-09T13:09:08.386000Z"
+    },
+    {
+      "sid": "8bc5a475-ad38-40f2-bfd5-1715dc386bb0",
+      "ts": "2026-04-10T14:16:42.484569021Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-10T14:16:52.910000Z"
+    },
+    {
+      "sid": "ee5c0900-6d6b-471a-b39f-6d5e3e61c703",
+      "ts": "2026-04-10T15:36:43.171502749Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 13,
+      "max_turn_ts": "2026-04-10T15:36:54.758000Z"
+    },
+    {
+      "sid": "72c962fb-d376-4bdc-af48-5a2603365a68",
+      "ts": "2026-04-10T15:41:02.129815351Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-10T15:41:39.468000Z"
+    },
+    {
+      "sid": "20053d58-3188-4c53-80e8-3b50823b1b11",
+      "ts": "2026-04-10T16:41:03.43323185Z",
+      "repo": "?",
+      "n": 12,
+      "max_turn_ts": "2026-04-10T16:41:13.812000Z"
+    },
+    {
+      "sid": "aac72e9a-bad0-4e1d-96b6-d0982f09ca36",
+      "ts": "2026-04-10T19:33:22.818558429Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-10T19:33:33.007000Z"
+    },
+    {
+      "sid": "ea686cb6-cb52-4262-ba44-a302a5ad7058",
+      "ts": "2026-04-10T20:20:41.73693979Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-10T20:22:45.152000Z"
+    },
+    {
+      "sid": "7a668936-73c6-4a79-8c99-d49a3bcd9356",
+      "ts": "2026-04-10T21:21:16.152420318Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-04-10T21:21:24.351000Z"
+    },
+    {
+      "sid": "511d945b-6b51-4624-ab93-4d5d435598fa",
+      "ts": "2026-04-11T11:09:14.045197441Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-11T11:09:32.849000Z"
+    },
+    {
+      "sid": "1e88dee0-bf6c-41c5-ba87-7e2753350cf1",
+      "ts": "2026-04-11T11:51:44.063506168Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-11T11:53:28.636000Z"
+    },
+    {
+      "sid": "ba71b555-57c7-4c33-9523-0186baed52b0",
+      "ts": "2026-04-11T12:55:18.740508908Z",
+      "repo": "?",
+      "n": 18,
+      "max_turn_ts": "2026-04-11T12:56:27.794000Z"
+    },
+    {
+      "sid": "20985949-5f19-4003-ae7d-d677a2d2d912",
+      "ts": "2026-04-11T15:16:40.617460916Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-11T15:28:56.732000Z"
+    },
+    {
+      "sid": "c61a02de-82bb-41a9-bfd2-fadceed88f6d",
+      "ts": "2026-04-11T16:09:14.142905891Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-11T16:09:25.699000Z"
+    },
+    {
+      "sid": "bb7aa13c-cb23-4ff8-9d61-443faf5a948d",
+      "ts": "2026-04-11T16:30:04.878615508Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-11T16:30:57.443000Z"
+    },
+    {
+      "sid": "a514a8df-2eed-4a2c-b505-2783cfb82352",
+      "ts": "2026-04-11T16:54:48.908961997Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-11T16:55:20.739000Z"
+    },
+    {
+      "sid": "5655f05f-c635-4530-b2cb-dcb6e9a99fec",
+      "ts": "2026-04-11T19:32:54.647820036Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-11T19:33:21.335000Z"
+    },
+    {
+      "sid": "1c62edb9-bbe1-4f60-85c6-52307cc17e64",
+      "ts": "2026-04-11T20:00:43.302820149Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-11T20:01:08.570000Z"
+    },
+    {
+      "sid": "c0c1ffec-3189-49cb-bc2c-540a4091da07",
+      "ts": "2026-04-11T20:20:33.361675108Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-11T20:20:58.874000Z"
+    },
+    {
+      "sid": "a9f5ff66-9161-49ab-9b0b-2c97c3605220",
+      "ts": "2026-04-11T20:51:59.382927159Z",
+      "repo": "?",
+      "n": 3,
+      "max_turn_ts": "2026-04-11T20:53:03.696000Z"
+    },
+    {
+      "sid": "bdeec04f-6b0b-4921-b5b5-301be47b072b",
+      "ts": "2026-04-12T20:15:32.676104062Z",
+      "repo": "?",
+      "n": 6,
+      "max_turn_ts": "2026-04-12T20:15:41.761000Z"
+    },
+    {
+      "sid": "8243ff05-98e1-4d84-b625-9941b2252129",
+      "ts": "2026-04-12T21:03:36.182685442Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-12T21:07:19.212000Z"
+    },
+    {
+      "sid": "42aa3a93-a33d-47b2-8c46-06754a33963d",
+      "ts": "2026-04-12T21:54:11.816171708Z",
+      "repo": "?",
+      "n": 8,
+      "max_turn_ts": "2026-04-12T21:54:30.959000Z"
+    },
+    {
+      "sid": "7c64e3f6-ddd5-4255-8153-44ddf12b98cd",
+      "ts": "2026-04-12T22:46:22.726953889Z",
+      "repo": "?",
+      "n": 4,
+      "max_turn_ts": "2026-04-12T22:46:30.391000Z"
+    },
+    {
+      "sid": "76f8aa70-a47a-4882-b577-a30bdeea647d",
+      "ts": "2026-04-12T22:51:41.689689171Z",
+      "repo": "?",
+      "n": 2,
+      "max_turn_ts": "2026-04-12T22:51:55.020000Z"
+    },
+    {
+      "sid": "932e07e5-df90-4ef5-9ff0-242c944309e0",
+      "ts": "2026-04-17T15:07:00.295000+00:00",
+      "repo": "?",
+      "n": 10,
+      "max_turn_ts": "2026-04-17T15:26:43.258000Z"
+    },
+    {
+      "sid": "32b2bc7e-b486-4273-8123-19648a591a93",
+      "ts": "2026-04-17T15:44:57.110975644Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-17T15:45:50.879000Z"
+    },
+    {
+      "sid": "6e2a77f5-e663-4bd1-8fbb-abd181bc4653",
+      "ts": "2026-04-17T16:53:16.076238692Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-04-17T16:53:27.300000Z"
+    },
+    {
+      "sid": "2e3df92b-358b-4e2f-83f5-8b62591ddca5",
+      "ts": "2026-04-17T17:08:10.956000+00:00",
+      "repo": "?",
+      "n": 38,
+      "max_turn_ts": "2026-04-17T20:24:02.838000Z"
+    },
+    {
+      "sid": "c6562551-1672-4f02-b9f3-bd472e0448f2",
+      "ts": "2026-04-17T21:02:04.50021907Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-04-17T21:02:38.544000Z"
+    },
+    {
+      "sid": "b50ca2de-9b04-42c5-9550-e96f92be2544",
+      "ts": "2026-04-19T17:39:37.545672325Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-04-19T17:39:49.706000Z"
+    },
+    {
+      "sid": "df90512a-c85f-4c9e-a85b-2fda18b5ad58",
+      "ts": "2026-04-19T18:13:58.305712495Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-04-19T18:14:04.409000Z"
+    },
+    {
+      "sid": "490c32a1-76a5-4d3d-9a10-5e94a8bdcb0b",
+      "ts": "2026-04-20T09:15:47.694485348Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-20T09:16:00.789000Z"
+    },
+    {
+      "sid": "8491a22d-cd44-4479-b1e5-25d9a2690e53",
+      "ts": "2026-04-20T15:28:34.423141311Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-04-20T09:32:01.947000Z"
+    },
+    {
+      "sid": "90b41218-3103-4389-b0c7-560cf72f04b6",
+      "ts": "2026-04-20T15:28:36.732445254Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-04-20T10:05:00.238000Z"
+    },
+    {
+      "sid": "b6bc2bc4-df09-4df9-9ad9-169433b49bc3",
+      "ts": "2026-04-20T15:28:40.333651109Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-04-20T15:28:51.650000Z"
+    },
+    {
+      "sid": "1acd7c66-2a92-497b-a8f3-b7cde6fe6c75",
+      "ts": "2026-04-20T16:30:30.251295638Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-20T16:48:50.161000Z"
+    },
+    {
+      "sid": "f384e80b-d1a3-457b-9db3-a852640fde09",
+      "ts": "2026-04-21T01:10:33.909105821Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-21T01:10:41.449000Z"
+    },
+    {
+      "sid": "7b150498-33fc-435f-b45c-58c128ed39ac",
+      "ts": "2026-04-21T02:13:09.394922439Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-21T02:13:21.899000Z"
+    },
+    {
+      "sid": "12a3de5a-c621-4cb8-b992-ade7347182be",
+      "ts": "2026-04-21T03:29:34.405423142Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-21T03:29:52.652000Z"
+    },
+    {
+      "sid": "b13c154b-c189-4744-b6eb-e4e8dbfe6f1c",
+      "ts": "2026-04-21T04:01:21.782364622Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T04:01:42.782000Z"
+    },
+    {
+      "sid": "88c1e838-029f-4dc5-8053-27325ab66306",
+      "ts": "2026-04-21T10:15:00.191389842Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-21T09:51:23.998000Z"
+    },
+    {
+      "sid": "c1089169-fe73-4586-9bc4-1ad3769da292",
+      "ts": "2026-04-21T10:15:04.586567474Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-04-21T10:15:15.378000Z"
+    },
+    {
+      "sid": "2d52949d-2d63-49e1-8170-45fedee86382",
+      "ts": "2026-04-21T11:23:41.326289822Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-21T11:24:43.521000Z"
+    },
+    {
+      "sid": "6974ee40-9475-4de0-a86f-1967292f3acb",
+      "ts": "2026-04-23T00:04:23.161713181Z",
+      "repo": "?",
+      "n": 11,
+      "max_turn_ts": "2026-04-13T13:37:59.455000Z"
+    },
+    {
+      "sid": "ae670f34-4128-488b-8a20-d3faa1e07b58",
+      "ts": "2026-04-23T00:04:30.078709447Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-04-23T00:04:38.497000Z"
+    },
+    {
+      "sid": "ccb52a7c-c4da-4b40-8b6f-dcaae4760475",
+      "ts": "2026-04-23T09:15:04.448432261Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-04-23T09:15:28.295000Z"
+    },
+    {
+      "sid": "4793982f-3366-49e6-95eb-1e3375189b6a",
+      "ts": "2026-04-23T11:07:31.632450828Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-22T23:18:49.191000Z"
+    },
+    {
+      "sid": "4dbf34d0-e29e-4cef-b432-46c919c71ce0",
+      "ts": "2026-04-23T13:28:51.082138981Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T11:22:35.453000Z"
+    },
+    {
+      "sid": "e4640139-ffcf-4d52-961d-94ba0587b1df",
+      "ts": "2026-04-23T13:28:59.408708305Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-23T13:29:54.660000Z"
+    },
+    {
+      "sid": "f56eceff-1eae-4ae5-b54f-00caca2f76b7",
+      "ts": "2026-04-23T15:34:12.593582226Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-23T14:52:14.754000Z"
+    },
+    {
+      "sid": "6c6f8d49-086a-4abc-9726-0e3f8f9fb3fd",
+      "ts": "2026-04-23T17:26:57.124515472Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-04-23T17:27:55.936000Z"
+    },
+    {
+      "sid": "711934c4-7ec6-4bfc-a8b4-7e2a6dd4b919",
+      "ts": "2026-04-23T19:50:06.299326868Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-04-23T19:50:58.200000Z"
+    },
+    {
+      "sid": "4c97a6be-984f-4988-a1c2-a6e3ef21ea90",
+      "ts": "2026-04-24T12:53:00.699310915Z",
+      "repo": "?",
+      "n": 55,
+      "max_turn_ts": "2026-04-10T12:39:21.093000Z"
+    },
+    {
+      "sid": "cdfcc02f-d808-4660-ae34-0376a10227cf",
+      "ts": "2026-04-24T12:53:14.892046574Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-23T21:05:27.211000Z"
+    },
+    {
+      "sid": "2e111e9b-1400-496f-b7d8-41704a320d63",
+      "ts": "2026-04-24T20:14:49.496481305Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-24T19:38:50.164000Z"
+    },
+    {
+      "sid": "5ed9f5ff-3132-461d-ab9d-82ad2068a401",
+      "ts": "2026-04-24T20:29:38.039633795Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-04-24T20:32:40.131000Z"
+    },
+    {
+      "sid": "123b9812-2491-4b1f-93a4-04c236ab6e70",
+      "ts": "2026-04-24T21:41:09.484600079Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-04-24T21:41:55.745000Z"
+    },
+    {
+      "sid": "99f00f8e-1ebb-42e9-8fb3-ccbaf250ddad",
+      "ts": "2026-04-24T23:08:22.576881697Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T23:08:45.360000Z"
+    },
+    {
+      "sid": "87e8a265-dfe9-4f2b-9cbb-4806a69261c6",
+      "ts": "2026-04-24T23:30:52.818994189Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T23:31:33.675000Z"
+    },
+    {
+      "sid": "910d20d4-1239-499e-8a12-98d65591a6a5",
+      "ts": "2026-04-25T00:37:33.745424057Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T00:37:53.205000Z"
+    },
+    {
+      "sid": "8a4df509-043a-4374-bfa8-be37f07e533a",
+      "ts": "2026-04-25T01:05:12.962510918Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-25T01:05:28.739000Z"
+    },
+    {
+      "sid": "9c0c67ee-a0b9-4514-93b9-9e8fe195d6a8",
+      "ts": "2026-04-25T17:13:54.0847586Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-04-25T17:14:04.208000Z"
+    },
+    {
+      "sid": "1aee48de-b992-43e8-b07c-23a85c0fa459",
+      "ts": "2026-04-27T08:45:23.308144292Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 30,
+      "max_turn_ts": "2026-04-27T08:47:06.335000Z"
+    },
+    {
+      "sid": "f6feae3b-8731-4206-b820-0c4e9423ea25",
+      "ts": "2026-05-01T15:41:16.400835545Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 8,
+      "max_turn_ts": "2026-05-01T08:29:56.646000Z"
+    },
+    {
+      "sid": "ca6af548-6863-4baf-80dc-9e264d72ba43",
+      "ts": "2026-05-02T15:47:16.433139879Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-05-02T14:33:16.257000Z"
+    },
+    {
+      "sid": "c182181b-3026-49d1-a80c-d52fb69e7d88",
+      "ts": "2026-05-02T17:21:00.775246622Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-05-02T16:15:01.569000Z"
+    },
+    {
+      "sid": "d8a08ef8-84e7-4797-8b13-657571e0f7a8",
+      "ts": "2026-05-02T18:59:50.381251635Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 10,
+      "max_turn_ts": "2026-05-02T18:20:22.059000Z"
+    },
+    {
+      "sid": "8f18a472-e1c5-4c9c-8ce3-6e738423db8c",
+      "ts": "2026-05-02T20:34:40.643318094Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 11,
+      "max_turn_ts": "2026-05-02T20:35:36.648000Z"
+    },
+    {
+      "sid": "59fb4a37-a44f-47c7-aee7-05cbf47536c3",
+      "ts": "2026-05-02T21:02:08.585773188Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-05-02T21:02:56.178000Z"
+    },
+    {
+      "sid": "3095ddac-0c6c-4ebb-a665-8615c0b4f1f0",
+      "ts": "2026-05-07T08:27:18.94145398Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-04-24T22:08:14.864000Z"
+    },
+    {
+      "sid": "30999a7f-2c92-4056-b760-a8560933b26c",
+      "ts": "2026-05-07T08:30:46.232284559Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-07T08:44:00.497000Z"
+    },
+    {
+      "sid": "ccb17ef9-5f72-4b8e-b4ed-bbcf7e7229d6",
+      "ts": "2026-05-07T08:30:55.342404436Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 13,
+      "max_turn_ts": "2026-04-25T01:35:34.314000Z"
+    },
+    {
+      "sid": "068bf5f6-e22a-4387-8972-7f6e4026ace5",
+      "ts": "2026-05-15T11:04:30.070551265Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T11:13:18.740000Z"
+    },
+    {
+      "sid": "bea58142-752f-49eb-92a3-83ac2514f5b2",
+      "ts": "2026-05-15T19:21:20.854511633Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 22,
+      "max_turn_ts": "2026-05-15T19:22:16.077000Z"
+    },
+    {
+      "sid": "77cec88c-2dbf-4083-aaff-c91f09616c0d",
+      "ts": "2026-05-15T21:14:07.707094302Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 3,
+      "max_turn_ts": "2026-05-15T21:15:16.560000Z"
+    },
+    {
+      "sid": "def485c5-8947-4895-82cd-d38870ac62a3",
+      "ts": "2026-05-15T23:58:12.720491908Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-16T00:01:34.433000Z"
+    },
+    {
+      "sid": "261e433d-477e-4516-9fbf-2eba6dd912ac",
+      "ts": "2026-05-16T00:58:57.162244824Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 15,
+      "max_turn_ts": "2026-05-16T00:59:48.741000Z"
+    },
+    {
+      "sid": "da2a5730-0820-4c47-aa8e-1b69e1b50282",
+      "ts": "2026-05-18T13:27:08.58713204Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-18T13:27:22.390000Z"
+    },
+    {
+      "sid": "31b13259-2823-493b-8f16-223adcef698f",
+      "ts": "2026-05-18T13:51:49.389258656Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 5,
+      "max_turn_ts": "2026-05-18T13:52:30.888000Z"
+    },
+    {
+      "sid": "43f8c9a3-7a05-40f0-b6f3-9d283ace1d25",
+      "ts": "2026-05-19T16:24:53.351445512Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-19T16:27:34.949000Z"
+    },
+    {
+      "sid": "9caca465-69ad-41a9-8e8a-4d2f780e10bb",
+      "ts": "2026-05-20T15:54:05.704019182Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-05-20T15:54:41.393000Z"
+    },
+    {
+      "sid": "691e2320-7121-41a7-9be9-466ebec70f25",
+      "ts": "2026-05-21T11:00:02.271767008Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 7,
+      "max_turn_ts": "2026-05-21T11:00:14.477000Z"
+    },
+    {
+      "sid": "69071866-5c6e-4d80-9f71-a06e1bac53ad",
+      "ts": "2026-05-21T16:40:33.383332288Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T16:41:24.265000Z"
+    },
+    {
+      "sid": "ae8fba67-918a-4327-a045-9f9928534ea2",
+      "ts": "2026-05-22T05:41:02.393327112Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-22T05:42:11.936000Z"
+    },
+    {
+      "sid": "fc04ab5a-41b3-488e-843e-d8feb9d74eb2",
+      "ts": "2026-05-22T13:40:49.88713862Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-22T14:02:27.741000Z"
+    },
+    {
+      "sid": "62104a4c-684b-4f9d-a925-209064142722",
+      "ts": "2026-05-22T23:48:50.093027218Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-05-22T23:49:29.697000Z"
+    },
+    {
+      "sid": "03b00f06-132a-4725-95af-bad6ae12767d",
+      "ts": "2026-05-23T01:00:30.877294942Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-23T01:01:01.424000Z"
+    },
+    {
+      "sid": "d3522dbf-ac94-4433-8bcc-aee028c86703",
+      "ts": "2026-05-23T12:04:05.615289846Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 6,
+      "max_turn_ts": "2026-05-23T12:04:12.911000Z"
+    },
+    {
+      "sid": "5f753dde-9ec8-4ab7-b78c-a185d2fcd32c",
+      "ts": "2026-05-23T20:23:02.697803769Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-23T20:23:38.385000Z"
+    },
+    {
+      "sid": "01dbb013-399d-44f2-b6f9-423b0b370f8e",
+      "ts": "2026-05-24T07:28:21.196801863Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-23T18:21:45.484000Z"
+    },
+    {
+      "sid": "96dd758c-4fe6-4a48-be32-846451558cdb",
+      "ts": "2026-05-24T07:35:19.065533984Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-24T07:37:45.956000Z"
+    },
+    {
+      "sid": "7a387ebe-5dec-4e0b-ac75-eceb9beff34c",
+      "ts": "2026-05-24T13:28:44.82932511Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-24T13:30:37.720000Z"
+    },
+    {
+      "sid": "766bdbbc-01a5-471a-9091-815b02d3c28d",
+      "ts": "2026-05-24T15:36:45.508793423Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-24T15:37:28.729000Z"
+    },
+    {
+      "sid": "ec0a291e-d843-412b-b9a0-617b18426a27",
+      "ts": "2026-05-24T17:04:20.037625785Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 4,
+      "max_turn_ts": "2026-05-24T17:04:28.390000Z"
+    },
+    {
+      "sid": "7dc9c78d-e767-4e9d-9bfe-621fc59e19f3",
+      "ts": "2026-05-24T19:54:51.294167364Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-24T19:56:07.336000Z"
+    },
+    {
+      "sid": "7818c56a-191e-41ed-86e8-af576fb39389",
+      "ts": "2026-05-24T22:05:58.343579419Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 2,
+      "max_turn_ts": "2026-05-24T22:07:20.201000Z"
+    },
+    {
+      "sid": "48ae3560-75f1-4c5d-ae64-36b9bf9c36c0",
+      "ts": "2026-05-26T09:00:35.701285307Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T08:52:39.261000Z"
+    },
+    {
+      "sid": "74563433-de9f-4760-9e30-c58171b3461f",
+      "ts": "2026-05-26T09:00:46.177094408Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T08:47:27.059000Z"
+    },
+    {
+      "sid": "bbf594e8-d681-4408-9f16-f986dcf314d9",
+      "ts": "2026-05-26T09:00:49.78704627Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T08:58:16.460000Z"
+    },
+    {
+      "sid": "00340979-606e-423c-8a6c-6126fc3e8588",
+      "ts": "2026-05-26T09:26:35.51666178Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T09:20:33.321000Z"
+    },
+    {
+      "sid": "f19de850-85e5-4ef3-8e42-b5f43444d9f4",
+      "ts": "2026-05-26T09:26:57.877756004Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T09:12:41.160000Z"
+    },
+    {
+      "sid": "35cf22f5-21cb-4c34-b501-9008bfdf2e55",
+      "ts": "2026-05-26T10:25:29.814837968Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T09:42:00.676000Z"
+    },
+    {
+      "sid": "8065550e-f329-4997-b8a4-2326e826d23b",
+      "ts": "2026-05-26T10:25:39.919929992Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T10:24:14.964000Z"
+    },
+    {
+      "sid": "ad993fd3-acd9-41bf-b4ba-eb6d8f82b4e9",
+      "ts": "2026-05-26T10:25:43.481699341Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T09:37:40.367000Z"
+    },
+    {
+      "sid": "ab11fcc9-e40d-4bf5-86d5-5aa02a730d0e",
+      "ts": "2026-05-26T10:46:50.866946121Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T10:35:34.978000Z"
+    },
+    {
+      "sid": "d848f98c-3189-482c-8db1-c3c723d08e54",
+      "ts": "2026-05-26T10:46:53.976552742Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T10:39:44.717000Z"
+    },
+    {
+      "sid": "3df7fb16-7317-40c7-aa75-7437c5604deb",
+      "ts": "2026-05-26T11:00:41.232584177Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T10:55:05.552000Z"
+    },
+    {
+      "sid": "54f971ef-9e58-412b-961d-87b65827849d",
+      "ts": "2026-05-26T11:00:47.960970481Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 13,
+      "max_turn_ts": "2026-05-26T11:01:00.829000Z"
+    },
+    {
+      "sid": "046514e7-c1d5-4e2e-85ce-84b403dd2c4e",
+      "ts": "2026-05-26T12:07:45.957569711Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T12:05:30.752000Z"
+    },
+    {
+      "sid": "fc7cdbfa-3f68-4b72-a1a8-3e8b916cb4fe",
+      "ts": "2026-05-26T12:08:01.813812989Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T11:58:02.502000Z"
+    },
+    {
+      "sid": "762c9364-ef7f-4cf7-bf15-f8b3e33bf1e6",
+      "ts": "2026-05-26T12:31:45.186481066Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T12:30:26.751000Z"
+    },
+    {
+      "sid": "e4608a10-de2b-4d71-aa89-da6326744a88",
+      "ts": "2026-05-26T12:31:50.595408802Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T12:19:37.285000Z"
+    },
+    {
+      "sid": "505e4bd9-faaf-477b-b02b-2a882d810626",
+      "ts": "2026-05-26T12:55:13.48881851Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T12:45:48.546000Z"
+    },
+    {
+      "sid": "8b749129-faa1-47bb-bf1e-756c3b9b14d6",
+      "ts": "2026-05-26T12:55:25.926644381Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T12:53:59.186000Z"
+    },
+    {
+      "sid": "91277d70-abe5-46f0-96bd-a27566a00d4d",
+      "ts": "2026-05-26T13:28:16.6925613Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T13:18:13.452000Z"
+    },
+    {
+      "sid": "f14d22ea-3a1a-48cd-a1a3-cda53c9ad365",
+      "ts": "2026-05-26T13:28:21.291236888Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T13:26:07.786000Z"
+    },
+    {
+      "sid": "daefbbd2-39c4-4f17-8a60-35ceef5a3e55",
+      "ts": "2026-05-26T13:52:04.517674369Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T13:41:01.847000Z"
+    },
+    {
+      "sid": "f64c89e4-df89-4ffc-8590-cee545e983a8",
+      "ts": "2026-05-26T13:52:08.016756112Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T13:49:32.637000Z"
+    },
+    {
+      "sid": "0774eb4b-d416-4422-be0b-25a6ee951344",
+      "ts": "2026-05-26T14:13:19.233342883Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T14:04:37.782000Z"
+    },
+    {
+      "sid": "c0edcea0-d5a4-4068-adbf-3c0e49a59664",
+      "ts": "2026-05-26T14:13:32.92788004Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T14:12:02.247000Z"
+    },
+    {
+      "sid": "2109e8b0-7dd6-48a4-b6e6-9e56e2ae399d",
+      "ts": "2026-05-26T14:50:47.894864604Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T14:39:49.511000Z"
+    },
+    {
+      "sid": "fd0a7dfb-b142-4bd6-8dda-0350369f8bb6",
+      "ts": "2026-05-26T14:51:02.738472804Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T14:49:19.122000Z"
+    },
+    {
+      "sid": "ae67355a-80ad-4e52-aef1-1960be72977a",
+      "ts": "2026-05-26T15:07:40.419815388Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T15:01:04.124000Z"
+    },
+    {
+      "sid": "e915feef-a676-46b7-a2fb-974849f60618",
+      "ts": "2026-05-26T15:07:43.328723183Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T15:05:45.287000Z"
+    },
+    {
+      "sid": "00d89f9b-5405-4bcc-b524-e394dc84603e",
+      "ts": "2026-05-26T15:34:08.467003515Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T15:17:43.123000Z"
+    },
+    {
+      "sid": "f08ccc29-bc0e-424d-b950-cf3a82bd6668",
+      "ts": "2026-05-26T15:34:25.491193088Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T15:32:33.638000Z"
+    },
+    {
+      "sid": "1ae841ea-6de0-4ca0-98a9-f32bb2ceb52c",
+      "ts": "2026-05-26T17:21:12.031416655Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T17:09:29.881000Z"
+    },
+    {
+      "sid": "773589d0-48c0-4559-99b6-6631d9b1ba76",
+      "ts": "2026-05-26T17:21:25.890642277Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T17:14:44.536000Z"
+    },
+    {
+      "sid": "34744f66-288c-440e-b9c4-d0bf96bae469",
+      "ts": "2026-05-26T17:46:46.742102567Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T17:40:47.096000Z"
+    },
+    {
+      "sid": "559b99f1-4aaa-44ce-bbef-b6b1f971e39b",
+      "ts": "2026-05-26T17:46:50.685943113Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T17:34:11.460000Z"
+    },
+    {
+      "sid": "584cc747-18b9-443c-91c3-b82c18dc935b",
+      "ts": "2026-05-26T17:46:52.686660297Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T17:45:17.415000Z"
+    },
+    {
+      "sid": "05fd18d3-b86e-4877-85bb-43bc03122fc4",
+      "ts": "2026-05-26T18:31:34.164799948Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T18:20:07.553000Z"
+    },
+    {
+      "sid": "9b1bdf34-6de9-49eb-88ea-f86b72ea3322",
+      "ts": "2026-05-26T18:31:54.126458127Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T18:16:10.001000Z"
+    },
+    {
+      "sid": "2438fd2c-68b8-48d4-8767-fd72bf66898b",
+      "ts": "2026-05-26T19:02:15.925952787Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T18:54:32.496000Z"
+    },
+    {
+      "sid": "9eee6f37-ff14-4790-9e74-429182d262b4",
+      "ts": "2026-05-26T19:02:33.332563623Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T18:45:15.521000Z"
+    },
+    {
+      "sid": "06f2d8d7-bd1b-42e2-b2d6-39d2371a77ca",
+      "ts": "2026-05-26T19:22:50.973813448Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T19:15:23.349000Z"
+    },
+    {
+      "sid": "801031cd-1650-451a-80ad-96e1848b206e",
+      "ts": "2026-05-26T19:23:04.581023106Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T19:12:26.887000Z"
+    },
+    {
+      "sid": "b7f5cae9-7a77-46fa-adf9-fd7e566ca66a",
+      "ts": "2026-05-26T19:23:09.460232529Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T19:21:12.955000Z"
+    },
+    {
+      "sid": "47139de2-a5d0-4c3c-95f2-312cc0ccfab5",
+      "ts": "2026-05-26T19:44:34.060020052Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T19:35:36.464000Z"
+    },
+    {
+      "sid": "d37d8ee1-16de-4a3b-833e-c0f2d9e5ef54",
+      "ts": "2026-05-26T19:44:43.491089716Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T19:43:01.863000Z"
+    },
+    {
+      "sid": "fff0bc9f-6f8c-4868-ad2f-c4204206d154",
+      "ts": "2026-05-26T19:44:46.969077051Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T19:39:32.410000Z"
+    },
+    {
+      "sid": "2eef3e0c-7530-4b4b-9849-b0793931097f",
+      "ts": "2026-05-26T20:21:49.866194189Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 14,
+      "max_turn_ts": "2026-05-26T20:22:34.239000Z"
+    },
+    {
+      "sid": "f6b44e59-e6a0-4ad6-a685-d7f66d713d32",
+      "ts": "2026-05-26T20:21:56.076666459Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T20:18:45.870000Z"
+    },
+    {
+      "sid": "390f8829-a269-434d-967b-18e2c4cc983b",
+      "ts": "2026-05-26T21:41:41.923103511Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T21:39:14.750000Z"
+    },
+    {
+      "sid": "fd6c9ca8-c5bd-46b5-bc5a-e7650aae8cad",
+      "ts": "2026-05-26T21:41:58.448904744Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T21:33:20.932000Z"
+    },
+    {
+      "sid": "78c6d101-5775-4689-a807-18bed608d9db",
+      "ts": "2026-05-26T22:03:45.265705948Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T22:02:02.658000Z"
+    },
+    {
+      "sid": "d08c715d-2d27-451d-887c-8d49b162f1ef",
+      "ts": "2026-05-26T22:03:48.132034565Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T21:52:35.900000Z"
+    },
+    {
+      "sid": "b85199ad-58d9-4b8a-a185-65d43380b371",
+      "ts": "2026-05-26T22:26:06.004967057Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T22:24:04.540000Z"
+    },
+    {
+      "sid": "cd5d10fa-086c-440b-b042-07144ea25f8f",
+      "ts": "2026-05-26T22:26:08.314675121Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T22:15:05.217000Z"
+    },
+    {
+      "sid": "368a27d6-3823-4e03-b854-901be187f516",
+      "ts": "2026-05-26T22:44:12.637327805Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T22:42:30.064000Z"
+    },
+    {
+      "sid": "ed251687-4396-4f01-8033-922762394f9d",
+      "ts": "2026-05-26T22:44:35.576754106Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T22:37:50.285000Z"
+    },
+    {
+      "sid": "3088bda7-6e98-4abf-a476-df4211470c6c",
+      "ts": "2026-05-26T23:08:26.52096901Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T23:06:19.432000Z"
+    },
+    {
+      "sid": "fe764b39-504a-4c3d-975b-3925257497f1",
+      "ts": "2026-05-26T23:08:47.198087838Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T22:57:17.267000Z"
+    },
+    {
+      "sid": "46b5cf04-cbed-4643-b0c4-5d77ad4f2d91",
+      "ts": "2026-05-26T23:25:40.795464983Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T23:17:34.959000Z"
+    },
+    {
+      "sid": "c9ff2845-99dd-4f3f-862d-f74b19114ed5",
+      "ts": "2026-05-26T23:25:54.195016324Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T23:24:17.649000Z"
+    },
+    {
+      "sid": "91b979bc-2c86-4466-b0ae-98d5d7beebb3",
+      "ts": "2026-05-26T23:43:14.654897898Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T23:41:12.862000Z"
+    },
+    {
+      "sid": "d80aefd8-0b21-460a-a3b1-0ac62ee166c4",
+      "ts": "2026-05-26T23:43:18.196019572Z",
+      "repo": "armelhbobdad/bmad-module-skill-forge",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T23:34:37.440000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

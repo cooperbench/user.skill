@@ -1,0 +1,1104 @@
+{
+  "developer": "gh:ababushkin",
+  "slug": "gh_ababushkin",
+  "Tstar": "2026-06-18T02:57:46.228733Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 156,
+  "n_human_turns": 672,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "1f160f43-2e29-4995-bc1b-047987e1b03b",
+      "ts": "2026-04-17T15:04:59.091468Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 48,
+      "max_turn_ts": "2026-04-17T15:05:04.478000Z"
+    },
+    {
+      "sid": "bad49003-a0ec-497c-8824-5f1027360a44",
+      "ts": "2026-04-17T15:15:10.305103Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-17T15:15:11.977000Z"
+    },
+    {
+      "sid": "289eab8f-cbbc-4b57-b030-a339a2d94e70",
+      "ts": "2026-04-17T15:33:52.098196Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-04-17T15:33:53.800000Z"
+    },
+    {
+      "sid": "497eee2c-8221-4caf-8145-025426ca2ed5",
+      "ts": "2026-04-17T17:07:20.884288Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 8,
+      "max_turn_ts": "2026-04-17T15:53:29.843000Z"
+    },
+    {
+      "sid": "afcae248-e39c-4a62-85a9-e4fe134f0f2e",
+      "ts": "2026-04-17T17:07:23.974034Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-17T17:07:25.899000Z"
+    },
+    {
+      "sid": "f577eda0-2b69-4f4b-a6dc-bca4070c2edf",
+      "ts": "2026-04-29T14:56:48.837054Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-29T14:53:03.470000Z"
+    },
+    {
+      "sid": "77e11adc-5ca4-414f-b252-eb56b1fd8560",
+      "ts": "2026-04-29T15:01:45.843431Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-04-29T15:00:06.110000Z"
+    },
+    {
+      "sid": "d562cfe7-e3fe-47cb-91a7-9231f6939b8e",
+      "ts": "2026-04-29T15:05:22.243852Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-29T15:04:17.378000Z"
+    },
+    {
+      "sid": "82ff9d30-f306-4cf9-be42-5dcc2591980f",
+      "ts": "2026-05-17T11:35:22.566062Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 5,
+      "max_turn_ts": "2026-05-17T11:29:33.308000Z"
+    },
+    {
+      "sid": "aa7d214f-6207-4e5a-ac0a-88cf9426b03a",
+      "ts": "2026-05-17T11:36:35.109762Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 24,
+      "max_turn_ts": "2026-05-17T11:35:35.198000Z"
+    },
+    {
+      "sid": "223bdd12-bf95-4798-a940-707514d60aa2",
+      "ts": "2026-05-17T11:49:14.194901Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 5,
+      "max_turn_ts": "2026-05-17T10:34:32.335000Z"
+    },
+    {
+      "sid": "a04d86fc-c21d-456b-9c69-8083583af27a",
+      "ts": "2026-05-17T12:01:14.951549Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 6,
+      "max_turn_ts": "2026-05-17T12:01:26.614000Z"
+    },
+    {
+      "sid": "4f61ec7f-b38f-49a3-86ea-b23853443ed3",
+      "ts": "2026-05-17T12:17:53.008594Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 4,
+      "max_turn_ts": "2026-05-17T12:17:59.036000Z"
+    },
+    {
+      "sid": "21f0fc62-9034-423e-a8d3-85aef3714fc6",
+      "ts": "2026-05-17T12:53:36.601663Z",
+      "repo": "ababushkin/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T12:53:36.682000Z"
+    },
+    {
+      "sid": "9f667a26-f500-40b7-a2a8-39bcf3169d7b",
+      "ts": "2026-05-17T14:21:10.022374Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T14:21:06.368000Z"
+    },
+    {
+      "sid": "532cc82e-737b-49cb-8ba4-fc94ddd52a2d",
+      "ts": "2026-05-17T14:34:10.540954Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 3,
+      "max_turn_ts": "2026-05-17T14:33:55.368000Z"
+    },
+    {
+      "sid": "f1a2bcdd-e084-4841-9ffb-174685348697",
+      "ts": "2026-05-17T14:34:16.893129Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T14:34:46.429000Z"
+    },
+    {
+      "sid": "7b2ee072-c171-44a5-b67f-9beddb9d7960",
+      "ts": "2026-05-17T14:47:47.588246Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T14:48:12.618000Z"
+    },
+    {
+      "sid": "247b5587-80d0-42c2-86cf-bf9af7ba445c",
+      "ts": "2026-05-18T08:58:56.467388Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 3,
+      "max_turn_ts": "2026-05-18T08:56:30.202000Z"
+    },
+    {
+      "sid": "51e904c9-ff1a-471f-8132-0180055165b6",
+      "ts": "2026-05-18T09:23:18.563681Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 6,
+      "max_turn_ts": "2026-05-18T09:23:36.794000Z"
+    },
+    {
+      "sid": "7e4e5008-a117-4b1f-b117-72a541dbe53e",
+      "ts": "2026-05-18T09:23:18.931148Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T12:25:11.928000Z"
+    },
+    {
+      "sid": "d0c3d9c4-e9b4-4610-99f3-b273955c0c68",
+      "ts": "2026-05-18T09:23:19.059966Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 7,
+      "max_turn_ts": "2026-05-17T12:40:38.559000Z"
+    },
+    {
+      "sid": "fa0c67a1-52fb-43ec-aaa4-3d7c5b2f506a",
+      "ts": "2026-05-18T10:19:18.078813Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 3,
+      "max_turn_ts": "2026-05-18T10:19:36.693000Z"
+    },
+    {
+      "sid": "f9e870eb-ee53-4241-8be3-7484cf6329fc",
+      "ts": "2026-05-18T12:03:35.968043Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 3,
+      "max_turn_ts": "2026-05-18T12:03:36.026000Z"
+    },
+    {
+      "sid": "b127fb8f-19c2-465b-91c3-280f63b189a7",
+      "ts": "2026-05-19T04:55:57.712733Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 11,
+      "max_turn_ts": "2026-05-19T04:56:17.370000Z"
+    },
+    {
+      "sid": "847a48fd-edc4-42c5-9b85-f9332f7fc512",
+      "ts": "2026-05-19T06:48:14.272164Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 7,
+      "max_turn_ts": "2026-05-19T06:48:32.795000Z"
+    },
+    {
+      "sid": "540b10b1-bc9d-49ae-9a39-ec380fe9a1a0",
+      "ts": "2026-05-19T07:14:53.68652Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T07:15:19.959000Z"
+    },
+    {
+      "sid": "670a93c6-0bc1-4737-b692-dbf1a53ccc3f",
+      "ts": "2026-05-19T12:39:14.981629Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 4,
+      "max_turn_ts": "2026-05-19T12:39:23.207000Z"
+    },
+    {
+      "sid": "2a305331-68a8-4561-bf0b-a9de40f32dd9",
+      "ts": "2026-05-19T13:25:31.757109Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 13,
+      "max_turn_ts": "2026-05-19T12:26:43.739000Z"
+    },
+    {
+      "sid": "93e33cc7-e8a4-4347-817b-1c5208021c24",
+      "ts": "2026-05-19T13:47:41.666153Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T13:48:01.090000Z"
+    },
+    {
+      "sid": "80386cd8-3f75-4327-94ed-d05beb1a2c6e",
+      "ts": "2026-05-19T13:55:06.789422Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T13:55:24.311000Z"
+    },
+    {
+      "sid": "35cab0f1-95cf-4153-9d21-6621e6776ba4",
+      "ts": "2026-05-19T14:09:43.428112Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 2,
+      "max_turn_ts": "2026-05-19T14:10:17.935000Z"
+    },
+    {
+      "sid": "25c35bdb-de55-40bf-9ea6-0ade5f408229",
+      "ts": "2026-05-19T14:19:20.783919Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T14:20:08.617000Z"
+    },
+    {
+      "sid": "c6e2730b-1d15-49a9-b945-8489abc8353f",
+      "ts": "2026-05-20T07:10:46.4397Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 9,
+      "max_turn_ts": "2026-05-20T07:11:08.589000Z"
+    },
+    {
+      "sid": "4a0a6144-7eec-4e71-8bcd-a8803c67cbf4",
+      "ts": "2026-05-20T09:02:30.0603Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-05-20T09:02:31.112000Z"
+    },
+    {
+      "sid": "e902265a-aef8-458e-ad7e-7321231f99ab",
+      "ts": "2026-05-20T09:12:06.938551Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T09:25:49.882000Z"
+    },
+    {
+      "sid": "dd75aa91-bd7d-49bf-b1b3-1ea0c9f1c6cf",
+      "ts": "2026-05-20T09:41:48.002082Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 12,
+      "max_turn_ts": "2026-05-20T09:42:03.817000Z"
+    },
+    {
+      "sid": "c8f0875c-58ec-4b6c-8f5a-f47a3a9e22ec",
+      "ts": "2026-05-20T14:50:04.162721Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T14:50:26.232000Z"
+    },
+    {
+      "sid": "717b7daf-8ef9-4e2c-bcea-2224c3aa8abb",
+      "ts": "2026-05-20T23:52:49.835417Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T23:53:07.783000Z"
+    },
+    {
+      "sid": "c8f3b5b3-505d-41b4-945e-6abe5d42503a",
+      "ts": "2026-05-21T00:00:14.788724Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T00:00:34.815000Z"
+    },
+    {
+      "sid": "07cd63e9-7b8e-4057-8eb8-770021b7851a",
+      "ts": "2026-05-21T00:06:44.089122Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T00:07:03.957000Z"
+    },
+    {
+      "sid": "45f7e8e3-3802-4787-bf0b-5d1c551d6688",
+      "ts": "2026-05-21T00:13:55.478406Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T00:14:14.889000Z"
+    },
+    {
+      "sid": "66289106-e8a2-4196-950f-e0c5e2817555",
+      "ts": "2026-05-21T00:20:53.482407Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 4,
+      "max_turn_ts": "2026-05-21T00:18:37.349000Z"
+    },
+    {
+      "sid": "ece12b04-ed21-4df1-96f0-c0a7de32c25b",
+      "ts": "2026-05-21T00:20:59.844524Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T00:21:25.231000Z"
+    },
+    {
+      "sid": "704536d7-8c0b-4d59-a3d4-1c2d4fd6bddc",
+      "ts": "2026-05-21T04:49:44.491281Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T04:50:06.245000Z"
+    },
+    {
+      "sid": "3078a8c0-3e7a-4105-8dcf-5f2df23ff776",
+      "ts": "2026-05-21T06:25:33.192849Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-21T06:25:56.022000Z"
+    },
+    {
+      "sid": "d039933b-757d-4042-8a55-daa1c626db06",
+      "ts": "2026-05-21T13:17:10.824551Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 9,
+      "max_turn_ts": "2026-05-21T13:17:36.744000Z"
+    },
+    {
+      "sid": "dfb1d8d6-5014-4c8e-8420-98593c05d452",
+      "ts": "2026-05-22T15:04:52.486504Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-22T15:00:53.644000Z"
+    },
+    {
+      "sid": "e2bc2542-61e0-4fab-8d99-ec7ad321b101",
+      "ts": "2026-05-23T07:06:00.884702Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-23T07:07:37.600000Z"
+    },
+    {
+      "sid": "7ced9f48-65e3-471b-a25d-f3c0956ce6db",
+      "ts": "2026-05-23T07:30:26.351381Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 2,
+      "max_turn_ts": "2026-05-23T07:30:54.571000Z"
+    },
+    {
+      "sid": "c64e8c86-0026-4747-9c9e-16904f75fe51",
+      "ts": "2026-05-23T12:44:37.641289Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 3,
+      "max_turn_ts": "2026-05-23T12:44:33.627000Z"
+    },
+    {
+      "sid": "5ea0627e-adef-429a-beb9-50a217e37fc3",
+      "ts": "2026-05-23T13:13:18.990644Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-23T13:14:10.187000Z"
+    },
+    {
+      "sid": "6f7f96be-151b-447b-9801-d97b0344e7b0",
+      "ts": "2026-05-23T13:41:08.875579Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-23T13:41:56.712000Z"
+    },
+    {
+      "sid": "0c2d42f0-e3bc-467e-9d4a-87b7ef3bbcf5",
+      "ts": "2026-05-23T15:13:23.041347Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-23T15:08:44.304000Z"
+    },
+    {
+      "sid": "89d38d6c-7aef-465c-abfe-52b837e50534",
+      "ts": "2026-05-23T15:13:32.398713Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 4,
+      "max_turn_ts": "2026-05-23T15:15:01.872000Z"
+    },
+    {
+      "sid": "706c6a41-1528-4a75-a371-dacfb4aa90bb",
+      "ts": "2026-05-24T06:11:59.404372Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 2,
+      "max_turn_ts": "2026-05-24T06:12:51.140000Z"
+    },
+    {
+      "sid": "870349c6-a59c-4d16-ab03-1a920159e203",
+      "ts": "2026-05-24T06:19:48.701272Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-24T06:20:27.566000Z"
+    },
+    {
+      "sid": "91a4f978-5fbf-40e1-adc9-d0e045f0c932",
+      "ts": "2026-05-24T06:19:50.267763Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 3,
+      "max_turn_ts": "2026-05-23T15:00:26.962000Z"
+    },
+    {
+      "sid": "aacacd4c-b321-40e2-b406-e70806f0adee",
+      "ts": "2026-05-25T04:41:07.382004Z",
+      "repo": "ababushkin/imagedoc",
+      "n": 5,
+      "max_turn_ts": "2026-05-25T04:42:29.865000Z"
+    },
+    {
+      "sid": "f410037f-e8ad-4c2c-b414-1a9c91c395c5",
+      "ts": "2026-05-25T04:41:10.678393Z",
+      "repo": "ababushkin/imagedoc",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T04:41:55.980000Z"
+    },
+    {
+      "sid": "7bc56f85-2bd6-4584-8c32-322a15830333",
+      "ts": "2026-05-25T05:06:12.900707Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T05:06:50.653000Z"
+    },
+    {
+      "sid": "f08f23f1-14a9-4a7b-be06-98283d791ef0",
+      "ts": "2026-05-25T05:34:40.091088Z",
+      "repo": "ababushkin/imagedoc",
+      "n": 5,
+      "max_turn_ts": "2026-05-25T06:03:03.392000Z"
+    },
+    {
+      "sid": "362e9124-dc86-4307-aff0-01feb5df448d",
+      "ts": "2026-05-25T05:57:36.796451Z",
+      "repo": "ababushkin/imagedoc",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T05:58:26.231000Z"
+    },
+    {
+      "sid": "1900af90-ae7d-4a53-a28f-27ef76b271b4",
+      "ts": "2026-05-25T06:11:25.292519Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-05-25T06:12:07.612000Z"
+    },
+    {
+      "sid": "cc94aff7-3072-46d3-ac76-29dd21212002",
+      "ts": "2026-05-25T06:11:29.23083Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 4,
+      "max_turn_ts": "2026-05-25T06:11:47.487000Z"
+    },
+    {
+      "sid": "91e1be12-797c-435c-99ab-a2fb626cc5af",
+      "ts": "2026-05-25T06:14:41.642552Z",
+      "repo": "ababushkin/imagedoc",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T06:15:24.227000Z"
+    },
+    {
+      "sid": "97fa4d43-13fc-4e15-87e6-f1e0df60958a",
+      "ts": "2026-05-25T06:19:02.207539Z",
+      "repo": "ababushkin/imagedoc",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T06:19:19.826000Z"
+    },
+    {
+      "sid": "b1021dfc-cb4c-45a1-8768-18d60159a532",
+      "ts": "2026-05-25T09:13:31.771878Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 19,
+      "max_turn_ts": "2026-05-25T08:51:09.454000Z"
+    },
+    {
+      "sid": "bb840eaa-ed63-4d79-8190-9ee3bda5a334",
+      "ts": "2026-05-25T09:13:32.530415Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 9,
+      "max_turn_ts": "2026-05-25T08:33:55.851000Z"
+    },
+    {
+      "sid": "0b5743c4-4826-4ab1-8931-016c4c5d1d93",
+      "ts": "2026-05-25T09:13:36.346629Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T09:14:37.418000Z"
+    },
+    {
+      "sid": "6e618a40-d80b-4831-a79d-a4b437c7f591",
+      "ts": "2026-05-25T10:00:29.4296Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T10:01:13.865000Z"
+    },
+    {
+      "sid": "25a1e7bf-2240-41f5-b7ef-c1920db6b59c",
+      "ts": "2026-05-25T10:42:36.134378Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T10:43:21.691000Z"
+    },
+    {
+      "sid": "eb41b75e-55b8-46ea-b21c-8336746e009e",
+      "ts": "2026-05-25T13:24:19.522153Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 8,
+      "max_turn_ts": "2026-05-25T13:26:27.408000Z"
+    },
+    {
+      "sid": "23b241e2-be64-41a9-907d-ff218e00555f",
+      "ts": "2026-05-25T13:25:59.509427Z",
+      "repo": "ababushkin/agentic-equity-research-skills",
+      "n": 1,
+      "max_turn_ts": "2026-05-25T13:27:23.574000Z"
+    },
+    {
+      "sid": "497726bc-f43d-45f1-a1ad-5b145ed29226",
+      "ts": "2026-05-26T10:04:38.790039Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T10:05:22.035000Z"
+    },
+    {
+      "sid": "5b30f67d-eb59-4a1a-9812-1f7b22ed530d",
+      "ts": "2026-05-26T12:44:54.73181Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 2,
+      "max_turn_ts": "2026-05-26T12:45:01.109000Z"
+    },
+    {
+      "sid": "5c8597c7-ff8a-40af-a260-e0b99411d418",
+      "ts": "2026-05-28T08:35:15.977883Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-05-28T08:36:16.795000Z"
+    },
+    {
+      "sid": "d2dda828-0c38-47ba-a4ef-5f6a4a2d55f3",
+      "ts": "2026-05-28T08:35:17.619283Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 9,
+      "max_turn_ts": "2026-05-28T08:12:19.024000Z"
+    },
+    {
+      "sid": "a4c3fdfe-7ca3-4858-bfb8-c8182466f67d",
+      "ts": "2026-05-28T08:51:44.386816Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-05-28T08:52:05.778000Z"
+    },
+    {
+      "sid": "e3453eb4-1dd7-4bd0-b6b9-8d80b84b89f1",
+      "ts": "2026-05-28T10:18:10.675338Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 20,
+      "max_turn_ts": "2026-05-28T10:17:51.818000Z"
+    },
+    {
+      "sid": "f88a9c6c-fcd4-43da-a7c2-28551f7bb033",
+      "ts": "2026-05-28T10:18:15.363799Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 8,
+      "max_turn_ts": "2026-05-28T10:18:25.578000Z"
+    },
+    {
+      "sid": "45dedc6e-c2d0-4846-a54e-93358ef0f7cd",
+      "ts": "2026-05-28T13:58:31.456981Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-05-28T13:58:36.673000Z"
+    },
+    {
+      "sid": "1909e1d5-8312-40fe-b52f-c30a94eecddc",
+      "ts": "2026-05-28T14:19:31.560064Z",
+      "repo": "ababushkin/workflow-hooks",
+      "n": 8,
+      "max_turn_ts": "2026-05-28T14:19:34.305000Z"
+    },
+    {
+      "sid": "d39dd7c7-f034-4b76-965a-615375860a9a",
+      "ts": "2026-05-28T14:44:08.084193Z",
+      "repo": "ababushkin/workflow-hooks",
+      "n": 1,
+      "max_turn_ts": "2026-05-28T14:44:36.363000Z"
+    },
+    {
+      "sid": "3a737fc0-902a-4009-a642-e96c2db6d1c8",
+      "ts": "2026-06-01T00:23:46.137369Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T00:24:25.958000Z"
+    },
+    {
+      "sid": "9e1cf68c-904a-4bd4-96b7-0a979cf73c80",
+      "ts": "2026-06-01T00:23:46.786045Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 4,
+      "max_turn_ts": "2026-05-28T14:17:12.014000Z"
+    },
+    {
+      "sid": "43bd6755-93d1-4346-a070-bdd3e40c3da2",
+      "ts": "2026-06-01T00:41:53.547789Z",
+      "repo": "ababushkin/workflow-hooks",
+      "n": 8,
+      "max_turn_ts": "2026-06-01T00:27:50.658000Z"
+    },
+    {
+      "sid": "4bbc6378-c5a0-4380-80e2-4e4be447ae42",
+      "ts": "2026-06-01T00:41:59.821303Z",
+      "repo": "ababushkin/workflow-hooks",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T00:44:00.047000Z"
+    },
+    {
+      "sid": "b14da5fd-9704-49b4-9c39-b3daab775550",
+      "ts": "2026-06-01T05:52:55.113604Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T05:56:36.957000Z"
+    },
+    {
+      "sid": "c18cf498-dfc9-45cc-a095-8cbd8afeeedb",
+      "ts": "2026-06-01T05:53:04.639771Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T05:53:40.427000Z"
+    },
+    {
+      "sid": "222813d0-3fb8-4be4-92b5-8d4af133e06e",
+      "ts": "2026-06-01T06:17:13.439925Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T06:17:53.886000Z"
+    },
+    {
+      "sid": "6a544259-0e69-44d7-a226-521a82b5da75",
+      "ts": "2026-06-01T06:31:44.45281Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T06:32:15.820000Z"
+    },
+    {
+      "sid": "cd655078-f5ef-4263-bad6-bff62b9a33d5",
+      "ts": "2026-06-01T06:44:00.768608Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T06:45:26.502000Z"
+    },
+    {
+      "sid": "905b4632-e0d8-4446-a47a-05cb1bb26150",
+      "ts": "2026-06-01T06:48:50.5802Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T06:49:19.608000Z"
+    },
+    {
+      "sid": "e76aeef2-b7f1-4be9-916b-5a535c975227",
+      "ts": "2026-06-01T06:48:50.889293Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T06:36:36.150000Z"
+    },
+    {
+      "sid": "2adfa49a-4626-45f6-9fee-6340434313b8",
+      "ts": "2026-06-01T07:06:12.866042Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T07:06:52.064000Z"
+    },
+    {
+      "sid": "84d63ef6-79c9-4c52-8087-079d4e1ca0fb",
+      "ts": "2026-06-01T07:12:25.930966Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T07:12:54.991000Z"
+    },
+    {
+      "sid": "80d4427c-c2cf-4a12-bf1f-8c8999daa08b",
+      "ts": "2026-06-01T07:21:05.253878Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T07:21:37.870000Z"
+    },
+    {
+      "sid": "491e50d7-c5c5-445f-9338-1cfa93277a8a",
+      "ts": "2026-06-01T11:33:56.78552Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T11:34:37.872000Z"
+    },
+    {
+      "sid": "c8591bb1-a132-41ac-8716-455328b4451b",
+      "ts": "2026-06-01T11:39:35.538325Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T11:40:14.644000Z"
+    },
+    {
+      "sid": "c86f213c-9cb6-4afe-8b13-f4affdef8ebf",
+      "ts": "2026-06-01T11:42:51.884027Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T11:43:21.447000Z"
+    },
+    {
+      "sid": "1d906b46-1528-44ab-9d3a-d2e1a156a6a0",
+      "ts": "2026-06-01T12:06:39.704589Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T12:07:12.956000Z"
+    },
+    {
+      "sid": "b1f4a288-67fc-47ad-b533-da8896a55254",
+      "ts": "2026-06-01T12:15:33.036758Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T12:17:13.852000Z"
+    },
+    {
+      "sid": "30ba458e-440b-4440-b36a-38c943841d0d",
+      "ts": "2026-06-01T12:25:09.219521Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T12:25:44.303000Z"
+    },
+    {
+      "sid": "32a22c10-fa23-41f5-a0b9-a991f5a0e9d4",
+      "ts": "2026-06-01T12:36:02.925712Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-01T12:40:04.015000Z"
+    },
+    {
+      "sid": "1e8d1681-fe1b-45b8-8a9d-fecb55966f91",
+      "ts": "2026-06-02T10:40:25.531061Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-02T10:41:02.180000Z"
+    },
+    {
+      "sid": "c2782da2-f5fb-4d20-8d7f-1912b082442f",
+      "ts": "2026-06-03T10:36:11.896347Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 7,
+      "max_turn_ts": "2026-06-03T10:38:29.248000Z"
+    },
+    {
+      "sid": "7eb2a9c1-7bf1-447d-8b78-54a7ca34c5dd",
+      "ts": "2026-06-03T11:21:00.089473Z",
+      "repo": "ababushkin/agent-skills",
+      "n": 11,
+      "max_turn_ts": "2026-06-03T11:21:14.226000Z"
+    },
+    {
+      "sid": "2ac7fd97-1205-4394-b611-66801023991e",
+      "ts": "2026-06-04T05:34:36.776369Z",
+      "repo": "ababushkin/agent-skills",
+      "n": 1,
+      "max_turn_ts": "2026-06-04T04:57:56.236000Z"
+    },
+    {
+      "sid": "70b76da3-512d-488b-ad8c-5d7eac8a2466",
+      "ts": "2026-06-04T09:23:27.987913Z",
+      "repo": "ababushkin/agent-skills",
+      "n": 19,
+      "max_turn_ts": "2026-06-04T09:23:21.902000Z"
+    },
+    {
+      "sid": "1f92bd55-c42f-4f73-a09c-5c6f0e932f6d",
+      "ts": "2026-06-09T01:27:15.349671Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T01:28:11.501000Z"
+    },
+    {
+      "sid": "7bc97e03-91e4-4a14-9eb2-c5f3216502b5",
+      "ts": "2026-06-09T01:31:03.841168Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T01:31:33.675000Z"
+    },
+    {
+      "sid": "35646832-305c-468b-8c4f-9d2cfe34f03c",
+      "ts": "2026-06-09T01:36:06.578354Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T01:37:03.840000Z"
+    },
+    {
+      "sid": "923a6d88-a95e-4f26-ab87-933d075ba77f",
+      "ts": "2026-06-09T01:38:02.597162Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T01:38:55.879000Z"
+    },
+    {
+      "sid": "1877d397-9e6a-4e5d-b1b7-8af63dc5d29a",
+      "ts": "2026-06-09T01:48:36.207899Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T01:49:25.623000Z"
+    },
+    {
+      "sid": "606a8a53-c1df-4110-a061-50c5b05f0c26",
+      "ts": "2026-06-09T02:19:09.010182Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 11,
+      "max_turn_ts": "2026-06-09T02:19:09.073000Z"
+    },
+    {
+      "sid": "c3abf14c-1d8a-4576-a7f4-2bdb4e837caa",
+      "ts": "2026-06-10T13:37:42.152661Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-06-10T13:39:09.704000Z"
+    },
+    {
+      "sid": "a95bd4f2-6071-4223-99a4-6bad2e4eb2bc",
+      "ts": "2026-06-10T13:53:45.591654Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-10T13:53:55.163000Z"
+    },
+    {
+      "sid": "3569aade-b0eb-4a53-ac13-edb3835ee9c1",
+      "ts": "2026-06-10T14:25:17.1982Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 4,
+      "max_turn_ts": "2026-06-10T14:02:16.205000Z"
+    },
+    {
+      "sid": "8bd520d6-f6d8-4720-ab81-ced4d8fc9d8e",
+      "ts": "2026-06-10T14:25:17.447595Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 3,
+      "max_turn_ts": "2026-06-10T14:15:23.256000Z"
+    },
+    {
+      "sid": "9449a08a-95ad-4518-a06c-c2d335a49fa1",
+      "ts": "2026-06-11T07:33:29.828806Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 3,
+      "max_turn_ts": "2026-06-11T07:33:32.596000Z"
+    },
+    {
+      "sid": "f40796fd-6387-435c-a9a4-68d54437d4b9",
+      "ts": "2026-06-11T11:14:25.022988Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-06-11T11:14:50.344000Z"
+    },
+    {
+      "sid": "8fc5f275-53e9-41c9-967d-56d5c8c8199f",
+      "ts": "2026-06-11T11:45:02.303198Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-11T11:45:20.438000Z"
+    },
+    {
+      "sid": "01564105-a66e-4224-8df0-00452ce98beb",
+      "ts": "2026-06-11T12:06:33.591759Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-06-11T12:08:15.208000Z"
+    },
+    {
+      "sid": "70ca22cc-7747-4dae-919d-904255ce1e9f",
+      "ts": "2026-06-11T13:14:57.695056Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 3,
+      "max_turn_ts": "2026-06-11T07:37:00.346000Z"
+    },
+    {
+      "sid": "b03df76c-a39c-480c-91c5-0d7df4fab4d2",
+      "ts": "2026-06-11T13:14:58.675906Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 10,
+      "max_turn_ts": "2026-06-11T13:13:13.946000Z"
+    },
+    {
+      "sid": "399a9db7-09ca-4a0f-bf6e-dc9b441ed754",
+      "ts": "2026-06-11T13:50:02.386739Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-11T13:51:52.078000Z"
+    },
+    {
+      "sid": "e55be82e-a00f-4dea-861b-0d6182ca585c",
+      "ts": "2026-06-11T13:50:06.27593Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 10,
+      "max_turn_ts": "2026-06-11T13:54:20.653000Z"
+    },
+    {
+      "sid": "fa87083e-6575-49ff-92bc-1669281dc2de",
+      "ts": "2026-06-11T14:24:50.322256Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-06-11T14:24:58.839000Z"
+    },
+    {
+      "sid": "3f105d3f-d1ec-452c-a0d6-48fbe25a67e1",
+      "ts": "2026-06-12T05:34:14.232147Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 9,
+      "max_turn_ts": "2026-06-12T05:33:48.553000Z"
+    },
+    {
+      "sid": "bc1a244e-0d8e-4e46-9979-36fcf232d271",
+      "ts": "2026-06-12T05:34:18.129226Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 8,
+      "max_turn_ts": "2026-06-12T05:36:18.057000Z"
+    },
+    {
+      "sid": "35850593-52c3-4dd2-a8c8-5662649f2120",
+      "ts": "2026-06-15T02:29:02.484283Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 6,
+      "max_turn_ts": "2026-06-15T02:29:12.017000Z"
+    },
+    {
+      "sid": "b21c4fab-181d-4398-b12c-faca99cca28f",
+      "ts": "2026-06-15T03:36:04.369738Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 2,
+      "max_turn_ts": "2026-06-15T03:35:54.790000Z"
+    },
+    {
+      "sid": "8481177d-6479-4a25-87ac-ad5dcf3f59c5",
+      "ts": "2026-06-15T06:39:46.19951Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 3,
+      "max_turn_ts": "2026-06-15T06:40:08.771000Z"
+    },
+    {
+      "sid": "1e976e2b-d1ef-4117-8571-ed46c0326009",
+      "ts": "2026-06-15T09:24:34.438749Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 16,
+      "max_turn_ts": "2026-06-15T06:22:37.247000Z"
+    },
+    {
+      "sid": "440dd9a4-0263-4c6b-8045-a5d910388559",
+      "ts": "2026-06-15T09:24:38.393325Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 6,
+      "max_turn_ts": "2026-06-15T09:24:42.208000Z"
+    },
+    {
+      "sid": "e4e003ae-fe39-4c0f-ba1b-ee6c3cb06de7",
+      "ts": "2026-06-15T12:00:45.480138Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 5,
+      "max_turn_ts": "2026-06-15T12:00:51.371000Z"
+    },
+    {
+      "sid": "d05b361c-502f-4bb2-bdf3-c521dc658203",
+      "ts": "2026-06-15T12:21:14.265799Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-15T12:21:16.160000Z"
+    },
+    {
+      "sid": "aa7cbfb2-438f-4c7a-8d69-6aee82735186",
+      "ts": "2026-06-15T13:01:42.67232Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 7,
+      "max_turn_ts": "2026-06-10T13:25:05.464000Z"
+    },
+    {
+      "sid": "24b853ab-62c0-4bd0-a254-57d960b5d333",
+      "ts": "2026-06-15T13:24:32.47202Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 4,
+      "max_turn_ts": "2026-06-15T13:24:34.838000Z"
+    },
+    {
+      "sid": "00c36043-a07a-4098-bfde-f660823496ea",
+      "ts": "2026-06-15T13:46:21.506237Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 3,
+      "max_turn_ts": "2026-06-15T13:46:32.600000Z"
+    },
+    {
+      "sid": "264e5b2f-5785-4777-b34a-1d5d62afc3b0",
+      "ts": "2026-06-15T13:46:25.414194Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 6,
+      "max_turn_ts": "2026-06-15T13:46:46.753000Z"
+    },
+    {
+      "sid": "2ad1f961-3204-4cc4-b272-6cfa751c1458",
+      "ts": "2026-06-15T13:46:26.122246Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 6,
+      "max_turn_ts": "2026-06-15T13:11:12.464000Z"
+    },
+    {
+      "sid": "b8f7dd52-5347-4fd5-891a-6628556fef34",
+      "ts": "2026-06-15T13:46:26.486726Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 3,
+      "max_turn_ts": "2026-06-15T13:21:14.486000Z"
+    },
+    {
+      "sid": "3689fb8b-b88f-4dbd-b4e1-c68716253509",
+      "ts": "2026-06-15T15:07:00.609663Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 13,
+      "max_turn_ts": "2026-06-15T15:07:03.340000Z"
+    },
+    {
+      "sid": "10755336-9ce6-4395-9a79-1aded556761f",
+      "ts": "2026-06-16T03:21:29.970703Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 16,
+      "max_turn_ts": "2026-06-16T03:21:37.165000Z"
+    },
+    {
+      "sid": "423a1a63-1d92-4bad-babf-f419c8e20b56",
+      "ts": "2026-06-16T04:33:39.563901Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 1,
+      "max_turn_ts": "2026-06-16T04:33:43.612000Z"
+    },
+    {
+      "sid": "8e5d8abc-be80-4ad5-b14e-86e32498827d",
+      "ts": "2026-06-16T11:31:56.215142Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 15,
+      "max_turn_ts": "2026-06-10T13:23:34.406000Z"
+    },
+    {
+      "sid": "2d02965c-927c-49fa-a734-7e0c1d27a4aa",
+      "ts": "2026-06-16T11:35:14.429628Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 8,
+      "max_turn_ts": "2026-06-16T11:35:27.643000Z"
+    },
+    {
+      "sid": "8971829c-b804-40a0-acc7-a4a251b9c8c1",
+      "ts": "2026-06-16T11:50:22.758629Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 3,
+      "max_turn_ts": "2026-06-16T11:50:30.277000Z"
+    },
+    {
+      "sid": "91fcd0b4-19fb-4b40-9590-836f10000b70",
+      "ts": "2026-06-16T12:21:08.84005Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 1,
+      "max_turn_ts": "2026-06-16T12:21:23.197000Z"
+    },
+    {
+      "sid": "0032be59-3fe2-4f0d-a709-ca383d6f1639",
+      "ts": "2026-06-16T12:37:14.700877Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 5,
+      "max_turn_ts": "2026-06-16T12:38:39.214000Z"
+    },
+    {
+      "sid": "11c6f1eb-b4f3-4ea0-be22-0677198f8a63",
+      "ts": "2026-06-16T13:26:18.469715Z",
+      "repo": "ababushkin/workflow-hooks",
+      "n": 2,
+      "max_turn_ts": "2026-06-16T13:26:20.699000Z"
+    },
+    {
+      "sid": "9d3fc796-7754-4c5c-bec8-86338a20ba50",
+      "ts": "2026-06-16T13:31:12.306244Z",
+      "repo": "ababushkin/agent-skills-shaper",
+      "n": 8,
+      "max_turn_ts": "2026-06-16T13:25:47.605000Z"
+    },
+    {
+      "sid": "0ea14c36-4388-4f5f-9e9c-7327e3607066",
+      "ts": "2026-06-17T02:49:21.749779Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 16,
+      "max_turn_ts": "2026-06-17T02:48:51.988000Z"
+    },
+    {
+      "sid": "9995327e-05ce-48e0-9fc5-535511800b3c",
+      "ts": "2026-06-17T12:18:54.295866Z",
+      "repo": "ababushkin/drain-cycle",
+      "n": 2,
+      "max_turn_ts": "2026-06-17T12:20:23.112000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

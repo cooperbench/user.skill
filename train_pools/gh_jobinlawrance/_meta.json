@@ -1,0 +1,397 @@
+{
+  "developer": "gh:jobinlawrance",
+  "slug": "gh_jobinlawrance",
+  "Tstar": "2026-07-02T17:29:39.180994Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 55,
+  "n_human_turns": 1657,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "b5280b46-cf69-428d-8d41-a1aa8a0897ed",
+      "ts": "2026-02-14T04:53:19.884745Z",
+      "repo": "ravencloak-org/ravencloak",
+      "n": 161,
+      "max_turn_ts": "2026-02-14T04:53:16.960000Z"
+    },
+    {
+      "sid": "f5f37e1e-0f3a-42e3-ad72-5e07b9313ead",
+      "ts": "2026-02-14T04:56:10.696000+00:00",
+      "repo": "?",
+      "n": 81,
+      "max_turn_ts": "2026-02-14T18:54:32.324000Z"
+    },
+    {
+      "sid": "8d69995d-cfa8-4a57-b7ee-9dcdcc3f7bab",
+      "ts": "2026-03-14T11:54:27.960000+00:00",
+      "repo": "?",
+      "n": 57,
+      "max_turn_ts": "2026-03-14T12:09:52.332000Z"
+    },
+    {
+      "sid": "0dec1d80-ca41-4a70-8938-0d4304246229",
+      "ts": "2026-03-14T14:51:07.10713Z",
+      "repo": "ravencloak-org/ravencloak",
+      "n": 1,
+      "max_turn_ts": "2026-03-14T14:51:00.879000Z"
+    },
+    {
+      "sid": "a1fcd2a6-391b-4e22-a7e8-9e74409530f4",
+      "ts": "2026-03-23T06:20:32.071995Z",
+      "repo": "ravencloak-org/ravencloak",
+      "n": 2,
+      "max_turn_ts": "2026-03-23T06:20:30.855000Z"
+    },
+    {
+      "sid": "25edfaf0-87c0-4b2a-b464-1825d1e95d71",
+      "ts": "2026-03-27T17:25:50.211002Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 45,
+      "max_turn_ts": "2026-03-27T17:25:45.477000Z"
+    },
+    {
+      "sid": "906b034e-2a90-49bc-9d25-7be3ec11307b",
+      "ts": "2026-03-27T22:49:30.076207Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 8,
+      "max_turn_ts": "2026-03-27T22:42:21.701000Z"
+    },
+    {
+      "sid": "49d36a53-fe40-4d89-b1b8-699b7e008f53",
+      "ts": "2026-03-28T00:38:33.883586Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 31,
+      "max_turn_ts": "2026-03-28T00:38:29.003000Z"
+    },
+    {
+      "sid": "7b55dc61-aaae-4cd5-8464-dacad755f243",
+      "ts": "2026-03-28T07:43:21.090006Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 19,
+      "max_turn_ts": "2026-03-28T07:43:17.198000Z"
+    },
+    {
+      "sid": "fc9e8c4e-a337-4a7d-ae04-548ba3d20493",
+      "ts": "2026-04-02T07:53:26.304463Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 63,
+      "max_turn_ts": "2026-04-02T07:29:29.253000Z"
+    },
+    {
+      "sid": "31505fc3-7823-4449-9e43-09e3ff8b64c7",
+      "ts": "2026-04-04T14:15:05.203705Z",
+      "repo": "?",
+      "n": 33,
+      "max_turn_ts": "2026-04-02T15:36:15.122000Z"
+    },
+    {
+      "sid": "bf94df2a-b46a-4b03-a28d-d0b909fae942",
+      "ts": "2026-04-04T14:50:10.024469Z",
+      "repo": "ravencloak-org/ravencloak",
+      "n": 12,
+      "max_turn_ts": "2026-04-04T14:50:05.776000Z"
+    },
+    {
+      "sid": "a3bdb71e-7c57-4524-9f2b-d19b2f441918",
+      "ts": "2026-04-06T13:08:28.564321Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 11,
+      "max_turn_ts": "2026-04-05T23:15:49.697000Z"
+    },
+    {
+      "sid": "fe359f94-fb7f-4d6d-a2a4-a96ca6bb9fac",
+      "ts": "2026-04-07T09:48:52.393108Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 12,
+      "max_turn_ts": "2026-04-07T09:48:48.299000Z"
+    },
+    {
+      "sid": "facb1bb1-3f38-4aa3-b85c-431a05541fe7",
+      "ts": "2026-04-08T16:17:44.759644Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 68,
+      "max_turn_ts": "2026-04-08T15:45:47.325000Z"
+    },
+    {
+      "sid": "b8cbf483-2ecd-48c1-b57f-151f9ee615c5",
+      "ts": "2026-04-08T17:10:05.154993Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 12,
+      "max_turn_ts": "2026-04-08T17:10:00.581000Z"
+    },
+    {
+      "sid": "59ff5ba9-552f-401b-be49-26519ba7fd6b",
+      "ts": "2026-04-09T09:26:16.701612Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 2,
+      "max_turn_ts": "2026-04-09T09:26:10.001000Z"
+    },
+    {
+      "sid": "34272b39-a087-4915-a239-bf166444203b",
+      "ts": "2026-04-10T12:32:11.561181Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 11,
+      "max_turn_ts": "2026-04-10T12:32:05.319000Z"
+    },
+    {
+      "sid": "a8e822f4-2ee5-46f6-9a0b-5106d07abfd2",
+      "ts": "2026-04-10T12:58:43.068107Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 19,
+      "max_turn_ts": "2026-04-10T12:58:36.558000Z"
+    },
+    {
+      "sid": "a4aae4ac-99a3-40dc-9381-e9296b555c84",
+      "ts": "2026-04-10T15:18:19.084974Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 30,
+      "max_turn_ts": "2026-04-10T15:18:14.157000Z"
+    },
+    {
+      "sid": "ab618a0e-ea92-4b6f-bafe-c387ff9ec7b8",
+      "ts": "2026-04-10T18:17:24.313338Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 19,
+      "max_turn_ts": "2026-04-10T17:07:44.179000Z"
+    },
+    {
+      "sid": "cfa487ee-ce1a-4dd2-b6b8-4701f22a1272",
+      "ts": "2026-04-12T13:21:11.800588Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 27,
+      "max_turn_ts": "2026-04-12T13:21:04.469000Z"
+    },
+    {
+      "sid": "622fd2c2-651a-482c-910c-823866b1cc5a",
+      "ts": "2026-04-12T13:30:23.035115Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 8,
+      "max_turn_ts": "2026-04-12T13:30:15.013000Z"
+    },
+    {
+      "sid": "cda62b25-b8ee-4d57-9b22-17d0cb7aa515",
+      "ts": "2026-04-12T14:38:26.174103Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 1,
+      "max_turn_ts": "2026-04-12T14:38:17.784000Z"
+    },
+    {
+      "sid": "e0b67fff-5c46-4ec7-bad7-744b74d5f40a",
+      "ts": "2026-04-12T15:05:34.686141Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 10,
+      "max_turn_ts": "2026-04-12T15:05:25.963000Z"
+    },
+    {
+      "sid": "f19aadcf-f9ec-4409-bd21-e4546e0b0eb1",
+      "ts": "2026-04-13T04:15:35.660553Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 19,
+      "max_turn_ts": "2026-04-13T04:15:27.383000Z"
+    },
+    {
+      "sid": "96f59fa8-7d26-4db6-b7a5-188ef7c09257",
+      "ts": "2026-04-13T11:59:35.978368Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 46,
+      "max_turn_ts": "2026-04-13T11:59:27.158000Z"
+    },
+    {
+      "sid": "c9ce9215-d1ba-4965-83fd-eba9b611dad2",
+      "ts": "2026-04-17T18:18:21.966734Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 113,
+      "max_turn_ts": "2026-04-17T18:18:07.069000Z"
+    },
+    {
+      "sid": "162e458f-d4b7-41d7-ac1a-5261c1467a88",
+      "ts": "2026-04-19T16:56:38.568836Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 5,
+      "max_turn_ts": "2026-04-19T16:56:07.766000Z"
+    },
+    {
+      "sid": "38e7abd3-a889-4bee-b47b-56fe698be1ed",
+      "ts": "2026-04-19T17:00:21.430766Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 5,
+      "max_turn_ts": "2026-04-19T17:00:17.210000Z"
+    },
+    {
+      "sid": "d345fce6-bd3a-4238-9b1a-f18c96b86762",
+      "ts": "2026-04-19T17:27:14.573586Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 1,
+      "max_turn_ts": "2026-04-19T17:27:10.184000Z"
+    },
+    {
+      "sid": "344abf44-1690-438f-9eda-1ce9a0e106bc",
+      "ts": "2026-04-19T18:22:31.610787Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 10,
+      "max_turn_ts": "2026-04-19T18:22:27.128000Z"
+    },
+    {
+      "sid": "30bae7da-9b26-4041-9dd0-7458662d72fb",
+      "ts": "2026-05-06T12:50:31.292881Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 52,
+      "max_turn_ts": "2026-04-19T16:37:50.802000Z"
+    },
+    {
+      "sid": "ef2e7b6a-2371-4780-a8b3-804354864df6",
+      "ts": "2026-05-06T12:50:31.923452Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 7,
+      "max_turn_ts": "2026-05-01T04:06:37.185000Z"
+    },
+    {
+      "sid": "68332225-4551-471d-9cd0-ce8181e90855",
+      "ts": "2026-05-12T18:22:25.801829Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 28,
+      "max_turn_ts": "2026-05-09T01:03:12.055000Z"
+    },
+    {
+      "sid": "758b8d0b-d93f-4ed6-9c1c-cb894f7c76cf",
+      "ts": "2026-05-12T18:22:26.345026Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 6,
+      "max_turn_ts": "2026-05-07T15:13:50.188000Z"
+    },
+    {
+      "sid": "a5c572c5-a567-4da7-875e-979922a0eb76",
+      "ts": "2026-05-12T18:22:53.757889Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 8,
+      "max_turn_ts": "2026-05-12T17:16:05.131000Z"
+    },
+    {
+      "sid": "23a571e0-47be-4147-b2ae-7e7191521414",
+      "ts": "2026-05-12T18:38:59.268769Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 38,
+      "max_turn_ts": "2026-05-12T18:38:29.255000Z"
+    },
+    {
+      "sid": "8c912b9a-a384-4f00-93fc-dc47af90e115",
+      "ts": "2026-05-12T18:54:49.851362Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 8,
+      "max_turn_ts": "2026-05-12T18:54:18.318000Z"
+    },
+    {
+      "sid": "96a9ccf6-73df-4951-9053-b40c67817f09",
+      "ts": "2026-05-16T14:26:36.425329Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 19,
+      "max_turn_ts": "2026-05-16T14:26:00.701000Z"
+    },
+    {
+      "sid": "a98b275b-1d14-4bd9-bc6d-fe240361da7e",
+      "ts": "2026-05-16T18:07:09.135844Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 27,
+      "max_turn_ts": "2026-05-16T17:39:18.657000Z"
+    },
+    {
+      "sid": "4a604303-c534-47a5-b60a-68cbe34ce70f",
+      "ts": "2026-05-16T20:16:09.328795Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 42,
+      "max_turn_ts": "2026-05-16T20:11:52.703000Z"
+    },
+    {
+      "sid": "8e572083-f33f-49ca-b4f8-012e8de59af1",
+      "ts": "2026-05-16T20:16:10.083046Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 17,
+      "max_turn_ts": "2026-05-16T20:11:09.854000Z"
+    },
+    {
+      "sid": "8a28770d-0bb7-4b1c-9673-f3f9210d4525",
+      "ts": "2026-05-26T13:00:02.932158Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 8,
+      "max_turn_ts": "2026-05-26T12:59:55.771000Z"
+    },
+    {
+      "sid": "69464040-203b-459e-a602-6864c7e2ba04",
+      "ts": "2026-06-05T10:23:35.631029Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 51,
+      "max_turn_ts": "2026-06-05T10:18:28.549000Z"
+    },
+    {
+      "sid": "337cea8f-5a6b-4199-bc68-1de07b76ec01",
+      "ts": "2026-06-06T22:41:11.523594Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 129,
+      "max_turn_ts": "2026-06-06T18:24:58.580000Z"
+    },
+    {
+      "sid": "d8595691-8e54-4f3b-9d3c-e4e6c0e88193",
+      "ts": "2026-06-07T19:13:54.039575Z",
+      "repo": "ravencloak-org/Raven",
+      "n": 55,
+      "max_turn_ts": "2026-06-07T19:13:30.399000Z"
+    },
+    {
+      "sid": "9237228e-d108-44c2-bc18-a716df89dc78",
+      "ts": "2026-06-07T22:03:59.559273Z",
+      "repo": "ravencloak-org/caw",
+      "n": 5,
+      "max_turn_ts": "2026-06-07T21:56:14.837000Z"
+    },
+    {
+      "sid": "ed110f40-811f-4948-82a9-896e3ea3ca15",
+      "ts": "2026-06-09T05:14:25.019122Z",
+      "repo": "ravencloak-org/caw",
+      "n": 24,
+      "max_turn_ts": "2026-06-09T05:14:21.249000Z"
+    },
+    {
+      "sid": "05f2b245-4c5b-4610-a92d-b43c78801f3b",
+      "ts": "2026-06-11T17:45:29.715653Z",
+      "repo": "ravencloak-org/caw",
+      "n": 2,
+      "max_turn_ts": "2026-06-11T14:29:33.946000Z"
+    },
+    {
+      "sid": "e0f29129-9b30-4898-825a-b332ecacacea",
+      "ts": "2026-06-11T17:45:29.97506Z",
+      "repo": "ravencloak-org/caw",
+      "n": 34,
+      "max_turn_ts": "2026-06-11T15:16:30.211000Z"
+    },
+    {
+      "sid": "4a720074-2dd7-4aed-b82b-370ec4890a6a",
+      "ts": "2026-06-29T04:46:14.961804Z",
+      "repo": "ravencloak-org/tiny",
+      "n": 27,
+      "max_turn_ts": "2026-06-29T04:46:11.643000Z"
+    },
+    {
+      "sid": "5e379906-7378-4207-8b64-361d6a3dd262",
+      "ts": "2026-06-29T06:10:21.678797Z",
+      "repo": "ravencloak-org/tiny",
+      "n": 23,
+      "max_turn_ts": "2026-06-29T06:10:17.993000Z"
+    },
+    {
+      "sid": "8800a864-e1cb-4d13-9744-9d16ef2a83c7",
+      "ts": "2026-06-30T22:54:41.527208Z",
+      "repo": "ravencloak-org/tiny",
+      "n": 87,
+      "max_turn_ts": "2026-06-30T22:54:34.515000Z"
+    },
+    {
+      "sid": "c651ee02-cf8b-46ac-af2c-803058706c9a",
+      "ts": "2026-07-01T17:32:44.22522Z",
+      "repo": "ravencloak-org/tiny",
+      "n": 18,
+      "max_turn_ts": "2026-07-01T17:32:40.028000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

@@ -1,0 +1,2492 @@
+# Dataset manifest for userbench/UserBench
+# Rebuild: harbor add --scan ../datasets/eval-620 --to .
+# Publish: yes | harbor publish --public -t v2 datasets/eval-620 packages/UserBench
+
+[dataset]
+name = "userbench/UserBench"
+description = "UserBench eval: 620 noprofile next-message tasks across 62 developers (exactly 10 shortest-history points per developer with ≥10 eval points)."
+keywords = [ "userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile",]
+[[dataset.authors]]
+name = "UserBench"
+
+
+[[tasks]]
+name = "userbench/135yshr__196168af"
+digest = "sha256:b7fbb866871aec60410283747e195f671988c8a0ec8f331ea1e5534d9e7d414c"
+
+[[tasks]]
+name = "userbench/135yshr__446e7a75"
+digest = "sha256:1a99c856299f6fb1b7f1d8652262b28c6962b01ff09eb3d63a4f323f31bcb28e"
+
+[[tasks]]
+name = "userbench/135yshr__488a7841"
+digest = "sha256:f0347e6758d18a4aee14eee959667a2ecbd22d619c60bfa7b5fc424fc95670bd"
+
+[[tasks]]
+name = "userbench/135yshr__676c5289"
+digest = "sha256:baf7886e812530b85630231cf2ac3af0b6e0af14af164bdd2a6fe8e1b01ce186"
+
+[[tasks]]
+name = "userbench/135yshr__824ae900"
+digest = "sha256:b082ca672679a3e745328a4a0d0dfb8ee769e4f607eb21ec6e165c41376746a2"
+
+[[tasks]]
+name = "userbench/135yshr__b4924a51"
+digest = "sha256:6760c449a4f207ba740275c6e269916bbb9194ac12a80c6211e7c00277619738"
+
+[[tasks]]
+name = "userbench/135yshr__cf5e60ca"
+digest = "sha256:15cb1f3caa193e95f31b696cf786283394d1710a89f550e5b073a1594851143b"
+
+[[tasks]]
+name = "userbench/135yshr__d1edc0a3"
+digest = "sha256:85d034ca7a3b17a772f2988e5c6d4483ac73d9d413ec4e741b173e15146ad5b8"
+
+[[tasks]]
+name = "userbench/135yshr__e3ee00a3"
+digest = "sha256:db21e55d0ca4bc17d4a6e5aa75bd64c6038b6b38267e85bc122284c5901ed5c4"
+
+[[tasks]]
+name = "userbench/135yshr__e4b9747c"
+digest = "sha256:6901ff7b5f638819daeb00db2e498be636137e95dfa6bd709bcb5102ae5a0571"
+
+[[tasks]]
+name = "userbench/4thwithme__1e9b9622"
+digest = "sha256:ac097e21efd143558107907079fef35a788cc59b3e48c72dd7b7b06d1a15f406"
+
+[[tasks]]
+name = "userbench/4thwithme__404e13d3"
+digest = "sha256:e2c72cf1980b359491a4d97eaf94fa806823aae0b27b52dafc919cd95a6cd135"
+
+[[tasks]]
+name = "userbench/4thwithme__56e34cff"
+digest = "sha256:40ab254aa087a9c75581c3e8a2c0fe02d16ff5ec22490fe841556a98960b7cc9"
+
+[[tasks]]
+name = "userbench/4thwithme__725a3b3c"
+digest = "sha256:28d0cf47b6d67af4b8d1609ed45384448c36b93750b86485e480df18cb3fa001"
+
+[[tasks]]
+name = "userbench/4thwithme__96d539a8"
+digest = "sha256:1c443d4997f0d2355c3fbd397d9565a03f3e52786ba003fe86414e76c31b1c35"
+
+[[tasks]]
+name = "userbench/4thwithme__a2549fc8"
+digest = "sha256:7f32a20cae91167cb4e0aaf284e6d1dec87a005b09f8a79bc3271d30f2239be1"
+
+[[tasks]]
+name = "userbench/4thwithme__c9912712"
+digest = "sha256:f36a7b31c0f678b1d03d341ad37f05338c407a1c465369a22557accb1f99876b"
+
+[[tasks]]
+name = "userbench/4thwithme__d2c038e3"
+digest = "sha256:b1b0c4bd25caf1a687715dcd15d6161436b33a7ef1f042861b4124e996bc31a7"
+
+[[tasks]]
+name = "userbench/4thwithme__db958e1f"
+digest = "sha256:a97eb31ff85fe11d31427dcbb3e022f67539201200ee3086760bbdc788e494da"
+
+[[tasks]]
+name = "userbench/4thwithme__e0b170b3"
+digest = "sha256:2a0b38641fad2cdef9e113f78b42015dc5da15b022726a3930ff019beed8637f"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__2951d3d1"
+digest = "sha256:1bb3b67b7b2fafab325ae46ed71b615c7ae2f32052535ded81f7b49efeee0a53"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__63f9b284"
+digest = "sha256:867635389f9f89f8e47a31ba9f2d4ce5e75319915941e14a76d525c74f3717f4"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__6ab6543d"
+digest = "sha256:81a643033cc7dad859f1b4e049cdda995de51a11fce02be2124ff83d3559b3ee"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__744c71ca"
+digest = "sha256:aa61d5c89ae00fd29ee76305c9187f8b99ab9a9ab76c2aca446ab6553995bcaa"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__9f401a7b"
+digest = "sha256:2056fb7d621be79ef4ea4f7821abb414ccdad48d5e255fe7791a96db0d6a414b"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__a018815b"
+digest = "sha256:72482f20eb33c793695894c3946f3e7af8010acf7d576f930835087b10166218"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__cf912278"
+digest = "sha256:00a2ffdf3f1583f335e9c7c737ebea670b11d8506b44edb7f86e7ab316d521d2"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__d2ea0f07"
+digest = "sha256:6c57572ddbb50da469079b769982844f3435255f5d6ea7937d4c3eca661511d9"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__d33c5ef7"
+digest = "sha256:8b55ada3c25ae3265a81f1c9fe8626998b440e9d664d357e55feb98ef0c5cd65"
+
+[[tasks]]
+name = "userbench/ET-NoahDolev__e4e19c4b"
+digest = "sha256:153d3c3e6ee7c103d74ae85fe7abcfe255b7e0773869da70293e9e33f9ba8491"
+
+[[tasks]]
+name = "userbench/FSM1__123d9f43"
+digest = "sha256:c4ac31ba3df49aff0ff5ce5619355e35237fc4c0e48fc9c6671762d9c8199adf"
+
+[[tasks]]
+name = "userbench/FSM1__1fe3ba80"
+digest = "sha256:7102a7e1b06f6e545c10b93ed0c8ab03b2c1dc868e025d29cd1cbd1e6dde30a3"
+
+[[tasks]]
+name = "userbench/FSM1__271c699b"
+digest = "sha256:65256bd21ddc6c915f934fb7913457fbb58b0e62ee85beaad5292e44018c909c"
+
+[[tasks]]
+name = "userbench/FSM1__53bf4e87"
+digest = "sha256:26876a9a61df33135284644f3872c0f15f88de6029a8717031d5fda14e882c12"
+
+[[tasks]]
+name = "userbench/FSM1__8d0fb85e"
+digest = "sha256:10e81cf712222cdc105e230290361d91b39995e277a1ac92bf4710c26a382aea"
+
+[[tasks]]
+name = "userbench/FSM1__9ca02217"
+digest = "sha256:794be19ead7047d64c87b3330e908e0b67ce85952ce94a716e63ee85fd0337f8"
+
+[[tasks]]
+name = "userbench/FSM1__a876f41a"
+digest = "sha256:86be788f7220705849a30da74d7ac080b38c0a28bcdcd3b86d2fdd0ce4eea570"
+
+[[tasks]]
+name = "userbench/FSM1__be1ec78f"
+digest = "sha256:45b4f286d99b91913819368433f5fb4e00eaa8599052e927c710f3f6978b1f6f"
+
+[[tasks]]
+name = "userbench/FSM1__d3bad63b"
+digest = "sha256:0f99df8a98e9a1e44e7e740f6e6bc125b95bdfe6e9486b615b49ef7f0ca7b645"
+
+[[tasks]]
+name = "userbench/FSM1__e064c641"
+digest = "sha256:848646c0b3205db15c14e6879019f8647701ef04dd60ec7e9c6fd93ba820488d"
+
+[[tasks]]
+name = "userbench/KeKs0r__638dbf35"
+digest = "sha256:e298808950d5d9d7b9e7ec0538ec1261ec28bcce253becf605e1bf4836b35866"
+
+[[tasks]]
+name = "userbench/KeKs0r__7d6d7ccd"
+digest = "sha256:898a279644dc3f01f422c3721b428f86c428c4b505eb18ac7d4150922685791b"
+
+[[tasks]]
+name = "userbench/KeKs0r__90c80d6d"
+digest = "sha256:e97edb9e690c27bf9b6a1d6bf93d2b0d95f76e3bc2199aac15d2825ab82ec657"
+
+[[tasks]]
+name = "userbench/KeKs0r__a3482769"
+digest = "sha256:d0fd62f828ff62455b54aee09f7951fff1432d0f9c2e76c5c89aadcd4b5637c6"
+
+[[tasks]]
+name = "userbench/KeKs0r__a3599b78"
+digest = "sha256:8d2f9be46323347fe4eaef5f781cce3c9d6494d773a3d67d70778f86423abaeb"
+
+[[tasks]]
+name = "userbench/KeKs0r__a3626c5d"
+digest = "sha256:528bfcf98a08ae6f0a7345dde7a16258c0d3525eacbe0be29294736392a8b6d4"
+
+[[tasks]]
+name = "userbench/KeKs0r__ac28eed7"
+digest = "sha256:38f90b9ac2e1963faae2da0ffbcfb27ac1effde08bd27b426de64757cfa3a6cd"
+
+[[tasks]]
+name = "userbench/KeKs0r__c7dd8b9b"
+digest = "sha256:c00da6f59133be8539f6fedf821e672fd7b8efc967aa7bb672d9be2b922ebe01"
+
+[[tasks]]
+name = "userbench/KeKs0r__dbbc1fb2"
+digest = "sha256:b2c55ea17b083c92d4c3bb6ed89c1c770b7fcbf0f5ce5ddf42c381cdb2187f9d"
+
+[[tasks]]
+name = "userbench/KeKs0r__f7d88343"
+digest = "sha256:4a0ce2462acac763d8e61f2127ee6049ac10723f3170a44ecb5bc9f894da43f1"
+
+[[tasks]]
+name = "userbench/MohammedMqat__09e14a28"
+digest = "sha256:e820a7cf99e55e13e7c433e28274ab847737130d3a78f90227799f341f4dd7a2"
+
+[[tasks]]
+name = "userbench/MohammedMqat__27bcfe81"
+digest = "sha256:6b3327b0b1847b0b644653a95acad0e2065b7d937a53bd03a940e0b32870a128"
+
+[[tasks]]
+name = "userbench/MohammedMqat__4e4e7193"
+digest = "sha256:1d4184afb68d6d4976810b49912f727305aba230f3c5149f33a12aa4d7fb74d5"
+
+[[tasks]]
+name = "userbench/MohammedMqat__81504953"
+digest = "sha256:a8c29f25025b6938c083a3ccb08fbb51f366b59ed91874f0bf544da4a8975572"
+
+[[tasks]]
+name = "userbench/MohammedMqat__8483a6a4"
+digest = "sha256:31562628944bf78c4a9298a9b5e789946e6df60a3893f54a5d4a81efb142044a"
+
+[[tasks]]
+name = "userbench/MohammedMqat__9ce28792"
+digest = "sha256:bda9af296fad2b49f4246915d3a274a03353105bc0fdbf1c9c12dec48be6450f"
+
+[[tasks]]
+name = "userbench/MohammedMqat__e972ce4f"
+digest = "sha256:7624e825082daed6b553292901fc5dbc61b10a319e2e8f2bae7659912f44fdd7"
+
+[[tasks]]
+name = "userbench/MohammedMqat__eaaeae4f"
+digest = "sha256:b59237386592ed976c3463943d1d47ea16c1c62d6acad4f6336f15b9d2764323"
+
+[[tasks]]
+name = "userbench/MohammedMqat__eb4f7f08"
+digest = "sha256:2b5580539017149076aed07850a1dae7afc2b5369912e197111b4824668bdd1e"
+
+[[tasks]]
+name = "userbench/MohammedMqat__f5ba11ff"
+digest = "sha256:7040c92f2e24df6a81afb00586e5ea65bc6238cd93dc0b4527dcbf2dfa97cfbf"
+
+[[tasks]]
+name = "userbench/PJensen__1a77191b"
+digest = "sha256:88a99782fbe446242f2486bd4ca3d90264eb8790c50ba55d94cc09d7fb4d0bae"
+
+[[tasks]]
+name = "userbench/PJensen__2366c990"
+digest = "sha256:1fcc4e3f4ca6460d21c6f9cb97d0010fae6a55c8dd96db8529d7d9d9d31c9ed6"
+
+[[tasks]]
+name = "userbench/PJensen__2744e784"
+digest = "sha256:dbb42269250a108acff2a58f78247156a39c5bc877c89423d773aefc7447939d"
+
+[[tasks]]
+name = "userbench/PJensen__409f7f83"
+digest = "sha256:c214320e614d33599d392c90c2bb33ca9f5ab24d5ed2454243c6a316581e675e"
+
+[[tasks]]
+name = "userbench/PJensen__428a45fb"
+digest = "sha256:f617e7a1978c1aa875278015d13122fff8b722748d35d4b13388fba1a9b0f93e"
+
+[[tasks]]
+name = "userbench/PJensen__4ebea46d"
+digest = "sha256:22fc664d5b8c6d79024f3f8bb5c96494362435208b11211922b0cf0f1aa355a9"
+
+[[tasks]]
+name = "userbench/PJensen__8bc81bf4"
+digest = "sha256:03235af0a257925520a43a70f21d6bd2eed58cd57caca20ccc930c1a7ab3593d"
+
+[[tasks]]
+name = "userbench/PJensen__8bfa5cf3"
+digest = "sha256:a2b00ba0b7f380670589d43792eb407d07cc0dbe17d2d699d9fb4650509f9070"
+
+[[tasks]]
+name = "userbench/PJensen__d78917b2"
+digest = "sha256:46b37716637bc3cf82589f796ba06a250e0083562a4c93435ab6f0ca076cf485"
+
+[[tasks]]
+name = "userbench/PJensen__d9c743d6"
+digest = "sha256:96e772c0989b9e57dbeb5b482058467a5bf379c70ab9dcb8ed7bc293ea0d4388"
+
+[[tasks]]
+name = "userbench/Poytr1__4ef838c8"
+digest = "sha256:8eafea1828bcb8218d7efd04777de1f0839f39a9fe76d9ef97b6797cae97ebd6"
+
+[[tasks]]
+name = "userbench/Poytr1__7704b402"
+digest = "sha256:0af827c11b051b48112fb457d4ff9939428c4d2c3612685d76e30dc92da940b5"
+
+[[tasks]]
+name = "userbench/Poytr1__792397bd"
+digest = "sha256:6526586684f3ef20cc02f6b08a3567ea316ed0e4fcd97b49935db34be9e38df5"
+
+[[tasks]]
+name = "userbench/Poytr1__79b74c55"
+digest = "sha256:84ac778e251e1c119d9f795624539a210cd66b2ba471e399335e3bfab60e4051"
+
+[[tasks]]
+name = "userbench/Poytr1__9c1714f3"
+digest = "sha256:633e3d610f0e71ef266515584392993b7ca3875013ce2eda962021d48f5a51e0"
+
+[[tasks]]
+name = "userbench/Poytr1__a2acb2d7"
+digest = "sha256:57edc831c7a4d3b9d3d87a10cfdf150e0822dd4ee28b4ae8465e306affd50aaa"
+
+[[tasks]]
+name = "userbench/Poytr1__b2abde78"
+digest = "sha256:6f8c459df16cc4c9279b5c8634341002e599770a64531ac3328173b6f4615c4e"
+
+[[tasks]]
+name = "userbench/Poytr1__b720c576"
+digest = "sha256:1e201694fb3fbb5ef235774624d7897761c812586a0c56549b9351810321b64c"
+
+[[tasks]]
+name = "userbench/Poytr1__d19883d2"
+digest = "sha256:63e8330edd1e2474ef1d66ba462a691bda98718fda8c442626c628d46d45bf77"
+
+[[tasks]]
+name = "userbench/Poytr1__e42f2f97"
+digest = "sha256:9403cee654e5138e66031c4c3ff7f3f284269d491b886673a1affbd17e01689b"
+
+[[tasks]]
+name = "userbench/Soph__1a8c6a0c"
+digest = "sha256:0bb56dfadf6ec13ed442dc753b30c138014feb1f884c4c79ba9f76403e558d0c"
+
+[[tasks]]
+name = "userbench/Soph__31443222"
+digest = "sha256:ba8e10dff6d0e51fd151a5c02134bd8e283e38cc0ec48a632602564604bdf606"
+
+[[tasks]]
+name = "userbench/Soph__33197b4e"
+digest = "sha256:0ab39ea01a9bc3ee05803fa7ebdd9a9a8cecb5387e2bd5c28936aafc49142df9"
+
+[[tasks]]
+name = "userbench/Soph__7302b475"
+digest = "sha256:c7a4f44f0c25f8d220136a863b1427a0a02f5e4d3f4d56450ce05a4d105bc59a"
+
+[[tasks]]
+name = "userbench/Soph__a13f4134"
+digest = "sha256:d31652edc5cd516c051ff98cc9d3dcab78d1420fbc41a36631dc9caa501031d1"
+
+[[tasks]]
+name = "userbench/Soph__d2bccb86"
+digest = "sha256:15e91e2a8b2f39f2798a70e3687f65e2af52064feb4801002a76743505089b89"
+
+[[tasks]]
+name = "userbench/Soph__d4aeb5f7"
+digest = "sha256:c64db57ced3b376973331c2d2837e487c1f4692a2e921137d76c5c5b8a163d13"
+
+[[tasks]]
+name = "userbench/Soph__ec880138"
+digest = "sha256:322b55514ded55da638d759260ce10f725160bc82692e8488f0dda760d774463"
+
+[[tasks]]
+name = "userbench/Soph__ed41ff61"
+digest = "sha256:e0809270706a944d61274ae5a5b346acd65f793ecd4f2ac40caa2f932fe8c07c"
+
+[[tasks]]
+name = "userbench/Soph__fc2c3472"
+digest = "sha256:fc46bcd52cf61914533312ae413c38320f922db8ea1be6cae25c1806f23804df"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__1c7b5273"
+digest = "sha256:773041d2d4f1f19a663f7b38f441c4861fd0e2b5070a27d77e0d90cabe20d3ad"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__3c378e34"
+digest = "sha256:333b7084275e5f9288e6e76ea97d8553d6ff4360d270b04197f5d0c97b6294fb"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__3c662166"
+digest = "sha256:3d0ff839b983b7b69bc29e6efc86d78f07dab33a69a1d7cc7a8ab354c7d8fb04"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__69f46708"
+digest = "sha256:f94508f04472ba422e077d9b1591aa85955487d2cac66dba2db3d666ecbc2ac0"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__8c531ba1"
+digest = "sha256:a4370ed7058a7b4bf19c63d7279faf5bd86603813695d77ea6a2df7abe07cf5b"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__9b04eb34"
+digest = "sha256:c227da873cc19333156a2f7d3311386fbd9c2702556743af743e6e2bad3f832c"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__c6832f84"
+digest = "sha256:a6a99f73e4c58bd29344a771a9431410d31e103fbd0bfbdfbe11afff14ad1f9d"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__e6fddb86"
+digest = "sha256:7f47fce861dad5a1c499e9c124d6ec88c2cf4e9d95c762fedc5a22f7a35d0307"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__f054d028"
+digest = "sha256:66e78a8370d40babed59b5e8ccf98239c26263b4bd802e152b5c0a56b5c60983"
+
+[[tasks]]
+name = "userbench/Stark-Industries0417__fde8b674"
+digest = "sha256:e31086d0a05964c07d8504dfda28f7c940124fdb6ac750032e0aa10a7db32b2c"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__01470379"
+digest = "sha256:3357845449302ccfc912bf5686f814b89f8e7a8171838f1ce67da4f24c0a8ee2"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__1b8bda9a"
+digest = "sha256:4321f5b1f6b72f2a3357a0c33e63f05e0cc793f2d54f6d75d6d230f52ad8e708"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__53dd0e94"
+digest = "sha256:26814c4a085ebe38a0a2975448a9a7fb79970455e2bcf616fd2dae84ad95b257"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__99a7df5d"
+digest = "sha256:f415d80e39dee999ef5c296f3a414debfeb586e4436e147dd372f3f1feaee38a"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__ad9ab945"
+digest = "sha256:752e4807583e16c3b4e241f35c5610591f64be83a7e4ea17e86b1b05b8c0de60"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__b6a77404"
+digest = "sha256:cd40b47221b782be0a2604385a1a089b6bb212100faa03e1ce1d97b2a011889a"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__dd18f7dc"
+digest = "sha256:05670690e95c494871da11dd0c6104d069abe3017d483d7d4607ef96d8afecbc"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__e0560a3c"
+digest = "sha256:b85d1c8bce71e948405bdc89d01b4caae3c352f9a9c66419a540f45d66c5c436"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__ec7192a4"
+digest = "sha256:26945a223fcc028279c5fa763b99626b3063ae305a9e8cd7db46d309459a123d"
+
+[[tasks]]
+name = "userbench/TheurgicDuke771__fe9210ab"
+digest = "sha256:948048fcd3d866efed6ed07a7b8db0723558b33a99e11e0dcfb020100c43ae07"
+
+[[tasks]]
+name = "userbench/ababushkin__0dafbf18"
+digest = "sha256:339faf5b45090f7984cdfef77aed2fe7967a96e0238f14e09cb96f63617af34b"
+
+[[tasks]]
+name = "userbench/ababushkin__15c2bcc4"
+digest = "sha256:7ec0937a0893a4a50085f54df289907b0318e4e55ad697b8651ec5ff446471e3"
+
+[[tasks]]
+name = "userbench/ababushkin__3c505e52"
+digest = "sha256:518d46867070daceb3e4a4ed47afff16e99da52329c2864ffff76c9395aa20ab"
+
+[[tasks]]
+name = "userbench/ababushkin__55f888fa"
+digest = "sha256:21a957a1547ab381089d1847db7d52199e925056f22328d6d8962951aec6ca76"
+
+[[tasks]]
+name = "userbench/ababushkin__7f121b4c"
+digest = "sha256:ca49d2f319b796a9fbfe88b8c2a104c3dbceb6db7096a055bc1af8573714fcc6"
+
+[[tasks]]
+name = "userbench/ababushkin__b31eb66a"
+digest = "sha256:5473d263b7ff2e2644dcf169e5fad015208b97d39ad6f40149aa026d04cd41d0"
+
+[[tasks]]
+name = "userbench/ababushkin__c4f5c7c5"
+digest = "sha256:11832db16d87777fb8b679c38805a36208ba8081ed79249f4c1c5e6673cdf687"
+
+[[tasks]]
+name = "userbench/ababushkin__e2b5880e"
+digest = "sha256:140690d6767dbe4f801a1a1b8dd96578b60f6b618f11eb9ca3f8f9d5d3d043a9"
+
+[[tasks]]
+name = "userbench/ababushkin__ec41cd5d"
+digest = "sha256:2c93fc0d9dfec173e515d66e6ce22c32d17184c6eee3dec47f3d7a3461f39997"
+
+[[tasks]]
+name = "userbench/ababushkin__fd476f56"
+digest = "sha256:5b5d8bf46c2a00da48673944746a13eb21aed107e1b842c09ab4a3a2622cd8cd"
+
+[[tasks]]
+name = "userbench/achildrenmile__1a13a0ad"
+digest = "sha256:9252f8edce2242a2552bdca88d99746da7e685b0b8730d6eee4efbd63682e4f2"
+
+[[tasks]]
+name = "userbench/achildrenmile__210b9808"
+digest = "sha256:39abf7d27c85b6a905021e20ba13ffdfe0d36cc7c36c21147928c1918c114602"
+
+[[tasks]]
+name = "userbench/achildrenmile__2ff9e2ca"
+digest = "sha256:03ce481c20cb2f7e742aa87159415a723bc549199b2c9a0c98895e4a0f44ad72"
+
+[[tasks]]
+name = "userbench/achildrenmile__35c350fc"
+digest = "sha256:9ca65cd39e3694413ba4e894617eba282b225551a0740df7122ebbad215a2304"
+
+[[tasks]]
+name = "userbench/achildrenmile__43d956ea"
+digest = "sha256:9ff3511d472017d44da71677003670847985b99c81e5e42a1bf441bb07c34cd1"
+
+[[tasks]]
+name = "userbench/achildrenmile__5d92c930"
+digest = "sha256:99ef84006a475a4094d9ad362a16dc33f675be1e4cf62e94eae520630dcf4687"
+
+[[tasks]]
+name = "userbench/achildrenmile__71a8a165"
+digest = "sha256:03b0639f81f862b705bc0cae7400c995bb0556a05aa5413b8b4f089c410e7d2d"
+
+[[tasks]]
+name = "userbench/achildrenmile__7dafef0e"
+digest = "sha256:d1e05a811b54b9855c33f7dea9be454e4042afb432bda6b1cfbfc8d85ade1614"
+
+[[tasks]]
+name = "userbench/achildrenmile__97a0d30b"
+digest = "sha256:1914aab357f8c976abd47d32bdb239adb54ce9f7436d342f95c209a49eab7960"
+
+[[tasks]]
+name = "userbench/achildrenmile__9b4c1a14"
+digest = "sha256:dadc054df37ffd42a4cad9e7791f163ea40ca8a22f4b3e8f87e9e148f10c4a7a"
+
+[[tasks]]
+name = "userbench/admarble__08f6ff97"
+digest = "sha256:17253d6bbed08870be6b4b822b63d04190c310faa9307a1a4d8b25767d4929f1"
+
+[[tasks]]
+name = "userbench/admarble__1ffea695"
+digest = "sha256:cbf140aa48c7d2a60c8030242187221fa3935ea1364bd8893b55f56b378a0d96"
+
+[[tasks]]
+name = "userbench/admarble__2188f606"
+digest = "sha256:56ec68fc0460fb4c2d3c6ae8cedba1678070cc438d390e2c48618ff14d2589c4"
+
+[[tasks]]
+name = "userbench/admarble__347929ab"
+digest = "sha256:b8165cb37097489a76bff6856930b850f6d23f990a7f62d14c8d8099cd6b1660"
+
+[[tasks]]
+name = "userbench/admarble__63ccad05"
+digest = "sha256:91ab7bd055bda40a2a0a0bfaaab583bff0fa8fee2d6a06b526d9fe24fea35e19"
+
+[[tasks]]
+name = "userbench/admarble__af4442f0"
+digest = "sha256:2f85b563838fdf84893595d32d72a04110715f0148893e8588c89407ebbb7ad3"
+
+[[tasks]]
+name = "userbench/admarble__b47ec152"
+digest = "sha256:f6985666121253bb4d4dcabe4ee35c168169b49e1a753c31708f9b44ad4c71a5"
+
+[[tasks]]
+name = "userbench/admarble__bacf1d41"
+digest = "sha256:6587a2aa9ccf065ad0365a76d360cdee4564c58a04c5388aa3f97a59acd88846"
+
+[[tasks]]
+name = "userbench/admarble__c7561573"
+digest = "sha256:32ada60423ab878682fff8c62ce9b78ecc7e012930e1a707e46392ace6e3829f"
+
+[[tasks]]
+name = "userbench/admarble__dbb54fbd"
+digest = "sha256:426534a9c247d64f3bf7d6fe9d3a4aeea6dbbf246655948cd446d8386a09dad4"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__04c32a20"
+digest = "sha256:eba41d8d9cbdfbb876cfcf0abf0d84ee13f953577544cfb4b8b7add0fc4d5244"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__095c91a6"
+digest = "sha256:3a85ba49840ce4a84757a5f31f972d99e7f7625286e04932ee7fa1422d17c2a7"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__3dc3da3f"
+digest = "sha256:e62fe74ac8f0714c3cf345d2ceb8887f9ecf7c616ac47a54d199bfeaaeaa17c2"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__54a1160b"
+digest = "sha256:8e585ac041e001fb936b650f35d489c0178e3fbd854b4c03760075cd3c3f11c4"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__585afa4a"
+digest = "sha256:162b366f764c3432befff231bbeee972054c4d7dfc4a902ff27a7416b3f4cf8c"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__8c8bffaf"
+digest = "sha256:1f9e21b4aa089ce190130b7585592c89e87585d1cd2f769ba002993818203420"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__bd8cd4f9"
+digest = "sha256:ca78355ecd25157e89607be29ae1311fe95cc3bdf715c1eaad43a4b02763a49e"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__c005ae79"
+digest = "sha256:f2dc22cf867de1bce06e9f2f9ecca85be20b45137ca76a4e21201bc5ad396855"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__e546a69e"
+digest = "sha256:50d485fb855d541cd70c417e9bf54095d9e65787dbaf016e8cdb185f27bc8a38"
+
+[[tasks]]
+name = "userbench/alishakawaguchi__fcb29da8"
+digest = "sha256:f87d6cac34c08536744cc2a374e40bc255858718c9e172c20726a99aa72910c6"
+
+[[tasks]]
+name = "userbench/armelhbobdad__1ca1c892"
+digest = "sha256:e1720fcd75872811239b6fd420d284bab6bdcaa3dd68f3a1af2275f29a3994a1"
+
+[[tasks]]
+name = "userbench/armelhbobdad__248d4e03"
+digest = "sha256:2168fad2ca8b1dbbec945750b718baf207c0d9223ffad077414bfa0f3ced0256"
+
+[[tasks]]
+name = "userbench/armelhbobdad__2856056c"
+digest = "sha256:7859907aa8496cb8ec5f40fc6314207a8c87442161cf7d40161c6769f66fcb80"
+
+[[tasks]]
+name = "userbench/armelhbobdad__7a6c95c5"
+digest = "sha256:537aeffc980daded370c993a7e167034f219c2b7f3d556f54374515df99cbe6d"
+
+[[tasks]]
+name = "userbench/armelhbobdad__8d99ddd6"
+digest = "sha256:c3131432cfc8284ae03de33c80d445bff48bede35ce55cc1336ecca3ef181aab"
+
+[[tasks]]
+name = "userbench/armelhbobdad__9b514f47"
+digest = "sha256:be2b5e3068df1bda2f11db31153bcb07931e82c7204aab7593ab9f02a41c659e"
+
+[[tasks]]
+name = "userbench/armelhbobdad__b387bc68"
+digest = "sha256:9c89aed9cdb489c6a81e65cbaf8ad728bc51c98ab2bfb678e9ed12d939658ed1"
+
+[[tasks]]
+name = "userbench/armelhbobdad__d8689cd9"
+digest = "sha256:3de414e6ae0ce1bb4098d054cc3dbbf6a22fae264ed74bc5b8a4f0704ed8e77e"
+
+[[tasks]]
+name = "userbench/armelhbobdad__d91ed9bd"
+digest = "sha256:057f341ad7655c42d315d063fd94a1ab2adc6ab7dbc6c9b2281c824399083fab"
+
+[[tasks]]
+name = "userbench/armelhbobdad__dfebbec3"
+digest = "sha256:a8bbed14bcc5edfa1b6052ebc68dae6cc559fd46fce7b0a2ea92a1f1286121c7"
+
+[[tasks]]
+name = "userbench/barbogast__015a4d1e"
+digest = "sha256:3e70229498c3eaf23180a6b3d0d7ab610858794fb899c7221bc1664c1ff57007"
+
+[[tasks]]
+name = "userbench/barbogast__07017b77"
+digest = "sha256:8a5da48e40eb8b0aed02f7790c582a667f3b695f56b9d44d3597a79bd046f5f7"
+
+[[tasks]]
+name = "userbench/barbogast__2627df09"
+digest = "sha256:afe74353a3ff603285cad6b8fe6e6dfc406a50058e23df984c6b8b52450424c5"
+
+[[tasks]]
+name = "userbench/barbogast__2bfad951"
+digest = "sha256:8e59c1a21648733af14ce22438ba15220da0c3f6f820a81862e54d1a9ef7a340"
+
+[[tasks]]
+name = "userbench/barbogast__4509fc91"
+digest = "sha256:848105b3b5a3b4088228c5a8ffe4984795fc5f609e82fb78208f350636e5757c"
+
+[[tasks]]
+name = "userbench/barbogast__47bb82ec"
+digest = "sha256:3e03718e9342633162ec1c3b14445e13d295fed3c38004825a261ce462a1e2de"
+
+[[tasks]]
+name = "userbench/barbogast__4aa039d9"
+digest = "sha256:3d235c09e8eb21265f45113e2cdc4d5afe1930d4e11aa14bff0963d0e30497b9"
+
+[[tasks]]
+name = "userbench/barbogast__5c442045"
+digest = "sha256:78d2826264bff6465c0166a7d8d22adfa8e2108af1cd0610f3e282f0b89a8583"
+
+[[tasks]]
+name = "userbench/barbogast__601f787e"
+digest = "sha256:34ec33dd608b711c70397d04ffeba2cb3a7966240be005a904926d83f0e219a4"
+
+[[tasks]]
+name = "userbench/barbogast__9c63e30b"
+digest = "sha256:62a310563d8ad45dd0b6a9450be627cf63709078e42ba641331a73fc9c722778"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__077f6188"
+digest = "sha256:b067dda012d589195a64384ea09073258394bb2d35853b135154ec29cd2b1b32"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__116d4a16"
+digest = "sha256:db352fde72e31829a58b33e004826394850d9cab4a7448cb0f0ac3775098bcb7"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__32cf9092"
+digest = "sha256:6d46cb3356175845116d9a69fdd2a958c1aef701449ff070e332dffc71e6b5a8"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__42416c99"
+digest = "sha256:d43262e58a7c2a1028ea328d44b8f87ec7711a648b5c8c425a8994d0428a7d04"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__64f0503c"
+digest = "sha256:9bfd353fea191c81eb3099268ceb100ba4569aa12826b9097c2b08cc9e75e250"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__b2b09b06"
+digest = "sha256:b70fca0c7a02c02f11fd29c595c9fe45bd45f32976cdd0dedd2f0a897e48b1ea"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__c3b99d32"
+digest = "sha256:65292f60ec80be95cc00f4f6b2bc8bfefc68d0f4067d9f7abcf7ad3289bbb26a"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__c3c0d0c7"
+digest = "sha256:3744f6fb1766d274cf831ee981f0ea355be30ef37ebf9f39c3a4a444331eb0e2"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__df26765a"
+digest = "sha256:ab4222661e00968adb8f36e335e8ea84278713512e4a022534b8988d7141dc9d"
+
+[[tasks]]
+name = "userbench/blackgirlbytes__eb3010a3"
+digest = "sha256:d6002069525182e5f93ef159791d28f5ccd5e32a05303b1ef8ac1ef00c6a0190"
+
+[[tasks]]
+name = "userbench/christso__0244b4d0"
+digest = "sha256:59929eb31c828b21c075992d25e74ac0c3ac30480a4a45eb21e4dfea6d4f2fff"
+
+[[tasks]]
+name = "userbench/christso__64756dde"
+digest = "sha256:dce21968cd6da1866d649bc35bc34b1b1ab79875a4f5d8d21ba9a4f008243a25"
+
+[[tasks]]
+name = "userbench/christso__6858ee27"
+digest = "sha256:8cea708186530dd643b85cc771f323151285204bc2029bc35c45b3ddcf98b5bb"
+
+[[tasks]]
+name = "userbench/christso__6f5610eb"
+digest = "sha256:130637ac10b72906cc0a73bb3dd2bb4a815a49cf06364ecc0aa203ac07aef6fb"
+
+[[tasks]]
+name = "userbench/christso__7616b4d3"
+digest = "sha256:f8cfaef1bcc9b478e7d5870b1f8c3e6662ab886ecafb589bdb3ce651f45007dd"
+
+[[tasks]]
+name = "userbench/christso__c229da20"
+digest = "sha256:f825e423140255f34b10a48213c24c91b3511b6cefb04499e98202ee3ce5823e"
+
+[[tasks]]
+name = "userbench/christso__d8ca1042"
+digest = "sha256:0877d29582bfc71ad05ba9987f6fda4f096906945ff78948eac2dcd2559af865"
+
+[[tasks]]
+name = "userbench/christso__dee1a922"
+digest = "sha256:0a2c313568f0da26aa0f22e61c34f15612fd0cbf4d6c8ccadfdeec8062bfff66"
+
+[[tasks]]
+name = "userbench/christso__e5946a37"
+digest = "sha256:25018d102d9563c65229baf0d501a54fde3641fc857257e69565b8f81364798f"
+
+[[tasks]]
+name = "userbench/christso__f277e5cc"
+digest = "sha256:58af408d7dd8ee5a8d3098e846caf549f98a6ff9797a6561309e2df86eb3e1c6"
+
+[[tasks]]
+name = "userbench/cyyeh__0ef3c5c5"
+digest = "sha256:3f054a75ed22658aeaef59d3668945ea2095258a89db0d96df81178ea7614d01"
+
+[[tasks]]
+name = "userbench/cyyeh__3cc7d29d"
+digest = "sha256:30027482e8213468f9a14efa4a1b7c97383bf3a2f40b13d22209ab2e0e3b2580"
+
+[[tasks]]
+name = "userbench/cyyeh__5f330796"
+digest = "sha256:b16398d2466d8c24a5617ea1e085e5edbba45eeb735746ac93bef62030b5b051"
+
+[[tasks]]
+name = "userbench/cyyeh__61ced54e"
+digest = "sha256:b6101e520d31b65b5e5bf34737126f54140881e31759096c33cd54b9752a5617"
+
+[[tasks]]
+name = "userbench/cyyeh__8615d833"
+digest = "sha256:59ff418d13de77b9e86ee0be5b1315142e7b3c0fd9ab1627fb6b83f710b97f18"
+
+[[tasks]]
+name = "userbench/cyyeh__87913fda"
+digest = "sha256:ca529d3d7ccd2066a66cf2541b8792535ca08231f1790bd6a480b5dddde8c47c"
+
+[[tasks]]
+name = "userbench/cyyeh__93e85db5"
+digest = "sha256:516f06493e86ff5288187c13cf2436476d101475cff8772867ca620cc93b0515"
+
+[[tasks]]
+name = "userbench/cyyeh__9a9888b5"
+digest = "sha256:00e676e79eef032b1253cf99f8ac56145a31d4ffcb2267903d0b67b59b3128ef"
+
+[[tasks]]
+name = "userbench/cyyeh__a430a77c"
+digest = "sha256:318e7ceee0f0c60c0af45ef97047c4fb9b445587a58d69b211cf5494a718d445"
+
+[[tasks]]
+name = "userbench/cyyeh__af946993"
+digest = "sha256:35dadb4e8d173dcd44cae0e0dc4e759219b686b18a7efc758c5cfe748d9e599d"
+
+[[tasks]]
+name = "userbench/dc_000__25e7cf92"
+digest = "sha256:d1f47676deffef4223cb11459b28fe3043dc5171dcb3d79454b84a506c4f3a53"
+
+[[tasks]]
+name = "userbench/dc_000__49970ee1"
+digest = "sha256:8c84fcdcb51a2136912f9d462715766d3ef55c780ae4ac803d951a60d96f236e"
+
+[[tasks]]
+name = "userbench/dc_000__4afde71e"
+digest = "sha256:9e21f28e5777721a44c287a534b795d59a45663a92d033e48fddfcba7ad1004c"
+
+[[tasks]]
+name = "userbench/dc_000__4b92ddba"
+digest = "sha256:b103ae816496699254f7672ba944a5fab5dcfe20ce9152ba1885b271c6a6e50c"
+
+[[tasks]]
+name = "userbench/dc_000__52b607d4"
+digest = "sha256:dadd80e43ec79c564180f050303e5bef25be76c6a6ddbc824eb2329448d10335"
+
+[[tasks]]
+name = "userbench/dc_000__aa12035f"
+digest = "sha256:14b35e1b2b318e8e5982f0e153196f4adcdee210a42cdda1ae48ea6877cefdcb"
+
+[[tasks]]
+name = "userbench/dc_000__b5514499"
+digest = "sha256:241c75ad3e0dd5f1c999bff6b47a724975296fa646f303a2cd91553d1404951e"
+
+[[tasks]]
+name = "userbench/dc_000__d46bdcc2"
+digest = "sha256:1330b73cba43e7269d8f608b2e6502fd8567c81cdf96eadaed22eb9a4312da87"
+
+[[tasks]]
+name = "userbench/dc_000__d5528693"
+digest = "sha256:204e11c8619892da35bf58b1282fbf0c9ac2eb55bb5461530b8b23f7119fcb68"
+
+[[tasks]]
+name = "userbench/dc_000__e5a61347"
+digest = "sha256:68921c3fb2ca64901bafd1c440bbf19c9cfc1ce6e28cb5f67e9dc98b130e76f8"
+
+[[tasks]]
+name = "userbench/dc_001__03bfd6bd"
+digest = "sha256:619cbe0bec5039f7e9e33248b11c88599e6c9be5fba1bce8991fba2b473d7af0"
+
+[[tasks]]
+name = "userbench/dc_001__0ced58ab"
+digest = "sha256:5054dacb0c1e9f36ea62d49378c5ee5c5198492b951bb3ee1c95ffb7afb22e7c"
+
+[[tasks]]
+name = "userbench/dc_001__4b92ecaf"
+digest = "sha256:e4d55b5b235cb69f9b00b6475e5ab8c99b925114aebedb1821191e8e9b703d49"
+
+[[tasks]]
+name = "userbench/dc_001__4e16b43d"
+digest = "sha256:19894ad31618c9023171c852545028292e10207751d800e2dc17feaa89cc223a"
+
+[[tasks]]
+name = "userbench/dc_001__536cd200"
+digest = "sha256:d39806e6ece43cf18b335dcc9bf140c4fdf5fa18d3e77732635f5c4d850ff522"
+
+[[tasks]]
+name = "userbench/dc_001__63608a3b"
+digest = "sha256:e9426933cead93cfb4623d2f69c5fb944508f3640cf943a836b6992e79276998"
+
+[[tasks]]
+name = "userbench/dc_001__7381cb8f"
+digest = "sha256:6ad39c4313366cb7d4db3cde3916172aadaa3781d066d7c86f190866db6e9b2d"
+
+[[tasks]]
+name = "userbench/dc_001__aefe92aa"
+digest = "sha256:e489fa048c5b14ac1781801c26b6024302f53b66f5045ee68f1306cc7a462956"
+
+[[tasks]]
+name = "userbench/dc_001__d5eb57d4"
+digest = "sha256:fb0b9a6e73e8cfc199a1e30a88b7418ac471b681e8ae035df9d8b4999b3c421a"
+
+[[tasks]]
+name = "userbench/dc_001__d88c2c32"
+digest = "sha256:db40a48eb3fb603db467cab6786c09aeafa33140df7ec793a126303c566fbe0d"
+
+[[tasks]]
+name = "userbench/dc_004__1b611cb2"
+digest = "sha256:11b7e09df0c69da18be4ea3d8621232e9f15cb0e31a8b4b145e6b8b7125d6dc4"
+
+[[tasks]]
+name = "userbench/dc_004__633347c9"
+digest = "sha256:f598f9f6364e8212fbeede426880ec4bea0766a457583afadb9c8c62755fb96c"
+
+[[tasks]]
+name = "userbench/dc_004__667e2977"
+digest = "sha256:281a2b0f158587bdbff9bda245acf1fbcec5962f0ab0fe585c2fb9402d2eb8c5"
+
+[[tasks]]
+name = "userbench/dc_004__74515f8d"
+digest = "sha256:3be1eec4ce9b46928600af25d5a511ae4d660da8830b39b231460970ffdad3a9"
+
+[[tasks]]
+name = "userbench/dc_004__7c46d305"
+digest = "sha256:67fd963004ad1c043800d2b6243bb68f19b469af48e5ab84a27f4ff464772f93"
+
+[[tasks]]
+name = "userbench/dc_004__90ee87f8"
+digest = "sha256:f59b525b4a12991a3993c6e2aecf19534b514cb4cec88352b3d6218dbe5ddb94"
+
+[[tasks]]
+name = "userbench/dc_004__9a96d08d"
+digest = "sha256:2e61627410c1c14013c9363f1e5b83645151f8bb6deefce6241da47c1430800c"
+
+[[tasks]]
+name = "userbench/dc_004__a833e6e4"
+digest = "sha256:448c265ebb28ea7062b7eade8eebda8d95cda9e8c6133a6703bf2d6990db51d1"
+
+[[tasks]]
+name = "userbench/dc_004__b1a1b133"
+digest = "sha256:4aaba36bd04dde6ab4710186e455dabbd0c3bece7b32e0bd6e73dcc16fd975a1"
+
+[[tasks]]
+name = "userbench/dc_004__ce4ab540"
+digest = "sha256:bcb7057c7d69ddc5a17ae8f89f75811dae2696fef2fba4999047ff13e281c81c"
+
+[[tasks]]
+name = "userbench/dc_010__47ffc258"
+digest = "sha256:35bb9cdb220c92166e708f77a6db68910a5a1776dd1e6e6a62408f9edb31501c"
+
+[[tasks]]
+name = "userbench/dc_010__4814d75a"
+digest = "sha256:adafd6658146869baa55e73b1ca57cf8374208d8e7700207a882a75c3ce44e5a"
+
+[[tasks]]
+name = "userbench/dc_010__5a9e3805"
+digest = "sha256:034840d9796a0358f106a18e8afbb6a1832eba3ca48d6239c2e58910745fc794"
+
+[[tasks]]
+name = "userbench/dc_010__609f9b8a"
+digest = "sha256:3f2fb100dae29780d4db693f1f44de2e022110ecc6786e60f208d2f046615bc1"
+
+[[tasks]]
+name = "userbench/dc_010__71b80cd3"
+digest = "sha256:ed03f85175286a8779eb5cf3d63898cf6bfc6b86723a4ecdf73e5ae1e53ab2f9"
+
+[[tasks]]
+name = "userbench/dc_010__9ef010fa"
+digest = "sha256:e091ed64200d1a054b3f1e1a4aad2643d4f30c1c80f538cd329a8e41ba80ba95"
+
+[[tasks]]
+name = "userbench/dc_010__b9fc11b2"
+digest = "sha256:c491e3e5089ceac83906eacf2bee911c4a919c9aceb4aae5660bd712b4822c8a"
+
+[[tasks]]
+name = "userbench/dc_010__d717c75a"
+digest = "sha256:24f1e5827011bfdb614c66d29e6c4aba64f05848e5ceac86cbc243ca3b1b72cd"
+
+[[tasks]]
+name = "userbench/dc_010__fa91db13"
+digest = "sha256:bec76c3c69e57c287c7d9f2ff83551ee2f61555661bf73885653fbed79b3d7dd"
+
+[[tasks]]
+name = "userbench/dc_010__ff7c22f6"
+digest = "sha256:17ec58dc900351030bb4e2e106a32d595efc62d0f3735cd65ee2dc3857b69830"
+
+[[tasks]]
+name = "userbench/dcambria__10d6ba09"
+digest = "sha256:0525ad35d2eb40ce434db4c8b665c583203cbe889875e8e9c05807d33e6ba7d3"
+
+[[tasks]]
+name = "userbench/dcambria__311fbdc2"
+digest = "sha256:76f821769ffa1b9d2e7f09255217c4bc9597269c30caf9f87aaf866eebfb57ce"
+
+[[tasks]]
+name = "userbench/dcambria__31d94d0a"
+digest = "sha256:65faa22568b4b48380230dec3dbee0f25160c91df86722626fa0fc3ddb97cc17"
+
+[[tasks]]
+name = "userbench/dcambria__3462644a"
+digest = "sha256:474adba810255c9a85f0aeb9f7554cc015184872cd12c9d6659a237ef306abbf"
+
+[[tasks]]
+name = "userbench/dcambria__37a1120c"
+digest = "sha256:968e4b31e9f02c1086dd26a2c8fdfe90947190b64b93cbdb4ab39aa33af363f8"
+
+[[tasks]]
+name = "userbench/dcambria__5bdc81bf"
+digest = "sha256:f2784f7c4628bdf6dde8c4e67de449f5ffa25bcb73fae20e47ca55d679b39a50"
+
+[[tasks]]
+name = "userbench/dcambria__8b203ca9"
+digest = "sha256:480a69ba7b565579e0a34db07d5f3c463298d2ff3d95f0af7ba599a57c892e32"
+
+[[tasks]]
+name = "userbench/dcambria__91b175cb"
+digest = "sha256:881b291469c97e53f14d3ac1352c95c4845e9e43a43e3b70d18b424049c1b03e"
+
+[[tasks]]
+name = "userbench/dcambria__b1663567"
+digest = "sha256:d9efe60777496f8cf0aa6a763d4d49c475c399ee7bc642c6ad12187942c2d8ad"
+
+[[tasks]]
+name = "userbench/dcambria__cff3e93f"
+digest = "sha256:d48a1ba860d519565eec96dadbb11a961a2190f1e36c6d7f260e7c964a1db814"
+
+[[tasks]]
+name = "userbench/fcamblor__10653b23"
+digest = "sha256:e8d5e88ca72d4209da5370b6256d49866be28613eac71088b06ed7e567e793aa"
+
+[[tasks]]
+name = "userbench/fcamblor__41e0acf2"
+digest = "sha256:9e7d4e35e68f095ccb8140adf955502d69dd8bc4be3f90cd6468fffd410a281f"
+
+[[tasks]]
+name = "userbench/fcamblor__4c9bb47a"
+digest = "sha256:49da4be0d7b92e6acfb081debf780ea8df3986fbaec5f1f2b013e8545d7aa508"
+
+[[tasks]]
+name = "userbench/fcamblor__5f26916b"
+digest = "sha256:04c800d03dd2c8a08b8b08b405f803141786b405164b2db0a8f817c1e911d85a"
+
+[[tasks]]
+name = "userbench/fcamblor__7309daf9"
+digest = "sha256:bbfee963cc8d9cebd4707f1c77cd72d4c9e28b05fb32abeea227e09256532419"
+
+[[tasks]]
+name = "userbench/fcamblor__791476df"
+digest = "sha256:fd1dc37085105b3bbc65fa83c74e4c1a47b53892734bc68d823a6b1d6b89936a"
+
+[[tasks]]
+name = "userbench/fcamblor__962f5e71"
+digest = "sha256:98b109cc169497c1e5d421af641f7c6ef1f548464d9e8fe3712b76c419c1d866"
+
+[[tasks]]
+name = "userbench/fcamblor__aa53f12b"
+digest = "sha256:eb8784d1e23c4a83b86b24fd586634234c0b155b72d52615e71015d0892c8901"
+
+[[tasks]]
+name = "userbench/fcamblor__b7014237"
+digest = "sha256:db6be50a03b555cc0b604d35bcc06c4dae9c3726513a5e4479b4e3c13ef88eb8"
+
+[[tasks]]
+name = "userbench/fcamblor__d55d0502"
+digest = "sha256:791f0c19f71aa98492195c986fe6bb53577fc30848ff7326495e9c315d8f94e2"
+
+[[tasks]]
+name = "userbench/gabadi__45c83dac"
+digest = "sha256:596fdeca75e5973906a9a236ba177dd324fa131db3e6c15732ed7d93b49d5064"
+
+[[tasks]]
+name = "userbench/gabadi__566903d8"
+digest = "sha256:73b431d6feb136c08c8e22e94319f39de6849ae69738aec67a7561f20b9bfb08"
+
+[[tasks]]
+name = "userbench/gabadi__5ff54caa"
+digest = "sha256:6f07190b8133b006de2f2443f73405fb16b165253cc4ebb2a45f584b2b3a2899"
+
+[[tasks]]
+name = "userbench/gabadi__7b40d2af"
+digest = "sha256:32b9083b97e226903cd93f08384804ae957a8a6dba1fc8f1758e760677bfae80"
+
+[[tasks]]
+name = "userbench/gabadi__82b5fa6a"
+digest = "sha256:59bd794e1e7c08e1b94b444e297530fb67a83b49360e365ff46da3a66b1a22b2"
+
+[[tasks]]
+name = "userbench/gabadi__9e498963"
+digest = "sha256:5696dec9b73935055afab04132234870cf163abc13293ce88d350bc4e715c8a0"
+
+[[tasks]]
+name = "userbench/gabadi__aba2eda8"
+digest = "sha256:96d93fd3b3a27c8795f8af38cee4f7eedc50e7bede5538de8d4df8dfbe9deee3"
+
+[[tasks]]
+name = "userbench/gabadi__ae3008ee"
+digest = "sha256:49682a70f4be2249f3534b656f7afd7516a286f3b0f534086428d38f58cce8ce"
+
+[[tasks]]
+name = "userbench/gabadi__cc9e1d70"
+digest = "sha256:d3696af87417ebdeb5963fb80ae34f5bd0b879d14174b49fee0a16353a89a6d9"
+
+[[tasks]]
+name = "userbench/gabadi__de9f94c6"
+digest = "sha256:0aeb5c9b33df72abd06a01a34aa7d665f2c19aa305b626f93943decd545d8d63"
+
+[[tasks]]
+name = "userbench/heddendorp__1866113f"
+digest = "sha256:6ef2b2eb5c84f6376726c464576bcb078ca4032ac527a5faf3e3a954168eed0c"
+
+[[tasks]]
+name = "userbench/heddendorp__1d900217"
+digest = "sha256:826619d28a23694520231d2b2005c398afb0291c64a1d63d4d0bbe1758cf8ea6"
+
+[[tasks]]
+name = "userbench/heddendorp__6c4a125a"
+digest = "sha256:3b9ea7a08761079f60475af33aa7df1f635b6adfe915f9ebef973fae1b5c95bd"
+
+[[tasks]]
+name = "userbench/heddendorp__7c00d429"
+digest = "sha256:7374f13121ca7299890cf832f2797007428f1c08ccacfa292c95419f565d99c0"
+
+[[tasks]]
+name = "userbench/heddendorp__7d0856ac"
+digest = "sha256:cf2af3fbf24ef31efeb27bcc4a01bc17ad70dc83ceec61772651b6810111a014"
+
+[[tasks]]
+name = "userbench/heddendorp__8a98faf8"
+digest = "sha256:c42888cc0cdf40839915e0e9053d4e53fc1a7943e8026028302de9d58e72cb82"
+
+[[tasks]]
+name = "userbench/heddendorp__8c0f454e"
+digest = "sha256:5ea0f19c90735caac8c34f5225a753f1fd3e007c41e97300d5fd1366e708ac98"
+
+[[tasks]]
+name = "userbench/heddendorp__9c1e8c6a"
+digest = "sha256:f9572638374a018b517f8c52bbb0ace8faf12068db264327515d1ceafc2b73b0"
+
+[[tasks]]
+name = "userbench/heddendorp__b574678e"
+digest = "sha256:0dadd6f10b57158c6c8b0104db946b0a9060c03b4f6abc2de5f8299f29d6b935"
+
+[[tasks]]
+name = "userbench/heddendorp__e9ee70fb"
+digest = "sha256:b2d2f7a7054a14de03763b6946e5df9cb18c2d0d629d296e10b94da222e23200"
+
+[[tasks]]
+name = "userbench/henryph24__28f7ca31"
+digest = "sha256:70c0db121de18e8debc00356d56d5428a3334a4fa082e9099bd094a2da3b5ab3"
+
+[[tasks]]
+name = "userbench/henryph24__32550e4b"
+digest = "sha256:1be6ea881858886dc5a92464b8b4337c0dba7da94d9d9b3eb1bfe5f9c421d2ee"
+
+[[tasks]]
+name = "userbench/henryph24__7290ea77"
+digest = "sha256:324f2a1b5a4840fc019c7c5023642158a2ab1baa382327d990c1e2526a2abeb0"
+
+[[tasks]]
+name = "userbench/henryph24__82af8b05"
+digest = "sha256:dec36a6b6d78040e9ed59557b94ee27c62877d3572d0da0cd1ebe855d9f1d540"
+
+[[tasks]]
+name = "userbench/henryph24__abd778f8"
+digest = "sha256:7e28422c04a37a62fbf416bf801141cad0d26d98f8f56cdd4f62a01fd55c0f3c"
+
+[[tasks]]
+name = "userbench/henryph24__c072ea86"
+digest = "sha256:dbc21b590717aea18612748d0d248b3b8091e8f194e40b2e4e2afe91a97791da"
+
+[[tasks]]
+name = "userbench/henryph24__c2387b32"
+digest = "sha256:f85102f304c9eaaad966ea0313ea5224e874bced20ad4416c956ea477e28d0fe"
+
+[[tasks]]
+name = "userbench/henryph24__d2760f4a"
+digest = "sha256:18224fc1b355e2d5fc814db41a99c51b282a2e4092260c96e6effd920998f84e"
+
+[[tasks]]
+name = "userbench/henryph24__e8f45c35"
+digest = "sha256:61b7c4418515e992ec80eaa6813f8f08084744d882613cc1045b9ba781c537b2"
+
+[[tasks]]
+name = "userbench/henryph24__f0fc860a"
+digest = "sha256:cb4aba5da7dcdffa731963b53e4674925e1a2e4df49b19d24a1802cd921dfa15"
+
+[[tasks]]
+name = "userbench/hutusi__066149dd"
+digest = "sha256:527033e839193ee02944a3f8d1f832b827fea6574d0bfaa0533860a3e9502c12"
+
+[[tasks]]
+name = "userbench/hutusi__2751eb8c"
+digest = "sha256:257e78506b3cae55f6dcbf189051dc5d6fa9f813678a21ee7f8d90a7c12ddf71"
+
+[[tasks]]
+name = "userbench/hutusi__332ec1ee"
+digest = "sha256:02f2464afea383bd98c8458598f922eb3c505d19ff7adf1dbb2f0aa24752ed5f"
+
+[[tasks]]
+name = "userbench/hutusi__490bc1e1"
+digest = "sha256:b5f74b2d012d6ca47b9e6696df45b45ce77f390cda3f9ef70f680d4cf74c8e3c"
+
+[[tasks]]
+name = "userbench/hutusi__67ea1d83"
+digest = "sha256:8590f05b31726f732c14ccec5f898180344e579fc05e756924214c38166d8864"
+
+[[tasks]]
+name = "userbench/hutusi__80247856"
+digest = "sha256:187bc5d48ba4e06128142361779700980eea4faee6ea763c4065144f600b1da3"
+
+[[tasks]]
+name = "userbench/hutusi__aa2cfed0"
+digest = "sha256:156cee15c9a43dfbbeb828d9a3af1f7c6dd78f59522ccb698622d04a952c5733"
+
+[[tasks]]
+name = "userbench/hutusi__ba6fef9a"
+digest = "sha256:defe2b2b625cc08728f85f99fee9a4892d3477ec5425a886c1361eeb43eea026"
+
+[[tasks]]
+name = "userbench/hutusi__bb886168"
+digest = "sha256:5aa33e43a10f88e057a256889530fb10d1cca6947996471f6e65c98e9dc1db08"
+
+[[tasks]]
+name = "userbench/hutusi__d53dbb64"
+digest = "sha256:3b02ded9c458c4f89dc2b055ab3e0aad041d164f581a0a086c27060dfdaef8c6"
+
+[[tasks]]
+name = "userbench/jakobtfaber__0fddf0ed"
+digest = "sha256:48dde5fcc90b8fa5cc14ac05f18c0c237dc304bc9a7354a7dfcdda1b9364ebb5"
+
+[[tasks]]
+name = "userbench/jakobtfaber__1395ade5"
+digest = "sha256:8810cb4a8315b51900696f0224fc02ee39be788b07717d81d97e67bb48bc700d"
+
+[[tasks]]
+name = "userbench/jakobtfaber__2a61e65f"
+digest = "sha256:9610e39bb3f686d72f2c190d3f0575a871b51e124dd112cf0f4a65a6c3b88ef2"
+
+[[tasks]]
+name = "userbench/jakobtfaber__8441d390"
+digest = "sha256:f83677209ce800ace1767df00d36c7cf80a2c78a153f445d123f79ce34e747a4"
+
+[[tasks]]
+name = "userbench/jakobtfaber__8a4f165d"
+digest = "sha256:2a92bf46e95d3ba62c2e9739d90094dd57e1b6fc6652d1dc599916d8d16181a0"
+
+[[tasks]]
+name = "userbench/jakobtfaber__92492978"
+digest = "sha256:530b1796df9e67f637fe8b254e9009b5ef30da5a91ca99bbde4406ff12e1dcd9"
+
+[[tasks]]
+name = "userbench/jakobtfaber__a0f851cc"
+digest = "sha256:03fe710c882d8b7d3260e4ce4cfa563281980f99f617bf69b3c420ac1add8512"
+
+[[tasks]]
+name = "userbench/jakobtfaber__bc4316a7"
+digest = "sha256:14193b8762a0637737df34c45b98a328d06282ba34a4b1fd105fb29d167a1d2f"
+
+[[tasks]]
+name = "userbench/jakobtfaber__bdaadc4b"
+digest = "sha256:8ea81cd5c93f7499e326b54cc50384995b0b373f0b6de3d5e959e63dde370c68"
+
+[[tasks]]
+name = "userbench/jakobtfaber__fbdba2d7"
+digest = "sha256:8cf1707e236c3eac5f9a4e83bcccc4cc69d749a458491c0ddd6a15114ea52582"
+
+[[tasks]]
+name = "userbench/jdsingh122918__170092ed"
+digest = "sha256:eefb1ebe81a16a95c2c2b9646aae6f37d6f0b2def30a97fc76ffa0b84d59abde"
+
+[[tasks]]
+name = "userbench/jdsingh122918__235948db"
+digest = "sha256:b74fc9d8d00c00e02622f8c1ecea08c5ca71f4a75a74e5bff195fd354495f221"
+
+[[tasks]]
+name = "userbench/jdsingh122918__44679c06"
+digest = "sha256:6087daed25ff34ddec546f708aeaef74804ac7215c5f457e7161940cfafe5b80"
+
+[[tasks]]
+name = "userbench/jdsingh122918__92c17296"
+digest = "sha256:a9381ab3aca28dde1ec9429832a22b532552d706d1a1fd804373eb9340d97e51"
+
+[[tasks]]
+name = "userbench/jdsingh122918__96fc2d3b"
+digest = "sha256:15c43b15c69f9fc153b8df5696b2bf1541f546a39b308e29b63971509aafd8df"
+
+[[tasks]]
+name = "userbench/jdsingh122918__9d260baa"
+digest = "sha256:b252be54894d2a1bbc202a6300087c8a1de701582c5aa3161e00905979e1c69d"
+
+[[tasks]]
+name = "userbench/jdsingh122918__bb859790"
+digest = "sha256:ca9abcf063c96aa3972a370ddc1e99572552fbcaccee849d1df22ea434b99ac1"
+
+[[tasks]]
+name = "userbench/jdsingh122918__d44c4e2b"
+digest = "sha256:0e82c9c7248fc4152538a48f5986edb211586858544716cbaa2da8e8e26920fe"
+
+[[tasks]]
+name = "userbench/jdsingh122918__f1bc9841"
+digest = "sha256:6685d3be4e0f72a90998690b6627d7d3d8199e8753197d48c1d5d1433131ad5e"
+
+[[tasks]]
+name = "userbench/jdsingh122918__f6d90727"
+digest = "sha256:72b1537df23e7d72dfdf4dfaab40e5b9dbf93c60fafbd437daa76eed16df7361"
+
+[[tasks]]
+name = "userbench/jeevanpillay__2d2d580e"
+digest = "sha256:8cff52f804e7b7dc61bb2bed024225ae199733dd7d2e7b0b3fde6da60af5951e"
+
+[[tasks]]
+name = "userbench/jeevanpillay__335616a6"
+digest = "sha256:c9f7754a987a19100894b82501b08d510418e25acbed1b45f50d714d24183354"
+
+[[tasks]]
+name = "userbench/jeevanpillay__342c66a8"
+digest = "sha256:ab27459aaf30fbf228d611ec91740daca5ce7908f6d29fc8f8593d24d81f423b"
+
+[[tasks]]
+name = "userbench/jeevanpillay__454b9dde"
+digest = "sha256:b85cb6ad4cecbc9a93851ece29dd75260ab83c8bf0f95f029caa465305ce1ad5"
+
+[[tasks]]
+name = "userbench/jeevanpillay__5904ac41"
+digest = "sha256:80fe4e80cdfb39b85d9b4198f8f208ce99befefb9d8a6b44213d38938da693fd"
+
+[[tasks]]
+name = "userbench/jeevanpillay__71e57a23"
+digest = "sha256:650d9459d25351695549cc6f859a64ae343eef89b6cfa7705345039881e636d6"
+
+[[tasks]]
+name = "userbench/jeevanpillay__7941e093"
+digest = "sha256:f336b3e047d36fa9c9ea310a2007a45ba95fc3df7620da714923c2b9965aa0b8"
+
+[[tasks]]
+name = "userbench/jeevanpillay__d951d14a"
+digest = "sha256:66baa21b212c1ffdd42495d548f7576a50c4c948e4f2bd0b57bb70d182987ef3"
+
+[[tasks]]
+name = "userbench/jeevanpillay__e77b5133"
+digest = "sha256:f6d13e335a584cb39f5ff809147ae0e0d432a823df366798dbded426c6497c65"
+
+[[tasks]]
+name = "userbench/jeevanpillay__fa06bda8"
+digest = "sha256:82b0a99b13b259d5c5e9aba56d509dafbe49cabf8c60cc3f9d6e1839784448c7"
+
+[[tasks]]
+name = "userbench/jhoetter__209999e7"
+digest = "sha256:41ad22583a4673a20efdeed512a96c39a4ab8f0cd7e5adf712536ce216393f00"
+
+[[tasks]]
+name = "userbench/jhoetter__2da05fce"
+digest = "sha256:92dbc2b6d634f484708b02a95585d2a5f65b4e064f8b77d51601319a62f5188c"
+
+[[tasks]]
+name = "userbench/jhoetter__3517bfbd"
+digest = "sha256:822b3392ad55b6f3745a1415199b17a639b5046ad91fc1c2407c7f5948819235"
+
+[[tasks]]
+name = "userbench/jhoetter__5acf62c0"
+digest = "sha256:d5cffab23b0bdbdc1d689765ba1aba9549a6d3772d1a59041a7c3d5c3e4e03e2"
+
+[[tasks]]
+name = "userbench/jhoetter__60915a1f"
+digest = "sha256:12918a967b6c8c4a3b7da0b3a9c6128adb3aaf36a2b727d55a6103ee12235418"
+
+[[tasks]]
+name = "userbench/jhoetter__8c270a1b"
+digest = "sha256:3cc7d07ce278978636bd8064d30cb5af28e0849dd38e87501ff78d295c5cd99a"
+
+[[tasks]]
+name = "userbench/jhoetter__919e665d"
+digest = "sha256:dee6bf8c497557b8100ea6dd30bb52ba024095f0ef482feaf7f8c2cb54377624"
+
+[[tasks]]
+name = "userbench/jhoetter__b49b7e7f"
+digest = "sha256:6d115062a56113603a894d7405cda5a33a64bacba3f480bd47a5b274597c516f"
+
+[[tasks]]
+name = "userbench/jhoetter__bcc3790b"
+digest = "sha256:456eb94e2ba108038ab765ee296e142fc407316e97802abc973e13cb90afcc7e"
+
+[[tasks]]
+name = "userbench/jhoetter__eb3780f4"
+digest = "sha256:a2baa7606ba72cd33093ce4d4aa437ca4a370a719002825576082cc979fbc762"
+
+[[tasks]]
+name = "userbench/jobinlawrance__015f6990"
+digest = "sha256:08b0a54c6aef3f1cc4d6070ec874043dba86165a6e359a72da310dcffe5211ce"
+
+[[tasks]]
+name = "userbench/jobinlawrance__2edaea1b"
+digest = "sha256:c93a32d2aea0a0810d3c2b303a102e88122d2ed5d68f1471a33f83ae3341672e"
+
+[[tasks]]
+name = "userbench/jobinlawrance__66e69569"
+digest = "sha256:39ec563bfff6205f4ba0d3b4939359dc6ffe6313d7aae5e79d9a932a06fc4a67"
+
+[[tasks]]
+name = "userbench/jobinlawrance__69d520ea"
+digest = "sha256:f385a321a61a215f0e8acbd9bd7546ab8dd5cbd7ffc338304debe45527f5f3f5"
+
+[[tasks]]
+name = "userbench/jobinlawrance__723f7ef8"
+digest = "sha256:cd4cca6c44fc3c8f095ba7da3aae6fe9cc46ae2a5adfe018221d00c4aa6c23d8"
+
+[[tasks]]
+name = "userbench/jobinlawrance__7cd7e40a"
+digest = "sha256:f8de140832aed1d969a2ba29425ad3fb67f7cbb2b020a927ad8c6cb80a80147e"
+
+[[tasks]]
+name = "userbench/jobinlawrance__8d3fd0f5"
+digest = "sha256:418a8dd27df267b7a5d4f29f02f11c24605cd8c78abeb70661bb3435f3bc96f5"
+
+[[tasks]]
+name = "userbench/jobinlawrance__a1dc6ac0"
+digest = "sha256:ddd1edf0a9f57cb4f3599c47e06761daa067aa303a73789410eac66dc964845a"
+
+[[tasks]]
+name = "userbench/jobinlawrance__a748127e"
+digest = "sha256:4b23011094350291a4aa399732f79440073ada341959f0e767ed1a714aade957"
+
+[[tasks]]
+name = "userbench/jobinlawrance__ba8c72c7"
+digest = "sha256:392d175096def534fc90cca4cb4bf143a42f85a6273733576c7530a12da373e0"
+
+[[tasks]]
+name = "userbench/johyunduk__0daa688f"
+digest = "sha256:4a541d0d997288bfc9d68786dcdae7dedd02f19d8921f9ff93524c1f1bfafe0f"
+
+[[tasks]]
+name = "userbench/johyunduk__263db43d"
+digest = "sha256:0a88ab8651d866be35e54bc7e3091e666f7b9e30874d0f3716c1720df22f38b0"
+
+[[tasks]]
+name = "userbench/johyunduk__4bab3ef7"
+digest = "sha256:da049bc8f2a4c680b5b850f83510cb6199c0fe8dc898111acfaeea67d26604bb"
+
+[[tasks]]
+name = "userbench/johyunduk__5a1334df"
+digest = "sha256:322c37391218ae454b9593e06d038fa3536522a632fa0c185ae30549b4575021"
+
+[[tasks]]
+name = "userbench/johyunduk__75a332c5"
+digest = "sha256:828ec00c8ec619adecb8f57dfaa7d0691b31fb2026d85bf8f02582577bf58fa2"
+
+[[tasks]]
+name = "userbench/johyunduk__8bd19a58"
+digest = "sha256:82d19e02df071fbeb58a7a096330dc84ab6bd31aa07022a68c7e87dc12856aeb"
+
+[[tasks]]
+name = "userbench/johyunduk__b15e8506"
+digest = "sha256:4a9aad298d4e73cbbc55ac2e8c8c7b883d28ef00afa6ada064cf96b2067ef6ca"
+
+[[tasks]]
+name = "userbench/johyunduk__cb36cb1b"
+digest = "sha256:84018d7729c48c58a251f27e59764da8d717510876356a4968ca712105f93e00"
+
+[[tasks]]
+name = "userbench/johyunduk__ed18bb52"
+digest = "sha256:0e24e9561fd5404ef30017696cbde7cbcd01cc6ec1c7a3858cd8f48ec83f5bcd"
+
+[[tasks]]
+name = "userbench/johyunduk__f296fc43"
+digest = "sha256:b8b9babfb3058312cadfc5246c6ca82761dd86fe8eebe4d6232945d7dc1b4c9a"
+
+[[tasks]]
+name = "userbench/jskswamy__264ee35c"
+digest = "sha256:a5b38662729153a742c2f9ae383a3f80178f0f87036ef7018097750b46e42dab"
+
+[[tasks]]
+name = "userbench/jskswamy__2fd0350e"
+digest = "sha256:3ba1ffb97ce8ca06437f25c763ceadf118ac21ba58c69dda1cbc761bad598694"
+
+[[tasks]]
+name = "userbench/jskswamy__45376c4b"
+digest = "sha256:b2ed3ebad16fc40bdb6df7a1fc1aa346dacac9048327b23c793469597d977311"
+
+[[tasks]]
+name = "userbench/jskswamy__636b5fea"
+digest = "sha256:e55dcf99f245f3b8ab6935905c59cf7ffe4976f444936178a006a7ded42a766d"
+
+[[tasks]]
+name = "userbench/jskswamy__81abacf0"
+digest = "sha256:0ade5c5122709c5b9ff324761d327a19c893eb8b5ce72cd12acfb754e98b48fc"
+
+[[tasks]]
+name = "userbench/jskswamy__89eb1820"
+digest = "sha256:488f6f645f7800911468cd7c6d56ec8e581f4d6e7bb2536ad7b4f166354cc288"
+
+[[tasks]]
+name = "userbench/jskswamy__9cd70f59"
+digest = "sha256:1bf47dd6f9abb5be6db74d213663ec45a91a8c38487ecb7bb34cb22e1cfafb1d"
+
+[[tasks]]
+name = "userbench/jskswamy__a7f1470b"
+digest = "sha256:5674913c05c1acbbdc9231f23bc79a3ddef8dc1f94327c1d85ef708f2a2ec82a"
+
+[[tasks]]
+name = "userbench/jskswamy__e6f3d857"
+digest = "sha256:6b2f825e40855b69c78e330f1fe2947953797e9aecc0b100e49d20338065c574"
+
+[[tasks]]
+name = "userbench/jskswamy__e7cb0835"
+digest = "sha256:9ab13e3af7ef09eebd4bd5b5acc17faa832e01305dc4f24150562bd4134a742d"
+
+[[tasks]]
+name = "userbench/junaid-appointy__311a12f4"
+digest = "sha256:52e4881334a19bfdba5fac7b5c3bca4779636c37b526649df9aa1571cd523976"
+
+[[tasks]]
+name = "userbench/junaid-appointy__35091490"
+digest = "sha256:29068851166f1e56b3b1ef9026aaa72cbb8069a29bdbfdfb8dbe011aeb234e13"
+
+[[tasks]]
+name = "userbench/junaid-appointy__915b9090"
+digest = "sha256:365237aae20df818280a542f184ef449a81f2c48b484165cb4f06064bb88a47a"
+
+[[tasks]]
+name = "userbench/junaid-appointy__9ae3d2e7"
+digest = "sha256:ab49e7ff302d71ff5771f28eef86db8a249d5b2cecf1cff0cdb37ec168a76fb0"
+
+[[tasks]]
+name = "userbench/junaid-appointy__af1dce79"
+digest = "sha256:70afed036f6be85a6310b98bcd202fb0239e607a5465657198b559fdd4a534b8"
+
+[[tasks]]
+name = "userbench/junaid-appointy__beeefe8f"
+digest = "sha256:05c6cb77f0c0c811661aa1e712860fd7646bf5f5ddc4f4ea37678c534d9039e8"
+
+[[tasks]]
+name = "userbench/junaid-appointy__cac807fd"
+digest = "sha256:9949855d7e74e4d1a0abdc23c8038b52187a31002c17a8787db355287f528086"
+
+[[tasks]]
+name = "userbench/junaid-appointy__cb0b492b"
+digest = "sha256:478a48e8456df2bc1bf4f9d35c23e8817e0f74f729134d182aa446be172801d2"
+
+[[tasks]]
+name = "userbench/junaid-appointy__cee3b6be"
+digest = "sha256:cb3aad39d023405bcfa6c780d22e91a278215af809e01e5cec0d0ec3e205d332"
+
+[[tasks]]
+name = "userbench/junaid-appointy__d8cc1ea6"
+digest = "sha256:90df716900397a897e7518a735dc4acdd1abc0f0d6f2f0720519246108312136"
+
+[[tasks]]
+name = "userbench/khaong__06bbbed2"
+digest = "sha256:71738ffb0388f478f94ab2b62d277e4a3edb15dd804fd71d68ed123bea3f58d5"
+
+[[tasks]]
+name = "userbench/khaong__0b023426"
+digest = "sha256:a8ecb5e1ec25b4cbef0603def7f074e6fd52fa0cab1409af3b22f967d79bc238"
+
+[[tasks]]
+name = "userbench/khaong__10e38ded"
+digest = "sha256:c367a63a83e73630bec0d916abdb8bda4ae73a66506ec36f03c59a989ba6048a"
+
+[[tasks]]
+name = "userbench/khaong__18ba6389"
+digest = "sha256:4c4074f499fceb01473ee7f085583f35185273bbfe96f1f0ed70f71d61fbfa3f"
+
+[[tasks]]
+name = "userbench/khaong__3589873f"
+digest = "sha256:884cb34da0270608b1bd129425262244cbe5a6466596efe1f66db8c010952df6"
+
+[[tasks]]
+name = "userbench/khaong__3e62c23c"
+digest = "sha256:d10f75f43d5be60491017afe3909eebe543800d9b3a7157c2e3fcdc0acfce32c"
+
+[[tasks]]
+name = "userbench/khaong__7e2efac8"
+digest = "sha256:39afce084bcac34921fd3f2d4e2c1e75ef36971a9cae00d96fa4b2302dd6a993"
+
+[[tasks]]
+name = "userbench/khaong__8bd56ca2"
+digest = "sha256:ef51d79962d2fa962cae25a1a4f2640848ab3487fc636df2ce4e8c8aa1cd4ba2"
+
+[[tasks]]
+name = "userbench/khaong__d9031f8a"
+digest = "sha256:ed19d3c34f61e74c3dec283ff7403e281f09f7583f8ed63a005e869a6932df93"
+
+[[tasks]]
+name = "userbench/khaong__e1ad66fe"
+digest = "sha256:7c7461333d167ba2782e6c36dbe5f0dd1657df7de7dc77c927e041192ad22003"
+
+[[tasks]]
+name = "userbench/kmiki0__2a36c043"
+digest = "sha256:9521333fbd5b36b2531bf4a723491229d1b9885fe3c99b7068c1c586850b5fa3"
+
+[[tasks]]
+name = "userbench/kmiki0__35023941"
+digest = "sha256:69e5612b86e2796b4bc8bfa85059027908ddff969806d7cf0f06f30b2652fa05"
+
+[[tasks]]
+name = "userbench/kmiki0__364954f2"
+digest = "sha256:70934fac056e8f04abe1b291013b815a82d03a399a5cbce906a8f766d872c5c8"
+
+[[tasks]]
+name = "userbench/kmiki0__603c6c1f"
+digest = "sha256:3f31964da19792bf815914fb8dd89acd0d72a8e167c0f60357d4860f96a11678"
+
+[[tasks]]
+name = "userbench/kmiki0__6260a388"
+digest = "sha256:408250c5434abac779b6822014d8ee416ee65ecf9e11c079ca28a8fa090d0620"
+
+[[tasks]]
+name = "userbench/kmiki0__672300e9"
+digest = "sha256:4e5845982ad7fc2409f444037a0e27445b991c823ae379952e599168ed0b2027"
+
+[[tasks]]
+name = "userbench/kmiki0__924a7b32"
+digest = "sha256:4a7249153d0789cf99f7a5fe3cfe73b0f1db7d473eba09d2f4c1dbf96d994b86"
+
+[[tasks]]
+name = "userbench/kmiki0__a9bb3ed2"
+digest = "sha256:2bc1a1bf7fedc5519e23fd2b0d073fe77f9bc0cfaec04333965ea14faf5bda8d"
+
+[[tasks]]
+name = "userbench/kmiki0__da54e58e"
+digest = "sha256:f70e688e0213ae3a49e1ff038673706c3bace49537f964e3bab2d0662c47a004"
+
+[[tasks]]
+name = "userbench/kmiki0__f7732c44"
+digest = "sha256:0cc477fefa3d42189711c6c254b84406b7b807a98c8b4183c2853dab2111984c"
+
+[[tasks]]
+name = "userbench/kohaku500__24642283"
+digest = "sha256:006c60b06aed3f6f64ac5395c155afad163fdb0c8b8355c3479e397720200180"
+
+[[tasks]]
+name = "userbench/kohaku500__31ef4143"
+digest = "sha256:74d27bbcb00a3ad7e562d032e7b80ffc9b4110d1c9753e5546a295790a791d46"
+
+[[tasks]]
+name = "userbench/kohaku500__38862417"
+digest = "sha256:2f4c8fd906b0454e438b10a2a1a3c29aa7384583fb0d3d2f52a0e174160201c9"
+
+[[tasks]]
+name = "userbench/kohaku500__80f87c63"
+digest = "sha256:8362514eedff38b996a83da0f83e9479262b8020acc73c316e4a01383815d6be"
+
+[[tasks]]
+name = "userbench/kohaku500__829d75fd"
+digest = "sha256:caf46249e07f760a06a33ce229954dc1d1c923b8460d77eb0b7b72fceb079812"
+
+[[tasks]]
+name = "userbench/kohaku500__9036119a"
+digest = "sha256:9fb40d40c193c4a2271faafcade1597e7bcee206901ffba278b6a624ecced310"
+
+[[tasks]]
+name = "userbench/kohaku500__c36c95c2"
+digest = "sha256:f1bd037d657ac983301314ae594021ef4888ba7ad8afd17ebe33b5228c1f1f40"
+
+[[tasks]]
+name = "userbench/kohaku500__cc54a542"
+digest = "sha256:da26bd1dbf2b8543d5b660fb0e6d6627ead55fe3e2b865c19c257fc97be1ba99"
+
+[[tasks]]
+name = "userbench/kohaku500__d39c7601"
+digest = "sha256:858b1d8a479f51c3a589f381a072cd7a549b7da03d9ffa11dd07d98c8c696e14"
+
+[[tasks]]
+name = "userbench/kohaku500__d7998363"
+digest = "sha256:858c157a7ba1fc4d30024ca518314fe42de7bd35a69ba7cafd3e43ce0a282ea6"
+
+[[tasks]]
+name = "userbench/kungfusaini__051dc260"
+digest = "sha256:b72b2d45c9647c8855affaea89131ee3cb13857b630ec776f27a8f0666cad3f4"
+
+[[tasks]]
+name = "userbench/kungfusaini__0dcc9805"
+digest = "sha256:4886b6eba9badccb20de66fb3d4be68904dfeb30cc0962c68a876c14b9f9bd91"
+
+[[tasks]]
+name = "userbench/kungfusaini__6409200a"
+digest = "sha256:d758125795c2106fbd0b2485c0812c72b7810b6b38cdcdf7a90dd1041181420a"
+
+[[tasks]]
+name = "userbench/kungfusaini__76670d24"
+digest = "sha256:04690e0a2d49ec4731f56c13c720a08da94dabef81ad44ac7c8580138d45a28a"
+
+[[tasks]]
+name = "userbench/kungfusaini__8314296d"
+digest = "sha256:14e7bf66c51f11f9cf4045a60cf3dee57304cfbd64a91810fcb186237d677e01"
+
+[[tasks]]
+name = "userbench/kungfusaini__9a3333b8"
+digest = "sha256:5f401a4e60bc877b76fdd084de34e34ac821a0b9cb2ad93bdda9951a74a9ef7f"
+
+[[tasks]]
+name = "userbench/kungfusaini__9d0a7d9e"
+digest = "sha256:fe5b475fa6d2412f0455440e03cf96b5babfda3ab0982e1ec011c1835f54ac66"
+
+[[tasks]]
+name = "userbench/kungfusaini__9f8077cf"
+digest = "sha256:64b6d7edeb765975abee421123e5364f191d8662638e5fec466bcf17430b32ed"
+
+[[tasks]]
+name = "userbench/kungfusaini__e97ae043"
+digest = "sha256:3f9081d7c5d007248d432519a5454afa9c304fc1da65a0001ea6690a6f4bdc92"
+
+[[tasks]]
+name = "userbench/kungfusaini__f8d51bd4"
+digest = "sha256:237a2c8f61ec8d4f07b2b4c477837248fcdec0f391bf56a13d1ed5e1fb40d137"
+
+[[tasks]]
+name = "userbench/lyston11__182e418e"
+digest = "sha256:b640dcf84203dea2403237a7c89a70dec9034d46d3164c60a3b151a892d63c30"
+
+[[tasks]]
+name = "userbench/lyston11__3d28b804"
+digest = "sha256:48e2b6ad95b5feeefa3f48baae1151cad452b0ea464ead394bf06232b920ad30"
+
+[[tasks]]
+name = "userbench/lyston11__581de3ef"
+digest = "sha256:746d9b595b15916803af4082d698cb2945971833a0a23fbd6a74f1a73e793943"
+
+[[tasks]]
+name = "userbench/lyston11__5cd5012e"
+digest = "sha256:e80f95886475c59b963b486373cb3f15fe214c91133f6aeaac5c2aabf0b7926f"
+
+[[tasks]]
+name = "userbench/lyston11__5fac2a4d"
+digest = "sha256:e4ce0a246315bb7343e65da2cbf0bf64f77449b82a3fd05093ddf9f8dca8e02a"
+
+[[tasks]]
+name = "userbench/lyston11__733da7f7"
+digest = "sha256:ee8824540f44bd422ef4eade9ea63b30a0c2503ea19bae5201a404b9abf34a85"
+
+[[tasks]]
+name = "userbench/lyston11__c12cd364"
+digest = "sha256:5bc804c70be67de89fa7b9481d3525b3f93d281b8b7d05626bdbd4d54f03760e"
+
+[[tasks]]
+name = "userbench/lyston11__c145a945"
+digest = "sha256:db9e9fbb2632e6b0e9d0a815308e49e44dc0c73495cc73ed4fc606a7d24ff54d"
+
+[[tasks]]
+name = "userbench/lyston11__c3e8ff4c"
+digest = "sha256:f9ee54bc53f97d7f8bb0aef450d1268da12aef94df8418a79f88a5ac50b99b9c"
+
+[[tasks]]
+name = "userbench/lyston11__ec0ffdd5"
+digest = "sha256:078f86722475c8fa97e57b54c0adf759e31932417a72a33ccb9e6551c1f4a818"
+
+[[tasks]]
+name = "userbench/malkoG__4ca6601d"
+digest = "sha256:00387d3fa5044c1100575175a99b3992e6aa7a870a557ca1ec7a48b593ba28dc"
+
+[[tasks]]
+name = "userbench/malkoG__58805f63"
+digest = "sha256:462ab2ac7c0b2fd055887c1f5caa912de4e1d0d748f170a16f41e767e04b7886"
+
+[[tasks]]
+name = "userbench/malkoG__654e600d"
+digest = "sha256:92e625ba141f805d7e3e813057f3485fc3b3f839dfa2bcebd2556fc4f044ef20"
+
+[[tasks]]
+name = "userbench/malkoG__908ed694"
+digest = "sha256:b36b1a6da5f312d6785822d661115aabfe24098eaf82d1a4a58918e39f12093d"
+
+[[tasks]]
+name = "userbench/malkoG__9b248afd"
+digest = "sha256:d510370f9c26f7726352117c1be0999b60fcb1213db57dd3a16a4efa09c165a2"
+
+[[tasks]]
+name = "userbench/malkoG__9b476884"
+digest = "sha256:10250be3eacc52f0f6b7a7f4cbd99c30ca21c5a9a709d0b90cd03b8baeced7e9"
+
+[[tasks]]
+name = "userbench/malkoG__a7ddaeaf"
+digest = "sha256:6e48d8f258c7ef08631f53e3b660512b264c69f560e8558d5566c1c43fcd0eb6"
+
+[[tasks]]
+name = "userbench/malkoG__c2d73c4f"
+digest = "sha256:dd44caca3d7de9129e2b1b2143fa334eeae89959c64f0f1b9fbc94b965512c27"
+
+[[tasks]]
+name = "userbench/malkoG__d0e54495"
+digest = "sha256:f230615b526156379affc1b79b54180367860b9fb36acca5765adbd39384b512"
+
+[[tasks]]
+name = "userbench/malkoG__f0e27113"
+digest = "sha256:d69651cdd0471c462633a3f0770e2718fa8e326d13beec7844fdde139bb655b3"
+
+[[tasks]]
+name = "userbench/manderson240__2bac58a0"
+digest = "sha256:d2947e556ad60ecf545171670a37d6100784d55999ea3424080029058c184920"
+
+[[tasks]]
+name = "userbench/manderson240__3c73d247"
+digest = "sha256:3e878d61139ce3fa14d1fb6b1d8cfa08086e18e02a4287e328015aaa018649bf"
+
+[[tasks]]
+name = "userbench/manderson240__48f851af"
+digest = "sha256:725ccb124da912b6f0e9973ec9a1f20977b947fae3609a7798d4e81441e55e5e"
+
+[[tasks]]
+name = "userbench/manderson240__4d6f4d55"
+digest = "sha256:ed2ca6eaa77340c6132d508ba205f187c171536182050da91dd171486c93b67a"
+
+[[tasks]]
+name = "userbench/manderson240__5c697026"
+digest = "sha256:bea27e6bd22aa99765eee29ae0b326565b7cda4e787527813c757199746382da"
+
+[[tasks]]
+name = "userbench/manderson240__82601d5d"
+digest = "sha256:05cae6b99af53608f505224d0ef99ddd6b5b10be88c0188bf8bdc67675181c89"
+
+[[tasks]]
+name = "userbench/manderson240__9267ae98"
+digest = "sha256:1b4781d370784e278a79f3ea44db8978b32e84fc04a3cfc148f112f18edd9069"
+
+[[tasks]]
+name = "userbench/manderson240__a3d3d466"
+digest = "sha256:b151a02364dd0688ef32cda6ba8ee3f4cd38f4d2b919b46ede47d2be33e96baa"
+
+[[tasks]]
+name = "userbench/manderson240__c62b91cf"
+digest = "sha256:c8cd5d8ca0627b831cd2ab42316637c14338183317b3e6cc8f87465191b0ad44"
+
+[[tasks]]
+name = "userbench/manderson240__ec275534"
+digest = "sha256:8ad9f4169e252d8cb590863aea6f06f84dc635d1701ff7d69066fda0889f8efa"
+
+[[tasks]]
+name = "userbench/marcus-sa__0121e4af"
+digest = "sha256:64847b316cf0331695bef19a4abed8572c5912d79fd6e04bc507b15c25adb3c0"
+
+[[tasks]]
+name = "userbench/marcus-sa__27ae199d"
+digest = "sha256:71c3f928d7ef1e48ea69c0e98f6a2bfcf5c2f5c8369bc30f386dff5822c0567c"
+
+[[tasks]]
+name = "userbench/marcus-sa__288f068e"
+digest = "sha256:93e65a1315d643ade6521a44e8a3b8004be3411ca1d6def271f5fcf59e01a8f4"
+
+[[tasks]]
+name = "userbench/marcus-sa__56b8c4e7"
+digest = "sha256:cd595243d8050ff6fbfb96e623bbff96858ac7dbc2d38232d159ea6efc61427b"
+
+[[tasks]]
+name = "userbench/marcus-sa__60346b6a"
+digest = "sha256:8e964bad1ac4c4edee2c4fe6466ba069043576582b96674bc0fd024bdfd9edf9"
+
+[[tasks]]
+name = "userbench/marcus-sa__81996502"
+digest = "sha256:d37172947a1243b4dbb909bf6adc5ad7dc82fd2c230213023852629efe7f5b22"
+
+[[tasks]]
+name = "userbench/marcus-sa__8f91d1b5"
+digest = "sha256:c07cbb56af700b5b26dd89a20a14d3ab9508660ffe8b5f8a39724e28c446c834"
+
+[[tasks]]
+name = "userbench/marcus-sa__aafed4ab"
+digest = "sha256:87965113d760d90d17fe41930b34f54a245a246cb5c45aabaa7bc4670038c71a"
+
+[[tasks]]
+name = "userbench/marcus-sa__b4fa4432"
+digest = "sha256:bcba3f5474b227cca0dc721306e1f8387d618d9a0ef9622e28514b42502fedae"
+
+[[tasks]]
+name = "userbench/marcus-sa__e7c46cf0"
+digest = "sha256:eb68396e4f9e484a8268e61b0d832ea1069b102dcd035f1b8e385b6103c8bc4b"
+
+[[tasks]]
+name = "userbench/melagiri__013c6017"
+digest = "sha256:700b32d01362fdbd2a099ea18a6fea88872485c4d030e265ae7ddc1a4cc5c1d7"
+
+[[tasks]]
+name = "userbench/melagiri__130f32d7"
+digest = "sha256:c2b69dbd652814d65b66441eb6fdd053dd0f4472ed82cf1141569bf6119210c4"
+
+[[tasks]]
+name = "userbench/melagiri__25b8f546"
+digest = "sha256:735d18c51bcc14ea7761f348bc20c63d87cfb792406c3cd773eec1c62fb80dc5"
+
+[[tasks]]
+name = "userbench/melagiri__28dbbafd"
+digest = "sha256:106e261650d3a7d628b6ecdafaa1e683d6160d56491b2484468db4cbcbaa1b4f"
+
+[[tasks]]
+name = "userbench/melagiri__3cf814f5"
+digest = "sha256:0e995456a8bef91e50a8a32316cab66a3999bddc1b25af5b99349d27c81df647"
+
+[[tasks]]
+name = "userbench/melagiri__4203583e"
+digest = "sha256:0c4f2b593764c310a5b268bc1345af93157d10b2034c55071bebfa3bdf4c1f66"
+
+[[tasks]]
+name = "userbench/melagiri__476a562b"
+digest = "sha256:58d48f788c5a9b41e0e9ebafe6f7d28fe8a2e9894a71f23c1ecfc1b304520dfd"
+
+[[tasks]]
+name = "userbench/melagiri__7a34ab4a"
+digest = "sha256:f233ea09ccc766ff555233bc0d5071789406fee53399de2c06e4117f1b960c58"
+
+[[tasks]]
+name = "userbench/melagiri__af1394ab"
+digest = "sha256:e169d24ab8c5ee77d83fcb1fea51237ecb8dd8ecfb5df3e0d6c416b540cf20c3"
+
+[[tasks]]
+name = "userbench/melagiri__e0dad522"
+digest = "sha256:298ceab3f5cec563cf151f11a87b83d5392cbd8147985b3f56de8b1d04159d50"
+
+[[tasks]]
+name = "userbench/mvanhorn__47cf85ab"
+digest = "sha256:7286f4c74cddc58cefafffb5f31c377fa8b5bdb85697c6c0f1808704e8ecadcd"
+
+[[tasks]]
+name = "userbench/mvanhorn__4e30e41e"
+digest = "sha256:1c16bf45bc09be9f551f9adc2a4b8adffe427d7e243b5f60e7cb995e0dce17c6"
+
+[[tasks]]
+name = "userbench/mvanhorn__716a17ba"
+digest = "sha256:261bc278dae337edc73ea28d58f29040212dcbb1b3971d1ea71e8c1e2ea6dc74"
+
+[[tasks]]
+name = "userbench/mvanhorn__7921dff4"
+digest = "sha256:a1c65839bb8f0f56763ee5e0f56e8efca39eb878c1fd3772e5a22385c80cd277"
+
+[[tasks]]
+name = "userbench/mvanhorn__89ae7ff7"
+digest = "sha256:2f7d8edb016d56336a5b8f419ac0acde75257dbe2d90120ebc9360cd04de7f2e"
+
+[[tasks]]
+name = "userbench/mvanhorn__8a8dc66c"
+digest = "sha256:7067c24473306c84456de393b678f1a406093617ff2adc6424aebcf1d56ebd26"
+
+[[tasks]]
+name = "userbench/mvanhorn__8c97d4de"
+digest = "sha256:d0494bd341af8ef394914330ce0014475163a30587c224b97c7ef5a87d6fa3a1"
+
+[[tasks]]
+name = "userbench/mvanhorn__a4b76ce8"
+digest = "sha256:9378249bde9418980d9c2ed295a2daaaa576ae3a6f86d70a475bacbe8f80d138"
+
+[[tasks]]
+name = "userbench/mvanhorn__c15f2981"
+digest = "sha256:0cd3ec1968f46c55700f6720288a82b3f41ab53e31ab1c1a70a94ee79940cb99"
+
+[[tasks]]
+name = "userbench/mvanhorn__cf848111"
+digest = "sha256:c32ca8121523a5e8e0a1328df6efc8fa060eec81b15b17ee2c32febd293af0a2"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__273ef024"
+digest = "sha256:59695d75907074a22fc9d2ba529317f65e4294c5f8e3ebca3a73692c09826b3f"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__30525504"
+digest = "sha256:4c0f444a8921e1d79712d90ca04e4c44e280c104b4d30d4ada8659550d62eb10"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__33b00343"
+digest = "sha256:e7b70581838b7c18821888997bebf8fb9aab36281cce0a3730d6603130bfa25d"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__35376685"
+digest = "sha256:180af355bec4fd28ebd95fef437a8686691ad6fcd0b6a8ee6b0ba4066e7b6c1a"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__617a942a"
+digest = "sha256:5fbd9e332c328f13642d601fabbaf605b93b12d40258a39bc5da6d132176fee3"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__62642c4b"
+digest = "sha256:25b294f6a82ee9fb4ab11fa1bc6f83c08288ececd9eefe38307f2a0f4f4657e0"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__74dc6f40"
+digest = "sha256:7753a4499826e4ea7060a2705c731109c58f77187bc24602dd4a45b7bbaf12f6"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__8e4c4321"
+digest = "sha256:d1f6de10cb618b85eb84fb074900eefa824658e963184173021a19aa31127f3b"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__8fa7119c"
+digest = "sha256:c4e250e2546143e460ee7b01143aeda401b684f8d6e8c781f9e8fd46a225c1c9"
+
+[[tasks]]
+name = "userbench/nathanbooth-konecta__d2090df8"
+digest = "sha256:3536da5a2223dd329a7c0337516b7583a56d33154584da2f55c0a16e29f07559"
+
+[[tasks]]
+name = "userbench/nosman__19985a6e"
+digest = "sha256:2e81bb94c5b7df594e7824f766a6b578549ae3251179664b38a4480ca65121fb"
+
+[[tasks]]
+name = "userbench/nosman__416e9b74"
+digest = "sha256:041029550b4049d09519f46d18fdec94a8af3e2bd4a7dc13376a778cad826929"
+
+[[tasks]]
+name = "userbench/nosman__458811d2"
+digest = "sha256:70f41f44826bed32df283f00cad0b953a1099a677b8e33aa270007da87cb49ba"
+
+[[tasks]]
+name = "userbench/nosman__490dad19"
+digest = "sha256:287ed4229283e47e5a933db56f8187503862863e69a552a35f032e4e81fc52a6"
+
+[[tasks]]
+name = "userbench/nosman__5b7c798e"
+digest = "sha256:4f3e24331e7b43f1837c8d2ed17b35ae4adcbe9a0a516501f306b9b47141e8e6"
+
+[[tasks]]
+name = "userbench/nosman__75355bce"
+digest = "sha256:ff7aaf189354213188d00a11b54d4e6796e427192e785b45bd1d5a72483bcad8"
+
+[[tasks]]
+name = "userbench/nosman__7c59d97b"
+digest = "sha256:79c8ef2638d7869f5d633aa1e23d94efbcef33293508c22fbdb8c8cec553f2dc"
+
+[[tasks]]
+name = "userbench/nosman__a1b3187b"
+digest = "sha256:744220a9538b300ca34a3ded2082c5aaf7e4343fe5e8230de9dbf2ab1c09d96d"
+
+[[tasks]]
+name = "userbench/nosman__bd4601c6"
+digest = "sha256:c4d154308b1261995c0701cc554268b5bec76cf4e769f1fe4044f5f2ef0e9ae0"
+
+[[tasks]]
+name = "userbench/nosman__d7d30e52"
+digest = "sha256:92ae031668fcd6e1a5672ee18ee733c4c34756b016462a39c5b82e27fcfc7692"
+
+[[tasks]]
+name = "userbench/oddessentials__0494e728"
+digest = "sha256:42f7b971d901a6256a745ce90332e428975bec28a02a2dd6071d7d819c7a3803"
+
+[[tasks]]
+name = "userbench/oddessentials__0558d1c7"
+digest = "sha256:62b2bf813ed0588948fb9419466bee71de2ac4b15cae0492756819fba1994c00"
+
+[[tasks]]
+name = "userbench/oddessentials__0b10a78b"
+digest = "sha256:cd2006df345db0591e69c468c218fbb25fa967887a34389aca7bd6d528e65fca"
+
+[[tasks]]
+name = "userbench/oddessentials__379f489c"
+digest = "sha256:687c9303e8605b706b496cafefcebbf377221c7cdf98e46ded2108700ba2bfd9"
+
+[[tasks]]
+name = "userbench/oddessentials__49939de2"
+digest = "sha256:b5eeaad86e1375b8dd00dc5aec24be57d0b0a898f9b76cd18f0d1a64199a46b3"
+
+[[tasks]]
+name = "userbench/oddessentials__74f6a0b5"
+digest = "sha256:b4a5f3ea553f6bd07401ec47bb7a3d04cc58af3fdb4d95a0c9520bb9156cafb8"
+
+[[tasks]]
+name = "userbench/oddessentials__845a955a"
+digest = "sha256:03f0fa12dcd1254c171dfd72d9bcb214a5957108cefd8e306fd45ed870d2a4d1"
+
+[[tasks]]
+name = "userbench/oddessentials__90f1206d"
+digest = "sha256:617a20809a8afc7d9d40344fb48f713f92791dc746c9cff65a3e73e4cfa798ef"
+
+[[tasks]]
+name = "userbench/oddessentials__b4bcc213"
+digest = "sha256:b7d906d30155c9d2a311cb165f811aeff754b359230271d4574e236ac8ab2fe0"
+
+[[tasks]]
+name = "userbench/oddessentials__eaf6331c"
+digest = "sha256:69fc14a51db83b39ad53766b3d7099fc24caf4b5ef6c966dacc26cc4c27aa9bc"
+
+[[tasks]]
+name = "userbench/penso__05181f3e"
+digest = "sha256:abc3edfe99c6fe42f5f8eae1158636436892c26a2c74ed6680eec915b85a92c3"
+
+[[tasks]]
+name = "userbench/penso__395b6920"
+digest = "sha256:203d78dfae325ca3299c6bafe646c0f7570ae868be8384300bc1894172f2273d"
+
+[[tasks]]
+name = "userbench/penso__56c1b069"
+digest = "sha256:278576bea1a4d6c54b3ac5ac2e028b8696b27e2623131f3555b5d12e96005485"
+
+[[tasks]]
+name = "userbench/penso__89b3a2d0"
+digest = "sha256:792c2e7f553a3bae7a3f53ec2fdba54e0f355d5f7a032cc67a1674a16b1e089c"
+
+[[tasks]]
+name = "userbench/penso__99f8e6bd"
+digest = "sha256:e68959b957d6acfb432ef584ce4045aefe1488fe5fd024b09fa9e02b567ab37f"
+
+[[tasks]]
+name = "userbench/penso__ccf3440a"
+digest = "sha256:f590a3eab7c2f8fccbde3c9ee3d889da5e67c94509befdc487c1382893172487"
+
+[[tasks]]
+name = "userbench/penso__d1d5889f"
+digest = "sha256:b334197f2d9355aa906730f81b9f895f4223dc4d5a4972b81a509dbd285595fa"
+
+[[tasks]]
+name = "userbench/penso__e8f7bfab"
+digest = "sha256:b20e01331f414359c1f19e07fb8a16a39583aaec5938a85c2dba6cee8e37e585"
+
+[[tasks]]
+name = "userbench/penso__ea51f5a6"
+digest = "sha256:7ab086a1e17597f6f007f8cfebcf0005f3d20632e8fc49e2a937dbf58399492f"
+
+[[tasks]]
+name = "userbench/penso__fe93fa2b"
+digest = "sha256:ecc6221adbaa98a6902df556107b758d21b37cebca0423a0d421bbe378413c92"
+
+[[tasks]]
+name = "userbench/raman325__429c2fe6"
+digest = "sha256:e22ff7c9fd9b7fb8918bc63ff4562104c2d27052b548b26f80c5b68a957e1aa4"
+
+[[tasks]]
+name = "userbench/raman325__4750553d"
+digest = "sha256:5273d52a325595d13f1408239304a6adffd010160aaed9e75440ab4ee623d3ed"
+
+[[tasks]]
+name = "userbench/raman325__646fecc7"
+digest = "sha256:5188ed7f5616c11ee544a476b92de68c96a6a2cd447484da3fdd0fd10169845d"
+
+[[tasks]]
+name = "userbench/raman325__9730850f"
+digest = "sha256:6822dd31f5271b57e5a21170d05476d155cdb6652fd258b014cbbf4d00c1afee"
+
+[[tasks]]
+name = "userbench/raman325__9dacf299"
+digest = "sha256:28b8bb4935d9dbd129244f1937acecc8ed5599a886b076b5c35d73a7577a0071"
+
+[[tasks]]
+name = "userbench/raman325__a9ce30a5"
+digest = "sha256:9eaa0377f9772941401eaf083e74b84f10d41bd76fd209995cf5fec62f305177"
+
+[[tasks]]
+name = "userbench/raman325__d4a2df8b"
+digest = "sha256:9e7e7f695d2bae3570fe64a63980e7efa697acf07d2e32aed244563252f6ea88"
+
+[[tasks]]
+name = "userbench/raman325__d86a71c6"
+digest = "sha256:824a79604c7f986fe5adc300770cae9d0239c8e998dc77197641c943982a7345"
+
+[[tasks]]
+name = "userbench/raman325__e67e0975"
+digest = "sha256:fda18a2ce173c3a5c9250a6e1e83c5b04024f80a81ff9df0f9409551e0ba0e39"
+
+[[tasks]]
+name = "userbench/raman325__f4d22eb8"
+digest = "sha256:3f1d9284a834362503cb0b50b29bd493089f5cce4ed35b3b3b3686bbdb88a821"
+
+[[tasks]]
+name = "userbench/robouden__0104b37c"
+digest = "sha256:66957f0d64fd28d5f6434bf49c56d2847c042b773c37a875779f0f386000f512"
+
+[[tasks]]
+name = "userbench/robouden__158fa32c"
+digest = "sha256:aa888ce8ce2fb0317a0f8dafe1d5034538d4f5410b5b42e9a72e573dd3b3d57b"
+
+[[tasks]]
+name = "userbench/robouden__36ed725c"
+digest = "sha256:0b4a8b0bed7138f78d7dfd3504c480e96588f1ff799bf18f314c5bdf0fd57645"
+
+[[tasks]]
+name = "userbench/robouden__8b4b3c4a"
+digest = "sha256:30b4ee227a7e152d0ad7de3cefa7697a71cc0ceac0a213699a21312aec7454b5"
+
+[[tasks]]
+name = "userbench/robouden__b294b008"
+digest = "sha256:6426b6df4146d4b8b9e2af394c542691d14afa096001c924e22314eb02684b9f"
+
+[[tasks]]
+name = "userbench/robouden__c6e9e844"
+digest = "sha256:d3e087ff29bd7604c85b74fe15f245a69768144ac4eda4411a899252e04156ec"
+
+[[tasks]]
+name = "userbench/robouden__cb40a5e2"
+digest = "sha256:6c95a3a2b2334c7b1358ef7fdaaaa85ca3bcc855b3d8aa344f3d07e9698c16fe"
+
+[[tasks]]
+name = "userbench/robouden__cfbea6a0"
+digest = "sha256:8cf4cb82b256124cc6fc7919c4bfb8c5b1cde69b97d7406578b60f85d86f9e47"
+
+[[tasks]]
+name = "userbench/robouden__e896e954"
+digest = "sha256:5655f7b6b2bab0de98eb89e98f9ee14d6b94e76c3afb349bfb959eddac11977b"
+
+[[tasks]]
+name = "userbench/robouden__f12f7493"
+digest = "sha256:9d62b492e68e153916acc49cfa0d1ec56cb8f1f54a1a3689d24f484e5c0a129e"
+
+[[tasks]]
+name = "userbench/scottdensmore__17cdc6a5"
+digest = "sha256:b46a141365737f8017c0e87144e98fb20ac9bc344902475df2b7ce168536d37d"
+
+[[tasks]]
+name = "userbench/scottdensmore__344cacf9"
+digest = "sha256:0a24c3f609caf2211645cfefe0ba3cfa7c9e1a2e48ca09532c5a29fe144524ed"
+
+[[tasks]]
+name = "userbench/scottdensmore__42381bd0"
+digest = "sha256:c4c0843d3380ff058fdf73778db119c31d5502a7d923b5864215a51355e230e7"
+
+[[tasks]]
+name = "userbench/scottdensmore__6d44807a"
+digest = "sha256:9331b0fa26c1c74368708cb339da9d44e1bef94ce89e761c8b901bcaae5eb452"
+
+[[tasks]]
+name = "userbench/scottdensmore__7b129602"
+digest = "sha256:83a9e8e7f23e25f35ac70cae86e5fffa8a0220975b37a2322c2e172705f02911"
+
+[[tasks]]
+name = "userbench/scottdensmore__83347f87"
+digest = "sha256:a8dca56f870d6d6887ec573735f4456a7319e9ea68e40ab5acc18b68b05b6d0b"
+
+[[tasks]]
+name = "userbench/scottdensmore__878978e8"
+digest = "sha256:df16346103ab000b8ea1cf972f97252398fb4d718928c64f1092388b62ff2fba"
+
+[[tasks]]
+name = "userbench/scottdensmore__96489d0d"
+digest = "sha256:bcd2fda004284957d952a4e3c1894109c0c710f33e43de568a5360c8fdf9b91e"
+
+[[tasks]]
+name = "userbench/scottdensmore__b162aa5c"
+digest = "sha256:587e9a62d463df51a0d62468c25e782f7a362ecdc3155db451932a6838667ee2"
+
+[[tasks]]
+name = "userbench/scottdensmore__e7c0c3f1"
+digest = "sha256:ed71f0e021390575a4f0922d44a4f8d996b919966727eab6bede5514f6f25306"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__13c48199"
+digest = "sha256:ae2047523509a118976eea0a4827a02485d5f42605008ec2f16831e3fd0b1a8e"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__28776902"
+digest = "sha256:ccec8bfa5364554326e75e4dce5a96c56cdccbebca7bc60ea638335621e353ea"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__3f75b898"
+digest = "sha256:b06ff60199e530cfb756c59a9cf476e7e7a5da69be6d8f7e3e13ba9692e04959"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__8dc175b0"
+digest = "sha256:9fcb5f141ddc924ae487bde9612acd5143eadae1a870cf661536a0f41d944b70"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__91bc17ba"
+digest = "sha256:1bcea289eed1a39ddc45d192ddeed0b9bb1ade10b9cb66f4258dece096e6123c"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__93f5702f"
+digest = "sha256:b460f59521c2e31fe7865b66617399dbd6118d23159499dad1456b01c697f444"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__b8fbec2d"
+digest = "sha256:6502473de1eba6cde8bf15ad6e72c7f388f1905cd233be4de4b5e7ce16866c95"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__bfe1ab76"
+digest = "sha256:9eb483ca6b640c6fe48f8f49978c0c315195e22e4645a7b8f164d334d9fbec27"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__dc989aa1"
+digest = "sha256:073f08e5623e7356d05314fec10a48166985e8b765945df16139809a87d7cf35"
+
+[[tasks]]
+name = "userbench/singampalliveerendra__de5a3f57"
+digest = "sha256:24147e5efa94b6cbbfdb4eed3432a3ed0955d492839020d3e346f54f7d3fbfd2"
+
+[[tasks]]
+name = "userbench/ta93abe__14a96679"
+digest = "sha256:6cc59107119025e55599ba24551b1c658f0ee500422024a7e90bb534a9865bfe"
+
+[[tasks]]
+name = "userbench/ta93abe__1d0c822b"
+digest = "sha256:6d6b6d14df9148832b8e2a7181b2d845e2ce17d16a41c12e6102be12fabc13ac"
+
+[[tasks]]
+name = "userbench/ta93abe__22fa2a69"
+digest = "sha256:df2bdbb681d4e1f5bf35e88d8937013b72b0a8799dffc0922077eca680b53d85"
+
+[[tasks]]
+name = "userbench/ta93abe__25e7c1b9"
+digest = "sha256:6136ec7ecb1ff4f703ffdb534bd5c61420e35bdd0908bdae02aba555557952ab"
+
+[[tasks]]
+name = "userbench/ta93abe__2d529cb3"
+digest = "sha256:5f2b346b03917e977e9ec839ee2dcd3a42607e3fd9d079f63b59bed46cf1c555"
+
+[[tasks]]
+name = "userbench/ta93abe__2f9b0c7c"
+digest = "sha256:17d2bcda0edbbe2c56a929e837e26afcaa41861580368605309e22eda3c94bef"
+
+[[tasks]]
+name = "userbench/ta93abe__3b70eafa"
+digest = "sha256:2d97a39481f80ebdcb0fabb77dcd15f567db78de611455a1fa9ca5b93f2538b1"
+
+[[tasks]]
+name = "userbench/ta93abe__8cd6cb7b"
+digest = "sha256:1de0b58e993202039f72485ed01a9fdd408e08243e5893ebc84a3c1882abaf8d"
+
+[[tasks]]
+name = "userbench/ta93abe__a68fb6da"
+digest = "sha256:24c1178d7b21a73da84934a0f8bfb21ed5d60418ef69a4f6c82fa7c377213aa4"
+
+[[tasks]]
+name = "userbench/ta93abe__e1d7b4a4"
+digest = "sha256:3bd4bd02d77ee9f178c9946b005cbbe061321a746ea801426f59cf65d74784b0"
+
+[[tasks]]
+name = "userbench/thieso2__2cd329c5"
+digest = "sha256:68a60118855e635211d84ee5dbf4bfb61774b433e4d12f626f8a1e8fd47d1b33"
+
+[[tasks]]
+name = "userbench/thieso2__3dbff2d6"
+digest = "sha256:bb039242cac7022fede49f6daa5660bd9d9568ed918f29c1ccf33d729e9d3375"
+
+[[tasks]]
+name = "userbench/thieso2__491f5eda"
+digest = "sha256:8f35f50a7b9a6a31c5631addfa3326de471cdcee7c4e8c0f6f1dc37311c28768"
+
+[[tasks]]
+name = "userbench/thieso2__5b029bc6"
+digest = "sha256:7b461f37257228a792834129b8d91805f4ace2ed914ae27775e48d189adf3c36"
+
+[[tasks]]
+name = "userbench/thieso2__67587edd"
+digest = "sha256:1cd85d7b35c72c003d63f956845044afcbc6777111968867c3f6ed73b763bae2"
+
+[[tasks]]
+name = "userbench/thieso2__711016f6"
+digest = "sha256:d3eb8b90068f9a6ecb2f251b6388196677e27fdc305fdecabc154718a03dbbb7"
+
+[[tasks]]
+name = "userbench/thieso2__8f357020"
+digest = "sha256:1d59f196a74297c3dd3871113d4dd49f912b08209ee19dab6d4350b4884977b2"
+
+[[tasks]]
+name = "userbench/thieso2__ac3f3046"
+digest = "sha256:5b6ec03ce0f54f9de7723b0f85678bbfa5b04f90d1e3e4480082c710cd15a17e"
+
+[[tasks]]
+name = "userbench/thieso2__ef3476ab"
+digest = "sha256:1648a0dd2df131ff743a1e81b8dfe68ed5bb995963fa5ffece53232d394f0477"
+
+[[tasks]]
+name = "userbench/thieso2__f58a3bca"
+digest = "sha256:cb6ee1c1cdd21bd8b45851cfab47eb921f5f71e579007bdd491b25a3328b7c9a"
+
+[[tasks]]
+name = "userbench/wildlily1021__08bd9283"
+digest = "sha256:4c1c8e33bc5344bfbeb0f30615769720f6605af602375e4185ac5e0f78c95ddb"
+
+[[tasks]]
+name = "userbench/wildlily1021__1261af91"
+digest = "sha256:10a6862868c3234832c3490736f0c3cc9b79b8309b77d168d15bb5fa44271476"
+
+[[tasks]]
+name = "userbench/wildlily1021__2e8bcca3"
+digest = "sha256:fa93a2299d53d59ebd69c8b3651adcc59e577dca7f6c37a546f712ae47f4c665"
+
+[[tasks]]
+name = "userbench/wildlily1021__7748b2c8"
+digest = "sha256:92ceeadb920df87dcfe42e0c8468951599f9708bedf6c0b9769e23531f990989"
+
+[[tasks]]
+name = "userbench/wildlily1021__85caed49"
+digest = "sha256:ac7a7e30537317c15488671c9299d49979e2d8fd6e69593d553c079328a83d83"
+
+[[tasks]]
+name = "userbench/wildlily1021__8a0b4073"
+digest = "sha256:c6409c7ae1d3ae12edf0f6d0522d65a59a2e1e32cb20b80f997eef852aa19313"
+
+[[tasks]]
+name = "userbench/wildlily1021__a84e53a9"
+digest = "sha256:0cf32eaab10dda8b667972b5b8ebc91fe872de9c2b10c301897e146d7794fd6c"
+
+[[tasks]]
+name = "userbench/wildlily1021__c031a215"
+digest = "sha256:668f20ec0da8381287af3a459f7c2d752c85fd54d04ebb362996d185a1e8380d"
+
+[[tasks]]
+name = "userbench/wildlily1021__e4c4eb11"
+digest = "sha256:5577806141e21b25a20d776f654d5a61aa06dc3eb76e69accbcb0b70f2e76551"
+
+[[tasks]]
+name = "userbench/wildlily1021__ff1c6f83"
+digest = "sha256:9e6aa6d2b6855f8f0e9d52c3996f3d11fd45e67a0280c9ac66a0250a09b48cd6"
+
+[[tasks]]
+name = "userbench/winksaville__0b1794e9"
+digest = "sha256:b8a6c3104a7debdba0208fd31e1096e208f7fe5a00ba70b84af1358070152b0d"
+
+[[tasks]]
+name = "userbench/winksaville__0c62d5b9"
+digest = "sha256:c8315d84142c6c14387377ea966357a280edcf475b358c67a3b3a4e5a0028151"
+
+[[tasks]]
+name = "userbench/winksaville__0d00a824"
+digest = "sha256:9038f516b89d17c032391e1f1b7bb2125a02ed66a2bee49d5f728d3987c564a0"
+
+[[tasks]]
+name = "userbench/winksaville__4f87e52f"
+digest = "sha256:975d3ca9ea74b57b508dc8ea3d626a44905c7abf67da7dee66b94c32bc78b796"
+
+[[tasks]]
+name = "userbench/winksaville__7d7bb7df"
+digest = "sha256:6d401547aaab6135218194899002aeb9c1ba0ccb66057ddec532bf36cb1db7c3"
+
+[[tasks]]
+name = "userbench/winksaville__94139dc3"
+digest = "sha256:c1626cef01b2c1bbf03cd6bca0dc2a5f809abacfaef33341307dbfa34b641149"
+
+[[tasks]]
+name = "userbench/winksaville__98ba6868"
+digest = "sha256:7a18ae4530b69a92893cdb4367f895c4df872b39ea21124042c0f5ce02088243"
+
+[[tasks]]
+name = "userbench/winksaville__aad4a4f9"
+digest = "sha256:198c4c1f9dad9ffb174ccfc7e2a4db2362c5b6d19c73d542da0b3cc85593f8d5"
+
+[[tasks]]
+name = "userbench/winksaville__dd69ca82"
+digest = "sha256:c35fccdeb38a9de8de9be83b7ceebd5dd32337cdef62dc087fda2d826ab8ba7e"
+
+[[tasks]]
+name = "userbench/winksaville__e91d7fe5"
+digest = "sha256:c1a449cc0fff79a39e7705e3a42ce1c27ae9079f3d9ffa27b9c6cca29f01302a"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__0341b973"
+digest = "sha256:174430b09b3a380f56405372b3d7419568c082e59ffeb2a0191e21ffb1ffcbdd"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__23d09ae6"
+digest = "sha256:005112a0a279ed3b5b1a0c83eaf9f1a19a0b29df36b1a5a4b745b4cd82612023"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__32f6e7cb"
+digest = "sha256:86e47dd87276c8795ca6e5f144ca92de2ad40ad64844e90ead517495d7e3ab0b"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__3c5461f5"
+digest = "sha256:0eeb53980e8d05de12f250d7084b25a50494803467e8cfbe5884323c0a484567"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__52dbe4cd"
+digest = "sha256:f07133c7cb63ffc4fd51e9a5e8ac52c5bef4fb89ad1f606f33d6848cc59e462a"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__8e7c88b8"
+digest = "sha256:2bdf46453e9643b333408250f445bf8932baaf227ea71c1f2a5c8a505cb534c6"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__95ae4c7c"
+digest = "sha256:4c2eb9eda9a9541d359aa7eb9ccd4bf27c0e5dd8358bbaa3555b69bec2dace54"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__c9c5ca60"
+digest = "sha256:e6281d7efc2da5f40231f02372747e9d3789d8d2341d1448d462881a25803273"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__eb53a405"
+digest = "sha256:864e41274cb8d54a6b0d4a363d6d2380fbced1f33417ac6c6f3e9e7f160a0c96"
+
+[[tasks]]
+name = "userbench/yutakobayashidev__f67ef680"
+digest = "sha256:99862ad83158334f9ca497c735960812696636e53aa19ebb58120ee28d39f35c"
+
+[[tasks]]
+name = "userbench/yyovil__0acc2714"
+digest = "sha256:5f8a2b55ed5fbb2c5c6cbcee6f4c4b7e581b96565f8140bd0cb8c43fb81eed75"
+
+[[tasks]]
+name = "userbench/yyovil__149c4120"
+digest = "sha256:ab4db660563860f2f573482576208bbf2204172b4f2b863951121a959cdeafd7"
+
+[[tasks]]
+name = "userbench/yyovil__262c7a5a"
+digest = "sha256:f8e4deeb4c91050319528097bfd28fb0f817bc740b0ffb35d3c6b8dd9724c459"
+
+[[tasks]]
+name = "userbench/yyovil__357f2675"
+digest = "sha256:3667ca20c3beed90e904a903d49bb9ecc9cd1703ac4391dc4a33eef91343bc5d"
+
+[[tasks]]
+name = "userbench/yyovil__3b746732"
+digest = "sha256:75c2151acbdc387cf8f5d0647d8924817cabdc88691f1f6c554a1cb2fa564dfa"
+
+[[tasks]]
+name = "userbench/yyovil__61ad7991"
+digest = "sha256:0eb35916f567d620f81318f76dd7aa77737363bd4d584b1298267ab2509adb41"
+
+[[tasks]]
+name = "userbench/yyovil__6e71d5f5"
+digest = "sha256:c077fd2337c588f22cf78f1ac8c58f4aaf5d052197d73cfe196d596973d86e2d"
+
+[[tasks]]
+name = "userbench/yyovil__781caa58"
+digest = "sha256:37fc8e6c2b16e6ee5ced2bdbd14a6302bc1dfba7d00f20d4ce028d3f29dec38f"
+
+[[tasks]]
+name = "userbench/yyovil__8e748208"
+digest = "sha256:6d136d122811f61be92ec234d53b91c338c0de0f30cc3f67dce118bdca7aced8"
+
+[[tasks]]
+name = "userbench/yyovil__a5d654fb"
+digest = "sha256:819b0f37adc294d9ec4351fe923a39e37bce7f61ebdfb27986ce2cc0b85d78bf"
+

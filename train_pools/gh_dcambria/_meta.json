@@ -1,0 +1,495 @@
+{
+  "developer": "gh:dcambria",
+  "slug": "gh_dcambria",
+  "Tstar": "2026-06-08T16:19:27.895589Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 69,
+  "n_human_turns": 1185,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "b2f77701-4260-47fe-9c7a-538166a13594",
+      "ts": "2026-02-27T06:14:04.40153Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 2,
+      "max_turn_ts": "2026-02-27T06:12:45.879000Z"
+    },
+    {
+      "sid": "7438a885-85b8-4f7e-a0b9-1207e4ce2805",
+      "ts": "2026-03-10T14:12:04.381844Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 1,
+      "max_turn_ts": "2026-03-10T14:11:55.208000Z"
+    },
+    {
+      "sid": "3b7956f0-27c0-4679-b621-e10207bd5b03",
+      "ts": "2026-03-11T06:41:43.952323Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 1,
+      "max_turn_ts": "2026-03-11T03:44:58.894000Z"
+    },
+    {
+      "sid": "51945ba6-9e63-4fe7-b6f6-9abf880e6b45",
+      "ts": "2026-03-11T06:41:48.367341Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 8,
+      "max_turn_ts": "2026-03-11T06:41:23.023000Z"
+    },
+    {
+      "sid": "7cfd307c-fd3f-4b16-a0af-a92eec2826d5",
+      "ts": "2026-03-13T03:48:37.726818Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 9,
+      "max_turn_ts": "2026-03-13T03:44:14.710000Z"
+    },
+    {
+      "sid": "8eec02cb-4fd9-4c5e-93a9-0bdd33762b91",
+      "ts": "2026-03-16T06:25:14.055054Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 5,
+      "max_turn_ts": "2026-03-11T07:00:27.186000Z"
+    },
+    {
+      "sid": "5add7883-9a20-463b-be39-addad9c1abcf",
+      "ts": "2026-03-16T06:27:28.820535Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-03-12T21:19:11.273000Z"
+    },
+    {
+      "sid": "64b3c5fd-79d7-4cc3-9375-d8a386641372",
+      "ts": "2026-03-16T06:28:09.431983Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 2,
+      "max_turn_ts": "2026-03-13T23:28:04.495000Z"
+    },
+    {
+      "sid": "6f7a8814-6d14-48f3-8062-4c834a194f6f",
+      "ts": "2026-03-16T07:36:06.355041Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 6,
+      "max_turn_ts": "2026-03-16T07:38:04.791000Z"
+    },
+    {
+      "sid": "5bcc1355-7686-4071-99db-5ab3d45e199f",
+      "ts": "2026-03-16T08:09:03.878144Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 3,
+      "max_turn_ts": "2026-03-16T08:10:25.454000Z"
+    },
+    {
+      "sid": "4ba793dd-d74d-4505-9134-e8a375e4f922",
+      "ts": "2026-03-16T09:21:19.660229Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 3,
+      "max_turn_ts": "2026-03-16T09:21:48.652000Z"
+    },
+    {
+      "sid": "844abafa-a6af-4b06-8f3c-1c7632ca4bd7",
+      "ts": "2026-03-16T09:24:29.379334Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 1,
+      "max_turn_ts": "2026-03-16T09:24:05.518000Z"
+    },
+    {
+      "sid": "83b62838-7ac2-474c-8027-5bab7e934fc0",
+      "ts": "2026-03-16T12:13:08.672913Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 6,
+      "max_turn_ts": "2026-03-16T12:13:10.776000Z"
+    },
+    {
+      "sid": "96026686-db3b-4efe-8772-406d27f7de29",
+      "ts": "2026-03-16T12:13:50.210618Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 5,
+      "max_turn_ts": "2026-03-16T12:14:13.241000Z"
+    },
+    {
+      "sid": "cc6868f8-e93f-4514-98ca-93323c030ce0",
+      "ts": "2026-03-16T12:14:43.337618Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 5,
+      "max_turn_ts": "2026-03-16T12:15:41.831000Z"
+    },
+    {
+      "sid": "7a6fee96-00ce-46c1-a294-430175c03fe6",
+      "ts": "2026-03-16T15:20:38.413577Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 1,
+      "max_turn_ts": "2026-03-16T15:19:09.144000Z"
+    },
+    {
+      "sid": "7c1dc6e3-b31b-4adb-a9b3-54a27cf17aa3",
+      "ts": "2026-03-16T15:20:44.594637Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 1,
+      "max_turn_ts": "2026-03-16T15:21:19.703000Z"
+    },
+    {
+      "sid": "2e74a29e-2e4c-4362-817b-4be8f8aef358",
+      "ts": "2026-03-21T17:13:43.862111Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-03-13T00:14:30.242000Z"
+    },
+    {
+      "sid": "43dbc5d1-1a1e-40f8-a72c-71248bf72c18",
+      "ts": "2026-03-21T17:14:57.937124Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 3,
+      "max_turn_ts": "2026-03-16T10:44:13.177000Z"
+    },
+    {
+      "sid": "558be14d-2ee3-4969-a19d-1d35ce380f33",
+      "ts": "2026-03-21T17:15:43.73701Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 3,
+      "max_turn_ts": "2026-03-21T17:20:34.960000Z"
+    },
+    {
+      "sid": "6811f825-df9e-46a5-ade2-d925def71e0b",
+      "ts": "2026-03-21T17:16:16.447518Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 2,
+      "max_turn_ts": "2026-03-21T02:15:24.466000Z"
+    },
+    {
+      "sid": "858bce81-ae9c-4fe7-99a3-4b6ec85645f1",
+      "ts": "2026-03-21T17:18:34.948751Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 8,
+      "max_turn_ts": "2026-03-21T15:35:50.478000Z"
+    },
+    {
+      "sid": "85ab9284-da7e-45e5-af0d-487988c1e907",
+      "ts": "2026-03-21T17:19:06.539642Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 6,
+      "max_turn_ts": "2026-03-16T11:25:52.872000Z"
+    },
+    {
+      "sid": "96beec12-d7b6-4910-96c8-c84d83d2c5b7",
+      "ts": "2026-03-21T17:20:04.23093Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 8,
+      "max_turn_ts": "2026-03-12T20:22:48.102000Z"
+    },
+    {
+      "sid": "bdbd37f8-7eb9-44ec-9fb2-cc1d56ce7992",
+      "ts": "2026-03-21T17:20:17.288603Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 14,
+      "max_turn_ts": "2026-03-13T04:10:14.532000Z"
+    },
+    {
+      "sid": "cb0c99d5-d4f4-4030-a3ea-31e52e56d6ff",
+      "ts": "2026-03-21T17:20:22.884504Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 26,
+      "max_turn_ts": "2026-03-21T01:46:42.915000Z"
+    },
+    {
+      "sid": "5f4ae8a2-bc45-41bf-bb08-8669a7a5b740",
+      "ts": "2026-04-02T03:13:29.800447Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 6,
+      "max_turn_ts": "2026-04-01T22:04:42.680000Z"
+    },
+    {
+      "sid": "0329dbe0-38cf-40fa-9b04-79fa7b3ab8a5",
+      "ts": "2026-04-03T00:53:06.775015Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 13,
+      "max_turn_ts": "2026-04-01T00:26:37.758000Z"
+    },
+    {
+      "sid": "219f4921-e522-4468-a632-a3b5f2c19f24",
+      "ts": "2026-04-03T00:53:19.376596Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 1,
+      "max_turn_ts": "2026-04-03T01:41:57.190000Z"
+    },
+    {
+      "sid": "da215210-6e4a-4a2d-b5d7-668be3e706aa",
+      "ts": "2026-04-03T00:54:43.890368Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 5,
+      "max_turn_ts": "2026-04-03T00:55:31.094000Z"
+    },
+    {
+      "sid": "22e9b018-7b73-4954-bbfc-8bce4fcb1346",
+      "ts": "2026-04-08T23:42:07.506096Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 14,
+      "max_turn_ts": "2026-04-08T23:43:15.973000Z"
+    },
+    {
+      "sid": "2e2ba133-8e7f-4c62-b4bb-ca37ed518a41",
+      "ts": "2026-04-08T23:42:21.915384Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 108,
+      "max_turn_ts": "2026-04-09T00:04:00.518000Z"
+    },
+    {
+      "sid": "e853850d-285d-47a4-94c7-bba6e9b4f1cf",
+      "ts": "2026-04-12T21:13:01.872679Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-04-12T21:13:05.213000Z"
+    },
+    {
+      "sid": "a2bd635f-8e52-4c18-ac47-877c1a33a18f",
+      "ts": "2026-04-13T09:00:08.379785Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-04-13T00:46:52.084000Z"
+    },
+    {
+      "sid": "580b8ecb-64f5-4223-ae18-3741806c8c21",
+      "ts": "2026-04-13T12:29:51.063453Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 18,
+      "max_turn_ts": "2026-04-13T09:02:22.031000Z"
+    },
+    {
+      "sid": "d8e42335-0420-4c60-b533-d2d67cb6bf92",
+      "ts": "2026-04-13T12:46:54.249233Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 9,
+      "max_turn_ts": "2026-04-13T12:47:16.472000Z"
+    },
+    {
+      "sid": "de3ea7bc-4158-43f5-af05-a54ce1eb9fe8",
+      "ts": "2026-04-13T13:57:46.928433Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-04-13T13:57:38.300000Z"
+    },
+    {
+      "sid": "db785883-093e-44a9-b077-b90d29df76d2",
+      "ts": "2026-04-21T01:39:31.863498Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-04-21T01:39:41.387000Z"
+    },
+    {
+      "sid": "830757bf-72f7-4e3b-b2c3-b84e2c125a16",
+      "ts": "2026-04-23T22:41:12.694161Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 11,
+      "max_turn_ts": "2026-04-23T22:41:48.720000Z"
+    },
+    {
+      "sid": "55811d4e-34d6-42df-9582-284664a6a576",
+      "ts": "2026-05-02T03:55:19.773367Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 156,
+      "max_turn_ts": "2026-05-02T03:53:02.249000Z"
+    },
+    {
+      "sid": "4f490e1a-3806-4a20-b0b1-1cd924213234",
+      "ts": "2026-05-02T04:23:44.433709Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 6,
+      "max_turn_ts": "2026-05-02T04:23:15.377000Z"
+    },
+    {
+      "sid": "b0c85c0d-3e41-418f-b659-b55fdce2f639",
+      "ts": "2026-05-02T04:23:51.173448Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 13,
+      "max_turn_ts": "2026-05-02T04:24:13.155000Z"
+    },
+    {
+      "sid": "77e18f47-931f-4cd9-bb59-bd6a900a6d9b",
+      "ts": "2026-05-02T18:22:55.906783Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 21,
+      "max_turn_ts": "2026-05-02T18:22:24.075000Z"
+    },
+    {
+      "sid": "5d460347-5812-4496-831c-1da11e05398d",
+      "ts": "2026-05-04T20:54:41.518636Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 11,
+      "max_turn_ts": "2026-05-04T20:56:02.193000Z"
+    },
+    {
+      "sid": "9415f4cc-fc5e-4717-bbb9-a363328857de",
+      "ts": "2026-05-05T17:59:49.906399Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 10,
+      "max_turn_ts": "2026-05-04T22:52:32.669000Z"
+    },
+    {
+      "sid": "0147bb50-a0f5-4736-9b3f-29a4b681d9c7",
+      "ts": "2026-05-06T23:38:38.845258Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 92,
+      "max_turn_ts": "2026-05-06T23:43:32.572000Z"
+    },
+    {
+      "sid": "f0f24298-3471-4695-be93-962ba05756a9",
+      "ts": "2026-05-06T23:42:50.665196Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 35,
+      "max_turn_ts": "2026-05-06T23:41:25.820000Z"
+    },
+    {
+      "sid": "20944fb4-474e-49f2-aae5-103d725dcaaa",
+      "ts": "2026-05-13T05:07:30.865003Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 18,
+      "max_turn_ts": "2026-05-13T05:09:34.863000Z"
+    },
+    {
+      "sid": "4b492b3d-63a9-4270-837f-cd8a6093ce9c",
+      "ts": "2026-05-13T05:08:42.876533Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 78,
+      "max_turn_ts": "2026-05-11T21:09:33.118000Z"
+    },
+    {
+      "sid": "b898dd16-ad28-4f9f-a33a-9629b88a44a7",
+      "ts": "2026-05-14T22:49:42.325229Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 8,
+      "max_turn_ts": "2026-05-14T22:21:55.313000Z"
+    },
+    {
+      "sid": "7f90a5a1-be37-4d41-9f3b-b03f27d3b50f",
+      "ts": "2026-05-15T17:03:57.009699Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 31,
+      "max_turn_ts": "2026-05-15T17:05:51.404000Z"
+    },
+    {
+      "sid": "34524ba3-cd15-47e1-a6c9-93eb0c696232",
+      "ts": "2026-05-17T18:36:35.965684Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 38,
+      "max_turn_ts": "2026-05-01T06:31:31.328000Z"
+    },
+    {
+      "sid": "9f495f11-36bf-4354-83db-c672a5cdf90f",
+      "ts": "2026-05-17T23:24:50.437073Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 43,
+      "max_turn_ts": "2026-05-17T23:20:18.367000Z"
+    },
+    {
+      "sid": "6ced4d35-4074-4280-8ed6-b6455c94afbd",
+      "ts": "2026-05-18T01:33:56.123429Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 7,
+      "max_turn_ts": "2026-05-18T01:33:33.231000Z"
+    },
+    {
+      "sid": "b737ee17-0eee-4d5a-9572-43c0dbd8442b",
+      "ts": "2026-05-18T06:23:27.929122Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 12,
+      "max_turn_ts": "2026-05-18T06:08:51.917000Z"
+    },
+    {
+      "sid": "41bcbebb-3f96-44b7-b4d1-a0bf4089199f",
+      "ts": "2026-05-18T19:08:49.827015Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 4,
+      "max_turn_ts": "2026-05-18T06:16:20.329000Z"
+    },
+    {
+      "sid": "b3209511-d7d6-441a-ada9-9f23bba38089",
+      "ts": "2026-05-18T19:13:06.140654Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 5,
+      "max_turn_ts": "2026-05-18T06:11:15.309000Z"
+    },
+    {
+      "sid": "e156eba2-8565-43da-af1f-c8849c8d2b98",
+      "ts": "2026-05-18T19:15:29.570173Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 30,
+      "max_turn_ts": "2026-05-18T05:20:51.946000Z"
+    },
+    {
+      "sid": "f1f8886a-015b-4576-84dd-6e236bdfe519",
+      "ts": "2026-05-18T19:16:45.952918Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 5,
+      "max_turn_ts": "2026-05-18T05:53:43.602000Z"
+    },
+    {
+      "sid": "967fc13c-90a7-4d97-97cb-b37e200d47f8",
+      "ts": "2026-05-19T03:26:34.85578Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 12,
+      "max_turn_ts": "2026-05-19T01:58:37.748000Z"
+    },
+    {
+      "sid": "3da60995-7491-4f55-9d6a-ea63cb7cf96c",
+      "ts": "2026-05-22T05:19:49.131602Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 17,
+      "max_turn_ts": "2026-05-22T04:27:28.959000Z"
+    },
+    {
+      "sid": "dc1d702a-ddd0-4cc9-9deb-503b6da82c4f",
+      "ts": "2026-05-22T05:22:30.542464Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 28,
+      "max_turn_ts": "2026-05-22T04:16:47.657000Z"
+    },
+    {
+      "sid": "276fd8d1-de90-4556-b8ae-a11e4fde35e4",
+      "ts": "2026-05-25T23:01:54.675831Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 11,
+      "max_turn_ts": "2026-05-22T05:57:41.306000Z"
+    },
+    {
+      "sid": "1c68b488-0ada-4eb7-b53e-822c1e6871e7",
+      "ts": "2026-05-29T23:19:10.77285Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 58,
+      "max_turn_ts": "2026-05-26T04:46:45.598000Z"
+    },
+    {
+      "sid": "5d3b190d-36ab-4d51-a3dc-eec311098b41",
+      "ts": "2026-05-29T23:21:20.791727Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 8,
+      "max_turn_ts": "2026-05-28T16:57:23.527000Z"
+    },
+    {
+      "sid": "ba985619-ef81-4363-ac5e-799ba57be42f",
+      "ts": "2026-05-29T23:24:21.688937Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 26,
+      "max_turn_ts": "2026-05-28T16:47:50.089000Z"
+    },
+    {
+      "sid": "bebe1acc-697a-4c6c-8e2a-cccd0918e0cc",
+      "ts": "2026-05-29T23:25:34.804694Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 12,
+      "max_turn_ts": "2026-05-29T02:57:53.253000Z"
+    },
+    {
+      "sid": "e80adb31-faea-400e-9ae2-dbf45f3f2678",
+      "ts": "2026-05-29T23:27:13.835868Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 22,
+      "max_turn_ts": "2026-05-29T23:13:16.322000Z"
+    },
+    {
+      "sid": "2c2b06d4-44b2-45c0-ab06-f664c5e18b84",
+      "ts": "2026-05-29T23:58:34.32035Z",
+      "repo": "Bureau-IT/concertacaoamazonia",
+      "n": 30,
+      "max_turn_ts": "2026-05-29T23:55:31.340000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

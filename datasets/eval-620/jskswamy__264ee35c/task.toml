@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "userbench/jskswamy__264ee35c"
+description = "Predict the developer's next message given the conversation so far."
+authors = []
+keywords = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+
+[metadata]
+author_name = "userbench"
+category = "user-simulation"
+tags = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+developer = "gh:jskswamy"
+point_id = "0d2b5b79-a251-4a96-8297-f5dd3099ec52#2"
+condition = "noprofile"
+legacy_task_id = "gh_jskswamy__264ee35c"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

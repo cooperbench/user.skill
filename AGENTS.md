@@ -10,7 +10,7 @@
 
 Primary Cloud Agent repo: **`cooperbench/user.skill`** branch **`kevin`** (shows in the Cloud Agents picker). The AlienKevin copy is a personal remote mirror only.
 
-Seoul scrape/cohort scripts live under `data-pipelines/` (`claude-crawl/`, `swesimbench-v2/`). Harbor eval packages live at repo-root `tasks/`. Scrubbed train sessions live at `train/` (markdown). Raw scrapes/digests stay in S3, not git.
+Seoul scrape/cohort scripts live under `data-pipelines/` (`claude-crawl/`, `swesimbench-v2/`). Public UserBench Harbor eval is `datasets/eval-620/` (symlink `tasks/` → that tree; Hub `userbench/UserBench@v2`). Full leak-safe train corpora are `train_pools/`; package metadata under `packages/`; publish helpers under `harbor/`. Scrubbed train sessions also live at `train/` (markdown). Website on branch `benchmark-website`. Raw scrapes/digests stay in S3, not git.
 
 ### Secrets (dashboard)
 

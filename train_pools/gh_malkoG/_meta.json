@@ -1,0 +1,243 @@
+{
+  "developer": "gh:malkoG",
+  "slug": "gh_malkoG",
+  "Tstar": "2026-04-17T22:43:41.623013Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 33,
+  "n_human_turns": 439,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "0475faa1-06c4-4183-b2d4-71e5ee114c54",
+      "ts": "2026-02-16T06:46:03.122000+00:00",
+      "repo": "?",
+      "n": 17,
+      "max_turn_ts": "2026-02-16T08:06:21.729000Z"
+    },
+    {
+      "sid": "948a3954-6196-4010-8a1f-80c4cef48fcc",
+      "ts": "2026-03-18T14:08:17.378000+00:00",
+      "repo": "?",
+      "n": 20,
+      "max_turn_ts": "2026-03-19T04:00:44.235000Z"
+    },
+    {
+      "sid": "8a9ec257-cad9-4634-866d-d0bffa235e37",
+      "ts": "2026-03-19T07:43:50.040414Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 27,
+      "max_turn_ts": "2026-03-19T07:43:46.594000Z"
+    },
+    {
+      "sid": "1050034d-d0c3-4855-91f2-e921eb7d0d3a",
+      "ts": "2026-03-19T07:48:20.213085Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T07:48:19.352000Z"
+    },
+    {
+      "sid": "92078f8f-8361-4268-b3ae-1601a70e6fff",
+      "ts": "2026-03-25T01:50:47.014000+00:00",
+      "repo": "hackers-pub/android",
+      "n": 2,
+      "max_turn_ts": "2026-03-25T01:52:46.881000Z"
+    },
+    {
+      "sid": "0a446b72-6e8a-4d02-9bf3-dae7f8778d9e",
+      "ts": "2026-03-25T01:51:53.806394Z",
+      "repo": "hackers-pub/android",
+      "n": 20,
+      "max_turn_ts": "2026-03-19T12:53:35.555000Z"
+    },
+    {
+      "sid": "4f472d1d-7105-4713-90e7-3a0c184dc2dd",
+      "ts": "2026-03-27T03:52:05.336484Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 26,
+      "max_turn_ts": "2026-03-27T03:52:02.919000Z"
+    },
+    {
+      "sid": "ee972132-3827-437f-8088-480794067b7f",
+      "ts": "2026-03-27T06:08:50.079618Z",
+      "repo": "hackers-pub/android",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T06:08:46.355000Z"
+    },
+    {
+      "sid": "046da0d2-8438-44e5-80ad-7df520dc12ce",
+      "ts": "2026-03-27T06:36:59.969396Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 57,
+      "max_turn_ts": "2026-03-27T06:36:55.944000Z"
+    },
+    {
+      "sid": "36776aad-86d0-4a47-9612-2adc251b3e67",
+      "ts": "2026-04-09T21:29:17.089667Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 4,
+      "max_turn_ts": "2026-04-09T21:29:13.093000Z"
+    },
+    {
+      "sid": "cc81e0ed-c963-4809-a554-91bf6324b9ec",
+      "ts": "2026-04-09T23:46:01.431054Z",
+      "repo": "hackers-pub/android",
+      "n": 1,
+      "max_turn_ts": "2026-04-09T23:45:57.461000Z"
+    },
+    {
+      "sid": "ac3f02f2-e1eb-4fdf-9ed4-c39aa08b7599",
+      "ts": "2026-04-12T06:31:10.117062Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 149,
+      "max_turn_ts": "2026-04-12T06:31:03.046000Z"
+    },
+    {
+      "sid": "6d4651e3-a74b-4436-ae4a-234bcf8bc88c",
+      "ts": "2026-04-12T07:09:16.401741Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 5,
+      "max_turn_ts": "2026-04-12T07:09:12.049000Z"
+    },
+    {
+      "sid": "8183c18d-7050-4db3-85a9-36330a92b042",
+      "ts": "2026-04-13T01:38:17.388779Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 1,
+      "max_turn_ts": "2026-04-13T01:38:13.730000Z"
+    },
+    {
+      "sid": "70873a32-f06f-4b64-b11d-f61802ce59e2",
+      "ts": "2026-04-13T01:43:22.422832Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 2,
+      "max_turn_ts": "2026-04-13T01:43:18.764000Z"
+    },
+    {
+      "sid": "38c4c535-5a5e-45fc-9d40-f32794dfacac",
+      "ts": "2026-04-13T01:50:59.00017Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 3,
+      "max_turn_ts": "2026-04-13T01:50:55.031000Z"
+    },
+    {
+      "sid": "8eb11fb8-1b2e-448e-8eca-61c23f553e13",
+      "ts": "2026-04-13T02:25:08.60292Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 12,
+      "max_turn_ts": "2026-04-13T02:25:04.785000Z"
+    },
+    {
+      "sid": "21944e83-4833-4ef9-8bf1-6f5f86ca9917",
+      "ts": "2026-04-13T13:09:40.385698Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 2,
+      "max_turn_ts": "2026-04-12T08:20:38.687000Z"
+    },
+    {
+      "sid": "467ddb9c-c5ee-4321-b220-ed2d50c763d6",
+      "ts": "2026-04-13T13:09:40.845539Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 23,
+      "max_turn_ts": "2026-04-13T13:07:51.088000Z"
+    },
+    {
+      "sid": "c56ceea8-70f6-43ce-89e1-1f484ca67cf9",
+      "ts": "2026-04-13T13:09:49.967953Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 1,
+      "max_turn_ts": "2026-04-13T13:09:46.085000Z"
+    },
+    {
+      "sid": "cb12b5ed-e985-4d70-bb98-d8cb287dbb9a",
+      "ts": "2026-04-13T13:12:21.904582Z",
+      "repo": "hackers-pub/android",
+      "n": 1,
+      "max_turn_ts": "2026-04-13T13:12:17.896000Z"
+    },
+    {
+      "sid": "99fd0aba-b463-4407-ba88-0df416acfecc",
+      "ts": "2026-04-13T13:22:39.700039Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 6,
+      "max_turn_ts": "2026-04-13T13:22:35.860000Z"
+    },
+    {
+      "sid": "190e1426-fef2-447b-9bdc-3c6376e2aecf",
+      "ts": "2026-04-13T14:37:15.886488Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 2,
+      "max_turn_ts": "2026-04-13T14:37:11.676000Z"
+    },
+    {
+      "sid": "d6eb942b-0436-4c56-b08b-645f11f6de36",
+      "ts": "2026-04-15T04:15:09.363911Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 6,
+      "max_turn_ts": "2026-04-15T04:15:05.870000Z"
+    },
+    {
+      "sid": "19be3881-9a33-457d-bc95-d97ac9de5b60",
+      "ts": "2026-04-15T04:39:03.00733Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 6,
+      "max_turn_ts": "2026-04-15T04:38:58.902000Z"
+    },
+    {
+      "sid": "0af782cb-0f22-40a0-a0e0-b5adc78f515f",
+      "ts": "2026-04-15T05:06:35.771777Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 5,
+      "max_turn_ts": "2026-04-15T05:06:31.848000Z"
+    },
+    {
+      "sid": "97dc2759-3e3a-4ef5-bda7-31d10fd19751",
+      "ts": "2026-04-15T05:18:08.888422Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 4,
+      "max_turn_ts": "2026-04-15T05:18:04.978000Z"
+    },
+    {
+      "sid": "b9c7b037-b39f-4d8b-9016-d686c45e6a84",
+      "ts": "2026-04-15T05:44:12.016513Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 3,
+      "max_turn_ts": "2026-04-15T05:44:08.289000Z"
+    },
+    {
+      "sid": "99f451a1-2da7-447e-8b6a-d3de095a5769",
+      "ts": "2026-04-15T05:59:33.127639Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 1,
+      "max_turn_ts": "2026-04-15T05:59:29.285000Z"
+    },
+    {
+      "sid": "863760e1-43be-478c-b2cb-c4833aede69d",
+      "ts": "2026-04-15T06:23:26.676373Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 20,
+      "max_turn_ts": "2026-04-15T06:23:22.752000Z"
+    },
+    {
+      "sid": "343b2b1e-6368-45e7-a6c0-d649a651ed1b",
+      "ts": "2026-04-15T08:30:02.443093Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 5,
+      "max_turn_ts": "2026-04-15T08:29:58.634000Z"
+    },
+    {
+      "sid": "caac3d1c-3924-46a2-a635-e99e2e047bc5",
+      "ts": "2026-04-15T08:41:43.501048Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 1,
+      "max_turn_ts": "2026-04-15T08:41:39.786000Z"
+    },
+    {
+      "sid": "1d77b9b5-7237-4afa-b694-ac95a67b5aa7",
+      "ts": "2026-04-15T08:46:06.393917Z",
+      "repo": "malkoG/hackerspub-android",
+      "n": 5,
+      "max_turn_ts": "2026-04-15T08:46:02.569000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

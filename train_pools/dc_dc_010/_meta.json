@@ -1,0 +1,719 @@
+{
+  "developer": "dc:dc_010",
+  "slug": "dc_dc_010",
+  "Tstar": "2026-02-24T14:49:24.541Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 101,
+  "n_human_turns": 1211,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "019c65a9-ee00-7462-9d9d-a122ed8e4e12",
+      "ts": "2026-02-16T08:56:15.788Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 32,
+      "max_turn_ts": "2026-02-16T16:48:03.822000Z"
+    },
+    {
+      "sid": "019c65ec-7377-7603-8400-e2f6a57aae69",
+      "ts": "2026-02-16T10:08:41.301Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 18,
+      "max_turn_ts": "2026-02-16T11:29:24.692000Z"
+    },
+    {
+      "sid": "019c6615-cdbb-7060-8120-4ea62114e575",
+      "ts": "2026-02-16T10:53:51.495Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 13,
+      "max_turn_ts": "2026-02-16T11:53:02.861000Z"
+    },
+    {
+      "sid": "019c6645-595b-7a80-bd86-8e9b83dab1a2",
+      "ts": "2026-02-16T11:46:07.065Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 28,
+      "max_turn_ts": "2026-02-16T13:19:28.949000Z"
+    },
+    {
+      "sid": "019c6670-d790-7b42-9f03-4fe332836db6",
+      "ts": "2026-02-16T12:33:17.727Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T12:39:32.591000Z"
+    },
+    {
+      "sid": "019c6676-1f7e-7583-9dff-509e5fbcab9e",
+      "ts": "2026-02-16T12:39:03.814Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 4,
+      "max_turn_ts": "2026-02-16T13:08:41.818000Z"
+    },
+    {
+      "sid": "019c6677-8f55-7752-8e9f-7995689f88e9",
+      "ts": "2026-02-16T12:40:39.272Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 17,
+      "max_turn_ts": "2026-02-16T18:58:14.307000Z"
+    },
+    {
+      "sid": "019c6678-405b-7d12-b615-1e7e812ccfb7",
+      "ts": "2026-02-16T12:41:23.599Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T12:48:46.356000Z"
+    },
+    {
+      "sid": "019c667f-1803-7820-9946-cac01d9d961c",
+      "ts": "2026-02-16T12:48:51.883Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T13:02:41.417000Z"
+    },
+    {
+      "sid": "019c668b-222b-7fa2-b3b0-223c2f1b8311",
+      "ts": "2026-02-16T13:02:01.043Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T13:12:19.607000Z"
+    },
+    {
+      "sid": "019c668c-8220-7e72-bc38-e135f121813b",
+      "ts": "2026-02-16T13:03:42.992Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T13:05:58.619000Z"
+    },
+    {
+      "sid": "019c6694-41e3-7303-ae01-da2791a1aa5e",
+      "ts": "2026-02-16T13:11:59.031Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T13:15:53.705000Z"
+    },
+    {
+      "sid": "019c6695-b6bb-7dd3-b738-4c2c76fe1c81",
+      "ts": "2026-02-16T13:13:34.058Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-16T13:21:35.352000Z"
+    },
+    {
+      "sid": "019c674f-3349-7150-bd58-ce7304d9edfe",
+      "ts": "2026-02-16T16:36:30.049Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T16:37:59.457000Z"
+    },
+    {
+      "sid": "019c6750-3527-7a73-9056-a88e7a00bfee",
+      "ts": "2026-02-16T16:37:19.366Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-16T16:38:21.627000Z"
+    },
+    {
+      "sid": "019c6756-03bc-7022-a89d-04dd3b8763b7",
+      "ts": "2026-02-16T16:43:49.280Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T16:55:14.474000Z"
+    },
+    {
+      "sid": "019c675b-8d0b-7211-9075-ded3197be762",
+      "ts": "2026-02-16T16:49:48.648Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 29,
+      "max_turn_ts": "2026-02-16T19:38:14.669000Z"
+    },
+    {
+      "sid": "019c6760-484a-7ec3-8f1c-7e39fb4999f1",
+      "ts": "2026-02-16T16:55:07.583Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 24,
+      "max_turn_ts": "2026-02-16T18:03:56.424000Z"
+    },
+    {
+      "sid": "019c679d-6089-7982-99b2-951248eec31f",
+      "ts": "2026-02-16T18:01:33.563Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 16,
+      "max_turn_ts": "2026-02-16T18:56:55.237000Z"
+    },
+    {
+      "sid": "019c67be-90c7-7190-ba19-acb00dec4900",
+      "ts": "2026-02-16T18:38:02.572Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 27,
+      "max_turn_ts": "2026-02-16T21:50:41.503000Z"
+    },
+    {
+      "sid": "019c67d2-8919-76b1-bb98-1384e999fbee",
+      "ts": "2026-02-16T18:59:57.515Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T19:01:35.362000Z"
+    },
+    {
+      "sid": "019c67d3-27ef-7921-8f79-559e43eb9296",
+      "ts": "2026-02-16T19:00:29.200Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-16T19:17:44.985000Z"
+    },
+    {
+      "sid": "019c67d6-29b3-7d92-8d33-2edbdd18627f",
+      "ts": "2026-02-16T19:03:46.453Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 8,
+      "max_turn_ts": "2026-02-16T19:18:21.998000Z"
+    },
+    {
+      "sid": "019c67e5-8cc2-7e72-949d-b6cc1a622d36",
+      "ts": "2026-02-16T19:20:40.487Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 12,
+      "max_turn_ts": "2026-02-16T20:13:18.826000Z"
+    },
+    {
+      "sid": "019c6809-617e-7002-843e-d835366b650d",
+      "ts": "2026-02-16T19:59:49.658Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 9,
+      "max_turn_ts": "2026-02-16T20:30:54.189000Z"
+    },
+    {
+      "sid": "019c681c-5b16-7702-93b3-a8e76462c83f",
+      "ts": "2026-02-16T20:20:30.560Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 10,
+      "max_turn_ts": "2026-02-16T22:14:55.358000Z"
+    },
+    {
+      "sid": "019c683b-1c40-77f3-b2b1-204398f35363",
+      "ts": "2026-02-16T20:53:56.784Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T20:55:13.872000Z"
+    },
+    {
+      "sid": "019c6848-960e-7f42-831b-5d5d149f4c58",
+      "ts": "2026-02-16T21:08:50.611Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T21:15:28.890000Z"
+    },
+    {
+      "sid": "019c6869-e0f7-79a3-b061-f9e325c8025f",
+      "ts": "2026-02-16T21:45:32.188Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 21,
+      "max_turn_ts": "2026-02-16T22:19:34.191000Z"
+    },
+    {
+      "sid": "019c6884-241b-7801-92f8-cdbacb613a17",
+      "ts": "2026-02-16T22:13:43.116Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 15,
+      "max_turn_ts": "2026-02-16T22:34:00.402000Z"
+    },
+    {
+      "sid": "019c688b-7b84-7563-aef9-7f2c86dbc1bd",
+      "ts": "2026-02-16T22:21:44.849Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 18,
+      "max_turn_ts": "2026-02-17T00:10:44.310000Z"
+    },
+    {
+      "sid": "019c6897-0d50-7712-93a8-fb29bfa5a51b",
+      "ts": "2026-02-16T22:34:22.773Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 19,
+      "max_turn_ts": "2026-02-17T02:45:27.951000Z"
+    },
+    {
+      "sid": "019c6897-40a6-7701-bb18-91d65d5ea021",
+      "ts": "2026-02-16T22:35:22.890Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 9,
+      "max_turn_ts": "2026-02-17T00:10:35.401000Z"
+    },
+    {
+      "sid": "019c68f6-bfe2-74f2-82d7-ec3c77a2424d",
+      "ts": "2026-02-17T00:19:06.863Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 13,
+      "max_turn_ts": "2026-02-17T02:11:25.883000Z"
+    },
+    {
+      "sid": "019c692d-cbef-7132-a4b1-66531ac15b22",
+      "ts": "2026-02-17T01:19:20.995Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 8,
+      "max_turn_ts": "2026-02-17T11:58:09.225000Z"
+    },
+    {
+      "sid": "019c695c-3e95-7c81-aa06-4d9030e88426",
+      "ts": "2026-02-17T02:09:44.480Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-17T02:32:17.725000Z"
+    },
+    {
+      "sid": "019c6b6a-f059-7442-b5d6-f5878f8be0de",
+      "ts": "2026-02-17T11:45:01.577Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-17T12:20:10.082000Z"
+    },
+    {
+      "sid": "019c6b6b-12b4-78f3-86e3-9575298d3ab9",
+      "ts": "2026-02-17T11:45:21.971Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 18,
+      "max_turn_ts": "2026-02-17T12:47:40.926000Z"
+    },
+    {
+      "sid": "019c6b6f-4b92-7f02-8b0c-0b42f28691d1",
+      "ts": "2026-02-17T11:51:25.933Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-17T12:01:43.904000Z"
+    },
+    {
+      "sid": "019c6b71-3266-7b20-8a51-ec92b32e6075",
+      "ts": "2026-02-17T11:51:47.494Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 11,
+      "max_turn_ts": "2026-02-17T12:12:30.900000Z"
+    },
+    {
+      "sid": "019c6b79-53b8-78d3-9902-a8c80b3048be",
+      "ts": "2026-02-17T12:00:40.893Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 9,
+      "max_turn_ts": "2026-02-17T12:43:48.579000Z"
+    },
+    {
+      "sid": "019c6b81-007c-7a82-b4e9-4692cdee3ea8",
+      "ts": "2026-02-17T12:09:16.187Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-17T12:16:15.601000Z"
+    },
+    {
+      "sid": "019c6b96-b6d6-7163-b5f4-0ca17147b682",
+      "ts": "2026-02-17T12:32:48.956Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-17T14:14:05.217000Z"
+    },
+    {
+      "sid": "019c6ba0-f938-73d3-b64a-56d4ce8e0bdf",
+      "ts": "2026-02-17T12:44:15.029Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 47,
+      "max_turn_ts": "2026-02-17T17:27:40.501000Z"
+    },
+    {
+      "sid": "019c6bbc-ea82-78f1-9496-8093df7e9073",
+      "ts": "2026-02-17T13:14:39.497Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-17T13:17:59.447000Z"
+    },
+    {
+      "sid": "019c6bf9-ba49-7591-b5d7-40193cba5450",
+      "ts": "2026-02-17T14:20:58.878Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-17T14:34:01.697000Z"
+    },
+    {
+      "sid": "019c6c1f-aa8f-7952-828c-3e5a47db6586",
+      "ts": "2026-02-17T15:02:44.178Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 13,
+      "max_turn_ts": "2026-02-17T17:47:55.830000Z"
+    },
+    {
+      "sid": "019c6c24-e791-73e3-bc55-ed1df8e985fa",
+      "ts": "2026-02-17T15:08:19.112Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-17T16:20:30.491000Z"
+    },
+    {
+      "sid": "019c6c95-af8f-7ce1-beca-f6f5abe45734",
+      "ts": "2026-02-17T17:11:33.863Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-17T17:22:50.901000Z"
+    },
+    {
+      "sid": "019c6ca6-e1d3-77b2-8e80-43286dafbe7d",
+      "ts": "2026-02-17T17:30:03.875Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-17T21:49:10.029000Z"
+    },
+    {
+      "sid": "019c6ca9-810b-7af3-b2a3-03ca9d9099c8",
+      "ts": "2026-02-17T17:32:54.746Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 21,
+      "max_turn_ts": "2026-02-17T19:13:03.717000Z"
+    },
+    {
+      "sid": "019c6cb8-8837-7bb2-8147-ee232474267e",
+      "ts": "2026-02-17T17:50:02.273Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-17T18:05:23.835000Z"
+    },
+    {
+      "sid": "019c6cc5-6478-7371-b929-0a9629f2a23e",
+      "ts": "2026-02-17T18:03:24.854Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 4,
+      "max_turn_ts": "2026-02-17T18:11:02.873000Z"
+    },
+    {
+      "sid": "019c6ccd-ac79-7b30-b136-becfbeaf9374",
+      "ts": "2026-02-17T18:12:27.789Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-17T18:31:06.092000Z"
+    },
+    {
+      "sid": "019c6ce4-5d14-7de1-924a-3c5a30e94fea",
+      "ts": "2026-02-17T18:37:24.444Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-18T01:14:34.804000Z"
+    },
+    {
+      "sid": "019c6cfd-b3ce-7653-ae8f-6895d16069f1",
+      "ts": "2026-02-17T19:04:55.920Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-17T19:21:54.788000Z"
+    },
+    {
+      "sid": "019c6d0e-2400-7983-9084-c9d0e8632a9f",
+      "ts": "2026-02-17T19:22:51.611Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 9,
+      "max_turn_ts": "2026-02-17T20:11:53.494000Z"
+    },
+    {
+      "sid": "019c6d1c-884d-7212-ac5d-ac3fbaa99eb8",
+      "ts": "2026-02-17T19:38:38.666Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-17T19:42:59.318000Z"
+    },
+    {
+      "sid": "019c6d33-f16b-7d61-8c63-7ba44ec3d3f7",
+      "ts": "2026-02-17T20:04:07.592Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-17T20:40:15.683000Z"
+    },
+    {
+      "sid": "019c6d7a-dca0-7860-a4ca-ba0d2d38430e",
+      "ts": "2026-02-17T21:21:35.407Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 20,
+      "max_turn_ts": "2026-02-17T23:32:42.118000Z"
+    },
+    {
+      "sid": "019c6dbc-0e11-77d2-8b76-b015d2d58ad2",
+      "ts": "2026-02-17T22:32:48.519Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 16,
+      "max_turn_ts": "2026-02-18T00:10:36.897000Z"
+    },
+    {
+      "sid": "019c6dcd-8e91-7c20-8b78-99a75c1cf344",
+      "ts": "2026-02-17T22:52:15.619Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 9,
+      "max_turn_ts": "2026-02-17T23:20:33.161000Z"
+    },
+    {
+      "sid": "019c6dd6-56af-7c82-810e-2884afba5903",
+      "ts": "2026-02-17T23:01:29.647Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 12,
+      "max_turn_ts": "2026-02-18T00:13:48.429000Z"
+    },
+    {
+      "sid": "019c6dde-31ff-7781-a39e-646e7877d5ea",
+      "ts": "2026-02-17T23:10:30.666Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-17T23:24:48.225000Z"
+    },
+    {
+      "sid": "019c6e03-527f-7c01-a42e-157bc95d70b5",
+      "ts": "2026-02-17T23:50:46.049Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-18T00:04:29.829000Z"
+    },
+    {
+      "sid": "019c6e12-d131-7641-9c28-027c1476fc5d",
+      "ts": "2026-02-18T00:07:54.896Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 19,
+      "max_turn_ts": "2026-02-18T01:43:17.754000Z"
+    },
+    {
+      "sid": "019c6e1d-557e-7091-8f27-cc5ac1e8bc72",
+      "ts": "2026-02-18T00:19:05.969Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T00:23:50.482000Z"
+    },
+    {
+      "sid": "019c6e50-76f9-7912-b148-a629791e39f2",
+      "ts": "2026-02-18T01:14:55.719Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 14,
+      "max_turn_ts": "2026-02-18T01:59:41.033000Z"
+    },
+    {
+      "sid": "019c6e51-8618-7782-8712-34ae1d64b747",
+      "ts": "2026-02-18T01:16:15.839Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-18T09:46:05.315000Z"
+    },
+    {
+      "sid": "019c6e5a-efa2-7cc3-8d07-c9c636aa9a06",
+      "ts": "2026-02-18T01:26:23.316Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 4,
+      "max_turn_ts": "2026-02-18T02:13:08.113000Z"
+    },
+    {
+      "sid": "019c7020-fb2b-7070-859b-1400b6cb6c1f",
+      "ts": "2026-02-18T09:42:15.735Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-18T10:22:05.601000Z"
+    },
+    {
+      "sid": "019c7021-16bc-7082-be8a-ce48124220e6",
+      "ts": "2026-02-18T09:42:23.388Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-18T10:52:37.182000Z"
+    },
+    {
+      "sid": "019c703f-87f7-7061-a870-753d8449ce7e",
+      "ts": "2026-02-18T10:15:38.189Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T10:33:54.022000Z"
+    },
+    {
+      "sid": "019c7040-4016-79b0-8e9c-d9ca8cae3765",
+      "ts": "2026-02-18T10:16:24.982Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 20,
+      "max_turn_ts": "2026-02-18T19:55:40.734000Z"
+    },
+    {
+      "sid": "019c7053-94a9-73f1-a37b-14dddff8e9e2",
+      "ts": "2026-02-18T10:37:41.658Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-18T11:13:50.300000Z"
+    },
+    {
+      "sid": "019c705d-62dd-7850-9c02-fa3831da8625",
+      "ts": "2026-02-18T10:48:15.260Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T11:18:36.967000Z"
+    },
+    {
+      "sid": "019c7070-f190-7503-9428-0d853868578d",
+      "ts": "2026-02-18T11:09:36.308Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 5,
+      "max_turn_ts": "2026-02-18T11:28:23.241000Z"
+    },
+    {
+      "sid": "019c707a-cdbd-7690-a7e4-a5b49bab9426",
+      "ts": "2026-02-18T11:20:22.931Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 21,
+      "max_turn_ts": "2026-02-18T14:48:11.641000Z"
+    },
+    {
+      "sid": "019c70a9-0e1d-79a3-a655-cf62f745fb78",
+      "ts": "2026-02-18T12:10:54.087Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 48,
+      "max_turn_ts": "2026-02-19T01:14:02.140000Z"
+    },
+    {
+      "sid": "019c70d8-a229-7bd3-9ac9-728ddf119f6c",
+      "ts": "2026-02-18T13:03:25.011Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 11,
+      "max_turn_ts": "2026-02-18T14:30:08.117000Z"
+    },
+    {
+      "sid": "019c711e-3b4d-7490-9010-0879a7d045b9",
+      "ts": "2026-02-18T14:19:42.807Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 4,
+      "max_turn_ts": "2026-02-18T16:24:51.719000Z"
+    },
+    {
+      "sid": "019c7125-df6d-7682-b83b-fa5232feba46",
+      "ts": "2026-02-18T14:27:24.089Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 4,
+      "max_turn_ts": "2026-02-18T15:04:04.467000Z"
+    },
+    {
+      "sid": "019c712b-9d64-71c0-a65f-a1595eeb3f53",
+      "ts": "2026-02-18T14:33:30.226Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 59,
+      "max_turn_ts": "2026-02-18T18:19:41.801000Z"
+    },
+    {
+      "sid": "019c7131-9145-7a81-929d-0059fa3189ce",
+      "ts": "2026-02-18T14:40:00.760Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T14:44:45.237000Z"
+    },
+    {
+      "sid": "019c7165-722d-79a3-8a59-959ada429983",
+      "ts": "2026-02-18T15:36:55.886Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 68,
+      "max_turn_ts": "2026-02-18T23:01:52.242000Z"
+    },
+    {
+      "sid": "019c7225-b61e-7703-91a3-de52831a4c4e",
+      "ts": "2026-02-18T19:06:46.557Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T19:12:03.244000Z"
+    },
+    {
+      "sid": "019c7293-222e-7302-9ae8-330d298500e1",
+      "ts": "2026-02-18T21:06:13.858Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 4,
+      "max_turn_ts": "2026-02-18T21:17:04.549000Z"
+    },
+    {
+      "sid": "019c72d6-e48f-7ea3-81d8-26b384b41bc9",
+      "ts": "2026-02-18T22:20:14.285Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T22:35:35.082000Z"
+    },
+    {
+      "sid": "019c72e5-98e9-7d50-8930-171fe018c642",
+      "ts": "2026-02-18T22:36:16.034Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T23:13:46.043000Z"
+    },
+    {
+      "sid": "019c72e6-100e-76d1-a7e7-57297bb62c96",
+      "ts": "2026-02-18T22:36:47.802Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T22:52:41.181000Z"
+    },
+    {
+      "sid": "019c7308-c29d-7400-9cf5-383f1e97d849",
+      "ts": "2026-02-18T23:14:40.445Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 20,
+      "max_turn_ts": "2026-02-19T01:25:28.646000Z"
+    },
+    {
+      "sid": "019c7324-fdd1-7fe1-b1db-47705d701ec0",
+      "ts": "2026-02-18T23:45:30.531Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 3,
+      "max_turn_ts": "2026-02-18T23:55:24.107000Z"
+    },
+    {
+      "sid": "019c7329-47d1-7992-9ad8-f0e8cf277566",
+      "ts": "2026-02-18T23:50:30.873Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 11,
+      "max_turn_ts": "2026-02-19T01:00:26.972000Z"
+    },
+    {
+      "sid": "019c737c-e41c-7750-a182-ae2eaab1772b",
+      "ts": "2026-02-19T01:21:31.374Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 1,
+      "max_turn_ts": "2026-02-19T01:24:26.626000Z"
+    },
+    {
+      "sid": "019c89e9-379f-7773-b460-3df50805c9fd",
+      "ts": "2026-02-23T10:07:05.998Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 18,
+      "max_turn_ts": "2026-02-23T15:22:43.892000Z"
+    },
+    {
+      "sid": "019c8a3a-7a88-70b2-8f18-c9acd392f83a",
+      "ts": "2026-02-23T11:20:27.137Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-23T11:45:38.460000Z"
+    },
+    {
+      "sid": "019c8a3b-464e-7792-b1b7-d79a0a8aa177",
+      "ts": "2026-02-23T11:21:46.836Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 77,
+      "max_turn_ts": "2026-02-23T21:52:52.613000Z"
+    },
+    {
+      "sid": "019c8a4e-edf2-73f1-8832-f218cc68cb1d",
+      "ts": "2026-02-23T11:42:35.176Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 6,
+      "max_turn_ts": "2026-02-23T12:36:19.142000Z"
+    },
+    {
+      "sid": "019c8aef-0ad1-7bc0-9688-0d46cbb2e6d2",
+      "ts": "2026-02-23T14:37:28.307Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 74,
+      "max_turn_ts": "2026-02-24T14:48:53.646000Z"
+    },
+    {
+      "sid": "019c8afd-6718-7382-87e0-040ba1f8fb95",
+      "ts": "2026-02-23T14:53:18.781Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 2,
+      "max_turn_ts": "2026-02-23T15:06:07.110000Z"
+    },
+    {
+      "sid": "019c8cd2-5f61-7262-bba7-0f0171588fd6",
+      "ts": "2026-02-23T23:25:24.638Z",
+      "repo": "REXX-NEW/my-personal-codex-data",
+      "n": 7,
+      "max_turn_ts": "2026-02-24T12:40:35.587000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

@@ -1,0 +1,89 @@
+{
+  "developer": "gh:heddendorp",
+  "slug": "gh_heddendorp",
+  "Tstar": "2026-06-29T19:25:18.338057Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 11,
+  "n_human_turns": 540,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "019d9ffb-4d91-79a1-9cfb-7128aaee13b6",
+      "ts": "2026-04-19T17:57:48.092501Z",
+      "repo": "evorto-app/app",
+      "n": 22,
+      "max_turn_ts": "2026-04-19T17:57:54.501000Z"
+    },
+    {
+      "sid": "019e2131-a19f-7ca3-bf4c-734383cff996",
+      "ts": "2026-05-13T16:37:45.883864Z",
+      "repo": "evorto-app/app",
+      "n": 6,
+      "max_turn_ts": "2026-05-13T16:37:45.164000Z"
+    },
+    {
+      "sid": "019e0c35-2eca-73c1-8c45-a503c48d2efd",
+      "ts": "2026-05-13T21:09:26.692919Z",
+      "repo": "evorto-app/app",
+      "n": 4,
+      "max_turn_ts": "2026-05-13T21:09:49.002000Z"
+    },
+    {
+      "sid": "019e3540-e5d0-7ac2-82d8-08076ec89a2e",
+      "ts": "2026-05-17T11:15:52.580743Z",
+      "repo": "evorto-app/app",
+      "n": 11,
+      "max_turn_ts": "2026-05-17T11:17:18.956000Z"
+    },
+    {
+      "sid": "019e3598-bc93-71c1-84a8-8a178a97dc2b",
+      "ts": "2026-05-17T13:37:25.830594Z",
+      "repo": "evorto-app/app",
+      "n": 6,
+      "max_turn_ts": "2026-05-17T13:39:44.981000Z"
+    },
+    {
+      "sid": "019e3538-a001-70b3-bd7b-ecb3f9c0ad1b",
+      "ts": "2026-05-17T13:47:50.110101Z",
+      "repo": "evorto-app/app",
+      "n": 1,
+      "max_turn_ts": "2026-05-17T09:31:36.975000Z"
+    },
+    {
+      "sid": "019e8421-9348-7a60-8d98-9651cf74cda4",
+      "ts": "2026-06-01T17:15:19.441871Z",
+      "repo": "evorto-app/app",
+      "n": 5,
+      "max_turn_ts": "2026-06-01T17:15:45.434000Z"
+    },
+    {
+      "sid": "019e8c4a-fce8-7c63-a3e9-08fd96884c12",
+      "ts": "2026-06-05T15:04:06.480465Z",
+      "repo": "evorto-app/app",
+      "n": 398,
+      "max_turn_ts": "2026-06-05T15:03:19.049000Z"
+    },
+    {
+      "sid": "019e9e44-0f15-7b10-8531-2f317ddc9c5c",
+      "ts": "2026-06-06T18:52:51.278202Z",
+      "repo": "evorto-app/app",
+      "n": 2,
+      "max_turn_ts": "2026-06-06T18:55:03.141000Z"
+    },
+    {
+      "sid": "019ea60b-1a1c-7703-b8d8-26ed57eb7f8e",
+      "ts": "2026-06-10T04:09:33.887967Z",
+      "repo": "evorto-app/app",
+      "n": 82,
+      "max_turn_ts": "2026-06-10T04:09:07.859000Z"
+    },
+    {
+      "sid": "019ef105-b843-7472-ac4d-0f0d6212ec80",
+      "ts": "2026-06-22T20:33:08.29199Z",
+      "repo": "evorto-app/app",
+      "n": 3,
+      "max_turn_ts": "2026-06-22T20:33:48.078000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

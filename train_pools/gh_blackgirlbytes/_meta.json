@@ -1,0 +1,446 @@
+{
+  "developer": "gh:blackgirlbytes",
+  "slug": "gh_blackgirlbytes",
+  "Tstar": "2026-06-19T12:16:20.348285Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 62,
+  "n_human_turns": 918,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "d078f2fb-5705-403b-992a-715667a6fe57",
+      "ts": "2026-03-30T09:49:51.396396Z",
+      "repo": "blackgirlbytes/scribble-readable",
+      "n": 5,
+      "max_turn_ts": "2026-03-30T09:50:02.114000Z"
+    },
+    {
+      "sid": "4a11f729-099b-4e06-9550-77396e37c9b5",
+      "ts": "2026-03-30T10:26:48.594412Z",
+      "repo": "blackgirlbytes/genuary2026",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T10:26:39.366000Z"
+    },
+    {
+      "sid": "cba8d5b4-c219-4a9b-8239-aca602cb7633",
+      "ts": "2026-03-30T10:39:31.725378Z",
+      "repo": "hydeparksda/invite-automation",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T10:39:22.526000Z"
+    },
+    {
+      "sid": "aabc0550-b8a4-43a5-a8e2-0d779298667b",
+      "ts": "2026-03-30T17:16:58.836566Z",
+      "repo": "blackgirlbytes/handwriter",
+      "n": 13,
+      "max_turn_ts": "2026-03-30T17:17:03.624000Z"
+    },
+    {
+      "sid": "019d4663-83b5-7af1-b908-297a96ce151c",
+      "ts": "2026-04-01T02:26:29.555374Z",
+      "repo": "blackgirlbytes/pretext-handwriter-demo",
+      "n": 4,
+      "max_turn_ts": "2026-04-01T02:26:29.374000Z"
+    },
+    {
+      "sid": "019d482a-c024-70a3-8f7c-b7b4f56c4abe",
+      "ts": "2026-04-01T09:00:30.478403Z",
+      "repo": "blackgirlbytes/pretext-handwriting-demo",
+      "n": 6,
+      "max_turn_ts": "2026-04-01T08:58:21.604000Z"
+    },
+    {
+      "sid": "019d473b-fa3b-7480-9725-723b0aae707f",
+      "ts": "2026-04-01T09:28:47.963815Z",
+      "repo": "blackgirlbytes/pretext-handwriting-demo",
+      "n": 37,
+      "max_turn_ts": "2026-04-01T09:28:47.215000Z"
+    },
+    {
+      "sid": "019ddba6-d9ca-71d2-89c3-5dd074c317b3",
+      "ts": "2026-04-30T00:11:33.498337Z",
+      "repo": "entireio/git-sync",
+      "n": 9,
+      "max_turn_ts": "2026-04-30T00:11:58.115000Z"
+    },
+    {
+      "sid": "019ddcb1-07d7-7821-9b36-168174c16562",
+      "ts": "2026-04-30T05:10:54.508201Z",
+      "repo": "entireio/git-sync",
+      "n": 10,
+      "max_turn_ts": "2026-04-30T05:10:53.947000Z"
+    },
+    {
+      "sid": "019ddaf2-047a-7a63-839e-79f4476f3b44",
+      "ts": "2026-04-30T15:36:59.565917Z",
+      "repo": "entireio/git-sync",
+      "n": 35,
+      "max_turn_ts": "2026-04-29T23:16:54.734000Z"
+    },
+    {
+      "sid": "019ddeed-72de-7371-bf67-ac505f4386ba",
+      "ts": "2026-04-30T15:37:05.850674Z",
+      "repo": "entireio/git-sync",
+      "n": 12,
+      "max_turn_ts": "2026-04-30T15:36:59.238000Z"
+    },
+    {
+      "sid": "bf0d7da1-e260-41cb-a27d-20b53359d790",
+      "ts": "2026-06-03T05:45:04.565406Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-03T05:45:11.411000Z"
+    },
+    {
+      "sid": "99fd37cf-9dfa-4a2d-b1f8-17dc7da61d9d",
+      "ts": "2026-06-03T05:47:15.396071Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-03T05:47:19.259000Z"
+    },
+    {
+      "sid": "1724749a-c47c-4c19-b52b-6858f322d551",
+      "ts": "2026-06-03T05:50:01.387813Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-03T05:50:06.910000Z"
+    },
+    {
+      "sid": "b3b3fb25-90c3-4a42-bd2c-c831f432c398",
+      "ts": "2026-06-03T05:51:39.273883Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-03T05:51:44.535000Z"
+    },
+    {
+      "sid": "2980f52a-559e-4818-ae7a-914fe32aae7c",
+      "ts": "2026-06-05T09:46:00.013953Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 10,
+      "max_turn_ts": "2026-06-05T09:45:16.418000Z"
+    },
+    {
+      "sid": "1a022d9c-5548-44c3-aa63-69b8ae51e8b8",
+      "ts": "2026-06-05T16:13:59.100948Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-05T16:03:41.440000Z"
+    },
+    {
+      "sid": "eb4f7ed1-9c0a-467a-93fd-61a231e8856e",
+      "ts": "2026-06-05T16:13:59.362028Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 7,
+      "max_turn_ts": "2026-06-05T15:28:35.595000Z"
+    },
+    {
+      "sid": "019e9884-fb42-7040-8ef8-a1b6b61f1dd1",
+      "ts": "2026-06-05T18:37:59.927129Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 18,
+      "max_turn_ts": "2026-06-05T18:37:19.140000Z"
+    },
+    {
+      "sid": "43c7fbd3-f5f2-4ded-b973-01819a051dfd",
+      "ts": "2026-06-09T05:39:13.039722Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 6,
+      "max_turn_ts": "2026-06-06T08:34:26.536000Z"
+    },
+    {
+      "sid": "50ee4d1a-71c8-4883-be11-8d53633cc549",
+      "ts": "2026-06-09T09:51:25.627655Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 43,
+      "max_turn_ts": "2026-06-09T09:51:33.228000Z"
+    },
+    {
+      "sid": "019ea8fa-feb1-7f93-ac74-4c3373a82d7f",
+      "ts": "2026-06-10T19:54:33.725715Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 18,
+      "max_turn_ts": "2026-06-09T16:49:01.292000Z"
+    },
+    {
+      "sid": "019eae1a-0617-7291-abac-f438875870d4",
+      "ts": "2026-06-10T19:54:34.910702Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 20,
+      "max_turn_ts": "2026-06-10T10:33:40.695000Z"
+    },
+    {
+      "sid": "754b1f58-72f6-44bc-97ce-6c28037848e3",
+      "ts": "2026-06-10T19:54:38.387173Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 22,
+      "max_turn_ts": "2026-06-10T19:54:55.669000Z"
+    },
+    {
+      "sid": "cb77ee11-31c9-4f9a-9dc3-3cf520a35d40",
+      "ts": "2026-06-10T19:54:38.471694Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-09T20:27:56.557000Z"
+    },
+    {
+      "sid": "d43002f0-2256-4a4e-8abe-ae97243b5906",
+      "ts": "2026-06-10T19:54:39.515591Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 41,
+      "max_turn_ts": "2026-06-10T10:27:55.744000Z"
+    },
+    {
+      "sid": "019eb121-52c3-74e3-a296-e2cdce6fa2b5",
+      "ts": "2026-06-11T10:35:37.517479Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 5,
+      "max_turn_ts": "2026-06-10T18:02:54.204000Z"
+    },
+    {
+      "sid": "e5b21660-f162-4071-97c3-8ce5c73c7857",
+      "ts": "2026-06-11T10:35:47.161658Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 4,
+      "max_turn_ts": "2026-06-11T10:36:11.808000Z"
+    },
+    {
+      "sid": "4fc30b8d-0d52-49cd-8b24-c78559edb2ff",
+      "ts": "2026-06-11T15:45:48.633263Z",
+      "repo": "entireio/external-agents",
+      "n": 24,
+      "max_turn_ts": "2026-06-11T15:45:44.423000Z"
+    },
+    {
+      "sid": "ed80b65d-9ba6-42c1-bcf1-89ed4c4519f3",
+      "ts": "2026-06-13T08:15:23.692041Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 22,
+      "max_turn_ts": "2026-06-12T22:08:26.383000Z"
+    },
+    {
+      "sid": "019ec66b-5210-7711-a71e-86632c398f1f",
+      "ts": "2026-06-15T05:51:08.431707Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 52,
+      "max_turn_ts": "2026-06-15T05:39:28.543000Z"
+    },
+    {
+      "sid": "233712ad-9679-40e0-bc3a-3cafadc74605",
+      "ts": "2026-06-15T18:13:22.767125Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 81,
+      "max_turn_ts": "2026-06-15T18:13:28.232000Z"
+    },
+    {
+      "sid": "019ecfb7-79f9-7263-bf8c-1f3b136a6a3c",
+      "ts": "2026-06-16T20:05:45.877534Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 30,
+      "max_turn_ts": "2026-06-16T13:50:27.162000Z"
+    },
+    {
+      "sid": "019ed0b0-ee61-7341-8509-df97a795155d",
+      "ts": "2026-06-16T20:05:46.011822Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 3,
+      "max_turn_ts": "2026-06-16T13:54:38.463000Z"
+    },
+    {
+      "sid": "88508f41-9260-4ba2-ba37-2ae5c118c0fa",
+      "ts": "2026-06-17T00:02:47.113888Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 34,
+      "max_turn_ts": "2026-06-16T23:23:28.721000Z"
+    },
+    {
+      "sid": "019ed1e2-c216-7cf1-b680-035524a8fc09",
+      "ts": "2026-06-17T19:19:37.42499Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 4,
+      "max_turn_ts": "2026-06-16T20:06:07.707000Z"
+    },
+    {
+      "sid": "019ed0f2-4373-7820-a3b8-d51bac5e7d6d",
+      "ts": "2026-06-17T22:25:17.635048Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 37,
+      "max_turn_ts": "2026-06-16T23:17:33.597000Z"
+    },
+    {
+      "sid": "019ed2c0-e620-7ab0-bafc-6ea27adb45c9",
+      "ts": "2026-06-17T22:25:29.69222Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-16T23:34:23.796000Z"
+    },
+    {
+      "sid": "38573ee1-23f1-46a2-a4f2-13ba6a15bf0c",
+      "ts": "2026-06-17T23:56:58.867723Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 32,
+      "max_turn_ts": "2026-06-17T14:51:54.232000Z"
+    },
+    {
+      "sid": "3b5a9bec-34c4-48d5-9502-dd21f9e1e011",
+      "ts": "2026-06-17T23:56:58.99298Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 3,
+      "max_turn_ts": "2026-06-17T17:43:01.490000Z"
+    },
+    {
+      "sid": "b4204c32-77ab-409a-9627-b677ca8be616",
+      "ts": "2026-06-17T23:56:59.278722Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 8,
+      "max_turn_ts": "2026-06-17T16:47:27.733000Z"
+    },
+    {
+      "sid": "019ed44c-d791-7742-8652-f4d3af4f45f1",
+      "ts": "2026-06-18T06:27:53.039154Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-17T06:38:57.317000Z"
+    },
+    {
+      "sid": "019ed44e-4be8-7c33-a28c-229573f5ad26",
+      "ts": "2026-06-18T06:28:04.215907Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-17T06:42:17.199000Z"
+    },
+    {
+      "sid": "019ed974-19ee-72c2-b4c7-407a029544b2",
+      "ts": "2026-06-18T14:20:28.723624Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 3,
+      "max_turn_ts": "2026-06-18T07:04:28.600000Z"
+    },
+    {
+      "sid": "019ed992-2382-7801-9bed-79c4b9980845",
+      "ts": "2026-06-18T14:21:05.99945Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 2,
+      "max_turn_ts": "2026-06-18T07:20:07.553000Z"
+    },
+    {
+      "sid": "019edb14-5c03-7b62-9c55-5fd2ea99a5c6",
+      "ts": "2026-06-18T14:21:06.3097Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 2,
+      "max_turn_ts": "2026-06-18T14:20:11.341000Z"
+    },
+    {
+      "sid": "47f1677e-c6c9-4dba-8e3f-1e3dfe715b26",
+      "ts": "2026-06-18T14:21:06.903948Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 2,
+      "max_turn_ts": "2026-06-17T17:47:34.093000Z"
+    },
+    {
+      "sid": "019edb22-0a24-74a1-922d-1f66ae0d7b88",
+      "ts": "2026-06-18T14:43:44.061709Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 4,
+      "max_turn_ts": "2026-06-18T14:43:43.703000Z"
+    },
+    {
+      "sid": "019ed6ed-d8b6-7d40-b672-764045f61e13",
+      "ts": "2026-06-18T15:37:04.971548Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 58,
+      "max_turn_ts": "2026-06-17T22:27:23.986000Z"
+    },
+    {
+      "sid": "019ed7a6-b622-7683-a718-e3f4947d2fac",
+      "ts": "2026-06-18T15:37:10.871361Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 58,
+      "max_turn_ts": "2026-06-18T04:25:19.896000Z"
+    },
+    {
+      "sid": "019ed7bd-1336-7123-ad87-5b5a67325237",
+      "ts": "2026-06-18T15:37:17.021743Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 31,
+      "max_turn_ts": "2026-06-17T23:57:07.926000Z"
+    },
+    {
+      "sid": "019ed7c2-0e29-7b52-b92a-ff8e6f9573a0",
+      "ts": "2026-06-18T15:37:17.228585Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 1,
+      "max_turn_ts": "2026-06-17T22:52:22.435000Z"
+    },
+    {
+      "sid": "019ed92d-fcab-7bc0-9f52-222f86167dc5",
+      "ts": "2026-06-18T15:37:42.784449Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 2,
+      "max_turn_ts": "2026-06-18T05:24:57.095000Z"
+    },
+    {
+      "sid": "019ed2e2-c0ba-7551-9a3b-dcad81973311",
+      "ts": "2026-06-18T15:45:54.047711Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 16,
+      "max_turn_ts": "2026-06-17T16:53:56.407000Z"
+    },
+    {
+      "sid": "019ed688-f0d8-7531-a5f3-ca1cf17f7c75",
+      "ts": "2026-06-18T15:46:29.989408Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 17,
+      "max_turn_ts": "2026-06-17T18:28:33.494000Z"
+    },
+    {
+      "sid": "019ed6d6-ef92-7bc1-91e1-eb148c3140a6",
+      "ts": "2026-06-18T15:46:43.809746Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 15,
+      "max_turn_ts": "2026-06-17T19:16:05.953000Z"
+    },
+    {
+      "sid": "019ed6d8-372d-7b72-ab4c-3532dd77b3e4",
+      "ts": "2026-06-18T15:46:53.117722Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 11,
+      "max_turn_ts": "2026-06-17T19:00:26.632000Z"
+    },
+    {
+      "sid": "019ed8f8-438a-7e70-95ce-59a9cadd7a34",
+      "ts": "2026-06-19T12:14:52.531051Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 6,
+      "max_turn_ts": "2026-06-18T04:38:10.378000Z"
+    },
+    {
+      "sid": "019ed942-4ed9-7c21-860b-c4e15f3b0e85",
+      "ts": "2026-06-19T12:15:16.04439Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 3,
+      "max_turn_ts": "2026-06-18T05:47:55.644000Z"
+    },
+    {
+      "sid": "019ed95a-540c-72b3-acb9-7d481f967116",
+      "ts": "2026-06-19T12:16:03.382457Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 2,
+      "max_turn_ts": "2026-06-18T06:17:05.608000Z"
+    },
+    {
+      "sid": "019edb14-9a44-7081-bc6e-c597e4807a42",
+      "ts": "2026-06-19T12:16:19.568148Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 13,
+      "max_turn_ts": "2026-06-18T16:21:36.603000Z"
+    },
+    {
+      "sid": "019edb4e-76f5-7800-be12-ffff1334f57b",
+      "ts": "2026-06-19T12:16:20.0175Z",
+      "repo": "blackgirlbytes/planetfall-seed-signalkit",
+      "n": 6,
+      "max_turn_ts": "2026-06-18T15:48:12.737000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

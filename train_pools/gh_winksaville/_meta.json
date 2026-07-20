@@ -1,0 +1,1419 @@
+{
+  "developer": "gh:winksaville",
+  "slug": "gh_winksaville",
+  "Tstar": "2026-07-08T15:22:19.977Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 201,
+  "n_human_turns": 6622,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "7bc8af93-0225-46e5-adb6-8ab5eb7edf00",
+      "ts": "2026-02-06T20:00:40.890Z",
+      "repo": "winksaville/tspec",
+      "n": 3,
+      "max_turn_ts": "2026-02-06T20:00:40.889000Z"
+    },
+    {
+      "sid": "bbb250e2-f0dd-45cd-b621-a4688368df71",
+      "ts": "2026-02-06T20:12:29.510Z",
+      "repo": "winksaville/tspec",
+      "n": 6,
+      "max_turn_ts": "2026-02-06T20:30:30.032000Z"
+    },
+    {
+      "sid": "1c5b040a-0785-4801-9c5a-cab6dbf8be5e",
+      "ts": "2026-02-06T22:19:56.582Z",
+      "repo": "winksaville/tspec",
+      "n": 21,
+      "max_turn_ts": "2026-02-07T00:38:48.137000Z"
+    },
+    {
+      "sid": "a6685fb6-0542-4693-9ff7-7a2742866414",
+      "ts": "2026-02-08T00:09:33.823Z",
+      "repo": "winksaville/tspec",
+      "n": 25,
+      "max_turn_ts": "2026-02-08T05:22:21.736000Z"
+    },
+    {
+      "sid": "a61b758b-0ffc-474b-950f-45c9c8ba5a1c",
+      "ts": "2026-02-08T05:22:21.736Z",
+      "repo": "winksaville/tspec",
+      "n": 7,
+      "max_turn_ts": "2026-02-08T05:47:36.851000Z"
+    },
+    {
+      "sid": "785f4d80-3220-44cd-932e-1df50314ab70",
+      "ts": "2026-02-08T05:51:46.410Z",
+      "repo": "winksaville/tspec",
+      "n": 9,
+      "max_turn_ts": "2026-02-08T05:58:01.266000Z"
+    },
+    {
+      "sid": "72b72004-8d1a-40a3-91ca-8dc1d1f9160d",
+      "ts": "2026-02-10T00:58:41.218Z",
+      "repo": "winksaville/tspec",
+      "n": 27,
+      "max_turn_ts": "2026-02-10T02:50:44.187000Z"
+    },
+    {
+      "sid": "fe67cd02-920d-44eb-bf0e-c7ed2150003a",
+      "ts": "2026-02-10T20:30:29.062Z",
+      "repo": "winksaville/tspec",
+      "n": 28,
+      "max_turn_ts": "2026-02-11T00:53:12.020000Z"
+    },
+    {
+      "sid": "75bc7f40-abd6-4a8f-a3ff-a5433f5561a7",
+      "ts": "2026-02-11T18:53:52.671Z",
+      "repo": "winksaville/tspec",
+      "n": 26,
+      "max_turn_ts": "2026-02-11T23:15:31.257000Z"
+    },
+    {
+      "sid": "0952d71d-56aa-45c4-b7f4-87246c89e705",
+      "ts": "2026-02-11T23:35:26.357Z",
+      "repo": "winksaville/tspec",
+      "n": 12,
+      "max_turn_ts": "2026-02-12T01:08:45.658000Z"
+    },
+    {
+      "sid": "e00787b9-72e9-4e60-95d6-149a342d37a1",
+      "ts": "2026-02-12T17:27:27.665Z",
+      "repo": "winksaville/tspec",
+      "n": 1,
+      "max_turn_ts": "2026-02-12T17:27:27.664000Z"
+    },
+    {
+      "sid": "31844e9d-db10-4dee-9989-db9a3cc2434b",
+      "ts": "2026-02-13T05:55:26.443Z",
+      "repo": "winksaville/tspec",
+      "n": 23,
+      "max_turn_ts": "2026-02-13T06:54:36.632000Z"
+    },
+    {
+      "sid": "3b0493f7-4d90-404a-a9fc-982bb9699901",
+      "ts": "2026-02-13T07:07:43.660Z",
+      "repo": "winksaville/tspec",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T07:14:16.486000Z"
+    },
+    {
+      "sid": "294539fa-a24e-40ed-bb24-107dd02b7bc9",
+      "ts": "2026-02-13T19:44:44.899Z",
+      "repo": "winksaville/tspec",
+      "n": 13,
+      "max_turn_ts": "2026-02-14T03:05:14.869000Z"
+    },
+    {
+      "sid": "523e0196-ec0e-4f0f-b3aa-d2ec37f02b00",
+      "ts": "2026-02-14T17:44:52.011Z",
+      "repo": "winksaville/tspec",
+      "n": 8,
+      "max_turn_ts": "2026-02-14T18:24:16.415000Z"
+    },
+    {
+      "sid": "a6801e08-e532-4ed0-ad26-a28a5c1751d4",
+      "ts": "2026-02-15T16:33:16.837Z",
+      "repo": "winksaville/tspec",
+      "n": 3,
+      "max_turn_ts": "2026-02-15T16:40:57.771000Z"
+    },
+    {
+      "sid": "08d6af52-0da8-4794-8440-7ff91b7fc4a1",
+      "ts": "2026-02-15T16:42:53.063Z",
+      "repo": "winksaville/tspec",
+      "n": 26,
+      "max_turn_ts": "2026-02-16T04:35:10.376000Z"
+    },
+    {
+      "sid": "eca65bbc-e672-4fea-b6ec-3d08ff0e054f",
+      "ts": "2026-02-16T18:30:33.435Z",
+      "repo": "winksaville/tspec",
+      "n": 16,
+      "max_turn_ts": "2026-02-16T18:30:33.435000Z"
+    },
+    {
+      "sid": "f325d164-0d6f-4fda-8b9d-9e0d3713ebc7",
+      "ts": "2026-02-16T20:30:40.533Z",
+      "repo": "winksaville/tspec",
+      "n": 14,
+      "max_turn_ts": "2026-02-17T01:57:31.640000Z"
+    },
+    {
+      "sid": "fdc0f424-2fc9-46e3-8ae1-67760596304a",
+      "ts": "2026-02-17T01:57:31.640Z",
+      "repo": "winksaville/tspec",
+      "n": 6,
+      "max_turn_ts": "2026-02-17T02:27:39.699000Z"
+    },
+    {
+      "sid": "ed421e8d-c9e5-4da9-8b8f-6d6a19367cdf",
+      "ts": "2026-02-17T18:40:27.982Z",
+      "repo": "winksaville/tspec",
+      "n": 20,
+      "max_turn_ts": "2026-02-17T20:29:03.558000Z"
+    },
+    {
+      "sid": "5393dae0-bcf8-4710-befe-e652ae5de49f",
+      "ts": "2026-02-17T20:29:03.559Z",
+      "repo": "winksaville/tspec",
+      "n": 22,
+      "max_turn_ts": "2026-02-17T22:14:43.059000Z"
+    },
+    {
+      "sid": "6b337234-8e56-4f9b-bbe0-f9bc945a2878",
+      "ts": "2026-02-17T22:21:26.424Z",
+      "repo": "winksaville/tspec",
+      "n": 15,
+      "max_turn_ts": "2026-02-18T00:52:40.932000Z"
+    },
+    {
+      "sid": "84b31fdb-2671-4b7e-b3a2-62e7e6b82e19",
+      "ts": "2026-02-18T01:08:11.305Z",
+      "repo": "winksaville/tspec",
+      "n": 14,
+      "max_turn_ts": "2026-02-18T01:36:25.472000Z"
+    },
+    {
+      "sid": "d63c20e6-68d5-4443-8703-9c64f64c20ac",
+      "ts": "2026-02-18T16:57:43.400Z",
+      "repo": "winksaville/tspec",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T17:27:02.799000Z"
+    },
+    {
+      "sid": "858c47fd-7691-486a-97e0-aa129a22c45a",
+      "ts": "2026-02-18T17:27:02.798Z",
+      "repo": "winksaville/tspec",
+      "n": 64,
+      "max_turn_ts": "2026-02-19T00:08:07.669000Z"
+    },
+    {
+      "sid": "4b7b0982-40a3-41ed-88fa-66bab771017e",
+      "ts": "2026-02-19T01:19:29.963Z",
+      "repo": "winksaville/tspec",
+      "n": 2,
+      "max_turn_ts": "2026-02-19T01:28:41.639000Z"
+    },
+    {
+      "sid": "9239b91c-f074-428a-9f43-a64f26394fcb",
+      "ts": "2026-02-19T01:28:41.638Z",
+      "repo": "winksaville/tspec",
+      "n": 8,
+      "max_turn_ts": "2026-02-19T02:03:52.919000Z"
+    },
+    {
+      "sid": "04a21918-a429-4e1e-93b1-ca0cea51c8c8",
+      "ts": "2026-02-19T02:03:52.918Z",
+      "repo": "winksaville/tspec",
+      "n": 3,
+      "max_turn_ts": "2026-02-19T06:42:08.739000Z"
+    },
+    {
+      "sid": "5fdb0e06-516a-41d4-a0f7-6fda0b96546f",
+      "ts": "2026-02-19T18:06:26.412Z",
+      "repo": "winksaville/tspec",
+      "n": 50,
+      "max_turn_ts": "2026-02-20T06:54:30.633000Z"
+    },
+    {
+      "sid": "0ea6eaaa-bc67-454c-966b-a143f5222609",
+      "ts": "2026-02-20T19:29:36.952Z",
+      "repo": "winksaville/tspec",
+      "n": 37,
+      "max_turn_ts": "2026-02-20T23:10:50.525000Z"
+    },
+    {
+      "sid": "46b5458d-7547-4946-8dad-38c6bdd85312",
+      "ts": "2026-02-20T23:10:50.524Z",
+      "repo": "winksaville/tspec",
+      "n": 27,
+      "max_turn_ts": "2026-02-21T00:27:00.335000Z"
+    },
+    {
+      "sid": "f5a01a70-d4d7-4923-a076-ec33ca1cbce2",
+      "ts": "2026-02-21T00:27:00.334Z",
+      "repo": "winksaville/tspec",
+      "n": 19,
+      "max_turn_ts": "2026-02-21T01:52:42.173000Z"
+    },
+    {
+      "sid": "68f3676e-6bda-4e17-9573-54913c83dca5",
+      "ts": "2026-02-23T18:38:09.098Z",
+      "repo": "winksaville/tspec",
+      "n": 7,
+      "max_turn_ts": "2026-02-23T18:56:52.534000Z"
+    },
+    {
+      "sid": "de9a39bf-6768-491f-993c-042a15a72810",
+      "ts": "2026-02-23T18:56:52.527Z",
+      "repo": "winksaville/tspec",
+      "n": 27,
+      "max_turn_ts": "2026-02-24T01:24:09.764000Z"
+    },
+    {
+      "sid": "71031bbb-35d9-4941-aa71-deb65463c82f",
+      "ts": "2026-02-24T01:28:11.021Z",
+      "repo": "winksaville/tspec",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T01:34:08.547000Z"
+    },
+    {
+      "sid": "d91bae01-88b0-43e9-b493-b1e9aba55aba",
+      "ts": "2026-02-24T01:34:08.546Z",
+      "repo": "winksaville/tspec",
+      "n": 9,
+      "max_turn_ts": "2026-02-24T01:58:41.790000Z"
+    },
+    {
+      "sid": "a43bea35-c19f-4f24-8ead-1d2843290b28",
+      "ts": "2026-02-24T02:03:20.456Z",
+      "repo": "winksaville/tspec",
+      "n": 8,
+      "max_turn_ts": "2026-02-24T02:23:58.711000Z"
+    },
+    {
+      "sid": "59c30adf-4972-43d1-8ae5-b7ef0ec46ce1",
+      "ts": "2026-02-24T02:23:58.710Z",
+      "repo": "winksaville/tspec",
+      "n": 9,
+      "max_turn_ts": "2026-02-24T02:58:46.602000Z"
+    },
+    {
+      "sid": "673a794a-b95e-43fb-b767-b20b760a722a",
+      "ts": "2026-02-28T21:02:31.268Z",
+      "repo": "winksaville/hw-jjg-bot.claude",
+      "n": 12,
+      "max_turn_ts": "2026-02-28T22:09:43.710000Z"
+    },
+    {
+      "sid": "a5fdab37-cf04-4ac1-88f3-25fa72158fdd",
+      "ts": "2026-02-28T22:26:31.214Z",
+      "repo": "winksaville/hw-jjg-bot.claude",
+      "n": 4,
+      "max_turn_ts": "2026-02-28T22:42:02.058000Z"
+    },
+    {
+      "sid": "c9102ec0-1d89-45f0-be19-04fd4e265f46",
+      "ts": "2026-03-01T01:06:24.506Z",
+      "repo": "winksaville/hw-jjg-bot.claude",
+      "n": 18,
+      "max_turn_ts": "2026-03-01T06:44:40.010000Z"
+    },
+    {
+      "sid": "21a90a91-75b6-4e8b-a6fa-ee7099999ed3",
+      "ts": "2026-03-03T01:35:30.999Z",
+      "repo": "winksaville/hw-jjg-bot.claude",
+      "n": 6,
+      "max_turn_ts": "2026-03-03T05:06:29.508000Z"
+    },
+    {
+      "sid": "8b1f01de-cc51-4077-ad50-5e8542c630c1",
+      "ts": "2026-03-05T22:20:13.735Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 3,
+      "max_turn_ts": "2026-03-05T22:37:34.157000Z"
+    },
+    {
+      "sid": "0343f4bd-2540-4274-b158-f3e52f5c68f6",
+      "ts": "2026-03-05T22:37:34.150Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 8,
+      "max_turn_ts": "2026-03-06T04:26:15.076000Z"
+    },
+    {
+      "sid": "b6fd64c6-236e-4432-8b49-a9e94ebc7ae0",
+      "ts": "2026-03-06T18:27:27.530Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 16,
+      "max_turn_ts": "2026-03-06T20:15:40.969000Z"
+    },
+    {
+      "sid": "73422a80-ae68-4d74-90d5-0df40acc09ee",
+      "ts": "2026-03-11T16:12:01.098Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 34,
+      "max_turn_ts": "2026-03-11T18:38:29.231000Z"
+    },
+    {
+      "sid": "f9775166-b9c2-4351-a7b3-dae6795acdf8",
+      "ts": "2026-03-12T18:11:45.166Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 34,
+      "max_turn_ts": "2026-03-13T05:14:37.565000Z"
+    },
+    {
+      "sid": "0ec6fef2-ed63-416d-a34c-a4ab89b8f013",
+      "ts": "2026-03-14T00:48:47.689Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 23,
+      "max_turn_ts": "2026-03-14T02:39:25.392000Z"
+    },
+    {
+      "sid": "52f97b3a-72ed-4da4-8579-349708c5b24d",
+      "ts": "2026-03-14T18:27:59.312Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 18,
+      "max_turn_ts": "2026-03-15T01:59:33.947000Z"
+    },
+    {
+      "sid": "14b46294-af28-4be5-8b7f-b9336f5caca9",
+      "ts": "2026-03-15T02:27:08.556Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 8,
+      "max_turn_ts": "2026-03-15T03:24:14.020000Z"
+    },
+    {
+      "sid": "d7ca9aad-3c26-4233-8ce7-1c1322fdfb13",
+      "ts": "2026-03-15T03:52:06.954Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 6,
+      "max_turn_ts": "2026-03-15T04:18:54.702000Z"
+    },
+    {
+      "sid": "f6724179-d47d-4bd7-81a6-12d9504688f7",
+      "ts": "2026-03-15T18:24:59.279Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 34,
+      "max_turn_ts": "2026-03-15T20:32:49.143000Z"
+    },
+    {
+      "sid": "25c1477d-49d2-42d9-b2c4-9cb3f1afaecf",
+      "ts": "2026-03-15T23:32:45.152Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 41,
+      "max_turn_ts": "2026-03-16T02:15:07.290000Z"
+    },
+    {
+      "sid": "8073a5f4-f828-4308-9eb2-c44798b1fb70",
+      "ts": "2026-03-16T15:24:16.843Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 5,
+      "max_turn_ts": "2026-03-16T15:47:32.672000Z"
+    },
+    {
+      "sid": "30b7cf8b-5d63-4311-9310-a2ac2f6744c2",
+      "ts": "2026-03-16T15:54:17.188Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 38,
+      "max_turn_ts": "2026-03-16T21:39:13.032000Z"
+    },
+    {
+      "sid": "1bf38a30-0fca-4558-9ddf-d6f5473ff2f1",
+      "ts": "2026-03-16T21:41:50.413Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 63,
+      "max_turn_ts": "2026-03-17T04:27:18.371000Z"
+    },
+    {
+      "sid": "01951ee7-c3ea-4ef4-b1b0-4fb6fc04c464",
+      "ts": "2026-03-17T15:10:36.801Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 6,
+      "max_turn_ts": "2026-03-17T15:42:25.445000Z"
+    },
+    {
+      "sid": "ddcf975d-2206-4c49-9f3f-0be3361fe450",
+      "ts": "2026-03-17T15:46:31.972Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 25,
+      "max_turn_ts": "2026-03-17T16:53:19.349000Z"
+    },
+    {
+      "sid": "dac8bfb4-f6c6-4786-97fb-154b55364f74",
+      "ts": "2026-03-17T17:51:59.148Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 18,
+      "max_turn_ts": "2026-03-18T02:19:35.396000Z"
+    },
+    {
+      "sid": "195fba15-c0d9-4e47-8d9c-647312552dee",
+      "ts": "2026-03-18T16:02:13.472Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 68,
+      "max_turn_ts": "2026-03-19T00:06:05.901000Z"
+    },
+    {
+      "sid": "47b6f68c-9c31-471b-a324-fedbb7f73af4",
+      "ts": "2026-03-19T00:07:24.498Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T00:07:39.659000Z"
+    },
+    {
+      "sid": "05230898-5b80-4958-b1a1-726fee47577c",
+      "ts": "2026-03-19T01:34:00.057Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 50,
+      "max_turn_ts": "2026-03-19T07:23:16.657000Z"
+    },
+    {
+      "sid": "86fb7a89-abfa-4e84-b862-5983e93c0b3b",
+      "ts": "2026-03-19T15:28:49.322Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 135,
+      "max_turn_ts": "2026-03-21T01:53:53.086000Z"
+    },
+    {
+      "sid": "5ea28ab1-9f53-4758-a284-2d4f7ea55f19",
+      "ts": "2026-03-20T15:32:00.269Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 108,
+      "max_turn_ts": "2026-03-20T21:08:46.698000Z"
+    },
+    {
+      "sid": "ad1f18a5-7185-40db-8fac-623aef5338c5",
+      "ts": "2026-03-21T01:54:56.078Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 36,
+      "max_turn_ts": "2026-03-21T03:43:50.519000Z"
+    },
+    {
+      "sid": "453ef257-991f-4897-907c-45e35e433165",
+      "ts": "2026-03-21T19:27:26.337Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 13,
+      "max_turn_ts": "2026-03-21T23:27:57.197000Z"
+    },
+    {
+      "sid": "31ba272b-f7c2-436b-a017-269e27a64d07",
+      "ts": "2026-03-21T21:19:13.526Z",
+      "repo": "winksaville/ccs-viewer-by-cc",
+      "n": 1,
+      "max_turn_ts": "2026-03-21T21:19:24.289000Z"
+    },
+    {
+      "sid": "997afb98-c6aa-4f4a-92ac-a841e040414b",
+      "ts": "2026-03-23T18:49:37.836Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 21,
+      "max_turn_ts": "2026-03-23T19:29:13.987000Z"
+    },
+    {
+      "sid": "092de687-cd0d-4583-b872-bc2908dff3ba",
+      "ts": "2026-03-23T21:46:49.213Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 77,
+      "max_turn_ts": "2026-03-24T03:11:51.008000Z"
+    },
+    {
+      "sid": "cf01c4a8-6d31-4424-8086-2a5d58aa1e7b",
+      "ts": "2026-03-24T16:38:47.053Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 46,
+      "max_turn_ts": "2026-03-24T21:45:19.079000Z"
+    },
+    {
+      "sid": "9b2768f8-af27-46ad-8bff-30224e095e74",
+      "ts": "2026-03-24T23:39:28.333Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 18,
+      "max_turn_ts": "2026-03-25T00:34:21.544000Z"
+    },
+    {
+      "sid": "979fd0fd-a10d-419e-9cc5-b911dc32dfd8",
+      "ts": "2026-03-25T15:36:10.225Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 98,
+      "max_turn_ts": "2026-03-26T03:30:24.795000Z"
+    },
+    {
+      "sid": "d0e6ac1e-5e32-4e7f-8a92-b5c067bd4cda",
+      "ts": "2026-03-26T17:09:14.869Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 48,
+      "max_turn_ts": "2026-03-26T22:46:58.673000Z"
+    },
+    {
+      "sid": "8db2eaec-548a-45b3-a7e2-36dd7f1c79a7",
+      "ts": "2026-03-26T22:55:01.043Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 35,
+      "max_turn_ts": "2026-03-27T01:30:17.593000Z"
+    },
+    {
+      "sid": "b9b4e855-94f6-4d07-b4ee-f1c1353260ac",
+      "ts": "2026-03-28T16:51:03.781Z",
+      "repo": "winksaville/ccs-viewer-by-cc.claude",
+      "n": 75,
+      "max_turn_ts": "2026-03-29T01:11:33.232000Z"
+    },
+    {
+      "sid": "440ee5f2-e8f3-41ac-a6bf-eed67982c01f",
+      "ts": "2026-04-02T16:35:25.089Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 42,
+      "max_turn_ts": "2026-04-03T00:07:55.881000Z"
+    },
+    {
+      "sid": "e3c1ab81-bd3a-41d1-98db-24a074d4a339",
+      "ts": "2026-04-03T00:12:37.221Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 208,
+      "max_turn_ts": "2026-04-04T04:27:52.162000Z"
+    },
+    {
+      "sid": "730a9d51-01dd-43e5-bde5-226ad88904c0",
+      "ts": "2026-04-06T05:12:41.613Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 2,
+      "max_turn_ts": "2026-04-06T05:22:02.459000Z"
+    },
+    {
+      "sid": "0b43dc0b-6566-4b08-bfd4-16c2768f96de",
+      "ts": "2026-04-06T21:27:15.147Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 9,
+      "max_turn_ts": "2026-04-07T02:27:02.831000Z"
+    },
+    {
+      "sid": "7a8f5a23-6285-4a0a-ae2f-7812c30e15c3",
+      "ts": "2026-04-13T16:19:47.500Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 20,
+      "max_turn_ts": "2026-04-13T17:21:53.048000Z"
+    },
+    {
+      "sid": "bcdae425-aa30-4c91-a6ec-24a6faf26bfe",
+      "ts": "2026-04-14T15:12:11.059Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 18,
+      "max_turn_ts": "2026-04-14T16:29:52.693000Z"
+    },
+    {
+      "sid": "5e71000a-7a40-4c8f-b946-6d8565d42cf4",
+      "ts": "2026-04-14T16:38:43.785Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 59,
+      "max_turn_ts": "2026-04-14T23:11:04.155000Z"
+    },
+    {
+      "sid": "32a08c49-65aa-4cfd-b2c5-49d78bad817e",
+      "ts": "2026-04-14T18:25:38.636Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 7,
+      "max_turn_ts": "2026-04-14T18:51:58.807000Z"
+    },
+    {
+      "sid": "143f3919-47cd-4ca1-9218-54c636baf91c",
+      "ts": "2026-04-14T19:07:19.679Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 68,
+      "max_turn_ts": "2026-04-15T01:47:35.670000Z"
+    },
+    {
+      "sid": "a592c173-65d0-4f86-aeb2-c3c8ab32305a",
+      "ts": "2026-04-15T18:18:41.224Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 88,
+      "max_turn_ts": "2026-04-16T04:47:38.503000Z"
+    },
+    {
+      "sid": "01f085b0-3aa1-47f9-92a0-4f1ffa1f94f8",
+      "ts": "2026-04-16T16:16:22.938Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 47,
+      "max_turn_ts": "2026-04-16T18:35:49.538000Z"
+    },
+    {
+      "sid": "872c56cc-5e8a-4720-a1de-d5b3a8a5c16a",
+      "ts": "2026-04-16T18:36:55.893Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 46,
+      "max_turn_ts": "2026-04-16T21:25:25.493000Z"
+    },
+    {
+      "sid": "34b9409d-2eeb-4846-847c-fc8440fe2772",
+      "ts": "2026-04-17T02:26:54.013Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 29,
+      "max_turn_ts": "2026-04-17T03:58:49.872000Z"
+    },
+    {
+      "sid": "7d833a57-2927-470d-a30a-2c08745d4690",
+      "ts": "2026-04-17T17:23:17.850Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 16,
+      "max_turn_ts": "2026-04-17T18:20:20.117000Z"
+    },
+    {
+      "sid": "021f0624-67d7-4ea7-971e-f6f008882f96",
+      "ts": "2026-04-17T18:25:45.507Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 45,
+      "max_turn_ts": "2026-04-18T05:00:31.411000Z"
+    },
+    {
+      "sid": "515c3526-6d87-4b63-b9e1-66a1b7bcf261",
+      "ts": "2026-04-17T20:43:55.055Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 23,
+      "max_turn_ts": "2026-04-17T22:48:23.200000Z"
+    },
+    {
+      "sid": "afa5bd48-df17-4593-9a5f-8fd996500fc4",
+      "ts": "2026-04-18T19:34:51.303Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 28,
+      "max_turn_ts": "2026-04-18T21:26:06.331000Z"
+    },
+    {
+      "sid": "ac89ceb1-f7ae-4785-9858-77623fa4bf71",
+      "ts": "2026-04-19T04:32:15.025Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 49,
+      "max_turn_ts": "2026-04-19T07:31:51.277000Z"
+    },
+    {
+      "sid": "38383cc4-1dcc-4eff-b5d6-ea9a55af94f9",
+      "ts": "2026-04-19T15:34:03.660Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 16,
+      "max_turn_ts": "2026-04-19T17:13:19.494000Z"
+    },
+    {
+      "sid": "32548b06-6141-4dfe-b1f3-94663cda2cdd",
+      "ts": "2026-04-20T15:37:07.104Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-04-20T15:37:18.789000Z"
+    },
+    {
+      "sid": "3d640610-487d-4c7d-b0a2-6446d523c301",
+      "ts": "2026-04-20T15:54:03.254Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 38,
+      "max_turn_ts": "2026-04-20T18:47:59.811000Z"
+    },
+    {
+      "sid": "dd6d8dec-5fd8-4f01-b77e-691afb50e95d",
+      "ts": "2026-04-20T22:09:01.151Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 18,
+      "max_turn_ts": "2026-04-21T00:45:45.451000Z"
+    },
+    {
+      "sid": "da32760b-3813-49f6-8f71-1799b3170aaf",
+      "ts": "2026-04-21T01:19:01.898Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 6,
+      "max_turn_ts": "2026-04-21T01:48:09.472000Z"
+    },
+    {
+      "sid": "cbfb1f81-a9ef-45eb-9c30-6bf18563a5e9",
+      "ts": "2026-04-21T01:55:36.603Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 11,
+      "max_turn_ts": "2026-04-21T02:47:26.091000Z"
+    },
+    {
+      "sid": "dbf5b9be-a9d4-4324-80ef-97dabc80cf0f",
+      "ts": "2026-04-21T15:41:16.715Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 68,
+      "max_turn_ts": "2026-04-22T00:59:18.570000Z"
+    },
+    {
+      "sid": "4b62f244-c554-4c5e-9f36-38899f0c2c1c",
+      "ts": "2026-04-21T19:05:06.339Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-04-21T19:06:01.594000Z"
+    },
+    {
+      "sid": "bcea8a1f-e09d-46ef-a64d-1fda3224c737",
+      "ts": "2026-04-21T19:12:58.035Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 58,
+      "max_turn_ts": "2026-04-22T01:15:00.208000Z"
+    },
+    {
+      "sid": "c45012e1-1268-499d-bb7b-4b6b7677f8e5",
+      "ts": "2026-04-22T14:31:39.765Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 51,
+      "max_turn_ts": "2026-04-22T18:37:40.003000Z"
+    },
+    {
+      "sid": "c8b17196-67ee-4509-b278-67e45fc8d7e4",
+      "ts": "2026-04-22T21:17:44.332Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 104,
+      "max_turn_ts": "2026-04-23T04:09:20.044000Z"
+    },
+    {
+      "sid": "f6f80425-564f-412e-9aa5-5d8b07b0de69",
+      "ts": "2026-04-23T15:08:02.187Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 85,
+      "max_turn_ts": "2026-04-24T03:14:36.652000Z"
+    },
+    {
+      "sid": "a36b3f6b-b118-490c-abd7-e0c52976f25d",
+      "ts": "2026-04-23T17:31:43.747Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 63,
+      "max_turn_ts": "2026-04-24T02:32:28.170000Z"
+    },
+    {
+      "sid": "00ac8d8d-67d7-4116-a7b4-677072de6ca6",
+      "ts": "2026-04-24T02:50:21.428Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 3,
+      "max_turn_ts": "2026-04-24T03:01:23.752000Z"
+    },
+    {
+      "sid": "aae974ee-28ee-4971-8301-ecf203b488c7",
+      "ts": "2026-04-24T14:39:25.373Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T14:39:56.228000Z"
+    },
+    {
+      "sid": "24eb88c9-01c8-4b04-8d4c-63049e35b0fa",
+      "ts": "2026-04-24T15:15:02.134Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 40,
+      "max_turn_ts": "2026-04-25T04:00:03.239000Z"
+    },
+    {
+      "sid": "a6e6a96c-23b5-41ba-9f86-8b77b69bef2f",
+      "ts": "2026-04-24T15:20:16.367Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 43,
+      "max_turn_ts": "2026-04-25T04:03:15.612000Z"
+    },
+    {
+      "sid": "ffe2a940-0ac3-4db8-b31f-3f8425238b82",
+      "ts": "2026-04-25T15:51:04.163Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 4,
+      "max_turn_ts": "2026-04-25T16:45:13.729000Z"
+    },
+    {
+      "sid": "899d0cc0-d56c-4d04-925f-8e6c4133e56a",
+      "ts": "2026-04-25T15:51:11.981Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 6,
+      "max_turn_ts": "2026-04-25T16:51:29.607000Z"
+    },
+    {
+      "sid": "daacdfda-0d6d-4dcb-b284-cef062130d26",
+      "ts": "2026-04-25T17:37:02.743Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 14,
+      "max_turn_ts": "2026-04-25T18:23:55.301000Z"
+    },
+    {
+      "sid": "8f7fd9cc-f1f4-40ad-98a3-27a79e3400fd",
+      "ts": "2026-04-26T14:10:37.102Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 51,
+      "max_turn_ts": "2026-04-27T03:09:05.049000Z"
+    },
+    {
+      "sid": "44b25277-0ece-4a0d-92f6-3f790f7e425e",
+      "ts": "2026-04-26T14:10:44.059Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 62,
+      "max_turn_ts": "2026-04-27T03:02:18.570000Z"
+    },
+    {
+      "sid": "4dcb26b1-9ab8-42c9-b83a-2a065c7e980b",
+      "ts": "2026-04-26T17:10:11.467Z",
+      "repo": "winksaville/t1.claude",
+      "n": 21,
+      "max_turn_ts": "2026-04-26T19:43:04.697000Z"
+    },
+    {
+      "sid": "b5c79e0c-43cd-4d25-a2d4-3421647e65ea",
+      "ts": "2026-04-27T14:20:14.787Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 89,
+      "max_turn_ts": "2026-04-28T05:27:25.681000Z"
+    },
+    {
+      "sid": "abe3e105-d85b-424c-a096-3f4b1b4e5b58",
+      "ts": "2026-04-28T13:47:27.737Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 169,
+      "max_turn_ts": "2026-04-29T08:03:08.189000Z"
+    },
+    {
+      "sid": "f36f632e-70c1-44d6-8f85-27b6b47227d3",
+      "ts": "2026-04-29T15:01:56.990Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 152,
+      "max_turn_ts": "2026-04-30T04:54:46.071000Z"
+    },
+    {
+      "sid": "75325d04-9af2-447a-bb0c-f46580a82fec",
+      "ts": "2026-04-30T14:48:07.320Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 28,
+      "max_turn_ts": "2026-04-30T18:54:59.828000Z"
+    },
+    {
+      "sid": "7251cc3b-0a9d-4620-b587-4c31bbd0f3e1",
+      "ts": "2026-04-30T20:40:19.465Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 37,
+      "max_turn_ts": "2026-05-01T03:07:27.585000Z"
+    },
+    {
+      "sid": "fb870267-d5e3-42a3-8c71-49734ff0b022",
+      "ts": "2026-05-01T14:28:46.184Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 20,
+      "max_turn_ts": "2026-05-02T01:21:05.953000Z"
+    },
+    {
+      "sid": "803ffd5f-fa7e-495b-891d-0f0ae8a35dc4",
+      "ts": "2026-05-03T01:51:41.744Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 46,
+      "max_turn_ts": "2026-05-03T05:52:32.171000Z"
+    },
+    {
+      "sid": "abc418fd-85a0-4387-bf53-e8e92d6aa5ec",
+      "ts": "2026-05-04T01:35:33.329Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 32,
+      "max_turn_ts": "2026-05-04T06:01:32.840000Z"
+    },
+    {
+      "sid": "b0ad2ebf-74b9-4aec-b864-bd84558dacf1",
+      "ts": "2026-05-04T15:24:09.157Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 91,
+      "max_turn_ts": "2026-05-05T03:07:03.415000Z"
+    },
+    {
+      "sid": "be6b39e0-51cb-4d38-a34b-ed2ad842c923",
+      "ts": "2026-05-05T18:38:35.915Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 113,
+      "max_turn_ts": "2026-05-06T17:22:19.271000Z"
+    },
+    {
+      "sid": "930d17eb-039f-4c0b-a122-f5d3dd259ed6",
+      "ts": "2026-05-06T18:03:22.621Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 27,
+      "max_turn_ts": "2026-05-06T22:34:07.487000Z"
+    },
+    {
+      "sid": "f6aea525-6526-42b2-99d6-caea9191ab1b",
+      "ts": "2026-05-07T17:49:13.345Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 61,
+      "max_turn_ts": "2026-05-08T04:32:59.725000Z"
+    },
+    {
+      "sid": "9c02a81c-9296-445b-8d07-8cd6bab38a42",
+      "ts": "2026-05-08T15:17:17.419Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 35,
+      "max_turn_ts": "2026-05-08T22:05:47.909000Z"
+    },
+    {
+      "sid": "ab46a6b5-0a7a-4c43-85d4-9695700bd18a",
+      "ts": "2026-05-10T15:35:46.260Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 20,
+      "max_turn_ts": "2026-05-10T21:06:09.366000Z"
+    },
+    {
+      "sid": "6c13d72c-03d5-4cff-90a8-3bcdf520a9e1",
+      "ts": "2026-05-11T00:27:50.217Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 36,
+      "max_turn_ts": "2026-05-11T01:59:10.954000Z"
+    },
+    {
+      "sid": "ce5b43d5-e53c-44f2-9d52-11f8e0dcd930",
+      "ts": "2026-05-11T13:58:12.074Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 8,
+      "max_turn_ts": "2026-05-11T14:45:02.663000Z"
+    },
+    {
+      "sid": "757f9715-e327-4a94-a5ff-209e1944bffc",
+      "ts": "2026-05-11T15:28:10.055Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 45,
+      "max_turn_ts": "2026-05-12T02:02:53.010000Z"
+    },
+    {
+      "sid": "2ebe7274-b880-4366-86b5-abb36e0aed07",
+      "ts": "2026-05-12T14:11:29.553Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 69,
+      "max_turn_ts": "2026-05-13T06:52:56.697000Z"
+    },
+    {
+      "sid": "787e2ad0-df24-4843-b302-2c52b6d87e35",
+      "ts": "2026-05-12T14:41:44.837Z",
+      "repo": "winksaville/t1.claude",
+      "n": 11,
+      "max_turn_ts": "2026-05-12T21:34:57.101000Z"
+    },
+    {
+      "sid": "bef0c597-3bc1-4fb6-b304-28a5764fc199",
+      "ts": "2026-05-13T15:03:38.898Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 27,
+      "max_turn_ts": "2026-05-13T17:41:59.588000Z"
+    },
+    {
+      "sid": "49bd060b-4e04-43e4-a838-869f9e319700",
+      "ts": "2026-05-13T17:43:10.195Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 30,
+      "max_turn_ts": "2026-05-14T06:49:16.446000Z"
+    },
+    {
+      "sid": "98b110b9-c618-49bf-8a9f-56194102f62a",
+      "ts": "2026-05-14T18:21:41.473Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 20,
+      "max_turn_ts": "2026-05-15T00:36:47.452000Z"
+    },
+    {
+      "sid": "966988fe-23ec-4ac8-a354-653ca1a09e45",
+      "ts": "2026-05-15T00:37:25.822Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 18,
+      "max_turn_ts": "2026-05-15T03:01:51.686000Z"
+    },
+    {
+      "sid": "5c894a70-fa33-4b77-a4f9-f737ba3b7edd",
+      "ts": "2026-05-15T15:58:30.306Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 63,
+      "max_turn_ts": "2026-05-16T02:15:21.714000Z"
+    },
+    {
+      "sid": "8cf087c9-e2ab-4768-9d7f-951d441bffc5",
+      "ts": "2026-05-19T19:21:21.926Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 78,
+      "max_turn_ts": "2026-05-20T06:17:34.752000Z"
+    },
+    {
+      "sid": "b67e994e-ea0e-4fbf-ab10-c0b500029225",
+      "ts": "2026-05-20T15:00:04.592Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 58,
+      "max_turn_ts": "2026-05-21T00:32:34.203000Z"
+    },
+    {
+      "sid": "c5d1ebdc-10b9-4908-b8a4-a9d84a8ee8ef",
+      "ts": "2026-05-21T20:28:49.912Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 55,
+      "max_turn_ts": "2026-05-23T01:26:03.581000Z"
+    },
+    {
+      "sid": "45492c92-a0ef-48c2-99bb-0b6c56834812",
+      "ts": "2026-05-23T01:26:33.707Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-05-23T01:26:37.463000Z"
+    },
+    {
+      "sid": "41ae866f-c7b4-4daa-80ad-35a4001c0c1e",
+      "ts": "2026-05-23T01:27:04.587Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 47,
+      "max_turn_ts": "2026-05-23T07:14:17.962000Z"
+    },
+    {
+      "sid": "fb3c538d-6c5d-4932-a286-b72d5312189a",
+      "ts": "2026-05-24T15:13:03.527Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 72,
+      "max_turn_ts": "2026-05-25T06:19:00.518000Z"
+    },
+    {
+      "sid": "ac7269ef-bb7c-4e36-8273-7812706c62ba",
+      "ts": "2026-05-24T19:44:54.531Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 3,
+      "max_turn_ts": "2026-05-24T19:57:19.477000Z"
+    },
+    {
+      "sid": "5662e41c-301e-4976-94c3-31559db6cbbb",
+      "ts": "2026-05-25T14:13:20.157Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 117,
+      "max_turn_ts": "2026-05-26T05:35:21.505000Z"
+    },
+    {
+      "sid": "25c04b5d-3721-4704-9313-00044a465c8a",
+      "ts": "2026-05-25T21:41:12.577Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 12,
+      "max_turn_ts": "2026-05-26T01:41:48.707000Z"
+    },
+    {
+      "sid": "90a98646-c3f1-4fb7-bc89-ebe9c078415a",
+      "ts": "2026-05-26T13:51:04.649Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 25,
+      "max_turn_ts": "2026-05-26T15:50:02.063000Z"
+    },
+    {
+      "sid": "2d974b97-a85a-4969-acda-3d92081e447b",
+      "ts": "2026-05-26T13:51:10.829Z",
+      "repo": "winksaville/actor-x1.claude",
+      "n": 16,
+      "max_turn_ts": "2026-05-26T15:50:56.360000Z"
+    },
+    {
+      "sid": "fa69f049-6dff-427d-b015-d089051c1efd",
+      "ts": "2026-05-26T18:50:14.307Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-05-26T18:50:25.648000Z"
+    },
+    {
+      "sid": "54e4ad3c-8c05-4e34-a06e-70b6e62159ae",
+      "ts": "2026-05-26T19:00:52.939Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 55,
+      "max_turn_ts": "2026-05-27T02:44:12.444000Z"
+    },
+    {
+      "sid": "a2a51385-9b50-4100-8462-345ee7d096db",
+      "ts": "2026-05-27T02:46:33.344Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 11,
+      "max_turn_ts": "2026-05-27T03:19:31.179000Z"
+    },
+    {
+      "sid": "b1d800d6-109d-4ed7-a485-a2befe7fa5e3",
+      "ts": "2026-05-27T22:06:12.648Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 48,
+      "max_turn_ts": "2026-05-28T05:35:00.949000Z"
+    },
+    {
+      "sid": "7505a30e-6a09-4523-96d3-dcfc4f508d86",
+      "ts": "2026-05-28T15:18:11.313Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 26,
+      "max_turn_ts": "2026-05-28T18:38:06.985000Z"
+    },
+    {
+      "sid": "5c58f42a-7fb7-4ef3-b914-7301ef74ce04",
+      "ts": "2026-05-29T20:19:40.161Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 69,
+      "max_turn_ts": "2026-05-30T04:08:08.465000Z"
+    },
+    {
+      "sid": "00690083-466a-4e7f-b883-e5e53c04ab72",
+      "ts": "2026-05-30T17:45:31.820Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-05-30T17:46:23.927000Z"
+    },
+    {
+      "sid": "663b876c-cf4e-4e8c-869b-3a37c0132215",
+      "ts": "2026-05-30T17:48:34.797Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 1,
+      "max_turn_ts": "2026-05-30T17:49:03.423000Z"
+    },
+    {
+      "sid": "6c458329-0f04-4ba7-93fa-8f18ac2d526e",
+      "ts": "2026-05-30T17:51:04.631Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 34,
+      "max_turn_ts": "2026-05-30T21:03:56.752000Z"
+    },
+    {
+      "sid": "d0d49552-b2ac-4e23-8a0f-a25761837e83",
+      "ts": "2026-05-30T21:09:07.670Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 85,
+      "max_turn_ts": "2026-05-31T21:01:22.345000Z"
+    },
+    {
+      "sid": "04805991-ed8b-428c-adca-95bc9b45cc13",
+      "ts": "2026-05-31T21:08:35.802Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 16,
+      "max_turn_ts": "2026-05-31T22:02:57.090000Z"
+    },
+    {
+      "sid": "e5ec0e9d-b1c8-4143-a844-c6e520a1770b",
+      "ts": "2026-06-01T18:50:06.535Z",
+      "repo": "winksaville/t1.claude",
+      "n": 19,
+      "max_turn_ts": "2026-06-02T01:56:16.313000Z"
+    },
+    {
+      "sid": "c1080192-9374-42c5-a6b4-38ea90600a52",
+      "ts": "2026-06-04T15:32:08.055Z",
+      "repo": "winksaville/t1.claude",
+      "n": 42,
+      "max_turn_ts": "2026-06-05T00:59:18.194000Z"
+    },
+    {
+      "sid": "6dd5c05a-b9c8-4abe-a10f-68f1fc4332ce",
+      "ts": "2026-06-11T04:57:28.700Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 10,
+      "max_turn_ts": "2026-06-11T06:19:01.719000Z"
+    },
+    {
+      "sid": "6ffda43c-d03e-4c15-8087-1e650bc89d94",
+      "ts": "2026-06-11T13:09:47.336Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 19,
+      "max_turn_ts": "2026-06-12T06:10:47.859000Z"
+    },
+    {
+      "sid": "aa4bfd5d-c6b3-4f32-ac00-4dca6460bfe2",
+      "ts": "2026-06-21T05:16:52.077Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 74,
+      "max_turn_ts": "2026-06-21T19:29:21.434000Z"
+    },
+    {
+      "sid": "68defbbc-3219-4de7-bf36-6299afbac08d",
+      "ts": "2026-06-22T22:50:14.230Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 18,
+      "max_turn_ts": "2026-06-23T00:07:03.856000Z"
+    },
+    {
+      "sid": "b89348ba-3ff7-47b9-a7e8-c91b325dda42",
+      "ts": "2026-06-24T21:26:47.049Z",
+      "repo": "winksaville/bdimager.claude",
+      "n": 26,
+      "max_turn_ts": "2026-06-25T00:48:20.347000Z"
+    },
+    {
+      "sid": "3233598a-b2d4-452d-8023-ddcf876361d4",
+      "ts": "2026-06-25T19:04:25.321Z",
+      "repo": "winksaville/bdimager.claude",
+      "n": 2,
+      "max_turn_ts": "2026-06-26T01:26:48.175000Z"
+    },
+    {
+      "sid": "b51c2b53-713d-41ca-9579-2410164863e6",
+      "ts": "2026-06-26T02:47:33.559Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 36,
+      "max_turn_ts": "2026-06-26T05:10:48.433000Z"
+    },
+    {
+      "sid": "60c67709-35f7-40f1-b259-28750f7a378c",
+      "ts": "2026-06-26T15:15:08.332Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 22,
+      "max_turn_ts": "2026-06-26T16:24:10.451000Z"
+    },
+    {
+      "sid": "eea215ac-8d8c-4a75-86a4-6479ca3fc00e",
+      "ts": "2026-06-26T18:21:47.903Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 19,
+      "max_turn_ts": "2026-06-26T20:18:22.611000Z"
+    },
+    {
+      "sid": "2e162c5d-1f04-4148-8897-48d49ef87756",
+      "ts": "2026-06-26T20:35:33.641Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 6,
+      "max_turn_ts": "2026-06-26T21:22:14.693000Z"
+    },
+    {
+      "sid": "974a345f-b8eb-45b9-bc56-24a2d835ff95",
+      "ts": "2026-06-26T21:27:06.107Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 14,
+      "max_turn_ts": "2026-06-27T00:09:32.696000Z"
+    },
+    {
+      "sid": "16a5b918-d6e7-4295-a57a-1b3cea3f9817",
+      "ts": "2026-06-26T21:43:26.177Z",
+      "repo": "winksaville/bdimager.claude",
+      "n": 10,
+      "max_turn_ts": "2026-06-27T00:07:54.679000Z"
+    },
+    {
+      "sid": "ee2614f5-10f5-49aa-b237-21b72ffa9a11",
+      "ts": "2026-06-27T22:08:04.755Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 22,
+      "max_turn_ts": "2026-06-28T00:48:14.962000Z"
+    },
+    {
+      "sid": "bd0baa17-fe77-4529-a163-b64225215bdb",
+      "ts": "2026-06-28T03:53:44.083Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 39,
+      "max_turn_ts": "2026-06-28T07:37:44.725000Z"
+    },
+    {
+      "sid": "42e57668-bded-496c-b971-c6e5e2127bf1",
+      "ts": "2026-06-28T14:50:44.442Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 71,
+      "max_turn_ts": "2026-06-28T20:37:50.170000Z"
+    },
+    {
+      "sid": "2670822f-bdfe-4486-ab46-5074ca138341",
+      "ts": "2026-06-28T20:59:18.977Z",
+      "repo": "winksaville/rw-vn100.claude",
+      "n": 39,
+      "max_turn_ts": "2026-06-29T00:34:26.192000Z"
+    },
+    {
+      "sid": "8e495237-48c8-4708-aff1-9a8f36bebf99",
+      "ts": "2026-07-01T15:46:42.222Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 11,
+      "max_turn_ts": "2026-07-01T16:35:29.304000Z"
+    },
+    {
+      "sid": "5c59c8fe-d681-438c-8b8b-2a1cf0132c66",
+      "ts": "2026-07-01T16:40:58.591Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 17,
+      "max_turn_ts": "2026-07-01T22:58:47.816000Z"
+    },
+    {
+      "sid": "c531726c-1328-484f-9488-6d94cb897e2c",
+      "ts": "2026-07-01T22:08:34.033Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 7,
+      "max_turn_ts": "2026-07-01T22:40:49.367000Z"
+    },
+    {
+      "sid": "1e3421a8-e7b4-4d09-8f15-7d795e3e040e",
+      "ts": "2026-07-01T22:48:30.313Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 40,
+      "max_turn_ts": "2026-07-02T04:32:18.831000Z"
+    },
+    {
+      "sid": "fcbbfde0-c1b9-4110-8822-52a2cf8d3876",
+      "ts": "2026-07-01T23:40:30.085Z",
+      "repo": "winksaville/t1.claude",
+      "n": 4,
+      "max_turn_ts": "2026-07-02T00:08:19.355000Z"
+    },
+    {
+      "sid": "835e2fd3-de15-4f08-852a-631f90e092aa",
+      "ts": "2026-07-02T17:00:57.985Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 44,
+      "max_turn_ts": "2026-07-03T04:50:13.104000Z"
+    },
+    {
+      "sid": "d5b1a238-8b50-45f1-8e7c-45cc72c9b156",
+      "ts": "2026-07-02T19:03:13.922Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 42,
+      "max_turn_ts": "2026-07-03T02:47:29.603000Z"
+    },
+    {
+      "sid": "d2b14bc9-a39a-45cd-8c2b-c72746d71cd9",
+      "ts": "2026-07-03T17:41:02.977Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 71,
+      "max_turn_ts": "2026-07-04T00:49:55.774000Z"
+    },
+    {
+      "sid": "75b85bd0-79cb-448d-b434-6696b16d542f",
+      "ts": "2026-07-03T19:59:57.583Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 26,
+      "max_turn_ts": "2026-07-04T00:55:12.800000Z"
+    },
+    {
+      "sid": "53984af8-48a7-4eb4-b1a6-6f27b93c629b",
+      "ts": "2026-07-04T01:56:36.700Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 4,
+      "max_turn_ts": "2026-07-04T02:14:58.451000Z"
+    },
+    {
+      "sid": "6d011fa0-7cbb-4c06-95fd-cdefe4ff4156",
+      "ts": "2026-07-04T17:49:18.800Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 77,
+      "max_turn_ts": "2026-07-05T01:02:40.511000Z"
+    },
+    {
+      "sid": "93ce1ca2-f1c7-478b-b7fe-6b165716e2dd",
+      "ts": "2026-07-05T01:24:38.702Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 14,
+      "max_turn_ts": "2026-07-05T04:47:35.947000Z"
+    },
+    {
+      "sid": "d6884fa5-b613-43bd-8954-7de22f791810",
+      "ts": "2026-07-05T14:32:00.919Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 104,
+      "max_turn_ts": "2026-07-06T05:54:54.707000Z"
+    },
+    {
+      "sid": "9ffb842c-dc2e-4d19-bb70-92207c3cffdb",
+      "ts": "2026-07-06T00:08:09.407Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 9,
+      "max_turn_ts": "2026-07-06T01:11:35.820000Z"
+    },
+    {
+      "sid": "f1bc3112-85ff-484a-8844-f732b3d03792",
+      "ts": "2026-07-06T16:42:31.457Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 16,
+      "max_turn_ts": "2026-07-06T18:10:34.411000Z"
+    },
+    {
+      "sid": "4a0be16e-ff80-46f5-a113-302c688418ec",
+      "ts": "2026-07-06T18:03:41.816Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 8,
+      "max_turn_ts": "2026-07-06T18:28:16.270000Z"
+    },
+    {
+      "sid": "6d9a7f3f-05f4-4fa6-9196-c0bae5d1a840",
+      "ts": "2026-07-06T18:45:47.491Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 23,
+      "max_turn_ts": "2026-07-07T04:05:56.524000Z"
+    },
+    {
+      "sid": "ae67040b-5507-4288-b3f5-b8a0c7879068",
+      "ts": "2026-07-06T18:54:43.872Z",
+      "repo": "winksaville/iiac-perf.claude",
+      "n": 21,
+      "max_turn_ts": "2026-07-07T00:02:33.794000Z"
+    },
+    {
+      "sid": "02fe397e-1062-45ab-96d1-05f1cadcca64",
+      "ts": "2026-07-07T19:58:12.931Z",
+      "repo": "winksaville/zc-ring-x1.claude",
+      "n": 57,
+      "max_turn_ts": "2026-07-08T02:38:27.577000Z"
+    },
+    {
+      "sid": "2f5b32ab-2743-407e-86e0-735432246813",
+      "ts": "2026-07-08T01:44:36.034Z",
+      "repo": "winksaville/vc-x1.claude",
+      "n": 18,
+      "max_turn_ts": "2026-07-08T05:43:31.806000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

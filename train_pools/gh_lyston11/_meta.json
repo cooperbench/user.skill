@@ -1,0 +1,376 @@
+{
+  "developer": "gh:lyston11",
+  "slug": "gh_lyston11",
+  "Tstar": "2026-05-22T06:11:03.825Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 52,
+  "n_human_turns": 779,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "019d4eb4-96e4-7a60-a933-3fd456918c5c",
+      "ts": "2026-04-02T15:02:07.156Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 23,
+      "max_turn_ts": "2026-04-04T12:59:23.118000Z"
+    },
+    {
+      "sid": "f6bee2b2-e1fe-4b31-8f8b-d4aec8e3cd71",
+      "ts": "2026-04-03T12:44:33.669Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-04-03T12:47:11.506000Z"
+    },
+    {
+      "sid": "89e4f79b-17c0-465a-bb5a-f2960e0103f5",
+      "ts": "2026-04-04T01:28:07.781Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-04-04T01:28:13.525000Z"
+    },
+    {
+      "sid": "68165666-12de-4830-a238-10dbeb7e63e4",
+      "ts": "2026-04-04T08:26:55.569Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-04-04T08:26:58.487000Z"
+    },
+    {
+      "sid": "ea5d333f-5a27-4a0c-b9c1-79d5526879fe",
+      "ts": "2026-04-04T11:38:18.609Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 3,
+      "max_turn_ts": "2026-04-04T11:42:10.724000Z"
+    },
+    {
+      "sid": "d52c3e3d-a46c-4532-842c-52a439181d80",
+      "ts": "2026-04-04T11:44:08.359Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 2,
+      "max_turn_ts": "2026-04-04T11:48:58.858000Z"
+    },
+    {
+      "sid": "d69e154c-7ca8-4ef7-8847-d5d42f8f29fe",
+      "ts": "2026-04-04T11:49:58.862Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-04-04T11:50:01.342000Z"
+    },
+    {
+      "sid": "019d5c2d-0fca-7de3-ba55-8f5d2755d11f",
+      "ts": "2026-04-05T05:46:38.807Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 6,
+      "max_turn_ts": "2026-04-05T06:32:39.368000Z"
+    },
+    {
+      "sid": "019d5cc8-cd9a-7392-af29-eb1d29339759",
+      "ts": "2026-04-05T08:36:21.922Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 62,
+      "max_turn_ts": "2026-04-07T14:07:46.935000Z"
+    },
+    {
+      "sid": "019d6827-ef71-73d3-a2bf-12e39dabe234",
+      "ts": "2026-04-07T13:36:32.504Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 11,
+      "max_turn_ts": "2026-04-07T14:54:05.105000Z"
+    },
+    {
+      "sid": "e4389337-5dbf-466b-9bf4-51235f59354c",
+      "ts": "2026-04-08T01:08:39.595Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 7,
+      "max_turn_ts": "2026-04-08T01:31:01.842000Z"
+    },
+    {
+      "sid": "019d6aef-6b47-79b3-9fac-15014545566a",
+      "ts": "2026-04-08T02:33:14.055Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 59,
+      "max_turn_ts": "2026-04-16T09:54:49.457000Z"
+    },
+    {
+      "sid": "019d6c22-41ca-7e21-a23d-dabf38f3d996",
+      "ts": "2026-04-08T08:08:29.568Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 13,
+      "max_turn_ts": "2026-04-20T02:21:02.717000Z"
+    },
+    {
+      "sid": "019d7014-1a8a-7a92-8cb2-1d20bf5d7e0f",
+      "ts": "2026-04-09T02:31:03.945Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 57,
+      "max_turn_ts": "2026-04-14T02:02:53.463000Z"
+    },
+    {
+      "sid": "4deac62a-c7a9-47b4-bc00-a99f95bbabc3",
+      "ts": "2026-04-13T01:18:37.817Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 2,
+      "max_turn_ts": "2026-04-13T01:50:46.830000Z"
+    },
+    {
+      "sid": "cf57c06d-3f46-4bdf-b96e-b1d37dbaeddb",
+      "ts": "2026-04-14T05:42:49.585Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 23,
+      "max_turn_ts": "2026-05-07T09:12:12.391000Z"
+    },
+    {
+      "sid": "ff19def9-a6f3-400f-b10f-93d1ee9dda12",
+      "ts": "2026-04-14T05:50:43.282Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 15,
+      "max_turn_ts": "2026-04-15T02:00:20.796000Z"
+    },
+    {
+      "sid": "019d9401-bd6c-7e03-85d8-c7c5f7a35b58",
+      "ts": "2026-04-16T01:58:01.546Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 59,
+      "max_turn_ts": "2026-04-23T03:17:12.625000Z"
+    },
+    {
+      "sid": "daa5f112-3973-4071-be33-c011a7fd1dfe",
+      "ts": "2026-04-17T00:46:33.825Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 62,
+      "max_turn_ts": "2026-05-02T04:25:41.850000Z"
+    },
+    {
+      "sid": "019d9a59-07b5-7bb1-9608-355b6f95d8c1",
+      "ts": "2026-04-17T07:31:52.018Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 7,
+      "max_turn_ts": "2026-04-26T06:50:03.940000Z"
+    },
+    {
+      "sid": "c47cdee5-9032-47b9-8ce6-e41080be34d7",
+      "ts": "2026-04-18T07:35:26.937Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 9,
+      "max_turn_ts": "2026-04-18T08:21:51.051000Z"
+    },
+    {
+      "sid": "001ef7f0-1f84-4cc5-90be-4889040b4f4d",
+      "ts": "2026-04-21T01:27:33.799Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 4,
+      "max_turn_ts": "2026-04-21T01:39:52.585000Z"
+    },
+    {
+      "sid": "019db93e-274d-75b1-a7fe-db1b60f99f43",
+      "ts": "2026-04-23T07:29:22.587Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 4,
+      "max_turn_ts": "2026-04-24T01:25:39.794000Z"
+    },
+    {
+      "sid": "b10996eb-82ba-4e42-9ba6-09059e6d24be",
+      "ts": "2026-04-24T06:56:30.696Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 7,
+      "max_turn_ts": "2026-04-24T08:12:08.732000Z"
+    },
+    {
+      "sid": "ba2b1fad-3d4b-485d-8a2f-7ac2bb9491b3",
+      "ts": "2026-04-24T07:32:36.984Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T07:35:39.710000Z"
+    },
+    {
+      "sid": "6d3596a8-e7e4-47e4-85fd-bbc336391d0d",
+      "ts": "2026-04-25T09:31:15.283Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 24,
+      "max_turn_ts": "2026-04-27T01:38:11.698000Z"
+    },
+    {
+      "sid": "63d3e573-b6be-472a-baea-d5ae065548a1",
+      "ts": "2026-04-25T12:25:39.732Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 4,
+      "max_turn_ts": "2026-04-25T13:04:49.658000Z"
+    },
+    {
+      "sid": "850cee92-6b29-47c1-bea4-8ca0d7098b2b",
+      "ts": "2026-04-26T07:59:21.980Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 11,
+      "max_turn_ts": "2026-04-26T12:26:31.818000Z"
+    },
+    {
+      "sid": "019dc8d1-4c89-7a02-8b00-2571c0feb232",
+      "ts": "2026-04-26T08:04:18.742Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 4,
+      "max_turn_ts": "2026-04-26T09:15:01.697000Z"
+    },
+    {
+      "sid": "c8af3d79-241f-4e44-a342-dacef482a158",
+      "ts": "2026-04-27T07:40:48.463Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 9,
+      "max_turn_ts": "2026-04-27T09:05:13.209000Z"
+    },
+    {
+      "sid": "f1772b01-ba9a-4163-8525-90a908658eed",
+      "ts": "2026-04-28T02:19:00.674Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 47,
+      "max_turn_ts": "2026-05-07T08:51:52.583000Z"
+    },
+    {
+      "sid": "019dd6f1-2b2a-7f22-97b1-b1c82ef00dd7",
+      "ts": "2026-04-29T01:53:57.774Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 58,
+      "max_turn_ts": "2026-05-02T08:54:43.828000Z"
+    },
+    {
+      "sid": "019ded95-fc32-74b0-8ff7-1073aa423298",
+      "ts": "2026-05-03T11:25:42.353Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 9,
+      "max_turn_ts": "2026-05-03T12:25:53.221000Z"
+    },
+    {
+      "sid": "019df1ea-6a23-7382-bd5c-ad5694530407",
+      "ts": "2026-05-04T07:36:28.539Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 39,
+      "max_turn_ts": "2026-05-04T16:42:12.388000Z"
+    },
+    {
+      "sid": "019df3d4-fb49-79d0-b012-83ad7d46f10b",
+      "ts": "2026-05-04T16:32:26.851Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-05-04T16:37:36.361000Z"
+    },
+    {
+      "sid": "019df7e5-1111-7702-9a5a-506e344dad8e",
+      "ts": "2026-05-05T11:28:18.935Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 6,
+      "max_turn_ts": "2026-05-05T12:01:21.938000Z"
+    },
+    {
+      "sid": "019df7e5-c58b-75f0-b6a5-b52d34d8850f",
+      "ts": "2026-05-05T11:29:00.396Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 3,
+      "max_turn_ts": "2026-05-05T11:55:02.795000Z"
+    },
+    {
+      "sid": "019dfb61-22a4-7bc2-83c6-6c4e2d7b7069",
+      "ts": "2026-05-06T03:42:33.857Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 5,
+      "max_turn_ts": "2026-05-07T00:57:25.265000Z"
+    },
+    {
+      "sid": "019e016c-462e-7542-83e5-063f273549ab",
+      "ts": "2026-05-07T07:52:28.855Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 6,
+      "max_turn_ts": "2026-05-07T09:17:45.569000Z"
+    },
+    {
+      "sid": "019e0557-60f6-7ff3-96cd-932cc7608afc",
+      "ts": "2026-05-08T02:07:59.510Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 10,
+      "max_turn_ts": "2026-05-09T06:18:33.133000Z"
+    },
+    {
+      "sid": "019e05bb-a291-71c3-b02d-ef19780adf54",
+      "ts": "2026-05-08T03:57:27.554Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 6,
+      "max_turn_ts": "2026-05-08T06:03:00.539000Z"
+    },
+    {
+      "sid": "019e063e-cbe4-74c2-8279-0dd360bc103c",
+      "ts": "2026-05-08T06:20:54.434Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 3,
+      "max_turn_ts": "2026-05-08T07:42:55.575000Z"
+    },
+    {
+      "sid": "019e0a87-115d-7f10-acee-acc0936ed947",
+      "ts": "2026-05-09T02:19:01.549Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 5,
+      "max_turn_ts": "2026-05-11T03:59:24.831000Z"
+    },
+    {
+      "sid": "019e0b92-825b-7740-91e0-aa6699a44a83",
+      "ts": "2026-05-09T07:10:37.349Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 6,
+      "max_turn_ts": "2026-05-11T02:28:46.856000Z"
+    },
+    {
+      "sid": "019e0bb1-bb9a-7ae1-9b8b-b043eea1ec51",
+      "ts": "2026-05-09T07:44:32.871Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 6,
+      "max_turn_ts": "2026-05-12T02:54:48.915000Z"
+    },
+    {
+      "sid": "019e0bc3-e673-76d1-9a1c-61a6f8491b91",
+      "ts": "2026-05-09T08:04:57.989Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 3,
+      "max_turn_ts": "2026-05-09T09:25:14.054000Z"
+    },
+    {
+      "sid": "019e14c2-4aa6-7031-a222-fd5f4704834c",
+      "ts": "2026-05-11T01:59:16.375Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 3,
+      "max_turn_ts": "2026-05-11T03:02:11.526000Z"
+    },
+    {
+      "sid": "019e1b60-c418-7ea1-9155-3ee49659be55",
+      "ts": "2026-05-12T08:50:02.100Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 4,
+      "max_turn_ts": "2026-05-13T09:48:40.461000Z"
+    },
+    {
+      "sid": "019e1b61-0ea3-7750-b441-22e4ba582659",
+      "ts": "2026-05-12T08:50:43.639Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 14,
+      "max_turn_ts": "2026-05-20T06:18:19.888000Z"
+    },
+    {
+      "sid": "019e1f23-57e7-7110-ba2c-c18698f4f8ec",
+      "ts": "2026-05-13T02:22:27.705Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 51,
+      "max_turn_ts": "2026-05-21T08:57:13.905000Z"
+    },
+    {
+      "sid": "019e259b-6a80-7a83-a71f-eb27056287f3",
+      "ts": "2026-05-14T08:30:08.789Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-05-14T08:54:01.043000Z"
+    },
+    {
+      "sid": "019e4db9-5c1b-79c3-9b89-baa090b93375",
+      "ts": "2026-05-22T03:27:34.297Z",
+      "repo": "lyston11/Codex_Bundles",
+      "n": 1,
+      "max_turn_ts": "2026-05-22T03:27:49.097000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

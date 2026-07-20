@@ -1,0 +1,166 @@
+{
+  "developer": "gh:barbogast",
+  "slug": "gh_barbogast",
+  "Tstar": "2026-07-06T10:12:35.022128Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 22,
+  "n_human_turns": 418,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "a51096aa-9f1f-4ac1-bc27-c156e898eeb3",
+      "ts": "2026-06-12T14:53:54.222509Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 22,
+      "max_turn_ts": "2026-06-12T14:53:57.086000Z"
+    },
+    {
+      "sid": "13f7da74-a986-4a20-9023-e1884af27cc2",
+      "ts": "2026-06-12T15:45:56.407206Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 20,
+      "max_turn_ts": "2026-06-12T15:45:58.961000Z"
+    },
+    {
+      "sid": "6359350c-930b-488a-990e-08fa6b8743c0",
+      "ts": "2026-06-14T11:40:13.16791Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 30,
+      "max_turn_ts": "2026-06-14T11:40:16.044000Z"
+    },
+    {
+      "sid": "f6a63049-8571-413c-9252-9b0b07c277bf",
+      "ts": "2026-06-15T12:57:34.341118Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 11,
+      "max_turn_ts": "2026-06-15T12:57:36.923000Z"
+    },
+    {
+      "sid": "38838dca-6d5d-4379-83fa-4478691335da",
+      "ts": "2026-06-15T13:29:11.812892Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 12,
+      "max_turn_ts": "2026-06-15T13:29:15.284000Z"
+    },
+    {
+      "sid": "d7bd4067-0d60-4ab4-900e-fbf9b2d214a8",
+      "ts": "2026-06-15T16:29:11.253701Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 31,
+      "max_turn_ts": "2026-06-15T16:29:14.298000Z"
+    },
+    {
+      "sid": "7e498368-1a83-4ba2-bae3-6e5b0fcd30fa",
+      "ts": "2026-06-16T09:24:32.760313Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 19,
+      "max_turn_ts": "2026-06-16T09:24:37.087000Z"
+    },
+    {
+      "sid": "aad3d0cd-48f6-4af3-9b60-affa54da190f",
+      "ts": "2026-06-17T08:39:24.061219Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 34,
+      "max_turn_ts": "2026-06-17T08:28:33.574000Z"
+    },
+    {
+      "sid": "3cf2c068-686b-4b3b-976d-3aaee3c0d988",
+      "ts": "2026-06-18T12:55:11.815078Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 46,
+      "max_turn_ts": "2026-06-18T10:50:20.562000Z"
+    },
+    {
+      "sid": "00890b75-3b73-40ea-a572-24824f035a7f",
+      "ts": "2026-06-22T08:45:29.088461Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 54,
+      "max_turn_ts": "2026-06-22T08:45:31.787000Z"
+    },
+    {
+      "sid": "4e4099df-2d4f-4ceb-8140-c489d1428568",
+      "ts": "2026-06-22T14:54:32.7183Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 2,
+      "max_turn_ts": "2026-06-22T13:31:53.478000Z"
+    },
+    {
+      "sid": "bcd253cd-5828-4403-a15b-894ed08e80f2",
+      "ts": "2026-06-22T14:54:35.955535Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 19,
+      "max_turn_ts": "2026-06-22T14:54:38.842000Z"
+    },
+    {
+      "sid": "c1863ea8-e46b-4780-9ca0-8d71374473d0",
+      "ts": "2026-06-22T14:54:36.204592Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 5,
+      "max_turn_ts": "2026-06-22T13:27:05.034000Z"
+    },
+    {
+      "sid": "884e7f37-343d-48de-92d7-4e1cab31a3fc",
+      "ts": "2026-06-23T10:00:55.859725Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 13,
+      "max_turn_ts": "2026-06-23T10:00:58.487000Z"
+    },
+    {
+      "sid": "e45151dc-6852-410d-9a7a-d01c7434fe0a",
+      "ts": "2026-06-23T16:14:57.428986Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 2,
+      "max_turn_ts": "2026-06-23T16:14:59.257000Z"
+    },
+    {
+      "sid": "e08972f8-a3d5-40ec-bfe3-ffad639d6a46",
+      "ts": "2026-06-26T08:25:50.897179Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 13,
+      "max_turn_ts": "2026-06-26T08:25:53.314000Z"
+    },
+    {
+      "sid": "3b79b6b3-d2c7-4591-bf16-24c1a71fce86",
+      "ts": "2026-07-01T09:46:06.425057Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 8,
+      "max_turn_ts": "2026-07-01T09:46:09.640000Z"
+    },
+    {
+      "sid": "543a1724-665b-488b-888f-1509e6cb4cc3",
+      "ts": "2026-07-01T10:11:28.323175Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 7,
+      "max_turn_ts": "2026-07-01T10:11:29.815000Z"
+    },
+    {
+      "sid": "c7c66ffb-886c-489b-9a67-c84a3e10c59c",
+      "ts": "2026-07-01T13:33:03.170323Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 4,
+      "max_turn_ts": "2026-07-01T13:33:04.487000Z"
+    },
+    {
+      "sid": "e89b75a8-4df3-4bd9-9cd3-9ca67212fc7c",
+      "ts": "2026-07-01T15:54:58.428786Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 13,
+      "max_turn_ts": "2026-07-01T15:55:01.841000Z"
+    },
+    {
+      "sid": "b9caef86-2dfc-48a3-a969-7f2e0f8e77ab",
+      "ts": "2026-07-02T09:05:25.137878Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 41,
+      "max_turn_ts": "2026-07-02T09:05:28.389000Z"
+    },
+    {
+      "sid": "79cec24d-8205-413d-a2ac-27d5e8894623",
+      "ts": "2026-07-02T11:38:13.395195Z",
+      "repo": "barbogast/paper-scan-processor",
+      "n": 12,
+      "max_turn_ts": "2026-07-02T11:38:16.167000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

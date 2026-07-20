@@ -1,0 +1,201 @@
+{
+  "developer": "gh:raman325",
+  "slug": "gh_raman325",
+  "Tstar": "2026-06-15T16:43:57.520118Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 27,
+  "n_human_turns": 1723,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "112658aa-8e2f-43a4-9f8b-a690dfce9b04",
+      "ts": "2026-02-19T21:00:09.752907Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 81,
+      "max_turn_ts": "2026-02-19T21:00:00.446000Z"
+    },
+    {
+      "sid": "98642744-cce1-47af-b53b-e824cd8c45c5",
+      "ts": "2026-02-19T21:07:38.499000+00:00",
+      "repo": "?",
+      "n": 5,
+      "max_turn_ts": "2026-02-19T21:43:17.515000Z"
+    },
+    {
+      "sid": "b1386405-5f79-42e9-a9bf-25375841c5d0",
+      "ts": "2026-03-11T20:14:14.341283Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 13,
+      "max_turn_ts": "2026-03-11T20:14:27.205000Z"
+    },
+    {
+      "sid": "7c955a97-89aa-424d-84c1-3b2571976d8a",
+      "ts": "2026-03-12T00:55:53.73755Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 28,
+      "max_turn_ts": "2026-03-12T00:56:08.345000Z"
+    },
+    {
+      "sid": "c63ce302-ab53-46e3-85e8-9f10a16c0217",
+      "ts": "2026-03-12T04:54:39.969711Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 2,
+      "max_turn_ts": "2026-03-12T04:55:01.921000Z"
+    },
+    {
+      "sid": "eff50567-4070-45c7-9cfd-145beb07fcaa",
+      "ts": "2026-03-28T17:18:00.325934Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 44,
+      "max_turn_ts": "2026-03-28T14:32:51.436000Z"
+    },
+    {
+      "sid": "63d8909b-820f-49f1-a229-8f5f7e106c70",
+      "ts": "2026-03-29T08:10:27.729652Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 70,
+      "max_turn_ts": "2026-03-29T08:10:19.046000Z"
+    },
+    {
+      "sid": "0042d351-fad5-4c90-8890-a26276efc046",
+      "ts": "2026-03-31T04:37:58.84422Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 54,
+      "max_turn_ts": "2026-03-30T16:11:37.995000Z"
+    },
+    {
+      "sid": "48741139-7324-4848-afb8-1f2ed5118058",
+      "ts": "2026-04-02T03:01:35.124868Z",
+      "repo": "?",
+      "n": 36,
+      "max_turn_ts": "2026-04-02T03:47:33.968000Z"
+    },
+    {
+      "sid": "3f097ff1-5bb6-4622-8cfe-35782dd270ba",
+      "ts": "2026-04-13T01:05:31.935612Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 406,
+      "max_turn_ts": "2026-04-10T16:16:54.806000Z"
+    },
+    {
+      "sid": "6629a885-3d0f-45f3-b34c-af9881428368",
+      "ts": "2026-04-17T06:13:36.231249Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 256,
+      "max_turn_ts": "2026-04-17T06:13:49.494000Z"
+    },
+    {
+      "sid": "9b4082f1-6f1a-4674-80fc-628e3964b57a",
+      "ts": "2026-04-20T05:10:53.426666Z",
+      "repo": "?",
+      "n": 147,
+      "max_turn_ts": "2026-04-18T06:33:31.706000Z"
+    },
+    {
+      "sid": "54032d4c-d2b9-4392-8c7a-02456829dfb1",
+      "ts": "2026-04-30T21:48:40.076194Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 1,
+      "max_turn_ts": "2026-04-30T21:49:12.968000Z"
+    },
+    {
+      "sid": "9d662aaa-f935-4906-a164-65e1a04fe236",
+      "ts": "2026-05-02T01:14:27.454465Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 264,
+      "max_turn_ts": "2026-04-29T04:37:16.729000Z"
+    },
+    {
+      "sid": "71c16e9b-de1a-419b-a20c-1b5f51ff2253",
+      "ts": "2026-05-03T18:11:09.876795Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 85,
+      "max_turn_ts": "2026-05-03T18:11:43.613000Z"
+    },
+    {
+      "sid": "11071522-12a7-49bf-8474-e25ed7c01777",
+      "ts": "2026-05-04T19:31:10.677443Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 4,
+      "max_turn_ts": "2026-05-04T19:31:47.537000Z"
+    },
+    {
+      "sid": "ece33d9e-e94c-406a-9430-8aa787cb15c5",
+      "ts": "2026-05-11T15:37:50.030686Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 11,
+      "max_turn_ts": "2026-05-11T15:38:02.028000Z"
+    },
+    {
+      "sid": "d6a610db-1fa5-4bc0-8776-f6066210f1ea",
+      "ts": "2026-05-24T21:29:56.327826Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 6,
+      "max_turn_ts": "2026-05-24T21:31:02.848000Z"
+    },
+    {
+      "sid": "141b983e-c4ce-4485-8c70-44b1b1c57337",
+      "ts": "2026-05-26T03:39:26.244705Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 3,
+      "max_turn_ts": "2026-05-26T03:40:14.918000Z"
+    },
+    {
+      "sid": "52b41563-f94d-430e-b2f6-e80ddc043843",
+      "ts": "2026-05-28T19:02:49.633107Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 16,
+      "max_turn_ts": "2026-05-21T22:58:06.124000Z"
+    },
+    {
+      "sid": "73c731a0-9d5e-43b7-b0ed-642052a25b52",
+      "ts": "2026-05-28T22:56:57.682381Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 22,
+      "max_turn_ts": "2026-05-28T22:57:18.596000Z"
+    },
+    {
+      "sid": "60aa3c4b-4ad0-4a55-9ee4-afec660ff356",
+      "ts": "2026-06-04T19:52:41.51115Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 30,
+      "max_turn_ts": "2026-05-31T00:57:58.462000Z"
+    },
+    {
+      "sid": "6f97b605-d32c-49a3-80e4-d2835dfb7464",
+      "ts": "2026-06-05T04:33:11.245469Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 12,
+      "max_turn_ts": "2026-06-05T04:33:35.126000Z"
+    },
+    {
+      "sid": "dd8e2ca5-afbe-478e-9f73-d76e35961c30",
+      "ts": "2026-06-08T15:48:58.990201Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 2,
+      "max_turn_ts": "2026-06-08T15:49:37.519000Z"
+    },
+    {
+      "sid": "f007f8e0-8e15-49f8-9b78-ca4730e9a56f",
+      "ts": "2026-06-12T04:37:36.205326Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 109,
+      "max_turn_ts": "2026-06-12T02:48:32.731000Z"
+    },
+    {
+      "sid": "1ef8ac84-9273-48a1-8046-b91e9dbde1a7",
+      "ts": "2026-06-13T03:44:18.77113Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 14,
+      "max_turn_ts": "2026-06-13T03:44:53.341000Z"
+    },
+    {
+      "sid": "b52570f3-297c-48de-929c-16f82353f027",
+      "ts": "2026-06-13T20:50:33.538989Z",
+      "repo": "raman325/lock_code_manager",
+      "n": 2,
+      "max_turn_ts": "2026-06-13T18:08:38.613000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

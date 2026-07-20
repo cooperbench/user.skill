@@ -1,8 +1,0 @@
-{
-  "point_id": "019e622a-5db4-7ed2-90a4-e976b23a9125#224",
-  "developer": "gh:lyston11",
-  "condition": "noprofile",
-  "real": "[$codex-md-docs](/home/<USER>/.codex/skills/codex-md-docs/SKILL.md) 记录",
-  "prev_agent": "换机部署分两种情况。\n\n**同一个 Cloudflare 账号，继续维护当前服务**\n\n新机器上执行：\n\n```bash\ncd ~/PycharmProjects\ngit clone https://github.com/Hello-Application-XH/HelloKimi.git\ncd HelloKimi\nnpm install\nnpx wrangler login\n```\n\n然后确认 [wrangler.toml](/home/<USER>/PycharmProjects/HelloKimi/wrangler.toml) 里有这两个关键配置：\n\n```toml\nSTREAM_INTERVAL_MS = \"0\"\n\n[[kv_namespaces]]\nbinding = \"KIMI_KV\"\nid = \"776ff915c9774db299878f0e54250814\"\n```\n\n再部署：\n\n```bash\nnpm run deploy\n```\n\n同账号、同 Worker 名 `kimi-ai-2api`，一般会直接更新现有服务：\n\n```text\nhttps://kimi-ai-2api.lyston-hellokimi.workers.dev\n```\n\nCloudflare 里的 `API_MASTER_KEY` secret 通常会保留，不需要重新设置。部署后用这个测：\n\n```bash\ncurl https://kimi-ai-2api.lyston-hellokimi.workers.dev/v1/models \\\n  -H \"Authorization: bearer [REDACTED]\"\n```\n\n**换 Cloudflare 账号，重新部署一套**\n\n需要重新登录新账号、创建 KV、设置 secret：\n\n```bash\nnpm install\nnpx wrangler login\nnpx wrangler kv namespace create KIMI_KV\n```\n\n把新返回的 KV `id` 写进 `wrangler.toml`，然后：\n\n```bash\nnpx wrangler secret put API_MASTER_KEY\nnpm run deploy\n```\n\n注意：当前本机的 `wrangler.toml` 和 `.gitignore` 有部署相关改动，如果你要换机，最好先把这些改动提交到你自己的仓库，或者把整个 `/home/<USER>/PycharmProjects/HelloKimi` 目录拷到新机器。",
-  "gold_move": null
-}

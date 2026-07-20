@@ -1,4 +1,4 @@
-# SWESimBench v2 — train sessions
+# UserBench — train sessions
 
 Scrubbed **train-split** coding-agent sessions for the Opus-era clean cohort
 (68 developers, 10774 sessions).

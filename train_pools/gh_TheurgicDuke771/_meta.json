@@ -1,0 +1,264 @@
+{
+  "developer": "gh:TheurgicDuke771",
+  "slug": "gh_TheurgicDuke771",
+  "Tstar": "2026-07-06T00:03:48.162636Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 36,
+  "n_human_turns": 819,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "20430269-c3d6-46f0-a275-830e2c7009f4",
+      "ts": "2026-05-28T22:55:22.940768Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 99,
+      "max_turn_ts": "2026-05-28T19:08:50.534000Z"
+    },
+    {
+      "sid": "15fa9ccf-6e30-4c4f-9650-e42b87962bce",
+      "ts": "2026-05-29T07:05:00.963651Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 16,
+      "max_turn_ts": "2026-05-29T07:08:11.669000Z"
+    },
+    {
+      "sid": "867bc35c-e57f-43d0-b4ee-1dd3348a4e43",
+      "ts": "2026-05-29T17:01:01.849426Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 8,
+      "max_turn_ts": "2026-05-29T16:42:28.613000Z"
+    },
+    {
+      "sid": "2954fd8d-6352-4e3c-b2af-d38da7cafff9",
+      "ts": "2026-05-30T20:38:40.175827Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 4,
+      "max_turn_ts": "2026-05-30T20:39:01.725000Z"
+    },
+    {
+      "sid": "f81a27c1-9606-4cc2-bccc-2e2fee08a0cb",
+      "ts": "2026-06-07T18:43:29.983153Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 70,
+      "max_turn_ts": "2026-06-07T15:05:01.221000Z"
+    },
+    {
+      "sid": "8603fa2a-25c9-4c76-87d4-83228bd296a6",
+      "ts": "2026-06-12T05:32:09.294983Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 82,
+      "max_turn_ts": "2026-06-12T05:12:35.924000Z"
+    },
+    {
+      "sid": "ba67bf71-7ffe-461c-bd57-ef43aec77a54",
+      "ts": "2026-06-14T09:25:42.694637Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 6,
+      "max_turn_ts": "2026-06-14T09:27:43.137000Z"
+    },
+    {
+      "sid": "80ae0122-48e1-4446-85d1-a5f459a89af0",
+      "ts": "2026-06-14T21:44:13.903209Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 25,
+      "max_turn_ts": "2026-06-13T17:29:13.918000Z"
+    },
+    {
+      "sid": "a924d94a-4e18-45a5-9c36-7250cd2ff4f4",
+      "ts": "2026-06-19T07:43:17.457521Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 35,
+      "max_turn_ts": "2026-06-19T06:43:56.200000Z"
+    },
+    {
+      "sid": "4bc13446-7dfa-442d-bc8c-6f955e33c0a0",
+      "ts": "2026-06-20T22:37:35.874383Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 31,
+      "max_turn_ts": "2026-06-20T21:45:38.710000Z"
+    },
+    {
+      "sid": "00e4a513-4666-4dd4-936b-a2e8b31b1e81",
+      "ts": "2026-06-21T03:39:30.812834Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 4,
+      "max_turn_ts": "2026-06-20T23:11:50.179000Z"
+    },
+    {
+      "sid": "d0e2f994-bd08-4455-8506-92e041c9f9f7",
+      "ts": "2026-06-21T16:51:55.29619Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 9,
+      "max_turn_ts": "2026-06-21T14:55:59.583000Z"
+    },
+    {
+      "sid": "9675239c-cd77-437c-924e-88d82989844a",
+      "ts": "2026-06-21T17:44:56.51591Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T17:47:35.266000Z"
+    },
+    {
+      "sid": "e09d0a70-842d-4dc9-89b0-0de83d829ed6",
+      "ts": "2026-06-21T20:06:53.402127Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T20:14:15.683000Z"
+    },
+    {
+      "sid": "2d1f9170-3f54-40e8-8b76-75bc90387ac0",
+      "ts": "2026-06-21T22:59:37.648122Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 4,
+      "max_turn_ts": "2026-06-21T23:00:48.284000Z"
+    },
+    {
+      "sid": "13a49f86-b65e-48e2-b5cc-3e25f09b88b9",
+      "ts": "2026-06-22T03:38:12.589753Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 5,
+      "max_turn_ts": "2026-06-21T19:20:57.980000Z"
+    },
+    {
+      "sid": "a341653f-436c-4caa-abf9-8421256d054d",
+      "ts": "2026-06-22T14:13:29.268152Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 8,
+      "max_turn_ts": "2026-06-22T07:50:33.132000Z"
+    },
+    {
+      "sid": "133d1282-1d7e-4e27-9c59-29417e6dd544",
+      "ts": "2026-06-23T01:28:31.319106Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 3,
+      "max_turn_ts": "2026-06-22T15:02:57.949000Z"
+    },
+    {
+      "sid": "ef5a3226-b94d-4bcd-9e8e-d6b1c4817290",
+      "ts": "2026-06-26T21:42:31.66643Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 26,
+      "max_turn_ts": "2026-06-24T07:45:22.448000Z"
+    },
+    {
+      "sid": "0c4da650-d50d-4dd6-a154-ba6b6e5a9c5d",
+      "ts": "2026-06-26T22:18:13.045598Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 11,
+      "max_turn_ts": "2026-06-26T22:19:09.224000Z"
+    },
+    {
+      "sid": "f4bc72b1-2ea6-4652-90c2-d70d040c7bc7",
+      "ts": "2026-06-26T22:18:13.517692Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 19,
+      "max_turn_ts": "2026-06-26T22:17:41.910000Z"
+    },
+    {
+      "sid": "46d55ffd-0d5e-4657-836b-f314ba4bd09e",
+      "ts": "2026-06-28T00:11:46.484514Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 3,
+      "max_turn_ts": "2026-06-28T00:12:38.351000Z"
+    },
+    {
+      "sid": "81337ef4-3e4c-4b90-96b4-35982b06e236",
+      "ts": "2026-06-28T01:50:09.402085Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 17,
+      "max_turn_ts": "2026-06-28T02:00:23.329000Z"
+    },
+    {
+      "sid": "59ab7129-d208-48ea-a0aa-21855fbcee2a",
+      "ts": "2026-06-28T02:56:25.753504Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 6,
+      "max_turn_ts": "2026-06-28T03:09:24.346000Z"
+    },
+    {
+      "sid": "241fe94d-0bde-415d-91c0-d8a99074293b",
+      "ts": "2026-06-28T20:42:19.902663Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 8,
+      "max_turn_ts": "2026-06-28T20:55:14.490000Z"
+    },
+    {
+      "sid": "cc0f3de4-3b06-47d4-bc8e-3752f9786504",
+      "ts": "2026-06-29T20:57:17.831642Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 60,
+      "max_turn_ts": "2026-06-29T08:34:44.866000Z"
+    },
+    {
+      "sid": "9ee5a2c3-1ab5-41a4-8d59-50ed8cf55869",
+      "ts": "2026-06-29T21:32:52.09597Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 8,
+      "max_turn_ts": "2026-06-29T21:32:35.828000Z"
+    },
+    {
+      "sid": "dd078854-3593-4943-a332-8f03a3ad6807",
+      "ts": "2026-06-29T23:44:57.391597Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 10,
+      "max_turn_ts": "2026-06-29T23:42:17.861000Z"
+    },
+    {
+      "sid": "83180c0d-bbe5-4c61-b9bc-5700e05669e4",
+      "ts": "2026-07-01T00:28:07.216383Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 82,
+      "max_turn_ts": "2026-06-30T22:10:13.045000Z"
+    },
+    {
+      "sid": "91a2ad94-53ea-4a83-ad69-33820c546636",
+      "ts": "2026-07-01T22:56:05.670671Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 58,
+      "max_turn_ts": "2026-07-01T22:12:07.811000Z"
+    },
+    {
+      "sid": "57b0cfef-599b-468b-af47-faaff05623ec",
+      "ts": "2026-07-02T22:04:21.979704Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 3,
+      "max_turn_ts": "2026-07-02T22:05:13.648000Z"
+    },
+    {
+      "sid": "a33e4939-e8b1-4b81-aaa1-168fd7fc382f",
+      "ts": "2026-07-03T08:02:22.316022Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 29,
+      "max_turn_ts": "2026-07-03T08:03:14.744000Z"
+    },
+    {
+      "sid": "2c8d359c-1386-49f9-8dc5-62a253753085",
+      "ts": "2026-07-04T18:10:52.333811Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 38,
+      "max_turn_ts": "2026-07-04T07:19:38.938000Z"
+    },
+    {
+      "sid": "0aef84ae-9324-4eaf-a425-b6451fedf029",
+      "ts": "2026-07-04T20:37:42.43993Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 11,
+      "max_turn_ts": "2026-07-04T20:37:45.473000Z"
+    },
+    {
+      "sid": "31e2e593-4ff7-47bb-922b-b3f240ba7743",
+      "ts": "2026-07-05T03:44:12.966863Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 6,
+      "max_turn_ts": "2026-07-04T17:48:46.117000Z"
+    },
+    {
+      "sid": "a9be1a77-8cac-4d65-b95c-94daac919ec8",
+      "ts": "2026-07-05T09:02:54.228389Z",
+      "repo": "TheurgicDuke771/DataQ",
+      "n": 7,
+      "max_turn_ts": "2026-07-05T09:04:25.982000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

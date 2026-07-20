@@ -1,0 +1,621 @@
+{
+  "developer": "gh:ET-NoahDolev",
+  "slug": "gh_ET-NoahDolev",
+  "Tstar": "2026-04-02T16:58:04.485802Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 87,
+  "n_human_turns": 493,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "c822e640-e796-4050-a4e2-dfce5b4cd404",
+      "ts": "2026-02-19T08:51:48.415515Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-19T08:00:23.034000Z"
+    },
+    {
+      "sid": "ce5385a7-1d35-4fe6-916c-ba8444f6c980",
+      "ts": "2026-02-19T08:52:03.328078Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T12:15:31.162000Z"
+    },
+    {
+      "sid": "dc4c0931-2d7d-45bb-8f84-e5a7aac83f2f",
+      "ts": "2026-02-19T08:52:17.971682Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 4,
+      "max_turn_ts": "2026-02-18T16:55:44.038000Z"
+    },
+    {
+      "sid": "ebfe3551-07f5-4dd7-9a67-91f22ac30bd4",
+      "ts": "2026-02-19T08:52:32.499868Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T18:31:27.915000Z"
+    },
+    {
+      "sid": "0559a5ee-0076-4a73-9a75-e62bf96b03ca",
+      "ts": "2026-02-19T08:58:06.740407Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-19T09:01:20.561000Z"
+    },
+    {
+      "sid": "1b95d379-4f11-4d74-a567-07fd734105c8",
+      "ts": "2026-02-19T08:58:22.612992Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T13:12:19.920000Z"
+    },
+    {
+      "sid": "2da9d63b-7956-46ef-aca1-26fc7e16743c",
+      "ts": "2026-02-19T08:58:36.571061Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T19:53:58.248000Z"
+    },
+    {
+      "sid": "34778132-1f6e-4354-a0c1-606fe42a16b0",
+      "ts": "2026-02-19T08:58:52.993575Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T15:14:56.835000Z"
+    },
+    {
+      "sid": "5a8d215c-55de-4cfb-a019-397b16befde5",
+      "ts": "2026-02-19T08:59:07.411429Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T20:09:52.165000Z"
+    },
+    {
+      "sid": "71685010-b440-4a24-96f1-c0cdaf953c81",
+      "ts": "2026-02-19T08:59:22.024699Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T16:24:48.949000Z"
+    },
+    {
+      "sid": "8000ab07-b7ed-4807-9480-552b38ab70a2",
+      "ts": "2026-02-19T08:59:51.870825Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-18T09:56:14.982000Z"
+    },
+    {
+      "sid": "99f06629-3703-4e4e-81de-dee4c5aaef99",
+      "ts": "2026-02-19T09:00:05.956739Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 12,
+      "max_turn_ts": "2026-02-19T07:57:39.745000Z"
+    },
+    {
+      "sid": "1d126a18-4b1c-44d1-9c38-31575cccc25b",
+      "ts": "2026-02-19T16:13:55.773583Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-19T16:00:49.488000Z"
+    },
+    {
+      "sid": "5f6d9351-5590-48de-9d5c-589a3d513288",
+      "ts": "2026-02-19T16:14:05.766011Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-19T16:04:59.118000Z"
+    },
+    {
+      "sid": "6ee7cf79-fe69-44ef-a4fd-74554a45db19",
+      "ts": "2026-02-19T16:14:16.153722Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 10,
+      "max_turn_ts": "2026-02-19T12:06:51.960000Z"
+    },
+    {
+      "sid": "9f29d3e2-c701-49ad-b40b-96f2faa4402f",
+      "ts": "2026-02-19T16:14:26.447629Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-19T10:51:33.208000Z"
+    },
+    {
+      "sid": "e7b52982-ea5e-42df-8e06-e83a6053a506",
+      "ts": "2026-02-19T19:04:15.991559Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 3,
+      "max_turn_ts": "2026-02-19T19:04:03.755000Z"
+    },
+    {
+      "sid": "9e308917-11ec-45e0-ba67-9ff5deffb7c1",
+      "ts": "2026-02-20T07:37:58.409494Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 6,
+      "max_turn_ts": "2026-02-19T22:24:01.381000Z"
+    },
+    {
+      "sid": "ea6cc712-3363-4960-bd06-f2266321ef7f",
+      "ts": "2026-02-20T09:02:15.128452Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 6,
+      "max_turn_ts": "2026-02-19T21:42:09.055000Z"
+    },
+    {
+      "sid": "1469035a-af86-401d-8256-308e4bf695e1",
+      "ts": "2026-02-20T21:53:14.224545Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 5,
+      "max_turn_ts": "2026-02-19T11:25:36.223000Z"
+    },
+    {
+      "sid": "8dbcec95-91ef-4b3f-a202-82acc3a9d333",
+      "ts": "2026-02-20T21:53:25.039672Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 4,
+      "max_turn_ts": "2026-02-19T19:55:23.723000Z"
+    },
+    {
+      "sid": "a1a154b0-5ab0-435c-aec8-113d1359c834",
+      "ts": "2026-02-20T21:53:36.528128Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 10,
+      "max_turn_ts": "2026-02-20T19:49:38.579000Z"
+    },
+    {
+      "sid": "dfc9fdff-09ef-4844-9253-3710905a26a2",
+      "ts": "2026-02-20T21:53:48.354306Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 7,
+      "max_turn_ts": "2026-02-20T08:17:00.813000Z"
+    },
+    {
+      "sid": "f45dfff6-f689-49c0-b6f8-17060c70b78d",
+      "ts": "2026-02-20T21:54:08.832014Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T09:07:08.825000Z"
+    },
+    {
+      "sid": "70a68919-ad8e-4b15-b47c-8c4c3ec9db9c",
+      "ts": "2026-02-23T11:25:26.809021Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-23T11:28:58.224000Z"
+    },
+    {
+      "sid": "d5fc143d-bc6d-4109-afff-c8d5b051e7a1",
+      "ts": "2026-02-23T19:12:02.286191Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 5,
+      "max_turn_ts": "2026-02-23T19:24:03.100000Z"
+    },
+    {
+      "sid": "6fc82e32-5756-419f-a5fe-b990de22520e",
+      "ts": "2026-02-23T21:04:05.118767Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 4,
+      "max_turn_ts": "2026-02-23T21:11:17.894000Z"
+    },
+    {
+      "sid": "19e05565-aff6-47ee-bec5-406f4e0f4794",
+      "ts": "2026-02-24T14:41:13.364458Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 10,
+      "max_turn_ts": "2026-02-24T13:18:27.452000Z"
+    },
+    {
+      "sid": "8d4ba383-395d-4015-ba8a-c031b378ac43",
+      "ts": "2026-02-24T14:41:48.252301Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-24T11:42:18.056000Z"
+    },
+    {
+      "sid": "9a6ceb25-1daf-46b0-af41-fda9386d20a6",
+      "ts": "2026-02-24T14:41:59.388157Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 3,
+      "max_turn_ts": "2026-02-24T08:57:15.082000Z"
+    },
+    {
+      "sid": "be495a09-53d6-4a78-af8b-1e80c18b6095",
+      "ts": "2026-02-24T14:42:10.717412Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-24T10:23:38.559000Z"
+    },
+    {
+      "sid": "c3c88379-f9ea-4bd3-9f20-47cb612e42c0",
+      "ts": "2026-02-24T14:42:21.669804Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-24T08:26:01.978000Z"
+    },
+    {
+      "sid": "53a37c62-b0b6-42f7-a56b-39cc40b90a71",
+      "ts": "2026-02-24T14:59:43.883532Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 12,
+      "max_turn_ts": "2026-02-24T14:59:07.478000Z"
+    },
+    {
+      "sid": "7ec5d9b6-f2b4-4425-a1b4-e5e5197b98bf",
+      "ts": "2026-02-24T14:59:56.789243Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-24T10:19:08.038000Z"
+    },
+    {
+      "sid": "bbe2e529-7e9c-4e13-8e3c-7cc2bd33e5d6",
+      "ts": "2026-02-24T20:22:40.552052Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 3,
+      "max_turn_ts": "2026-02-24T16:34:03.881000Z"
+    },
+    {
+      "sid": "8042ca34-a7ab-4a80-99fd-8d6f303168cd",
+      "ts": "2026-02-24T20:36:17.506971Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-24T18:12:44.459000Z"
+    },
+    {
+      "sid": "b3f36cdd-96d3-41ac-bf54-58e7fbf6a2ee",
+      "ts": "2026-02-24T20:36:29.784278Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T17:49:20.869000Z"
+    },
+    {
+      "sid": "f4aa7543-6425-4086-a461-a0c1de67d23b",
+      "ts": "2026-02-24T20:36:43.945458Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 13,
+      "max_turn_ts": "2026-02-24T20:38:37.418000Z"
+    },
+    {
+      "sid": "30f6195c-e011-4d80-a023-36624a7277e5",
+      "ts": "2026-02-24T20:58:18.641967Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 1,
+      "max_turn_ts": "2026-02-24T20:56:23.103000Z"
+    },
+    {
+      "sid": "0763f328-ecca-4b30-9f17-a374d39cfe9c",
+      "ts": "2026-02-25T13:12:04.876873Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-25T11:20:55.135000Z"
+    },
+    {
+      "sid": "329f898f-9d0b-4ef9-a3db-79953033b18d",
+      "ts": "2026-02-25T13:12:26.703205Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 18,
+      "max_turn_ts": "2026-02-24T23:27:37.446000Z"
+    },
+    {
+      "sid": "8f7ab414-1570-45e3-8e67-e3802c36ce9d",
+      "ts": "2026-02-25T13:12:39.811386Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T22:06:50.712000Z"
+    },
+    {
+      "sid": "9c45b04a-7f93-445b-860b-b378d04264f2",
+      "ts": "2026-02-25T14:23:04.705181Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 10,
+      "max_turn_ts": "2026-02-25T14:03:11.529000Z"
+    },
+    {
+      "sid": "9e06866b-2771-405e-9e67-5724f7bbf026",
+      "ts": "2026-02-25T14:23:20.238896Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T14:20:01.803000Z"
+    },
+    {
+      "sid": "3528c610-539f-47b3-9b0e-223c6b9ff512",
+      "ts": "2026-02-25T14:59:15.486504Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T14:55:57.004000Z"
+    },
+    {
+      "sid": "83834bf7-941d-4160-9184-22c46088b121",
+      "ts": "2026-02-25T21:21:23.786246Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 23,
+      "max_turn_ts": "2026-02-25T21:20:28.923000Z"
+    },
+    {
+      "sid": "475829dc-5268-4129-aa06-ddb9e0a0bff6",
+      "ts": "2026-02-26T15:56:32.860131Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-26T09:23:30.648000Z"
+    },
+    {
+      "sid": "8cc22cbf-bff8-43c2-852c-bb5ed3ca44e8",
+      "ts": "2026-02-27T10:50:30.590935Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 10,
+      "max_turn_ts": "2026-02-26T08:10:15.537000Z"
+    },
+    {
+      "sid": "02cd7433-eb5f-468e-aab5-587d044f9709",
+      "ts": "2026-02-27T13:10:00.46683Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 7,
+      "max_turn_ts": "2026-02-26T19:02:41.585000Z"
+    },
+    {
+      "sid": "5fa9f090-9747-4608-a637-e214c9821d88",
+      "ts": "2026-02-27T13:10:35.236133Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 8,
+      "max_turn_ts": "2026-02-26T15:20:54.644000Z"
+    },
+    {
+      "sid": "71356d24-29ab-450c-81e5-e56c048756c5",
+      "ts": "2026-02-27T13:10:38.606882Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 2,
+      "max_turn_ts": "2026-02-27T13:15:22.619000Z"
+    },
+    {
+      "sid": "7d735052-1516-4ec9-8e2f-3eaf179499f4",
+      "ts": "2026-02-27T13:10:39.810877Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T22:10:16.466000Z"
+    },
+    {
+      "sid": "cca3898a-3de5-4b23-a5fc-2a2b28b0449e",
+      "ts": "2026-02-27T13:10:42.576911Z",
+      "repo": "ElixirTrials/medgemma-hackathon",
+      "n": 5,
+      "max_turn_ts": "2026-02-20T14:37:50.614000Z"
+    },
+    {
+      "sid": "3ddbd4e3-0ccb-4a18-808c-fe1d31d2324d",
+      "ts": "2026-03-03T20:18:18.18742Z",
+      "repo": "ElixirTrials/rune",
+      "n": 2,
+      "max_turn_ts": "2026-03-03T19:52:28.712000Z"
+    },
+    {
+      "sid": "a3f1a5ec-a075-48ac-8191-8723a0ca47d9",
+      "ts": "2026-03-03T21:37:48.937873Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-03T21:07:49.039000Z"
+    },
+    {
+      "sid": "b5bb7c8b-7410-4207-91b3-048d566af1e0",
+      "ts": "2026-03-04T13:55:07.897654Z",
+      "repo": "ElixirTrials/rune",
+      "n": 4,
+      "max_turn_ts": "2026-03-04T08:58:15.611000Z"
+    },
+    {
+      "sid": "66a09f46-ca53-4586-b2ea-a7e834661b18",
+      "ts": "2026-03-04T17:44:26.130741Z",
+      "repo": "ElixirTrials/rune",
+      "n": 5,
+      "max_turn_ts": "2026-03-04T17:30:08.994000Z"
+    },
+    {
+      "sid": "d28c89b1-7ca9-4ec9-8a6f-7ba81022f238",
+      "ts": "2026-03-04T17:44:32.020068Z",
+      "repo": "ElixirTrials/rune",
+      "n": 7,
+      "max_turn_ts": "2026-03-04T15:55:29.788000Z"
+    },
+    {
+      "sid": "b3245387-9fb4-4c7e-bd07-25becf420f58",
+      "ts": "2026-03-06T06:50:22.50693Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T06:53:02.033000Z"
+    },
+    {
+      "sid": "16d6e66f-a3c5-4a77-815c-0f4cab2fa4bc",
+      "ts": "2026-03-06T14:32:40.286681Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T11:28:27.893000Z"
+    },
+    {
+      "sid": "77a9e10c-bda7-429e-81de-5b0b3adc313f",
+      "ts": "2026-03-06T16:02:14.48181Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T15:30:41.520000Z"
+    },
+    {
+      "sid": "bdbaac08-992e-42d8-ae40-48d853c878b2",
+      "ts": "2026-03-06T16:02:42.972489Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-06T16:19:53.006000Z"
+    },
+    {
+      "sid": "0bf13c74-ac3a-40fc-8b1a-4968b155f2fb",
+      "ts": "2026-03-13T10:47:12.104362Z",
+      "repo": "ElixirTrials/rune",
+      "n": 7,
+      "max_turn_ts": "2026-03-03T14:47:14.063000Z"
+    },
+    {
+      "sid": "2c6ba63c-a26b-4232-b1b9-0957b7c6c189",
+      "ts": "2026-03-13T10:47:22.651871Z",
+      "repo": "ElixirTrials/rune",
+      "n": 2,
+      "max_turn_ts": "2026-03-12T21:44:16.281000Z"
+    },
+    {
+      "sid": "76990f2d-0bea-4ffd-a18d-b5f0d3e59454",
+      "ts": "2026-03-13T10:47:39.094168Z",
+      "repo": "ElixirTrials/rune",
+      "n": 4,
+      "max_turn_ts": "2026-03-06T09:55:27.732000Z"
+    },
+    {
+      "sid": "8061bb6b-e546-41c3-80b7-cf36816074f0",
+      "ts": "2026-03-13T10:47:45.389878Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-05T14:42:36.642000Z"
+    },
+    {
+      "sid": "9e3b4cbc-c9e5-4f50-9178-4b3fddad0832",
+      "ts": "2026-03-13T10:47:54.876556Z",
+      "repo": "ElixirTrials/rune",
+      "n": 2,
+      "max_turn_ts": "2026-03-05T16:54:18.881000Z"
+    },
+    {
+      "sid": "acf18de4-875c-4b66-af39-20c0410291a7",
+      "ts": "2026-03-13T10:48:05.3075Z",
+      "repo": "ElixirTrials/rune",
+      "n": 4,
+      "max_turn_ts": "2026-03-06T08:15:02.954000Z"
+    },
+    {
+      "sid": "b2ff80d3-aad5-420c-b5c8-990821b038c2",
+      "ts": "2026-03-13T10:48:10.813104Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-05T05:38:15.796000Z"
+    },
+    {
+      "sid": "3ac9671e-cac5-4332-b221-4da75866a0ec",
+      "ts": "2026-03-13T10:51:25.056957Z",
+      "repo": "ElixirTrials/rune",
+      "n": 7,
+      "max_turn_ts": "2026-03-12T22:27:53.118000Z"
+    },
+    {
+      "sid": "9175fc23-0c6c-457b-910d-2360c1a63599",
+      "ts": "2026-03-13T10:51:44.168413Z",
+      "repo": "ElixirTrials/rune",
+      "n": 5,
+      "max_turn_ts": "2026-03-13T09:21:21.756000Z"
+    },
+    {
+      "sid": "e0656677-6e3d-4139-9a97-dc3d6e524212",
+      "ts": "2026-03-13T14:17:11.55322Z",
+      "repo": "ElixirTrials/rune",
+      "n": 22,
+      "max_turn_ts": "2026-03-13T14:15:16.750000Z"
+    },
+    {
+      "sid": "67c4212c-9831-4f2d-9a77-c40a92a3cae2",
+      "ts": "2026-03-13T15:25:20.039182Z",
+      "repo": "ElixirTrials/rune",
+      "n": 4,
+      "max_turn_ts": "2026-03-13T15:25:44.432000Z"
+    },
+    {
+      "sid": "7412b733-83bf-4882-8d00-38be935e2ba6",
+      "ts": "2026-03-13T15:25:25.453663Z",
+      "repo": "ElixirTrials/rune",
+      "n": 8,
+      "max_turn_ts": "2026-03-13T15:05:03.417000Z"
+    },
+    {
+      "sid": "4e14cbd8-2bcb-492a-bd8b-55f0c5157792",
+      "ts": "2026-03-16T10:58:22.054982Z",
+      "repo": "ElixirTrials/rune",
+      "n": 3,
+      "max_turn_ts": "2026-03-13T21:40:50.921000Z"
+    },
+    {
+      "sid": "64cc7320-9dee-4b60-a4e6-bf9b3d510c8b",
+      "ts": "2026-03-16T17:51:29.477257Z",
+      "repo": "ElixirTrials/rune",
+      "n": 3,
+      "max_turn_ts": "2026-03-16T14:26:34.399000Z"
+    },
+    {
+      "sid": "c8c1b365-8947-4975-9167-f226a4841ff4",
+      "ts": "2026-03-16T17:51:56.715409Z",
+      "repo": "ElixirTrials/rune",
+      "n": 2,
+      "max_turn_ts": "2026-03-16T14:04:40.510000Z"
+    },
+    {
+      "sid": "733201ba-8b1e-4613-aa93-fa0f8e017e21",
+      "ts": "2026-03-16T17:54:58.329049Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-03-16T17:52:12.111000Z"
+    },
+    {
+      "sid": "119cd3d2-d58c-4628-b915-ffd7155b7dc1",
+      "ts": "2026-03-17T09:34:10.782747Z",
+      "repo": "ElixirTrials/rune",
+      "n": 3,
+      "max_turn_ts": "2026-03-16T20:34:39.134000Z"
+    },
+    {
+      "sid": "3fb7721f-7a2a-4fed-9c7f-69c5d9d0022f",
+      "ts": "2026-03-20T18:03:39.184409827Z",
+      "repo": "ElixirTrials/rune",
+      "n": 50,
+      "max_turn_ts": "2026-03-20T18:03:21.032000Z"
+    },
+    {
+      "sid": "903b583a-5baf-43b3-ae43-ea24ba831a47",
+      "ts": "2026-03-23T14:24:07.292799Z",
+      "repo": "ElixirTrials/rune",
+      "n": 2,
+      "max_turn_ts": "2026-03-23T14:25:04.840000Z"
+    },
+    {
+      "sid": "13e30f0f-fb21-4aec-8341-a56e6f430208",
+      "ts": "2026-03-23T17:29:27.156282Z",
+      "repo": "ElixirTrials/rune",
+      "n": 7,
+      "max_turn_ts": "2026-03-23T17:29:56.029000Z"
+    },
+    {
+      "sid": "7dcac314-38c9-499c-ac99-9d28e2a4e020",
+      "ts": "2026-04-01T07:16:54.0005Z",
+      "repo": "ElixirTrials/rune",
+      "n": 6,
+      "max_turn_ts": "2026-04-01T07:26:13.931000Z"
+    },
+    {
+      "sid": "a0f7c6c4-406d-4876-a579-cf2bb752c7b9",
+      "ts": "2026-04-01T12:01:02.782522Z",
+      "repo": "ElixirTrials/rune",
+      "n": 18,
+      "max_turn_ts": "2026-04-01T12:52:20.241000Z"
+    },
+    {
+      "sid": "996e0a51-fe13-4b2c-8c89-7c1d83d1755a",
+      "ts": "2026-04-02T07:27:42.122225Z",
+      "repo": "ElixirTrials/rune",
+      "n": 3,
+      "max_turn_ts": "2026-04-02T07:28:00.582000Z"
+    },
+    {
+      "sid": "46fbd253-065e-4102-91c7-5f7622134b36",
+      "ts": "2026-04-02T08:13:33.901439Z",
+      "repo": "ElixirTrials/rune",
+      "n": 1,
+      "max_turn_ts": "2026-04-02T08:13:52.110000Z"
+    },
+    {
+      "sid": "13deaa78-1150-4106-b167-5e1359377e68",
+      "ts": "2026-04-02T16:28:48.888866Z",
+      "repo": "ElixirTrials/rune",
+      "n": 15,
+      "max_turn_ts": "2026-04-02T16:28:57.236000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

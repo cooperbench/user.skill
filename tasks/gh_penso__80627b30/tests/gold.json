@@ -1,1 +1,0 @@
-{"point_id": "ed791c89-3b1f-46b9-8e56-2d948f24f0e5#872", "developer": "gh:penso", "condition": "noprofile", "real": "When I click on a bundled skill, I should still be able to view it. Clicks does nothing right now", "prev_agent": "Clean. Main merged, style.css conflict resolved by regenerating from Tailwind, pushed.", "gold_move": null}

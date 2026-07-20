@@ -1,0 +1,929 @@
+{
+  "developer": "gh:wildlily1021",
+  "slug": "gh_wildlily1021",
+  "Tstar": "2026-05-21T04:20:59.187Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 131,
+  "n_human_turns": 675,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "fedf307e-5b34-4f76-a3c2-e62664096c65",
+      "ts": "2026-05-06T07:27:39.099Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 22,
+      "max_turn_ts": "2026-05-07T09:19:51.068000Z"
+    },
+    {
+      "sid": "4c7bcb58-5572-417d-a307-725a9cea1fe0",
+      "ts": "2026-05-06T10:50:01.848Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:02:20.273000Z"
+    },
+    {
+      "sid": "266e7ab8-55bf-493a-be9b-e085e0dcf85b",
+      "ts": "2026-05-06T10:50:16.204Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T10:58:37.215000Z"
+    },
+    {
+      "sid": "5fc9a082-909b-44b6-b8db-b29651fdcd84",
+      "ts": "2026-05-06T11:08:42.715Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-06T12:50:02.444000Z"
+    },
+    {
+      "sid": "5a8b59b0-07ca-45ac-91bb-e0713bffd04b",
+      "ts": "2026-05-06T11:09:56.594Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T11:17:27.978000Z"
+    },
+    {
+      "sid": "90ec2772-4575-4b76-9bbd-42b6fa2d18bf",
+      "ts": "2026-05-06T11:30:47.635Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 22,
+      "max_turn_ts": "2026-05-06T15:03:53.447000Z"
+    },
+    {
+      "sid": "141ad298-54b1-43cc-a769-8bccd0424bad",
+      "ts": "2026-05-06T13:11:40.216Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T13:19:19.003000Z"
+    },
+    {
+      "sid": "57c2cfa9-fe40-43dd-bc79-8e7e66712bc8",
+      "ts": "2026-05-06T13:24:56.537Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-06T14:03:55.245000Z"
+    },
+    {
+      "sid": "02fbfedf-0c45-4084-bb3b-fa3452946f60",
+      "ts": "2026-05-06T13:25:05.730Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-06T14:17:34.742000Z"
+    },
+    {
+      "sid": "19d0d283-a80e-461d-b5da-cb4e4d5e3855",
+      "ts": "2026-05-06T13:25:37.570Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-06T14:04:47.023000Z"
+    },
+    {
+      "sid": "2c202b62-f6d7-402d-8ef3-afd211a5c9ee",
+      "ts": "2026-05-06T14:31:16.133Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-06T15:01:55.561000Z"
+    },
+    {
+      "sid": "39bcd7fe-efed-4c39-97c0-6c07d339bee8",
+      "ts": "2026-05-06T15:18:06.480Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T15:35:59.315000Z"
+    },
+    {
+      "sid": "8bbc2fe8-74b7-4b4f-8233-3d3dd5bae6e1",
+      "ts": "2026-05-06T15:18:20.374Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T15:30:09.135000Z"
+    },
+    {
+      "sid": "8eba86f6-1e0a-4b08-a562-411913677922",
+      "ts": "2026-05-06T15:40:00.040Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-06T16:25:49.500000Z"
+    },
+    {
+      "sid": "6a215c9e-55a2-41a0-863e-bc635f2de438",
+      "ts": "2026-05-07T00:59:23.368Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-07T01:08:13.233000Z"
+    },
+    {
+      "sid": "82f14354-9285-4b17-8857-cd5891d5a167",
+      "ts": "2026-05-07T01:07:25.162Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 6,
+      "max_turn_ts": "2026-05-07T02:17:20.276000Z"
+    },
+    {
+      "sid": "c02eb89d-c918-4218-8508-c9dcdfdf7872",
+      "ts": "2026-05-07T02:17:00.819Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 13,
+      "max_turn_ts": "2026-05-07T09:18:41.132000Z"
+    },
+    {
+      "sid": "ab39640e-adbd-44b7-95c2-a7c84894d4c6",
+      "ts": "2026-05-07T02:30:18.884Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T02:53:44.944000Z"
+    },
+    {
+      "sid": "f5966b15-0ad9-4762-91fd-fbac9e8167f4",
+      "ts": "2026-05-07T02:30:21.581Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T03:21:58.710000Z"
+    },
+    {
+      "sid": "bee82f35-805b-4d0e-b2a5-c53a376f27b2",
+      "ts": "2026-05-07T02:30:23.623Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T03:06:29.609000Z"
+    },
+    {
+      "sid": "41383900-f4d6-4603-a70c-bad890d8f0c4",
+      "ts": "2026-05-07T03:22:32.408Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T03:39:34.976000Z"
+    },
+    {
+      "sid": "221bdf1c-5b8b-4d56-9110-f457e6feb70f",
+      "ts": "2026-05-07T03:31:51.190Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-07T03:40:44.062000Z"
+    },
+    {
+      "sid": "945c7e92-9cce-4ef9-8a14-b108b4c0ab2d",
+      "ts": "2026-05-07T06:44:30.082Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T07:05:15.348000Z"
+    },
+    {
+      "sid": "f385efdf-2da6-4492-a141-06c4e4848423",
+      "ts": "2026-05-07T07:06:46.099Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 6,
+      "max_turn_ts": "2026-05-07T08:03:51.331000Z"
+    },
+    {
+      "sid": "df00647f-392c-43fe-aa28-553ea12a11c9",
+      "ts": "2026-05-07T07:21:50.058Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-07T07:58:08.439000Z"
+    },
+    {
+      "sid": "51ee159d-0827-4194-8612-2af940cc8838",
+      "ts": "2026-05-07T08:06:33.485Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-07T09:24:20.788000Z"
+    },
+    {
+      "sid": "0d35c532-f3a5-41fd-9717-4fd186b7f69e",
+      "ts": "2026-05-07T09:28:25.221Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T11:31:36.058000Z"
+    },
+    {
+      "sid": "bdcba568-854b-47b0-956d-ed9861f68047",
+      "ts": "2026-05-07T11:34:11.877Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 6,
+      "max_turn_ts": "2026-05-07T12:09:42.495000Z"
+    },
+    {
+      "sid": "030d34c4-726d-41b5-8778-d63ba936cd9e",
+      "ts": "2026-05-07T12:19:46.408Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 135,
+      "max_turn_ts": "2026-05-18T11:24:01.681000Z"
+    },
+    {
+      "sid": "c1f48c57-13ee-41dc-96d0-285ded9d8204",
+      "ts": "2026-05-07T15:16:55.466Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-07T15:25:09.286000Z"
+    },
+    {
+      "sid": "22cd8d11-2718-4786-b9f8-98eab351785d",
+      "ts": "2026-05-07T15:17:18.864Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T15:22:03.153000Z"
+    },
+    {
+      "sid": "8d055c6d-2945-47b3-b91a-8f3b52c92fc2",
+      "ts": "2026-05-07T15:25:10.658Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T15:31:34.904000Z"
+    },
+    {
+      "sid": "cef3251f-351b-41c0-82ae-3edd3c1e929c",
+      "ts": "2026-05-07T15:25:26.938Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-07T15:31:32.280000Z"
+    },
+    {
+      "sid": "c666ecc3-77ed-4b8d-a400-40184f90d49b",
+      "ts": "2026-05-08T01:22:36.263Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-08T02:05:48.976000Z"
+    },
+    {
+      "sid": "d673b857-fef7-495d-9d1f-36c990eb5160",
+      "ts": "2026-05-08T01:22:44.738Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 9,
+      "max_turn_ts": "2026-05-08T09:24:30.118000Z"
+    },
+    {
+      "sid": "7c66f720-47ee-4f0b-b733-ca5e82acf1a0",
+      "ts": "2026-05-08T01:22:57.049Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-08T02:08:05.730000Z"
+    },
+    {
+      "sid": "32712ad1-53cc-4886-bf7d-68a8c34eb498",
+      "ts": "2026-05-08T02:13:31.860Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-08T02:41:30.023000Z"
+    },
+    {
+      "sid": "fad72400-736b-455b-a90c-d5caa934eb7c",
+      "ts": "2026-05-08T06:45:40.419Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-08T07:24:54.154000Z"
+    },
+    {
+      "sid": "6c51fe48-1d0d-4bad-a8a9-e6057d8fc111",
+      "ts": "2026-05-08T06:45:50.299Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 9,
+      "max_turn_ts": "2026-05-08T08:22:44.334000Z"
+    },
+    {
+      "sid": "b9ff125e-0a7f-4bb2-ae34-1cc6997baf27",
+      "ts": "2026-05-08T07:28:04.969Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-08T08:31:11.564000Z"
+    },
+    {
+      "sid": "367208f8-1647-4a98-a7e6-0511bc74dbc5",
+      "ts": "2026-05-08T08:27:49.492Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-08T09:25:02.527000Z"
+    },
+    {
+      "sid": "2009c54c-4974-4095-bb0b-86eeb068bc4d",
+      "ts": "2026-05-08T09:21:10.026Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-08T11:35:05.917000Z"
+    },
+    {
+      "sid": "a2ec1ea8-da30-4499-abcf-8cca0568ef37",
+      "ts": "2026-05-08T09:31:12.085Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 10,
+      "max_turn_ts": "2026-05-08T12:23:06.409000Z"
+    },
+    {
+      "sid": "e862ac7f-002e-4774-be02-f21228e9240f",
+      "ts": "2026-05-08T09:31:22.204Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 10,
+      "max_turn_ts": "2026-05-08T16:45:14.306000Z"
+    },
+    {
+      "sid": "3e685291-2db4-4668-9ae6-2dd718485900",
+      "ts": "2026-05-08T11:37:31.157Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-08T12:34:32.769000Z"
+    },
+    {
+      "sid": "6b13628a-5399-4bc2-9496-294437f67fc9",
+      "ts": "2026-05-08T12:27:26.081Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-08T13:35:15.989000Z"
+    },
+    {
+      "sid": "5b7cd403-1a9d-459f-b9e6-941b9e1b501d",
+      "ts": "2026-05-08T12:51:08.748Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-08T13:34:54.773000Z"
+    },
+    {
+      "sid": "55c9f594-b78e-4a4c-b1e4-53104b4dd2ce",
+      "ts": "2026-05-08T13:38:23.194Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-08T16:24:20.071000Z"
+    },
+    {
+      "sid": "ebd93ac3-bdfd-46a3-a8f8-4494c9a920a3",
+      "ts": "2026-05-08T13:39:00.535Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-08T16:20:50.789000Z"
+    },
+    {
+      "sid": "6f45750d-adc3-43c2-864e-4d8a0c653835",
+      "ts": "2026-05-08T16:30:19.191Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-08T16:36:26.644000Z"
+    },
+    {
+      "sid": "2a6f2e20-3e2c-4b9c-bd35-a959c5afdb43",
+      "ts": "2026-05-09T02:15:40.863Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-09T02:22:27.001000Z"
+    },
+    {
+      "sid": "7f84ea7a-68f9-43be-b443-c895c14f8bf3",
+      "ts": "2026-05-09T02:16:35.191Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 13,
+      "max_turn_ts": "2026-05-09T14:06:54.048000Z"
+    },
+    {
+      "sid": "e41319c9-05ad-4708-97f8-bbd22697b7ed",
+      "ts": "2026-05-09T02:16:38.470Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 13,
+      "max_turn_ts": "2026-05-09T14:23:35.869000Z"
+    },
+    {
+      "sid": "a6f659a7-a747-4401-8eda-f056fb2f3dbc",
+      "ts": "2026-05-09T14:22:03.929Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-10T05:57:47.334000Z"
+    },
+    {
+      "sid": "792928a8-8e84-48d2-b8b0-4baf87a493af",
+      "ts": "2026-05-09T14:34:08.633Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-10T05:58:44.107000Z"
+    },
+    {
+      "sid": "2f1da7d9-ef36-4df3-a2b8-150bb108ed13",
+      "ts": "2026-05-10T05:58:06.404Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-10T07:00:01.049000Z"
+    },
+    {
+      "sid": "c605fe25-5cd0-45a4-89df-36dd6abc4130",
+      "ts": "2026-05-10T06:00:25.202Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-10T06:55:19.795000Z"
+    },
+    {
+      "sid": "b62bc112-70b5-46e3-a243-78af83ca5aab",
+      "ts": "2026-05-10T07:00:32.810Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-10T07:57:03.091000Z"
+    },
+    {
+      "sid": "02f1f099-6d8d-4448-a554-b57eb6b48bba",
+      "ts": "2026-05-10T07:56:44.270Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-10T08:29:46.466000Z"
+    },
+    {
+      "sid": "8fba7a27-fac4-4721-989c-7bf82d3d95e0",
+      "ts": "2026-05-10T08:21:53.845Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-10T09:03:42.670000Z"
+    },
+    {
+      "sid": "346c7b17-12e7-4b16-8a60-03cafad4b232",
+      "ts": "2026-05-10T09:42:57.687Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-10T10:02:00.352000Z"
+    },
+    {
+      "sid": "5cebd4c6-e1fc-46fe-88f3-5a6caeeb8778",
+      "ts": "2026-05-11T01:15:25.254Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-11T02:02:41.122000Z"
+    },
+    {
+      "sid": "e7c6e7bc-e7d2-4550-a1d7-8d598be14e7e",
+      "ts": "2026-05-11T01:15:36.466Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-11T01:29:36.294000Z"
+    },
+    {
+      "sid": "0fbef0b3-c97e-483a-a123-36a627a8e5ae",
+      "ts": "2026-05-11T02:03:00.314Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-11T03:01:31.168000Z"
+    },
+    {
+      "sid": "8c7d966d-80a6-4076-a9b0-a32b694957a5",
+      "ts": "2026-05-11T03:01:33.715Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-11T03:08:09.140000Z"
+    },
+    {
+      "sid": "489c9f87-a730-4d01-a2cb-55d86066c130",
+      "ts": "2026-05-11T03:02:03.088Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 6,
+      "max_turn_ts": "2026-05-11T16:27:14.879000Z"
+    },
+    {
+      "sid": "ccee53b9-9113-44aa-bb9e-c734bdbde516",
+      "ts": "2026-05-11T03:02:13.334Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-11T03:09:28.924000Z"
+    },
+    {
+      "sid": "819c5d57-6f34-4adc-bca8-447932cd9c7d",
+      "ts": "2026-05-11T03:18:36.370Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-11T03:48:29.607000Z"
+    },
+    {
+      "sid": "b81f7de9-3403-4fad-bba0-8937947a9e9f",
+      "ts": "2026-05-11T03:51:21.983Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 7,
+      "max_turn_ts": "2026-05-11T16:35:21.862000Z"
+    },
+    {
+      "sid": "29aae6c4-22af-4d5c-869a-933183c53804",
+      "ts": "2026-05-11T15:44:13.194Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-11T16:28:18.524000Z"
+    },
+    {
+      "sid": "3d174b27-f9f1-46af-ac04-c926ce39c199",
+      "ts": "2026-05-11T16:37:24.481Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-11T17:19:36.703000Z"
+    },
+    {
+      "sid": "83539898-0344-4c24-8ced-93e3e4d7bbb1",
+      "ts": "2026-05-12T01:03:58.258Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T01:04:07.447000Z"
+    },
+    {
+      "sid": "5823d8c5-7f58-4d7f-8a44-8f964fe3d671",
+      "ts": "2026-05-12T01:07:51.615Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-12T01:53:47.062000Z"
+    },
+    {
+      "sid": "1f252873-c43a-457d-9288-3913669ee06c",
+      "ts": "2026-05-12T01:56:52.972Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 8,
+      "max_turn_ts": "2026-05-12T02:22:57.337000Z"
+    },
+    {
+      "sid": "520c81ff-d267-4316-9831-d025685f8fae",
+      "ts": "2026-05-12T02:00:45.407Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 20,
+      "max_turn_ts": "2026-05-12T09:44:05.693000Z"
+    },
+    {
+      "sid": "f74a2091-6114-4bc0-9f5a-b402aa5aa26f",
+      "ts": "2026-05-12T03:03:33.560Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 16,
+      "max_turn_ts": "2026-05-12T08:35:37.927000Z"
+    },
+    {
+      "sid": "60b503be-285c-423e-9e2d-e3a1e89ee2d4",
+      "ts": "2026-05-12T08:35:15.123Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-12T09:55:00.077000Z"
+    },
+    {
+      "sid": "ec17c0bf-24b2-4792-a566-d67ce8f78f97",
+      "ts": "2026-05-12T10:10:14.865Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 7,
+      "max_turn_ts": "2026-05-12T15:18:32.044000Z"
+    },
+    {
+      "sid": "b8d68cad-405e-43ee-b356-63d54f950ab0",
+      "ts": "2026-05-12T11:01:29.985Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 7,
+      "max_turn_ts": "2026-05-12T12:33:44.944000Z"
+    },
+    {
+      "sid": "95680e4b-3e1f-436a-a891-8a4b4eacd56c",
+      "ts": "2026-05-12T11:01:42.843Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-12T11:38:59.908000Z"
+    },
+    {
+      "sid": "2aca96f4-57e3-4209-95db-cf1733acccc1",
+      "ts": "2026-05-12T11:01:54.232Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-12T12:21:39.424000Z"
+    },
+    {
+      "sid": "7dbd2baa-8701-4ca4-a4a0-a247a92bdcf2",
+      "ts": "2026-05-12T11:03:07.486Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-12T12:19:56.140000Z"
+    },
+    {
+      "sid": "b4fa875a-8c8d-4c40-9a9a-65726e0fa2f9",
+      "ts": "2026-05-12T11:39:34.477Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-12T12:20:51.776000Z"
+    },
+    {
+      "sid": "ba47853b-3554-4119-b4b1-cf8245808a19",
+      "ts": "2026-05-12T12:55:39.563Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-12T14:38:45.001000Z"
+    },
+    {
+      "sid": "6190ff02-5599-47c9-8d73-9d56c2228054",
+      "ts": "2026-05-12T14:49:05.037Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-12T15:11:29.819000Z"
+    },
+    {
+      "sid": "b717a258-427f-4ea7-8a54-8d84c8e18880",
+      "ts": "2026-05-12T15:44:08.245Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-13T01:10:21.928000Z"
+    },
+    {
+      "sid": "7412d5aa-ff64-4586-a5b6-6c5ed8fa75dd",
+      "ts": "2026-05-13T01:02:36.276Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 13,
+      "max_turn_ts": "2026-05-13T03:43:34.702000Z"
+    },
+    {
+      "sid": "cd448a9f-a839-46b3-9b12-268ff4f64ddc",
+      "ts": "2026-05-13T02:16:01.175Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-13T02:27:16.963000Z"
+    },
+    {
+      "sid": "9a146f5c-d6dc-4f7e-9570-d65638ba4c25",
+      "ts": "2026-05-13T02:37:48.463Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-13T02:51:48.656000Z"
+    },
+    {
+      "sid": "96dd26ff-72f1-4a87-974d-2d14b1b8129b",
+      "ts": "2026-05-13T02:38:04.701Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-13T02:46:21.163000Z"
+    },
+    {
+      "sid": "c0cb43c1-02f0-4831-b812-062e4702bd02",
+      "ts": "2026-05-13T02:38:14.528Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-13T02:54:37.726000Z"
+    },
+    {
+      "sid": "3e99ba09-ac50-4272-ac07-f1771a0896c5",
+      "ts": "2026-05-13T03:46:33.917Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 8,
+      "max_turn_ts": "2026-05-13T10:33:44.125000Z"
+    },
+    {
+      "sid": "8cd4b1c4-6bef-42b9-b320-8c1ba8376b38",
+      "ts": "2026-05-13T06:49:09.286Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-13T09:10:49.508000Z"
+    },
+    {
+      "sid": "8862a360-e494-4400-b471-857bfc36218c",
+      "ts": "2026-05-13T10:33:39.374Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 9,
+      "max_turn_ts": "2026-05-14T01:34:27.618000Z"
+    },
+    {
+      "sid": "0e090c31-1a40-4ba0-8ef2-cae323ee521d",
+      "ts": "2026-05-13T13:52:11.000Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-13T14:47:35.585000Z"
+    },
+    {
+      "sid": "60ecd267-e9a1-45a6-a198-1369abc5f79e",
+      "ts": "2026-05-13T13:52:29.632Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-13T14:50:03.929000Z"
+    },
+    {
+      "sid": "722c9527-bbbd-4ffc-80a9-5e2a0162efdd",
+      "ts": "2026-05-13T14:56:22.203Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 11,
+      "max_turn_ts": "2026-05-14T03:18:45.930000Z"
+    },
+    {
+      "sid": "a6907ef0-65e2-444b-9991-03a2525a6ae8",
+      "ts": "2026-05-13T15:16:13.789Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-13T15:30:10.117000Z"
+    },
+    {
+      "sid": "f692bfb7-f1db-4383-8209-b36e6f82bd1d",
+      "ts": "2026-05-13T16:00:10.129Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-13T16:42:19.378000Z"
+    },
+    {
+      "sid": "84739cc2-9ba1-4b44-a367-1d2a5a1367e9",
+      "ts": "2026-05-14T01:17:50.949Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-14T01:30:57.616000Z"
+    },
+    {
+      "sid": "8ed41665-5456-41ea-864a-88f946a478aa",
+      "ts": "2026-05-14T01:36:49.331Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-14T02:17:45.446000Z"
+    },
+    {
+      "sid": "0771be24-32a4-485d-9b8b-5a32686d3858",
+      "ts": "2026-05-14T02:17:39.380Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-14T02:36:44.490000Z"
+    },
+    {
+      "sid": "42307e1a-7b3e-48d9-89af-1e91ba5c73b6",
+      "ts": "2026-05-14T02:39:20.445Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-14T03:01:00.540000Z"
+    },
+    {
+      "sid": "145fc589-eca1-4945-86d2-3234cdbe3762",
+      "ts": "2026-05-14T03:05:21.691Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 8,
+      "max_turn_ts": "2026-05-15T01:09:51.491000Z"
+    },
+    {
+      "sid": "764d1979-fec0-4de1-b57b-c5e8b9286d30",
+      "ts": "2026-05-14T03:30:43.047Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-14T04:11:10.723000Z"
+    },
+    {
+      "sid": "59304441-3fab-4140-99cd-2f358efe7c08",
+      "ts": "2026-05-15T01:39:41.927Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 7,
+      "max_turn_ts": "2026-05-15T02:32:09.801000Z"
+    },
+    {
+      "sid": "af70f70b-1a30-4e44-89bf-46e49dede3f8",
+      "ts": "2026-05-15T01:42:32.894Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T02:07:57.717000Z"
+    },
+    {
+      "sid": "de65dd18-e06f-430e-b3fc-eca81f915e9f",
+      "ts": "2026-05-15T01:42:46.570Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T01:51:44.592000Z"
+    },
+    {
+      "sid": "70e14fef-3d1a-4eb7-b4f7-8a72129ef2bb",
+      "ts": "2026-05-15T03:06:05.031Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-15T03:39:55.239000Z"
+    },
+    {
+      "sid": "de3bea8c-4fec-4ee0-9c93-dccc2a29ff56",
+      "ts": "2026-05-15T03:40:12.175Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-15T06:46:34.630000Z"
+    },
+    {
+      "sid": "ef5da558-382e-4e7c-b028-9f35f5be53a9",
+      "ts": "2026-05-15T07:46:07.382Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-15T08:04:25.130000Z"
+    },
+    {
+      "sid": "3f891982-86c5-4f6a-b8cd-e957a8d49df6",
+      "ts": "2026-05-15T07:46:18.557Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-15T08:18:20.766000Z"
+    },
+    {
+      "sid": "67ed8d9c-24d4-4c78-a3bb-204de2d0ecc5",
+      "ts": "2026-05-15T08:45:27.182Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-15T09:31:18.711000Z"
+    },
+    {
+      "sid": "7797bae1-6b4c-4107-9778-6d5c76b73930",
+      "ts": "2026-05-15T08:45:39.943Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 3,
+      "max_turn_ts": "2026-05-15T09:48:35.177000Z"
+    },
+    {
+      "sid": "c430e301-1019-4799-8cf1-d135e6e4aa67",
+      "ts": "2026-05-15T08:45:57.202Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-15T08:49:37.294000Z"
+    },
+    {
+      "sid": "2281612a-34a4-4ffb-84e6-ff3f18434a1f",
+      "ts": "2026-05-18T08:41:20.735Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 17,
+      "max_turn_ts": "2026-05-19T12:41:15.216000Z"
+    },
+    {
+      "sid": "8870d692-70b2-47eb-b96e-4fa9f09ac2cd",
+      "ts": "2026-05-18T11:25:46.972Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 14,
+      "max_turn_ts": "2026-05-19T10:30:26.460000Z"
+    },
+    {
+      "sid": "471dd9ec-df93-43cc-99cd-ea2f9b180263",
+      "ts": "2026-05-18T12:29:44.870Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 5,
+      "max_turn_ts": "2026-05-18T14:25:35.479000Z"
+    },
+    {
+      "sid": "3406d358-0783-497f-9412-94176b85cdaa",
+      "ts": "2026-05-19T07:39:03.225Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 8,
+      "max_turn_ts": "2026-05-19T10:11:19.822000Z"
+    },
+    {
+      "sid": "dc9d3527-1ef7-4073-86ec-80d59f028b48",
+      "ts": "2026-05-19T10:32:34.137Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T10:59:39.871000Z"
+    },
+    {
+      "sid": "0108eb75-c987-428c-97e6-17fddeb5caa7",
+      "ts": "2026-05-19T10:32:51.460Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T10:43:38.791000Z"
+    },
+    {
+      "sid": "1e70be19-0ba1-4a75-b8f1-0dd1219804ce",
+      "ts": "2026-05-19T10:32:58.638Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-19T11:18:49.725000Z"
+    },
+    {
+      "sid": "abd57e07-acd4-4a3b-9c1f-1941fce2a5ab",
+      "ts": "2026-05-19T10:33:18.553Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-19T11:32:44.753000Z"
+    },
+    {
+      "sid": "fa9a7e84-4a45-4d0b-91a6-f4b1b45d0203",
+      "ts": "2026-05-19T11:41:21.578Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-19T11:56:59.285000Z"
+    },
+    {
+      "sid": "aa24f945-10ee-40ca-8e00-93203df61d51",
+      "ts": "2026-05-19T12:02:17.743Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 10,
+      "max_turn_ts": "2026-05-21T04:03:38.605000Z"
+    },
+    {
+      "sid": "d88d91ec-e7e3-44f5-a84a-2eabcffea1d4",
+      "ts": "2026-05-19T13:10:54.777Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-19T14:13:58.598000Z"
+    },
+    {
+      "sid": "3cf91260-37bc-4c74-b19f-544016e34ff9",
+      "ts": "2026-05-19T14:13:40.302Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 4,
+      "max_turn_ts": "2026-05-19T15:17:45.405000Z"
+    },
+    {
+      "sid": "2e38b40c-9526-4fd6-afcf-0fa897ffe8c2",
+      "ts": "2026-05-19T15:17:46.571Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 2,
+      "max_turn_ts": "2026-05-20T02:46:14.396000Z"
+    },
+    {
+      "sid": "11e420a7-7b18-48f4-a602-553e88b0481f",
+      "ts": "2026-05-20T02:51:57.830Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T03:18:52.619000Z"
+    },
+    {
+      "sid": "2dd0dca7-96ec-4173-8293-db723880e93f",
+      "ts": "2026-05-20T03:23:45.641Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T04:02:33.800000Z"
+    },
+    {
+      "sid": "91919c76-5ddb-42e4-ab37-947378766b8d",
+      "ts": "2026-05-20T04:03:05.120Z",
+      "repo": "wildlily1021/XW_Software",
+      "n": 1,
+      "max_turn_ts": "2026-05-20T04:25:34.822000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

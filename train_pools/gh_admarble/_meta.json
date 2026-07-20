@@ -1,0 +1,1062 @@
+{
+  "developer": "gh:admarble",
+  "slug": "gh_admarble",
+  "Tstar": "2026-04-19T00:32:03.927413Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 150,
+  "n_human_turns": 759,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "e3502432-182c-4462-b603-d4f5677b9b6e",
+      "ts": "2026-02-22T00:09:07.219317Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-02-21T23:46:21.394000Z"
+    },
+    {
+      "sid": "a478a8a8-ec4c-4346-9d6e-e3973702d0c4",
+      "ts": "2026-02-22T08:21:29.938976Z",
+      "repo": "sequant-io/sequant",
+      "n": 18,
+      "max_turn_ts": "2026-02-22T08:21:27.681000Z"
+    },
+    {
+      "sid": "64b42ace-f2b0-4146-b81f-2db70bfa2dcd",
+      "ts": "2026-02-22T08:27:17.898266Z",
+      "repo": "sequant-io/sequant",
+      "n": 14,
+      "max_turn_ts": "2026-02-22T08:27:16.082000Z"
+    },
+    {
+      "sid": "d9515e91-7437-4802-9007-70301a215517",
+      "ts": "2026-02-22T08:59:30.736376Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-02-22T08:59:30.069000Z"
+    },
+    {
+      "sid": "07087b61-5eb3-4de1-b4eb-5e7f2542412f",
+      "ts": "2026-02-22T09:17:12.787692Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T09:17:11.698000Z"
+    },
+    {
+      "sid": "5ecd2855-836c-4f3e-a8e3-3841ff308fcc",
+      "ts": "2026-02-22T09:42:13.491896Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-02-22T09:42:12.010000Z"
+    },
+    {
+      "sid": "170a6d5b-e79c-4a12-9d22-60730e148b83",
+      "ts": "2026-02-22T10:11:41.655674Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T10:11:37.163000Z"
+    },
+    {
+      "sid": "1b267d19-13a7-43ad-a0ab-bca46b6e9160",
+      "ts": "2026-02-22T10:29:54.462022Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T10:29:50.539000Z"
+    },
+    {
+      "sid": "252dcb7b-eb42-4c5a-9179-3d83c9841e51",
+      "ts": "2026-02-22T10:45:34.78143Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T10:45:30.196000Z"
+    },
+    {
+      "sid": "e44b8353-8f3a-4c8b-90b0-cb21f0bf3f2d",
+      "ts": "2026-02-23T02:01:01.369418Z",
+      "repo": "sequant-io/sequant",
+      "n": 10,
+      "max_turn_ts": "2026-02-23T02:00:55.521000Z"
+    },
+    {
+      "sid": "1af594b1-d16f-45e4-8d79-d358de0d0ebe",
+      "ts": "2026-03-04T06:23:02.45721Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-04T06:23:01.159000Z"
+    },
+    {
+      "sid": "4f9054da-5546-4eee-b004-c7beb2cffadd",
+      "ts": "2026-03-11T22:21:27.602066Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-03-11T22:19:02.557000Z"
+    },
+    {
+      "sid": "ff680333-be82-4d0f-b2d9-b47e8d6cdae3",
+      "ts": "2026-03-11T22:21:39.30214Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-03-11T22:21:37.787000Z"
+    },
+    {
+      "sid": "f414b188-e44b-460e-8eb4-bad2c84b8941",
+      "ts": "2026-03-11T22:42:44.482396Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-03-11T22:42:43.695000Z"
+    },
+    {
+      "sid": "777e2782-6dbe-4682-ad99-160312b54d73",
+      "ts": "2026-03-11T23:47:37.166946Z",
+      "repo": "sequant-io/sequant",
+      "n": 30,
+      "max_turn_ts": "2026-03-11T23:47:35.972000Z"
+    },
+    {
+      "sid": "fc5d33b7-9514-4833-9c8b-cee95193b840",
+      "ts": "2026-03-12T03:19:10.183635Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-03-12T03:19:08.619000Z"
+    },
+    {
+      "sid": "8286ecbc-0d42-4114-896b-f13478be6320",
+      "ts": "2026-03-12T03:35:56.219576Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T03:35:51.274000Z"
+    },
+    {
+      "sid": "4945b93f-f3e5-4217-83ef-a30b0ade1092",
+      "ts": "2026-03-12T03:47:44.656299Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T03:47:40.408000Z"
+    },
+    {
+      "sid": "7f52d560-0629-4aff-8b49-d67ef6cbfc9e",
+      "ts": "2026-03-12T03:59:58.621397Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T03:59:54.264000Z"
+    },
+    {
+      "sid": "95f53bc3-221e-4015-b887-024621c5f44a",
+      "ts": "2026-03-12T04:19:17.856862Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T04:19:13.484000Z"
+    },
+    {
+      "sid": "5df3ad42-3bf5-4efb-a00a-b9907898ebc2",
+      "ts": "2026-03-12T20:07:29.735414Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-03-12T15:11:30.236000Z"
+    },
+    {
+      "sid": "6abbe4f6-5189-4c0a-bc7d-6f26e27960ce",
+      "ts": "2026-03-13T15:13:07.930298Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-13T15:13:03.673000Z"
+    },
+    {
+      "sid": "a30e9c2a-1f3c-47e2-afc4-0466049a3c0e",
+      "ts": "2026-03-13T15:23:11.534848Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-13T15:23:06.946000Z"
+    },
+    {
+      "sid": "bab74775-9315-4f8d-8a35-e955d8719f61",
+      "ts": "2026-03-13T21:13:26.302042Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-03-13T21:12:39.072000Z"
+    },
+    {
+      "sid": "5ded9274-f6d2-4f52-a18a-94e057aaa7e7",
+      "ts": "2026-03-13T21:22:04.862223Z",
+      "repo": "sequant-io/sequant",
+      "n": 4,
+      "max_turn_ts": "2026-03-13T21:22:03.761000Z"
+    },
+    {
+      "sid": "cc8d5dfc-3f29-4ac6-a2d7-17080324c763",
+      "ts": "2026-03-14T14:46:32.895982Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-03-14T14:46:27.701000Z"
+    },
+    {
+      "sid": "37ff7213-67d7-4b76-ba0b-27464716ae66",
+      "ts": "2026-03-15T16:07:53.147642Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-15T16:07:47.714000Z"
+    },
+    {
+      "sid": "8f61a17d-1af7-40ca-b23c-1a7dd952afca",
+      "ts": "2026-03-15T17:05:17.352532Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-03-15T17:05:15.196000Z"
+    },
+    {
+      "sid": "25ae725a-e732-4f69-a451-e6a51128adbc",
+      "ts": "2026-03-15T17:40:30.648496Z",
+      "repo": "sequant-io/sequant",
+      "n": 2,
+      "max_turn_ts": "2026-03-15T17:40:30.007000Z"
+    },
+    {
+      "sid": "9ac20327-4710-4010-8d67-aa1005ac0afb",
+      "ts": "2026-03-18T21:15:38.092255Z",
+      "repo": "sequant-io/sequant",
+      "n": 38,
+      "max_turn_ts": "2026-03-16T03:43:17.102000Z"
+    },
+    {
+      "sid": "331195fb-931d-40d5-86f2-20fbdada5393",
+      "ts": "2026-03-18T21:15:49.376212Z",
+      "repo": "sequant-io/sequant",
+      "n": 2,
+      "max_turn_ts": "2026-03-18T21:15:47.892000Z"
+    },
+    {
+      "sid": "ece0980f-9ddb-48b4-b6c4-02197f32e7c2",
+      "ts": "2026-03-21T18:26:40.654601Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-21T18:26:36.048000Z"
+    },
+    {
+      "sid": "7b65a7d5-f880-4a8c-b46e-f37683705337",
+      "ts": "2026-03-21T18:35:46.631261Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-21T18:35:42.559000Z"
+    },
+    {
+      "sid": "a79cb6d5-fa67-4c89-904c-60344dc6467b",
+      "ts": "2026-03-22T01:52:54.296691Z",
+      "repo": "sequant-io/sequant",
+      "n": 19,
+      "max_turn_ts": "2026-03-20T03:47:48.033000Z"
+    },
+    {
+      "sid": "4d41608f-d167-4c20-b9d5-99191be5d13c",
+      "ts": "2026-03-22T03:08:55.548052Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-03-22T03:08:54.465000Z"
+    },
+    {
+      "sid": "b7522425-6490-472f-b53b-593fe653203a",
+      "ts": "2026-03-22T03:10:04.149878Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T03:09:59.842000Z"
+    },
+    {
+      "sid": "3a379c3a-6d9e-4258-b302-7f71fd9a499f",
+      "ts": "2026-03-22T03:14:37.707132Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-03-22T03:14:36.077000Z"
+    },
+    {
+      "sid": "8751df9e-b039-4a28-8e8f-60ba02665642",
+      "ts": "2026-03-22T03:31:07.151456Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T03:31:02.770000Z"
+    },
+    {
+      "sid": "6b310739-fbf3-415d-9d32-6e5f4b3e6cd8",
+      "ts": "2026-03-23T00:14:37.96453Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T00:05:58.490000Z"
+    },
+    {
+      "sid": "79bf07bd-0c9b-4d47-a5dc-78dad290c655",
+      "ts": "2026-03-23T00:15:48.68848Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T00:15:44.132000Z"
+    },
+    {
+      "sid": "daaebad6-14e1-4855-b675-db8516d03647",
+      "ts": "2026-03-23T00:39:21.926558Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T00:39:17.777000Z"
+    },
+    {
+      "sid": "030ac5a1-aeff-4a0e-9040-26fcc6537608",
+      "ts": "2026-03-23T01:02:44.936999Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T00:49:54.490000Z"
+    },
+    {
+      "sid": "46485c30-0450-4d26-95cb-1c0e131dbcc4",
+      "ts": "2026-03-23T01:03:57.448109Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T01:03:53.081000Z"
+    },
+    {
+      "sid": "30eae5f1-0a74-43ba-b925-61b85cf6a2cf",
+      "ts": "2026-03-23T01:24:43.875328Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T01:17:26.264000Z"
+    },
+    {
+      "sid": "aff843c2-71e2-4268-bf19-a81e2da8589b",
+      "ts": "2026-03-23T01:26:37.528735Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T01:26:33.368000Z"
+    },
+    {
+      "sid": "c0856e03-b1fe-47e1-8416-d31933bd137f",
+      "ts": "2026-03-23T05:21:54.950302Z",
+      "repo": "sequant-io/sequant",
+      "n": 18,
+      "max_turn_ts": "2026-03-22T23:55:33.807000Z"
+    },
+    {
+      "sid": "e6c4e1a4-a073-4389-8b96-2d726e8e317b",
+      "ts": "2026-03-23T05:21:55.331266Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-03-23T03:28:11.595000Z"
+    },
+    {
+      "sid": "50b92455-51ef-4dd7-b600-890e98210de4",
+      "ts": "2026-03-23T05:31:09.385442Z",
+      "repo": "sequant-io/sequant",
+      "n": 19,
+      "max_turn_ts": "2026-03-23T05:31:05.462000Z"
+    },
+    {
+      "sid": "cbe103de-5ae3-4cdd-b487-b2150ffe4a43",
+      "ts": "2026-03-23T05:59:09.596554Z",
+      "repo": "sequant-io/sequant",
+      "n": 17,
+      "max_turn_ts": "2026-03-23T05:59:07.773000Z"
+    },
+    {
+      "sid": "9e478634-8226-4c4c-90bb-94f1b0cd666d",
+      "ts": "2026-03-23T13:35:36.105672Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T13:35:34.696000Z"
+    },
+    {
+      "sid": "eb047f2a-d62e-4970-95bf-d7e3d50882b2",
+      "ts": "2026-03-23T13:37:46.938535Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T13:37:45.357000Z"
+    },
+    {
+      "sid": "2525c3bc-2573-4cab-b826-b3c841a23be7",
+      "ts": "2026-03-23T13:54:33.636578Z",
+      "repo": "sequant-io/sequant",
+      "n": 10,
+      "max_turn_ts": "2026-03-23T13:54:31.422000Z"
+    },
+    {
+      "sid": "a1f905d0-36d5-4e00-932d-950edbc84036",
+      "ts": "2026-03-23T13:55:07.36221Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T13:55:05.962000Z"
+    },
+    {
+      "sid": "a1d91fa0-3392-4741-a2cf-9d687eb1a699",
+      "ts": "2026-03-23T14:29:38.64871Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T14:05:23.534000Z"
+    },
+    {
+      "sid": "0194b67d-bdd3-47b3-81c8-dd5479ea5b37",
+      "ts": "2026-03-23T14:30:55.516587Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T14:30:50.867000Z"
+    },
+    {
+      "sid": "54ef56c8-aba5-4fbe-b1fc-64157f4c0879",
+      "ts": "2026-03-23T14:48:41.061823Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T14:48:36.760000Z"
+    },
+    {
+      "sid": "21418c7e-84d2-419c-ade2-a8095b96c984",
+      "ts": "2026-03-23T22:09:08.775869Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T22:09:04.389000Z"
+    },
+    {
+      "sid": "d1a2d3cb-6075-4d8e-9272-a336ade72b6a",
+      "ts": "2026-03-23T22:14:15.584008Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-23T22:14:14.684000Z"
+    },
+    {
+      "sid": "7792fa6b-dd63-4b8d-a529-b50bea10d739",
+      "ts": "2026-03-23T22:24:06.548578Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T22:24:02.202000Z"
+    },
+    {
+      "sid": "87fb7a43-0707-4312-b417-3a44ec751a8c",
+      "ts": "2026-03-23T22:39:02.605577Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T22:38:58.396000Z"
+    },
+    {
+      "sid": "4e8772ec-d7cd-4be9-9b9e-d04ede71a630",
+      "ts": "2026-03-24T05:20:37.962442Z",
+      "repo": "sequant-io/sequant",
+      "n": 10,
+      "max_turn_ts": "2026-03-24T05:20:36.056000Z"
+    },
+    {
+      "sid": "fe3e77e1-954e-4624-84cd-dc785e46858d",
+      "ts": "2026-03-24T07:18:16.807154Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T07:18:12.274000Z"
+    },
+    {
+      "sid": "17f42662-62e3-4882-9b75-c054b14911b9",
+      "ts": "2026-03-24T07:23:54.363204Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T07:19:54.916000Z"
+    },
+    {
+      "sid": "b722df3e-a970-4a65-a6f0-8e6d59d05006",
+      "ts": "2026-03-24T07:24:50.443481Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T07:24:45.196000Z"
+    },
+    {
+      "sid": "27c4bc59-0d19-4c13-a86b-92a8a55d8e00",
+      "ts": "2026-03-24T07:27:34.797707Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T07:27:30.139000Z"
+    },
+    {
+      "sid": "041674fe-19dd-4cf4-a842-0dbeb374b19b",
+      "ts": "2026-03-24T16:39:56.059831Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-03-24T16:39:54.594000Z"
+    },
+    {
+      "sid": "69326c4a-9e87-4e1d-817e-070dde34ca4c",
+      "ts": "2026-03-24T19:24:43.824769Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T19:24:39.077000Z"
+    },
+    {
+      "sid": "99731af2-ac02-4e8f-b1ce-aab4f769fd46",
+      "ts": "2026-03-24T19:35:00.985455Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T19:34:56.447000Z"
+    },
+    {
+      "sid": "9ce20383-19f7-41e1-9f3b-a8f1fa3edd0f",
+      "ts": "2026-03-24T20:25:05.52574Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T20:07:12.881000Z"
+    },
+    {
+      "sid": "18c60708-b261-4cfa-b9b1-8380e8983e86",
+      "ts": "2026-03-24T20:26:23.36474Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T20:26:18.480000Z"
+    },
+    {
+      "sid": "2193413b-a499-4f0b-b5aa-8a9fea411f0c",
+      "ts": "2026-03-25T00:23:40.903395Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T19:43:36.043000Z"
+    },
+    {
+      "sid": "2b38322b-a2ce-435e-8624-9581d0f8a669",
+      "ts": "2026-03-25T00:23:41.155394Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T19:57:06.971000Z"
+    },
+    {
+      "sid": "724a652e-d8b3-44d3-9fc9-c3fbd7658ba2",
+      "ts": "2026-03-25T00:23:41.344883Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T19:53:37.027000Z"
+    },
+    {
+      "sid": "c0fbb9e7-316e-4543-9842-f6294b155744",
+      "ts": "2026-03-25T00:23:41.623452Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T19:48:38.647000Z"
+    },
+    {
+      "sid": "ec004f22-c01f-46d0-91dd-abd92e209806",
+      "ts": "2026-03-25T00:56:36.067495Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T00:56:31.303000Z"
+    },
+    {
+      "sid": "cb2a24dd-4cd2-4a90-bc25-272d0af4e38b",
+      "ts": "2026-03-25T01:12:38.213426Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:12:33.623000Z"
+    },
+    {
+      "sid": "24f2fa0a-b201-4c8a-b8f4-495f4193bfe4",
+      "ts": "2026-03-25T01:12:54.905862Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:12:50.166000Z"
+    },
+    {
+      "sid": "0ddd2e9f-509c-4301-b19b-3d70befc8761",
+      "ts": "2026-03-25T01:40:49.85688Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:26:47.531000Z"
+    },
+    {
+      "sid": "5181ffff-6e77-4255-9529-ed02afebef60",
+      "ts": "2026-03-25T01:41:27.220841Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:29:41.460000Z"
+    },
+    {
+      "sid": "59e64c97-e329-46cb-8824-6144f02328dc",
+      "ts": "2026-03-25T01:42:06.551277Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:42:01.743000Z"
+    },
+    {
+      "sid": "52f7d02a-bdc9-4e76-b09a-bfe09ba65fea",
+      "ts": "2026-03-25T01:42:29.06811Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:42:24.520000Z"
+    },
+    {
+      "sid": "2d941073-6be6-4601-a371-d2d99a5dcc3f",
+      "ts": "2026-03-25T01:59:25.733378Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T01:59:21.109000Z"
+    },
+    {
+      "sid": "93e235bb-625d-4a45-a6b4-af9695d61d86",
+      "ts": "2026-03-25T02:08:53.442225Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T02:08:49.226000Z"
+    },
+    {
+      "sid": "1faa0527-20be-47ae-83df-e6970d84b574",
+      "ts": "2026-03-25T14:39:37.975121Z",
+      "repo": "sequant-io/sequant",
+      "n": 2,
+      "max_turn_ts": "2026-03-25T14:33:39.918000Z"
+    },
+    {
+      "sid": "6104068c-de7e-4112-a8b1-dcb6016de5cf",
+      "ts": "2026-03-25T14:39:38.614706Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-25T14:40:22.354000Z"
+    },
+    {
+      "sid": "b77d0ca1-7416-4ead-9f85-1d3a80047bf3",
+      "ts": "2026-03-25T14:39:42.088916Z",
+      "repo": "sequant-io/sequant",
+      "n": 13,
+      "max_turn_ts": "2026-03-25T14:39:58.590000Z"
+    },
+    {
+      "sid": "4512683d-33ee-4c41-a664-43e09f0a6f2e",
+      "ts": "2026-03-25T15:23:57.039413Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-03-25T15:22:07.266000Z"
+    },
+    {
+      "sid": "74ab8639-8396-4bf3-86d2-aca49e1c7081",
+      "ts": "2026-03-25T15:24:00.539912Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-03-25T15:24:06.308000Z"
+    },
+    {
+      "sid": "076f560c-fbed-4df1-b742-7e94fc4eb9e9",
+      "ts": "2026-03-25T15:31:02.379918Z",
+      "repo": "sequant-io/sequant",
+      "n": 29,
+      "max_turn_ts": "2026-02-25T03:41:39.520000Z"
+    },
+    {
+      "sid": "07aef08e-e03c-4380-b214-84d15989c135",
+      "ts": "2026-03-25T15:31:08.468506Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T15:31:47.199000Z"
+    },
+    {
+      "sid": "b73d920f-5c9d-4d88-baf5-4728a55daeaf",
+      "ts": "2026-03-25T15:31:08.947809Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T15:26:06.629000Z"
+    },
+    {
+      "sid": "f9dbd972-460e-446d-a0a8-fa154ee77bea",
+      "ts": "2026-03-25T15:31:13.307665Z",
+      "repo": "sequant-io/sequant",
+      "n": 12,
+      "max_turn_ts": "2026-03-25T15:31:49.656000Z"
+    },
+    {
+      "sid": "eea001bb-c3f6-400d-9858-31d7796bd944",
+      "ts": "2026-03-25T22:40:10.991735Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-25T22:40:22.015000Z"
+    },
+    {
+      "sid": "0a352a56-c927-47d3-abdc-84d4acba68c8",
+      "ts": "2026-03-25T22:58:38.285184Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-25T23:01:23.318000Z"
+    },
+    {
+      "sid": "b6f0adb9-d44a-4202-9ae5-c835dd3e1561",
+      "ts": "2026-03-25T23:02:44.659958Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-03-25T23:02:54.848000Z"
+    },
+    {
+      "sid": "589faeb8-e853-4be7-b41f-222bb4205ab7",
+      "ts": "2026-03-26T01:50:39.356726Z",
+      "repo": "sequant-io/sequant",
+      "n": 2,
+      "max_turn_ts": "2026-03-25T22:53:05.857000Z"
+    },
+    {
+      "sid": "5c123c06-f6e0-46f2-aed0-1e0c4226c97a",
+      "ts": "2026-03-26T01:50:42.933196Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-03-26T01:50:53.982000Z"
+    },
+    {
+      "sid": "649b2217-fbcb-448d-97c9-5b88c2d0dfcc",
+      "ts": "2026-03-26T06:14:22.927641Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-26T06:08:10.904000Z"
+    },
+    {
+      "sid": "7b37f204-d12d-402f-8397-67ef993b197c",
+      "ts": "2026-03-26T06:17:58.555566Z",
+      "repo": "sequant-io/sequant",
+      "n": 4,
+      "max_turn_ts": "2026-03-26T06:14:42.474000Z"
+    },
+    {
+      "sid": "b7b66d70-cb63-469e-bb4a-0e947ddd112e",
+      "ts": "2026-03-26T06:19:54.768334Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-26T06:20:07.462000Z"
+    },
+    {
+      "sid": "27adc104-ce84-4a25-b8c4-5959ec46af9f",
+      "ts": "2026-03-26T13:35:26.266803Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T06:27:32.605000Z"
+    },
+    {
+      "sid": "2cd1dc5f-5533-4472-a5d5-e1fef8a4f095",
+      "ts": "2026-03-26T13:35:26.480903Z",
+      "repo": "sequant-io/sequant",
+      "n": 4,
+      "max_turn_ts": "2026-03-26T06:44:24.739000Z"
+    },
+    {
+      "sid": "36cebca9-5db1-4d37-b60f-4675918e133a",
+      "ts": "2026-03-26T13:35:32.923508Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T13:39:52.820000Z"
+    },
+    {
+      "sid": "519fa7ac-b8ad-4125-8f90-ec857ef952ad",
+      "ts": "2026-03-26T15:00:39.783231Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-03-26T15:00:47.453000Z"
+    },
+    {
+      "sid": "bb61657d-272d-49fe-b8b3-a5fb96e0947c",
+      "ts": "2026-03-26T15:01:34.784095Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-03-26T15:17:57.421000Z"
+    },
+    {
+      "sid": "e6d8f947-f4d4-4ffc-8ce6-2e1f78f40555",
+      "ts": "2026-03-26T15:01:37.929418Z",
+      "repo": "sequant-io/sequant",
+      "n": 2,
+      "max_turn_ts": "2026-03-26T15:01:48.784000Z"
+    },
+    {
+      "sid": "1db75a6a-dee0-481a-812c-62cb793b4bdc",
+      "ts": "2026-03-26T16:16:19.879153Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-03-26T16:16:47.546000Z"
+    },
+    {
+      "sid": "73bf7c31-14f9-42a2-9fcb-7c9b01ed5fde",
+      "ts": "2026-03-26T16:16:26.361482Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-26T16:18:31.469000Z"
+    },
+    {
+      "sid": "305ce101-72c6-45c6-9d03-b5cc91b85b52",
+      "ts": "2026-03-27T05:23:10.445377Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T05:23:44.689000Z"
+    },
+    {
+      "sid": "2f4f3537-2914-4b96-a082-d7c3db60700f",
+      "ts": "2026-03-27T05:28:17.069061Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-03-26T05:54:44.286000Z"
+    },
+    {
+      "sid": "3d8a3e57-be78-4701-adfb-5a0103717cca",
+      "ts": "2026-03-27T05:28:26.24691Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T05:28:30.443000Z"
+    },
+    {
+      "sid": "a6de46ce-9f23-42f4-9e31-1d82c2fea28e",
+      "ts": "2026-03-27T05:28:35.806775Z",
+      "repo": "sequant-io/sequant",
+      "n": 4,
+      "max_turn_ts": "2026-03-27T05:29:10.436000Z"
+    },
+    {
+      "sid": "ef7e3c2d-60c6-4488-8432-4bdb1e3fad66",
+      "ts": "2026-03-28T03:12:13.793453Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-03-28T03:12:32.810000Z"
+    },
+    {
+      "sid": "0968e284-ca5e-4fd0-809c-50240b3a32b6",
+      "ts": "2026-04-02T23:54:56.682179Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T22:23:13.914000Z"
+    },
+    {
+      "sid": "267ec718-5650-4f30-ba68-1cd0ffa1838d",
+      "ts": "2026-04-02T23:54:56.842844Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-03-27T22:13:52.490000Z"
+    },
+    {
+      "sid": "4b9f0f9d-0689-4ad4-9898-46cfea85c2d8",
+      "ts": "2026-04-02T23:55:02.238449Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-04-02T23:54:55.890000Z"
+    },
+    {
+      "sid": "60dc4be1-4498-4ebc-80a4-c7f996400216",
+      "ts": "2026-04-02T23:55:04.373706Z",
+      "repo": "sequant-io/sequant",
+      "n": 17,
+      "max_turn_ts": "2026-03-27T22:03:37.580000Z"
+    },
+    {
+      "sid": "6a9d8833-9a3b-43cc-9504-3a8e7ea05c2d",
+      "ts": "2026-04-02T23:55:04.469969Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T21:49:15.694000Z"
+    },
+    {
+      "sid": "b449ad2c-564f-4bad-ab35-e02f4dece6b1",
+      "ts": "2026-04-02T23:55:04.625705Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T21:42:00.124000Z"
+    },
+    {
+      "sid": "bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8",
+      "ts": "2026-04-02T23:55:06.700632Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-04-02T23:54:28.787000Z"
+    },
+    {
+      "sid": "be4cb01f-aa5e-4a6d-9efb-9f540b2193d0",
+      "ts": "2026-04-02T23:55:09.832356Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-04-02T23:55:13.801000Z"
+    },
+    {
+      "sid": "d2c49ad5-88ab-41e8-b866-d80a6dc17b35",
+      "ts": "2026-04-04T22:47:14.651423Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-04-04T22:47:22.979000Z"
+    },
+    {
+      "sid": "0bdd6503-e9f7-4e3b-bd15-a2bd205bbbfa",
+      "ts": "2026-04-05T16:47:23.070428Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-04-05T16:47:35.591000Z"
+    },
+    {
+      "sid": "89234f01-cbaf-4c8f-b336-36b164b903c5",
+      "ts": "2026-04-05T16:47:26.701756Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-04-05T16:48:00.770000Z"
+    },
+    {
+      "sid": "e06f9db5-e1a0-4499-87c7-73bbcea63ce2",
+      "ts": "2026-04-05T16:47:28.16311Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-04-05T16:45:56.286000Z"
+    },
+    {
+      "sid": "941c70e7-6cd1-4fcf-a050-8db117795064",
+      "ts": "2026-04-05T23:32:52.767335Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-04-05T23:16:27.013000Z"
+    },
+    {
+      "sid": "00e693c4-5a7a-4617-8930-16abbc0c4535",
+      "ts": "2026-04-06T06:00:58.595614Z",
+      "repo": "sequant-io/sequant",
+      "n": 24,
+      "max_turn_ts": "2026-04-06T01:03:50.840000Z"
+    },
+    {
+      "sid": "979301ee-0d4c-4fc4-a62f-fb85818c4947",
+      "ts": "2026-04-06T06:34:29.987571Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-04-06T06:35:09.824000Z"
+    },
+    {
+      "sid": "71afab5e-5486-4102-886e-5968e52ae5f5",
+      "ts": "2026-04-06T06:59:18.546509Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T07:03:37.389000Z"
+    },
+    {
+      "sid": "9935cfcb-7c93-4f14-9bd8-5750b112df92",
+      "ts": "2026-04-06T06:59:21.703766Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-04-06T06:59:34.139000Z"
+    },
+    {
+      "sid": "bed8bff4-32b6-4002-afd7-92052d0f7b5e",
+      "ts": "2026-04-06T14:33:59.781405Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T14:34:34.958000Z"
+    },
+    {
+      "sid": "6295c429-b846-43bd-aa65-5ac0cf6453a9",
+      "ts": "2026-04-06T14:35:18.95503Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T14:37:00.901000Z"
+    },
+    {
+      "sid": "d17a5c0a-aad0-4b9a-9008-ff68ec1f6825",
+      "ts": "2026-04-07T13:32:33.992877Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-07T03:04:56.357000Z"
+    },
+    {
+      "sid": "e1c18395-f58d-408a-815f-bed0b41375f0",
+      "ts": "2026-04-07T13:48:04.954586Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-04-07T13:46:54.735000Z"
+    },
+    {
+      "sid": "26b2b792-6197-4ae0-838f-e47f9ec26679",
+      "ts": "2026-04-07T14:32:06.85224Z",
+      "repo": "sequant-io/sequant",
+      "n": 10,
+      "max_turn_ts": "2026-04-07T14:32:20.534000Z"
+    },
+    {
+      "sid": "b94418e2-e71a-4ae8-a815-509dfab152e2",
+      "ts": "2026-04-07T14:32:11.678684Z",
+      "repo": "sequant-io/sequant",
+      "n": 2,
+      "max_turn_ts": "2026-04-07T14:31:12.345000Z"
+    },
+    {
+      "sid": "4b0d0df0-f1ad-4320-8964-d24f75d66237",
+      "ts": "2026-04-08T02:23:50.749448Z",
+      "repo": "sequant-io/sequant",
+      "n": 6,
+      "max_turn_ts": "2026-04-08T02:23:32.639000Z"
+    },
+    {
+      "sid": "d7168c50-52ec-4fb1-b159-8c1d2682bc74",
+      "ts": "2026-04-08T02:24:11.573466Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-04-08T02:24:45.319000Z"
+    },
+    {
+      "sid": "7c8e78df-7708-4682-8918-5a686c5afe5e",
+      "ts": "2026-04-08T03:03:20.777724Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-08T03:04:07.705000Z"
+    },
+    {
+      "sid": "fd53b67d-853f-4a5f-96f5-61f5da49fdc9",
+      "ts": "2026-04-08T03:37:13.831967Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-04-08T03:38:15.496000Z"
+    },
+    {
+      "sid": "5737f9a4-ad49-4063-8343-f2a50bf629bc",
+      "ts": "2026-04-08T03:49:30.25531Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-08T03:50:05.358000Z"
+    },
+    {
+      "sid": "a3893c45-eb45-4b41-8f9e-8343cf6ec591",
+      "ts": "2026-04-08T03:49:40.212989Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-04-08T03:53:25.084000Z"
+    },
+    {
+      "sid": "d3f85dc8-bbfd-44f6-b566-3c2dda313e80",
+      "ts": "2026-04-08T03:49:50.360762Z",
+      "repo": "sequant-io/sequant",
+      "n": 1,
+      "max_turn_ts": "2026-04-08T03:51:19.309000Z"
+    },
+    {
+      "sid": "8accae17-432f-4b43-9683-a63400c76580",
+      "ts": "2026-04-09T01:26:55.98445Z",
+      "repo": "sequant-io/sequant",
+      "n": 5,
+      "max_turn_ts": "2026-04-09T01:27:03.001000Z"
+    },
+    {
+      "sid": "2f9331fc-9c90-44bb-a41d-8ce3a7c90bc3",
+      "ts": "2026-04-09T03:35:37.282454Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-04-09T03:36:17.090000Z"
+    },
+    {
+      "sid": "27ed5902-0042-42ed-8253-8e4d93b1875c",
+      "ts": "2026-04-09T04:04:46.519187Z",
+      "repo": "sequant-io/sequant",
+      "n": 9,
+      "max_turn_ts": "2026-04-09T04:05:15.302000Z"
+    },
+    {
+      "sid": "f7aba497-17f6-4142-9edf-2d8e06250985",
+      "ts": "2026-04-09T04:04:55.167757Z",
+      "repo": "sequant-io/sequant",
+      "n": 7,
+      "max_turn_ts": "2026-04-09T04:04:44.976000Z"
+    },
+    {
+      "sid": "5c5c73e0-635a-4c87-8429-6cc95759e9a3",
+      "ts": "2026-04-12T04:11:19.88516Z",
+      "repo": "sequant-io/sequant",
+      "n": 3,
+      "max_turn_ts": "2026-04-12T04:12:24.493000Z"
+    },
+    {
+      "sid": "5a80dd7f-7afc-4ec4-8f0a-ce92dc25a29e",
+      "ts": "2026-04-18T22:28:24.243544Z",
+      "repo": "sequant-io/sequant",
+      "n": 8,
+      "max_turn_ts": "2026-04-18T22:28:31.099000Z"
+    },
+    {
+      "sid": "a2798699-c19b-46d3-b5f5-7fbf7f734af2",
+      "ts": "2026-04-18T23:51:19.474059Z",
+      "repo": "sequant-io/sequant",
+      "n": 19,
+      "max_turn_ts": "2026-04-18T23:51:31.049000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

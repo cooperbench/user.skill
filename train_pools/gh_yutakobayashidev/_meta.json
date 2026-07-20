@@ -1,0 +1,894 @@
+{
+  "developer": "gh:yutakobayashidev",
+  "slug": "gh_yutakobayashidev",
+  "Tstar": "2026-03-10T07:30:05.917694886Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 126,
+  "n_human_turns": 1136,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "2895683b-7a01-49e8-bc9a-47748afddf75",
+      "ts": "2026-02-14T16:03:01.135821265Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 39,
+      "max_turn_ts": "2026-02-14T16:03:00.447000Z"
+    },
+    {
+      "sid": "f2cfe0fd-ce59-4200-b901-9ba69749af1c",
+      "ts": "2026-02-14T16:28:49.426865531Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-14T16:28:49.208000Z"
+    },
+    {
+      "sid": "8a902afb-5b56-4618-8357-281574059208",
+      "ts": "2026-02-14T16:43:47.325484961Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-14T16:43:47.143000Z"
+    },
+    {
+      "sid": "4b4285e6-ec7c-4b56-9b51-de041d077a85",
+      "ts": "2026-02-15T12:24:27.529107745Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 34,
+      "max_turn_ts": "2026-02-15T09:16:24.832000Z"
+    },
+    {
+      "sid": "5e8eb376-65bd-47bb-8f93-7226581877a8",
+      "ts": "2026-02-15T12:24:32.068331505Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-15T12:24:31.832000Z"
+    },
+    {
+      "sid": "1e78cbac-dcee-412d-90a9-20055180c381",
+      "ts": "2026-02-15T13:14:51.840027299Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 29,
+      "max_turn_ts": "2026-02-15T13:14:51.191000Z"
+    },
+    {
+      "sid": "610a1783-b1bf-4176-80ea-30079adbf595",
+      "ts": "2026-02-15T13:46:05.739561285Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-15T13:39:00.469000Z"
+    },
+    {
+      "sid": "994b5d99-26d0-4e2a-bcdd-695d6dcf6d49",
+      "ts": "2026-02-15T13:46:13.1155064Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-15T13:46:12.822000Z"
+    },
+    {
+      "sid": "a10bed81-fca4-4016-8eb2-58fb0e76b9ff",
+      "ts": "2026-02-21T18:58:25.850624469Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-02-21T18:57:31.802000Z"
+    },
+    {
+      "sid": "672f6c0d-c25e-48c9-ae9e-8814795e751f",
+      "ts": "2026-02-21T20:15:30.137130682Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-21T19:45:41.094000Z"
+    },
+    {
+      "sid": "dc0d7f79-e7e3-436d-a52e-4b9ddb794a49",
+      "ts": "2026-02-21T20:15:30.173784875Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-21T19:55:12.016000Z"
+    },
+    {
+      "sid": "29c03073-acf7-4b1c-9233-d84d82392f4f",
+      "ts": "2026-02-21T21:00:01.870541169Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 8,
+      "max_turn_ts": "2026-02-21T21:00:00.517000Z"
+    },
+    {
+      "sid": "d7aeea5b-6b33-4736-a232-303868b8f430",
+      "ts": "2026-02-21T21:49:13.750504426Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 20,
+      "max_turn_ts": "2026-02-21T21:49:13.370000Z"
+    },
+    {
+      "sid": "b8306120-870f-44ca-bbe9-007ae9cc1cd2",
+      "ts": "2026-02-21T22:34:58.62384164Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-21T22:32:52.121000Z"
+    },
+    {
+      "sid": "a082825e-a4ba-456e-9bff-bf984eac463f",
+      "ts": "2026-02-21T22:40:54.629088728Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-21T22:40:54.431000Z"
+    },
+    {
+      "sid": "5c575ab8-85a2-4582-93fa-012df777d5d3",
+      "ts": "2026-02-21T23:41:42.06313265Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 33,
+      "max_turn_ts": "2026-02-21T23:29:28.404000Z"
+    },
+    {
+      "sid": "f1ec5540-9e01-4f5c-baa2-77b7c778ccb8",
+      "ts": "2026-02-21T23:41:42.145643724Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-21T23:02:48.628000Z"
+    },
+    {
+      "sid": "0499c963-a703-4234-8534-80930e46f102",
+      "ts": "2026-02-21T23:41:44.703621286Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-21T23:41:44.245000Z"
+    },
+    {
+      "sid": "0e0581f1-91f4-443c-b500-67433faf85b4",
+      "ts": "2026-02-22T00:17:13.544099173Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-21T23:44:39.960000Z"
+    },
+    {
+      "sid": "8a55099f-2ee6-46b7-aefd-7a314524b85b",
+      "ts": "2026-02-22T00:17:13.726352696Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-22T00:13:22.618000Z"
+    },
+    {
+      "sid": "5f5c5ea8-f80f-42e2-b828-eaef4e942736",
+      "ts": "2026-02-22T04:15:24.782700523Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T04:10:27.008000Z"
+    },
+    {
+      "sid": "d73a7143-3896-46e7-824d-b039de1f3ede",
+      "ts": "2026-02-22T04:25:22.033375508Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T04:25:21.796000Z"
+    },
+    {
+      "sid": "49afc3ca-637c-410d-904b-f7d9f6e200f4",
+      "ts": "2026-02-22T18:04:25.939533285Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T17:01:14.726000Z"
+    },
+    {
+      "sid": "4f4bf1e8-87ff-4a93-aad9-491378671a71",
+      "ts": "2026-02-22T18:04:25.98015408Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-02-22T16:52:12.634000Z"
+    },
+    {
+      "sid": "ae63295e-b58a-4d46-a12a-bf14e907e89a",
+      "ts": "2026-02-22T18:04:26.091864013Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-22T17:15:22.593000Z"
+    },
+    {
+      "sid": "d075c775-0aaf-45b1-8454-585a567c05df",
+      "ts": "2026-02-22T19:21:49.92483649Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 35,
+      "max_turn_ts": "2026-02-22T19:08:04.846000Z"
+    },
+    {
+      "sid": "553e6801-f43d-41e0-ae7a-f7a543f90eac",
+      "ts": "2026-02-22T20:25:01.178239018Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 20,
+      "max_turn_ts": "2026-02-22T20:11:03.709000Z"
+    },
+    {
+      "sid": "bc8cc773-f40b-4fb1-b5c3-ff7b40b9b6f2",
+      "ts": "2026-02-22T20:25:01.269403625Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-22T20:17:00.005000Z"
+    },
+    {
+      "sid": "31a2c34a-b815-4c98-9173-1975427b8d2d",
+      "ts": "2026-02-22T20:54:47.692871093Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 21,
+      "max_turn_ts": "2026-02-22T20:54:47.213000Z"
+    },
+    {
+      "sid": "b031e0a6-9e84-4d35-9152-c4673bc49dab",
+      "ts": "2026-02-22T21:44:44.13797448Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-22T21:14:50.770000Z"
+    },
+    {
+      "sid": "c1791440-c659-4894-95a7-a896fb9e7de3",
+      "ts": "2026-02-22T21:44:44.158152923Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T21:07:31.999000Z"
+    },
+    {
+      "sid": "dab207eb-d179-42a1-afb9-652e66be8da8",
+      "ts": "2026-02-22T21:44:44.222045746Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 8,
+      "max_turn_ts": "2026-02-22T21:40:16.773000Z"
+    },
+    {
+      "sid": "2d8a5747-cc3c-4bc1-8958-f1a41fa18b4d",
+      "ts": "2026-02-22T21:59:08.064842033Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 13,
+      "max_turn_ts": "2026-02-22T21:59:07.647000Z"
+    },
+    {
+      "sid": "70449434-dd60-40dc-8c9b-790f79689e39",
+      "ts": "2026-02-22T22:07:26.970723123Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-02-22T22:06:42.131000Z"
+    },
+    {
+      "sid": "27e7ca68-967e-4dd5-b756-52dce3fb152b",
+      "ts": "2026-02-22T23:42:52.563023293Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 51,
+      "max_turn_ts": "2026-02-22T23:42:51.887000Z"
+    },
+    {
+      "sid": "fd4eeae7-fb57-47e6-9362-a90bf4b9dedf",
+      "ts": "2026-02-23T00:03:41.992664204Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 5,
+      "max_turn_ts": "2026-02-23T00:03:41.678000Z"
+    },
+    {
+      "sid": "d8f675d5-4110-4fca-bb2b-6c2ce07aae6d",
+      "ts": "2026-02-23T00:10:04.354828588Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-23T00:10:04.121000Z"
+    },
+    {
+      "sid": "e7388d11-0b9f-40c8-8596-6eafec9dd960",
+      "ts": "2026-02-23T00:26:37.427853313Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-23T00:26:37.125000Z"
+    },
+    {
+      "sid": "3a382506-9c3b-4d45-b0af-331344cfc33e",
+      "ts": "2026-02-23T01:44:33.910858526Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 20,
+      "max_turn_ts": "2026-02-23T01:44:33.275000Z"
+    },
+    {
+      "sid": "064c4609-b62a-4211-85f3-b6887c95e609",
+      "ts": "2026-02-23T02:28:24.935944256Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 8,
+      "max_turn_ts": "2026-02-23T02:28:24.602000Z"
+    },
+    {
+      "sid": "6e35bdd8-84a4-4715-9b27-efbcdee25c56",
+      "ts": "2026-02-23T02:48:40.20869857Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-23T02:48:42.902000Z"
+    },
+    {
+      "sid": "a930f6f7-565b-46f4-87cb-021aca129790",
+      "ts": "2026-02-23T03:35:05.029385871Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 11,
+      "max_turn_ts": "2026-02-23T03:35:08.533000Z"
+    },
+    {
+      "sid": "a263242c-2543-444b-bdff-916cd90f5be0",
+      "ts": "2026-02-23T03:58:23.903813655Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-23T03:11:41.739000Z"
+    },
+    {
+      "sid": "01cb1340-52ae-4e2e-b010-c604c0b93234",
+      "ts": "2026-02-23T07:27:04.462619402Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 17,
+      "max_turn_ts": "2026-02-23T05:16:34.768000Z"
+    },
+    {
+      "sid": "1385672c-8ac8-4a9d-9726-3c9a5f15f1f7",
+      "ts": "2026-02-23T07:27:04.591278038Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 8,
+      "max_turn_ts": "2026-02-23T04:03:23.399000Z"
+    },
+    {
+      "sid": "272a9955-ac0b-45eb-a3ac-3600ceaa03fd",
+      "ts": "2026-02-23T07:27:05.077181117Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-23T04:17:39.215000Z"
+    },
+    {
+      "sid": "7221b5dc-5b98-481a-9239-b8bfa6c537b8",
+      "ts": "2026-02-23T10:22:31.145997456Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-23T10:22:34.365000Z"
+    },
+    {
+      "sid": "16aa062a-055a-413a-a509-15f7c89f26b8",
+      "ts": "2026-02-23T10:47:59.652606045Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-23T10:48:03.248000Z"
+    },
+    {
+      "sid": "1eb6b09c-a608-41ed-aed4-5d0ec9c2d8b0",
+      "ts": "2026-02-23T10:48:00.170785418Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 28,
+      "max_turn_ts": "2026-02-23T07:55:42.622000Z"
+    },
+    {
+      "sid": "38bf61ed-cb7d-440b-900c-7a28a4ae423f",
+      "ts": "2026-02-23T10:48:00.253068862Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 11,
+      "max_turn_ts": "2026-02-23T08:33:14.110000Z"
+    },
+    {
+      "sid": "5846b888-ae11-4aa1-baf8-3e69d7cea22a",
+      "ts": "2026-02-23T16:12:33.653411Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-23T16:12:37.457000Z"
+    },
+    {
+      "sid": "73f2b818-ddfe-47ae-a4ee-be7ee371eb91",
+      "ts": "2026-02-23T16:12:34.1632Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 29,
+      "max_turn_ts": "2026-02-23T15:37:54.195000Z"
+    },
+    {
+      "sid": "ca1cf425-6149-481f-917b-c15cafd9cad3",
+      "ts": "2026-02-23T16:12:34.220385Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-23T14:37:45.186000Z"
+    },
+    {
+      "sid": "36519382-ad0f-406a-9be1-a0a7d6034232",
+      "ts": "2026-02-23T16:59:42.396505Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 9,
+      "max_turn_ts": "2026-02-23T16:54:00.448000Z"
+    },
+    {
+      "sid": "01ebf829-9ade-4004-89f7-f2f12983c67e",
+      "ts": "2026-02-24T03:57:55.722056Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 5,
+      "max_turn_ts": "2026-02-24T03:54:13.406000Z"
+    },
+    {
+      "sid": "3ab41d6f-a00b-4803-b89a-c98c544eb821",
+      "ts": "2026-02-24T03:57:58.520687Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-23T17:36:57.769000Z"
+    },
+    {
+      "sid": "dc89296d-021c-4f72-9577-7e58c285be43",
+      "ts": "2026-02-24T03:58:00.61754Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T03:58:07.091000Z"
+    },
+    {
+      "sid": "f3f1aeff-263a-4407-9508-d3bd497ce40a",
+      "ts": "2026-02-24T03:58:03.499345Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-23T16:59:46.396000Z"
+    },
+    {
+      "sid": "e81bfb45-bf84-4f47-acdb-d3bd3ebad036",
+      "ts": "2026-02-24T08:36:08.635693Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-24T03:33:14.632000Z"
+    },
+    {
+      "sid": "1129b3b8-4d6a-46aa-b56b-96dbb4f7a624",
+      "ts": "2026-02-24T14:41:02.967776517Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-24T13:58:21.298000Z"
+    },
+    {
+      "sid": "85181056-ed5a-4d7b-823e-587d2de2447a",
+      "ts": "2026-02-24T14:41:03.061430175Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-24T14:41:07.053000Z"
+    },
+    {
+      "sid": "92db1c0c-3211-436e-b07b-7cb325664fc0",
+      "ts": "2026-02-24T14:58:49.540284192Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-24T14:58:52.964000Z"
+    },
+    {
+      "sid": "b9037d47-143f-42eb-bfd1-cabdb16bd9df",
+      "ts": "2026-02-24T16:20:16.829258503Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 8,
+      "max_turn_ts": "2026-02-23T16:25:42.566000Z"
+    },
+    {
+      "sid": "c64419bd-ea12-4807-8eb9-154632179d6c",
+      "ts": "2026-02-24T19:53:08.482918489Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 32,
+      "max_turn_ts": "2026-02-24T19:53:29.512000Z"
+    },
+    {
+      "sid": "43511c41-f874-4b9e-97de-cae16ff3d45c",
+      "ts": "2026-02-24T23:43:13.507949969Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 11,
+      "max_turn_ts": "2026-02-24T23:38:05.907000Z"
+    },
+    {
+      "sid": "4daebc19-b6f0-4dea-8a77-a38455acfbd9",
+      "ts": "2026-02-24T23:43:13.555332197Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T23:43:23.881000Z"
+    },
+    {
+      "sid": "12a75356-4c98-40ed-9d14-edd0bdd84d95",
+      "ts": "2026-02-25T02:29:51.468684385Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 14,
+      "max_turn_ts": "2026-02-25T01:42:10.784000Z"
+    },
+    {
+      "sid": "62367aca-7b96-4e51-9d5d-cb2b17f4c108",
+      "ts": "2026-02-25T02:29:51.800786039Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 16,
+      "max_turn_ts": "2026-02-25T00:31:03.598000Z"
+    },
+    {
+      "sid": "b1627491-874c-43fc-816e-dcdf9e6ae926",
+      "ts": "2026-02-25T02:48:05.93609436Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-25T02:48:09.136000Z"
+    },
+    {
+      "sid": "f8e3b3f6-d3f2-41f2-ad1a-7f1e33c32bf5",
+      "ts": "2026-02-25T03:13:54.762173571Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T03:14:02.834000Z"
+    },
+    {
+      "sid": "7cb04102-76fc-47f6-9930-1e116d482fc0",
+      "ts": "2026-02-25T04:23:14.577611232Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 4,
+      "max_turn_ts": "2026-02-25T04:23:18.057000Z"
+    },
+    {
+      "sid": "656c09a2-1ffa-44fe-8206-fc2a321184ee",
+      "ts": "2026-02-25T04:33:14.239604887Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 4,
+      "max_turn_ts": "2026-02-25T04:33:25.724000Z"
+    },
+    {
+      "sid": "11777562-8ab4-4840-85bc-9bc50530fac3",
+      "ts": "2026-02-25T05:11:30.379839441Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T17:58:56.439000Z"
+    },
+    {
+      "sid": "435a0b6b-f3ee-48a6-9778-beaeb3274b03",
+      "ts": "2026-02-25T05:11:30.590139304Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 41,
+      "max_turn_ts": "2026-02-24T18:36:23.697000Z"
+    },
+    {
+      "sid": "7df5a10e-8fcf-474c-bd8d-02c6e97a047a",
+      "ts": "2026-02-25T05:11:30.845405485Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 25,
+      "max_turn_ts": "2026-02-24T17:10:58.602000Z"
+    },
+    {
+      "sid": "9f24a50d-4d73-49ef-b71f-b851da71e181",
+      "ts": "2026-02-25T05:25:39.139111955Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T05:25:46.546000Z"
+    },
+    {
+      "sid": "e7cae931-bad5-4230-9540-99f48e7a285c",
+      "ts": "2026-02-25T05:56:55.623379691Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 10,
+      "max_turn_ts": "2026-02-25T05:56:58.824000Z"
+    },
+    {
+      "sid": "8292e5fb-1703-4383-862e-7796dd65de53",
+      "ts": "2026-02-25T06:28:38.347293466Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 18,
+      "max_turn_ts": "2026-02-25T04:36:43.734000Z"
+    },
+    {
+      "sid": "9ac35f70-30b6-4e7f-bc18-4f32985371ef",
+      "ts": "2026-02-25T06:28:38.394536361Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T06:28:42.374000Z"
+    },
+    {
+      "sid": "ce76d3df-dde6-4e09-804e-c3516eaf3386",
+      "ts": "2026-02-25T06:28:38.497253105Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 8,
+      "max_turn_ts": "2026-02-25T05:42:33.834000Z"
+    },
+    {
+      "sid": "e82ef922-87a8-40fe-880c-33fbc06cf3b0",
+      "ts": "2026-02-25T06:28:39.144170023Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 19,
+      "max_turn_ts": "2026-02-25T03:05:21.726000Z"
+    },
+    {
+      "sid": "fe8e0343-251d-46cf-9018-0be57e62f200",
+      "ts": "2026-02-25T06:28:39.473470991Z",
+      "repo": "yutakobayashidev/repiq",
+      "n": 9,
+      "max_turn_ts": "2026-02-25T03:46:58.770000Z"
+    },
+    {
+      "sid": "f594f24b-13e3-41fa-93a3-847db0efc33e",
+      "ts": "2026-02-25T16:01:06.587005903Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-02-25T16:01:10.226000Z"
+    },
+    {
+      "sid": "ae93e344-891c-4e10-8939-48869cfd63e4",
+      "ts": "2026-02-25T16:19:10.17293799Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 10,
+      "max_turn_ts": "2026-02-25T16:19:13.752000Z"
+    },
+    {
+      "sid": "04bd8d5b-3db4-4482-9576-5c565c384686",
+      "ts": "2026-02-25T17:23:14.513488Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 5,
+      "max_turn_ts": "2026-02-24T09:58:26.790000Z"
+    },
+    {
+      "sid": "0d05befc-195d-400d-9273-fb1854041388",
+      "ts": "2026-02-25T17:23:16.348065Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T10:43:36.389000Z"
+    },
+    {
+      "sid": "6835ec59-a72a-4b89-9151-c5cfa3a51f8e",
+      "ts": "2026-02-25T17:23:17.681653Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 19,
+      "max_turn_ts": "2026-02-24T09:45:34.338000Z"
+    },
+    {
+      "sid": "7d6423f3-d718-43bc-ba94-d8239d5966e5",
+      "ts": "2026-02-25T17:23:18.774844Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 7,
+      "max_turn_ts": "2026-02-24T08:34:59.537000Z"
+    },
+    {
+      "sid": "8b2c8d27-2d50-433a-9a06-e3db31f312c2",
+      "ts": "2026-02-25T17:23:19.428103Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-23T16:31:46.098000Z"
+    },
+    {
+      "sid": "ac783e1d-11f7-4702-bb9c-945cc7c4792b",
+      "ts": "2026-02-25T17:23:21.644427Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 9,
+      "max_turn_ts": "2026-02-24T11:59:47.586000Z"
+    },
+    {
+      "sid": "bbc5f443-83bc-4c5e-86a5-1412d32d3897",
+      "ts": "2026-02-25T17:23:22.913369Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-25T16:47:34.312000Z"
+    },
+    {
+      "sid": "b8f85a13-b9be-4d41-bdef-40f081d8cb23",
+      "ts": "2026-02-25T18:01:31.950803Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 30,
+      "max_turn_ts": "2026-02-25T18:01:34.850000Z"
+    },
+    {
+      "sid": "014d2dfd-6f1e-4b5f-872a-bc6fe5de212b",
+      "ts": "2026-02-25T20:32:41.316626457Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T20:26:38.409000Z"
+    },
+    {
+      "sid": "e3fd59e0-4339-46ff-88bc-4d5625c96fb6",
+      "ts": "2026-02-25T21:04:04.449490083Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T21:04:06.987000Z"
+    },
+    {
+      "sid": "1c3e48bf-ee56-40ad-833e-5d921a82d1da",
+      "ts": "2026-02-25T21:47:59.03935466Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-25T20:32:47.468000Z"
+    },
+    {
+      "sid": "b246bbb5-7fbd-49f2-b978-ed5ef0f56f69",
+      "ts": "2026-02-25T21:47:59.27834885Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-25T21:48:01.951000Z"
+    },
+    {
+      "sid": "1d74afb7-8e07-4b08-b75a-59e368d865fe",
+      "ts": "2026-02-26T05:22:18.218485143Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-26T05:22:20.801000Z"
+    },
+    {
+      "sid": "2dd23c30-1154-409b-b7f6-14e47c3a3308",
+      "ts": "2026-02-27T01:58:52.841082Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 12,
+      "max_turn_ts": "2026-02-27T01:58:58.842000Z"
+    },
+    {
+      "sid": "53188dad-2948-44cb-a17e-ca6bcbe39fbe",
+      "ts": "2026-02-27T03:04:03.505816Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-02-27T03:02:21.701000Z"
+    },
+    {
+      "sid": "0237fc0f-9df1-40f5-93f7-c917d629a99a",
+      "ts": "2026-02-27T03:34:33.639401Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-02-27T03:34:39.079000Z"
+    },
+    {
+      "sid": "afc90696-6564-4f0b-9f39-ac1ecb417255",
+      "ts": "2026-02-27T03:34:35.11688Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 33,
+      "max_turn_ts": "2026-02-27T03:33:15.641000Z"
+    },
+    {
+      "sid": "fc11c574-2705-4127-a233-770bcce45107",
+      "ts": "2026-02-27T03:40:38.948891Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-27T03:40:40.930000Z"
+    },
+    {
+      "sid": "e28f2b7d-8cf2-4cf2-a2ac-b248b2f04071",
+      "ts": "2026-02-27T04:18:04.768748Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 17,
+      "max_turn_ts": "2026-02-27T04:18:09.379000Z"
+    },
+    {
+      "sid": "9b177336-7926-4eed-b8b7-9e83dc5da683",
+      "ts": "2026-02-27T04:33:34.43429Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 10,
+      "max_turn_ts": "2026-02-27T04:33:38.711000Z"
+    },
+    {
+      "sid": "58697a8e-cdcd-4e8f-9cb2-67f40dc26a69",
+      "ts": "2026-02-27T04:52:21.396629Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 6,
+      "max_turn_ts": "2026-02-27T04:52:23.991000Z"
+    },
+    {
+      "sid": "bb570ff5-ab12-43d4-9ea6-591c62c272e2",
+      "ts": "2026-03-01T23:26:53.984775422Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 8,
+      "max_turn_ts": "2026-03-01T23:26:56.591000Z"
+    },
+    {
+      "sid": "8d9d9673-6340-4b60-8f66-3e1b5321f4e4",
+      "ts": "2026-03-01T23:43:55.513842072Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-03-01T23:43:58.458000Z"
+    },
+    {
+      "sid": "d20d9e2b-ead5-4ed3-a908-0a264be8a1a6",
+      "ts": "2026-03-02T00:52:46.734578797Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-03-02T00:52:49.662000Z"
+    },
+    {
+      "sid": "f53cc92e-1444-4220-85d2-2926e6cef130",
+      "ts": "2026-03-02T06:13:13.551300621Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-02T02:37:59.012000Z"
+    },
+    {
+      "sid": "448a8b8f-a1d0-4344-a50e-3fe94b32e98d",
+      "ts": "2026-03-02T06:14:48.004964954Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 5,
+      "max_turn_ts": "2026-03-02T06:14:50.349000Z"
+    },
+    {
+      "sid": "3012742a-68db-4ee5-b600-76b70a6a2351",
+      "ts": "2026-03-02T06:19:01.707973483Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-03-02T06:19:05.098000Z"
+    },
+    {
+      "sid": "4d374621-7727-4a48-bbf4-19a5cefec152",
+      "ts": "2026-03-02T17:21:10.224950457Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 10,
+      "max_turn_ts": "2026-03-02T17:21:13.894000Z"
+    },
+    {
+      "sid": "9bbae10a-0f4d-4511-845e-6068f6265d67",
+      "ts": "2026-03-02T18:46:34.079098302Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 11,
+      "max_turn_ts": "2026-03-02T18:46:39.639000Z"
+    },
+    {
+      "sid": "a2743aeb-1d06-42e2-b3ac-625763cfdc6a",
+      "ts": "2026-03-02T18:46:34.202992778Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 9,
+      "max_turn_ts": "2026-02-25T05:15:34.899000Z"
+    },
+    {
+      "sid": "9c201aec-af70-4dbd-889e-b6d54807c434",
+      "ts": "2026-03-02T19:00:37.181232736Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-02T19:00:39.826000Z"
+    },
+    {
+      "sid": "6acccae2-721b-4ed5-bdde-3a0b576221f5",
+      "ts": "2026-03-02T19:18:05.305515Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-02T19:12:44.962000Z"
+    },
+    {
+      "sid": "d5507203-9198-45be-8aa0-2b18aedac366",
+      "ts": "2026-03-02T19:18:08.622317Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 3,
+      "max_turn_ts": "2026-03-02T19:18:25.885000Z"
+    },
+    {
+      "sid": "e8cee93c-b497-4626-baf0-ec94101cea01",
+      "ts": "2026-03-02T19:18:09.033563Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 14,
+      "max_turn_ts": "2026-02-26T06:26:30.506000Z"
+    },
+    {
+      "sid": "3f58ab22-9e38-44cb-84e9-6500781c0783",
+      "ts": "2026-03-07T08:32:17.299594Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-03T02:00:30.611000Z"
+    },
+    {
+      "sid": "af0de35b-abda-42cf-88f6-58eb7e69dffa",
+      "ts": "2026-03-07T08:32:17.483338Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-03-07T07:45:43.530000Z"
+    },
+    {
+      "sid": "c60cf400-9569-4441-90ac-ae177efdab93",
+      "ts": "2026-03-07T08:32:21.800695Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 14,
+      "max_turn_ts": "2026-03-07T08:32:23.975000Z"
+    },
+    {
+      "sid": "5dd145cd-bf44-43b2-9ea6-c31c2c2d5abe",
+      "ts": "2026-03-07T09:26:57.909387Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-07T09:27:00.939000Z"
+    },
+    {
+      "sid": "1f2d49b6-7b99-41f5-a91c-be3b43a535a5",
+      "ts": "2026-03-10T04:48:03.040914034Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 2,
+      "max_turn_ts": "2026-03-10T04:32:35.649000Z"
+    },
+    {
+      "sid": "7af19e36-7c13-4e64-ae17-1643d285ab6b",
+      "ts": "2026-03-10T04:48:06.126840024Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-10T04:48:08.361000Z"
+    },
+    {
+      "sid": "48ef15c9-1018-4090-8d25-1adb565b861b",
+      "ts": "2026-03-10T04:55:26.140351623Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 4,
+      "max_turn_ts": "2026-03-10T04:55:35.459000Z"
+    },
+    {
+      "sid": "134fda6d-2897-4540-9b88-3e0245da4d22",
+      "ts": "2026-03-10T07:30:02.126428119Z",
+      "repo": "yutakobayashidev/dotnix",
+      "n": 1,
+      "max_turn_ts": "2026-03-10T07:09:21.490000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

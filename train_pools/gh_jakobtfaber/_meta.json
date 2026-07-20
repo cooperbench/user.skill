@@ -1,0 +1,264 @@
+{
+  "developer": "gh:jakobtfaber",
+  "slug": "gh_jakobtfaber",
+  "Tstar": "2026-06-24T19:26:28.441543Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 36,
+  "n_human_turns": 411,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "306380ce-dfcf-4de3-84d9-df22a9edc525",
+      "ts": "2026-06-22T18:08:45.177257Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-22T18:04:48.874000Z"
+    },
+    {
+      "sid": "019ef080-c862-7d11-a57c-75ce8d19749d",
+      "ts": "2026-06-22T18:30:43.528138Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 4,
+      "max_turn_ts": "2026-06-22T18:32:35.792000Z"
+    },
+    {
+      "sid": "12e6c6f1-cbd3-4afd-8514-1d28799cd64c",
+      "ts": "2026-06-22T19:44:38.65849Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 11,
+      "max_turn_ts": "2026-06-22T19:44:53.470000Z"
+    },
+    {
+      "sid": "265e6f8b-9d51-4f16-82f8-14fa7fad5c70",
+      "ts": "2026-06-23T01:20:38.236385Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 16,
+      "max_turn_ts": "2026-06-23T01:20:27.003000Z"
+    },
+    {
+      "sid": "216a8b06-4bdc-4267-841e-a31841e42276",
+      "ts": "2026-06-23T03:28:45.192423Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-23T03:12:49.404000Z"
+    },
+    {
+      "sid": "5e3abb7c-1b89-4fa9-bfa3-66785233dc4b",
+      "ts": "2026-06-23T03:28:45.755736Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-23T03:23:58.985000Z"
+    },
+    {
+      "sid": "6ec547e4-5a19-4f0e-a220-5d371b4ee9fc",
+      "ts": "2026-06-23T03:28:47.156634Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 39,
+      "max_turn_ts": "2026-06-22T18:22:42.365000Z"
+    },
+    {
+      "sid": "c1651240-9262-48ae-aef0-281d2eff3ef9",
+      "ts": "2026-06-23T03:28:55.30122Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-23T03:10:53.448000Z"
+    },
+    {
+      "sid": "53699af7-fb12-4d6d-af2b-624549d6a1e2",
+      "ts": "2026-06-23T09:12:37.69673Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-22T18:06:06.630000Z"
+    },
+    {
+      "sid": "019ef719-e66e-7132-97fa-67cf4eac57c9",
+      "ts": "2026-06-24T00:58:25.307052Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 4,
+      "max_turn_ts": "2026-06-24T00:58:21.901000Z"
+    },
+    {
+      "sid": "7e1f56a5-8913-49fd-8915-1c7d5ad6e747",
+      "ts": "2026-06-24T00:58:36.681023Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 4,
+      "max_turn_ts": "2026-06-24T00:44:05.058000Z"
+    },
+    {
+      "sid": "062ce024-8032-4ac6-882e-e6ee9b5aed19",
+      "ts": "2026-06-24T03:58:45.179466Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 4,
+      "max_turn_ts": "2026-06-24T03:59:16.146000Z"
+    },
+    {
+      "sid": "ac2a9913-fd5b-4f77-94f2-94af3daf53d7",
+      "ts": "2026-06-24T03:59:06.862154Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 90,
+      "max_turn_ts": "2026-06-24T03:58:22.955000Z"
+    },
+    {
+      "sid": "019ef867-659c-7ba2-a43e-f6dd9b45f0a2",
+      "ts": "2026-06-24T07:49:27.083976Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T06:57:29.384000Z"
+    },
+    {
+      "sid": "fd6e62fe-81a0-4203-b863-f5b990ccbc15",
+      "ts": "2026-06-24T09:46:34.259196Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 31,
+      "max_turn_ts": "2026-06-24T09:44:52.466000Z"
+    },
+    {
+      "sid": "7718779b-4573-47bb-82a9-eca51458ccfd",
+      "ts": "2026-06-24T10:05:09.610615943Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 44,
+      "max_turn_ts": "2026-06-24T09:56:47.635000Z"
+    },
+    {
+      "sid": "2fb68760-7c2e-4584-ac25-fadd9a8c6453",
+      "ts": "2026-06-24T10:49:02.818897Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 12,
+      "max_turn_ts": "2026-06-24T02:27:53.563000Z"
+    },
+    {
+      "sid": "42953396-6c21-4964-a0fd-c0a2bdffe411",
+      "ts": "2026-06-24T14:55:11.421222Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 21,
+      "max_turn_ts": "2026-06-24T14:42:41.115000Z"
+    },
+    {
+      "sid": "019efa2b-a30d-70c2-b794-ee826aaae76e",
+      "ts": "2026-06-24T15:21:28.603126Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T15:11:47.962000Z"
+    },
+    {
+      "sid": "e2067f89-1873-4de7-b000-412b5afb8b93",
+      "ts": "2026-06-24T15:53:08.863405Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 10,
+      "max_turn_ts": "2026-06-24T14:58:18.057000Z"
+    },
+    {
+      "sid": "019efa6b-71dc-76c2-ab6b-e1723504b2b6",
+      "ts": "2026-06-24T16:28:41.178566Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:20:56.694000Z"
+    },
+    {
+      "sid": "019efa6e-19cf-7362-b90a-24f8d90e21da",
+      "ts": "2026-06-24T16:28:41.604904Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:23:24.211000Z"
+    },
+    {
+      "sid": "019efa6e-db4e-7390-bbe9-5aaf0706cce3",
+      "ts": "2026-06-24T16:28:42.000748Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:23:21.657000Z"
+    },
+    {
+      "sid": "019efa7a-64cf-7db1-b9b9-fbadc2c50236",
+      "ts": "2026-06-24T16:39:51.870093Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:35:10.668000Z"
+    },
+    {
+      "sid": "019efa7d-458b-7ac3-97d5-c7fcf81cb981",
+      "ts": "2026-06-24T16:40:33.393668Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:39:12.658000Z"
+    },
+    {
+      "sid": "281f3615-d7b8-48a6-8d8c-291238a0200b",
+      "ts": "2026-06-24T17:16:43.513229Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 8,
+      "max_turn_ts": "2026-06-24T17:17:55.127000Z"
+    },
+    {
+      "sid": "3af9f603-f1ee-4a00-b691-0e66b3030165",
+      "ts": "2026-06-24T17:52:22.194932Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 84,
+      "max_turn_ts": "2026-06-24T17:54:54.785000Z"
+    },
+    {
+      "sid": "019ef7de-cf31-7223-bd43-a1957a17fafa",
+      "ts": "2026-06-24T17:57:25.493004Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T04:25:51.501000Z"
+    },
+    {
+      "sid": "019ef865-6412-73f3-9d10-b795172b4a64",
+      "ts": "2026-06-24T17:57:25.833924Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T06:52:35.171000Z"
+    },
+    {
+      "sid": "019efa6b-b677-7273-a071-580c4e582f7f",
+      "ts": "2026-06-24T17:57:26.252234Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:18:32.662000Z"
+    },
+    {
+      "sid": "019efa90-e80d-7f73-beca-73c7d600c934",
+      "ts": "2026-06-24T17:57:37.05131Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T16:59:34.778000Z"
+    },
+    {
+      "sid": "019efaac-cd8f-7fa3-85d2-77c1703e0eb5",
+      "ts": "2026-06-24T17:57:37.367709Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T17:30:03.241000Z"
+    },
+    {
+      "sid": "019ef8c1-3a66-7653-b116-0a8f51db1db9",
+      "ts": "2026-06-24T17:59:06.271422Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T08:34:12.264000Z"
+    },
+    {
+      "sid": "019efa4e-45dc-7891-b5ea-eb4d37629a81",
+      "ts": "2026-06-24T17:59:06.636499Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T15:48:56.944000Z"
+    },
+    {
+      "sid": "d836e440-34bd-488c-b2bb-76d0a63894c9",
+      "ts": "2026-06-24T17:59:33.659375Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 9,
+      "max_turn_ts": "2026-06-24T17:58:44.610000Z"
+    },
+    {
+      "sid": "019efad9-bed0-7a40-8cde-cc5d1e25a4b2",
+      "ts": "2026-06-24T18:30:58.944215Z",
+      "repo": "jakobtfaber/dsa110-FLITS",
+      "n": 1,
+      "max_turn_ts": "2026-06-24T18:18:26.683000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

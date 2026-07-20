@@ -1,0 +1,698 @@
+{
+  "developer": "gh:Poytr1",
+  "slug": "gh_Poytr1",
+  "Tstar": "2026-03-26T14:16:50.728353Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 98,
+  "n_human_turns": 620,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "1779df1a-c014-416d-85b6-b2213692ee7f",
+      "ts": "2026-02-24T11:31:06.518239Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-02-24T11:31:37.098000Z"
+    },
+    {
+      "sid": "a7f3e521-42be-4eb7-a31a-9aa7a4e67b76",
+      "ts": "2026-02-24T12:55:23.866549Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-24T12:14:48.042000Z"
+    },
+    {
+      "sid": "f2050b44-759c-4aa3-b2b2-dff0c536df49",
+      "ts": "2026-02-24T13:17:32.335129Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-02-24T13:23:40.569000Z"
+    },
+    {
+      "sid": "dcd6e412-3b68-4eaa-91e0-11befb19af03",
+      "ts": "2026-02-24T13:50:52.641794Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-24T13:51:08.411000Z"
+    },
+    {
+      "sid": "2d4e42a0-e00f-4d70-92fa-b54a5c1e27ef",
+      "ts": "2026-02-24T15:08:56.841773Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-24T15:09:09.525000Z"
+    },
+    {
+      "sid": "e4ada0eb-2b90-4b4d-b811-1455e745351b",
+      "ts": "2026-02-24T15:08:59.084473Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-02-24T14:25:22.832000Z"
+    },
+    {
+      "sid": "14e95586-08e1-46bd-9f05-97a8aeecd672",
+      "ts": "2026-02-25T14:39:50.505593Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 9,
+      "max_turn_ts": "2026-02-25T14:39:47.991000Z"
+    },
+    {
+      "sid": "a3b35a96-4180-4a58-9c58-98ebf32a5647",
+      "ts": "2026-02-25T15:38:14.984136Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-25T15:38:32.811000Z"
+    },
+    {
+      "sid": "de389f6d-4195-4580-97ec-6a8c9e5a8ae0",
+      "ts": "2026-02-25T15:38:16.609429Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-25T12:53:33.695000Z"
+    },
+    {
+      "sid": "f7fa2e92-9989-4eec-801a-c7bc09929137",
+      "ts": "2026-02-26T02:21:25.85036Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 6,
+      "max_turn_ts": "2026-02-25T15:53:52.395000Z"
+    },
+    {
+      "sid": "f994b135-3c78-4ded-85aa-20d5a2c2ad12",
+      "ts": "2026-02-26T02:21:25.947846Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-02-26T02:21:30.417000Z"
+    },
+    {
+      "sid": "47157a12-bf09-499c-8d0c-0446ec14a123",
+      "ts": "2026-02-26T02:41:55.596122Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-26T02:42:12.641000Z"
+    },
+    {
+      "sid": "f114cd15-f7cf-4efd-ac6b-c54c87db98e0",
+      "ts": "2026-02-26T02:41:57.563213Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-26T02:41:15.116000Z"
+    },
+    {
+      "sid": "363c621b-8bf4-4753-a3e4-a05c1d54fbe2",
+      "ts": "2026-02-26T02:52:24.056042Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-02-26T02:52:11.741000Z"
+    },
+    {
+      "sid": "541981d4-ecf9-43c8-b6ae-e788e76b0c3f",
+      "ts": "2026-02-26T02:52:25.782078Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-02-26T02:48:04.021000Z"
+    },
+    {
+      "sid": "5809462a-dc37-4bf8-991a-03d020f87d50",
+      "ts": "2026-02-26T02:52:25.965639Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T02:52:39.805000Z"
+    },
+    {
+      "sid": "b4dc4425-8641-45aa-9870-e81d6c745d0d",
+      "ts": "2026-02-26T03:26:56.832173Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T03:23:30.534000Z"
+    },
+    {
+      "sid": "f4d3139e-ff6e-4d48-a44f-1bc58b815c1a",
+      "ts": "2026-02-26T04:38:51.19539Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-02-26T04:38:44.888000Z"
+    },
+    {
+      "sid": "1adc9ddd-85d6-4506-8673-1f4e069320c7",
+      "ts": "2026-02-26T11:37:37.484937Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-26T11:38:10.027000Z"
+    },
+    {
+      "sid": "78263eb0-2b29-4a07-b6e8-0bd9b0f7cad9",
+      "ts": "2026-02-26T11:37:41.974765Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 15,
+      "max_turn_ts": "2026-02-26T05:52:21.031000Z"
+    },
+    {
+      "sid": "e6e9e8e9-dcdb-4833-9bb5-e6a24a9cc9a1",
+      "ts": "2026-02-26T11:37:43.801272Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 9,
+      "max_turn_ts": "2026-02-26T04:44:56.170000Z"
+    },
+    {
+      "sid": "45363800-af8a-48b1-af8c-4f37b889dd16",
+      "ts": "2026-02-26T12:45:46.015274Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 22,
+      "max_turn_ts": "2026-02-26T04:37:01.904000Z"
+    },
+    {
+      "sid": "544697bd-527b-44df-8bf0-4c7e4e01e3e6",
+      "ts": "2026-02-26T12:45:47.124093Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T12:45:58.232000Z"
+    },
+    {
+      "sid": "8f4d8a08-9d26-47fe-ba37-221d95afb411",
+      "ts": "2026-02-26T12:45:48.98436Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 6,
+      "max_turn_ts": "2026-02-26T12:09:57.999000Z"
+    },
+    {
+      "sid": "076fa9c4-f8bc-490a-834d-5f36db9aaf14",
+      "ts": "2026-02-26T14:09:41.084714Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 12,
+      "max_turn_ts": "2026-02-26T05:12:50.527000Z"
+    },
+    {
+      "sid": "1eb9f2c9-d06f-4e24-a271-12fd014fe350",
+      "ts": "2026-02-26T14:09:42.826013Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T13:45:18.213000Z"
+    },
+    {
+      "sid": "d54c0355-b027-46d7-a91a-e1b6697116d7",
+      "ts": "2026-02-26T14:09:47.154655Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-02-26T13:31:08.646000Z"
+    },
+    {
+      "sid": "001d3525-6897-4e35-b5e7-2fd70a0a5d29",
+      "ts": "2026-02-26T14:11:00.066474Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 8,
+      "max_turn_ts": "2026-02-26T14:10:11.517000Z"
+    },
+    {
+      "sid": "4e9f8350-b274-4442-bb56-9f3b9f94bd35",
+      "ts": "2026-02-27T10:35:44.833231Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 9,
+      "max_turn_ts": "2026-02-27T10:26:07.841000Z"
+    },
+    {
+      "sid": "ab707189-48de-4dd5-9a35-83655d18ce1e",
+      "ts": "2026-02-27T10:35:47.652492Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T13:14:34.864000Z"
+    },
+    {
+      "sid": "b88947db-d2a3-4d95-bc39-810b3442bda3",
+      "ts": "2026-02-27T10:37:26.178023Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-27T10:37:28.744000Z"
+    },
+    {
+      "sid": "0d950706-7e45-43cf-965d-3e023b326b39",
+      "ts": "2026-02-27T13:57:37.677462Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-27T13:58:22.403000Z"
+    },
+    {
+      "sid": "7bc3397e-06e6-48a9-9662-6fc4d01835f3",
+      "ts": "2026-02-27T15:04:50.330731Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-27T15:05:45.602000Z"
+    },
+    {
+      "sid": "0c3c112a-eefd-4fb4-a112-601b26322b4e",
+      "ts": "2026-02-27T15:07:12.63534Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 19,
+      "max_turn_ts": "2026-02-27T15:08:12.133000Z"
+    },
+    {
+      "sid": "8c52857a-750f-49e9-9f48-c6ce528284bd",
+      "ts": "2026-02-27T15:15:05.281002Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-27T15:15:34.083000Z"
+    },
+    {
+      "sid": "cd64cf27-3c38-4702-ab5b-bcfae85a57ec",
+      "ts": "2026-02-28T13:19:57.257281Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-02-28T13:20:37.438000Z"
+    },
+    {
+      "sid": "a9214814-3426-47ef-a1ed-bcab091952ca",
+      "ts": "2026-02-28T13:46:13.91924Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-28T13:22:47.279000Z"
+    },
+    {
+      "sid": "b167c8e2-5eb2-4047-9ae5-915082f8961d",
+      "ts": "2026-02-28T13:46:36.081564Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-27T10:52:19.173000Z"
+    },
+    {
+      "sid": "d544e3b5-d2d0-4ec4-ad6f-594e4c7c54d6",
+      "ts": "2026-02-28T13:46:38.651928Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-02-27T14:54:35.757000Z"
+    },
+    {
+      "sid": "b33d59bf-c050-49e6-b5ad-d20eb1fc3e1f",
+      "ts": "2026-02-28T14:01:12.077112Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-28T14:01:29.933000Z"
+    },
+    {
+      "sid": "4856cd7f-23c2-48d5-bc53-7e7faa87e206",
+      "ts": "2026-02-28T14:37:54.985446Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-02-28T14:19:21.627000Z"
+    },
+    {
+      "sid": "de6d7fc8-195e-41c2-a4fc-98f53b46da00",
+      "ts": "2026-02-28T14:37:56.811698Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 9,
+      "max_turn_ts": "2026-02-28T14:38:11.180000Z"
+    },
+    {
+      "sid": "158ac0bf-d320-4255-98c3-797165c7ff21",
+      "ts": "2026-03-01T07:01:46.738877Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-02-27T14:00:58.534000Z"
+    },
+    {
+      "sid": "5d3007be-d3bb-44bf-8d53-4dfd8ce34ba4",
+      "ts": "2026-03-01T07:22:53.902371Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-01T06:39:37.606000Z"
+    },
+    {
+      "sid": "bd8aa6b2-9533-422d-928b-9899c989c110",
+      "ts": "2026-03-01T07:22:56.822967Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 7,
+      "max_turn_ts": "2026-03-01T06:58:45.278000Z"
+    },
+    {
+      "sid": "c2474cdc-43da-41f8-a0d5-69921af93b9a",
+      "ts": "2026-03-01T11:03:01.703711Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 7,
+      "max_turn_ts": "2026-03-01T11:03:27.018000Z"
+    },
+    {
+      "sid": "f57ee357-52cc-4c08-8ce1-9648eca81738",
+      "ts": "2026-03-01T11:03:04.017343Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 7,
+      "max_turn_ts": "2026-03-01T10:58:06.234000Z"
+    },
+    {
+      "sid": "3f35bc90-59bd-4052-bde2-89d78f42eb17",
+      "ts": "2026-03-01T11:06:03.025223Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-01T11:06:38.906000Z"
+    },
+    {
+      "sid": "ae99f03c-1207-43c5-a04a-4c638e4a1e52",
+      "ts": "2026-03-01T11:06:07.589127Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 8,
+      "max_turn_ts": "2026-03-01T07:32:52.501000Z"
+    },
+    {
+      "sid": "7f1cd789-d92c-48e7-963c-d75732900c4a",
+      "ts": "2026-03-01T11:12:47.370096Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-01T11:13:19.501000Z"
+    },
+    {
+      "sid": "0d450961-03b2-4020-a724-57dccc1191dc",
+      "ts": "2026-03-01T11:20:38.241307Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-01T06:14:40.546000Z"
+    },
+    {
+      "sid": "0fc923e2-62d4-411f-ad96-8d74e87a4216",
+      "ts": "2026-03-01T11:20:41.258918Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 12,
+      "max_turn_ts": "2026-02-28T16:27:23.332000Z"
+    },
+    {
+      "sid": "3b8d2554-1fbe-4c8e-af9e-ee9b35030e42",
+      "ts": "2026-03-01T11:20:43.729619Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-01T06:26:26.945000Z"
+    },
+    {
+      "sid": "5377474f-9934-4025-8dc5-ba31224ed6ee",
+      "ts": "2026-03-01T11:20:46.55156Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-01T10:18:11.510000Z"
+    },
+    {
+      "sid": "f6f11d37-b8c5-4d39-a1e3-3c199a7a6c96",
+      "ts": "2026-03-01T11:20:50.510431Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-03-01T07:25:20.996000Z"
+    },
+    {
+      "sid": "27cab6d0-7d20-4201-89f4-2ec9d1d95c1f",
+      "ts": "2026-03-01T12:00:33.730866Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-01T12:00:33.155000Z"
+    },
+    {
+      "sid": "45bad776-2314-4aca-bad3-5ede071636ae",
+      "ts": "2026-03-01T12:00:35.822862Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-03-01T11:36:01.642000Z"
+    },
+    {
+      "sid": "54dc3843-a51f-40ab-a4eb-8fae5901a5c7",
+      "ts": "2026-03-01T12:00:38.018725Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 8,
+      "max_turn_ts": "2026-03-01T11:35:11.263000Z"
+    },
+    {
+      "sid": "fb0bd0d8-8e2e-475f-86c4-8fd3c9563b4d",
+      "ts": "2026-03-01T12:47:28.027598Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-01T12:47:51.981000Z"
+    },
+    {
+      "sid": "42d3f407-5180-4ff7-919d-ad2fc7399298",
+      "ts": "2026-03-01T13:16:57.265153Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-01T13:17:36.729000Z"
+    },
+    {
+      "sid": "3d85fb75-4c1e-45e6-abcf-652f101a8912",
+      "ts": "2026-03-01T13:47:36.632761Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-01T13:41:28.501000Z"
+    },
+    {
+      "sid": "820a1dee-869d-44c6-bee8-daff7a916977",
+      "ts": "2026-03-02T15:10:17.883304Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 18,
+      "max_turn_ts": "2026-03-02T15:10:54.417000Z"
+    },
+    {
+      "sid": "c690372f-9ada-4a0e-b49a-526b2ba1aa75",
+      "ts": "2026-03-02T15:12:14.737749Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-02T15:12:52.416000Z"
+    },
+    {
+      "sid": "d677b03a-86a7-4c86-beb7-134ccf3d2156",
+      "ts": "2026-03-03T12:40:41.51695Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-03T12:41:06.521000Z"
+    },
+    {
+      "sid": "339683d2-18f5-4a5c-9312-2317ee7c67cf",
+      "ts": "2026-03-03T12:53:59.587776Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-03T12:54:34.551000Z"
+    },
+    {
+      "sid": "d5bd8e75-3c0b-4b3c-a91b-b1de56d6df46",
+      "ts": "2026-03-03T13:34:55.31185Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 8,
+      "max_turn_ts": "2026-03-03T13:46:07.613000Z"
+    },
+    {
+      "sid": "a43ffee5-9adf-4c82-9e77-881cb27ba4a7",
+      "ts": "2026-03-03T13:41:28.118363Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 6,
+      "max_turn_ts": "2026-03-01T12:12:03.836000Z"
+    },
+    {
+      "sid": "cb727e2d-ca60-4358-bf03-9abf24523552",
+      "ts": "2026-03-03T13:48:00.438637Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-03T13:48:32.216000Z"
+    },
+    {
+      "sid": "45116879-40ac-4afa-8144-549ea4be7c82",
+      "ts": "2026-03-04T05:53:11.339444Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-03-04T06:02:06.943000Z"
+    },
+    {
+      "sid": "4aaff586-a15e-43c3-b6da-5b406627ba3e",
+      "ts": "2026-03-04T11:44:55.391639Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-04T11:45:19.017000Z"
+    },
+    {
+      "sid": "1c09a61d-e9a4-45f3-a191-94f00cd6dfde",
+      "ts": "2026-03-04T13:26:46.36599Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 15,
+      "max_turn_ts": "2026-03-04T05:53:42.716000Z"
+    },
+    {
+      "sid": "37b0ee48-5f77-409e-b953-28a96bfab023",
+      "ts": "2026-03-04T13:26:49.443471Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-01T13:57:43.141000Z"
+    },
+    {
+      "sid": "03d4696f-84d7-40f9-b621-089bfdf37c86",
+      "ts": "2026-03-04T13:41:24.970588Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 28,
+      "max_turn_ts": "2026-03-01T01:34:04.346000Z"
+    },
+    {
+      "sid": "8efcfb27-cce2-43cc-9721-b8c0e7b4f654",
+      "ts": "2026-03-05T14:11:21.385195Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-05T14:11:40.824000Z"
+    },
+    {
+      "sid": "68d787e4-995a-4da2-9e65-603f8864e8c1",
+      "ts": "2026-03-12T14:39:57.204958Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 12,
+      "max_turn_ts": "2026-03-04T15:52:42.342000Z"
+    },
+    {
+      "sid": "6a432120-3ced-43ba-b42f-dd8fe31599fa",
+      "ts": "2026-03-12T14:40:00.302608Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 11,
+      "max_turn_ts": "2026-03-05T15:23:34.864000Z"
+    },
+    {
+      "sid": "31c3d0b5-63c6-4bb2-988d-0cb2ed00240e",
+      "ts": "2026-03-13T12:25:10.951518Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 16,
+      "max_turn_ts": "2026-03-13T12:26:14.088000Z"
+    },
+    {
+      "sid": "5db57fef-9497-4ec3-9109-46d2efbd3edd",
+      "ts": "2026-03-13T12:25:22.687178Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-04T14:32:09.847000Z"
+    },
+    {
+      "sid": "774c80c5-d9a6-4f62-a2d6-df5ae0b81a87",
+      "ts": "2026-03-13T12:31:42.757786Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-03-13T12:32:11.139000Z"
+    },
+    {
+      "sid": "1fe8b167-20fe-4369-a9ef-8a96ed92a30e",
+      "ts": "2026-03-14T04:36:30.515788Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 12,
+      "max_turn_ts": "2026-03-04T14:02:26.775000Z"
+    },
+    {
+      "sid": "3d82bc8a-29ff-44de-8185-6f23ae803385",
+      "ts": "2026-03-14T04:36:33.085907Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 8,
+      "max_turn_ts": "2026-03-12T15:23:09.843000Z"
+    },
+    {
+      "sid": "54b74b93-157e-4d66-931b-2fa1a3ba70f1",
+      "ts": "2026-03-14T04:36:39.392668Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 34,
+      "max_turn_ts": "2026-03-12T15:21:29.450000Z"
+    },
+    {
+      "sid": "634e0e7e-6f25-49bb-bb5c-595301064a05",
+      "ts": "2026-03-14T04:36:41.813969Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 1,
+      "max_turn_ts": "2026-03-12T14:40:20.508000Z"
+    },
+    {
+      "sid": "3c505670-5652-4442-917f-a3970859983d",
+      "ts": "2026-03-14T14:41:05.390971Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-14T14:40:49.666000Z"
+    },
+    {
+      "sid": "bce5ac7d-72fc-4b86-96f1-84578259e6ba",
+      "ts": "2026-03-16T14:58:26.316714Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 10,
+      "max_turn_ts": "2026-03-14T14:29:45.274000Z"
+    },
+    {
+      "sid": "a81f06d9-8632-4b23-80ed-ef523813b0b7",
+      "ts": "2026-03-16T15:07:14.24674Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-16T14:44:58.226000Z"
+    },
+    {
+      "sid": "b1e342d8-cc49-4751-b241-cc9711dd5298",
+      "ts": "2026-03-16T15:07:16.983038Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-16T15:04:09.316000Z"
+    },
+    {
+      "sid": "ab8c6970-cff3-401d-9ea5-a3be38a8c460",
+      "ts": "2026-03-16T15:13:47.548914Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-16T15:11:03.624000Z"
+    },
+    {
+      "sid": "7aab837a-889a-448f-8788-716cc7a17999",
+      "ts": "2026-03-16T15:14:23.519377Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 2,
+      "max_turn_ts": "2026-03-16T15:14:18.855000Z"
+    },
+    {
+      "sid": "b9dff3f8-6468-4422-b63c-e84403aff55b",
+      "ts": "2026-03-23T01:39:48.934176Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-16T15:14:52.278000Z"
+    },
+    {
+      "sid": "cfe14e2b-44f8-4cb7-940f-de8716ee6960",
+      "ts": "2026-03-23T01:39:53.096291Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 36,
+      "max_turn_ts": "2026-03-22T14:32:48.949000Z"
+    },
+    {
+      "sid": "d65270c3-2263-4723-8050-ac41bb067b30",
+      "ts": "2026-03-23T06:21:25.494258Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T06:22:00.114000Z"
+    },
+    {
+      "sid": "3c36d092-c18e-4c3d-bb0d-f49679c1ce69",
+      "ts": "2026-03-23T06:47:06.146842Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 20,
+      "max_turn_ts": "2026-03-23T06:09:48.869000Z"
+    },
+    {
+      "sid": "ea321c49-fe6e-4571-8576-f2a4a73d91df",
+      "ts": "2026-03-23T08:11:33.561485Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 13,
+      "max_turn_ts": "2026-03-23T07:42:15.515000Z"
+    },
+    {
+      "sid": "98d5c0a9-e073-43d1-9f2a-991472c2a6ae",
+      "ts": "2026-03-23T08:35:35.68501Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 5,
+      "max_turn_ts": "2026-03-23T08:35:58.582000Z"
+    },
+    {
+      "sid": "58e95289-4999-4591-b4f0-f47ebb847994",
+      "ts": "2026-03-23T15:30:13.032377Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T15:31:51.277000Z"
+    },
+    {
+      "sid": "5f082a78-acec-4886-b77e-e1870966b8d8",
+      "ts": "2026-03-26T13:11:03.611035Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 4,
+      "max_turn_ts": "2026-03-23T08:39:51.241000Z"
+    },
+    {
+      "sid": "6723a070-7e96-408d-9ed0-b8f77d54b057",
+      "ts": "2026-03-26T13:11:06.166657Z",
+      "repo": "sentioxyz/changelogue",
+      "n": 3,
+      "max_turn_ts": "2026-03-23T15:03:45.239000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

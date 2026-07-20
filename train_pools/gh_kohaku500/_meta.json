@@ -1,0 +1,2896 @@
+{
+  "developer": "gh:kohaku500",
+  "slug": "gh_kohaku500",
+  "Tstar": "2026-05-02T21:51:57.934Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 412,
+  "n_human_turns": 2783,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "abf2e754-0eb2-476e-b529-cd9870a62fed",
+      "ts": "2026-04-12T06:35:31.196Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 2,
+      "max_turn_ts": "2026-04-12T06:41:52.321000Z"
+    },
+    {
+      "sid": "9655d6c4-45b2-4190-adaf-9a855c884bd1",
+      "ts": "2026-04-12T06:49:42.711Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 4,
+      "max_turn_ts": "2026-04-12T07:05:45.167000Z"
+    },
+    {
+      "sid": "5bf8a44e-e639-4f4d-9c20-d0a6d47fa2ee",
+      "ts": "2026-04-12T07:22:53.978Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 10,
+      "max_turn_ts": "2026-04-12T13:15:55.533000Z"
+    },
+    {
+      "sid": "0408e854-985f-4b8c-a213-10ac5677a4c8",
+      "ts": "2026-04-12T20:32:32.136Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 8,
+      "max_turn_ts": "2026-04-12T21:46:04.763000Z"
+    },
+    {
+      "sid": "e3ddbde9-b490-41d7-bf30-23d9158bd147",
+      "ts": "2026-04-13T02:15:14.501Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 4,
+      "max_turn_ts": "2026-04-13T02:19:15.034000Z"
+    },
+    {
+      "sid": "e9714fd7-9c8e-4a9e-a8fe-8d1ebdd3dff6",
+      "ts": "2026-04-13T02:20:55.224Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 11,
+      "max_turn_ts": "2026-04-13T02:31:30.941000Z"
+    },
+    {
+      "sid": "3a9ca286-728f-4ad5-b4f5-026bdc86b245",
+      "ts": "2026-04-13T02:37:52.141Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 30,
+      "max_turn_ts": "2026-04-13T07:32:55.634000Z"
+    },
+    {
+      "sid": "66617b26-1407-468b-b1d7-0483f90ac807",
+      "ts": "2026-04-13T07:49:46.219Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 24,
+      "max_turn_ts": "2026-04-13T12:31:46.739000Z"
+    },
+    {
+      "sid": "aa66d7f0-1ceb-413a-92ae-050fb54ad535",
+      "ts": "2026-04-14T04:38:26.282Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-14T04:38:59.013000Z"
+    },
+    {
+      "sid": "009a5506-8f0c-4df0-a074-4e1766cbd9b8",
+      "ts": "2026-04-14T05:34:26.102Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 12,
+      "max_turn_ts": "2026-04-14T06:14:08.309000Z"
+    },
+    {
+      "sid": "8cb1db05-331e-44d9-9128-7573e6a973f3",
+      "ts": "2026-04-14T06:16:27.739Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 85,
+      "max_turn_ts": "2026-04-15T08:44:06.925000Z"
+    },
+    {
+      "sid": "540fe2cd-b8a1-4793-942f-ada77958e69a",
+      "ts": "2026-04-17T22:08:18.746Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 4,
+      "max_turn_ts": "2026-04-17T22:10:09.334000Z"
+    },
+    {
+      "sid": "0210da20-bc4a-4304-91e3-6be98234347c",
+      "ts": "2026-04-17T22:16:04.464Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 2,
+      "max_turn_ts": "2026-04-17T22:16:37.593000Z"
+    },
+    {
+      "sid": "58d27ff5-991f-4e06-800d-302af4d0ef7f",
+      "ts": "2026-04-18T06:39:56.583Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 2,
+      "max_turn_ts": "2026-04-18T06:55:49.361000Z"
+    },
+    {
+      "sid": "bbcab6f4-75cc-41ad-a5bf-bb955ea1176d",
+      "ts": "2026-04-18T07:10:17.561Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 12,
+      "max_turn_ts": "2026-04-18T07:24:55.787000Z"
+    },
+    {
+      "sid": "4a59f6f6-56c4-43b5-8da7-ab4de598f114",
+      "ts": "2026-04-18T19:25:41.468Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 345,
+      "max_turn_ts": "2026-04-19T11:52:46.631000Z"
+    },
+    {
+      "sid": "e8cbf73f-78a1-47f9-a207-4ef6f18fa61c",
+      "ts": "2026-04-20T08:42:46.398Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 4,
+      "max_turn_ts": "2026-04-20T08:46:02.060000Z"
+    },
+    {
+      "sid": "9a3994dd-7e3f-40b2-829f-039da6bd087b",
+      "ts": "2026-04-20T08:43:35.422Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-20T08:43:42.825000Z"
+    },
+    {
+      "sid": "19733316-76ca-47f5-ad04-16e5303daf49",
+      "ts": "2026-04-20T23:17:18.240Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 224,
+      "max_turn_ts": "2026-04-21T08:36:17.001000Z"
+    },
+    {
+      "sid": "2b083b76-6272-4d95-8544-dfa7dd51d2f2",
+      "ts": "2026-04-21T03:07:56.845Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 26,
+      "max_turn_ts": "2026-04-21T20:46:49.609000Z"
+    },
+    {
+      "sid": "9bb01c4f-1acf-49ac-a25d-3806ade4bbe1",
+      "ts": "2026-04-22T07:25:33.743Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 216,
+      "max_turn_ts": "2026-04-23T11:18:58.519000Z"
+    },
+    {
+      "sid": "44332a39-47f9-4889-99a1-607301809344",
+      "ts": "2026-04-23T11:59:07.194Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 15,
+      "max_turn_ts": "2026-04-23T13:10:12.701000Z"
+    },
+    {
+      "sid": "9b86952d-45fe-460d-8f32-dd472c2102ec",
+      "ts": "2026-04-23T20:16:06.708Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1230,
+      "max_turn_ts": "2026-05-02T08:31:07.045000Z"
+    },
+    {
+      "sid": "13d0fdc0-0bd8-4b93-89d1-7299577fea7c",
+      "ts": "2026-04-24T23:43:12.599Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-24T23:44:13.937000Z"
+    },
+    {
+      "sid": "f0b72845-a747-4984-91b9-482d4d8dbd26",
+      "ts": "2026-04-25T00:24:09.482Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T00:25:07.113000Z"
+    },
+    {
+      "sid": "0ee2f8c1-5143-4453-929a-d370d5621d8d",
+      "ts": "2026-04-25T21:15:09.298Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T21:15:09.705000Z"
+    },
+    {
+      "sid": "a19d0c70-e241-4ed9-b247-378186bb1f30",
+      "ts": "2026-04-25T21:17:34.679Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T21:18:30.806000Z"
+    },
+    {
+      "sid": "0c12d895-fbc9-4a9b-92ab-05b926851dbe",
+      "ts": "2026-04-25T23:26:36.311Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-25T23:27:51.706000Z"
+    },
+    {
+      "sid": "4d223453-d055-4bc8-aaa0-f5fd3bb62ada",
+      "ts": "2026-04-26T20:22:24.288Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T20:23:59.278000Z"
+    },
+    {
+      "sid": "26565096-9870-46eb-a42c-cb7e12659d5c",
+      "ts": "2026-04-26T20:41:04.449Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T20:45:05.953000Z"
+    },
+    {
+      "sid": "e07630b5-9367-481b-aec5-2cc990e14a80",
+      "ts": "2026-04-26T20:45:04.188Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T20:46:52.828000Z"
+    },
+    {
+      "sid": "08a9199a-1e1a-4831-8afa-cc24fab93d2e",
+      "ts": "2026-04-26T20:49:04.279Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T20:55:20.622000Z"
+    },
+    {
+      "sid": "3f45cf00-8977-49a4-9d0b-3f5e03b59184",
+      "ts": "2026-04-26T20:53:04.272Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T20:57:10.627000Z"
+    },
+    {
+      "sid": "3906313f-1b91-40b9-a3c9-e0b19cbfcd5d",
+      "ts": "2026-04-26T21:00:04.267Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:02:32.141000Z"
+    },
+    {
+      "sid": "dd818e20-b844-4b4c-9835-a6c79eff7346",
+      "ts": "2026-04-26T21:03:04.151Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:06:15.162000Z"
+    },
+    {
+      "sid": "b70265b6-ecce-4fe8-a38f-2c22ffefa62f",
+      "ts": "2026-04-26T21:07:04.423Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:10:11.008000Z"
+    },
+    {
+      "sid": "7cd2e077-79ff-46a9-8384-9589e6ac1fbe",
+      "ts": "2026-04-26T21:11:04.361Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:15:00.256000Z"
+    },
+    {
+      "sid": "c6bbc238-25b5-41cc-b7cc-d70ff65b0253",
+      "ts": "2026-04-26T21:15:03.323Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:17:37.628000Z"
+    },
+    {
+      "sid": "9cc0e438-f3f4-4f3f-b1ca-65c0da469006",
+      "ts": "2026-04-26T21:19:04.105Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:20:54.201000Z"
+    },
+    {
+      "sid": "738f90bf-0034-4296-99cf-42a784a2ee05",
+      "ts": "2026-04-26T21:23:04.199Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:26:06.139000Z"
+    },
+    {
+      "sid": "b6d6ca68-a4fd-43c2-9bf4-3938f75a66dd",
+      "ts": "2026-04-26T21:27:04.658Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:29:46.694000Z"
+    },
+    {
+      "sid": "c2f945c6-c4af-40fe-bd69-0b740c009774",
+      "ts": "2026-04-26T21:30:04.242Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:32:43.060000Z"
+    },
+    {
+      "sid": "ffce3c0c-1a7d-44da-be3e-003905cf53bb",
+      "ts": "2026-04-26T21:33:04.359Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:39:52.424000Z"
+    },
+    {
+      "sid": "6fffb4b8-efa5-4092-b1ab-bff0a005c9c0",
+      "ts": "2026-04-26T21:41:03.976Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:44:15.197000Z"
+    },
+    {
+      "sid": "0bf55b69-3edf-4289-9be4-69be356fcd88",
+      "ts": "2026-04-26T21:45:04.171Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:47:45.134000Z"
+    },
+    {
+      "sid": "2d8ea623-0d42-4cf9-b4e7-91867ea52516",
+      "ts": "2026-04-26T21:49:04.206Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:52:52.550000Z"
+    },
+    {
+      "sid": "d1cd59eb-83c5-4f2c-95ef-6de57ffa8b6e",
+      "ts": "2026-04-26T21:53:04.684Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T21:55:44.536000Z"
+    },
+    {
+      "sid": "d5f57488-63b8-46eb-8b41-eda0c096b926",
+      "ts": "2026-04-26T21:57:03.683Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:01:34.188000Z"
+    },
+    {
+      "sid": "de937a32-02d0-410d-9742-10f458205602",
+      "ts": "2026-04-26T22:00:03.912Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:02:47.187000Z"
+    },
+    {
+      "sid": "c78b3149-cbb2-4a20-a359-5ee8456b8d03",
+      "ts": "2026-04-26T22:03:04.798Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:05:15.719000Z"
+    },
+    {
+      "sid": "2de3c12b-e92e-4156-8c47-a1924085259c",
+      "ts": "2026-04-26T22:07:03.800Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:10:00.939000Z"
+    },
+    {
+      "sid": "82c93d74-1e30-4eb5-919d-81e2160d7b9d",
+      "ts": "2026-04-26T22:11:04.289Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:13:58.661000Z"
+    },
+    {
+      "sid": "bf1d5874-3889-4041-b92f-b82fa19308eb",
+      "ts": "2026-04-26T22:15:04.078Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:16:48.554000Z"
+    },
+    {
+      "sid": "dc9f3d9d-3eb9-4307-8fa8-f288459aadd0",
+      "ts": "2026-04-26T22:19:08.283Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:21:38.693000Z"
+    },
+    {
+      "sid": "16060bad-a6e4-4c94-a081-dd31104e8684",
+      "ts": "2026-04-26T22:23:04.286Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:25:28.944000Z"
+    },
+    {
+      "sid": "71f986f0-1425-4dcb-8fa9-082eed44962e",
+      "ts": "2026-04-26T22:27:04.258Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:29:58.759000Z"
+    },
+    {
+      "sid": "b892fb18-1921-4e1c-8692-d5cb618aec1f",
+      "ts": "2026-04-26T22:30:03.998Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:31:49.587000Z"
+    },
+    {
+      "sid": "50a60547-03a3-4883-9e0f-7dc9429ca545",
+      "ts": "2026-04-26T22:33:04.585Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:37:10.472000Z"
+    },
+    {
+      "sid": "e813a17d-252d-40b1-a6cf-419c1e450676",
+      "ts": "2026-04-26T22:41:04.235Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:46:38.344000Z"
+    },
+    {
+      "sid": "79c8af15-1ef0-41ca-91b5-fae2d2bb8771",
+      "ts": "2026-04-26T22:45:04.733Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:47:39.593000Z"
+    },
+    {
+      "sid": "62408b5f-0741-4cd0-aacf-71604b6f9716",
+      "ts": "2026-04-26T22:49:04.123Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:52:37.178000Z"
+    },
+    {
+      "sid": "761b70b2-5dc5-4c9b-8613-04c6cb576273",
+      "ts": "2026-04-26T22:53:04.433Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T22:57:24.958000Z"
+    },
+    {
+      "sid": "338c941a-af9a-4f29-84c4-389167039372",
+      "ts": "2026-04-26T23:00:04.212Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:02:07.526000Z"
+    },
+    {
+      "sid": "b59a6a3a-776b-4db1-a73c-d2c02726b9d7",
+      "ts": "2026-04-26T23:03:04.819Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:07:04.755000Z"
+    },
+    {
+      "sid": "d3899b48-44b3-44af-9da6-5c8b29fc973f",
+      "ts": "2026-04-26T23:07:04.683Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:11:46.009000Z"
+    },
+    {
+      "sid": "cf95c2a4-6b53-4c6a-a97b-93db529375ad",
+      "ts": "2026-04-26T23:11:04.069Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:13:33.284000Z"
+    },
+    {
+      "sid": "bbb1f489-1d7b-4a4d-a789-bc561cffdac4",
+      "ts": "2026-04-26T23:15:05.377Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:17:51.580000Z"
+    },
+    {
+      "sid": "f06d9817-9c9e-4b52-86a8-195f521d1148",
+      "ts": "2026-04-26T23:19:04.467Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:19:30.183000Z"
+    },
+    {
+      "sid": "1577e431-6dfd-4411-8720-6ab458a5a12f",
+      "ts": "2026-04-26T23:23:04.189Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:25:34.861000Z"
+    },
+    {
+      "sid": "bcd2336f-8660-4410-b8c9-ade4095cc6bd",
+      "ts": "2026-04-26T23:27:04.157Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:30:17.205000Z"
+    },
+    {
+      "sid": "6f3d5141-6ff2-4e7e-9cee-87dffa4b994b",
+      "ts": "2026-04-26T23:30:04.212Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:31:20.418000Z"
+    },
+    {
+      "sid": "54463450-37b7-48e4-84ec-4c0f9c776498",
+      "ts": "2026-04-26T23:33:04.487Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:39:39.088000Z"
+    },
+    {
+      "sid": "e65ee93d-fa5a-4725-89f9-e4ea24ca4f58",
+      "ts": "2026-04-26T23:41:04.094Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:45:02.528000Z"
+    },
+    {
+      "sid": "26a53327-744f-4d8c-95f0-7ae48b6c87ef",
+      "ts": "2026-04-26T23:45:04.436Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:48:58.404000Z"
+    },
+    {
+      "sid": "2a8b7ad5-fa69-4935-b986-ffd1467ad7ce",
+      "ts": "2026-04-26T23:49:04.337Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:55:43.367000Z"
+    },
+    {
+      "sid": "df184385-a31c-48c7-9aca-92541e8b4182",
+      "ts": "2026-04-26T23:53:04.450Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:56:47Z"
+    },
+    {
+      "sid": "2eb544e2-f695-4e15-8dfc-303339b2336f",
+      "ts": "2026-04-26T23:57:04.224Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-26T23:59:26.810000Z"
+    },
+    {
+      "sid": "9f0d0c02-b44b-4786-9918-962155dfc2c1",
+      "ts": "2026-04-27T00:00:04.436Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:01:51.769000Z"
+    },
+    {
+      "sid": "10857997-58a5-4cd2-ba80-1b09fd3fe5a1",
+      "ts": "2026-04-27T00:03:04.256Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:06:16.374000Z"
+    },
+    {
+      "sid": "3a3fee20-4165-407f-b7f7-11da14541ae1",
+      "ts": "2026-04-27T00:07:04.448Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:09:41.165000Z"
+    },
+    {
+      "sid": "63781e7e-1043-469b-a948-9a103009bcd6",
+      "ts": "2026-04-27T00:11:04.499Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:13:28.712000Z"
+    },
+    {
+      "sid": "b91f7cb0-f19d-48c2-b41e-11c74cb291e0",
+      "ts": "2026-04-27T00:15:04.050Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:17:15.120000Z"
+    },
+    {
+      "sid": "463564af-d1cb-4921-b3be-6ce225fb89e3",
+      "ts": "2026-04-27T00:19:04.135Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:20:53.568000Z"
+    },
+    {
+      "sid": "982d7196-56ec-43a6-91af-b1cf514e1d94",
+      "ts": "2026-04-27T00:23:04.559Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:25:27.724000Z"
+    },
+    {
+      "sid": "2df772cb-89fd-4ad3-9d8c-4b7e323af1df",
+      "ts": "2026-04-27T00:27:03.928Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:32:28.223000Z"
+    },
+    {
+      "sid": "7c3e99de-ebb3-4e6e-9255-48aadb287f14",
+      "ts": "2026-04-27T00:30:04.068Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:31:50.912000Z"
+    },
+    {
+      "sid": "2f20683d-c2f4-432c-9c1b-928725efe84e",
+      "ts": "2026-04-27T00:33:04.248Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:39:18.388000Z"
+    },
+    {
+      "sid": "06f0708d-95ea-4270-929a-34d0b0a3ee5c",
+      "ts": "2026-04-27T00:41:04.604Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:43:28.479000Z"
+    },
+    {
+      "sid": "818c824f-957c-4820-a5b7-eaa6b4fc3e42",
+      "ts": "2026-04-27T00:45:04.713Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:47:19.061000Z"
+    },
+    {
+      "sid": "a340bd62-33c7-4091-88c7-c2549d6aa674",
+      "ts": "2026-04-27T00:49:04.260Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:54:19.963000Z"
+    },
+    {
+      "sid": "5c499118-8d91-45a7-bc28-2b7ca8ad0657",
+      "ts": "2026-04-27T00:53:04.375Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T00:58:51.302000Z"
+    },
+    {
+      "sid": "22c34470-5fe8-4f02-bcc0-126dcb7c2255",
+      "ts": "2026-04-27T01:00:04.728Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:04:33.176000Z"
+    },
+    {
+      "sid": "e6867609-b976-43ec-9da5-ddb6c22975f5",
+      "ts": "2026-04-27T01:03:04.312Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:06:15.098000Z"
+    },
+    {
+      "sid": "92ff333f-bbbb-48da-b3e2-42d4a406ca60",
+      "ts": "2026-04-27T01:07:04.210Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:10:09.819000Z"
+    },
+    {
+      "sid": "9cb63f92-4e4a-40b8-bd96-5c9c6b9bdc04",
+      "ts": "2026-04-27T01:11:04.041Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:14:31.737000Z"
+    },
+    {
+      "sid": "af98fb98-8c85-45e2-8058-1c3ea45a5c49",
+      "ts": "2026-04-27T01:15:04.078Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:19:17.123000Z"
+    },
+    {
+      "sid": "b0d7b5e9-305a-4f20-a859-cd0c2b6ce9c5",
+      "ts": "2026-04-27T01:19:03.972Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:22:42.487000Z"
+    },
+    {
+      "sid": "11fda1ba-df18-4644-a406-35b5385b9b15",
+      "ts": "2026-04-27T01:23:03.689Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:25:39.490000Z"
+    },
+    {
+      "sid": "0ba7a66e-c0f5-4be0-8b31-5668c6ebabb5",
+      "ts": "2026-04-27T01:27:03.731Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:29:32.620000Z"
+    },
+    {
+      "sid": "292215a7-7498-4d5d-8fdc-8f26e3383c4b",
+      "ts": "2026-04-27T01:30:04.952Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:34:07.311000Z"
+    },
+    {
+      "sid": "b823a2d0-1f7c-4b40-920e-ea73af6187f3",
+      "ts": "2026-04-27T01:33:04.608Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:42:15.819000Z"
+    },
+    {
+      "sid": "1843d38a-76c1-4826-aa4a-776edacc9250",
+      "ts": "2026-04-27T01:41:04.543Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:44:05.769000Z"
+    },
+    {
+      "sid": "6717cec0-1180-4578-8eab-9ff34d85870c",
+      "ts": "2026-04-27T01:45:03.833Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:46:55.289000Z"
+    },
+    {
+      "sid": "20b88e4e-d118-430a-bfab-150b2057c096",
+      "ts": "2026-04-27T01:49:04.463Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:55:05.700000Z"
+    },
+    {
+      "sid": "f7c45db8-73f9-4ca6-9047-fdcbf06e6ba1",
+      "ts": "2026-04-27T01:53:04.683Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T01:58:16.903000Z"
+    },
+    {
+      "sid": "fb74b4bb-42d3-425f-a1f8-f9d1b0de7c32",
+      "ts": "2026-04-27T01:57:04.139Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:00:55.765000Z"
+    },
+    {
+      "sid": "f9519af2-e3e1-43ed-8758-cdad9d36355d",
+      "ts": "2026-04-27T02:00:04.219Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:05:27.457000Z"
+    },
+    {
+      "sid": "df535baa-04f4-4a46-ae3c-d2fb345155fd",
+      "ts": "2026-04-27T02:03:03.936Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:05:43.767000Z"
+    },
+    {
+      "sid": "baf1a8a5-50b7-4373-9694-145188be2baf",
+      "ts": "2026-04-27T02:07:04.137Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:10:05.342000Z"
+    },
+    {
+      "sid": "a99ae027-4ff1-437e-b8a1-b22c87418d0e",
+      "ts": "2026-04-27T02:11:04.530Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:13:15.304000Z"
+    },
+    {
+      "sid": "b3cb5c95-ade5-4e62-a522-f355c5eadc8f",
+      "ts": "2026-04-27T02:15:03.614Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:17:57.501000Z"
+    },
+    {
+      "sid": "ac9dc873-6dba-4db5-87b0-cad903338838",
+      "ts": "2026-04-27T02:19:03.767Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:22:13.378000Z"
+    },
+    {
+      "sid": "83ddf1cb-c76f-4c27-85a0-453ff0050fc4",
+      "ts": "2026-04-27T02:23:04.624Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:28:04.687000Z"
+    },
+    {
+      "sid": "d30a3185-e59c-4b4c-b550-fdad5ca70308",
+      "ts": "2026-04-27T02:27:04.553Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:30:37.821000Z"
+    },
+    {
+      "sid": "ac73d519-3319-49b1-aa2f-9fb41fd4c729",
+      "ts": "2026-04-27T02:30:04.047Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:32:45.177000Z"
+    },
+    {
+      "sid": "3fd35685-315d-4561-a58b-d94eb81669f3",
+      "ts": "2026-04-27T02:33:04.467Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:38:13.767000Z"
+    },
+    {
+      "sid": "32212ce1-2854-4a66-ab23-185846d85c02",
+      "ts": "2026-04-27T02:41:03.698Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:41:04.449000Z"
+    },
+    {
+      "sid": "527f50fd-034f-4cc9-a858-84edcdaae6de",
+      "ts": "2026-04-27T02:45:04.780Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:45:04.748000Z"
+    },
+    {
+      "sid": "90804f67-f224-4244-b99e-629c224fab1f",
+      "ts": "2026-04-27T02:49:04.472Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:49:05.511000Z"
+    },
+    {
+      "sid": "b8b2ab56-5cb3-4cd8-a3e0-40503bbf49de",
+      "ts": "2026-04-27T02:53:03.732Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T02:53:04.114000Z"
+    },
+    {
+      "sid": "b0a80d51-94bf-440d-b669-3cb4b2d562e9",
+      "ts": "2026-04-27T03:00:04.731Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:00:04.657000Z"
+    },
+    {
+      "sid": "bd069871-9006-46ab-a259-2f77ca48a6b1",
+      "ts": "2026-04-27T03:03:04.554Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:03:04.935000Z"
+    },
+    {
+      "sid": "9cc06e86-46b6-4e29-988b-4f86adcaac14",
+      "ts": "2026-04-27T03:07:04.351Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:07:04.751000Z"
+    },
+    {
+      "sid": "a1ccd419-2520-45cf-b3b2-6a856fc941be",
+      "ts": "2026-04-27T03:11:04.206Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:11:04.662000Z"
+    },
+    {
+      "sid": "d6b49ee8-d8a8-40ef-ac77-25584f6da557",
+      "ts": "2026-04-27T03:15:03.924Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:15:04.453000Z"
+    },
+    {
+      "sid": "33be0b6f-5378-4896-b0fc-6ee26b9f5acd",
+      "ts": "2026-04-27T03:19:04.469Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:19:04.915000Z"
+    },
+    {
+      "sid": "c40d205d-8363-492a-8237-d177d7d1e285",
+      "ts": "2026-04-27T03:23:04.105Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:23:04.582000Z"
+    },
+    {
+      "sid": "6dd30e8e-8b24-4dfb-b95b-16ec991091ae",
+      "ts": "2026-04-27T03:27:03.817Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:27:04.280000Z"
+    },
+    {
+      "sid": "77b03491-6b47-4f06-a6ec-9ae398aeec6b",
+      "ts": "2026-04-27T03:33:04.166Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:33:04.624000Z"
+    },
+    {
+      "sid": "f948fca2-2288-471c-aa8b-e5b5e5da44cf",
+      "ts": "2026-04-27T03:57:04.417Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T03:57:04.874000Z"
+    },
+    {
+      "sid": "0ef9f1bc-5d44-4084-adf0-902c398fd6a1",
+      "ts": "2026-04-27T04:23:03.870Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:25:43.108000Z"
+    },
+    {
+      "sid": "076c680c-037e-4876-aa9c-a2c1868c79cb",
+      "ts": "2026-04-27T04:27:04.794Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:30:14.496000Z"
+    },
+    {
+      "sid": "268bb8a0-83f8-4334-a7b9-747e521d763a",
+      "ts": "2026-04-27T04:30:04.351Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:33:44.927000Z"
+    },
+    {
+      "sid": "aa0fb291-c44f-4645-8c06-b1dc9acd81f2",
+      "ts": "2026-04-27T04:33:04.626Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:36:39.005000Z"
+    },
+    {
+      "sid": "acfb8a45-5e75-41f2-b9e6-37bf4668495e",
+      "ts": "2026-04-27T04:41:03.702Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:45:20.076000Z"
+    },
+    {
+      "sid": "e32eb641-10c3-43c4-bd74-9e2a7b682e21",
+      "ts": "2026-04-27T04:45:03.660Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:47:19.294000Z"
+    },
+    {
+      "sid": "5a4fbb5b-029a-4d07-85bd-162d61d464e4",
+      "ts": "2026-04-27T04:49:04.638Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:54:19.966000Z"
+    },
+    {
+      "sid": "f8e6d598-f3fa-4b27-ad24-b4ec0eaa2060",
+      "ts": "2026-04-27T04:53:04.779Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T04:58:07.442000Z"
+    },
+    {
+      "sid": "55566f0f-bab2-4cbf-b617-613a3b1d0aa2",
+      "ts": "2026-04-27T05:00:04.051Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:06:58.668000Z"
+    },
+    {
+      "sid": "c19519bb-3c3e-4bc9-ba8d-76dce2b12eb8",
+      "ts": "2026-04-27T05:03:04.164Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:05:13.096000Z"
+    },
+    {
+      "sid": "7e9f8c56-e30b-409e-8eaa-846f31793ee8",
+      "ts": "2026-04-27T05:07:03.827Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:12:26.508000Z"
+    },
+    {
+      "sid": "5a1b224c-edcd-4350-9e32-1abb40ca3080",
+      "ts": "2026-04-27T05:11:03.850Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:16:37.805000Z"
+    },
+    {
+      "sid": "2edceffe-6ca4-453b-ac11-9a837d1cc414",
+      "ts": "2026-04-27T05:15:04.532Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:17:52.244000Z"
+    },
+    {
+      "sid": "8f356412-5c62-40b4-ace9-0bf7d0f365ed",
+      "ts": "2026-04-27T05:19:04.540Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:22:23.978000Z"
+    },
+    {
+      "sid": "a020b2ad-1e29-4755-abb5-e5c72824fdcb",
+      "ts": "2026-04-27T05:23:04.396Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:27:08.728000Z"
+    },
+    {
+      "sid": "aba74cdd-dd80-47ce-9846-2f19a367449b",
+      "ts": "2026-04-27T05:27:04.376Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:30:17.124000Z"
+    },
+    {
+      "sid": "af430654-9f16-4b4b-85f3-e7a0dfbe727a",
+      "ts": "2026-04-27T05:30:04.113Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:34:43.903000Z"
+    },
+    {
+      "sid": "016ece46-a454-437b-b3e5-197ddc8a2cfc",
+      "ts": "2026-04-27T05:33:04.356Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:38:38.905000Z"
+    },
+    {
+      "sid": "91a1f4ac-5f34-4bd4-8aa8-47af1e1adb40",
+      "ts": "2026-04-27T05:41:04.371Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:43:56.257000Z"
+    },
+    {
+      "sid": "ae93c275-e891-4739-a6db-3d31b9625193",
+      "ts": "2026-04-27T05:45:04.385Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:47:10.542000Z"
+    },
+    {
+      "sid": "da9f898c-acef-4430-9b45-5247c52513dd",
+      "ts": "2026-04-27T05:49:04.253Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:52:22.969000Z"
+    },
+    {
+      "sid": "702eb73c-6861-4346-908c-354fe1b9a936",
+      "ts": "2026-04-27T05:53:04.857Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:59:23.869000Z"
+    },
+    {
+      "sid": "7125587a-ce60-4728-b867-db55af86458f",
+      "ts": "2026-04-27T05:57:04.642Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T05:59:55.436000Z"
+    },
+    {
+      "sid": "fc6f7d77-0089-4bd7-a5bf-6948ab352eda",
+      "ts": "2026-04-27T06:00:05.005Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:04:46.830000Z"
+    },
+    {
+      "sid": "fbb5aeef-a76a-4f95-a91e-d70bc8f222ba",
+      "ts": "2026-04-27T06:03:04.741Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:05:47.658000Z"
+    },
+    {
+      "sid": "0712e7e6-55cf-4935-965c-eaccc4cdae7c",
+      "ts": "2026-04-27T06:07:03.955Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:10:01.053000Z"
+    },
+    {
+      "sid": "00d7478b-dd36-42dd-a629-517963cd10d8",
+      "ts": "2026-04-27T06:11:04.440Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:17:54.510000Z"
+    },
+    {
+      "sid": "efaa7839-ee41-4ec8-a6c5-29493f491d39",
+      "ts": "2026-04-27T06:15:04.502Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:17:21.758000Z"
+    },
+    {
+      "sid": "2dae4b06-850d-4d8c-b23d-1c253cc0a5d5",
+      "ts": "2026-04-27T06:19:03.893Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:23:23.761000Z"
+    },
+    {
+      "sid": "407dfbd1-021d-42c6-9313-40b582519c7e",
+      "ts": "2026-04-27T06:23:03.820Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:27:30.948000Z"
+    },
+    {
+      "sid": "39903e88-41c3-437f-86d2-cf3002dfcdfd",
+      "ts": "2026-04-27T06:27:04.267Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:29:48.804000Z"
+    },
+    {
+      "sid": "0cc35e5e-f5e7-432c-8174-303ec5d9dcc9",
+      "ts": "2026-04-27T06:30:04.165Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:32:15.744000Z"
+    },
+    {
+      "sid": "23e23530-6da1-4d44-9f73-3132075ed760",
+      "ts": "2026-04-27T06:33:04.071Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:39:06.499000Z"
+    },
+    {
+      "sid": "e529f11d-742d-43c7-9307-e18fad87d6f5",
+      "ts": "2026-04-27T06:41:04.681Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:44:46.028000Z"
+    },
+    {
+      "sid": "bc73f99a-a08d-454a-9ca0-1cf4adb1bb1a",
+      "ts": "2026-04-27T06:45:04.373Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:48:28.915000Z"
+    },
+    {
+      "sid": "2a80a21e-23fc-4f42-bfbf-058d40564433",
+      "ts": "2026-04-27T06:49:04.227Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T06:53:06.443000Z"
+    },
+    {
+      "sid": "1d5c2e9d-2b4e-498d-8ef8-85e9747cf753",
+      "ts": "2026-04-27T06:53:04.687Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:02:06.654000Z"
+    },
+    {
+      "sid": "13954006-2587-419a-a83c-f85d7dce493b",
+      "ts": "2026-04-27T07:00:05.680Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:01:58.008000Z"
+    },
+    {
+      "sid": "5c3727fe-62ee-4f16-8ea8-38638ed31de5",
+      "ts": "2026-04-27T07:03:04.005Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:04:11.535000Z"
+    },
+    {
+      "sid": "dc629d7d-17e1-482f-b870-983601dde969",
+      "ts": "2026-04-27T07:07:04.710Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:07:05.324000Z"
+    },
+    {
+      "sid": "94c7518d-f9a2-4beb-b9e1-dc7f43ff0009",
+      "ts": "2026-04-27T07:11:04.592Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:11:05.075000Z"
+    },
+    {
+      "sid": "f213fb07-1061-4cdb-9023-5eeeeede2e06",
+      "ts": "2026-04-27T07:15:04.532Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:15:04.467000Z"
+    },
+    {
+      "sid": "d88810fc-c3e3-406d-8c8d-6bd950b73a27",
+      "ts": "2026-04-27T07:19:04.350Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:19:04.791000Z"
+    },
+    {
+      "sid": "e02785a5-02d4-4468-a7b7-ce92dd670a2c",
+      "ts": "2026-04-27T07:23:04.627Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T08:23:05.185000Z"
+    },
+    {
+      "sid": "aa5fef4e-07d7-486f-b837-97e67ce23c02",
+      "ts": "2026-04-27T07:27:04.522Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:27:04.926000Z"
+    },
+    {
+      "sid": "c844a788-4373-4e3f-beed-cb5f488cbb19",
+      "ts": "2026-04-27T07:30:04.373Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:30:04.788000Z"
+    },
+    {
+      "sid": "201b9f5e-8605-40c1-868a-408d7b3c4d4f",
+      "ts": "2026-04-27T07:33:04.456Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:33:04.858000Z"
+    },
+    {
+      "sid": "afccaca6-ae10-4d72-8a7e-399a6a47cee2",
+      "ts": "2026-04-27T07:41:04.159Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:41:04.647000Z"
+    },
+    {
+      "sid": "34405ddf-ba70-40b1-81de-e24d6509a0b7",
+      "ts": "2026-04-27T07:45:04.011Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T08:45:05.174000Z"
+    },
+    {
+      "sid": "704a52ed-9d9b-4f62-b13c-399a127ee8cb",
+      "ts": "2026-04-27T07:49:03.815Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T08:49:04.956000Z"
+    },
+    {
+      "sid": "f35eddb1-67ad-496c-87f8-ee8b4dd3426d",
+      "ts": "2026-04-27T07:53:04.570Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:53:04.999000Z"
+    },
+    {
+      "sid": "c038fdff-0eb6-4525-a613-9ab420191bd3",
+      "ts": "2026-04-27T07:57:04.257Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T07:57:04.708000Z"
+    },
+    {
+      "sid": "2ffcc47b-8c8e-4d2b-a7ae-ceb33731c9b4",
+      "ts": "2026-04-27T08:03:04.339Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:03:04.847000Z"
+    },
+    {
+      "sid": "1311f03a-a1cf-435d-bac8-e7b35f38bddd",
+      "ts": "2026-04-27T09:23:04.744Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:27:07.719000Z"
+    },
+    {
+      "sid": "55d4008b-507f-4fe4-989f-6510ff5fab03",
+      "ts": "2026-04-27T09:27:04.188Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:29:12.049000Z"
+    },
+    {
+      "sid": "1027ab4f-c3f8-4717-b2c2-85dc1844d291",
+      "ts": "2026-04-27T09:30:04.407Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:33:50.955000Z"
+    },
+    {
+      "sid": "d917c992-d468-4f14-a75d-6911f6108c45",
+      "ts": "2026-04-27T09:33:04.216Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:39:58.111000Z"
+    },
+    {
+      "sid": "f9a5ebc8-234d-45e5-9a15-07d7ae9035e8",
+      "ts": "2026-04-27T09:41:04.346Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:43:49.686000Z"
+    },
+    {
+      "sid": "76e949ea-8177-40be-b4f8-bfd00fc5bd1c",
+      "ts": "2026-04-27T09:45:04.502Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:47:09.941000Z"
+    },
+    {
+      "sid": "bc586239-1228-47ef-8425-f2a972039e5d",
+      "ts": "2026-04-27T09:49:04.509Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:53:32.513000Z"
+    },
+    {
+      "sid": "f3d57517-d160-4bec-8dbb-dbcdff65aea7",
+      "ts": "2026-04-27T09:53:04.064Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:56:25.029000Z"
+    },
+    {
+      "sid": "76daacca-02fe-4fb9-b8d8-b2d224f88a40",
+      "ts": "2026-04-27T09:57:04.595Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T09:59:45.281000Z"
+    },
+    {
+      "sid": "2d0c9f45-67d7-4f99-a1b4-f1f09e51d225",
+      "ts": "2026-04-27T10:00:04.547Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:02:46.517000Z"
+    },
+    {
+      "sid": "42f2ddf2-52ce-4302-b16f-43a3b97f952f",
+      "ts": "2026-04-27T10:03:04.903Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:05:40.997000Z"
+    },
+    {
+      "sid": "e6462c33-dba0-40ab-8cc8-07b1e3c92f48",
+      "ts": "2026-04-27T10:07:04.368Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:10:10.349000Z"
+    },
+    {
+      "sid": "c5f77095-7639-4d9b-806d-bbbf6a33793e",
+      "ts": "2026-04-27T10:11:05.017Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:14:37.030000Z"
+    },
+    {
+      "sid": "749566a9-5f6d-4620-a7af-cad9febd97fd",
+      "ts": "2026-04-27T10:15:04.291Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:17:15.664000Z"
+    },
+    {
+      "sid": "6e2ab9c9-a111-4b2b-aece-ab0213ecfdea",
+      "ts": "2026-04-27T10:19:03.795Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:22:16.929000Z"
+    },
+    {
+      "sid": "87376de2-36c6-44d1-be81-464294e8332f",
+      "ts": "2026-04-27T10:23:04.712Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:27:13.259000Z"
+    },
+    {
+      "sid": "12e7facc-9cbf-43dd-b8d9-d55d74f10d75",
+      "ts": "2026-04-27T10:27:04.470Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:29:14.982000Z"
+    },
+    {
+      "sid": "72a5ef28-9103-47e0-b164-5321641d8121",
+      "ts": "2026-04-27T10:30:04.556Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:32:41.317000Z"
+    },
+    {
+      "sid": "96d937f0-7bea-4e60-ba65-8c0309c6b7f5",
+      "ts": "2026-04-27T10:33:04.774Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:35:44.235000Z"
+    },
+    {
+      "sid": "ec7597cd-cdab-4b4c-a0d3-230cf44b86dd",
+      "ts": "2026-04-27T10:41:04.251Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:44:19.637000Z"
+    },
+    {
+      "sid": "dd8698a1-d497-44ba-b87e-2ae0a83cca37",
+      "ts": "2026-04-27T10:45:03.876Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:47:45.026000Z"
+    },
+    {
+      "sid": "cbfba3aa-6ac6-45cf-ad8a-af0fb57ff75f",
+      "ts": "2026-04-27T10:49:04.453Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T10:53:17.922000Z"
+    },
+    {
+      "sid": "0728d6c1-7834-4ffe-86b2-eced23a8628b",
+      "ts": "2026-04-27T10:53:04.506Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:50:29.318000Z"
+    },
+    {
+      "sid": "8c976a98-6165-4b9d-a704-b954cc16c55a",
+      "ts": "2026-04-27T11:00:04.442Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:02:31.469000Z"
+    },
+    {
+      "sid": "4a12a840-6499-4735-a40c-a48a8554d714",
+      "ts": "2026-04-27T11:03:04.726Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:05:10.151000Z"
+    },
+    {
+      "sid": "156d66c3-d1ef-4684-a7a4-0db86144d439",
+      "ts": "2026-04-27T11:07:04.505Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:10:52.921000Z"
+    },
+    {
+      "sid": "e21830d7-4262-48d5-9982-125363b75e06",
+      "ts": "2026-04-27T11:11:04.541Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:17:32.184000Z"
+    },
+    {
+      "sid": "00f752e8-c8e9-483b-b0e5-8e22da32bb8b",
+      "ts": "2026-04-27T11:15:04.420Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:18:51.601000Z"
+    },
+    {
+      "sid": "d156803c-2d58-459f-9ed3-e820e5c86199",
+      "ts": "2026-04-27T11:19:03.944Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:21:39.045000Z"
+    },
+    {
+      "sid": "0a5d0d16-d1c9-4cdb-896b-24236a25222b",
+      "ts": "2026-04-27T11:23:04.469Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:27:27.260000Z"
+    },
+    {
+      "sid": "ee6e929a-d4a4-4b02-a2ab-8a05c1dab6a2",
+      "ts": "2026-04-27T11:27:04.438Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:29:44.626000Z"
+    },
+    {
+      "sid": "2bf71018-f9e9-4b39-ba3a-742c3c08b3b3",
+      "ts": "2026-04-27T11:30:04.359Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:34:21.544000Z"
+    },
+    {
+      "sid": "f35ce93e-6e82-402e-9704-a309ad96d8ae",
+      "ts": "2026-04-27T11:33:04.299Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:37:46.299000Z"
+    },
+    {
+      "sid": "a79cedec-7e05-4527-a596-a50521eae3fd",
+      "ts": "2026-04-27T11:41:04.576Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:43:34.237000Z"
+    },
+    {
+      "sid": "206f5d94-ec05-4c60-b877-8b85ef8a267e",
+      "ts": "2026-04-27T11:45:04.522Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:47:19.940000Z"
+    },
+    {
+      "sid": "6dd28222-bc86-440f-b7d8-88788da7d00f",
+      "ts": "2026-04-27T11:49:04.284Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:51:31.827000Z"
+    },
+    {
+      "sid": "76095170-7414-4c30-84e5-04b07b34376e",
+      "ts": "2026-04-27T11:53:04.165Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:57:37.107000Z"
+    },
+    {
+      "sid": "4d491656-b63b-4762-a229-56c60db039c5",
+      "ts": "2026-04-27T11:57:04.388Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T11:59:56.042000Z"
+    },
+    {
+      "sid": "94c0a25e-e38b-4d74-9a4f-a9bc0f1d3ea4",
+      "ts": "2026-04-27T12:00:04.809Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T12:03:09.399000Z"
+    },
+    {
+      "sid": "659a9773-eaa7-41c1-aada-8ef7fb6a299e",
+      "ts": "2026-04-27T12:03:04.430Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T12:06:10.653000Z"
+    },
+    {
+      "sid": "64ac20bf-abda-49ea-b8f4-6601d224a7ef",
+      "ts": "2026-04-27T12:07:04.010Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T12:09:48.806000Z"
+    },
+    {
+      "sid": "3800911e-d810-4840-9cac-a0874adfac52",
+      "ts": "2026-04-27T12:11:04.628Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T12:14:40.136000Z"
+    },
+    {
+      "sid": "a2f35283-f2d9-4603-b966-0a0e958c2115",
+      "ts": "2026-04-27T12:15:04.736Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T12:16:14.503000Z"
+    },
+    {
+      "sid": "db2c5649-23fd-41ad-8461-ecc931c1ca39",
+      "ts": "2026-04-27T12:19:05.431Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:19:04.936000Z"
+    },
+    {
+      "sid": "d9df3c17-f863-4f92-b995-a1d9c17c375a",
+      "ts": "2026-04-27T12:23:04.443Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:23:05.443000Z"
+    },
+    {
+      "sid": "74552f16-855e-436a-9c8d-869f9a332b9f",
+      "ts": "2026-04-27T12:27:04.146Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:27:04.511000Z"
+    },
+    {
+      "sid": "cbf85ee9-5126-40bd-9c76-f4d947e41c40",
+      "ts": "2026-04-27T12:30:04.147Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:30:05Z"
+    },
+    {
+      "sid": "efe02280-8aa8-4f8e-b440-2af79048e897",
+      "ts": "2026-04-27T12:33:04.052Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:33:05.096000Z"
+    },
+    {
+      "sid": "e102e65b-3455-4bc0-a8d8-e57f39b6cab5",
+      "ts": "2026-04-27T12:41:04.890Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:41:05.208000Z"
+    },
+    {
+      "sid": "b7986450-b246-4c7c-b0c0-b29e70dfc2df",
+      "ts": "2026-04-27T12:45:04.428Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:45:05.416000Z"
+    },
+    {
+      "sid": "fe0b837a-3b3f-4d5a-b834-353e958cfccf",
+      "ts": "2026-04-27T12:49:04.378Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:49:05.278000Z"
+    },
+    {
+      "sid": "e8dc548e-9b9a-4d1a-9803-9694f68c0912",
+      "ts": "2026-04-27T12:53:04.353Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:53:05.088000Z"
+    },
+    {
+      "sid": "f0e8b2ac-dfe2-4313-b07d-9f676e8b47ad",
+      "ts": "2026-04-27T13:03:04.839Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:03:05.308000Z"
+    },
+    {
+      "sid": "dea0e012-f25d-4710-b11a-587133fca213",
+      "ts": "2026-04-27T13:07:04.810Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:07:05.533000Z"
+    },
+    {
+      "sid": "f2dcacbc-45c3-412e-8126-db79cdb41385",
+      "ts": "2026-04-27T13:11:04.266Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:11:04.718000Z"
+    },
+    {
+      "sid": "7976333d-8ab2-4b52-a50a-d85f5ba5d091",
+      "ts": "2026-04-27T13:15:04.418Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:15:06.763000Z"
+    },
+    {
+      "sid": "df8b6849-9a24-42a8-9b61-120280c9cb29",
+      "ts": "2026-04-27T13:57:04.620Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T13:57:05.067000Z"
+    },
+    {
+      "sid": "5f2b970e-5b1c-4bb8-b672-a6e2c44360fe",
+      "ts": "2026-04-27T14:23:03.229Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:27:43.998000Z"
+    },
+    {
+      "sid": "61154c40-97f6-4721-8f68-c02bb320f9ea",
+      "ts": "2026-04-27T14:27:04.737Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:30:44.544000Z"
+    },
+    {
+      "sid": "ba8011f7-3fe8-4ed0-a8a7-618c1f4eec23",
+      "ts": "2026-04-27T14:30:04.758Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:31:56.331000Z"
+    },
+    {
+      "sid": "360a0951-484f-49e3-baf5-56b4586d7147",
+      "ts": "2026-04-27T14:33:04.342Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:38:44.697000Z"
+    },
+    {
+      "sid": "9a471b19-1df7-4328-b0e0-2cab5e31e752",
+      "ts": "2026-04-27T14:41:05.224Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:45:25.010000Z"
+    },
+    {
+      "sid": "03aaa9d9-6ee4-471a-a71f-6c67e78d963e",
+      "ts": "2026-04-27T14:45:04.255Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:50:13.893000Z"
+    },
+    {
+      "sid": "4e39b3c2-d6d3-4b84-8144-3ef3bb06db5f",
+      "ts": "2026-04-27T14:49:04.126Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:53:22.591000Z"
+    },
+    {
+      "sid": "729b9b43-e9f9-497a-a514-0560685ffe77",
+      "ts": "2026-04-27T14:53:04.329Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T14:58:06.951000Z"
+    },
+    {
+      "sid": "4878c085-14f6-489a-a1a5-bd2b9af41bc9",
+      "ts": "2026-04-27T15:00:04.581Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:04:48.166000Z"
+    },
+    {
+      "sid": "74de0142-f869-4afc-bd24-6b25f80ce69a",
+      "ts": "2026-04-27T15:03:04.740Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:06:37.681000Z"
+    },
+    {
+      "sid": "85ead0e0-9d0d-4c64-ac3a-b31d4ec7eae4",
+      "ts": "2026-04-27T15:07:04.106Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:11:07.185000Z"
+    },
+    {
+      "sid": "fb904532-a153-481a-aad2-2bb415b6c657",
+      "ts": "2026-04-27T15:11:04.106Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:14:48.819000Z"
+    },
+    {
+      "sid": "c3375076-d686-453b-aa01-e204d2982c2d",
+      "ts": "2026-04-27T15:15:05.575Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:17:24.623000Z"
+    },
+    {
+      "sid": "569d6708-401a-446e-a97c-1541363ba3fa",
+      "ts": "2026-04-27T15:19:04.208Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:21:39.172000Z"
+    },
+    {
+      "sid": "bae1ce0a-0df5-47a7-81f4-a1de97a2f357",
+      "ts": "2026-04-27T15:23:05.104Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:26:30.716000Z"
+    },
+    {
+      "sid": "e98b1ce5-6f8d-4ce5-bf2c-fcbbf9f5f7ec",
+      "ts": "2026-04-27T15:27:04.453Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:29:31.790000Z"
+    },
+    {
+      "sid": "cfe8e28a-4196-4f5b-a09d-ffc842f3ad19",
+      "ts": "2026-04-27T15:30:07.987Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:32:56.175000Z"
+    },
+    {
+      "sid": "85351103-e09e-4876-9e38-a7d38fde0963",
+      "ts": "2026-04-27T15:33:04.617Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:39:52.687000Z"
+    },
+    {
+      "sid": "70efc29b-e879-4d90-8523-7abb9712ee30",
+      "ts": "2026-04-27T15:41:03.949Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:44:54.201000Z"
+    },
+    {
+      "sid": "e0a88b1f-1ba1-4efc-b8f6-9899350969ea",
+      "ts": "2026-04-27T15:45:04.732Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:48:29.150000Z"
+    },
+    {
+      "sid": "4f4320b4-f7c7-478b-a5e4-0e1fb270173c",
+      "ts": "2026-04-27T15:49:04.473Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T15:54:22.447000Z"
+    },
+    {
+      "sid": "532638f7-d92e-4afb-a229-4283458c676e",
+      "ts": "2026-04-27T15:53:04.856Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:00:03.892000Z"
+    },
+    {
+      "sid": "715abb7a-0d02-43c3-9f79-48591e45897d",
+      "ts": "2026-04-27T15:57:04.547Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:00:27.174000Z"
+    },
+    {
+      "sid": "c83f60d2-ecda-4ccc-a43e-63ced01f9c67",
+      "ts": "2026-04-27T16:00:06.532Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:04:30.730000Z"
+    },
+    {
+      "sid": "29339ac9-b3ba-49fa-b29d-2945000726c6",
+      "ts": "2026-04-27T16:03:05.786Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:05:48.830000Z"
+    },
+    {
+      "sid": "c345b2d3-0cc4-49e3-b89e-820ee3b41a40",
+      "ts": "2026-04-27T16:07:04.302Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:09:46.130000Z"
+    },
+    {
+      "sid": "28dcc0ce-088b-4a2d-af90-1003b333350c",
+      "ts": "2026-04-27T16:11:04.786Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:13:03.202000Z"
+    },
+    {
+      "sid": "91cde66f-be47-4ad1-8615-56de4ab6b57d",
+      "ts": "2026-04-27T16:15:04.728Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:17:17.407000Z"
+    },
+    {
+      "sid": "11b0be07-f6aa-4d98-b8eb-bf34be77735e",
+      "ts": "2026-04-27T16:19:04.715Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:20:55.324000Z"
+    },
+    {
+      "sid": "8edf034f-97f7-47e5-9957-052bf1cde37e",
+      "ts": "2026-04-27T16:23:05.549Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:25:48.337000Z"
+    },
+    {
+      "sid": "a299de4c-6d1d-494d-b447-81f9d6501399",
+      "ts": "2026-04-27T16:27:06.260Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:30:44.827000Z"
+    },
+    {
+      "sid": "ac5a7949-f1de-4b31-90ce-4b65972111d1",
+      "ts": "2026-04-27T16:30:04.544Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:33:04.434000Z"
+    },
+    {
+      "sid": "d22dbe5d-3823-48a2-920a-0cc384b1806b",
+      "ts": "2026-04-27T16:33:04.325Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:42:27.731000Z"
+    },
+    {
+      "sid": "c1933228-7ee8-4f19-b3c9-578a6f39298f",
+      "ts": "2026-04-27T16:41:08.057Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:46:00.877000Z"
+    },
+    {
+      "sid": "7b386d87-2443-41f4-9825-1af02d6c5fc8",
+      "ts": "2026-04-27T16:45:04.046Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:48:38.979000Z"
+    },
+    {
+      "sid": "9a73057d-dc98-4c50-b61e-60a544bde43b",
+      "ts": "2026-04-27T16:49:04.253Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:55:05.519000Z"
+    },
+    {
+      "sid": "623cbacc-7771-4034-9e01-67af2663ea5f",
+      "ts": "2026-04-27T16:53:04.331Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T16:56:47.226000Z"
+    },
+    {
+      "sid": "53e92468-0515-437b-a5d4-e5ddc53a6349",
+      "ts": "2026-04-27T17:00:05.150Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:04:54.379000Z"
+    },
+    {
+      "sid": "c611a7d3-406d-402b-b84a-a10f48add364",
+      "ts": "2026-04-27T17:03:04.831Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:06:15.446000Z"
+    },
+    {
+      "sid": "9e2c2d4d-10e8-442c-bc4a-4101a6d99f90",
+      "ts": "2026-04-27T17:07:04.829Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:10:33.061000Z"
+    },
+    {
+      "sid": "fc0ecd8c-64e0-436f-9e10-fa29d26dcb6a",
+      "ts": "2026-04-27T17:11:04.522Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:13:48.763000Z"
+    },
+    {
+      "sid": "1807f1b4-ad13-4239-9735-cf9b67c0dc80",
+      "ts": "2026-04-27T17:15:04.104Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:17:33.116000Z"
+    },
+    {
+      "sid": "1d25407e-4434-49e2-8096-eba9400a693c",
+      "ts": "2026-04-27T17:19:07.626Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:22:48.472000Z"
+    },
+    {
+      "sid": "2b08bdd1-4c73-4cd8-a529-5d6faf362246",
+      "ts": "2026-04-27T17:23:04.765Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:25:54.664000Z"
+    },
+    {
+      "sid": "8861b616-f638-416b-b3e8-3834466abebd",
+      "ts": "2026-04-27T17:27:04.963Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:28:53.166000Z"
+    },
+    {
+      "sid": "26bd69d1-764a-49af-a35e-9a9bb0c7c44a",
+      "ts": "2026-04-27T17:30:04.494Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:33:57.646000Z"
+    },
+    {
+      "sid": "21db23a6-4300-40d9-b064-fca1fca79161",
+      "ts": "2026-04-27T17:33:04.372Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:41:51.762000Z"
+    },
+    {
+      "sid": "d419408e-f35e-4b30-9a28-8d9ef0800fda",
+      "ts": "2026-04-27T17:41:03.778Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:41:04.673000Z"
+    },
+    {
+      "sid": "cba71fb1-dcec-480a-be1d-7737c0bc0a3b",
+      "ts": "2026-04-27T17:45:04.300Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:45:04.519000Z"
+    },
+    {
+      "sid": "619cedf4-a430-4da3-a5c9-b12c5d73413c",
+      "ts": "2026-04-27T17:49:04.332Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:49:04.243000Z"
+    },
+    {
+      "sid": "96edef0b-0e02-42e6-8d59-9a4b8031a156",
+      "ts": "2026-04-27T17:53:04.227Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:53:04.640000Z"
+    },
+    {
+      "sid": "dd59d167-340a-4d19-ab74-85b7d7ca60cf",
+      "ts": "2026-04-27T17:57:04.223Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T17:57:04.630000Z"
+    },
+    {
+      "sid": "c3123ac8-10d8-4408-922b-a6ae24b8dca5",
+      "ts": "2026-04-27T18:00:04.224Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:00:04.719000Z"
+    },
+    {
+      "sid": "c380e509-4a94-42ab-a7ed-c1f0066168fd",
+      "ts": "2026-04-27T18:03:05.683Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:03:06.126000Z"
+    },
+    {
+      "sid": "e4450aac-c25c-4483-855a-b37b18bc5e0f",
+      "ts": "2026-04-27T18:07:04.694Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:07:04.509000Z"
+    },
+    {
+      "sid": "9e77aa39-4842-457b-8fd5-8ccfd64aa0a6",
+      "ts": "2026-04-27T18:11:04.190Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:11:04.654000Z"
+    },
+    {
+      "sid": "ac5d9f9b-ddd5-47fb-8ac1-f191ec9a6b0e",
+      "ts": "2026-04-27T18:15:04.184Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:15:04.740000Z"
+    },
+    {
+      "sid": "de98634e-7b74-4f1a-a9ee-42d3cb754e99",
+      "ts": "2026-04-27T18:19:04.074Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:19:04.557000Z"
+    },
+    {
+      "sid": "223b1d68-d4bd-49ac-a227-f6b000a0fb99",
+      "ts": "2026-04-27T18:23:04.682Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:23:05.129000Z"
+    },
+    {
+      "sid": "cb3cd23e-760d-4b26-beb5-a89c95e2aeee",
+      "ts": "2026-04-27T18:27:04.610Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:27:05.686000Z"
+    },
+    {
+      "sid": "1ca31fef-1331-4933-b1e5-611bdb535324",
+      "ts": "2026-04-27T18:33:04.567Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T18:33:05.007000Z"
+    },
+    {
+      "sid": "9501f7b7-4b3f-4d39-acfb-99c8d5e6e36a",
+      "ts": "2026-04-27T19:23:03.969Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:26:20.701000Z"
+    },
+    {
+      "sid": "30d0e38d-b08b-4aeb-a808-7f630ec9737d",
+      "ts": "2026-04-27T19:27:04.154Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:30:24.651000Z"
+    },
+    {
+      "sid": "d06bdcbf-e901-4930-ad13-0c821c199061",
+      "ts": "2026-04-27T19:30:04.530Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:32:06.341000Z"
+    },
+    {
+      "sid": "a5620f0d-c6b8-4643-a306-3bcc99504ef2",
+      "ts": "2026-04-27T19:33:04.682Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:39:19.554000Z"
+    },
+    {
+      "sid": "f971cf0b-ce61-4998-941c-b94d3cf332de",
+      "ts": "2026-04-27T19:41:04.952Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:45:46.662000Z"
+    },
+    {
+      "sid": "314882b7-d0e6-4138-86d9-35f9f68877f0",
+      "ts": "2026-04-27T19:45:05.253Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:49:06.080000Z"
+    },
+    {
+      "sid": "2e0bd9f3-b86a-492d-bbb3-6735c77ce645",
+      "ts": "2026-04-27T19:49:04.505Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:56:38.742000Z"
+    },
+    {
+      "sid": "487e1848-a356-4ad5-bd58-a997b65ff406",
+      "ts": "2026-04-27T19:53:04.473Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T19:59:18.981000Z"
+    },
+    {
+      "sid": "f9dafb74-a0c7-4243-99c4-3586eb2afebe",
+      "ts": "2026-04-27T19:57:04.099Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:00:36.352000Z"
+    },
+    {
+      "sid": "0c1b716a-9241-41d7-809e-67af58c7c69c",
+      "ts": "2026-04-27T20:00:04.397Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:07:00.354000Z"
+    },
+    {
+      "sid": "bb83c86c-62aa-4053-a4bc-9adda90f6563",
+      "ts": "2026-04-27T20:03:04.491Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:05:56.663000Z"
+    },
+    {
+      "sid": "140b5c40-041f-41f2-a975-0178d9f27abc",
+      "ts": "2026-04-27T20:07:03.983Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:11:16.313000Z"
+    },
+    {
+      "sid": "fca6115c-31a0-4b69-8d52-76e14789db21",
+      "ts": "2026-04-27T20:11:04.748Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:13:26.899000Z"
+    },
+    {
+      "sid": "a0dc6a1f-952b-45b5-bd69-d6e98e70f873",
+      "ts": "2026-04-27T20:15:04.681Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:17:34.135000Z"
+    },
+    {
+      "sid": "ea6dfe36-3db5-4f8b-b122-4b60e66d01a9",
+      "ts": "2026-04-27T20:19:04.521Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:21:33.798000Z"
+    },
+    {
+      "sid": "1b6c2fba-ba18-45b4-a86e-2028822a31cf",
+      "ts": "2026-04-27T20:23:03.847Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:26:51.534000Z"
+    },
+    {
+      "sid": "cba2a95f-10bd-4e87-a3bc-7330b2bb31d2",
+      "ts": "2026-04-27T20:27:04.043Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:30:18.789000Z"
+    },
+    {
+      "sid": "cb479468-c23e-48b2-8b73-4acb0b707dc4",
+      "ts": "2026-04-27T20:30:05.294Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:33:22.742000Z"
+    },
+    {
+      "sid": "8ab5e190-eace-4948-8fcc-ffe0bd5dc6b4",
+      "ts": "2026-04-27T20:33:03.921Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:42:29.892000Z"
+    },
+    {
+      "sid": "60fd4511-4ab5-47b3-8a9b-1fe662b27b55",
+      "ts": "2026-04-27T20:41:04.115Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:45:19.050000Z"
+    },
+    {
+      "sid": "46fb29d0-f461-49dd-86ee-288791e39000",
+      "ts": "2026-04-27T20:45:04.417Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:48:11.932000Z"
+    },
+    {
+      "sid": "f0bb1de1-9e4a-4365-856a-3958979713b0",
+      "ts": "2026-04-27T20:49:04.172Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:53:52.753000Z"
+    },
+    {
+      "sid": "9e369ae9-be00-429f-a1af-f123f85e2608",
+      "ts": "2026-04-27T20:53:04.821Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T20:58:55.921000Z"
+    },
+    {
+      "sid": "ed934add-e667-4696-b837-f1051b3cfda9",
+      "ts": "2026-04-27T21:00:04.940Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:05:01.378000Z"
+    },
+    {
+      "sid": "7712a591-c011-4bcd-bdfa-45e77c80c096",
+      "ts": "2026-04-27T21:03:04.195Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:06:07.075000Z"
+    },
+    {
+      "sid": "7ca05214-fe9f-4312-859f-1016cbe207a3",
+      "ts": "2026-04-27T21:07:04.750Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:10:44.716000Z"
+    },
+    {
+      "sid": "e9267b30-ace9-4fd9-aab3-3f98834c6360",
+      "ts": "2026-04-27T21:11:04.417Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:13:30.142000Z"
+    },
+    {
+      "sid": "32200c81-4e08-4b23-a946-d005bbd3e732",
+      "ts": "2026-04-27T21:15:04.478Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:17:27.943000Z"
+    },
+    {
+      "sid": "2f160107-993b-4906-80d3-396af88b1949",
+      "ts": "2026-04-27T21:19:04.331Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:21:20.588000Z"
+    },
+    {
+      "sid": "40eabc91-d8ee-48a4-b3e8-d3d43b50c110",
+      "ts": "2026-04-27T21:23:04.430Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:26:37.365000Z"
+    },
+    {
+      "sid": "282ca863-02eb-4177-8957-becbfe85bd3d",
+      "ts": "2026-04-27T21:27:04.663Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:30:04.340000Z"
+    },
+    {
+      "sid": "fa1892b1-12ea-4ee7-868d-52c45f2e27fe",
+      "ts": "2026-04-27T21:30:05.516Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:34:48.531000Z"
+    },
+    {
+      "sid": "13668af2-534f-4605-bafd-2f1e8ecac1d6",
+      "ts": "2026-04-27T21:33:04.841Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:36:05.583000Z"
+    },
+    {
+      "sid": "63575e08-1436-48e4-8fc3-de26a05aa19b",
+      "ts": "2026-04-27T21:41:05.440Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:44:02.706000Z"
+    },
+    {
+      "sid": "15766f4a-794c-4359-93ae-9594ff6ca352",
+      "ts": "2026-04-27T21:45:04.052Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:49:01.463000Z"
+    },
+    {
+      "sid": "c3729ea6-ddc0-4e93-b660-c9005c725685",
+      "ts": "2026-04-27T21:49:04.146Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:55:05.468000Z"
+    },
+    {
+      "sid": "3f8ac2b8-85d8-4fd9-b58a-48a6d0f0dc2d",
+      "ts": "2026-04-27T21:53:04.565Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T21:55:10.625000Z"
+    },
+    {
+      "sid": "eb9269da-9d84-4bda-8b7e-12f7f00112bf",
+      "ts": "2026-04-27T21:57:03.901Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:57:04.578000Z"
+    },
+    {
+      "sid": "e1a590ff-49df-40e1-9174-541faa778cc7",
+      "ts": "2026-04-27T22:00:05.353Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T22:30:05.018000Z"
+    },
+    {
+      "sid": "ac79b382-8f33-4362-846b-df46affb0f6d",
+      "ts": "2026-04-27T22:03:04.126Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:03:05.025000Z"
+    },
+    {
+      "sid": "bfc73f2e-a829-42e7-9195-5033edbd2c25",
+      "ts": "2026-04-27T22:07:03.865Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:07:04.234000Z"
+    },
+    {
+      "sid": "38c82c2e-da89-40df-bc0f-330ee130e13b",
+      "ts": "2026-04-27T22:11:04.673Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:11:05.193000Z"
+    },
+    {
+      "sid": "bfe6c62e-9f5b-41b4-bc9f-6b0d30c833f3",
+      "ts": "2026-04-27T22:15:04.402Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:15:04.999000Z"
+    },
+    {
+      "sid": "b3c104d1-b368-46da-ac4e-83dfcfc7265d",
+      "ts": "2026-04-27T22:19:04.312Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:19:04.789000Z"
+    },
+    {
+      "sid": "e301d030-052b-4fb7-a153-eaf7fda4752a",
+      "ts": "2026-04-27T22:23:04.501Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T22:23:05.220000Z"
+    },
+    {
+      "sid": "a2aa97bf-d98c-4f97-907c-58f1d9aeea67",
+      "ts": "2026-04-27T22:27:04.568Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T22:27:04.999000Z"
+    },
+    {
+      "sid": "8f9df428-75e7-481b-a67e-9c17abff0eb6",
+      "ts": "2026-04-27T22:33:04.462Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T22:33:04.951000Z"
+    },
+    {
+      "sid": "b016305e-7cf8-45f4-81ad-2f01e5253699",
+      "ts": "2026-04-27T22:41:04.101Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:41:05.129000Z"
+    },
+    {
+      "sid": "b7af3021-29fb-43e1-b4bb-cb9e123dd867",
+      "ts": "2026-04-27T22:45:03.949Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:45:04.895000Z"
+    },
+    {
+      "sid": "c6b418e4-4d05-4ba1-a545-848d3017b3cc",
+      "ts": "2026-04-27T22:49:04.743Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:49:04.907000Z"
+    },
+    {
+      "sid": "dac40db6-7876-48d8-9b12-1d737ce34557",
+      "ts": "2026-04-27T22:53:08.004Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-27T23:53:04.691000Z"
+    },
+    {
+      "sid": "2fde6ae9-114c-4e60-85bd-f38cb12cd7ed",
+      "ts": "2026-04-28T00:23:04.266Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:26:58.865000Z"
+    },
+    {
+      "sid": "5e89111a-17d5-4419-9c82-14c7b3cc46a1",
+      "ts": "2026-04-28T00:27:04.295Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:30:28.373000Z"
+    },
+    {
+      "sid": "ffcfbf25-d7f9-4a58-a4a0-6dcd2d81dda1",
+      "ts": "2026-04-28T00:30:04.287Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:35:08.916000Z"
+    },
+    {
+      "sid": "8e3c639e-e7c2-42b3-8773-fbd89cf856c6",
+      "ts": "2026-04-28T00:33:04.446Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:36:38.103000Z"
+    },
+    {
+      "sid": "ac576c91-8ce0-4c48-bf85-110de45ef3a9",
+      "ts": "2026-04-28T00:41:04.562Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:45:11.019000Z"
+    },
+    {
+      "sid": "41a1341b-a3e5-48f8-b8bd-ec64878e5e59",
+      "ts": "2026-04-28T00:45:05.011Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:49:07.387000Z"
+    },
+    {
+      "sid": "39b7112d-6b6f-4ff4-9c7c-a5c4ebbd4d4f",
+      "ts": "2026-04-28T00:49:04.996Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:57:14.581000Z"
+    },
+    {
+      "sid": "9cd0e2fd-7a3a-47d4-add8-20eaf4dd5097",
+      "ts": "2026-04-28T00:53:04.439Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T00:57:17.957000Z"
+    },
+    {
+      "sid": "df5a5bf5-0a72-4d28-9371-657a1c98becb",
+      "ts": "2026-04-28T01:00:04.989Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:01:24.699000Z"
+    },
+    {
+      "sid": "97bfe2c7-7a90-4b8c-818d-1687e6d2fd62",
+      "ts": "2026-04-28T01:03:03.827Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:06:46.817000Z"
+    },
+    {
+      "sid": "de961289-b284-4389-94cf-5f6227f91303",
+      "ts": "2026-04-28T01:07:04.025Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:10:39.482000Z"
+    },
+    {
+      "sid": "1f7f6caf-a2f1-440b-95f5-6a8eccc9c935",
+      "ts": "2026-04-28T01:11:04.782Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:13:56.017000Z"
+    },
+    {
+      "sid": "f91afad0-5fc9-41b5-b667-30b9bdf56118",
+      "ts": "2026-04-28T01:15:04.554Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:19:15.835000Z"
+    },
+    {
+      "sid": "39ce7b69-6f97-4daa-8352-b96ac1d5f17a",
+      "ts": "2026-04-28T01:19:04.459Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:21:56.142000Z"
+    },
+    {
+      "sid": "436fcbe6-8ac5-442c-9c50-7ceaf6934677",
+      "ts": "2026-04-28T01:23:04.463Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:25:32.141000Z"
+    },
+    {
+      "sid": "22e3f07f-6893-4306-b0cd-d2f5073ee589",
+      "ts": "2026-04-28T01:27:04.588Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:30:41.692000Z"
+    },
+    {
+      "sid": "1c4428b8-ec3f-4f77-8e17-ca4d830a1637",
+      "ts": "2026-04-28T01:30:04.491Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:32:03.555000Z"
+    },
+    {
+      "sid": "2df896d1-f5b7-4b3a-b18d-89a0228bea36",
+      "ts": "2026-04-28T01:33:04.097Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:37:54.938000Z"
+    },
+    {
+      "sid": "8d804282-18fc-4781-8134-ed95f211e369",
+      "ts": "2026-04-28T01:41:04.280Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:45:38.155000Z"
+    },
+    {
+      "sid": "ece9e4df-ff0a-4a14-bfea-ac30669fbbe6",
+      "ts": "2026-04-28T01:45:04.041Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:48:35.661000Z"
+    },
+    {
+      "sid": "ab722e42-6b00-43af-8a25-e0444103a002",
+      "ts": "2026-04-28T01:49:03.998Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:52:26.015000Z"
+    },
+    {
+      "sid": "a58cca69-fe8d-4f9a-8001-6346e283d886",
+      "ts": "2026-04-28T01:53:04.198Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:59:37.420000Z"
+    },
+    {
+      "sid": "981d7214-3798-47e9-9f19-7f28d85ae701",
+      "ts": "2026-04-28T01:57:04.175Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T01:59:30.349000Z"
+    },
+    {
+      "sid": "2ab059af-cff2-4ca2-9e35-e521dcf6cd82",
+      "ts": "2026-04-28T02:00:05.075Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:01:25.134000Z"
+    },
+    {
+      "sid": "b8d7ea2c-fc99-407c-a7f5-634f99bc0d0b",
+      "ts": "2026-04-28T02:03:04.466Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:08:44.072000Z"
+    },
+    {
+      "sid": "24844acf-9fbf-444f-b2a2-b5d9b77100e7",
+      "ts": "2026-04-28T02:07:04.401Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:10:16.364000Z"
+    },
+    {
+      "sid": "6f394912-6123-4ed5-b9f2-f39c31f87c0b",
+      "ts": "2026-04-28T02:11:04.740Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:13:34.500000Z"
+    },
+    {
+      "sid": "740e9d15-5828-4c4d-826b-5682a3d9a14f",
+      "ts": "2026-04-28T02:15:03.914Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:17:34.026000Z"
+    },
+    {
+      "sid": "116f40de-4488-4f7e-b749-e25d2da577b7",
+      "ts": "2026-04-28T02:19:04.468Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:20:56.893000Z"
+    },
+    {
+      "sid": "d32f9e74-9bf8-4246-8411-27e38e46d576",
+      "ts": "2026-04-28T02:23:04.276Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:30:21.549000Z"
+    },
+    {
+      "sid": "48edbff3-5d53-46d2-bccb-8d4cd4c0cf9f",
+      "ts": "2026-04-28T02:27:04.947Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:31:12.093000Z"
+    },
+    {
+      "sid": "b6f6b86a-7a94-4b56-96d3-2913a4ba9413",
+      "ts": "2026-04-28T02:30:04.313Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:31:59.081000Z"
+    },
+    {
+      "sid": "13a8536d-24f5-4808-9f25-d13c72be3ca2",
+      "ts": "2026-04-28T02:33:04.036Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:36:42.863000Z"
+    },
+    {
+      "sid": "bf6a767a-95c8-49ab-a972-7554b3468aeb",
+      "ts": "2026-04-28T02:41:04.056Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:47:05.958000Z"
+    },
+    {
+      "sid": "72aec2f6-1ffd-4f96-9dd5-5695a9f5797c",
+      "ts": "2026-04-28T02:45:03.865Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:49:56.424000Z"
+    },
+    {
+      "sid": "562232f2-6469-4f0e-89a7-6b519f9cbfd8",
+      "ts": "2026-04-28T02:49:04.145Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:55:06.716000Z"
+    },
+    {
+      "sid": "cbb08ebc-4fa8-404c-a339-67d50fbb7c76",
+      "ts": "2026-04-28T02:53:04.653Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T02:58:00.475000Z"
+    },
+    {
+      "sid": "fcb8cef9-ea00-4ffd-a453-072354bac21e",
+      "ts": "2026-04-28T03:00:04.911Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:02:13.565000Z"
+    },
+    {
+      "sid": "8f636c2f-36d5-4cf2-997d-cfd7d2791573",
+      "ts": "2026-04-28T03:03:04.710Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:08:11.355000Z"
+    },
+    {
+      "sid": "b31cea51-3e76-474f-9900-9237d71c22f5",
+      "ts": "2026-04-28T03:07:03.986Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:10:16.048000Z"
+    },
+    {
+      "sid": "7a536263-7872-43db-96b4-8e14ad8f14c7",
+      "ts": "2026-04-28T03:11:04.243Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:15:24.272000Z"
+    },
+    {
+      "sid": "ab7a8430-c12b-474a-8157-59f2c18f262f",
+      "ts": "2026-04-28T03:15:04.380Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:17:11.656000Z"
+    },
+    {
+      "sid": "cb8d30c1-ecad-4d61-81bb-f88703be520f",
+      "ts": "2026-04-28T03:19:03.909Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:21:37.196000Z"
+    },
+    {
+      "sid": "8259b9a0-a350-4c4d-8933-20156932e060",
+      "ts": "2026-04-28T03:23:04.417Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T04:23:04.832000Z"
+    },
+    {
+      "sid": "acf4f917-a914-4da5-813f-493804ea30e4",
+      "ts": "2026-04-28T03:27:04.052Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:27:04.618000Z"
+    },
+    {
+      "sid": "fa473b08-eaa8-4eeb-9979-5256d04fb8bf",
+      "ts": "2026-04-28T03:30:03.928Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T05:00:05.086000Z"
+    },
+    {
+      "sid": "fdfac1af-eaf0-46f5-ab88-4b425785b4ff",
+      "ts": "2026-04-28T03:33:03.846Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T04:33:05.047000Z"
+    },
+    {
+      "sid": "ce74df5d-4abf-481a-8c12-c3b7fe87e193",
+      "ts": "2026-04-28T03:41:04.272Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T04:41:04.595000Z"
+    },
+    {
+      "sid": "686988e2-57f2-4f01-ab61-364feb57a797",
+      "ts": "2026-04-28T03:45:03.945Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:45:04.476000Z"
+    },
+    {
+      "sid": "9dcb3d23-399f-4230-a735-76be93e86b3d",
+      "ts": "2026-04-28T03:49:03.617Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:49:04.051000Z"
+    },
+    {
+      "sid": "614b25b7-d6b1-4156-b04b-3014f9b86b34",
+      "ts": "2026-04-28T03:53:04.797Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:53:05.244000Z"
+    },
+    {
+      "sid": "3d89cb51-c306-45d8-b6d2-882b97b2b144",
+      "ts": "2026-04-28T03:57:04.470Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T03:57:05.121000Z"
+    },
+    {
+      "sid": "fd7ad05a-71cf-42b1-a3b8-657c1ca2dba0",
+      "ts": "2026-04-28T04:03:03.927Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T04:03:05.001000Z"
+    },
+    {
+      "sid": "594c0e45-2fe0-408f-9199-86da984cba8a",
+      "ts": "2026-04-28T04:07:04.207Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T04:07:04.599000Z"
+    },
+    {
+      "sid": "aed3d1c2-b6cd-4fb8-be47-0639e91de5a0",
+      "ts": "2026-04-28T04:11:03.960Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T05:11:04.852000Z"
+    },
+    {
+      "sid": "21f7193a-c5b7-4d99-86bc-30b135543e54",
+      "ts": "2026-04-28T04:15:03.824Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T05:15:05.058000Z"
+    },
+    {
+      "sid": "504959f3-d7bf-4e60-b6f1-f6e0a2209545",
+      "ts": "2026-04-28T04:19:04.509Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T05:19:04.793000Z"
+    },
+    {
+      "sid": "b7dec5e6-fc34-41ff-8456-8142b98a71b5",
+      "ts": "2026-04-28T05:23:04.256Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T05:26:00.758000Z"
+    },
+    {
+      "sid": "767adda5-45e6-4f6e-b25b-42c340f3ce74",
+      "ts": "2026-04-28T05:27:04.176Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 1,
+      "max_turn_ts": "2026-04-28T05:31:12.952000Z"
+    },
+    {
+      "sid": "a50748c5-5abf-4544-b00d-09d2107623a6",
+      "ts": "2026-05-02T08:49:38.641Z",
+      "repo": "kohaku500/02-automation-company",
+      "n": 123,
+      "max_turn_ts": "2026-05-02T14:53:48.904000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

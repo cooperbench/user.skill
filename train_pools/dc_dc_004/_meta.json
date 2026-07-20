@@ -1,0 +1,1419 @@
+{
+  "developer": "dc:dc_004",
+  "slug": "dc_dc_004",
+  "Tstar": "2026-02-23T19:03:37.902Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 201,
+  "n_human_turns": 1979,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "1000cb18-9ec4-4ad1-932e-3a7f23d09792",
+      "ts": "2026-02-05T13:28:48.433Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 19,
+      "max_turn_ts": "2026-02-05T16:33:33.224000Z"
+    },
+    {
+      "sid": "7d7a2300-6005-4b2d-b74b-bb32ff1f33eb",
+      "ts": "2026-02-05T13:35:27.905Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-05T15:56:49.837000Z"
+    },
+    {
+      "sid": "1329a0ba-6967-4434-a844-f42317a2568f",
+      "ts": "2026-02-05T15:59:31.596Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 18,
+      "max_turn_ts": "2026-02-05T18:12:24.829000Z"
+    },
+    {
+      "sid": "7cc51804-014a-4189-a5d8-b92e51a05993",
+      "ts": "2026-02-05T16:35:59.923Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-05T16:54:53.814000Z"
+    },
+    {
+      "sid": "e87b50d9-fff7-424e-adb6-e3a424bb020c",
+      "ts": "2026-02-05T16:36:23.623Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 22,
+      "max_turn_ts": "2026-02-05T20:35:46.670000Z"
+    },
+    {
+      "sid": "fd128653-1832-4e42-951e-978fb0ef8a4a",
+      "ts": "2026-02-05T16:56:59.520Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 16,
+      "max_turn_ts": "2026-02-05T18:30:23.323000Z"
+    },
+    {
+      "sid": "86929ac3-23cb-4714-af30-496b9a7bae9c",
+      "ts": "2026-02-05T17:45:25.553Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 20,
+      "max_turn_ts": "2026-02-05T19:06:26.016000Z"
+    },
+    {
+      "sid": "fc8ba070-417c-4718-bc01-d2b06a569341",
+      "ts": "2026-02-05T18:16:16.991Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 12,
+      "max_turn_ts": "2026-02-05T20:42:23.934000Z"
+    },
+    {
+      "sid": "6c6540ae-add7-4572-b77f-72c3628e7eb2",
+      "ts": "2026-02-05T18:31:16.341Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 18,
+      "max_turn_ts": "2026-02-05T21:23:27.902000Z"
+    },
+    {
+      "sid": "de7bb416-cded-477d-b15d-49804074b601",
+      "ts": "2026-02-05T19:08:07.649Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-05T19:53:06.114000Z"
+    },
+    {
+      "sid": "1071be8d-34ec-45f4-aac4-8ad7ac7a925d",
+      "ts": "2026-02-05T20:05:05.211Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-05T20:45:24.399000Z"
+    },
+    {
+      "sid": "fc2ed4a6-f9e2-447e-b2c1-4703b67662a3",
+      "ts": "2026-02-05T21:02:29.470Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-05T21:28:04.419000Z"
+    },
+    {
+      "sid": "119e06c0-e23a-4f7b-9517-d2dcdca518f7",
+      "ts": "2026-02-05T21:29:26.702Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 20,
+      "max_turn_ts": "2026-02-06T11:01:02.748000Z"
+    },
+    {
+      "sid": "2b075bcb-29d0-419b-b1e1-e5da76752f84",
+      "ts": "2026-02-05T22:52:47.919Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-05T22:56:27.719000Z"
+    },
+    {
+      "sid": "d5dd70dd-c98b-4e27-adf5-d37d617cdc48",
+      "ts": "2026-02-05T23:29:12.859Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 14,
+      "max_turn_ts": "2026-02-06T11:18:56.450000Z"
+    },
+    {
+      "sid": "8ebe2116-3457-4572-97b7-b479c763607e",
+      "ts": "2026-02-06T10:59:57.825Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-06T11:11:19.394000Z"
+    },
+    {
+      "sid": "378b11d4-8281-4de1-b231-119af3f12d49",
+      "ts": "2026-02-06T12:36:55.341Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-06T12:56:16.584000Z"
+    },
+    {
+      "sid": "e7595d40-cc3b-4eaa-a42c-503dfd784fa0",
+      "ts": "2026-02-06T12:46:28.860Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-06T13:09:35.283000Z"
+    },
+    {
+      "sid": "b01c9bbf-0173-461d-94d3-16b52c2370a0",
+      "ts": "2026-02-06T12:57:24.400Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-06T13:42:09.193000Z"
+    },
+    {
+      "sid": "5164fd61-50b3-46e0-9b93-9d517016c76b",
+      "ts": "2026-02-06T13:14:27.439Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-06T13:31:36.340000Z"
+    },
+    {
+      "sid": "93f1662e-a18c-415b-b94c-aa3fc9d58954",
+      "ts": "2026-02-06T13:48:16.414Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-06T13:51:52.317000Z"
+    },
+    {
+      "sid": "a48813b3-b2ab-467f-b1b7-ee81224a180e",
+      "ts": "2026-02-06T13:56:39.507Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 63,
+      "max_turn_ts": "2026-02-06T18:37:24.891000Z"
+    },
+    {
+      "sid": "acf7cec0-6ee5-42f1-aeb5-4fd189de3d7e",
+      "ts": "2026-02-06T13:58:07.995Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-06T14:10:31.011000Z"
+    },
+    {
+      "sid": "8fc37390-55b7-4c09-a322-ca3d357dd6bc",
+      "ts": "2026-02-06T16:53:21.191Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 12,
+      "max_turn_ts": "2026-02-09T08:20:41.855000Z"
+    },
+    {
+      "sid": "a0192057-fb45-49ef-b93a-12c5e8e42a52",
+      "ts": "2026-02-09T16:44:26.902Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 23,
+      "max_turn_ts": "2026-02-09T17:55:20.980000Z"
+    },
+    {
+      "sid": "a43bf9e2-99e7-48b9-aa38-793ca516a7d5",
+      "ts": "2026-02-09T19:07:43.720Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 9,
+      "max_turn_ts": "2026-02-09T19:38:37.925000Z"
+    },
+    {
+      "sid": "4857fd66-0aac-4d5b-8fc3-4ec10ad48176",
+      "ts": "2026-02-09T19:39:02.597Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 14,
+      "max_turn_ts": "2026-02-09T20:31:59.269000Z"
+    },
+    {
+      "sid": "09e2f65c-8cab-4cd0-80f2-525bf4309562",
+      "ts": "2026-02-09T20:33:08.756Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-09T20:45:42.467000Z"
+    },
+    {
+      "sid": "176df66c-31af-402e-af3d-8568d0ec97fa",
+      "ts": "2026-02-09T21:17:02.285Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-09T22:40:38.548000Z"
+    },
+    {
+      "sid": "c8256b4b-f0ac-4f24-b5e5-e7c27bffa3fb",
+      "ts": "2026-02-09T21:29:09.128Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-09T21:40:06.229000Z"
+    },
+    {
+      "sid": "c2a37ed2-7db6-4891-97ca-124290af9d21",
+      "ts": "2026-02-09T22:23:53.463Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-09T23:57:52.998000Z"
+    },
+    {
+      "sid": "7a0ebf74-3032-42e0-8621-854cf15ceede",
+      "ts": "2026-02-09T22:53:58.266Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 37,
+      "max_turn_ts": "2026-02-09T23:59:18.213000Z"
+    },
+    {
+      "sid": "10107833-7177-49d5-bd01-550bea1c42dc",
+      "ts": "2026-02-09T23:54:46.144Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T00:02:40.719000Z"
+    },
+    {
+      "sid": "f26c43bd-de2d-45e7-b198-da236453d021",
+      "ts": "2026-02-09T23:59:52.308Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 19,
+      "max_turn_ts": "2026-02-10T00:31:15.052000Z"
+    },
+    {
+      "sid": "6dd3ddb3-f004-4f0b-8343-6b7d99f94d5e",
+      "ts": "2026-02-10T00:34:58.852Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-10T00:47:47.915000Z"
+    },
+    {
+      "sid": "3572a24c-d0d7-4307-be60-0c6020a0d8d1",
+      "ts": "2026-02-10T00:38:02.730Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 16,
+      "max_turn_ts": "2026-02-10T12:38:43.426000Z"
+    },
+    {
+      "sid": "48c74943-41ad-4bc6-a2c7-45758c5e4e3c",
+      "ts": "2026-02-10T12:36:18.688Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-10T13:40:22.597000Z"
+    },
+    {
+      "sid": "c636df3a-aa79-4600-88c0-6d9d0e96654f",
+      "ts": "2026-02-10T12:39:30.258Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 12,
+      "max_turn_ts": "2026-02-10T14:48:00.059000Z"
+    },
+    {
+      "sid": "8da94ca5-4253-4319-b07b-3d9d7dfb268f",
+      "ts": "2026-02-10T13:41:58.917Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 18,
+      "max_turn_ts": "2026-02-10T16:55:21.103000Z"
+    },
+    {
+      "sid": "d6a3abdf-e5f7-419a-aa45-6df849799015",
+      "ts": "2026-02-10T15:09:39.674Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T15:13:34.546000Z"
+    },
+    {
+      "sid": "fb12acff-44b4-4d1a-b64c-d28996efc36b",
+      "ts": "2026-02-10T15:23:48.789Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 18,
+      "max_turn_ts": "2026-02-10T20:35:13.309000Z"
+    },
+    {
+      "sid": "0295b96c-e2c1-40d1-9a28-a5c7e91cba92",
+      "ts": "2026-02-10T16:55:33.845Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-10T17:18:25.743000Z"
+    },
+    {
+      "sid": "51507314-3281-4604-82f6-087b839f6bfe",
+      "ts": "2026-02-10T18:32:51.583Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T18:50:38.539000Z"
+    },
+    {
+      "sid": "0cd25338-85c5-46d5-817c-28eadb03caac",
+      "ts": "2026-02-10T18:33:22.309Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-10T18:43:41.961000Z"
+    },
+    {
+      "sid": "36273138-41f6-4fa6-957c-65f9a3700c0e",
+      "ts": "2026-02-10T18:34:20.959Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T18:46:06.882000Z"
+    },
+    {
+      "sid": "b68b9806-d89e-488d-9c14-3f3a0c1b3538",
+      "ts": "2026-02-10T18:34:43.368Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T18:51:22.396000Z"
+    },
+    {
+      "sid": "3705db88-df74-471f-88a5-9fc58ca66d2a",
+      "ts": "2026-02-10T18:35:51.649Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-10T18:49:16.584000Z"
+    },
+    {
+      "sid": "da12b904-32fb-444a-ad34-45885b02c10f",
+      "ts": "2026-02-10T18:47:47.838Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-10T19:10:08.135000Z"
+    },
+    {
+      "sid": "171338b5-df1e-4f48-8a27-09713ce62ed6",
+      "ts": "2026-02-10T19:15:40.538Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-10T20:05:28.893000Z"
+    },
+    {
+      "sid": "5a6063b0-72fa-4d54-9529-db2d139e2222",
+      "ts": "2026-02-10T20:00:26.685Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-10T20:58:08.660000Z"
+    },
+    {
+      "sid": "efff3364-6aa4-40e8-be70-94dd7f26797d",
+      "ts": "2026-02-10T20:27:47.014Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-10T20:59:20.556000Z"
+    },
+    {
+      "sid": "3a1cc3ce-3535-4425-aa7c-d82b5badf4a6",
+      "ts": "2026-02-10T20:35:28.976Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 23,
+      "max_turn_ts": "2026-02-11T11:09:05.254000Z"
+    },
+    {
+      "sid": "2a749f40-6196-42da-b9eb-2e8fb46b5e33",
+      "ts": "2026-02-10T22:15:29.831Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T09:18:53.568000Z"
+    },
+    {
+      "sid": "ea8b9dfb-58b4-4d55-b9a7-97a4b3040946",
+      "ts": "2026-02-11T09:19:12.497Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T10:18:04.474000Z"
+    },
+    {
+      "sid": "080e8692-1894-4225-a19e-04419d1eb5dd",
+      "ts": "2026-02-11T10:00:13.861Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 19,
+      "max_turn_ts": "2026-02-11T12:10:23.895000Z"
+    },
+    {
+      "sid": "1d780bac-c3d1-49b6-a097-39be8e95e6c9",
+      "ts": "2026-02-11T11:10:17.337Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T11:56:30.560000Z"
+    },
+    {
+      "sid": "014e1e9e-cc26-4d36-afa8-a7062cdde13e",
+      "ts": "2026-02-11T11:57:24.378Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-11T13:37:56.616000Z"
+    },
+    {
+      "sid": "49b68d8b-a5ec-4941-8d29-d630fb89c6de",
+      "ts": "2026-02-11T12:30:28.105Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 20,
+      "max_turn_ts": "2026-02-11T20:39:45.880000Z"
+    },
+    {
+      "sid": "12108e2e-f872-4dc5-9002-3ccc06593837",
+      "ts": "2026-02-11T13:56:06.786Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-11T16:17:39.975000Z"
+    },
+    {
+      "sid": "8bfb8231-8cd0-4cb9-aac6-0764554255e2",
+      "ts": "2026-02-11T16:18:15.269Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-11T16:45:38.974000Z"
+    },
+    {
+      "sid": "4c267d00-71c8-48e2-804b-f360cbb6636a",
+      "ts": "2026-02-11T17:00:08.442Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 48,
+      "max_turn_ts": "2026-02-11T20:22:04.338000Z"
+    },
+    {
+      "sid": "c387e0a5-a98d-4065-87f7-9613888e3841",
+      "ts": "2026-02-11T18:13:38.552Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 23,
+      "max_turn_ts": "2026-02-11T21:01:03.099000Z"
+    },
+    {
+      "sid": "f1066891-70d6-4fa4-95a1-00227cc9c973",
+      "ts": "2026-02-11T20:10:20.680Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-11T22:37:18.246000Z"
+    },
+    {
+      "sid": "a17b8a50-10dd-4636-808d-bf4fbd175f47",
+      "ts": "2026-02-11T20:22:29.430Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-11T21:06:55.027000Z"
+    },
+    {
+      "sid": "26d49c6f-91b8-49b4-af6f-40a549bb052c",
+      "ts": "2026-02-11T21:09:10.833Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 12,
+      "max_turn_ts": "2026-02-11T21:58:30.509000Z"
+    },
+    {
+      "sid": "e7e4c34b-36d7-4dad-b81d-4b7333d04c70",
+      "ts": "2026-02-11T21:58:47.174Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 9,
+      "max_turn_ts": "2026-02-12T01:39:30.271000Z"
+    },
+    {
+      "sid": "8ec7c9e1-2484-444e-b047-b4c609fc67de",
+      "ts": "2026-02-11T22:37:27.805Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 45,
+      "max_turn_ts": "2026-02-12T20:35:25.988000Z"
+    },
+    {
+      "sid": "1e8104ba-26e1-496a-b8f8-8fcabcf7450a",
+      "ts": "2026-02-12T01:40:04.508Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 38,
+      "max_turn_ts": "2026-02-12T13:56:32.844000Z"
+    },
+    {
+      "sid": "3c0063c1-184d-45ab-b3d5-318abedf4703",
+      "ts": "2026-02-12T16:16:16.090Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 14,
+      "max_turn_ts": "2026-02-12T19:20:43.489000Z"
+    },
+    {
+      "sid": "433a353b-8ada-4e9e-9215-2cbd74a9ba5d",
+      "ts": "2026-02-12T16:56:44.282Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-12T17:13:20.219000Z"
+    },
+    {
+      "sid": "0700754c-b060-4537-97d8-3d7e460ab7b0",
+      "ts": "2026-02-12T17:13:30.015Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 17,
+      "max_turn_ts": "2026-02-12T19:14:34.768000Z"
+    },
+    {
+      "sid": "a44a8088-f65f-49b8-a027-424e0de86825",
+      "ts": "2026-02-12T17:50:43.201Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-12T18:00:37.939000Z"
+    },
+    {
+      "sid": "8e0b296e-f5ce-4d08-905d-bfb4104af0e6",
+      "ts": "2026-02-12T18:38:55.045Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 33,
+      "max_turn_ts": "2026-02-12T23:23:53.713000Z"
+    },
+    {
+      "sid": "0482ffa5-c1cf-46cb-845c-beae0d4636ec",
+      "ts": "2026-02-12T19:23:04.500Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-12T19:57:40.324000Z"
+    },
+    {
+      "sid": "8706443a-a172-4bf4-b68d-c26eb8aac423",
+      "ts": "2026-02-12T19:58:16.683Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 13,
+      "max_turn_ts": "2026-02-12T21:31:12.601000Z"
+    },
+    {
+      "sid": "bf534476-41df-46b6-b53e-221692af3ab7",
+      "ts": "2026-02-12T20:44:39.522Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 16,
+      "max_turn_ts": "2026-02-12T22:09:27.832000Z"
+    },
+    {
+      "sid": "66ff1311-a449-4d7e-bbcf-3a4e64ed476d",
+      "ts": "2026-02-12T22:00:54.467Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-12T22:58:15.872000Z"
+    },
+    {
+      "sid": "28792013-b236-4799-be48-22b2f93e1ddb",
+      "ts": "2026-02-12T22:09:41.446Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 8,
+      "max_turn_ts": "2026-02-12T23:18:44.938000Z"
+    },
+    {
+      "sid": "e2731107-c2b5-43ec-819a-b69eefc8e74f",
+      "ts": "2026-02-12T22:10:28.564Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T23:34:11.144000Z"
+    },
+    {
+      "sid": "078446fe-c679-4abd-8be1-0e4cc935892a",
+      "ts": "2026-02-12T22:19:08.988Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-12T22:27:54.566000Z"
+    },
+    {
+      "sid": "7a9fff34-55a1-4878-bdca-39a1c9998988",
+      "ts": "2026-02-12T23:20:46.054Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-13T01:31:37.035000Z"
+    },
+    {
+      "sid": "e596e6a5-06e4-40d1-96d8-1edcf31bf988",
+      "ts": "2026-02-12T23:23:40.174Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T01:08:20.091000Z"
+    },
+    {
+      "sid": "f767d7e4-f6c8-42e9-a4cd-5c02138370a4",
+      "ts": "2026-02-12T23:29:38.663Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-13T12:34:55.166000Z"
+    },
+    {
+      "sid": "6c86794b-aac9-40a0-9bc2-7794050cdf55",
+      "ts": "2026-02-13T00:55:25.458Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T12:03:38.407000Z"
+    },
+    {
+      "sid": "6581e990-576f-4821-9ddb-d16946c94744",
+      "ts": "2026-02-13T00:57:50.998Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T01:15:40.337000Z"
+    },
+    {
+      "sid": "2d83f195-5d8e-43eb-8c7c-19daea969290",
+      "ts": "2026-02-13T01:18:22.678Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T01:39:23.554000Z"
+    },
+    {
+      "sid": "42d29e1c-c354-4309-8c85-a9f9eb2ae8ed",
+      "ts": "2026-02-13T01:32:00.565Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-13T12:53:24.904000Z"
+    },
+    {
+      "sid": "ab81c642-90b1-4af3-9c04-88eb0cd6b718",
+      "ts": "2026-02-13T01:32:40.260Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T01:55:43.653000Z"
+    },
+    {
+      "sid": "62ad8e91-dba4-4501-993f-d393fa53cb90",
+      "ts": "2026-02-13T01:53:51.774Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T12:00:09.760000Z"
+    },
+    {
+      "sid": "841c57b9-03fb-4200-b5f9-29a12752f9dc",
+      "ts": "2026-02-13T11:52:17.617Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T12:24:20.632000Z"
+    },
+    {
+      "sid": "2a2d286d-1617-4de4-883a-f8e34a1835db",
+      "ts": "2026-02-13T11:56:37.363Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T12:07:11.969000Z"
+    },
+    {
+      "sid": "11845a1f-cea0-4673-80f7-087c6a42d1a2",
+      "ts": "2026-02-13T12:05:53.943Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T12:14:37.561000Z"
+    },
+    {
+      "sid": "104e116b-a969-4548-8b1c-bc59145b3d48",
+      "ts": "2026-02-13T12:13:11.250Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T12:35:46.718000Z"
+    },
+    {
+      "sid": "8802571c-6b78-4cfc-83ab-164daff98cfa",
+      "ts": "2026-02-13T12:30:30.744Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-13T13:14:09.053000Z"
+    },
+    {
+      "sid": "aef7669c-1136-4bd0-aece-6c3c669f33e2",
+      "ts": "2026-02-13T12:47:20.413Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T12:56:14.601000Z"
+    },
+    {
+      "sid": "b093bc12-bb9e-454e-97ac-97c3dc0d4e77",
+      "ts": "2026-02-13T13:02:11.730Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-13T17:41:47.637000Z"
+    },
+    {
+      "sid": "cda22734-e33f-47ad-8877-00684d402b32",
+      "ts": "2026-02-13T13:04:17.417Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-13T17:20:06.677000Z"
+    },
+    {
+      "sid": "243d1b4f-c3f3-423e-978e-1bfa4f4172e3",
+      "ts": "2026-02-13T13:14:45.309Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-13T17:19:18.359000Z"
+    },
+    {
+      "sid": "cd86cef2-2f86-4839-a6ac-3d08a071f9fb",
+      "ts": "2026-02-13T16:10:59.357Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T17:30:44.288000Z"
+    },
+    {
+      "sid": "bc9e1501-0153-4a49-8977-4bc4bfb73702",
+      "ts": "2026-02-13T16:50:20.035Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T21:10:03.037000Z"
+    },
+    {
+      "sid": "36d8f34a-c836-437c-9808-0f40358c181f",
+      "ts": "2026-02-13T16:52:37.248Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T17:23:20.104000Z"
+    },
+    {
+      "sid": "92947b2a-e751-4000-829d-23551a2ec85c",
+      "ts": "2026-02-13T17:28:43.353Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T17:31:26.421000Z"
+    },
+    {
+      "sid": "12523d9b-5a53-4f4e-b07b-53055f27f57f",
+      "ts": "2026-02-13T17:32:40.549Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-13T22:08:43.602000Z"
+    },
+    {
+      "sid": "3d1453c9-fc6c-45f8-9a0f-6dbde1aa6acc",
+      "ts": "2026-02-13T21:02:47.544Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-13T23:07:00.278000Z"
+    },
+    {
+      "sid": "2b253fa8-9b6a-4906-9516-e8e2daffd4c7",
+      "ts": "2026-02-13T21:03:15.535Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-13T21:32:39.188000Z"
+    },
+    {
+      "sid": "5623fb2b-433b-4634-9366-47987268a1e5",
+      "ts": "2026-02-13T21:03:36.095Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 9,
+      "max_turn_ts": "2026-02-13T21:29:11.775000Z"
+    },
+    {
+      "sid": "11cf609b-2620-4949-9736-49c8dc542490",
+      "ts": "2026-02-13T21:23:28.057Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T21:35:17.052000Z"
+    },
+    {
+      "sid": "96787da4-a21e-4166-8b65-c138e3fd04ae",
+      "ts": "2026-02-13T21:43:55.946Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T21:57:03.164000Z"
+    },
+    {
+      "sid": "96e01c97-9bcd-4df0-a76e-c645690e448a",
+      "ts": "2026-02-13T22:12:04.994Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-13T23:09:19.576000Z"
+    },
+    {
+      "sid": "5d956780-face-40f9-bdba-8d3692e3e3d2",
+      "ts": "2026-02-13T22:21:35.291Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T22:50:44.239000Z"
+    },
+    {
+      "sid": "446b5e96-4943-47ee-9f53-edc4ffc48f7b",
+      "ts": "2026-02-13T22:52:31.160Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-13T23:16:06.356000Z"
+    },
+    {
+      "sid": "c8e2a105-67db-4f8a-81a4-53e5278db43e",
+      "ts": "2026-02-13T23:15:19.162Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T23:30:22.722000Z"
+    },
+    {
+      "sid": "1d7d2405-3f45-40c4-8ce4-7be1312bf95b",
+      "ts": "2026-02-13T23:16:32.078Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-14T00:15:35.126000Z"
+    },
+    {
+      "sid": "70bc1ec2-9e14-4757-915b-9665c5cbb9a7",
+      "ts": "2026-02-13T23:55:58.115Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-14T01:55:25.403000Z"
+    },
+    {
+      "sid": "91109ad2-9521-4940-8e2e-c5c365b636e2",
+      "ts": "2026-02-14T00:20:08.053Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T00:48:18.105000Z"
+    },
+    {
+      "sid": "51ed84a6-e150-4d0e-aa62-e3a723baa466",
+      "ts": "2026-02-14T00:50:33.921Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 8,
+      "max_turn_ts": "2026-02-14T01:17:26.879000Z"
+    },
+    {
+      "sid": "61265444-66c8-4c47-90d2-e612c8d8be90",
+      "ts": "2026-02-14T01:17:57.555Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-14T02:26:15.192000Z"
+    },
+    {
+      "sid": "526c4a30-43fa-42d8-a4f0-bd95239ce049",
+      "ts": "2026-02-14T02:26:33.702Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T02:55:35.355000Z"
+    },
+    {
+      "sid": "a25af5c7-6754-41de-80c5-96ce0c05be4b",
+      "ts": "2026-02-14T02:52:25.488Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T03:06:46.351000Z"
+    },
+    {
+      "sid": "4b55ffcf-c057-4d23-a6ae-45d336d9c108",
+      "ts": "2026-02-14T02:56:34.724Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-14T03:29:17.180000Z"
+    },
+    {
+      "sid": "a731ab6d-1654-4abf-9ac6-1714f9157c99",
+      "ts": "2026-02-14T03:09:06.004Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 8,
+      "max_turn_ts": "2026-02-14T03:40:17.867000Z"
+    },
+    {
+      "sid": "d3c66518-e6ca-499f-bc6d-e93ca53703b5",
+      "ts": "2026-02-14T03:30:42.088Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-14T03:56:08.398000Z"
+    },
+    {
+      "sid": "7eac0d2d-2907-4516-a696-d391866d24b3",
+      "ts": "2026-02-14T03:56:36.314Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-14T04:20:24.719000Z"
+    },
+    {
+      "sid": "9b95a840-41ad-419e-9b89-897248bdd33b",
+      "ts": "2026-02-14T04:05:40.721Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 21,
+      "max_turn_ts": "2026-02-14T05:10:11.151000Z"
+    },
+    {
+      "sid": "475ca0e2-5d13-4b27-a555-e7864f2f1d55",
+      "ts": "2026-02-14T04:08:20.927Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 9,
+      "max_turn_ts": "2026-02-14T04:32:05.599000Z"
+    },
+    {
+      "sid": "f216a5e4-9b6d-4ee7-8135-827e50c723f3",
+      "ts": "2026-02-14T04:21:49.271Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-14T04:40:24.176000Z"
+    },
+    {
+      "sid": "389668a6-a45f-4fac-92ec-0dd759f44b5c",
+      "ts": "2026-02-14T04:35:26.658Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 14,
+      "max_turn_ts": "2026-02-14T18:32:22.521000Z"
+    },
+    {
+      "sid": "05ff325d-d558-4cb5-aef0-c3ab377f27dd",
+      "ts": "2026-02-14T04:41:26.484Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-14T23:41:55.385000Z"
+    },
+    {
+      "sid": "f32eb4fc-a118-466b-9ef3-a2a49b25cee9",
+      "ts": "2026-02-14T18:32:53.085Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-15T00:46:09.561000Z"
+    },
+    {
+      "sid": "0baea815-3d17-48d3-a962-15396ee14b92",
+      "ts": "2026-02-14T23:31:57.788Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-15T00:03:38.756000Z"
+    },
+    {
+      "sid": "acd293f0-bfea-4401-8573-5b9962cc41d4",
+      "ts": "2026-02-14T23:42:22.224Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-15T00:10:07.807000Z"
+    },
+    {
+      "sid": "ead905d2-97bf-41a7-90aa-afc2f6a9d19d",
+      "ts": "2026-02-15T00:01:31.742Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-15T00:35:35.324000Z"
+    },
+    {
+      "sid": "3de5f046-b239-475a-be0e-9d5151b09769",
+      "ts": "2026-02-15T00:03:20.048Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-15T00:19:29.976000Z"
+    },
+    {
+      "sid": "d52ff9f6-2865-4a22-a381-525a7245bdf9",
+      "ts": "2026-02-15T00:10:14.463Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-15T00:58:56.460000Z"
+    },
+    {
+      "sid": "98434441-ecb0-4f7b-88ba-bf554eadfc31",
+      "ts": "2026-02-15T00:18:27.179Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 21,
+      "max_turn_ts": "2026-02-15T00:48:47.307000Z"
+    },
+    {
+      "sid": "69535600-6e28-41b1-9c8c-18e50bb2f56e",
+      "ts": "2026-02-15T00:46:22.838Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-15T00:54:11.156000Z"
+    },
+    {
+      "sid": "87b3ac55-cea6-4f54-b85a-05410a344c9f",
+      "ts": "2026-02-15T00:51:54.222Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-15T01:03:24.378000Z"
+    },
+    {
+      "sid": "a96ff048-1ca7-4698-a235-d623982fcb4a",
+      "ts": "2026-02-18T18:13:54.323Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T18:26:00.551000Z"
+    },
+    {
+      "sid": "36d02685-3b9a-4d4e-937a-c2e7563f63c2",
+      "ts": "2026-02-18T18:24:34.530Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 48,
+      "max_turn_ts": "2026-02-19T01:41:53.135000Z"
+    },
+    {
+      "sid": "5b7dfc2a-016f-465a-99a2-fb79fa1c9a90",
+      "ts": "2026-02-18T22:39:30.991Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 41,
+      "max_turn_ts": "2026-02-19T02:19:46.129000Z"
+    },
+    {
+      "sid": "f99aa0a0-783a-402a-a656-d91d40297ddc",
+      "ts": "2026-02-19T01:04:31.249Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 19,
+      "max_turn_ts": "2026-02-20T12:06:57.975000Z"
+    },
+    {
+      "sid": "b3fe7ce4-acf9-46ba-981c-9d652f82223e",
+      "ts": "2026-02-20T11:48:06.393Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 47,
+      "max_turn_ts": "2026-02-20T19:12:25.172000Z"
+    },
+    {
+      "sid": "f0d8ccc6-bd7d-4a4c-bd2c-595365628e53",
+      "ts": "2026-02-20T11:51:00.782Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 17,
+      "max_turn_ts": "2026-02-20T17:06:43.974000Z"
+    },
+    {
+      "sid": "a63a7dcc-de5c-4adb-b62d-d0273f2358b1",
+      "ts": "2026-02-20T14:09:03.093Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 12,
+      "max_turn_ts": "2026-02-20T17:17:24.715000Z"
+    },
+    {
+      "sid": "cf098468-836d-4643-8dcf-10df22aa9f64",
+      "ts": "2026-02-20T14:26:59.702Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-20T18:02:25.539000Z"
+    },
+    {
+      "sid": "2ba5f944-6edf-428a-9762-2c5b4cb511b5",
+      "ts": "2026-02-20T17:12:35.408Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 1,
+      "max_turn_ts": "2026-02-20T17:15:59.596000Z"
+    },
+    {
+      "sid": "cf22843e-4acb-407e-9996-8fc364320189",
+      "ts": "2026-02-20T17:14:07.574Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 17,
+      "max_turn_ts": "2026-02-20T19:16:27.618000Z"
+    },
+    {
+      "sid": "2da7b17b-76e4-4599-a552-2a2e710d6e41",
+      "ts": "2026-02-20T17:17:24.712Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-20T18:31:24.137000Z"
+    },
+    {
+      "sid": "dfcde3bc-d318-4975-870f-dde5f813f55e",
+      "ts": "2026-02-20T18:31:24.133Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-20T19:22:15.936000Z"
+    },
+    {
+      "sid": "e918aa88-04b1-4e5e-95e4-ecbf144cfc76",
+      "ts": "2026-02-20T18:33:36.324Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T18:56:30.131000Z"
+    },
+    {
+      "sid": "69fcfaee-4224-484b-ae36-2c5e721b4a03",
+      "ts": "2026-02-20T18:56:30.127Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-20T19:48:34.530000Z"
+    },
+    {
+      "sid": "2f222e57-4969-456c-a337-79faa6f91ff9",
+      "ts": "2026-02-20T19:11:32.019Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T19:27:58.125000Z"
+    },
+    {
+      "sid": "76f5e736-3047-4c5f-8bb9-aee6e2481645",
+      "ts": "2026-02-20T19:12:25.169Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-20T19:44:19.522000Z"
+    },
+    {
+      "sid": "7402f7a5-333f-4bda-853b-22454e76e3e9",
+      "ts": "2026-02-20T19:22:15.923Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-20T20:06:41.570000Z"
+    },
+    {
+      "sid": "1c66a0c4-449e-4fec-805c-d8e4ccd2b469",
+      "ts": "2026-02-20T19:29:17.162Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-20T20:45:40.075000Z"
+    },
+    {
+      "sid": "224d7b58-2a81-4033-8ff6-0e2a7993289a",
+      "ts": "2026-02-20T19:44:19.520Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 47,
+      "max_turn_ts": "2026-02-20T22:24:05.254000Z"
+    },
+    {
+      "sid": "af3f09b4-1e89-4669-a817-739121eede62",
+      "ts": "2026-02-20T19:48:34.525Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-20T21:16:40.484000Z"
+    },
+    {
+      "sid": "a2d32d09-d997-4156-a6bf-95564d823d1f",
+      "ts": "2026-02-20T20:06:41.569Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T20:54:45.317000Z"
+    },
+    {
+      "sid": "78e0955f-6580-48d5-b1ac-640452caf370",
+      "ts": "2026-02-20T20:45:40.072Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-20T21:06:25.179000Z"
+    },
+    {
+      "sid": "b9557076-9242-470e-b22c-ea36efc0dc46",
+      "ts": "2026-02-20T20:54:45.306Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 8,
+      "max_turn_ts": "2026-02-20T21:51:59.925000Z"
+    },
+    {
+      "sid": "8d270ac7-0442-4e7d-a85b-fc03901ce221",
+      "ts": "2026-02-20T21:06:25.174Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T21:53:02.270000Z"
+    },
+    {
+      "sid": "9ba8cd5d-893f-4155-bcca-f67b5a3060bf",
+      "ts": "2026-02-20T21:16:40.482Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-20T22:11:30.157000Z"
+    },
+    {
+      "sid": "3c8e0beb-69c7-4f9d-824b-78b1ff001103",
+      "ts": "2026-02-20T21:51:59.923Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 14,
+      "max_turn_ts": "2026-02-20T23:08:57.781000Z"
+    },
+    {
+      "sid": "fd36e6f7-3f33-47b2-93c9-d3ae599fe5aa",
+      "ts": "2026-02-20T21:53:02.261Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-20T23:02:43.162000Z"
+    },
+    {
+      "sid": "1c2fa128-5895-4f47-8ae5-0467177dd882",
+      "ts": "2026-02-20T22:11:30.149Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-20T23:01:01.212000Z"
+    },
+    {
+      "sid": "8c633d1e-6dd8-4a51-9a36-9348a5f60bdc",
+      "ts": "2026-02-20T23:02:33.334Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 8,
+      "max_turn_ts": "2026-02-21T12:07:06.692000Z"
+    },
+    {
+      "sid": "e1bdf97a-3a81-4296-9804-6f53e0559cd2",
+      "ts": "2026-02-20T23:02:43.156Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 21,
+      "max_turn_ts": "2026-02-21T12:53:01.066000Z"
+    },
+    {
+      "sid": "48d74853-ac3f-4233-a5a9-47b7320357ab",
+      "ts": "2026-02-21T02:20:40.760Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-21T11:03:31.008000Z"
+    },
+    {
+      "sid": "c2a285bc-9731-4249-955b-ad1a9e2e10a8",
+      "ts": "2026-02-22T12:26:45.083Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-22T12:49:05.898000Z"
+    },
+    {
+      "sid": "647a9ffd-c1f5-4fe9-855a-8c861e5e8e42",
+      "ts": "2026-02-22T12:27:03.536Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T13:05:11.998000Z"
+    },
+    {
+      "sid": "40b30a19-7709-43fc-93fc-6319d4273f5c",
+      "ts": "2026-02-22T12:49:05.895Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 10,
+      "max_turn_ts": "2026-02-22T13:49:10.429000Z"
+    },
+    {
+      "sid": "988169aa-111b-416f-b8ee-46461e9334a1",
+      "ts": "2026-02-22T12:52:44.467Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-22T13:40:34.190000Z"
+    },
+    {
+      "sid": "0dfc7731-859a-41e7-b110-3019ff1e0774",
+      "ts": "2026-02-22T13:05:11.994Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T14:10:49.951000Z"
+    },
+    {
+      "sid": "a5339b3d-4a30-4512-9a11-ccfa8f5683c8",
+      "ts": "2026-02-22T13:40:34.186Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 13,
+      "max_turn_ts": "2026-02-22T14:36:49.820000Z"
+    },
+    {
+      "sid": "e7e08dab-a4f7-47af-bb81-d9f2450636e3",
+      "ts": "2026-02-22T14:10:49.947Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 15,
+      "max_turn_ts": "2026-02-22T17:05:37.478000Z"
+    },
+    {
+      "sid": "72381ec3-cb9d-4191-bf68-d2d1a4d6606d",
+      "ts": "2026-02-22T14:36:49.818Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-22T15:21:27.395000Z"
+    },
+    {
+      "sid": "f698cd0f-73cf-4a8d-bdb0-0dfd196cd2d7",
+      "ts": "2026-02-22T15:21:27.390Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 20,
+      "max_turn_ts": "2026-02-22T22:18:21.933000Z"
+    },
+    {
+      "sid": "1710aa17-a4a8-49a7-a958-311f8aee2df3",
+      "ts": "2026-02-22T15:59:44.338Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 14,
+      "max_turn_ts": "2026-02-22T19:02:50.504000Z"
+    },
+    {
+      "sid": "4fca8a25-2daa-486f-9374-79d69000d801",
+      "ts": "2026-02-22T17:05:37.470Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 45,
+      "max_turn_ts": "2026-02-23T10:58:14.738000Z"
+    },
+    {
+      "sid": "26eccd4b-f02c-41a4-865f-1373103fdb04",
+      "ts": "2026-02-22T17:12:00.473Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 16,
+      "max_turn_ts": "2026-02-23T13:02:59.250000Z"
+    },
+    {
+      "sid": "f090041a-13fc-454e-9bee-97026321c651",
+      "ts": "2026-02-22T17:14:18.852Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 38,
+      "max_turn_ts": "2026-02-22T18:53:33.022000Z"
+    },
+    {
+      "sid": "e976c3ce-ef8c-465f-a922-b9fc64d7fa53",
+      "ts": "2026-02-22T18:54:31.837Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 18,
+      "max_turn_ts": "2026-02-22T20:45:49.077000Z"
+    },
+    {
+      "sid": "e98d3dd5-93b9-470f-8fa2-dff901b33870",
+      "ts": "2026-02-22T20:03:13.164Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-22T20:15:20.389000Z"
+    },
+    {
+      "sid": "71cd93bd-37eb-42d9-ba8d-7f5d227062fa",
+      "ts": "2026-02-22T20:15:20.386Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T20:30:54.765000Z"
+    },
+    {
+      "sid": "e6d60027-3087-4e17-9e50-01a0c7e2e63b",
+      "ts": "2026-02-22T20:31:29.372Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T20:50:59.848000Z"
+    },
+    {
+      "sid": "223a230a-9853-44c1-ba03-63d86838dafa",
+      "ts": "2026-02-22T20:50:59.843Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T21:04:27.493000Z"
+    },
+    {
+      "sid": "84fbf46d-1dd1-4eb4-abe5-aad99c2f681e",
+      "ts": "2026-02-22T21:12:16.107Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 6,
+      "max_turn_ts": "2026-02-22T21:22:02.767000Z"
+    },
+    {
+      "sid": "60757a0a-7ee2-4599-91d1-d087521b8f4a",
+      "ts": "2026-02-22T21:24:01.986Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 3,
+      "max_turn_ts": "2026-02-22T21:28:18.164000Z"
+    },
+    {
+      "sid": "606bff7d-cbe1-4400-a128-4bd520504cf9",
+      "ts": "2026-02-22T21:28:18.161Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 9,
+      "max_turn_ts": "2026-02-22T21:54:27.994000Z"
+    },
+    {
+      "sid": "984153aa-ebb5-4ac5-bdd0-836bcfc0d683",
+      "ts": "2026-02-22T21:54:27.989Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 5,
+      "max_turn_ts": "2026-02-22T22:14:47.289000Z"
+    },
+    {
+      "sid": "96345f53-4079-4f2b-badc-a3a43c58756a",
+      "ts": "2026-02-23T08:05:07.318Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 2,
+      "max_turn_ts": "2026-02-23T08:13:02.839000Z"
+    },
+    {
+      "sid": "c6becb7a-715a-43fd-b9f7-9c699a8191f0",
+      "ts": "2026-02-23T08:13:02.837Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-23T08:37:12.775000Z"
+    },
+    {
+      "sid": "aa4f17e6-e215-41bd-a2cb-606ac1f3008b",
+      "ts": "2026-02-23T10:58:14.727Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-23T11:15:53.950000Z"
+    },
+    {
+      "sid": "2098436c-e838-4b74-b370-87cbaf9c6436",
+      "ts": "2026-02-23T11:15:53.946Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-23T12:49:30.931000Z"
+    },
+    {
+      "sid": "91d1c354-89e2-405b-a0a2-f38fb265ba83",
+      "ts": "2026-02-23T11:37:09.660Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-23T11:52:59.245000Z"
+    },
+    {
+      "sid": "85157d36-a079-49d2-adbc-f809c3a8e9fc",
+      "ts": "2026-02-23T11:52:59.241Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 4,
+      "max_turn_ts": "2026-02-23T12:28:07.152000Z"
+    },
+    {
+      "sid": "7db1fca3-f5ac-4685-882d-b513f8b631d5",
+      "ts": "2026-02-23T12:44:15.784Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 7,
+      "max_turn_ts": "2026-02-23T14:09:31.375000Z"
+    },
+    {
+      "sid": "2f3d5158-b58e-48a4-90eb-cd1f24aee2e2",
+      "ts": "2026-02-23T14:09:31.371Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 22,
+      "max_turn_ts": "2026-02-23T16:49:21.063000Z"
+    },
+    {
+      "sid": "74553399-b197-4a6e-8412-2b719a0ccb0a",
+      "ts": "2026-02-23T16:49:21.060Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 8,
+      "max_turn_ts": "2026-02-23T17:40:45.083000Z"
+    },
+    {
+      "sid": "f162324d-bae6-4ef0-b79c-d9aa6f340f18",
+      "ts": "2026-02-23T17:40:45.065Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 12,
+      "max_turn_ts": "2026-02-23T18:06:30.025000Z"
+    },
+    {
+      "sid": "8ed87da6-ee48-4fbb-9d0b-af66b6000191",
+      "ts": "2026-02-23T18:06:30.020Z",
+      "repo": "0010Grent/dataclaw-peteromallet",
+      "n": 11,
+      "max_turn_ts": "2026-02-23T18:47:48.840000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

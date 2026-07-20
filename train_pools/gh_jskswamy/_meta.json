@@ -1,0 +1,180 @@
+{
+  "developer": "gh:jskswamy",
+  "slug": "gh_jskswamy",
+  "Tstar": "2026-03-26T15:30:31.392564Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 24,
+  "n_human_turns": 722,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "66c6ecf6-e72a-4e5d-aba7-06fe4427b696",
+      "ts": "2026-03-19T20:14:19.069639Z",
+      "repo": "jskswamy/aide",
+      "n": 67,
+      "max_turn_ts": "2026-03-19T19:24:59.048000Z"
+    },
+    {
+      "sid": "9831dbb5-cb63-49fa-bef3-3b2078cc57d0",
+      "ts": "2026-03-20T02:04:25.31172Z",
+      "repo": "jskswamy/aide",
+      "n": 18,
+      "max_turn_ts": "2026-03-20T02:05:04.475000Z"
+    },
+    {
+      "sid": "5c4d6d3b-7d37-47b5-b825-98338aa66e99",
+      "ts": "2026-03-20T05:34:43.008341Z",
+      "repo": "jskswamy/aide",
+      "n": 7,
+      "max_turn_ts": "2026-03-20T05:17:22.950000Z"
+    },
+    {
+      "sid": "7c742d48-91e9-4668-9927-2a86a931fa81",
+      "ts": "2026-03-20T05:34:43.061425Z",
+      "repo": "jskswamy/aide",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T05:05:32.073000Z"
+    },
+    {
+      "sid": "a2461769-8107-436a-9f6a-09ea03d9837a",
+      "ts": "2026-03-20T05:57:37.739492Z",
+      "repo": "jskswamy/aide",
+      "n": 7,
+      "max_turn_ts": "2026-03-20T05:59:39.465000Z"
+    },
+    {
+      "sid": "ef748353-5c92-4389-b07e-2cd1b3b58525",
+      "ts": "2026-03-20T14:12:29.701357Z",
+      "repo": "jskswamy/aide",
+      "n": 12,
+      "max_turn_ts": "2026-03-20T14:13:48.115000Z"
+    },
+    {
+      "sid": "ac427960-249f-4695-b902-a6d5e1c8ff65",
+      "ts": "2026-03-21T18:30:57.640205Z",
+      "repo": "jskswamy/aide",
+      "n": 29,
+      "max_turn_ts": "2026-03-21T02:16:52.798000Z"
+    },
+    {
+      "sid": "cfb29edb-de0f-4d47-9e2a-773545757fc6",
+      "ts": "2026-03-22T02:07:04.267698Z",
+      "repo": "jskswamy/aide",
+      "n": 37,
+      "max_turn_ts": "2026-03-22T02:01:43.877000Z"
+    },
+    {
+      "sid": "149ed256-95c7-49fe-acda-0bc0c900e799",
+      "ts": "2026-03-23T03:24:42.122595Z",
+      "repo": "jskswamy/aide",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T01:55:41.266000Z"
+    },
+    {
+      "sid": "7a4d0a75-d07e-4c56-9530-fe636bfe2c57",
+      "ts": "2026-03-23T07:20:16.709369Z",
+      "repo": "jskswamy/aide",
+      "n": 175,
+      "max_turn_ts": "2026-03-23T07:16:36.715000Z"
+    },
+    {
+      "sid": "fe0b4249-ff93-4286-ae28-de0609161dfc",
+      "ts": "2026-03-23T07:20:24.523669Z",
+      "repo": "jskswamy/aide",
+      "n": 17,
+      "max_turn_ts": "2026-03-23T07:20:41.569000Z"
+    },
+    {
+      "sid": "3838e136-b2a2-4d9e-84b5-42494c5f6fe8",
+      "ts": "2026-03-23T08:35:13.207091Z",
+      "repo": "jskswamy/aide",
+      "n": 16,
+      "max_turn_ts": "2026-03-23T08:32:03.957000Z"
+    },
+    {
+      "sid": "59f4faa3-c79b-4bb4-8cd6-ba5914b68653",
+      "ts": "2026-03-23T10:10:22.689102Z",
+      "repo": "jskswamy/aide",
+      "n": 30,
+      "max_turn_ts": "2026-03-23T10:10:37.243000Z"
+    },
+    {
+      "sid": "e43a3652-665a-46cd-b962-b2f1be439b34",
+      "ts": "2026-03-23T11:25:56.793118Z",
+      "repo": "jskswamy/aide",
+      "n": 16,
+      "max_turn_ts": "2026-03-23T11:26:54.850000Z"
+    },
+    {
+      "sid": "9ca38cfb-33bc-4afa-9236-bafc7dfe4427",
+      "ts": "2026-03-24T00:14:59.160634Z",
+      "repo": "jskswamy/aide",
+      "n": 41,
+      "max_turn_ts": "2026-03-24T00:15:33.406000Z"
+    },
+    {
+      "sid": "5c155be6-6b63-4156-8f71-d4e6a9342224",
+      "ts": "2026-03-24T04:15:09.33789Z",
+      "repo": "jskswamy/aide",
+      "n": 26,
+      "max_turn_ts": "2026-03-24T04:17:17.978000Z"
+    },
+    {
+      "sid": "a5d68674-e66c-4f6f-b124-e19c59a9d9a1",
+      "ts": "2026-03-24T08:00:17.312066Z",
+      "repo": "jskswamy/aide",
+      "n": 7,
+      "max_turn_ts": "2026-03-24T08:00:19.465000Z"
+    },
+    {
+      "sid": "59181112-e517-43eb-8cab-86f0e1ac5e93",
+      "ts": "2026-03-24T08:29:16.210761Z",
+      "repo": "jskswamy/aide",
+      "n": 10,
+      "max_turn_ts": "2026-03-24T08:29:40.765000Z"
+    },
+    {
+      "sid": "0abfbd5c-6f52-4576-969d-cf00e8b3a877",
+      "ts": "2026-03-24T17:56:46.205651Z",
+      "repo": "jskswamy/aide",
+      "n": 53,
+      "max_turn_ts": "2026-03-24T17:56:56.158000Z"
+    },
+    {
+      "sid": "ca834129-6bb8-4448-ad2e-dfdfac17e9bd",
+      "ts": "2026-03-25T11:54:19.69123Z",
+      "repo": "jskswamy/aide",
+      "n": 12,
+      "max_turn_ts": "2026-03-25T11:54:26.477000Z"
+    },
+    {
+      "sid": "dc0afbaa-27ee-4322-9c23-1f24a1cabf00",
+      "ts": "2026-03-25T12:44:08.439146Z",
+      "repo": "jskswamy/aide",
+      "n": 100,
+      "max_turn_ts": "2026-03-25T12:44:21.925000Z"
+    },
+    {
+      "sid": "b368f16d-ebbf-41c8-839f-94bfb318b92d",
+      "ts": "2026-03-25T18:39:32.826408Z",
+      "repo": "jskswamy/aide",
+      "n": 23,
+      "max_turn_ts": "2026-03-25T18:41:53.244000Z"
+    },
+    {
+      "sid": "8fc534fb-a094-47a7-b5dd-dacfba0c8a80",
+      "ts": "2026-03-26T05:30:16.466202Z",
+      "repo": "jskswamy/aide",
+      "n": 2,
+      "max_turn_ts": "2026-03-26T04:47:45.943000Z"
+    },
+    {
+      "sid": "0858f35d-988e-4a63-b9d4-8ee8a1ff8507",
+      "ts": "2026-03-26T13:25:01.219787Z",
+      "repo": "jskswamy/aide",
+      "n": 15,
+      "max_turn_ts": "2026-03-26T10:01:48.884000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

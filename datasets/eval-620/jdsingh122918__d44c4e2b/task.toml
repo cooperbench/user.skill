@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "userbench/jdsingh122918__d44c4e2b"
+description = "Predict the developer's next message given the conversation so far."
+authors = []
+keywords = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+
+[metadata]
+author_name = "userbench"
+category = "user-simulation"
+tags = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+developer = "gh:jdsingh122918"
+point_id = "c6ba3f41-3367-4f2a-8385-fa6273613836#25"
+condition = "noprofile"
+legacy_task_id = "gh_jdsingh122918__d44c4e2b"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

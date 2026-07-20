@@ -1,0 +1,348 @@
+{
+  "developer": "gh:nathanbooth-konecta",
+  "slug": "gh_nathanbooth-konecta",
+  "Tstar": "2026-02-19T14:54:37.505Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 48,
+  "n_human_turns": 839,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "845bba0a-b64d-44e3-b3ba-305527a1bb1c",
+      "ts": "2026-02-05T10:18:13.940Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 38,
+      "max_turn_ts": "2026-02-06T20:19:33.006000Z"
+    },
+    {
+      "sid": "3286ea6a-6097-4532-89e5-c6d531206b38",
+      "ts": "2026-02-05T11:18:31.961Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 26,
+      "max_turn_ts": "2026-02-05T19:06:03.652000Z"
+    },
+    {
+      "sid": "ea93b311-1888-4f2f-b691-a0a380802bee",
+      "ts": "2026-02-05T12:00:57.037Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 3,
+      "max_turn_ts": "2026-02-05T12:03:02.525000Z"
+    },
+    {
+      "sid": "f8e89e85-4576-483c-8f22-519bd2a561ac",
+      "ts": "2026-02-05T12:58:39.258Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-05T13:00:38.937000Z"
+    },
+    {
+      "sid": "af85d5f8-da7a-4985-b324-92fc7f5d6d33",
+      "ts": "2026-02-05T13:17:56.970Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 8,
+      "max_turn_ts": "2026-02-09T10:02:12.897000Z"
+    },
+    {
+      "sid": "ded7857e-603c-4a23-8cb0-da2abbd55749",
+      "ts": "2026-02-05T19:06:08.645Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 8,
+      "max_turn_ts": "2026-02-06T07:58:52.960000Z"
+    },
+    {
+      "sid": "8a9051b9-a7a9-4995-849b-a6660b98c6c1",
+      "ts": "2026-02-05T20:59:08.521Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 4,
+      "max_turn_ts": "2026-02-05T21:10:10.295000Z"
+    },
+    {
+      "sid": "d651fa50-bbc7-40c4-85ef-9248d88ca2a9",
+      "ts": "2026-02-06T07:59:11.101Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 63,
+      "max_turn_ts": "2026-02-07T14:18:35.644000Z"
+    },
+    {
+      "sid": "5d3880ba-4476-44ca-bcb9-2df6494ee8f9",
+      "ts": "2026-02-06T14:33:14.002Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 5,
+      "max_turn_ts": "2026-02-06T14:51:29.631000Z"
+    },
+    {
+      "sid": "24a4e70d-4f7d-469e-88c7-e3e58025d43e",
+      "ts": "2026-02-06T17:24:23.391Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 10,
+      "max_turn_ts": "2026-02-06T18:21:45.973000Z"
+    },
+    {
+      "sid": "b639df2b-ae23-42ca-a327-d9ff1a282627",
+      "ts": "2026-02-06T18:21:45.974Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 13,
+      "max_turn_ts": "2026-02-06T18:54:13.617000Z"
+    },
+    {
+      "sid": "492030a5-0992-4273-a7c4-040044d4cbbf",
+      "ts": "2026-02-06T18:54:13.617Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 7,
+      "max_turn_ts": "2026-02-06T20:18:12.124000Z"
+    },
+    {
+      "sid": "f22dc276-f44f-4bb8-9bad-b702e4d88b01",
+      "ts": "2026-02-06T20:18:12.125Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 15,
+      "max_turn_ts": "2026-02-09T10:04:28.441000Z"
+    },
+    {
+      "sid": "32bce6ee-2984-44ba-a427-e67dffcf3022",
+      "ts": "2026-02-07T10:05:06.322Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 13,
+      "max_turn_ts": "2026-02-08T08:54:47.263000Z"
+    },
+    {
+      "sid": "bb7d51cf-6bf2-49da-8e91-2a49600f221c",
+      "ts": "2026-02-07T14:11:34.395Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 2,
+      "max_turn_ts": "2026-02-07T14:18:24.645000Z"
+    },
+    {
+      "sid": "6b0de081-215e-4c21-811c-ceb526efd461",
+      "ts": "2026-02-07T14:20:07.193Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 110,
+      "max_turn_ts": "2026-02-10T09:15:15.122000Z"
+    },
+    {
+      "sid": "afdc95c2-c311-441c-a0b0-710ee91b6788",
+      "ts": "2026-02-08T16:35:39.217Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 28,
+      "max_turn_ts": "2026-02-09T10:33:33.699000Z"
+    },
+    {
+      "sid": "c4d82a3e-d919-4c3b-ad8a-817aac3a673d",
+      "ts": "2026-02-09T08:54:22.915Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 11,
+      "max_turn_ts": "2026-02-09T19:11:59.760000Z"
+    },
+    {
+      "sid": "6053b286-3f6c-4d4f-ac50-1046f45a1278",
+      "ts": "2026-02-09T09:30:41.707Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 11,
+      "max_turn_ts": "2026-02-09T17:58:10.502000Z"
+    },
+    {
+      "sid": "f2077325-885c-4a24-9d04-997fd3c2c651",
+      "ts": "2026-02-10T09:39:13.373Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 6,
+      "max_turn_ts": "2026-02-11T14:05:10.087000Z"
+    },
+    {
+      "sid": "29a6cccd-a03c-466b-a158-acb1f446721c",
+      "ts": "2026-02-10T09:41:52.926Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 21,
+      "max_turn_ts": "2026-02-13T14:33:52.599000Z"
+    },
+    {
+      "sid": "4dca5543-9fb2-45e1-b70f-b68b6be62019",
+      "ts": "2026-02-10T10:01:33.430Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 62,
+      "max_turn_ts": "2026-02-10T17:38:57.774000Z"
+    },
+    {
+      "sid": "34d33032-d8c1-46e1-84b0-c69959ed491e",
+      "ts": "2026-02-10T19:40:50.329Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 18,
+      "max_turn_ts": "2026-02-10T22:42:46.536000Z"
+    },
+    {
+      "sid": "22d6bfc2-da33-4542-827a-ea8554b3b562",
+      "ts": "2026-02-11T08:08:30.911Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 56,
+      "max_turn_ts": "2026-02-12T11:04:01.514000Z"
+    },
+    {
+      "sid": "01a42a92-8961-481f-b93c-b2e13847d4df",
+      "ts": "2026-02-11T20:06:38.580Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-11T20:21:20.187000Z"
+    },
+    {
+      "sid": "b280572d-a6b7-4294-ab42-0c75b84df939",
+      "ts": "2026-02-12T09:29:38.395Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-12T10:42:12.520000Z"
+    },
+    {
+      "sid": "25c4c817-84a3-401f-b538-aa6a70659234",
+      "ts": "2026-02-12T11:20:08.960Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 11,
+      "max_turn_ts": "2026-02-12T20:29:35.584000Z"
+    },
+    {
+      "sid": "6fa6e684-a666-4c30-8e4f-da8c43dfec83",
+      "ts": "2026-02-12T11:27:16.996Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 53,
+      "max_turn_ts": "2026-02-12T22:34:19.483000Z"
+    },
+    {
+      "sid": "692ae24a-be20-4aa7-99d2-0f117ede9634",
+      "ts": "2026-02-12T20:30:23.611Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 2,
+      "max_turn_ts": "2026-02-12T20:33:32.720000Z"
+    },
+    {
+      "sid": "a23298fc-4b67-4b36-bb43-996c9a81a4bd",
+      "ts": "2026-02-12T21:54:51.426Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 3,
+      "max_turn_ts": "2026-02-13T15:54:34.632000Z"
+    },
+    {
+      "sid": "e19ffde0-8d2f-4dcb-aa46-e8448902d717",
+      "ts": "2026-02-12T22:13:47.534Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-12T22:15:11.716000Z"
+    },
+    {
+      "sid": "d7e176d3-2196-4644-a263-45ac9d496c11",
+      "ts": "2026-02-12T22:32:13.774Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 30,
+      "max_turn_ts": "2026-02-13T10:15:10.880000Z"
+    },
+    {
+      "sid": "49808df3-7221-4a8c-b9df-e46f80df222c",
+      "ts": "2026-02-13T10:15:35.079Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T10:23:15.904000Z"
+    },
+    {
+      "sid": "3172ac0e-2d49-4236-aa50-59d78c27529e",
+      "ts": "2026-02-13T10:23:50.212Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 11,
+      "max_turn_ts": "2026-02-13T16:15:59.690000Z"
+    },
+    {
+      "sid": "13a114c6-fbba-44db-bdc4-00ef4b965158",
+      "ts": "2026-02-13T13:21:37.837Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 2,
+      "max_turn_ts": "2026-02-13T13:22:10.275000Z"
+    },
+    {
+      "sid": "bb0d7f4e-3dd2-42bc-91a3-cfc1fac3f3da",
+      "ts": "2026-02-13T16:12:03.088Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-13T16:15:17.082000Z"
+    },
+    {
+      "sid": "4391d265-e50b-4aff-bd11-0ea304c1728b",
+      "ts": "2026-02-16T09:49:48.980Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-16T09:54:02.948000Z"
+    },
+    {
+      "sid": "97f79394-0e17-4000-88e4-1b8d84050895",
+      "ts": "2026-02-16T10:07:05.542Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 8,
+      "max_turn_ts": "2026-02-16T14:52:38.842000Z"
+    },
+    {
+      "sid": "0b1f2f8a-a474-48c3-bd8b-72c69318448c",
+      "ts": "2026-02-16T15:11:11.022Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 11,
+      "max_turn_ts": "2026-02-16T21:49:22.241000Z"
+    },
+    {
+      "sid": "f61859a0-ff46-4dc0-b827-3817a93e5c86",
+      "ts": "2026-02-16T20:09:57.758Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 64,
+      "max_turn_ts": "2026-02-17T19:53:01.046000Z"
+    },
+    {
+      "sid": "0c53e585-33ca-4726-b244-0a946215d041",
+      "ts": "2026-02-16T20:50:13.454Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T21:04:03.022000Z"
+    },
+    {
+      "sid": "683fe549-f427-497c-9d5e-9ed95e029bd8",
+      "ts": "2026-02-16T22:16:37.315Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 12,
+      "max_turn_ts": "2026-02-17T07:52:14.981000Z"
+    },
+    {
+      "sid": "6cb04b34-3bf3-4c60-9112-a0fe7cd59637",
+      "ts": "2026-02-17T07:51:29.365Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 2,
+      "max_turn_ts": "2026-02-17T07:51:55.307000Z"
+    },
+    {
+      "sid": "cf4554a8-d99c-43c1-980c-7bdaea76d66b",
+      "ts": "2026-02-17T07:54:00.639Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 3,
+      "max_turn_ts": "2026-02-17T17:11:54.145000Z"
+    },
+    {
+      "sid": "c22096b9-2c72-4647-bb36-26b32c55d1f4",
+      "ts": "2026-02-17T20:21:51.518Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 29,
+      "max_turn_ts": "2026-02-18T08:21:33.044000Z"
+    },
+    {
+      "sid": "1012d67a-e822-4ba2-b862-78659d73c28c",
+      "ts": "2026-02-18T06:49:54.690Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T06:50:46.499000Z"
+    },
+    {
+      "sid": "e9d8a8a6-bd1f-47e8-8582-e701d4274280",
+      "ts": "2026-02-18T08:46:35.402Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 48,
+      "max_turn_ts": "2026-02-18T21:50:35.975000Z"
+    },
+    {
+      "sid": "14320076-d3a9-41f2-9587-b11eb5153433",
+      "ts": "2026-02-18T17:01:53.330Z",
+      "repo": "nathanbooth-konecta/claude-code-backup",
+      "n": 1,
+      "max_turn_ts": "2026-02-18T17:03:10.690000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

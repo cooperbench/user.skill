@@ -1,0 +1,579 @@
+{
+  "developer": "gh:robouden",
+  "slug": "gh_robouden",
+  "Tstar": "2026-04-24T00:42:55.602194129Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 81,
+  "n_human_turns": 1044,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "b18f7e10-3ef7-4a1a-a610-3c3a57cd3bd2",
+      "ts": "2026-02-11T13:00:38.635240547Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 4,
+      "max_turn_ts": "2026-02-11T13:00:35.519000Z"
+    },
+    {
+      "sid": "20f9319f-a0e1-43f7-92da-b744b96c95d9",
+      "ts": "2026-02-16T04:12:34.176441586Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 3,
+      "max_turn_ts": "2026-02-16T04:12:31.095000Z"
+    },
+    {
+      "sid": "960e1199-4c77-4e97-9fa1-33fb9498a0a9",
+      "ts": "2026-02-16T05:45:26.415986584Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 2,
+      "max_turn_ts": "2026-02-16T05:45:23.283000Z"
+    },
+    {
+      "sid": "b6847497-f5f3-4b52-a8dd-39eafaa75c69",
+      "ts": "2026-02-16T08:19:19.162046314Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 7,
+      "max_turn_ts": "2026-02-16T08:19:16.041000Z"
+    },
+    {
+      "sid": "60cd3ab5-ac7f-41ea-812f-2e73ce1aa29d",
+      "ts": "2026-02-18T23:28:41.819073378Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 6,
+      "max_turn_ts": "2026-02-18T23:20:54.586000Z"
+    },
+    {
+      "sid": "9140e479-d2cf-4f2a-83d2-c43dcac70eee",
+      "ts": "2026-02-18T23:36:30.383896695Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 2,
+      "max_turn_ts": "2026-02-18T23:35:54.860000Z"
+    },
+    {
+      "sid": "d86ef08f-ac65-4cb1-b018-46f425a03749",
+      "ts": "2026-02-19T02:08:05.248720163Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 5,
+      "max_turn_ts": "2026-02-19T01:51:05.063000Z"
+    },
+    {
+      "sid": "a851941e-91ed-4706-a4e2-39177a334681",
+      "ts": "2026-02-20T04:34:42.957889492Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 8,
+      "max_turn_ts": "2026-02-20T04:34:39.689000Z"
+    },
+    {
+      "sid": "b35d0ffa-3758-4c6a-a9d2-44ffa4ecf1ee",
+      "ts": "2026-02-20T09:19:37.133430424Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 6,
+      "max_turn_ts": "2026-02-20T09:19:33.882000Z"
+    },
+    {
+      "sid": "b86e41be-0756-455c-bc32-901d460eef6b",
+      "ts": "2026-02-20T09:32:51.399887373Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 2,
+      "max_turn_ts": "2026-02-20T09:28:01.745000Z"
+    },
+    {
+      "sid": "5b00aa71-4005-4f0a-a85a-4dfe47a65e3c",
+      "ts": "2026-02-20T10:15:08.354603858Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 4,
+      "max_turn_ts": "2026-02-20T10:14:51.497000Z"
+    },
+    {
+      "sid": "8610e9fd-f237-4d68-8794-31293b927da0",
+      "ts": "2026-02-20T12:58:58.937110396Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 18,
+      "max_turn_ts": "2026-02-20T12:22:01.334000Z"
+    },
+    {
+      "sid": "8bf95c26-d9d3-4f78-990c-9784125b69b8",
+      "ts": "2026-02-21T01:11:42.160694466Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 35,
+      "max_turn_ts": "2026-02-20T15:26:16.416000Z"
+    },
+    {
+      "sid": "faf8d6a2-6deb-494a-911e-8cbb11fca70a",
+      "ts": "2026-02-21T11:52:45.263187166Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 56,
+      "max_turn_ts": "2026-02-21T11:52:31.974000Z"
+    },
+    {
+      "sid": "8f04c9d2-6bf8-4ca1-8729-af6ffb5b771d",
+      "ts": "2026-02-22T00:10:19.244041214Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 3,
+      "max_turn_ts": "2026-02-22T00:05:14.183000Z"
+    },
+    {
+      "sid": "bd9b7f80-0310-436d-af9e-59416a1579d9",
+      "ts": "2026-02-22T02:07:23.567000+00:00",
+      "repo": "?",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T02:12:03.162000Z"
+    },
+    {
+      "sid": "a4cb7498-3efa-438e-b607-6f6d76ad374d",
+      "ts": "2026-02-22T02:08:06.064867975Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 4,
+      "max_turn_ts": "2026-02-22T02:03:15.224000Z"
+    },
+    {
+      "sid": "b2d0c8c8-8835-4fa3-bd1a-756837dc5717",
+      "ts": "2026-02-22T02:08:46.672524469Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 1,
+      "max_turn_ts": "2026-02-22T01:28:30.928000Z"
+    },
+    {
+      "sid": "631834d0-fc3b-4457-b801-7ed65e113840",
+      "ts": "2026-02-22T07:58:21.104292518Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 2,
+      "max_turn_ts": "2026-02-22T07:57:59.625000Z"
+    },
+    {
+      "sid": "a63effd9-4778-47b8-8b1a-2e5a910fa1af",
+      "ts": "2026-02-22T15:47:53.579801621Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 5,
+      "max_turn_ts": "2026-02-22T15:47:50.330000Z"
+    },
+    {
+      "sid": "4349298f-34ca-435c-9350-4d15476e7a4e",
+      "ts": "2026-02-23T01:13:28.277893822Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 1,
+      "max_turn_ts": "2026-02-23T01:12:55.068000Z"
+    },
+    {
+      "sid": "8ea091c9-3998-4d23-aa1f-5732adaea61f",
+      "ts": "2026-02-24T13:25:10.112697562Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 21,
+      "max_turn_ts": "2026-02-24T13:25:06.118000Z"
+    },
+    {
+      "sid": "0852daa6-239f-424e-bdd6-79521b1cbc88",
+      "ts": "2026-02-25T14:12:45.809000+00:00",
+      "repo": "?",
+      "n": 43,
+      "max_turn_ts": "2026-02-25T16:44:07.442000Z"
+    },
+    {
+      "sid": "323f4137-d5cd-497a-ba7f-d2a1ce9660de",
+      "ts": "2026-02-25T23:48:40.333208044Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 12,
+      "max_turn_ts": "2026-02-25T23:48:36.983000Z"
+    },
+    {
+      "sid": "9e2616b7-587c-4f38-be28-d49345b61936",
+      "ts": "2026-02-26T01:47:28.385166601Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T01:47:25.259000Z"
+    },
+    {
+      "sid": "4df2f39a-53b2-4edb-8759-ac9db246bd91",
+      "ts": "2026-02-26T07:13:26.600482746Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 16,
+      "max_turn_ts": "2026-02-26T07:13:21.671000Z"
+    },
+    {
+      "sid": "f80e1c19-a344-4583-9cf6-5c9e7daf6737",
+      "ts": "2026-02-26T13:09:47.510328205Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 3,
+      "max_turn_ts": "2026-02-26T13:09:42.917000Z"
+    },
+    {
+      "sid": "50ef6fc8-e935-4935-8931-8a4c17cad23a",
+      "ts": "2026-02-27T01:21:08.450428031Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T23:33:28.181000Z"
+    },
+    {
+      "sid": "ba492de5-dae3-4266-bb89-fd5c858092c4",
+      "ts": "2026-02-27T15:55:23.001091962Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 13,
+      "max_turn_ts": "2026-02-27T15:55:14.986000Z"
+    },
+    {
+      "sid": "e2172417-c330-4394-80c8-ae75a7da91f5",
+      "ts": "2026-02-28T04:57:08.961913788Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 8,
+      "max_turn_ts": "2026-02-28T04:55:14.168000Z"
+    },
+    {
+      "sid": "2da52712-c112-44d9-9bc5-68af6d178f26",
+      "ts": "2026-03-02T03:09:53.231221798Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 3,
+      "max_turn_ts": "2026-03-02T03:10:07.508000Z"
+    },
+    {
+      "sid": "ad25a4ab-0b58-4e05-bf8a-c268d931f7a4",
+      "ts": "2026-03-02T12:22:54.409451126Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 6,
+      "max_turn_ts": "2026-03-02T12:25:20.399000Z"
+    },
+    {
+      "sid": "ea63b833-3dd6-4d6a-9d90-0858a3c54126",
+      "ts": "2026-03-03T00:10:36.3006155Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 2,
+      "max_turn_ts": "2026-03-03T00:03:36.588000Z"
+    },
+    {
+      "sid": "bc583e35-b9e8-45bd-bdd1-b7275c4d77d2",
+      "ts": "2026-03-03T02:21:29.198000+00:00",
+      "repo": "?",
+      "n": 27,
+      "max_turn_ts": "2026-03-03T13:38:36.598000Z"
+    },
+    {
+      "sid": "38b54a46-5663-47ec-8f87-af920b1f4ba3",
+      "ts": "2026-03-04T09:47:16.495647617Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 12,
+      "max_turn_ts": "2026-03-04T02:10:15.383000Z"
+    },
+    {
+      "sid": "d3af4e36-d6e3-4220-9a81-ebca89484b4f",
+      "ts": "2026-03-04T10:48:31.382217395Z",
+      "repo": "Safecast/safecast-map-MCP",
+      "n": 2,
+      "max_turn_ts": "2026-02-25T09:21:14.417000Z"
+    },
+    {
+      "sid": "92f84a15-fb1b-48bf-8e02-185db21f9943",
+      "ts": "2026-03-04T12:33:27.637950354Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 2,
+      "max_turn_ts": "2026-03-04T12:29:58.070000Z"
+    },
+    {
+      "sid": "55675b68-75a8-4bf9-865d-de945758cb09",
+      "ts": "2026-03-04T13:39:35.34502157Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 4,
+      "max_turn_ts": "2026-03-04T13:39:49.136000Z"
+    },
+    {
+      "sid": "18e6ff61-9982-416d-9a28-d6a98c7f1cee",
+      "ts": "2026-03-05T06:31:40.970394054Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 3,
+      "max_turn_ts": "2026-03-05T06:31:57.829000Z"
+    },
+    {
+      "sid": "24ce5784-84e4-4702-a274-065775a73a6d",
+      "ts": "2026-03-12T13:36:07.405969151Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 3,
+      "max_turn_ts": "2026-03-12T13:37:56.864000Z"
+    },
+    {
+      "sid": "9ac58a69-cb94-410b-b5fa-767ad6f4946a",
+      "ts": "2026-03-12T13:36:39.189703472Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 5,
+      "max_turn_ts": "2026-03-12T06:35:15.442000Z"
+    },
+    {
+      "sid": "f545d8e7-cd4a-43e3-ac79-38154aa98851",
+      "ts": "2026-03-12T13:36:56.69600292Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 10,
+      "max_turn_ts": "2026-03-12T13:07:44.267000Z"
+    },
+    {
+      "sid": "4c2b9772-d227-44f4-b6f7-510366e9fc64",
+      "ts": "2026-03-13T00:47:09.036418361Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 2,
+      "max_turn_ts": "2026-03-12T23:20:11.145000Z"
+    },
+    {
+      "sid": "f2c92b6a-d8fd-4c7e-bfa8-9bb6c99493dd",
+      "ts": "2026-03-13T02:03:11.667416718Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 31,
+      "max_turn_ts": "2026-03-13T02:07:39.486000Z"
+    },
+    {
+      "sid": "65133d5d-4fb7-491c-af16-1eb8d4690726",
+      "ts": "2026-03-13T12:15:09.695273962Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 22,
+      "max_turn_ts": "2026-03-04T12:02:27.862000Z"
+    },
+    {
+      "sid": "b873c737-964e-4f95-87bc-c8b6b87542a7",
+      "ts": "2026-03-13T12:15:29.213747876Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 3,
+      "max_turn_ts": "2026-03-13T12:16:13.242000Z"
+    },
+    {
+      "sid": "b46ea429-1b4f-4871-9831-f11f1c4536a4",
+      "ts": "2026-03-14T01:54:44.44736793Z",
+      "repo": "?",
+      "n": 19,
+      "max_turn_ts": "2026-03-13T12:01:31.611000Z"
+    },
+    {
+      "sid": "dc47a096-9665-4100-a468-94dc30784f66",
+      "ts": "2026-03-14T01:55:06.891389795Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 27,
+      "max_turn_ts": "2026-03-14T01:56:18.570000Z"
+    },
+    {
+      "sid": "c5d41277-cf78-4655-b9b1-fa4fe07cb5f0",
+      "ts": "2026-03-14T13:29:10.154506428Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 12,
+      "max_turn_ts": "2026-03-14T11:58:54.751000Z"
+    },
+    {
+      "sid": "64a6cb96-c63d-4e10-8113-f1e2aced3ab2",
+      "ts": "2026-03-14T14:13:02.995903Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 6,
+      "max_turn_ts": "2026-03-14T14:13:54.049000Z"
+    },
+    {
+      "sid": "a556acf6-f669-4837-a3c9-66291f8cf6d0",
+      "ts": "2026-03-15T11:50:39.899932274Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 18,
+      "max_turn_ts": "2026-03-15T11:51:21.033000Z"
+    },
+    {
+      "sid": "01171b51-4eaa-47f3-9f5a-15df83a7d2f4",
+      "ts": "2026-03-16T01:34:11.662552629Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 5,
+      "max_turn_ts": "2026-03-16T01:34:34.956000Z"
+    },
+    {
+      "sid": "4dd0d6b8-e083-4fa3-afca-d1e3269ff24e",
+      "ts": "2026-03-23T23:34:20.994433306Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 2,
+      "max_turn_ts": "2026-03-23T23:34:58.188000Z"
+    },
+    {
+      "sid": "01319a6f-4742-4aaa-95f2-7af6a80b0a9b",
+      "ts": "2026-03-25T10:27:48.31556736Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 13,
+      "max_turn_ts": "2026-03-25T10:27:59.077000Z"
+    },
+    {
+      "sid": "ad099bee-c6ea-4523-a0d5-98b3c02f4b94",
+      "ts": "2026-03-26T06:35:39.897473822Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 2,
+      "max_turn_ts": "2026-03-26T06:36:09.645000Z"
+    },
+    {
+      "sid": "08f53e41-8000-4e76-8077-41332255c1be",
+      "ts": "2026-03-28T15:34:04.322103139Z",
+      "repo": "robouden/GrooveGO",
+      "n": 23,
+      "max_turn_ts": "2026-03-28T15:34:13.604000Z"
+    },
+    {
+      "sid": "1415651d-5457-497f-a8a0-4398adbc1a12",
+      "ts": "2026-03-29T11:05:05.870153769Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 11,
+      "max_turn_ts": "2026-03-29T11:04:17.408000Z"
+    },
+    {
+      "sid": "06bcbec1-38f2-4a1f-b573-52dae5adb777",
+      "ts": "2026-03-29T23:32:14.969616297Z",
+      "repo": "robouden/GrooveGO",
+      "n": 12,
+      "max_turn_ts": "2026-03-29T23:32:28.280000Z"
+    },
+    {
+      "sid": "647bf721-3095-4a3d-8482-e4e7cef2adbb",
+      "ts": "2026-03-30T23:50:57.625553672Z",
+      "repo": "Safecast/bGeigieZen",
+      "n": 30,
+      "max_turn_ts": "2026-03-30T23:51:22.077000Z"
+    },
+    {
+      "sid": "53e72d11-b1b7-490c-a2b8-85c421f9c711",
+      "ts": "2026-04-01T01:41:09.88954143Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 21,
+      "max_turn_ts": "2026-04-01T01:39:53.820000Z"
+    },
+    {
+      "sid": "7ece1b4d-18d9-491b-bb1a-1ab532681015",
+      "ts": "2026-04-01T01:41:13.077417653Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 13,
+      "max_turn_ts": "2026-03-31T14:03:26.360000Z"
+    },
+    {
+      "sid": "ebca4a42-f0e2-4064-8a62-ab6d0c676147",
+      "ts": "2026-04-01T03:32:30.662610744Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 21,
+      "max_turn_ts": "2026-04-01T03:32:56.392000Z"
+    },
+    {
+      "sid": "86c38a2b-dd7e-41b8-b11f-ea6dd10bffe2",
+      "ts": "2026-04-02T07:34:33.38694975Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 40,
+      "max_turn_ts": "2026-04-01T13:59:49.054000Z"
+    },
+    {
+      "sid": "0bea46ec-8299-4cc3-98f2-d3a4fe4b316a",
+      "ts": "2026-04-02T23:02:51.227643733Z",
+      "repo": "?",
+      "n": 52,
+      "max_turn_ts": "2026-04-04T01:17:47.195000Z"
+    },
+    {
+      "sid": "8894a8be-fb20-44c7-9f9e-134fa68b9886",
+      "ts": "2026-04-03T13:22:50.026425358Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 22,
+      "max_turn_ts": "2026-04-03T13:23:23.229000Z"
+    },
+    {
+      "sid": "ac137498-0684-42bc-bd3b-70bbe9bbdfe9",
+      "ts": "2026-04-05T02:09:02.491991651Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 21,
+      "max_turn_ts": "2026-04-04T14:19:07.835000Z"
+    },
+    {
+      "sid": "fdaaa736-904a-4a0c-958c-b0ff6f936ce9",
+      "ts": "2026-04-06T06:49:23.762123912Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 33,
+      "max_turn_ts": "2026-04-06T06:50:29.468000Z"
+    },
+    {
+      "sid": "3e759521-ebac-4543-809c-818fb66dd7ee",
+      "ts": "2026-04-06T11:59:30.430012781Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 1,
+      "max_turn_ts": "2026-04-05T12:29:35.696000Z"
+    },
+    {
+      "sid": "8ce07268-a8da-4456-aa05-8f730289850d",
+      "ts": "2026-04-06T20:10:42.648836696Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 20,
+      "max_turn_ts": "2026-04-06T12:39:04.986000Z"
+    },
+    {
+      "sid": "7c463737-9f41-48ca-9aae-27d613161014",
+      "ts": "2026-04-06T20:45:37.543730636Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 3,
+      "max_turn_ts": "2026-04-06T20:46:36.732000Z"
+    },
+    {
+      "sid": "df33b53b-e58c-4a3b-b24e-45647292d52b",
+      "ts": "2026-04-06T20:45:51.052168313Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 39,
+      "max_turn_ts": "2026-04-05T06:08:35.208000Z"
+    },
+    {
+      "sid": "7469df6d-212e-4a44-8ec3-1d5b88c43b85",
+      "ts": "2026-04-07T05:43:30.821395522Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 16,
+      "max_turn_ts": "2026-04-07T05:44:26.886000Z"
+    },
+    {
+      "sid": "71a6aa1d-05cc-4efb-ae8e-f29a1ad70e9e",
+      "ts": "2026-04-08T00:57:15.754462662Z",
+      "repo": "Safecast/safecast-new-map",
+      "n": 34,
+      "max_turn_ts": "2026-04-08T00:56:57.347000Z"
+    },
+    {
+      "sid": "fa8da04f-6283-4952-b5ed-535598efe59b",
+      "ts": "2026-04-11T23:04:32.250281453Z",
+      "repo": "Safecast/bGeigieZen",
+      "n": 8,
+      "max_turn_ts": "2026-04-11T23:05:34.522000Z"
+    },
+    {
+      "sid": "04c9821d-070a-4c07-a8fc-9ae20f6d4af3",
+      "ts": "2026-04-20T13:49:08.612329756Z",
+      "repo": "Safecast/bGeigieZen",
+      "n": 3,
+      "max_turn_ts": "2026-04-20T13:50:04.199000Z"
+    },
+    {
+      "sid": "2cde0f8c-7166-4148-8233-07a15709dd76",
+      "ts": "2026-04-24T00:42:54.012846565Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 34,
+      "max_turn_ts": "2026-04-19T15:43:04.717000Z"
+    },
+    {
+      "sid": "3200040a-3d1a-4630-9196-2ab7c25187e3",
+      "ts": "2026-04-24T00:42:54.065918332Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 3,
+      "max_turn_ts": "2026-04-19T07:19:23.430000Z"
+    },
+    {
+      "sid": "73180418-e784-40bf-926b-0e7aea4ad050",
+      "ts": "2026-04-24T00:42:54.405536782Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 21,
+      "max_turn_ts": "2026-04-19T01:04:08.352000Z"
+    },
+    {
+      "sid": "79e483cf-184e-4c51-9a67-e3d99000582f",
+      "ts": "2026-04-24T00:42:54.47291007Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 4,
+      "max_turn_ts": "2026-04-19T07:10:27.497000Z"
+    },
+    {
+      "sid": "8dd861ff-fd10-4a30-89b9-2aadd5db44e2",
+      "ts": "2026-04-24T00:42:54.64570777Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 5,
+      "max_turn_ts": "2026-04-17T14:20:59.892000Z"
+    },
+    {
+      "sid": "ae475a44-f713-4d84-85e2-6be0f6cbe4aa",
+      "ts": "2026-04-24T00:42:55.047171106Z",
+      "repo": "robouden/openclaw-workspace",
+      "n": 17,
+      "max_turn_ts": "2026-04-20T00:13:13.263000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

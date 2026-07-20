@@ -1,1 +1,0 @@
-{"point_id": "1cb7ed5c-2524-4ba4-97d6-a1359143d74a#823", "developer": "gh:mvanhorn", "condition": "noprofile", "real": "we have to trigger the e2e directly, as our branch won't trigger it", "prev_agent": "Pushed. That should trigger a new E2E run with both fixes \u2014 the opencode warmup step and the quieter transcript validation.", "gold_move": null}

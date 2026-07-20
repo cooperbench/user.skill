@@ -1,0 +1,320 @@
+{
+  "developer": "gh:kungfusaini",
+  "slug": "gh_kungfusaini",
+  "Tstar": "2026-06-05T08:54:06.685Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 44,
+  "n_human_turns": 2610,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "cb951072-eda3-4ce6-a751-f214ac4e76f4",
+      "ts": "2026-04-24T13:02:04.784Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 430,
+      "max_turn_ts": "2026-05-08T12:04:35.198000Z"
+    },
+    {
+      "sid": "653605a1-bdfe-4d53-b071-cbdaf524c856",
+      "ts": "2026-05-06T18:18:07.560Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 73,
+      "max_turn_ts": "2026-05-07T20:07:57.838000Z"
+    },
+    {
+      "sid": "3d2c8141-396a-46ce-b4b0-7c62748b501e",
+      "ts": "2026-05-08T14:34:31.718Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 54,
+      "max_turn_ts": "2026-05-09T18:47:41.781000Z"
+    },
+    {
+      "sid": "285df006-48f1-48ae-bf23-b8e58892ad0e",
+      "ts": "2026-05-09T10:01:14.670Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 11,
+      "max_turn_ts": "2026-05-10T06:51:47.296000Z"
+    },
+    {
+      "sid": "458d1a0a-acd2-47d5-8351-4d8e1d21aea5",
+      "ts": "2026-05-09T18:49:49.926Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 97,
+      "max_turn_ts": "2026-05-10T11:28:07.035000Z"
+    },
+    {
+      "sid": "0a7565de-7500-4adc-b9e0-b313b9cbe819",
+      "ts": "2026-05-09T18:52:01.882Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-05-09T18:55:38.380000Z"
+    },
+    {
+      "sid": "7466a0f2-f9df-44cc-8fdc-89997c1fa286",
+      "ts": "2026-05-10T09:42:21.779Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-10T09:46:08.827000Z"
+    },
+    {
+      "sid": "da81c1be-f6eb-4308-9e13-318506f26a20",
+      "ts": "2026-05-10T09:47:30.110Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-05-10T10:51:55.553000Z"
+    },
+    {
+      "sid": "6254d2b9-4160-43cd-a4b1-12b7befa7090",
+      "ts": "2026-05-10T10:43:52.557Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-10T10:43:59.442000Z"
+    },
+    {
+      "sid": "2bd0090d-e25d-4fbf-822a-c24018d0f957",
+      "ts": "2026-05-10T11:28:39.084Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 79,
+      "max_turn_ts": "2026-05-15T09:34:26.301000Z"
+    },
+    {
+      "sid": "1e93d08e-cfca-4f3c-b616-37d856a024c2",
+      "ts": "2026-05-10T15:07:19.188Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 17,
+      "max_turn_ts": "2026-05-10T21:02:28.230000Z"
+    },
+    {
+      "sid": "11bcb5f6-83b8-4d80-9a1a-ccdc9fbc43af",
+      "ts": "2026-05-10T22:18:51.381Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-05-11T06:55:41.495000Z"
+    },
+    {
+      "sid": "9c3e95f9-c33a-4481-9657-187c7d42b2a1",
+      "ts": "2026-05-11T14:17:36.270Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 27,
+      "max_turn_ts": "2026-05-19T08:40:51.785000Z"
+    },
+    {
+      "sid": "6d595a18-172c-4b4e-a697-3d70177a3c09",
+      "ts": "2026-05-11T15:25:05.584Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 33,
+      "max_turn_ts": "2026-05-11T17:59:57.954000Z"
+    },
+    {
+      "sid": "6bca3b04-0922-4f79-8c1a-9841ec30168a",
+      "ts": "2026-05-11T15:25:17.849Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 39,
+      "max_turn_ts": "2026-05-12T15:10:04.690000Z"
+    },
+    {
+      "sid": "2a1ed168-96c5-480c-825e-15dacbe0b705",
+      "ts": "2026-05-11T15:25:25.362Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 580,
+      "max_turn_ts": "2026-05-21T14:51:46.196000Z"
+    },
+    {
+      "sid": "75fce780-7597-452e-90cd-1c147ba5fa39",
+      "ts": "2026-05-11T15:25:32.451Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 43,
+      "max_turn_ts": "2026-05-12T13:54:52.059000Z"
+    },
+    {
+      "sid": "f7f1205f-65f2-42f8-9b0e-7bbcf66a7993",
+      "ts": "2026-05-12T08:44:27.687Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-05-12T09:32:56.773000Z"
+    },
+    {
+      "sid": "098af7d6-7f44-4fb3-b86a-705122bb3879",
+      "ts": "2026-05-12T14:46:27.398Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 31,
+      "max_turn_ts": "2026-05-13T06:52:43.724000Z"
+    },
+    {
+      "sid": "2830e21d-d291-423f-97e1-6e08c72ef4e9",
+      "ts": "2026-05-12T15:13:00.702Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-05-12T17:10:31.307000Z"
+    },
+    {
+      "sid": "6abd108e-0e02-466f-a124-775e541a7463",
+      "ts": "2026-05-15T08:17:29.733Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 309,
+      "max_turn_ts": "2026-05-22T17:59:05.062000Z"
+    },
+    {
+      "sid": "9e3b5bea-80f9-4db4-9deb-05eeaa3cb2cb",
+      "ts": "2026-05-18T10:30:11.424Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-05-18T11:10:38.902000Z"
+    },
+    {
+      "sid": "5c519836-42a5-4a10-b863-5ec89ccb5d19",
+      "ts": "2026-05-19T07:38:32.097Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 41,
+      "max_turn_ts": "2026-05-19T15:15:51.139000Z"
+    },
+    {
+      "sid": "d73085ce-2fef-4241-be6a-558efb8c3a2c",
+      "ts": "2026-05-19T13:52:17.439Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 26,
+      "max_turn_ts": "2026-05-20T10:48:42.303000Z"
+    },
+    {
+      "sid": "b669b10c-438e-4c07-b62d-f853aad9d508",
+      "ts": "2026-05-19T16:37:40.313Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-19T16:45:05.626000Z"
+    },
+    {
+      "sid": "9e338405-5051-487d-b527-c1a558819569",
+      "ts": "2026-05-21T07:23:47.516Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-05-21T08:22:47.099000Z"
+    },
+    {
+      "sid": "60ee9e91-ce38-425e-af25-f9131220c9fb",
+      "ts": "2026-05-21T07:24:52.356Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-05-21T08:31:44.110000Z"
+    },
+    {
+      "sid": "aa71900c-00d8-4ee8-b6e4-0cb980d59e7f",
+      "ts": "2026-05-21T10:05:47.082Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 12,
+      "max_turn_ts": "2026-05-21T10:48:16.895000Z"
+    },
+    {
+      "sid": "1bc629c9-3d66-45f4-8496-a5db222582d0",
+      "ts": "2026-05-21T11:38:56.943Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-05-21T11:57:34.189000Z"
+    },
+    {
+      "sid": "80faf07a-94b0-4227-a06e-e967c6aac189",
+      "ts": "2026-05-22T06:54:29.464Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 7,
+      "max_turn_ts": "2026-05-22T07:12:51.202000Z"
+    },
+    {
+      "sid": "da992a87-9066-4ddb-84ba-7c8b5c0a7821",
+      "ts": "2026-05-22T07:08:45.349Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-05-22T07:52:02.413000Z"
+    },
+    {
+      "sid": "a01004a1-7382-457a-951c-db7451b2a306",
+      "ts": "2026-05-22T13:23:52.748Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-05-22T14:18:52.745000Z"
+    },
+    {
+      "sid": "e1ab2707-7afb-4223-818a-e5cbd849384e",
+      "ts": "2026-05-22T14:46:40.709Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-22T15:03:55.872000Z"
+    },
+    {
+      "sid": "8bfa60e6-52ec-4889-a827-35f794b148d3",
+      "ts": "2026-05-22T17:42:10.214Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 12,
+      "max_turn_ts": "2026-05-22T20:14:52.337000Z"
+    },
+    {
+      "sid": "8fbdab51-13f4-488f-8be4-40ed858539c8",
+      "ts": "2026-05-26T14:00:22.291Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 219,
+      "max_turn_ts": "2026-06-03T14:05:16.053000Z"
+    },
+    {
+      "sid": "1544c7ff-ebe1-40ae-975c-cbc64f13c2bd",
+      "ts": "2026-05-26T18:40:15.771Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 87,
+      "max_turn_ts": "2026-05-27T16:53:15.461000Z"
+    },
+    {
+      "sid": "1bc3f83e-8251-4b05-9372-8c34ab3c53f7",
+      "ts": "2026-05-27T10:51:57.452Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 14,
+      "max_turn_ts": "2026-05-27T13:39:16.819000Z"
+    },
+    {
+      "sid": "ff5fcc9f-ed4e-4673-a76c-007e1298fcfc",
+      "ts": "2026-05-27T13:41:49.468Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-27T13:42:45.493000Z"
+    },
+    {
+      "sid": "09add6f0-6fd3-47f1-912e-b9cac8dab440",
+      "ts": "2026-05-27T13:55:51.099Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 228,
+      "max_turn_ts": "2026-06-01T21:12:03.846000Z"
+    },
+    {
+      "sid": "fa437cce-97e4-477c-93ff-ea27b56a17d8",
+      "ts": "2026-05-27T16:36:52.966Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 10,
+      "max_turn_ts": "2026-05-28T09:40:33.780000Z"
+    },
+    {
+      "sid": "fad29a64-28fc-4612-8d9e-ab01d81481ae",
+      "ts": "2026-05-27T17:44:58.698Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-05-27T17:47:32.678000Z"
+    },
+    {
+      "sid": "3ac7e961-870a-4643-8d71-3455b6f40a1f",
+      "ts": "2026-05-28T12:01:21.629Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 43,
+      "max_turn_ts": "2026-05-29T11:23:24.226000Z"
+    },
+    {
+      "sid": "9d7e2046-7e21-425b-8994-d7ed8faaeadd",
+      "ts": "2026-05-29T11:24:07.798Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-05-29T11:39:46.012000Z"
+    },
+    {
+      "sid": "310bf3a9-14aa-4f9b-9fb1-b82210fb5420",
+      "ts": "2026-06-03T11:52:00.284Z",
+      "repo": "kungfusaini/dotfiles",
+      "n": 14,
+      "max_turn_ts": "2026-06-03T14:14:59.847000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

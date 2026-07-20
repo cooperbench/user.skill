@@ -1,0 +1,570 @@
+{
+  "name": "UserBench leak-safe train pools",
+  "exported_at": "2026-07-20T06:09:07.789688Z",
+  "leak_rule": "T*=min(held.session.ts); include iff session.ts<T* AND max(turn.ts)<T*",
+  "n_developers": 62,
+  "hub_baseline": "userbench/UserBench@v2",
+  "hub_variants_note": "Harbor twins (UserBench-train400, future train1000, \u2026) subsample from this pool at publish time via sqrt_two_stage; they do not ship the full pool.",
+  "developers": [
+    {
+      "developer": "dc:dc_000",
+      "slug": "dc_dc_000",
+      "Tstar": "2026-05-14T21:39:36.728Z",
+      "n_sessions": 3335,
+      "n_human_turns": 15844,
+      "n_eval_tasks": 10,
+      "path": "dc_dc_000"
+    },
+    {
+      "developer": "dc:dc_001",
+      "slug": "dc_dc_001",
+      "Tstar": "2026-05-25T23:56:43.310Z",
+      "n_sessions": 727,
+      "n_human_turns": 11490,
+      "n_eval_tasks": 10,
+      "path": "dc_dc_001"
+    },
+    {
+      "developer": "dc:dc_004",
+      "slug": "dc_dc_004",
+      "Tstar": "2026-02-23T19:03:37.902Z",
+      "n_sessions": 201,
+      "n_human_turns": 1979,
+      "n_eval_tasks": 10,
+      "path": "dc_dc_004"
+    },
+    {
+      "developer": "dc:dc_010",
+      "slug": "dc_dc_010",
+      "Tstar": "2026-02-24T14:49:24.541Z",
+      "n_sessions": 101,
+      "n_human_turns": 1211,
+      "n_eval_tasks": 10,
+      "path": "dc_dc_010"
+    },
+    {
+      "developer": "gh:135yshr",
+      "slug": "gh_135yshr",
+      "Tstar": "2026-04-14T03:19:33.280737Z",
+      "n_sessions": 68,
+      "n_human_turns": 656,
+      "n_eval_tasks": 10,
+      "path": "gh_135yshr"
+    },
+    {
+      "developer": "gh:4thwithme",
+      "slug": "gh_4thwithme",
+      "Tstar": "2026-04-16T11:40:17.053Z",
+      "n_sessions": 139,
+      "n_human_turns": 1355,
+      "n_eval_tasks": 10,
+      "path": "gh_4thwithme"
+    },
+    {
+      "developer": "gh:ET-NoahDolev",
+      "slug": "gh_ET-NoahDolev",
+      "Tstar": "2026-04-02T16:58:04.485802Z",
+      "n_sessions": 87,
+      "n_human_turns": 493,
+      "n_eval_tasks": 10,
+      "path": "gh_ET-NoahDolev"
+    },
+    {
+      "developer": "gh:FSM1",
+      "slug": "gh_FSM1",
+      "Tstar": "2026-07-03T23:15:14.935822Z",
+      "n_sessions": 278,
+      "n_human_turns": 2565,
+      "n_eval_tasks": 10,
+      "path": "gh_FSM1"
+    },
+    {
+      "developer": "gh:KeKs0r",
+      "slug": "gh_KeKs0r",
+      "Tstar": "2026-03-03T16:29:10.716662Z",
+      "n_sessions": 120,
+      "n_human_turns": 453,
+      "n_eval_tasks": 10,
+      "path": "gh_KeKs0r"
+    },
+    {
+      "developer": "gh:MohammedMqat",
+      "slug": "gh_MohammedMqat",
+      "Tstar": "2026-04-20T18:26:52.540309255Z",
+      "n_sessions": 20,
+      "n_human_turns": 411,
+      "n_eval_tasks": 10,
+      "path": "gh_MohammedMqat"
+    },
+    {
+      "developer": "gh:PJensen",
+      "slug": "gh_PJensen",
+      "Tstar": "2026-06-29T17:23:16.174910074Z",
+      "n_sessions": 81,
+      "n_human_turns": 415,
+      "n_eval_tasks": 10,
+      "path": "gh_PJensen"
+    },
+    {
+      "developer": "gh:Poytr1",
+      "slug": "gh_Poytr1",
+      "Tstar": "2026-03-26T14:16:50.728353Z",
+      "n_sessions": 98,
+      "n_human_turns": 620,
+      "n_eval_tasks": 10,
+      "path": "gh_Poytr1"
+    },
+    {
+      "developer": "gh:Soph",
+      "slug": "gh_Soph",
+      "Tstar": "2026-05-22T13:09:43.460914Z",
+      "n_sessions": 112,
+      "n_human_turns": 1225,
+      "n_eval_tasks": 10,
+      "path": "gh_Soph"
+    },
+    {
+      "developer": "gh:Stark-Industries0417",
+      "slug": "gh_Stark-Industries0417",
+      "Tstar": "2026-02-17T18:29:38.596708Z",
+      "n_sessions": 157,
+      "n_human_turns": 1278,
+      "n_eval_tasks": 10,
+      "path": "gh_Stark-Industries0417"
+    },
+    {
+      "developer": "gh:TheurgicDuke771",
+      "slug": "gh_TheurgicDuke771",
+      "Tstar": "2026-07-06T00:03:48.162636Z",
+      "n_sessions": 36,
+      "n_human_turns": 819,
+      "n_eval_tasks": 10,
+      "path": "gh_TheurgicDuke771"
+    },
+    {
+      "developer": "gh:ababushkin",
+      "slug": "gh_ababushkin",
+      "Tstar": "2026-06-18T02:57:46.228733Z",
+      "n_sessions": 156,
+      "n_human_turns": 672,
+      "n_eval_tasks": 10,
+      "path": "gh_ababushkin"
+    },
+    {
+      "developer": "gh:achildrenmile",
+      "slug": "gh_achildrenmile",
+      "Tstar": "2026-03-09T13:16:35.040907847Z",
+      "n_sessions": 30,
+      "n_human_turns": 524,
+      "n_eval_tasks": 10,
+      "path": "gh_achildrenmile"
+    },
+    {
+      "developer": "gh:admarble",
+      "slug": "gh_admarble",
+      "Tstar": "2026-04-19T00:32:03.927413Z",
+      "n_sessions": 150,
+      "n_human_turns": 759,
+      "n_eval_tasks": 10,
+      "path": "gh_admarble"
+    },
+    {
+      "developer": "gh:alishakawaguchi",
+      "slug": "gh_alishakawaguchi",
+      "Tstar": "2026-04-24T21:40:52.218937Z",
+      "n_sessions": 163,
+      "n_human_turns": 553,
+      "n_eval_tasks": 10,
+      "path": "gh_alishakawaguchi"
+    },
+    {
+      "developer": "gh:armelhbobdad",
+      "slug": "gh_armelhbobdad",
+      "Tstar": "2026-05-27T00:26:22.497279646Z",
+      "n_sessions": 235,
+      "n_human_turns": 2180,
+      "n_eval_tasks": 10,
+      "path": "gh_armelhbobdad"
+    },
+    {
+      "developer": "gh:barbogast",
+      "slug": "gh_barbogast",
+      "Tstar": "2026-07-06T10:12:35.022128Z",
+      "n_sessions": 22,
+      "n_human_turns": 418,
+      "n_eval_tasks": 10,
+      "path": "gh_barbogast"
+    },
+    {
+      "developer": "gh:blackgirlbytes",
+      "slug": "gh_blackgirlbytes",
+      "Tstar": "2026-06-19T12:16:20.348285Z",
+      "n_sessions": 62,
+      "n_human_turns": 918,
+      "n_eval_tasks": 10,
+      "path": "gh_blackgirlbytes"
+    },
+    {
+      "developer": "gh:christso",
+      "slug": "gh_christso",
+      "Tstar": "2026-07-04T07:22:29.199772656Z",
+      "n_sessions": 25,
+      "n_human_turns": 459,
+      "n_eval_tasks": 10,
+      "path": "gh_christso"
+    },
+    {
+      "developer": "gh:cyyeh",
+      "slug": "gh_cyyeh",
+      "Tstar": "2026-03-04T14:34:16.874867Z",
+      "n_sessions": 261,
+      "n_human_turns": 1064,
+      "n_eval_tasks": 10,
+      "path": "gh_cyyeh"
+    },
+    {
+      "developer": "gh:dcambria",
+      "slug": "gh_dcambria",
+      "Tstar": "2026-06-08T16:19:27.895589Z",
+      "n_sessions": 69,
+      "n_human_turns": 1185,
+      "n_eval_tasks": 10,
+      "path": "gh_dcambria"
+    },
+    {
+      "developer": "gh:fcamblor",
+      "slug": "gh_fcamblor",
+      "Tstar": "2026-05-19T15:56:37.464377Z",
+      "n_sessions": 192,
+      "n_human_turns": 501,
+      "n_eval_tasks": 10,
+      "path": "gh_fcamblor"
+    },
+    {
+      "developer": "gh:gabadi",
+      "slug": "gh_gabadi",
+      "Tstar": "2026-06-23T07:54:45.43635Z",
+      "n_sessions": 137,
+      "n_human_turns": 774,
+      "n_eval_tasks": 10,
+      "path": "gh_gabadi"
+    },
+    {
+      "developer": "gh:heddendorp",
+      "slug": "gh_heddendorp",
+      "Tstar": "2026-06-29T19:25:18.338057Z",
+      "n_sessions": 11,
+      "n_human_turns": 540,
+      "n_eval_tasks": 10,
+      "path": "gh_heddendorp"
+    },
+    {
+      "developer": "gh:henryph24",
+      "slug": "gh_henryph24",
+      "Tstar": "2026-05-05T11:06:35.092315Z",
+      "n_sessions": 80,
+      "n_human_turns": 1479,
+      "n_eval_tasks": 10,
+      "path": "gh_henryph24"
+    },
+    {
+      "developer": "gh:hutusi",
+      "slug": "gh_hutusi",
+      "Tstar": "2026-07-05T01:40:05.192724Z",
+      "n_sessions": 99,
+      "n_human_turns": 1694,
+      "n_eval_tasks": 10,
+      "path": "gh_hutusi"
+    },
+    {
+      "developer": "gh:jakobtfaber",
+      "slug": "gh_jakobtfaber",
+      "Tstar": "2026-06-24T19:26:28.441543Z",
+      "n_sessions": 36,
+      "n_human_turns": 411,
+      "n_eval_tasks": 10,
+      "path": "gh_jakobtfaber"
+    },
+    {
+      "developer": "gh:jdsingh122918",
+      "slug": "gh_jdsingh122918",
+      "Tstar": "2026-03-12T03:15:47.269000+00:00",
+      "n_sessions": 27,
+      "n_human_turns": 481,
+      "n_eval_tasks": 10,
+      "path": "gh_jdsingh122918"
+    },
+    {
+      "developer": "gh:jeevanpillay",
+      "slug": "gh_jeevanpillay",
+      "Tstar": "2026-05-04T10:10:45.523818Z",
+      "n_sessions": 251,
+      "n_human_turns": 1271,
+      "n_eval_tasks": 10,
+      "path": "gh_jeevanpillay"
+    },
+    {
+      "developer": "gh:jhoetter",
+      "slug": "gh_jhoetter",
+      "Tstar": "2026-05-20T06:43:02.40286Z",
+      "n_sessions": 232,
+      "n_human_turns": 791,
+      "n_eval_tasks": 10,
+      "path": "gh_jhoetter"
+    },
+    {
+      "developer": "gh:jobinlawrance",
+      "slug": "gh_jobinlawrance",
+      "Tstar": "2026-07-02T17:29:39.180994Z",
+      "n_sessions": 55,
+      "n_human_turns": 1657,
+      "n_eval_tasks": 10,
+      "path": "gh_jobinlawrance"
+    },
+    {
+      "developer": "gh:johyunduk",
+      "slug": "gh_johyunduk",
+      "Tstar": "2026-05-16T02:41:44.825916Z",
+      "n_sessions": 51,
+      "n_human_turns": 1132,
+      "n_eval_tasks": 10,
+      "path": "gh_johyunduk"
+    },
+    {
+      "developer": "gh:jskswamy",
+      "slug": "gh_jskswamy",
+      "Tstar": "2026-03-26T15:30:31.392564Z",
+      "n_sessions": 24,
+      "n_human_turns": 722,
+      "n_eval_tasks": 10,
+      "path": "gh_jskswamy"
+    },
+    {
+      "developer": "gh:junaid-appointy",
+      "slug": "gh_junaid-appointy",
+      "Tstar": "2026-06-29T10:12:09.018388Z",
+      "n_sessions": 31,
+      "n_human_turns": 526,
+      "n_eval_tasks": 10,
+      "path": "gh_junaid-appointy"
+    },
+    {
+      "developer": "gh:khaong",
+      "slug": "gh_khaong",
+      "Tstar": "2026-03-06T23:58:08.457744Z",
+      "n_sessions": 45,
+      "n_human_turns": 700,
+      "n_eval_tasks": 10,
+      "path": "gh_khaong"
+    },
+    {
+      "developer": "gh:kmiki0",
+      "slug": "gh_kmiki0",
+      "Tstar": "2026-05-28T23:25:39.554886878Z",
+      "n_sessions": 15,
+      "n_human_turns": 702,
+      "n_eval_tasks": 10,
+      "path": "gh_kmiki0"
+    },
+    {
+      "developer": "gh:kohaku500",
+      "slug": "gh_kohaku500",
+      "Tstar": "2026-05-02T21:51:57.934Z",
+      "n_sessions": 412,
+      "n_human_turns": 2783,
+      "n_eval_tasks": 10,
+      "path": "gh_kohaku500"
+    },
+    {
+      "developer": "gh:kungfusaini",
+      "slug": "gh_kungfusaini",
+      "Tstar": "2026-06-05T08:54:06.685Z",
+      "n_sessions": 44,
+      "n_human_turns": 2610,
+      "n_eval_tasks": 10,
+      "path": "gh_kungfusaini"
+    },
+    {
+      "developer": "gh:lyston11",
+      "slug": "gh_lyston11",
+      "Tstar": "2026-05-22T06:11:03.825Z",
+      "n_sessions": 52,
+      "n_human_turns": 779,
+      "n_eval_tasks": 10,
+      "path": "gh_lyston11"
+    },
+    {
+      "developer": "gh:malkoG",
+      "slug": "gh_malkoG",
+      "Tstar": "2026-04-17T22:43:41.623013Z",
+      "n_sessions": 33,
+      "n_human_turns": 439,
+      "n_eval_tasks": 10,
+      "path": "gh_malkoG"
+    },
+    {
+      "developer": "gh:manderson240",
+      "slug": "gh_manderson240",
+      "Tstar": "2026-04-07T03:43:53.706687804Z",
+      "n_sessions": 133,
+      "n_human_turns": 956,
+      "n_eval_tasks": 10,
+      "path": "gh_manderson240"
+    },
+    {
+      "developer": "gh:marcus-sa",
+      "slug": "gh_marcus-sa",
+      "Tstar": "2026-03-28T17:27:28.447000+00:00",
+      "n_sessions": 344,
+      "n_human_turns": 2374,
+      "n_eval_tasks": 10,
+      "path": "gh_marcus-sa"
+    },
+    {
+      "developer": "gh:melagiri",
+      "slug": "gh_melagiri",
+      "Tstar": "2026-04-17T02:59:10.61657Z",
+      "n_sessions": 71,
+      "n_human_turns": 1890,
+      "n_eval_tasks": 10,
+      "path": "gh_melagiri"
+    },
+    {
+      "developer": "gh:mvanhorn",
+      "slug": "gh_mvanhorn",
+      "Tstar": "2026-02-25T00:28:11.17856Z",
+      "n_sessions": 88,
+      "n_human_turns": 605,
+      "n_eval_tasks": 10,
+      "path": "gh_mvanhorn"
+    },
+    {
+      "developer": "gh:nathanbooth-konecta",
+      "slug": "gh_nathanbooth-konecta",
+      "Tstar": "2026-02-19T14:54:37.505Z",
+      "n_sessions": 48,
+      "n_human_turns": 839,
+      "n_eval_tasks": 10,
+      "path": "gh_nathanbooth-konecta"
+    },
+    {
+      "developer": "gh:nosman",
+      "slug": "gh_nosman",
+      "Tstar": "2026-06-12T20:02:14.907505Z",
+      "n_sessions": 40,
+      "n_human_turns": 528,
+      "n_eval_tasks": 10,
+      "path": "gh_nosman"
+    },
+    {
+      "developer": "gh:oddessentials",
+      "slug": "gh_oddessentials",
+      "Tstar": "2026-04-05T15:19:00.561000+00:00",
+      "n_sessions": 30,
+      "n_human_turns": 1043,
+      "n_eval_tasks": 10,
+      "path": "gh_oddessentials"
+    },
+    {
+      "developer": "gh:penso",
+      "slug": "gh_penso",
+      "Tstar": "2026-04-20T21:58:12.018613Z",
+      "n_sessions": 184,
+      "n_human_turns": 1323,
+      "n_eval_tasks": 10,
+      "path": "gh_penso"
+    },
+    {
+      "developer": "gh:raman325",
+      "slug": "gh_raman325",
+      "Tstar": "2026-06-15T16:43:57.520118Z",
+      "n_sessions": 27,
+      "n_human_turns": 1723,
+      "n_eval_tasks": 10,
+      "path": "gh_raman325"
+    },
+    {
+      "developer": "gh:robouden",
+      "slug": "gh_robouden",
+      "Tstar": "2026-04-24T00:42:55.602194129Z",
+      "n_sessions": 81,
+      "n_human_turns": 1044,
+      "n_eval_tasks": 10,
+      "path": "gh_robouden"
+    },
+    {
+      "developer": "gh:scottdensmore",
+      "slug": "gh_scottdensmore",
+      "Tstar": "2026-07-05T18:47:23.238481Z",
+      "n_sessions": 10,
+      "n_human_turns": 427,
+      "n_eval_tasks": 10,
+      "path": "gh_scottdensmore"
+    },
+    {
+      "developer": "gh:singampalliveerendra",
+      "slug": "gh_singampalliveerendra",
+      "Tstar": "2026-06-26T10:35:18.389932723Z",
+      "n_sessions": 79,
+      "n_human_turns": 742,
+      "n_eval_tasks": 10,
+      "path": "gh_singampalliveerendra"
+    },
+    {
+      "developer": "gh:ta93abe",
+      "slug": "gh_ta93abe",
+      "Tstar": "2026-05-13T11:24:43.530496Z",
+      "n_sessions": 40,
+      "n_human_turns": 895,
+      "n_eval_tasks": 10,
+      "path": "gh_ta93abe"
+    },
+    {
+      "developer": "gh:thieso2",
+      "slug": "gh_thieso2",
+      "Tstar": "2026-05-06T05:12:16.183138159Z",
+      "n_sessions": 140,
+      "n_human_turns": 1121,
+      "n_eval_tasks": 10,
+      "path": "gh_thieso2"
+    },
+    {
+      "developer": "gh:wildlily1021",
+      "slug": "gh_wildlily1021",
+      "Tstar": "2026-05-21T04:20:59.187Z",
+      "n_sessions": 131,
+      "n_human_turns": 675,
+      "n_eval_tasks": 10,
+      "path": "gh_wildlily1021"
+    },
+    {
+      "developer": "gh:winksaville",
+      "slug": "gh_winksaville",
+      "Tstar": "2026-07-08T15:22:19.977Z",
+      "n_sessions": 201,
+      "n_human_turns": 6622,
+      "n_eval_tasks": 10,
+      "path": "gh_winksaville"
+    },
+    {
+      "developer": "gh:yutakobayashidev",
+      "slug": "gh_yutakobayashidev",
+      "Tstar": "2026-03-10T07:30:05.917694886Z",
+      "n_sessions": 126,
+      "n_human_turns": 1136,
+      "n_eval_tasks": 10,
+      "path": "gh_yutakobayashidev"
+    },
+    {
+      "developer": "gh:yyovil",
+      "slug": "gh_yyovil",
+      "Tstar": "2026-06-12T09:44:13.351633Z",
+      "n_sessions": 105,
+      "n_human_turns": 545,
+      "n_eval_tasks": 10,
+      "path": "gh_yyovil"
+    }
+  ],
+  "n_sessions": 10438,
+  "n_human_turns": 94026
+}

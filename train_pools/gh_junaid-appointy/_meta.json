@@ -1,0 +1,229 @@
+{
+  "developer": "gh:junaid-appointy",
+  "slug": "gh_junaid-appointy",
+  "Tstar": "2026-06-29T10:12:09.018388Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 31,
+  "n_human_turns": 526,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "be8782ec-6a65-4427-a8bf-92758944999d",
+      "ts": "2026-05-26T09:32:03.258963Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 33,
+      "max_turn_ts": "2026-05-26T07:10:25.491000Z"
+    },
+    {
+      "sid": "271324a3-322f-442b-a249-ef3d47eea1f0",
+      "ts": "2026-05-27T06:18:44.362629Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 33,
+      "max_turn_ts": "2026-05-26T16:24:38.601000Z"
+    },
+    {
+      "sid": "c83fada0-043a-43ab-9026-91c5d8b4de12",
+      "ts": "2026-06-01T09:56:02.188515Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 2,
+      "max_turn_ts": "2026-05-30T12:34:29.300000Z"
+    },
+    {
+      "sid": "2a08fe3a-7268-4299-a758-571d920a5495",
+      "ts": "2026-06-02T19:06:56.139878Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 3,
+      "max_turn_ts": "2026-06-02T11:36:52.996000Z"
+    },
+    {
+      "sid": "ab457eb8-1497-437f-a575-19670d12ae47",
+      "ts": "2026-06-02T19:06:56.619936Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 12,
+      "max_turn_ts": "2026-06-02T18:17:44.478000Z"
+    },
+    {
+      "sid": "2bd78ce2-c9b8-47e7-b70d-e4a73992a5be",
+      "ts": "2026-06-04T12:02:12.533829Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 2,
+      "max_turn_ts": "2026-06-04T12:00:37.727000Z"
+    },
+    {
+      "sid": "7cd3e3b3-a8c3-49f3-982d-1c9479b0218d",
+      "ts": "2026-06-04T12:02:12.989978Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 19,
+      "max_turn_ts": "2026-06-04T08:14:01.363000Z"
+    },
+    {
+      "sid": "ce06ddf5-3e41-4609-863e-91c62d43142f",
+      "ts": "2026-06-04T12:02:15.180317Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 70,
+      "max_turn_ts": "2026-06-04T06:39:33.621000Z"
+    },
+    {
+      "sid": "d67bd68a-5a76-409d-a367-77639d1b243f",
+      "ts": "2026-06-04T12:02:15.386619Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 16,
+      "max_turn_ts": "2026-06-04T11:39:07.934000Z"
+    },
+    {
+      "sid": "ddfa5244-ec50-4d9a-9d9f-e3a862826789",
+      "ts": "2026-06-04T12:02:15.785243Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 18,
+      "max_turn_ts": "2026-06-04T10:30:28.634000Z"
+    },
+    {
+      "sid": "fa478fa5-9f61-4157-9cea-58f693b53007",
+      "ts": "2026-06-04T12:02:16.355007Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 19,
+      "max_turn_ts": "2026-06-04T11:15:33.062000Z"
+    },
+    {
+      "sid": "5a3964fd-502d-42bc-a206-ee4145788e40",
+      "ts": "2026-06-07T17:54:54.721488Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 1,
+      "max_turn_ts": "2026-06-05T03:57:41.367000Z"
+    },
+    {
+      "sid": "63cb70bd-4800-4e79-8f60-36f272db9621",
+      "ts": "2026-06-07T17:54:54.814685Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 2,
+      "max_turn_ts": "2026-06-05T04:01:04.369000Z"
+    },
+    {
+      "sid": "fa16ab50-1f41-43c7-b526-32ec4180f0dc",
+      "ts": "2026-06-07T17:54:54.869769Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 1,
+      "max_turn_ts": "2026-06-07T11:53:46.912000Z"
+    },
+    {
+      "sid": "549f3133-e271-4d2d-a9c4-21733429d3ff",
+      "ts": "2026-06-08T03:45:55.125371Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 29,
+      "max_turn_ts": "2026-06-07T17:59:27.218000Z"
+    },
+    {
+      "sid": "cf33a9e4-321d-4d8d-944d-ed9a10516566",
+      "ts": "2026-06-08T07:58:09.096227Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 7,
+      "max_turn_ts": "2026-06-08T05:47:37.866000Z"
+    },
+    {
+      "sid": "b436ae72-7925-4109-907f-e493d53e8f1d",
+      "ts": "2026-06-08T11:39:02.418698Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 24,
+      "max_turn_ts": "2026-06-08T08:37:33.366000Z"
+    },
+    {
+      "sid": "f8f11a4c-6e8f-4d89-a883-0278b69a3875",
+      "ts": "2026-06-08T11:39:02.580511Z",
+      "repo": "junaid-appointy/inventory-app",
+      "n": 2,
+      "max_turn_ts": "2026-06-08T11:14:09.822000Z"
+    },
+    {
+      "sid": "02ede2b6-9758-4405-a544-967d56f22f2d",
+      "ts": "2026-06-26T09:46:59.612453Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 2,
+      "max_turn_ts": "2026-06-26T07:20:20.980000Z"
+    },
+    {
+      "sid": "12592640-8fc7-4780-92a5-f08b83a7ac7c",
+      "ts": "2026-06-26T09:47:00.103663Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 13,
+      "max_turn_ts": "2026-06-24T06:17:05.852000Z"
+    },
+    {
+      "sid": "150307e9-cd04-49df-a25f-f8ebf4e131ad",
+      "ts": "2026-06-26T09:47:00.220429Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 4,
+      "max_turn_ts": "2026-06-22T10:31:37.989000Z"
+    },
+    {
+      "sid": "30625a74-a743-46c0-941a-4ace0001f87f",
+      "ts": "2026-06-26T09:47:00.700376Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 26,
+      "max_turn_ts": "2026-06-22T09:24:58.874000Z"
+    },
+    {
+      "sid": "43000189-b7ed-4784-b3d4-e8f847141256",
+      "ts": "2026-06-26T09:47:01.526115Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 22,
+      "max_turn_ts": "2026-06-24T10:04:55.597000Z"
+    },
+    {
+      "sid": "4dd8c274-e489-494a-a8c9-3a412bb0698c",
+      "ts": "2026-06-26T09:47:02.150806Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 25,
+      "max_turn_ts": "2026-06-21T15:48:15.645000Z"
+    },
+    {
+      "sid": "6384626f-39e6-4116-8c48-4ea4b6c5c2a5",
+      "ts": "2026-06-26T09:47:02.271195Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 2,
+      "max_turn_ts": "2026-06-22T11:52:08.584000Z"
+    },
+    {
+      "sid": "6ed69e04-ffa1-4912-b67a-71e2c29b0d02",
+      "ts": "2026-06-26T09:47:02.688009Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 19,
+      "max_turn_ts": "2026-06-22T11:50:44.531000Z"
+    },
+    {
+      "sid": "aead60d8-891f-4b2b-9fdb-a0c8e99da520",
+      "ts": "2026-06-26T09:47:03.005058Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 8,
+      "max_turn_ts": "2026-06-23T10:25:27.023000Z"
+    },
+    {
+      "sid": "ce9b7c6f-1f6d-4614-8068-7337a12bb17b",
+      "ts": "2026-06-26T09:47:03.497935Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 12,
+      "max_turn_ts": "2026-06-24T03:56:16.807000Z"
+    },
+    {
+      "sid": "e89686dd-14bc-46c7-8c92-dfb9b0815380",
+      "ts": "2026-06-26T09:47:03.575492Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 2,
+      "max_turn_ts": "2026-06-22T08:02:14.925000Z"
+    },
+    {
+      "sid": "ea4a3992-c46b-4247-9776-fa25867f50c0",
+      "ts": "2026-06-26T09:47:05.067372Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 87,
+      "max_turn_ts": "2026-06-21T15:31:10.208000Z"
+    },
+    {
+      "sid": "eaabde84-3181-4717-a7e3-54bacb3d588d",
+      "ts": "2026-06-26T09:47:05.418262Z",
+      "repo": "junaid-appointy/auxilio-extension",
+      "n": 11,
+      "max_turn_ts": "2026-06-23T16:05:16.751000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

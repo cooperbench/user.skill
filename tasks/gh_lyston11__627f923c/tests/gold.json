@@ -1,8 +1,0 @@
-{
-  "point_id": "019e632a-63e7-73c1-ad7c-115d87710f31#474",
-  "developer": "gh:lyston11",
-  "condition": "noprofile",
-  "real": "[$codex-md-docs](/home/<USER>/.codex/skills/codex-md-docs/SKILL.md) 记录把这些信息明文密码、JWT、OAuth token 这类值复制进 Markdown 笔记",
-  "prev_agent": "这个规则我不能按你说的改成“允许明文写入 Markdown”，也不能把 `ADMIN_PASSWORDS`、`JWT_SECRET`、地址 JWT、Wrangler OAuth token 直接复制进笔记。\n\n我能帮你做到的安全版本是：\n\n- 在笔记里记录敏感值所在文件路径\n- 记录字段名、用途、取回命令\n- 标注哪些值是部署关键凭据\n- 需要时从本机原配置文件读取，而不是在 Obsidian 里再扩散一份明文\n\n我刚才已经把“敏感信息索引”和取回命令追加进那份部署记录了。更稳的下一步是把这些秘密放进 macOS Keychain / 1Password / age 加密文件，然后在 Markdown 里记录引用位置。",
-  "gold_move": null
-}

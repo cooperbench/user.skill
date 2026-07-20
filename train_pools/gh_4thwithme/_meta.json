@@ -1,0 +1,985 @@
+{
+  "developer": "gh:4thwithme",
+  "slug": "gh_4thwithme",
+  "Tstar": "2026-04-16T11:40:17.053Z",
+  "leak_rule": "session.ts < T* AND max(turn.ts) < T*",
+  "n_sessions": 139,
+  "n_human_turns": 1355,
+  "sessions_file": "sessions.jsonl.gz",
+  "sessions": [
+    {
+      "sid": "d2ecfa3f-eb7d-4fe1-810c-b3bf09cbfc0d",
+      "ts": "2026-03-12T11:48:33.431Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-03-12T12:31:55.607000Z"
+    },
+    {
+      "sid": "3edc3226-36ae-4210-bdd0-eeb2b07d0e9d",
+      "ts": "2026-03-16T12:23:54.166Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 8,
+      "max_turn_ts": "2026-03-19T12:46:07.189000Z"
+    },
+    {
+      "sid": "7265914a-474b-4fea-a626-65fb954b5492",
+      "ts": "2026-03-17T14:49:35.183Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 20,
+      "max_turn_ts": "2026-03-18T00:26:20.925000Z"
+    },
+    {
+      "sid": "847e64d7-967f-4cdf-a9aa-2485dfb21a18",
+      "ts": "2026-03-19T12:01:58.943Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 7,
+      "max_turn_ts": "2026-03-19T12:29:37.382000Z"
+    },
+    {
+      "sid": "910fb8ce-cc9e-4459-af48-a9839dedc788",
+      "ts": "2026-03-19T12:46:19.965Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T12:53:09.016000Z"
+    },
+    {
+      "sid": "1281760a-594f-492e-bbf4-77f2f51ee4a3",
+      "ts": "2026-03-19T12:53:23.215Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T12:54:37.471000Z"
+    },
+    {
+      "sid": "3e2fecb5-2d23-48d3-9e37-967e34fc4527",
+      "ts": "2026-03-19T12:54:45.802Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-19T15:08:39.690000Z"
+    },
+    {
+      "sid": "02fd1c46-a6b2-44f8-8a34-d9716907fff5",
+      "ts": "2026-03-20T16:22:20.553Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-03-20T17:37:52.685000Z"
+    },
+    {
+      "sid": "bbf37c50-4b29-41d1-8155-dfaa944263ac",
+      "ts": "2026-03-20T17:44:00.180Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-20T17:44:24.466000Z"
+    },
+    {
+      "sid": "6fd538fc-de23-4099-b4e7-763c3f4c7753",
+      "ts": "2026-03-21T09:41:43.933Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-03-21T10:27:15.342000Z"
+    },
+    {
+      "sid": "2e47c433-7bd4-4b48-96b0-32e09c282c25",
+      "ts": "2026-03-21T10:30:51.014Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-03-21T23:56:28.655000Z"
+    },
+    {
+      "sid": "b87bfa79-d204-4d22-9f62-c32fd31a803a",
+      "ts": "2026-03-22T13:33:13.576Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-03-22T13:36:18.715000Z"
+    },
+    {
+      "sid": "7ff0be99-eecf-4ca7-bfdc-774b703836be",
+      "ts": "2026-03-22T13:38:43.825Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:38:48.243000Z"
+    },
+    {
+      "sid": "aed60652-7022-4060-a04a-2944540cdcff",
+      "ts": "2026-03-22T13:39:46.909Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:39:56.420000Z"
+    },
+    {
+      "sid": "864147af-5a01-45e4-824c-8b99c99df741",
+      "ts": "2026-03-22T13:40:24.835Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:40:37.375000Z"
+    },
+    {
+      "sid": "332f2692-2c76-4dde-8d37-176374556fd9",
+      "ts": "2026-03-22T13:41:32.764Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:41:43.742000Z"
+    },
+    {
+      "sid": "5cf48b64-5252-49aa-b1b5-da543996af6a",
+      "ts": "2026-03-22T13:43:23.253Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:43:26.105000Z"
+    },
+    {
+      "sid": "232d3fbd-dc10-44ae-aa7b-2c114a5d9085",
+      "ts": "2026-03-22T13:43:50.038Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:43:52.858000Z"
+    },
+    {
+      "sid": "948c925c-cfef-434a-87f8-56133e86faa1",
+      "ts": "2026-03-22T13:45:07.695Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T13:46:40.031000Z"
+    },
+    {
+      "sid": "3189a499-0ac3-4161-b274-be286bdc60d4",
+      "ts": "2026-03-22T13:58:27.680Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-03-22T14:02:21.559000Z"
+    },
+    {
+      "sid": "c7a2ce73-3fe6-433d-b290-f542a3220f2d",
+      "ts": "2026-03-22T14:04:58.892Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T14:05:06.281000Z"
+    },
+    {
+      "sid": "f36fb3ab-00aa-46a1-9616-5ecde2c3f0db",
+      "ts": "2026-03-22T14:08:27.361Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 15,
+      "max_turn_ts": "2026-03-22T14:38:52.971000Z"
+    },
+    {
+      "sid": "390e30c0-f97b-46de-87ca-3b85970680cd",
+      "ts": "2026-03-22T14:11:02.543Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T14:11:05.778000Z"
+    },
+    {
+      "sid": "934ba1f8-840a-4830-9e8c-c011b5afd08f",
+      "ts": "2026-03-22T14:18:59.870Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T14:19:07.746000Z"
+    },
+    {
+      "sid": "b3d88f5e-6c54-4b99-93e0-843514596880",
+      "ts": "2026-03-22T14:19:15.790Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T14:19:21.919000Z"
+    },
+    {
+      "sid": "4658ebac-b772-417f-a1d1-eb850c20316c",
+      "ts": "2026-03-22T14:20:34.640Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T14:20:40.701000Z"
+    },
+    {
+      "sid": "36eca803-ab8d-4795-a479-453ad72bab31",
+      "ts": "2026-03-22T14:23:09.330Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-22T14:23:15.580000Z"
+    },
+    {
+      "sid": "3190ee6c-f60a-4a32-b4bf-dd77c9f97c0a",
+      "ts": "2026-03-22T15:06:59.068Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 61,
+      "max_turn_ts": "2026-03-23T16:16:09.544000Z"
+    },
+    {
+      "sid": "504912d1-4125-47c2-a420-51c1bf5e7bc6",
+      "ts": "2026-03-22T23:01:35.068Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-03-22T23:11:56.266000Z"
+    },
+    {
+      "sid": "a5182f14-a3e9-4bb5-a6da-806ce9e19bf2",
+      "ts": "2026-03-23T16:40:36.946Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 19,
+      "max_turn_ts": "2026-03-25T08:51:10.878000Z"
+    },
+    {
+      "sid": "7627b6d8-ad02-41a8-88b1-584d0f5ec0e6",
+      "ts": "2026-03-23T17:49:48.846Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-23T17:51:08.044000Z"
+    },
+    {
+      "sid": "1ac1075b-fa77-439f-b139-dbe38fa1ee28",
+      "ts": "2026-03-24T10:58:57.569Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T08:18:10.757000Z"
+    },
+    {
+      "sid": "3d455779-dc6f-4e17-9a65-57e92808719a",
+      "ts": "2026-03-24T11:18:43.905Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-03-25T08:17:19.370000Z"
+    },
+    {
+      "sid": "dbc1ecfe-e8ed-4263-969a-ab4367a86104",
+      "ts": "2026-03-24T12:04:33.756Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 7,
+      "max_turn_ts": "2026-03-24T15:42:41.601000Z"
+    },
+    {
+      "sid": "cbe99975-f961-4c1a-98f9-a8f7e9bd0e6e",
+      "ts": "2026-03-24T12:31:58.887Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 11,
+      "max_turn_ts": "2026-03-24T13:55:22.744000Z"
+    },
+    {
+      "sid": "09f53495-c8da-45ac-b258-347aa5bc4c44",
+      "ts": "2026-03-24T15:55:03.783Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T15:58:23.798000Z"
+    },
+    {
+      "sid": "75a5c858-f39d-4b8b-b23e-1ee89105099f",
+      "ts": "2026-03-24T15:57:51.646Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T15:58:51.055000Z"
+    },
+    {
+      "sid": "475c3ffa-53c0-400f-a7d5-c1bfc0f2c99c",
+      "ts": "2026-03-24T15:59:56.957Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-03-24T23:38:41.425000Z"
+    },
+    {
+      "sid": "8f102ab5-f5c4-46b0-8e9d-90b6b6d64e24",
+      "ts": "2026-03-24T17:43:07.627Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 97,
+      "max_turn_ts": "2026-03-25T00:39:35.794000Z"
+    },
+    {
+      "sid": "370be467-0cf6-42bb-ad43-ee0221f318ad",
+      "ts": "2026-03-24T23:36:48.790Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T23:36:51.222000Z"
+    },
+    {
+      "sid": "61e40c27-ddc8-4c0f-a8be-c6b88a27bb47",
+      "ts": "2026-03-24T23:37:32.750Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-24T23:37:34.098000Z"
+    },
+    {
+      "sid": "564d4502-4711-4f5b-b399-ecd3e830faff",
+      "ts": "2026-03-25T08:09:29.568Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-03-25T08:09:48.470000Z"
+    },
+    {
+      "sid": "27bf7cbd-a3dd-4f9d-8783-f942a3069c3d",
+      "ts": "2026-03-25T08:12:47.712Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-03-25T08:15:39.184000Z"
+    },
+    {
+      "sid": "9cc149ec-8d09-482e-bba8-77b2800ec47e",
+      "ts": "2026-03-25T15:46:35.372Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-03-25T15:54:22.347000Z"
+    },
+    {
+      "sid": "5a2e6152-9f58-424d-bce2-fed4b19322a5",
+      "ts": "2026-03-25T15:54:00.237Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-25T16:00:44.161000Z"
+    },
+    {
+      "sid": "168b96ec-285c-4aeb-9957-2b4c37ea373e",
+      "ts": "2026-03-25T15:57:28.675Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-03-26T00:20:56.337000Z"
+    },
+    {
+      "sid": "7d1a3b97-db28-4db8-a381-b6aa7fa891c8",
+      "ts": "2026-03-25T16:00:47.868Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 32,
+      "max_turn_ts": "2026-03-26T00:48:17.449000Z"
+    },
+    {
+      "sid": "c5835584-ebf7-45b9-96e9-174e4510a5e9",
+      "ts": "2026-03-26T00:21:28.324Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-03-26T00:43:48.734000Z"
+    },
+    {
+      "sid": "01fb2ebe-da7b-4532-8704-3e52b17aedd5",
+      "ts": "2026-03-26T08:12:05.873Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 8,
+      "max_turn_ts": "2026-03-26T16:08:26.245000Z"
+    },
+    {
+      "sid": "6673bb5e-ca7f-4542-a71b-0f91154f335c",
+      "ts": "2026-03-26T21:59:53.878Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-03-26T22:58:40.586000Z"
+    },
+    {
+      "sid": "fa0100a1-6bab-4311-837a-44f8c63f460c",
+      "ts": "2026-03-26T23:54:04.250Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-03-26T23:58:58.460000Z"
+    },
+    {
+      "sid": "001b4da5-21ca-4323-aa0d-4cc77cf9e2ea",
+      "ts": "2026-03-26T23:59:31.859Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T00:00:09.490000Z"
+    },
+    {
+      "sid": "9ae26489-ad3f-4d19-8a8c-2933f44ff4de",
+      "ts": "2026-03-27T00:00:19.799Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T00:01:53.648000Z"
+    },
+    {
+      "sid": "3b672e2b-c89e-4678-8117-b17a842df376",
+      "ts": "2026-03-27T00:03:29.542Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-27T00:04:50.732000Z"
+    },
+    {
+      "sid": "229c76f1-7e5e-433d-8295-d07e3e0b5492",
+      "ts": "2026-03-27T12:01:13.975Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 10,
+      "max_turn_ts": "2026-03-27T15:19:55.637000Z"
+    },
+    {
+      "sid": "3fca3770-82c6-4b03-af37-1d7c966d9fd6",
+      "ts": "2026-03-27T13:28:03.026Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-03-27T13:41:16.617000Z"
+    },
+    {
+      "sid": "f714a4e9-b9ae-433b-9a40-d2ff402a6ba6",
+      "ts": "2026-03-27T16:16:38.359Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-03-27T16:28:30.230000Z"
+    },
+    {
+      "sid": "f6f7a032-4921-4839-82df-cca4acc69596",
+      "ts": "2026-03-30T11:30:46.149Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-03-30T11:53:37.982000Z"
+    },
+    {
+      "sid": "0b5d0544-b230-4e34-bb99-899c7f959a0a",
+      "ts": "2026-03-30T11:53:58.767Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 22,
+      "max_turn_ts": "2026-03-30T17:53:50.930000Z"
+    },
+    {
+      "sid": "8f749e3b-cc35-42b8-8256-00d24422d0dc",
+      "ts": "2026-03-30T18:04:33.344Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-03-30T18:04:36.280000Z"
+    },
+    {
+      "sid": "9c90e54f-4b7e-4120-9427-89c4e249f2b7",
+      "ts": "2026-03-30T18:07:22.359Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 54,
+      "max_turn_ts": "2026-03-31T23:04:04.979000Z"
+    },
+    {
+      "sid": "ff1d7fc1-2aed-4cb4-864b-ab9534b288cc",
+      "ts": "2026-03-31T23:13:07.559Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 26,
+      "max_turn_ts": "2026-04-01T15:24:03.059000Z"
+    },
+    {
+      "sid": "246fb47f-92eb-440b-8b68-64b3a2114337",
+      "ts": "2026-04-01T09:51:25.557Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-04-01T10:00:55.660000Z"
+    },
+    {
+      "sid": "19cda771-91e9-49b9-ab95-d26021a08c25",
+      "ts": "2026-04-01T15:24:07.430Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 25,
+      "max_turn_ts": "2026-04-01T23:00:07.463000Z"
+    },
+    {
+      "sid": "7e92b7d5-8f6a-4f03-a42f-45708fa4bc9a",
+      "ts": "2026-04-01T22:35:40.160Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 16,
+      "max_turn_ts": "2026-04-01T23:14:11.359000Z"
+    },
+    {
+      "sid": "175d0efb-f629-4103-8050-0116b5efdcab",
+      "ts": "2026-04-02T08:12:28.939Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-02T08:12:55.368000Z"
+    },
+    {
+      "sid": "715a553a-128d-48a1-aab3-1bee96fd2af7",
+      "ts": "2026-04-02T08:13:32.919Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-02T08:13:36.548000Z"
+    },
+    {
+      "sid": "f06660a3-43b7-4e58-bd32-bef30a83c356",
+      "ts": "2026-04-02T09:10:10.518Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-02T09:13:30.615000Z"
+    },
+    {
+      "sid": "19895e5d-b4a1-464a-866b-38759c9614fa",
+      "ts": "2026-04-02T09:20:24.349Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 64,
+      "max_turn_ts": "2026-04-02T11:35:18.947000Z"
+    },
+    {
+      "sid": "40e364d1-cb36-4bd8-b258-1642477e3964",
+      "ts": "2026-04-02T11:32:12.807Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 26,
+      "max_turn_ts": "2026-04-02T21:57:03.339000Z"
+    },
+    {
+      "sid": "c30b951e-d3e7-409a-9ce7-4127b5b78345",
+      "ts": "2026-04-02T11:40:48.108Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 22,
+      "max_turn_ts": "2026-04-02T14:52:19.406000Z"
+    },
+    {
+      "sid": "24e5ac0d-d544-4330-86f6-84f6c04c1f59",
+      "ts": "2026-04-02T21:57:07.157Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-04-02T22:45:31.320000Z"
+    },
+    {
+      "sid": "35723d45-55fa-40a6-b773-b1008c0795e4",
+      "ts": "2026-04-02T22:01:59.148Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 24,
+      "max_turn_ts": "2026-04-02T23:17:58.418000Z"
+    },
+    {
+      "sid": "405b664d-8f7f-46bf-89b9-7373873345bd",
+      "ts": "2026-04-02T23:19:42.042Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-03T08:25:15.296000Z"
+    },
+    {
+      "sid": "804fb9af-6a09-41c6-93bf-03e9cc06693d",
+      "ts": "2026-04-03T08:56:46.269Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-03T09:55:27.132000Z"
+    },
+    {
+      "sid": "3f294f56-134d-43fa-806b-7579fd32b74d",
+      "ts": "2026-04-03T09:56:11.235Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-04-03T10:29:15.217000Z"
+    },
+    {
+      "sid": "a74f5c7c-0e6e-4ed7-9cae-3c3147c36940",
+      "ts": "2026-04-03T09:57:09.966Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-03T10:09:54.962000Z"
+    },
+    {
+      "sid": "f1eebf1b-52bb-42bb-ac42-295f7946a261",
+      "ts": "2026-04-03T09:58:05.991Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-03T10:06:38.673000Z"
+    },
+    {
+      "sid": "f72ab56f-6095-463d-9049-a049b152d1ef",
+      "ts": "2026-04-03T10:11:27.036Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 12,
+      "max_turn_ts": "2026-04-03T12:51:01.991000Z"
+    },
+    {
+      "sid": "5419736b-8fe9-4abc-9335-0c2448307fd4",
+      "ts": "2026-04-03T10:29:37.012Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 132,
+      "max_turn_ts": "2026-04-07T00:35:37.113000Z"
+    },
+    {
+      "sid": "05c7456e-337c-4163-8f52-b01f7a4db2d5",
+      "ts": "2026-04-03T11:38:38.374Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-03T11:40:49.083000Z"
+    },
+    {
+      "sid": "608ba8f0-2b58-47ff-bd36-0505a04ce68d",
+      "ts": "2026-04-03T11:53:16.277Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-03T11:53:20.683000Z"
+    },
+    {
+      "sid": "e2ea6ac6-3ffd-4c6e-a51b-4139cd9af7d2",
+      "ts": "2026-04-03T15:46:54.275Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-03T15:46:58.414000Z"
+    },
+    {
+      "sid": "895afef6-9c9b-4921-a53d-6c551d1cabdb",
+      "ts": "2026-04-04T18:12:06.125Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-04T18:12:08.415000Z"
+    },
+    {
+      "sid": "fad99911-5d84-44bb-a7c1-043f15b19b19",
+      "ts": "2026-04-06T13:59:31.828Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-06T14:00:58.131000Z"
+    },
+    {
+      "sid": "680e939b-707b-4a9a-9531-c04889f4836c",
+      "ts": "2026-04-06T14:19:15.849Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T14:24:41.502000Z"
+    },
+    {
+      "sid": "7c86b5b2-b3db-4930-b24b-8666fafde57c",
+      "ts": "2026-04-06T14:40:02.619Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-04-06T14:49:29.348000Z"
+    },
+    {
+      "sid": "d47ca00b-68dc-473a-9ef9-e560450c0993",
+      "ts": "2026-04-06T14:44:05.962Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-06T14:45:05.067000Z"
+    },
+    {
+      "sid": "72ab6b7c-4f52-46d3-b472-53ca050ae239",
+      "ts": "2026-04-06T14:51:22.297Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T14:51:35.422000Z"
+    },
+    {
+      "sid": "405db24b-44b9-461e-8ad4-d942b97c3e50",
+      "ts": "2026-04-06T15:25:49.447Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T15:25:51.650000Z"
+    },
+    {
+      "sid": "2988e39f-3de9-461d-be38-a56a7c4fabac",
+      "ts": "2026-04-06T15:27:51.958Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-06T16:29:47.985000Z"
+    },
+    {
+      "sid": "33acc093-fdcf-46a5-9fe1-6c103d58b071",
+      "ts": "2026-04-06T16:33:53.543Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 10,
+      "max_turn_ts": "2026-04-09T11:30:42.891000Z"
+    },
+    {
+      "sid": "17f79a51-6d85-4959-ba38-4723335699e6",
+      "ts": "2026-04-06T16:37:21.075Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T16:37:25.437000Z"
+    },
+    {
+      "sid": "19aa9368-4b6c-4225-812b-bfdc691d8474",
+      "ts": "2026-04-06T17:12:31.003Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T17:12:35.436000Z"
+    },
+    {
+      "sid": "2387085c-faf6-47d4-a2e0-772e3d8488c8",
+      "ts": "2026-04-06T17:16:04.819Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T17:16:07.818000Z"
+    },
+    {
+      "sid": "f985b171-6620-43c3-81a9-f010d4b8db81",
+      "ts": "2026-04-06T17:16:06.205Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T17:16:10.862000Z"
+    },
+    {
+      "sid": "441de604-99e3-429d-8f95-3abd9632546d",
+      "ts": "2026-04-06T17:16:08.903Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-06T17:16:12.092000Z"
+    },
+    {
+      "sid": "780e867f-8438-45f0-87bf-44285e027d73",
+      "ts": "2026-04-07T00:36:05.954Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 51,
+      "max_turn_ts": "2026-04-09T21:03:06.895000Z"
+    },
+    {
+      "sid": "b855c4f4-22b2-4198-9d7c-28637384c53a",
+      "ts": "2026-04-07T00:54:48.622Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-04-07T11:04:51.220000Z"
+    },
+    {
+      "sid": "40963a67-eead-4d81-a2cc-8c7f470c12b0",
+      "ts": "2026-04-07T12:50:16.577Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 29,
+      "max_turn_ts": "2026-04-07T14:41:52.440000Z"
+    },
+    {
+      "sid": "cc943972-73fb-4d01-99cf-2adbfb3b864e",
+      "ts": "2026-04-07T13:32:44.772Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 29,
+      "max_turn_ts": "2026-04-08T20:05:37.082000Z"
+    },
+    {
+      "sid": "579b3caa-c28b-4210-81e8-283839127253",
+      "ts": "2026-04-08T09:53:57.016Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-08T09:56:01.799000Z"
+    },
+    {
+      "sid": "57d9d1ad-7ef0-42b0-938a-d0f26e197d47",
+      "ts": "2026-04-08T13:08:14.992Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-08T13:11:23.010000Z"
+    },
+    {
+      "sid": "b15e1b24-ef33-4c1f-bb3a-4ba20e5e2118",
+      "ts": "2026-04-08T14:00:06.404Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-04-08T14:08:01.468000Z"
+    },
+    {
+      "sid": "9974a2e5-3ab1-4ff6-ad2f-4b72db792ba6",
+      "ts": "2026-04-08T14:26:15.103Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-08T14:26:22.949000Z"
+    },
+    {
+      "sid": "22953084-3fc9-4276-85b7-62de95f1439a",
+      "ts": "2026-04-08T14:35:53.046Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-08T19:56:42.870000Z"
+    },
+    {
+      "sid": "2b02e737-a841-419e-ab41-eb20ea791a49",
+      "ts": "2026-04-09T11:30:52.152Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-09T11:38:09.981000Z"
+    },
+    {
+      "sid": "dd3d0e48-a40d-4b01-94d8-69781a83b044",
+      "ts": "2026-04-09T11:35:20.123Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-09T11:38:11.287000Z"
+    },
+    {
+      "sid": "9127f301-4fa9-4285-8715-e96b5cebd9d4",
+      "ts": "2026-04-09T11:38:44.062Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-09T11:41:53.147000Z"
+    },
+    {
+      "sid": "0f07ce9e-b717-4a67-8a92-ba122014e1bf",
+      "ts": "2026-04-09T14:19:29.738Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-04-09T18:03:22.033000Z"
+    },
+    {
+      "sid": "63114351-482e-4121-a87c-3827a524bd03",
+      "ts": "2026-04-09T15:07:53.743Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 11,
+      "max_turn_ts": "2026-04-09T16:08:38.124000Z"
+    },
+    {
+      "sid": "b5953340-a6f0-4bc6-b26b-7625459f406d",
+      "ts": "2026-04-09T21:07:22.209Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 29,
+      "max_turn_ts": "2026-04-11T11:17:51.780000Z"
+    },
+    {
+      "sid": "05e5d024-34e7-40e3-9e29-8e12689dff38",
+      "ts": "2026-04-09T21:15:23.001Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 19,
+      "max_turn_ts": "2026-04-11T11:10:49.358000Z"
+    },
+    {
+      "sid": "36c995e7-57ec-4b4a-8e16-af106c40c731",
+      "ts": "2026-04-10T11:15:01.658Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-04-10T11:31:08.862000Z"
+    },
+    {
+      "sid": "47dc12ee-a4cd-4d37-a321-8b6b14ad5685",
+      "ts": "2026-04-10T11:49:03.564Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 9,
+      "max_turn_ts": "2026-04-10T12:21:51.586000Z"
+    },
+    {
+      "sid": "8eef2335-2d26-47a3-a65e-af87432cb8d2",
+      "ts": "2026-04-11T09:01:07.872Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 11,
+      "max_turn_ts": "2026-04-11T09:47:29.965000Z"
+    },
+    {
+      "sid": "80b216ed-4a76-4543-be8f-c3fb69aa7770",
+      "ts": "2026-04-11T11:27:15.511Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-11T11:32:31.406000Z"
+    },
+    {
+      "sid": "a66d3cc7-9f98-4c4b-bd9b-7e71161accb9",
+      "ts": "2026-04-11T16:48:51.979Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-11T17:41:22.819000Z"
+    },
+    {
+      "sid": "b6711bdf-3353-46f1-adc7-3c73239abd71",
+      "ts": "2026-04-11T22:10:16.065Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 8,
+      "max_turn_ts": "2026-04-11T22:28:48.517000Z"
+    },
+    {
+      "sid": "96950fc8-2a0f-499e-bacb-3743b850ac12",
+      "ts": "2026-04-11T22:39:11.929Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-11T22:49:38.361000Z"
+    },
+    {
+      "sid": "27455a67-0960-4e13-8517-1ebd6b2d2e5a",
+      "ts": "2026-04-11T22:49:53.114Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 27,
+      "max_turn_ts": "2026-04-13T07:42:35.087000Z"
+    },
+    {
+      "sid": "b85273b7-2eed-4b9b-bb49-fea21511846b",
+      "ts": "2026-04-13T07:42:41.252Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 13,
+      "max_turn_ts": "2026-04-13T09:12:25.263000Z"
+    },
+    {
+      "sid": "cb039ea7-a0a5-4682-b388-7950355d2b9f",
+      "ts": "2026-04-13T09:56:57.077Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-04-13T10:03:37.662000Z"
+    },
+    {
+      "sid": "7adfa2f1-2388-4349-8ed8-bc0072e2015c",
+      "ts": "2026-04-13T10:31:30.159Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 11,
+      "max_turn_ts": "2026-04-13T10:47:07.453000Z"
+    },
+    {
+      "sid": "328a3e1d-debc-416e-b251-8d6b3874cdaf",
+      "ts": "2026-04-13T10:47:20.316Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 18,
+      "max_turn_ts": "2026-04-13T17:19:03.359000Z"
+    },
+    {
+      "sid": "44e02d9c-0793-41ae-9b43-b2947510dc9f",
+      "ts": "2026-04-13T22:29:52.953Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 11,
+      "max_turn_ts": "2026-04-14T00:04:02.202000Z"
+    },
+    {
+      "sid": "37db22ea-37a5-4abf-a976-c790b70ec96c",
+      "ts": "2026-04-13T22:36:22.505Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 6,
+      "max_turn_ts": "2026-04-13T22:52:35.245000Z"
+    },
+    {
+      "sid": "19c0aace-b4f9-47cb-9b67-d8495be80c57",
+      "ts": "2026-04-14T12:52:53.045Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 5,
+      "max_turn_ts": "2026-04-14T14:41:46.275000Z"
+    },
+    {
+      "sid": "8b04b0c0-5b3a-490d-a47a-6535f9363b71",
+      "ts": "2026-04-14T14:48:12.061Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 15,
+      "max_turn_ts": "2026-04-14T17:11:05.843000Z"
+    },
+    {
+      "sid": "61765dbb-ef66-4fd0-8a1c-07967389f9ca",
+      "ts": "2026-04-14T15:10:40.160Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 4,
+      "max_turn_ts": "2026-04-14T15:23:22.593000Z"
+    },
+    {
+      "sid": "296556ca-d526-45af-a91f-1dc16b7a020b",
+      "ts": "2026-04-14T15:26:01.066Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-14T15:27:26.977000Z"
+    },
+    {
+      "sid": "7b6fc75c-3f05-429e-912d-a80af7ed7a6c",
+      "ts": "2026-04-14T15:40:35.444Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 8,
+      "max_turn_ts": "2026-04-14T15:53:58.299000Z"
+    },
+    {
+      "sid": "8cec1cbe-a9e6-4a4b-8621-660259391be6",
+      "ts": "2026-04-14T15:51:04.269Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 2,
+      "max_turn_ts": "2026-04-14T15:51:55.203000Z"
+    },
+    {
+      "sid": "f7b62ef0-7190-48d2-bf7c-b9ca9c4d8560",
+      "ts": "2026-04-14T16:42:59.169Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 7,
+      "max_turn_ts": "2026-04-14T16:48:31.263000Z"
+    },
+    {
+      "sid": "bc1835c1-c84d-406c-b338-9c3d2d74942e",
+      "ts": "2026-04-14T17:07:44.571Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 1,
+      "max_turn_ts": "2026-04-14T17:08:00.053000Z"
+    },
+    {
+      "sid": "39d3db10-3884-4b48-b9d3-74bc91ee2a3b",
+      "ts": "2026-04-14T17:11:15.239Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 3,
+      "max_turn_ts": "2026-04-14T17:46:27.354000Z"
+    },
+    {
+      "sid": "10be6cfa-5f3b-43a8-8707-ffa1efc9f43b",
+      "ts": "2026-04-14T18:31:21.586Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 15,
+      "max_turn_ts": "2026-04-14T19:41:40.149000Z"
+    },
+    {
+      "sid": "b1b601b4-4fd0-4a07-a420-144ebfb59ed8",
+      "ts": "2026-04-15T12:50:44.565Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 15,
+      "max_turn_ts": "2026-04-15T19:45:52.838000Z"
+    },
+    {
+      "sid": "db7520b1-a504-4783-8686-1f608e641dd3",
+      "ts": "2026-04-15T22:31:24.029Z",
+      "repo": "4thwithme/.dotfiles",
+      "n": 50,
+      "max_turn_ts": "2026-04-16T10:07:39.662000Z"
+    }
+  ],
+  "n_eval_tasks": 10
+}

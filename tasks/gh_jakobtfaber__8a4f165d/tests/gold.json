@@ -1,8 +1,0 @@
-{
-  "point_id": "019efa83-0f57-7de1-89af-c5ff79e3cbc9#20",
-  "developer": "gh:jakobtfaber",
-  "condition": "noprofile",
-  "real": "is it on remote?",
-  "prev_agent": "`Faber2026` is **not present as a submodule** in this checkout.\n\nChecks run from `/home/<USER>/Developer/repos/github.com/jakobtfaber/dsa110-FLITS`:\n\n- `git submodule status --recursive` returned no entries.\n- `.gitmodules` has no registered submodules.\n- `git ls-files --stage | grep -F 'Faber2026'` returned no tracked path.\n- `Faber2026/` is not present on disk.",
-  "gold_move": "inquiry"
-}
