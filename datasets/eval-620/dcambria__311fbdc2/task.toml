@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "userbench/dcambria__311fbdc2"
+description = "Predict the developer's next message given the conversation so far."
+authors = []
+keywords = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+
+[metadata]
+author_name = "userbench"
+category = "user-simulation"
+tags = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+developer = "gh:dcambria"
+point_id = "1df9459d-c31f-4274-bdfc-00adbac1555a#137"
+condition = "noprofile"
+legacy_task_id = "gh_dcambria__311fbdc2"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

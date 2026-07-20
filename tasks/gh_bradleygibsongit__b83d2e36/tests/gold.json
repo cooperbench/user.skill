@@ -1,8 +1,0 @@
-{
-  "point_id": "019db120-17ca-72f0-b43e-29796378a0c5#10",
-  "developer": "gh:bradleygibsongit",
-  "condition": "noprofile",
-  "real": "The logos weem a bit too big",
-  "prev_agent": "Updated the shared provider logo path so the new OpenAI/Codex and Claude SVGs now flow through the existing shared renderer in [ModelLogo.tsx](/home/<USER>/Projects/Active%20Projects/nucleus-desktop/apps/desktop/src/features/chat/components/ModelLogo.tsx:1). That means the model picker, chat tabs, and any other place using `ModelLogo` now pick up the new assets automatically. I treated Codex as sharing the same OpenAI/Codex mark you sent, and made both `openai` and `codex` use the same light/dark theme-aware logo path. I replaced the brand assets in [openai-symbol-light.svg](/home/<USER>/Projects/Active%20Projects/nucleus-desktop/apps/desktop/src/assets/brands/openai-symbol-light.svg:1), [openai-symbol-dark.svg](/home/<USER>/Projects/Active%20Projects/nucleus-desktop/apps/desktop/src/assets/brands/openai-symbol-dark.svg:1), and [claude-color.svg](/home/<USER>/Projects/Active%20Projects/nucleus-desktop/apps/desktop/src/assets/brands/claude-color.svg:1). `bun run typecheck` passes. I didn’t do a live visual app run in this turn. <oai-mem-citation> <citation_entries> MEMORY.md:1692-1693|note=[confirmed tab icons should keep using the shared icon slot] MEMORY.md:1796-1798|note=[reused repo context for harness and model UI surfaces] MEMORY.md:1612-1612|note=[captured related rollout id for the same nucleus-desktop UI area] </citation_entries> <rollout_ids> 019d67dd-2fcd-7f60-8928-7d5641b82393 </rollout_ids> </oai-mem-citation>",
-  "gold_move": "critical"
-}

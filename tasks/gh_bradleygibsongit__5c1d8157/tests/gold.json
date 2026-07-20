@@ -1,8 +1,0 @@
-{
-  "point_id": "019db120-17ca-72f0-b43e-29796378a0c5#154",
-  "developer": "gh:bradleygibsongit",
-  "condition": "noprofile",
-  "real": "That toggle the dropdown arrow should be on the right not the left",
-  "prev_agent": "The extra distance was being doubled: the opened steps body had its own top margin, and `MessageContent` was also adding its default vertical gap between the toggle row and the opened content. I removed that structural gap in [TurnStepsDropdown.tsx](/home/<USER>/Projects/Active%20Projects/nucleus-desktop/apps/desktop/src/features/chat/components/TurnStepsDropdown.tsx:118) by setting the dropdown’s `MessageContent` to `gap-0`, so the spacing is now controlled by the explicit top margin only. `bun run typecheck` passes. <oai-mem-citation> <citation_entries> MEMORY.md:3249-3249|note=[used prior guidance that spacing like this should be fixed at the row wrapper level rather than inside message content blocks] MEMORY.md:713-713|note=[used prior guidance that visible rendered behavior matters more than a plausible-looking code tweak] </citation_entries> <rollout_ids> </rollout_ids> </oai-mem-citation>",
-  "gold_move": null
-}

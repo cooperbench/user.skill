@@ -1,1 +1,0 @@
-{"point_id": "e2a24ee7-40d9-4189-80af-92f8b2fe1ba7#67", "developer": "gh:robouden", "condition": "noprofile", "real": "Can you use the mcp server now?", "prev_agent": "gitnexus is listed and \u2713 connected as a User MCP \u2014 it's working. It just won't be usable in this session until you restart Claude Code (new sessions load MCP tool schemas at startup).", "gold_move": null}

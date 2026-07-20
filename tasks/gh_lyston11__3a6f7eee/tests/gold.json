@@ -1,8 +1,0 @@
-{
-  "point_id": "019e622a-5db4-7ed2-90a4-e976b23a9125#222",
-  "developer": "gh:lyston11",
-  "condition": "noprofile",
-  "real": "如果我需要换机部署呢，需要怎么操作？",
-  "prev_agent": "现在不用你再操作了，我已经接着跑完了。\n\n部署地址：\n\n```text\nhttps://kimi-ai-2api.lyston-hellokimi.workers.dev\n```\n\nOpenAI 兼容 Base URL：\n\n```text\nhttps://kimi-ai-2api.lyston-hellokimi.workers.dev/v1\n```\n\nAPI Key：\n\n```text\ne0a15bf0283962d259f0f28e45252ecc544e1fbb2c936ed7\n```\n\n我也验证过了：\n- 根路径健康检查正常返回\n- `/v1/models` 带 Bearer Token 正常返回两个模型：`kimi-k2-instruct-0905`、`kimi-k2-instruct`\n\n本地改动在 [HelloKimi](/home/<USER>/PycharmProjects/HelloKimi)：写入了 KV 配置、把流式间隔设成 `0`，并补了 `.gitignore`。",
-  "gold_move": null
-}

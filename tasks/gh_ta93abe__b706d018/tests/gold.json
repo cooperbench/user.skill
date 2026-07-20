@@ -1,8 +1,0 @@
-{
-  "point_id": "019ec545-99e9-7ef1-a99b-c087c60881ac#422",
-  "developer": "gh:ta93abe",
-  "condition": "noprofile",
-  "real": "改善案をdocsに書き出して",
-  "prev_agent": "実装しました。主な変更は [worker/index.ts](/home/<USER>/Developer/github.com/ta93abe/me/worker/index.ts:397) に Worker `fetch` を追加して、`Link` ヘッダー、Markdown negotiation、`llms.txt`、`api-catalog`、`auth.md`、MCP Server Card、Agent Skills、簡易 MCP endpoint を返すようにした点です。あわせて [robots.txt](/home/<USER>/Developer/github.com/ta93abe/me/public/robots.txt:5) に AI bot rules と `Content-Signal`、[_headers](/home/<USER>/Developer/github.com/ta93abe/me/public/_headers:11) に `Content-Signal`、[Layout.astro](/home/<USER>/Developer/github.com/ta93abe/me/src/layouts/Layout.astro:96) に WebMCP 用の read-only tool 登録を追加しました。[wrangler.jsonc](/home/<USER>/Developer/github.com/ta93abe/me/wrangler.jsonc:4) では Static Assets binding と `run_worker_first` を有効化しています。\n\n検証済みです: `biome check`、`astro build`、`wrangler deploy --dry-run` は通過。ローカル Worker でも `/` の `Link`/`Vary`、`Accept: text/markdown`、`/.well-known/api-catalog`、`/.well-known/mcp/server-card.json`、`/.well-known/agent-skills/index.json`、`/auth.md`、`/mcp` を確認しました。\n\n未対応は DNS-AID です。これはリポジトリではなく DNS 側の SVCB/HTTPS レコード設定が必要です。公開スコアへ反映するには、まだ本番デプロイが必要です。\n\nなお、作業中に私の変更とは別に `pnpm-workspace.yaml` と `docs/AGENT_READINESS_PLAN.md` の差分が現れています。今回の実装とは切り離して、そのまま触っていません。\n\n参照: [Is Your Site Agent-Ready?](https://isitagentready.com/), [Cloudflare Static Assets binding](https://developers.cloudflare.com/workers/static-assets/binding/), [Worker script routing](https://developers.cloudflare.com/workers/static-assets/routing/worker-script/), [Static Assets headers](https://developers.cloudflare.com/workers/static-assets/headers/)",
-  "gold_move": null
-}

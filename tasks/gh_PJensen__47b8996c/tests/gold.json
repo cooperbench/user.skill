@@ -1,8 +1,0 @@
-{
-  "point_id": "019f32ae-01d0-78c3-99f5-1113c7ed3376#160",
-  "developer": "gh:PJensen",
-  "condition": "noprofile",
-  "real": "Lets make certain that the economy debugging graph is showing whatever time series that best reflect the state of the town economy.\n\nSame graph: The two letter labels are a little hard to understand",
-  "prev_agent": "Implemented the first deeper feedback pass for the town economy.\n\nChanged:\n- [TownState.js](/home/<USER>/Repos/JSHack/src/rules/components/TownState.js:5) now tracks derived `fuelStores`, `foodQuality`, `laborReadiness`, and `lowFuel`.\n- [townSimulationSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/townSimulationSystem.js:141) now feeds the town from actual inventories by preference: preserves the last prepared meal, then substitutes raw/fallback foods.\n- [townSimulationSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/townSimulationSystem.js:201) separates fuel from materials and derives labor readiness from food quality, morale, and fuel shortage.\n- [aiTownfolkSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/aiTownfolkSystem.js:176) adds physical tool wear for economy tools.\n- [aiTownfolkSystem.js](/home/<USER>/Repos/JSHack/src/rules/systems/aiTownfolkSystem.js:920) makes low labor readiness delay scheduled productive work.\n- Woodcutters/miners can pull missing tools from smithy stock, so smith output now feeds back into production.\n- Sharp hatchets/pickaxes/kitchen knives boost production once, then become worn; worn tools break on later use.\n\nVerification:\n- `deno test --allow-read tests/townSimulationSystem.test.mjs`\n- `deno test --allow-read tests/aiTownfolk.test.mjs`\n- `deno task check`\n\nAll passed.",
-  "gold_move": null
-}

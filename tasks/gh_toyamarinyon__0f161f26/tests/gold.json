@@ -1,8 +1,0 @@
-{
-  "point_id": "019ee5b0-a55f-7d11-a148-9e7e3266f589#962",
-  "developer": "gh:toyamarinyon",
-  "condition": "noprofile",
-  "real": "# In app browser:\n- The user has the in-app browser open with 1 tab.\n- Current URL: https://mdx-scroll-fade-article-prototype.ultrahope-dev.localhost/ja/writing/base-ui-scroll-fade\n\n## My request for Codex:\nウインドウ左上の三つアイコンのgap少し狭めてモノトーンでいいかも",
-  "prev_agent": "案1で入れました。どれか1つの preview をスクロールすると、他の2つも同じ `scrollTop / maxScrollTop` の ratio に同期します。\n\n実装は [scroll-fade-examples.tsx](/home/<USER>/.codex/worktrees/6dbd/ultrahope.dev/app/(writing)/ui/scroll-fade-examples.tsx) 側で、3つのスクロール要素を registry に登録して、`onScroll` で他の要素へ ratio を反映する形です。Base UI 版は `ScrollArea.Viewport` を登録しています。\n\nブラウザでも確認済みです。1つ目をスクロールしたら3つとも同じ ratio になり、Base UI 側の `--scroll-area-overflow-y-start/end` も追従していました。上方向への戻しも同期しています。\n\n確認済み:\n\n`pnpm format:check`  \n`pnpm lint`  \n`pnpm exec tsc --noEmit`",
-  "gold_move": null
-}

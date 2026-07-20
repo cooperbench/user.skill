@@ -1,8 +1,0 @@
-{
-  "point_id": "019ee09f-d2c6-72b1-94dd-f0863fe8464a#150",
-  "developer": "gh:blackgirlbytes",
-  "condition": "noprofile",
-  "real": "# In app browser:\n- The user has the in-app browser open.\n- Current URL: http://127.0.0.1:5173/leaderboard\n\n## My request for Codex:\ncan you run the site again so i can see it",
-  "prev_agent": "Executed the trail and pushed it.\n\n`/leaderboard` now opens the existing leaderboard board directly, hides the normal HUD/title chrome, and the Back button returns to `/`. I also added `vercel.json` rewrites so direct production hits to `/leaderboard` serve the SPA entry.\n\nChanged:\n- [src/main.js](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/main.js)\n- [src/style.css](/home/<USER>/Documents/work/planetfall-seed-signalkit/src/style.css)\n- [vercel.json](/home/<USER>/Documents/work/planetfall-seed-signalkit/vercel.json)\n\nVerified with `npm test`, `npm run build`, and a Chrome pass against `http://127.0.0.1:5173/leaderboard`. Committed and pushed as `35cdcfb Render leaderboard route` on `codex/leaderboard-route`. The existing untracked `.codex/` directory is still untouched.\n\n::git-stage{cwd=\"/home/<USER>/Documents/work/planetfall-seed-signalkit\"}\n::git-commit{cwd=\"/home/<USER>/Documents/work/planetfall-seed-signalkit\"}\n::git-push{cwd=\"/home/<USER>/Documents/work/planetfall-seed-signalkit\" branch=\"codex/leaderboard-route\"}",
-  "gold_move": null
-}

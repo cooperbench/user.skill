@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "userbench/yyovil__61ad7991"
+description = "Predict the developer's next message given the conversation so far."
+authors = []
+keywords = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+
+[metadata]
+author_name = "userbench"
+category = "user-simulation"
+tags = ["userbench", "user-simulation", "coding-agents", "move-prediction", "noprofile"]
+developer = "gh:yyovil"
+point_id = "019eaade-42a9-70f1-bff5-bf737e86d880#76"
+condition = "noprofile"
+legacy_task_id = "gh_yyovil__61ad7991"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

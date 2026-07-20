@@ -1,0 +1,41 @@
+{
+  "name": "UserBench eval-620",
+  "tasks": 620,
+  "developers": 62,
+  "per_dev": 10,
+  "min_points_for_inclusion": 10,
+  "task_name_pattern": "<username>__<hash> (DataClaw: dc_<id>__<hash>)",
+  "selection_rule": "Among developers with >=10 eval points in the 1520-task eval build, drop the 6 with <10 points; for each of the remaining 62, take exactly 10 points with the smallest environment/history.md byte size (same rule as build_agentic.py --per-dev: sorted by len(context) ascending). Sessions may be shared. Tie-break: legacy task directory name ascending. Task directory/name rewritten to short form without swesimbench-v2/, userbench/, or gh_ prefixes.",
+  "dropped_devs": [
+    {
+      "dev": "gh:bradleygibsongit",
+      "n": 8
+    },
+    {
+      "dev": "gh:cjrfoto",
+      "n": 3
+    },
+    {
+      "dev": "gh:dayhaysoos",
+      "n": 6
+    },
+    {
+      "dev": "gh:fogodev",
+      "n": 8
+    },
+    {
+      "dev": "gh:gopeace88",
+      "n": 8
+    },
+    {
+      "dev": "gh:toyamarinyon",
+      "n": 6
+    }
+  ],
+  "source_backup": "/data/swesimbench-v2-harbor/datasets/eval-1520-full",
+  "naming": {
+    "gh": "gh_<user>__<hash> -> <user>__<hash>",
+    "dc": "dc_dc_<id>__<hash> -> dc_<id>__<hash>",
+    "versioning": "Harbor tag only (@v2); not embedded in task name"
+  }
+}

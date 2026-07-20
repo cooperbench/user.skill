@@ -1,8 +1,0 @@
-{
-  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.18",
-  "policy_fingerprint": "aa35cf434db66068fc8d9bf7617f92b84e1f601383816949fc6d0a395330642f",
-  "cohort_fingerprint": "6ac97b6ab5904cb68e290ccb699c13aa194fce26538ae8e3bf58684fda3111c3",
-  "condition": "noprofile",
-  "tasks": 1520,
-  "developers": 68
-}

@@ -1,1 +1,0 @@
-{"point_id": "019f1513-0676-73b2-ad56-c9a4e4b0eace#599", "developer": "gh:heddendorp", "condition": "noprofile", "real": "Pull in the latest base changes and run the tests only in ci, I need control over local docker atm", "prev_agent": "I found the stuck local `docker run` client process and am killing that process directly.", "gold_move": null}

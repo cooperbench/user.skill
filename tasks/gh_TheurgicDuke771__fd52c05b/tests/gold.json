@@ -1,8 +1,0 @@
-{
-  "point_id": "855c6ddd-1ebc-4f55-92ad-3887696c3b53#659",
-  "developer": "gh:TheurgicDuke771",
-  "condition": "noprofile",
-  "real": "once the merge completes, sync to main",
-  "prev_agent": "Single-revision mode: the old revision (37) is deprovisioning and the new one (38) is `RunningAtMaxScale` — so exactly one beat scheduler, no double-firing. All three tasks are done.\n\n## Summary\n\n- **PR #756 merged** — squash-merged to `main` at 13:13Z, branch deleted. The all-datasource perf baseline is now live on the docs site.\n- **`DATAQ_DB.PERF.ORDER_LINES_50M` dropped** — and since that left the `PERF` schema empty, I removed the schema too. No perf artifacts remain anywhere now.\n- **Email receiver changed to `<REDACTED_EMAIL>`** — you were right, alerts were sending and receiving in the same Gmail mailbox. I changed only `EMAIL_TO`; `EMAIL_FROM`/`EMAIL_USERNAME` stay on `<REDACTED_EMAIL>` because that's the account that authenticates to Gmail's SMTP server (Gmail rejects a `From` that isn't the authenticated user). Changed in both places:\n  - the **live prod worker** (verified: `EMAIL_TO=<REDACTED_EMAIL>`, new revision healthy, old one deprovisioning),\n  - the gitignored **`terraform.tfvars`** so the next `terraform apply` won't revert it.\n\nAlerts will now arrive at your Outlook inbox. One caveat worth knowing: dedup suppresses repeat/unchanged failures, so to see the new routing fire you'd need a *fresh* failing run (a new suite/check), not a re-run of an already-alerted failure.",
-  "gold_move": null
-}
