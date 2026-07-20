@@ -146,7 +146,7 @@ export default function MispredictionPage() {
         </p>
       </header>
 
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <StatCard label="developers" value={fmt(m.users)} sub="held-out cohort" />
         <StatCard label="labelled points" value={fmt(m.points)} sub="move-classified" />
         {e3.generic?.spread_pred != null && (
@@ -158,6 +158,11 @@ export default function MispredictionPage() {
         )}
         {adj && (
           <StatCard label="worst misses: homogeneity" value={`${Math.round(100 * adj.homogeneity_share)}%`} sub={`task-completion / generic (n=${adj.n_adjudicated})`} />
+        )}
+        {d.metric_a?.folder?.by_condition?.distilled?.skill != null && (
+          <StatCard label="skill score (distilled)"
+            value={d.metric_a.folder.by_condition.distilled.skill.toFixed(1)}
+            sub="0 = majority-class predictor, 100 = perfect" />
         )}
       </div>
 
@@ -177,7 +182,7 @@ export default function MispredictionPage() {
           {d.metric_a?.folder && (
             <>
               <p className="mt-4 text-zinc-600">
-                <strong>Metric A, measured.</strong> Move accuracy against the majority-class baseline
+                <strong>Metric A, measured.</strong> Skill score against the majority-class baseline
                 (always predict <code className="font-mono text-xs">{d.metric_a.folder.baseline_class}</code>{" "}
                 = {n3(d.metric_a.folder.baseline_accuracy)}). The real move distribution is heavily
                 skewed, so this baseline is the bar that matters — and no condition clears it.
@@ -187,10 +192,10 @@ export default function MispredictionPage() {
                   <thead>
                     <tr className="text-xs text-zinc-500">
                       <th className="py-1 text-left font-semibold">condition</th>
-                      <th className="py-1 text-right font-semibold">folder acc</th>
-                      <th className="py-1 pr-6 text-right font-semibold">vs baseline</th>
+                      <th className="py-1 text-right font-semibold">folder skill</th>
+                      <th className="py-1 pr-6 text-right font-semibold">folder acc</th>
+                      <th className="py-1 text-right font-semibold">inline skill</th>
                       <th className="py-1 text-right font-semibold">inline acc</th>
-                      <th className="py-1 text-right font-semibold">vs baseline</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -200,10 +205,10 @@ export default function MispredictionPage() {
                       return (
                         <tr key={c} className="border-t border-zinc-100">
                           <td className="py-2 font-medium text-zinc-700">{c}</td>
-                          <td className="py-2 text-right tabular-nums text-zinc-600">{n3(fa?.accuracy)}</td>
-                          <td className="py-2 pr-6 text-right tabular-nums">{signed(fa?.vs_baseline, false)}</td>
-                          <td className="py-2 text-right tabular-nums text-zinc-600">{n3(ia?.accuracy)}</td>
-                          <td className="py-2 text-right tabular-nums">{signed(ia?.vs_baseline, false)}</td>
+                          <td className="py-2 text-right font-semibold tabular-nums text-rose-600">{fa?.skill?.toFixed(1)}</td>
+                          <td className="py-2 pr-6 text-right tabular-nums text-zinc-500">{n3(fa?.accuracy)}</td>
+                          <td className="py-2 text-right font-semibold tabular-nums text-rose-600">{ia?.skill?.toFixed(1)}</td>
+                          <td className="py-2 text-right tabular-nums text-zinc-500">{n3(ia?.accuracy)}</td>
                         </tr>
                       );
                     })}
