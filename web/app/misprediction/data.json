@@ -934,7 +934,9 @@
    "folder": "80%",
    "inline": "92%",
    "verdict": "supported",
-   "note": "Both modes: the dominant error is predicting keep-going where the developer did something individual."
+   "note": "Both modes: the dominant error is predicting keep-going where the developer did something individual.",
+   "metric": "A+C",
+   "metric_note": "misses are ranked by move mismatch (A) weighted by low judge-realism (C), then labelled."
   },
   {
    "id": "H1 · E2",
@@ -942,7 +944,9 @@
    "folder": "approve +0.010, critical -0.115",
    "inline": "approve +0.116, critical -0.108",
    "verdict": "mixed",
-   "note": "Holds on the low-prompt inline arm (clear approve-collapse). Folder mode is explicitly told not to default to approving, so the mass diverts to inquiry — as the plan predicted, H1 is only clean on a low-prompt baseline."
+   "note": "Holds on the low-prompt inline arm (clear approve-collapse). Folder mode is explicitly told not to default to approving, so the mass diverts to inquiry — as the plan predicted, H1 is only clean on a low-prompt baseline.",
+   "metric": "B",
+   "metric_note": "compares the whole real population's move distribution to the whole predicted one."
   },
   {
    "id": "H2 · E3",
@@ -950,7 +954,9 @@
    "folder": "0.200 vs 0.280 (p=0.0117)",
    "inline": "0.259 vs 0.283 (p=0.4148)",
    "verdict": "supported",
-   "note": "Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the model echo signature catchphrases verbatim, inflating apparent between-user distinctiveness."
+   "note": "Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the model echo signature catchphrases verbatim, inflating apparent between-user distinctiveness.",
+   "metric": "B",
+   "metric_note": "mean pairwise TVD between developers' move distributions, predicted vs real."
   },
   {
    "id": "H3 · E4",
@@ -958,7 +964,9 @@
    "folder": "Δ +0.054 (p=0.0386)",
    "inline": "Δ +0.088 (p=0.0025)",
    "verdict": "refuted",
-   "note": "The opposite, significantly: with a folder, predictions sit FARTHER from the real population average than the developers themselves do. Homogeneity is not shrinkage toward the human mean."
+   "note": "The opposite, significantly: with a folder, predictions sit FARTHER from the real population average than the developers themselves do. Homogeneity is not shrinkage toward the human mean.",
+   "metric": "B",
+   "metric_note": "TVD from each developer's distribution to the population-average distribution."
   },
   {
    "id": "E5",
@@ -966,7 +974,9 @@
    "folder": "surface_only",
    "inline": "flat",
    "verdict": "supported",
-   "note": "Folder reads surface_only: judge-style rises while move-mix distance to the real user does not improve."
+   "note": "Folder reads surface_only: judge-style rises while move-mix distance to the real user does not improve.",
+   "metric": "B+C",
+   "metric_note": "per-developer TVD (own distribution vs own prediction) set against judge style/content (C)."
   },
   {
    "id": "E6",
@@ -974,7 +984,9 @@
    "folder": "—",
    "inline": "—",
    "verdict": "not run",
-   "note": "Needs k-fold resampling of the generic simulator; not yet generated."
+   "note": "Needs k-fold resampling of the generic simulator; not yet generated.",
+   "metric": "A+B",
+   "metric_note": "would re-run the accuracy and distribution tests on determined points only."
   },
   {
    "id": "E7",
@@ -982,7 +994,9 @@
    "folder": "—",
    "inline": "—",
    "verdict": "not run",
-   "note": "The causal probe of the mechanism; not yet generated."
+   "note": "The causal probe of the mechanism; not yet generated.",
+   "metric": "B",
+   "metric_note": "would re-measure between-developer spread under low-prompt / move-conditioned arms."
   }
  ],
  "error_types": [
@@ -1011,5 +1025,72 @@
    "homogeneity": false,
    "desc": "anything else"
   }
- ]
+ ],
+ "metric_families": [
+  {
+   "id": "A",
+   "name": "individual-level accuracy",
+   "desc": "per held-out point, does the predicted move equal the real move? A single right/wrong per turn, averaged."
+  },
+  {
+   "id": "B",
+   "name": "population-level distribution",
+   "desc": "total-variation distance (TVD) between two move distributions: between two developers, between one developer and their own prediction, or between the whole real population and the whole predicted population. Says nothing about any individual turn."
+  },
+  {
+   "id": "C",
+   "name": "LLM-as-a-judge",
+   "desc": "a judge scores each predicted message against the real one for style (surface voice) and content (intent/substance), plus realism."
+  }
+ ],
+ "metric_a": {
+  "folder": {
+   "baseline_class": "directive",
+   "baseline_accuracy": 0.506,
+   "by_condition": {
+    "distilled": {
+     "n": 503,
+     "accuracy": 0.465,
+     "vs_baseline": -0.041,
+     "beats_baseline": false
+    },
+    "generic": {
+     "n": 505,
+     "accuracy": 0.43,
+     "vs_baseline": -0.076,
+     "beats_baseline": false
+    },
+    "wrong": {
+     "n": 503,
+     "accuracy": 0.445,
+     "vs_baseline": -0.061,
+     "beats_baseline": false
+    }
+   }
+  },
+  "inline": {
+   "baseline_class": "directive",
+   "baseline_accuracy": 0.512,
+   "by_condition": {
+    "distilled": {
+     "n": 495,
+     "accuracy": 0.446,
+     "vs_baseline": -0.066,
+     "beats_baseline": false
+    },
+    "generic": {
+     "n": 491,
+     "accuracy": 0.399,
+     "vs_baseline": -0.113,
+     "beats_baseline": false
+    },
+    "wrong": {
+     "n": 496,
+     "accuracy": 0.446,
+     "vs_baseline": -0.066,
+     "beats_baseline": false
+    }
+   }
+  }
+ }
 }
