@@ -19,23 +19,27 @@
  "A_move_accuracy": {
   "baseline_class": "directive",
   "baseline_accuracy": 0.512,
+  "skill_definition": "S = (acc - acc_baseline) / (1 - acc_baseline), x100; 0 = majority-class predictor, 100 = perfect, negative = worse",
   "by_condition": {
    "distilled": {
     "n": 495,
     "accuracy": 0.446,
     "vs_baseline": -0.066,
+    "skill": -13.5,
     "beats_baseline": false
    },
    "generic": {
     "n": 491,
     "accuracy": 0.399,
     "vs_baseline": -0.113,
+    "skill": -23.2,
     "beats_baseline": false
    },
    "wrong": {
     "n": 496,
     "accuracy": 0.446,
-    "vs_baseline": -0.066,
+    "vs_baseline": -0.067,
+    "skill": -13.6,
     "beats_baseline": false
    }
   }
