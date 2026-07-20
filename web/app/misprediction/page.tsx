@@ -151,6 +151,60 @@ export default function MispredictionPage() {
         )}
       </div>
 
+      {d.metric_families && (
+        <Section kicker="Metrics" title="Three families of measurement">
+          <p className="text-zinc-600">
+            Every experiment below is expressed in one of three metric families. Naming them up front
+            makes it explicit what each claim is actually measuring — and they can disagree.
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+            {d.metric_families.map((f: any) => (
+              <li key={f.id}>
+                <span className="font-semibold text-zinc-900">{f.id} · {f.name}</span> — {f.desc}
+              </li>
+            ))}
+          </ul>
+          {d.metric_a?.folder && (
+            <>
+              <p className="mt-4 text-zinc-600">
+                <strong>Metric A, measured.</strong> Move accuracy against the majority-class baseline
+                (always predict <code className="font-mono text-xs">{d.metric_a.folder.baseline_class}</code>{" "}
+                = {n3(d.metric_a.folder.baseline_accuracy)}). The real move distribution is heavily
+                skewed, so this baseline is the bar that matters — and no condition clears it.
+              </p>
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-xs text-zinc-500">
+                      <th className="py-1 text-left font-semibold">condition</th>
+                      <th className="py-1 text-right font-semibold">folder acc</th>
+                      <th className="py-1 pr-6 text-right font-semibold">vs baseline</th>
+                      <th className="py-1 text-right font-semibold">inline acc</th>
+                      <th className="py-1 text-right font-semibold">vs baseline</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {conds.map((c) => {
+                      const fa = d.metric_a.folder?.by_condition?.[c];
+                      const ia = d.metric_a.inline?.by_condition?.[c];
+                      return (
+                        <tr key={c} className="border-t border-zinc-100">
+                          <td className="py-2 font-medium text-zinc-700">{c}</td>
+                          <td className="py-2 text-right tabular-nums text-zinc-600">{n3(fa?.accuracy)}</td>
+                          <td className="py-2 pr-6 text-right tabular-nums">{signed(fa?.vs_baseline, false)}</td>
+                          <td className="py-2 text-right tabular-nums text-zinc-600">{n3(ia?.accuracy)}</td>
+                          <td className="py-2 text-right tabular-nums">{signed(ia?.vs_baseline, false)}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </Section>
+      )}
+
       {d.scoreboard && (
         <Section kicker="Scoreboard" title="Which claims survived the data?">
           <p className="text-zinc-600">
@@ -173,7 +227,7 @@ export default function MispredictionPage() {
                 {d.scoreboard.map((s: any) => (
                   <React.Fragment key={s.id}>
                     <tr className="border-t border-zinc-100">
-                      <td className="py-2 font-medium text-zinc-900">{s.id}</td>
+                      <td className="py-2 font-medium text-zinc-900">{s.id}{s.metric && <span className="ml-1.5 rounded bg-zinc-100 px-1 text-[10px] font-bold tracking-wide text-zinc-500 align-middle">{s.metric}</span>}</td>
                       <td className="py-2 text-zinc-600">{s.claim}</td>
                       <td className="py-2 text-right tabular-nums text-zinc-600">{s.folder}</td>
                       <td className="py-2 pr-6 text-right tabular-nums text-zinc-600">{s.inline}</td>
@@ -185,7 +239,7 @@ export default function MispredictionPage() {
                     </tr>
                     <tr>
                       <td />
-                      <td colSpan={4} className="pb-2 text-xs text-zinc-400">{s.note}</td>
+                      <td colSpan={4} className="pb-2 text-xs text-zinc-400">{s.metric_note && <><span className="font-semibold text-zinc-500">{s.metric}:</span> {s.metric_note} </>}{s.note}</td>
                     </tr>
                   </React.Fragment>
                 ))}
