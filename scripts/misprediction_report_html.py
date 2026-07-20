@@ -13,6 +13,9 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import misprediction_figs as FIGS  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 IN = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "analysis" / "misprediction_report.json"
 OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "analysis" / "misprediction.html"
@@ -203,6 +206,19 @@ def main():
             e3_bars += bar(v["spread_pred"], e3max, f'predicted · {c}',
                            "p<.05" if v["perm_p"] < 0.05 else "", "#818cf8")
 
+    # primary report is this_mode; the optional compare report is the other mode
+    this_mode = (r.get("sources") or [{}])[0].get("mode", "folder")
+    cr = None
+    cmode = None
+    if CMP.exists() and CMP.resolve() != IN.resolve():
+        cr = json.loads(CMP.read_text())
+        cmode = (cr.get("sources") or [{}])[0].get("mode", "inline")
+
+    folder_rep = r if this_mode == "folder" else cr
+    inline_rep = cr if this_mode == "folder" else r
+    figs = FIGS.build_figures(folder_rep or r, inline_rep)
+    figure = lambda k: (f'<figure class="fig">{figs[k]}</figure>' if figs.get(k) else "")
+
     # ---- metrics primer: the three families every experiment is expressed in ----
     a_f = r.get("A_move_accuracy")
     a_rows = ""
@@ -227,6 +243,7 @@ def main():
         '<li><b>C · LLM-as-a-judge</b> — a judge scores each predicted message against the real one for '
         '<em>style</em> (surface voice) and <em>content</em> (intent/substance), plus realism.</li>'
         '</ul>'
+        + figure('A')
         + (('<p style="margin-top:1rem"><b>Metric A, measured.</b> Move accuracy against the '
             f'majority-class baseline (always predict <code>{esc(a_f["baseline_class"])}</code> = '
             f'{num(a_f["baseline_accuracy"],3)}). The real move distribution is heavily skewed, so this '
@@ -297,13 +314,6 @@ def main():
                      "<b>B:</b> would re-measure between-developer spread under low-prompt / move-conditioned arms. The causal probe of the mechanism; not yet generated."))
         return rows
 
-    # primary report is this_mode; the optional compare report is the other mode
-    this_mode = (r.get("sources") or [{}])[0].get("mode", "folder")
-    cr = None
-    cmode = None
-    if CMP.exists() and CMP.resolve() != IN.resolve():
-        cr = json.loads(CMP.read_text())
-        cmode = (cr.get("sources") or [{}])[0].get("mode", "inline")
 
     # scoreboard columns are always folder-then-inline regardless of which report is primary
     fev = _ev(r if this_mode == "folder" else cr)
@@ -403,6 +413,8 @@ def main():
  td.num, th.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
  td.k {{ color:var(--zinc900); font-weight:500; }}
  .flag {{ display:inline-block; font-size:.7rem; padding:0 .35rem; border-radius:4px; background:#eef2ff; color:var(--indigo); }}
+ figure.fig {{ margin:1.1rem 0 .4rem; padding:.9rem 1rem; background:#fff; border:1px solid var(--zinc200);
+        border-radius:12px; overflow-x:auto; }}
  ul.defs {{ margin:.6rem 0 0; padding-left:1.1rem; font-size:.85rem; }}
  .mfam {{ display:inline-block; margin-left:.3rem; font-size:.62rem; font-weight:700; letter-spacing:.04em;
         background:var(--zinc100); color:var(--zinc500); border-radius:4px; padding:0 .3rem; vertical-align:middle; }}
@@ -476,6 +488,7 @@ each user's predicted mix sits closer to the population average than their real 
 <p>The homogeneity signature is a high share of <b>task-completion substitution</b> (predicted
 keep-going where the real developer did something individual) and <b>generic-not-specific</b>.</p>
 {e1_html}
+{figure('E1')}
 <div class="conv"><div class="h">developer</div><div class="h">REAL message</div><div class="h">SIMULATED prediction</div>
 {worst_html}</div></section>
 
@@ -487,14 +500,15 @@ keep-going where the real developer did something individual) and <b>generic-not
 {esc(e2.get("note",""))}</p>
 <table><thead><tr><th>condition</th>{"".join(f'<th class="num">{c}</th>' for c in CATS)}
 <th class="num">human→task / ←</th><th class="num">sign p</th></tr></thead><tbody>
-{e2_rows()}</tbody></table></section>
+{e2_rows()}</tbody></table>
+{figure('E2')}</section>
 
 <section><div class="kicker">E3 · primary result</div>
 <h2>Between-user variance collapse <span class="tag">H2</span></h2>
 <p>Mean pairwise total-variation distance between developers' move-mixes. If the model captured
 individual differences, predicted spread would match real spread; homogeneity predicts a
 <b>narrower</b> predicted spread. Lower bar = developers look more alike.</p>
-<div style="margin:1.2rem 0">{e3_bars}</div>
+{figure('E3')}
 <table><thead><tr><th>condition</th><th class="num">users</th><th class="num">spread real</th>
 <th class="num">spread pred</th><th class="num">Δ</th><th class="num">perm p</th><th>collapse?</th></tr></thead><tbody>
 {e3_rows()}</tbody></table></section>
@@ -505,7 +519,8 @@ individual differences, predicted spread would match real spread; homogeneity pr
 the median (predicted closer than real) supports homogeneity. Wilcoxon signed-rank.</p>
 <table><thead><tr><th>condition</th><th class="num">users</th><th class="num">dist→median real</th>
 <th class="num">dist→median pred</th><th class="num">Δ</th><th class="num">wilcoxon p</th><th>shrinks?</th></tr></thead><tbody>
-{e4_rows()}</tbody></table></section>
+{e4_rows()}</tbody></table>
+{figure('E4')}</section>
 
 <section><div class="kicker">E5 · decision vs. surface</div>
 <h2>Does the folder change the decision or only the voice?</h2>
@@ -514,7 +529,8 @@ the move-mix distance to the real user (lower = better decisions); <code>judge s
 surface voice.</p>
 <table><thead><tr><th>condition</th><th class="num">users</th><th class="num">move dist→real</th>
 <th class="num">judge style</th><th class="num">judge realism</th><th class="num">judge content</th></tr></thead><tbody>
-{e5_rows()}</tbody></table></section>
+{e5_rows()}</tbody></table>
+{figure('E5')}</section>
 
 <section><div class="kicker">Next</div>
 <h2>Experiments still to run</h2>

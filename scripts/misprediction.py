@@ -260,6 +260,36 @@ def e4_median_regression(records):
     return {"hypothesis": "pred closer to population median than real (shrinkage)", "by_condition": out}
 
 
+def per_user_detail(records):
+    """Per-developer values behind E3/E4, so figures can show the actual spread rather than
+    a single summary bar: each user's real/predicted mix and their distance to the population
+    centroid (the 'average developer' built from the real mixes)."""
+    out = {}
+    for cond in CONDS:
+        um = per_user_mixes(records, cond)
+        if len(um) < 3:
+            continue
+        # real centroid (the "average developer") and the predicted set's own centroid.
+        # E4 measures distance to the REAL centroid; E3 (spread) measures how far each mix sits
+        # from its OWN group's centroid — using the real centroid for both would conflate them.
+        pbar = mean_vec([rm for rm, _ in um.values()])
+        qbar = mean_vec([pm for _, pm in um.values()])
+        out[cond] = {
+            "centroid": [round(x, 4) for x in pbar],
+            "pred_centroid": [round(x, 4) for x in qbar],
+            "centroid_shift": round(tvd(qbar, pbar), 4),  # how far the model's attractor sits from the human mean
+            "users": {s: {"real_mix": [round(x, 4) for x in rm],
+                          "pred_mix": [round(x, 4) for x in pm],
+                          "d_real": round(tvd(rm, pbar), 4),      # E4: real -> real centroid
+                          "d_pred": round(tvd(pm, pbar), 4),      # E4: pred -> real centroid
+                          "s_real": round(tvd(rm, pbar), 4),      # E3: real -> own (real) centroid
+                          "s_pred": round(tvd(pm, qbar), 4),      # E3: pred -> own (pred) centroid
+                          "d_self": round(tvd(pm, rm), 4)}
+                      for s, (rm, pm) in sorted(um.items())},
+        }
+    return out
+
+
 def e5_decision_vs_surface(records, meta):
     """Does individuation change the DECISION (move mix) or only the SURFACE (style)?
     Move-distance = mean over users of TVD(pred_u, real_u). Style = judge_style from summary."""
@@ -432,6 +462,7 @@ def main():
         "E3_variance_collapse": e3_variance_collapse(records),
         "E4_median_regression": e4_median_regression(records),
         "E5_decision_vs_surface": e5_decision_vs_surface(records, meta),
+        "per_user_detail": per_user_detail(records),
     }
     worst = e1_worst_k(records, args.topk)
     if args.adjudicate:

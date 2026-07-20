@@ -214,33 +214,1215 @@
   "verdict": "flat",
   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
  },
- "E1_adjudication_summary": {
-  "n_adjudicated": 25,
-  "reasonable_rate": 0.16,
-  "error_type_counts": {
-   "generic_not_specific": 1,
-   "task_completion_substitution": 20,
-   "hallucinated_content": 4
+ "per_user_detail": {
+  "distilled": {
+   "centroid": [
+    0.1342,
+    0.1614,
+    0.5143,
+    0.1901
+   ],
+   "pred_centroid": [
+    0.2661,
+    0.0602,
+    0.5194,
+    0.1543
+   ],
+   "centroid_shift": 0.137,
+   "users": {
+    "135yshr": {
+     "real_mix": [
+      0.0333,
+      0.2,
+      0.5,
+      0.2667
+     ],
+     "pred_mix": [
+      0.3,
+      0.0,
+      0.6,
+      0.1
+     ],
+     "d_real": 0.1152,
+     "d_pred": 0.2515,
+     "s_real": 0.1152,
+     "s_pred": 0.1145,
+     "d_self": 0.3667
+    },
+    "FSM1": {
+     "real_mix": [
+      0.0333,
+      0.0667,
+      0.6667,
+      0.2333
+     ],
+     "pred_mix": [
+      0.4333,
+      0.0,
+      0.3667,
+      0.2
+     ],
+     "d_real": 0.1956,
+     "d_pred": 0.309,
+     "s_real": 0.1956,
+     "s_pred": 0.2129,
+     "d_self": 0.4
+    },
+    "KeKs0r": {
+     "real_mix": [
+      0.0,
+      0.3,
+      0.5333,
+      0.1667
+     ],
+     "pred_mix": [
+      0.1333,
+      0.0333,
+      0.8,
+      0.0333
+     ],
+     "d_real": 0.1576,
+     "d_pred": 0.2857,
+     "s_real": 0.1576,
+     "s_pred": 0.2806,
+     "d_self": 0.4
+    },
+    "Soph": {
+     "real_mix": [
+      0.1379,
+      0.1379,
+      0.4828,
+      0.2414
+     ],
+     "pred_mix": [
+      0.3333,
+      0.0,
+      0.6,
+      0.0667
+     ],
+     "d_real": 0.055,
+     "d_pred": 0.2848,
+     "s_real": 0.055,
+     "s_pred": 0.1478,
+     "d_self": 0.3126
+    },
+    "alishakawaguchi": {
+     "real_mix": [
+      0.1333,
+      0.0,
+      0.6667,
+      0.2
+     ],
+     "pred_mix": [
+      0.0667,
+      0.0,
+      0.8,
+      0.1333
+     ],
+     "d_real": 0.1623,
+     "d_pred": 0.2857,
+     "s_real": 0.1623,
+     "s_pred": 0.2806,
+     "d_self": 0.1333
+    },
+    "armelhbobdad": {
+     "real_mix": [
+      0.2,
+      0.0,
+      0.8,
+      0.0
+     ],
+     "pred_mix": [
+      0.4,
+      0.1,
+      0.5,
+      0.0
+     ],
+     "d_real": 0.3515,
+     "d_pred": 0.2658,
+     "s_real": 0.3515,
+     "s_pred": 0.1737,
+     "d_self": 0.3
+    },
+    "cyyeh": {
+     "real_mix": [
+      0.1429,
+      0.25,
+      0.3214,
+      0.2857
+     ],
+     "pred_mix": [
+      0.2143,
+      0.1786,
+      0.5,
+      0.1071
+     ],
+     "d_real": 0.1929,
+     "d_pred": 0.0973,
+     "s_real": 0.1929,
+     "s_pred": 0.1184,
+     "d_self": 0.25
+    },
+    "dayhaysoos": {
+     "real_mix": [
+      0.1667,
+      0.0,
+      0.1667,
+      0.6667
+     ],
+     "pred_mix": [
+      0.1667,
+      0.0,
+      0.1667,
+      0.6667
+     ],
+     "d_real": 0.509,
+     "d_pred": 0.509,
+     "s_real": 0.509,
+     "s_pred": 0.5124,
+     "d_self": 0.0
+    },
+    "henryph24": {
+     "real_mix": [
+      0.1667,
+      0.2,
+      0.3333,
+      0.3
+     ],
+     "pred_mix": [
+      0.2333,
+      0.0333,
+      0.4,
+      0.3333
+     ],
+     "d_real": 0.181,
+     "d_pred": 0.2424,
+     "s_real": 0.181,
+     "s_pred": 0.1791,
+     "d_self": 0.1667
+    },
+    "hutusi": {
+     "real_mix": [
+      0.2,
+      0.0333,
+      0.6667,
+      0.1
+     ],
+     "pred_mix": [
+      0.2333,
+      0.0,
+      0.4333,
+      0.3333
+     ],
+     "d_real": 0.2182,
+     "d_pred": 0.2424,
+     "s_real": 0.2182,
+     "s_pred": 0.1791,
+     "d_self": 0.2667
+    },
+    "jdsingh122918": {
+     "real_mix": [
+      0.1818,
+      0.0,
+      0.6364,
+      0.1818
+     ],
+     "pred_mix": [
+      0.2273,
+      0.0,
+      0.7727,
+      0.0
+     ],
+     "d_real": 0.1697,
+     "d_pred": 0.3515,
+     "s_real": 0.1697,
+     "s_pred": 0.2533,
+     "d_self": 0.1818
+    },
+    "jeevanpillay": {
+     "real_mix": [
+      0.2667,
+      0.2,
+      0.4333,
+      0.1
+     ],
+     "pred_mix": [
+      0.4667,
+      0.0333,
+      0.4,
+      0.1
+     ],
+     "d_real": 0.1711,
+     "d_pred": 0.3325,
+     "s_real": 0.1711,
+     "s_pred": 0.2006,
+     "d_self": 0.2
+    },
+    "khaong": {
+     "real_mix": [
+      0.125,
+      0.25,
+      0.5833,
+      0.0417
+     ],
+     "pred_mix": [
+      0.25,
+      0.0,
+      0.7083,
+      0.0417
+     ],
+     "d_real": 0.1576,
+     "d_pred": 0.3098,
+     "s_real": 0.1576,
+     "s_pred": 0.1889,
+     "d_self": 0.25
+    },
+    "malkoG": {
+     "real_mix": [
+      0.0667,
+      0.1667,
+      0.6,
+      0.1667
+     ],
+     "pred_mix": [
+      0.3,
+      0.1333,
+      0.5,
+      0.0667
+     ],
+     "d_real": 0.091,
+     "d_pred": 0.1658,
+     "s_real": 0.091,
+     "s_pred": 0.107,
+     "d_self": 0.2333
+    },
+    "marcus-sa": {
+     "real_mix": [
+      0.2333,
+      0.2,
+      0.5,
+      0.0667
+     ],
+     "pred_mix": [
+      0.1667,
+      0.0333,
+      0.7667,
+      0.0333
+     ],
+     "d_real": 0.1377,
+     "d_pred": 0.2848,
+     "s_real": 0.1377,
+     "s_pred": 0.2473,
+     "d_self": 0.2667
+    },
+    "melagiri": {
+     "real_mix": [
+      0.2759,
+      0.0345,
+      0.4828,
+      0.2069
+     ],
+     "pred_mix": [
+      0.5172,
+      0.0345,
+      0.3103,
+      0.1379
+     ],
+     "d_real": 0.1585,
+     "d_pred": 0.3831,
+     "s_real": 0.1585,
+     "s_pred": 0.2511,
+     "d_self": 0.2414
+    },
+    "nosman": {
+     "real_mix": [
+      0.0,
+      0.4118,
+      0.3529,
+      0.2353
+     ],
+     "pred_mix": [
+      0.2941,
+      0.2353,
+      0.3529,
+      0.1176
+     ],
+     "d_real": 0.2956,
+     "d_pred": 0.2338,
+     "s_real": 0.2956,
+     "s_pred": 0.2031,
+     "d_self": 0.2941
+    },
+    "oddessentials": {
+     "real_mix": [
+      0.087,
+      0.3043,
+      0.4783,
+      0.1304
+     ],
+     "pred_mix": [
+      0.1739,
+      0.1739,
+      0.3043,
+      0.3478
+     ],
+     "d_real": 0.143,
+     "d_pred": 0.21,
+     "s_real": 0.143,
+     "s_pred": 0.3073,
+     "d_self": 0.3043
+    },
+    "penso": {
+     "real_mix": [
+      0.0,
+      0.2727,
+      0.6818,
+      0.0455
+     ],
+     "pred_mix": [
+      0.0455,
+      0.1818,
+      0.7727,
+      0.0
+     ],
+     "d_real": 0.2788,
+     "d_pred": 0.2788,
+     "s_real": 0.2788,
+     "s_pred": 0.3749,
+     "d_self": 0.1364
+    },
+    "robouden": {
+     "real_mix": [
+      0.2333,
+      0.2,
+      0.4,
+      0.1667
+     ],
+     "pred_mix": [
+      0.3667,
+      0.0333,
+      0.3333,
+      0.2667
+     ],
+     "d_real": 0.1377,
+     "d_pred": 0.309,
+     "s_real": 0.1377,
+     "s_pred": 0.2129,
+     "d_self": 0.2333
+    }
+   }
   },
-  "homogeneity_share": 0.84,
-  "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+  "generic": {
+   "centroid": [
+    0.135,
+    0.1657,
+    0.5111,
+    0.1882
+   ],
+   "pred_centroid": [
+    0.2407,
+    0.0765,
+    0.4497,
+    0.2331
+   ],
+   "centroid_shift": 0.1506,
+   "users": {
+    "135yshr": {
+     "real_mix": [
+      0.0333,
+      0.2,
+      0.5,
+      0.2667
+     ],
+     "pred_mix": [
+      0.2,
+      0.0667,
+      0.5333,
+      0.2
+     ],
+     "d_real": 0.1127,
+     "d_pred": 0.0991,
+     "s_real": 0.1127,
+     "s_pred": 0.0837,
+     "d_self": 0.2
+    },
+    "FSM1": {
+     "real_mix": [
+      0.0333,
+      0.0667,
+      0.6667,
+      0.2333
+     ],
+     "pred_mix": [
+      0.1333,
+      0.0,
+      0.3667,
+      0.5
+     ],
+     "d_real": 0.2007,
+     "d_pred": 0.3118,
+     "s_real": 0.2007,
+     "s_pred": 0.2669,
+     "d_self": 0.3667
+    },
+    "KeKs0r": {
+     "real_mix": [
+      0.0,
+      0.3,
+      0.5333,
+      0.1667
+     ],
+     "pred_mix": [
+      0.3667,
+      0.0333,
+      0.3667,
+      0.2333
+     ],
+     "d_real": 0.1565,
+     "d_pred": 0.2768,
+     "s_real": 0.1565,
+     "s_pred": 0.1262,
+     "d_self": 0.4333
+    },
+    "Soph": {
+     "real_mix": [
+      0.1379,
+      0.1379,
+      0.4828,
+      0.2414
+     ],
+     "pred_mix": [
+      0.3,
+      0.0333,
+      0.4667,
+      0.2
+     ],
+     "d_real": 0.0561,
+     "d_pred": 0.1768,
+     "s_real": 0.0561,
+     "s_pred": 0.0763,
+     "d_self": 0.1621
+    },
+    "alishakawaguchi": {
+     "real_mix": [
+      0.1333,
+      0.0,
+      0.6667,
+      0.2
+     ],
+     "pred_mix": [
+      0.1333,
+      0.0667,
+      0.6667,
+      0.1333
+     ],
+     "d_real": 0.1674,
+     "d_pred": 0.1556,
+     "s_real": 0.1674,
+     "s_pred": 0.217,
+     "d_self": 0.0667
+    },
+    "armelhbobdad": {
+     "real_mix": [
+      0.2,
+      0.0,
+      0.8,
+      0.0
+     ],
+     "pred_mix": [
+      0.4,
+      0.2,
+      0.2,
+      0.2
+     ],
+     "d_real": 0.3539,
+     "d_pred": 0.3111,
+     "s_real": 0.3539,
+     "s_pred": 0.2828,
+     "d_self": 0.6
+    },
+    "cyyeh": {
+     "real_mix": [
+      0.1429,
+      0.25,
+      0.3214,
+      0.2857
+     ],
+     "pred_mix": [
+      0.2143,
+      0.1071,
+      0.4286,
+      0.25
+     ],
+     "d_real": 0.1897,
+     "d_pred": 0.1411,
+     "s_real": 0.1897,
+     "s_pred": 0.0475,
+     "d_self": 0.1786
+    },
+    "dayhaysoos": {
+     "real_mix": [
+      0.1667,
+      0.0,
+      0.1667,
+      0.6667
+     ],
+     "pred_mix": [
+      0.0,
+      0.0,
+      0.6667,
+      0.3333
+     ],
+     "d_real": 0.5102,
+     "d_pred": 0.3007,
+     "s_real": 0.5102,
+     "s_pred": 0.3172,
+     "d_self": 0.5
+    },
+    "henryph24": {
+     "real_mix": [
+      0.1667,
+      0.2,
+      0.3333,
+      0.3
+     ],
+     "pred_mix": [
+      0.1333,
+      0.0333,
+      0.5,
+      0.3333
+     ],
+     "d_real": 0.1778,
+     "d_pred": 0.1452,
+     "s_real": 0.1778,
+     "s_pred": 0.1505,
+     "d_self": 0.2
+    },
+    "hutusi": {
+     "real_mix": [
+      0.2069,
+      0.0345,
+      0.6552,
+      0.1034
+     ],
+     "pred_mix": [
+      0.1724,
+      0.0,
+      0.4828,
+      0.3448
+     ],
+     "d_real": 0.216,
+     "d_pred": 0.1941,
+     "s_real": 0.216,
+     "s_pred": 0.1448,
+     "d_self": 0.2414
+    },
+    "jdsingh122918": {
+     "real_mix": [
+      0.1818,
+      0.0,
+      0.6364,
+      0.1818
+     ],
+     "pred_mix": [
+      0.1364,
+      0.0,
+      0.6364,
+      0.2273
+     ],
+     "d_real": 0.1721,
+     "d_pred": 0.1657,
+     "s_real": 0.1721,
+     "s_pred": 0.1867,
+     "d_self": 0.0455
+    },
+    "jeevanpillay": {
+     "real_mix": [
+      0.2667,
+      0.2,
+      0.4333,
+      0.1
+     ],
+     "pred_mix": [
+      0.4667,
+      0.0667,
+      0.3,
+      0.1667
+     ],
+     "d_real": 0.1659,
+     "d_pred": 0.3317,
+     "s_real": 0.1659,
+     "s_pred": 0.226,
+     "d_self": 0.2667
+    },
+    "khaong": {
+     "real_mix": [
+      0.1304,
+      0.2609,
+      0.5652,
+      0.0435
+     ],
+     "pred_mix": [
+      0.2609,
+      0.0435,
+      0.5652,
+      0.1304
+     ],
+     "d_real": 0.1493,
+     "d_pred": 0.18,
+     "s_real": 0.1493,
+     "s_pred": 0.1357,
+     "d_self": 0.2174
+    },
+    "malkoG": {
+     "real_mix": [
+      0.0714,
+      0.1786,
+      0.5714,
+      0.1786
+     ],
+     "pred_mix": [
+      0.3214,
+      0.1429,
+      0.4643,
+      0.0714
+     ],
+     "d_real": 0.0732,
+     "d_pred": 0.1864,
+     "s_real": 0.0732,
+     "s_pred": 0.1617,
+     "d_self": 0.25
+    },
+    "marcus-sa": {
+     "real_mix": [
+      0.2414,
+      0.2069,
+      0.5172,
+      0.0345
+     ],
+     "pred_mix": [
+      0.4138,
+      0.0345,
+      0.4138,
+      0.1379
+     ],
+     "d_real": 0.1537,
+     "d_pred": 0.2788,
+     "s_real": 0.1537,
+     "s_pred": 0.1731,
+     "d_self": 0.2759
+    },
+    "melagiri": {
+     "real_mix": [
+      0.2667,
+      0.0333,
+      0.4667,
+      0.2333
+     ],
+     "pred_mix": [
+      0.2667,
+      0.0667,
+      0.3667,
+      0.3
+     ],
+     "d_real": 0.1768,
+     "d_pred": 0.2435,
+     "s_real": 0.1768,
+     "s_pred": 0.0929,
+     "d_self": 0.1
+    },
+    "nosman": {
+     "real_mix": [
+      0.0,
+      0.4375,
+      0.375,
+      0.1875
+     ],
+     "pred_mix": [
+      0.0625,
+      0.375,
+      0.3125,
+      0.25
+     ],
+     "d_real": 0.2718,
+     "d_pred": 0.2711,
+     "s_real": 0.2718,
+     "s_pred": 0.3153,
+     "d_self": 0.125
+    },
+    "oddessentials": {
+     "real_mix": [
+      0.087,
+      0.3043,
+      0.4783,
+      0.1304
+     ],
+     "pred_mix": [
+      0.1739,
+      0.1304,
+      0.4783,
+      0.2174
+     ],
+     "d_real": 0.1386,
+     "d_pred": 0.0681,
+     "s_real": 0.1386,
+     "s_pred": 0.0825,
+     "d_self": 0.1739
+    },
+    "penso": {
+     "real_mix": [
+      0.0,
+      0.3043,
+      0.6522,
+      0.0435
+     ],
+     "pred_mix": [
+      0.3913,
+      0.1304,
+      0.4783,
+      0.0
+     ],
+     "d_real": 0.2797,
+     "d_pred": 0.2563,
+     "s_real": 0.2797,
+     "s_pred": 0.2331,
+     "d_self": 0.3913
+    },
+    "robouden": {
+     "real_mix": [
+      0.2333,
+      0.2,
+      0.4,
+      0.1667
+     ],
+     "pred_mix": [
+      0.2667,
+      0.0,
+      0.3,
+      0.4333
+     ],
+     "d_real": 0.1326,
+     "d_pred": 0.3768,
+     "s_real": 0.1326,
+     "s_pred": 0.2262,
+     "d_self": 0.3
+    }
+   }
+  },
+  "wrong": {
+   "centroid": [
+    0.1346,
+    0.1655,
+    0.5083,
+    0.1916
+   ],
+   "pred_centroid": [
+    0.3072,
+    0.0455,
+    0.5117,
+    0.1356
+   ],
+   "centroid_shift": 0.1759,
+   "users": {
+    "135yshr": {
+     "real_mix": [
+      0.0333,
+      0.2,
+      0.5,
+      0.2667
+     ],
+     "pred_mix": [
+      0.4333,
+      0.0,
+      0.4667,
+      0.1
+     ],
+     "d_real": 0.1096,
+     "d_pred": 0.2987,
+     "s_real": 0.1096,
+     "s_pred": 0.1261,
+     "d_self": 0.4
+    },
+    "FSM1": {
+     "real_mix": [
+      0.0333,
+      0.0667,
+      0.6667,
+      0.2333
+     ],
+     "pred_mix": [
+      0.3,
+      0.0,
+      0.5667,
+      0.1333
+     ],
+     "d_real": 0.2001,
+     "d_pred": 0.2237,
+     "s_real": 0.2001,
+     "s_pred": 0.055,
+     "d_self": 0.2667
+    },
+    "KeKs0r": {
+     "real_mix": [
+      0.0,
+      0.3,
+      0.5333,
+      0.1667
+     ],
+     "pred_mix": [
+      0.1667,
+      0.1333,
+      0.6333,
+      0.0667
+     ],
+     "d_real": 0.1595,
+     "d_pred": 0.1571,
+     "s_real": 0.1595,
+     "s_pred": 0.2095,
+     "d_self": 0.2667
+    },
+    "Soph": {
+     "real_mix": [
+      0.1379,
+      0.1379,
+      0.4828,
+      0.2414
+     ],
+     "pred_mix": [
+      0.2667,
+      0.0,
+      0.6333,
+      0.1
+     ],
+     "d_real": 0.0532,
+     "d_pred": 0.2571,
+     "s_real": 0.0532,
+     "s_pred": 0.1217,
+     "d_self": 0.2793
+    },
+    "alishakawaguchi": {
+     "real_mix": [
+      0.1333,
+      0.0,
+      0.6667,
+      0.2
+     ],
+     "pred_mix": [
+      0.0,
+      0.0,
+      0.9333,
+      0.0667
+     ],
+     "d_real": 0.1668,
+     "d_pred": 0.425,
+     "s_real": 0.1668,
+     "s_pred": 0.4217,
+     "d_self": 0.2667
+    },
+    "armelhbobdad": {
+     "real_mix": [
+      0.2222,
+      0.0,
+      0.7778,
+      0.0
+     ],
+     "pred_mix": [
+      0.4444,
+      0.0,
+      0.4444,
+      0.1111
+     ],
+     "d_real": 0.3571,
+     "d_pred": 0.3099,
+     "s_real": 0.3571,
+     "s_pred": 0.1372,
+     "d_self": 0.3333
+    },
+    "cyyeh": {
+     "real_mix": [
+      0.1379,
+      0.2759,
+      0.3103,
+      0.2759
+     ],
+     "pred_mix": [
+      0.1724,
+      0.1379,
+      0.2759,
+      0.4138
+     ],
+     "d_real": 0.198,
+     "d_pred": 0.26,
+     "s_real": 0.198,
+     "s_pred": 0.3706,
+     "d_self": 0.1724
+    },
+    "dayhaysoos": {
+     "real_mix": [
+      0.1667,
+      0.0,
+      0.1667,
+      0.6667
+     ],
+     "pred_mix": [
+      0.3333,
+      0.0,
+      0.3333,
+      0.3333
+     ],
+     "d_real": 0.5072,
+     "d_pred": 0.3405,
+     "s_real": 0.5072,
+     "s_pred": 0.2238,
+     "d_self": 0.3333
+    },
+    "henryph24": {
+     "real_mix": [
+      0.1667,
+      0.2,
+      0.3333,
+      0.3
+     ],
+     "pred_mix": [
+      0.4333,
+      0.0333,
+      0.1,
+      0.4333
+     ],
+     "d_real": 0.175,
+     "d_pred": 0.5405,
+     "s_real": 0.175,
+     "s_pred": 0.4238,
+     "d_self": 0.4
+    },
+    "hutusi": {
+     "real_mix": [
+      0.2,
+      0.0333,
+      0.6667,
+      0.1
+     ],
+     "pred_mix": [
+      0.2333,
+      0.0,
+      0.7667,
+      0.0
+     ],
+     "d_real": 0.2237,
+     "d_pred": 0.3571,
+     "s_real": 0.2237,
+     "s_pred": 0.255,
+     "d_self": 0.1333
+    },
+    "jdsingh122918": {
+     "real_mix": [
+      0.1818,
+      0.0,
+      0.6364,
+      0.1818
+     ],
+     "pred_mix": [
+      0.4091,
+      0.0,
+      0.4545,
+      0.1364
+     ],
+     "d_real": 0.1752,
+     "d_pred": 0.2745,
+     "s_real": 0.1752,
+     "s_pred": 0.1026,
+     "d_self": 0.2273
+    },
+    "jeevanpillay": {
+     "real_mix": [
+      0.2667,
+      0.2,
+      0.4333,
+      0.1
+     ],
+     "pred_mix": [
+      0.3,
+      0.1,
+      0.5667,
+      0.0333
+     ],
+     "d_real": 0.1666,
+     "d_pred": 0.2237,
+     "s_real": 0.1666,
+     "s_pred": 0.1095,
+     "d_self": 0.1667
+    },
+    "khaong": {
+     "real_mix": [
+      0.125,
+      0.25,
+      0.5833,
+      0.0417
+     ],
+     "pred_mix": [
+      0.25,
+      0.0833,
+      0.6667,
+      0.0
+     ],
+     "d_real": 0.1595,
+     "d_pred": 0.2737,
+     "s_real": 0.1595,
+     "s_pred": 0.1928,
+     "d_self": 0.2083
+    },
+    "malkoG": {
+     "real_mix": [
+      0.0667,
+      0.1667,
+      0.6,
+      0.1667
+     ],
+     "pred_mix": [
+      0.2,
+      0.0667,
+      0.6,
+      0.1333
+     ],
+     "d_real": 0.0928,
+     "d_pred": 0.1571,
+     "s_real": 0.0928,
+     "s_pred": 0.1095,
+     "d_self": 0.1333
+    },
+    "marcus-sa": {
+     "real_mix": [
+      0.2333,
+      0.2,
+      0.5,
+      0.0667
+     ],
+     "pred_mix": [
+      0.5,
+      0.0,
+      0.4333,
+      0.0667
+     ],
+     "d_real": 0.1332,
+     "d_pred": 0.3654,
+     "s_real": 0.1332,
+     "s_pred": 0.1928,
+     "d_self": 0.2667
+    },
+    "melagiri": {
+     "real_mix": [
+      0.2667,
+      0.0333,
+      0.4667,
+      0.2333
+     ],
+     "pred_mix": [
+      0.4,
+      0.0,
+      0.4,
+      0.2
+     ],
+     "d_real": 0.1738,
+     "d_pred": 0.2738,
+     "s_real": 0.1738,
+     "s_pred": 0.1572,
+     "d_self": 0.1333
+    },
+    "nosman": {
+     "real_mix": [
+      0.0,
+      0.4375,
+      0.3125,
+      0.25
+     ],
+     "pred_mix": [
+      0.0625,
+      0.125,
+      0.625,
+      0.1875
+     ],
+     "d_real": 0.3304,
+     "d_pred": 0.1167,
+     "s_real": 0.3304,
+     "s_pred": 0.2447,
+     "d_self": 0.375
+    },
+    "oddessentials": {
+     "real_mix": [
+      0.087,
+      0.3043,
+      0.4783,
+      0.1304
+     ],
+     "pred_mix": [
+      0.087,
+      0.0435,
+      0.7826,
+      0.087
+     ],
+     "d_real": 0.1388,
+     "d_pred": 0.2743,
+     "s_real": 0.1388,
+     "s_pred": 0.2709,
+     "d_self": 0.3043
+    },
+    "penso": {
+     "real_mix": [
+      0.0,
+      0.3043,
+      0.6522,
+      0.0435
+     ],
+     "pred_mix": [
+      0.6522,
+      0.087,
+      0.2174,
+      0.0435
+     ],
+     "d_real": 0.2827,
+     "d_pred": 0.5176,
+     "s_real": 0.2827,
+     "s_pred": 0.3864,
+     "d_self": 0.6522
+    },
+    "robouden": {
+     "real_mix": [
+      0.2333,
+      0.2,
+      0.4,
+      0.1667
+     ],
+     "pred_mix": [
+      0.5,
+      0.1,
+      0.3333,
+      0.0667
+     ],
+     "d_real": 0.1332,
+     "d_pred": 0.3654,
+     "s_real": 0.1332,
+     "s_pred": 0.2473,
+     "d_self": 0.2667
+    }
+   }
+  }
  },
  "E1_worst_k": [
   {
-   "slug": "FSM1",
-   "point_id": "a4ed1cb9-4e4c-4d71-bc03-3c2c6b4e70a3#668",
+   "slug": "135yshr",
+   "point_id": "5d70c437-3168-4c82-86d1-46b5790e02d3#343",
    "repo": "the project",
-   "real_cat": "directive",
-   "pred_cat": "approve",
-   "real_act": "directive",
-   "pred_act": "approve",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
    "judge_realism": 3,
    "judge_content": 5,
-   "real": "/compact",
-   "generated": "ok",
+   "real": "前回と同一の内容です。変更点がありません。\n\n前回挙げた3点の未対処事項を改めて整理します。対処していただければ公開できる水準になると思います。\n\n---\n\n**1. 素朴アプローチとポリシーの認可ルールが暗黙に変わっている（269行目付近）**\n\n素朴版の `authorizeUpdate` は「作成者 or プロジェクトメンバー（メンバーであれば誰でもOK）」です。改善版の `TaskPolicy` は「作成者 or オーナー or エディター（閲覧者は不可）」です。これは認可ルール自体のリファクタではなく、ルールの厳格化です。読者は「ポリシーオブジェクトに移しただけ」と思って読むのに、実は判定基準が変わっている。素朴→改善の接続部分に「ポリシーオブジェクトに移行する際に、メンバーシップの有無ではなくロールに基づく判定に変更しています」と一文入れてください。\n\n**2. クエリ側の Handler コードがない（448〜501行目）**\n\n`TaskVisibility` をどこで生成して Handler に渡すのかが不明です。コマンド側では `Delete` Handler のコードで claims → actor の変換と UseCase 呼び出しまで示しています。クエリ側にも同等の Handler コード（role取得 → `NewTaskVisibility(role)` → `toTaskResponse` の呼び出し）を足せば、記事全体の対称性が揃います。\n\n**3. まとめの散文が6主張を1段落に詰め込んでいる（618行目）**\n\nテーブルで3レベルの整理はできているので、その後の散文は「各層の責務を分けることが最も重要」という一点に絞って、残りは削るか別文に分けると、締まりが良くなります。\n\n---\n\nこの3点以外は公開に問題ないレベルです。",
+   "generated": "確認しました。PRをマージしてください。",
    "severity": 1.97,
-   "reasonable": true,
-   "error_type": "generic_not_specific"
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
   },
   {
    "slug": "jeevanpillay",
@@ -271,23 +1453,7 @@
    "real": "omit anything any related to the core dev-lifecycle changes",
    "generated": "proceed",
    "severity": 1.98,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "135yshr",
-   "point_id": "5d70c437-3168-4c82-86d1-46b5790e02d3#343",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "directive",
-   "real_act": "critical",
-   "pred_act": "directive",
-   "judge_realism": 3,
-   "judge_content": 5,
-   "real": "前回と同一の内容です。変更点がありません。\n\n前回挙げた3点の未対処事項を改めて整理します。対処していただければ公開できる水準になると思います。\n\n---\n\n**1. 素朴アプローチとポリシーの認可ルールが暗黙に変わっている（269行目付近）**\n\n素朴版の `authorizeUpdate` は「作成者 or プロジェクトメンバー（メンバーであれば誰でもOK）」です。改善版の `TaskPolicy` は「作成者 or オーナー or エディター（閲覧者は不可）」です。これは認可ルール自体のリファクタではなく、ルールの厳格化です。読者は「ポリシーオブジェクトに移しただけ」と思って読むのに、実は判定基準が変わっている。素朴→改善の接続部分に「ポリシーオブジェクトに移行する際に、メンバーシップの有無ではなくロールに基づく判定に変更しています」と一文入れてください。\n\n**2. クエリ側の Handler コードがない（448〜501行目）**\n\n`TaskVisibility` をどこで生成して Handler に渡すのかが不明です。コマンド側では `Delete` Handler のコードで claims → actor の変換と UseCase 呼び出しまで示しています。クエリ側にも同等の Handler コード（role取得 → `NewTaskVisibility(role)` → `toTaskResponse` の呼び出し）を足せば、記事全体の対称性が揃います。\n\n**3. まとめの散文が6主張を1段落に詰め込んでいる（618行目）**\n\nテーブルで3レベルの整理はできているので、その後の散文は「各層の責務を分けることが最も重要」という一点に絞って、残りは削るか別文に分けると、締まりが良くなります。\n\n---\n\nこの3点以外は公開に問題ないレベルです。",
-   "generated": "確認しました。PRをマージしてください。",
-   "severity": 1.97,
-   "reasonable": false,
+   "reasonable": true,
    "error_type": "task_completion_substitution"
   },
   {
@@ -303,6 +1469,22 @@
    "real": "lets start with approach A",
    "generated": "B",
    "severity": 2.0,
+   "reasonable": true,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "FSM1",
+   "point_id": "a4ed1cb9-4e4c-4d71-bc03-3c2c6b4e70a3#668",
+   "repo": "the project",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real_act": "directive",
+   "pred_act": "approve",
+   "judge_realism": 3,
+   "judge_content": 5,
+   "real": "/compact",
+   "generated": "ok",
+   "severity": 1.97,
    "reasonable": true,
    "error_type": "task_completion_substitution"
   },
@@ -335,8 +1517,8 @@
    "real": "do I need to increment the versions so it doesn't mess with current users?",
    "generated": "push",
    "severity": 1.97,
-   "reasonable": true,
-   "error_type": "task_completion_substitution"
+   "reasonable": false,
+   "error_type": "hallucinated_content"
   },
   {
    "slug": "135yshr",
@@ -353,22 +1535,6 @@
    "severity": 1.95,
    "reasonable": true,
    "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "KeKs0r",
-   "point_id": "dba28125-46ba-467a-b242-0d9273683a0d#61",
-   "repo": "the project",
-   "real_cat": "inquiry",
-   "pred_cat": "directive",
-   "real_act": "inquiry",
-   "pred_act": "directive",
-   "judge_realism": 5,
-   "judge_content": 5,
-   "real": "shuold we also delete/Users/marc/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill",
-   "generated": "apply to CI first",
-   "severity": 1.95,
-   "reasonable": false,
-   "error_type": "hallucinated_content"
   },
   {
    "slug": "KeKs0r",
@@ -403,6 +1569,22 @@
    "error_type": "task_completion_substitution"
   },
   {
+   "slug": "KeKs0r",
+   "point_id": "dba28125-46ba-467a-b242-0d9273683a0d#61",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real_act": "inquiry",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "shuold we also delete/Users/marc/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill",
+   "generated": "apply to CI first",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
+  },
+  {
    "slug": "Soph",
    "point_id": "76731dd6-65de-4d92-be87-716b3e380099#251",
    "repo": "the project",
@@ -432,22 +1614,6 @@
    "generated": "create a PR",
    "severity": 1.95,
    "reasonable": false,
-   "error_type": "hallucinated_content"
-  },
-  {
-   "slug": "khaong",
-   "point_id": "26fd10e5-9929-4364-b5e7-540290e8931b#161",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "approve",
-   "real_act": "critical",
-   "pred_act": "approve",
-   "judge_realism": 5,
-   "judge_content": 10,
-   "real": "we have merge conflicts with origin/main - please fixup",
-   "generated": "go up",
-   "severity": 1.95,
-   "reasonable": false,
    "error_type": "task_completion_substitution"
   },
   {
@@ -468,6 +1634,22 @@
   },
   {
    "slug": "khaong",
+   "point_id": "26fd10e5-9929-4364-b5e7-540290e8931b#161",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real_act": "critical",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 10,
+   "real": "we have merge conflicts with origin/main - please fixup",
+   "generated": "go up",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "hallucinated_content"
+  },
+  {
+   "slug": "khaong",
    "point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#21",
    "repo": "the project",
    "real_cat": "critical",
@@ -478,22 +1660,6 @@
    "judge_content": 8,
    "real": "There's a comment on the PR:\n\ncallHookSync explicitly runs the Entire command with cwd=directory, but the async callHook does not. If OpenCode is started from a different working directory, the async hooks may run outside the repo and fail to resolve the git/worktree root. Make callHook run with the same working directory (e.g., set cwd to directory on the spawned command). \n\nCan we find the code where we're generating the opencode plugin and fixing that in the code that generates the plugin as well as in the newly added plugin?",
    "generated": "looks good, ty",
-   "severity": 1.95,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "khaong",
-   "point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#12",
-   "repo": "the project",
-   "real_cat": "critical",
-   "pred_cat": "directive",
-   "real_act": "critical",
-   "pred_act": "directive",
-   "judge_realism": 5,
-   "judge_content": 5,
-   "real": "That's wrong! I want you to update the .opencode/plugins/entire.ts plugin such that it uses the CLI in this repository. Can you undo all of the changes you did before?",
-   "generated": "looks good, commit and push",
    "severity": 1.95,
    "reasonable": false,
    "error_type": "task_completion_substitution"
@@ -515,6 +1681,22 @@
    "error_type": "hallucinated_content"
   },
   {
+   "slug": "khaong",
+   "point_id": "ses_2fd419c71ffeqSOLZEn9Pmpv8P#12",
+   "repo": "the project",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real_act": "critical",
+   "pred_act": "directive",
+   "judge_realism": 5,
+   "judge_content": 5,
+   "real": "That's wrong! I want you to update the .opencode/plugins/entire.ts plugin such that it uses the CLI in this repository. Can you undo all of the changes you did before?",
+   "generated": "looks good, commit and push",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
    "slug": "melagiri",
    "point_id": "f5bac496-5c8b-4a3b-9983-1bfa7f6ef8b9#18",
    "repo": "the project",
@@ -526,6 +1708,22 @@
    "judge_content": 8,
    "real": "run an audit on the plans and see how many stale docs are present and verify the existing implementation status against plans..",
    "generated": "ok",
+   "severity": 1.95,
+   "reasonable": false,
+   "error_type": "task_completion_substitution"
+  },
+  {
+   "slug": "melagiri",
+   "point_id": "f16cdd69-67a1-4f75-ac82-ac8267ca01f3#83",
+   "repo": "the project",
+   "real_cat": "inquiry",
+   "pred_cat": "approve",
+   "real_act": "inquiry",
+   "pred_act": "approve",
+   "judge_realism": 5,
+   "judge_content": 0,
+   "real": "explain me what we are building like i am a 15 year old",
+   "generated": "yes",
    "severity": 1.95,
    "reasonable": false,
    "error_type": "task_completion_substitution"
@@ -558,22 +1756,6 @@
    "judge_content": 8,
    "real": "Is this true and is it a problem from your perspective? The new review-time pipeline can report outdated review-time values after a normal extract run that omits --include-comments, because previously stamped PRs remain marked as covered\n  even though their thread data was not refreshed. That is a correctness issue for the new metrics.\n\n  Review comment:\n\n  - [P1] Invalidate old review-time coverage when skipping --include-comments — E:\\projects\\ado-git-repo-insights\\src\\ado_git_repo_insights\\cli.py:762-765\n    When extract runs without --include-comments, this branch deliberately leaves existing comments_extracted_at values untouched for PRs that were refreshed in the current run. If one of\n    those PRs received new approvals or thread changes since the last thread-enabled extraction, _generate_weekly_rollups() will still include its old review_time_minutes because it only\n    checks comments_extracted_at IS NOT NULL. In that common incremental-update scenario, the patch silently publishes stale review-time metrics for already-covered PRs instead of\n    suppressing them until comments are refreshed again.",
    "generated": "PR description looks good. commit all changes and then we will plan for PR submission.",
-   "severity": 1.95,
-   "reasonable": false,
-   "error_type": "task_completion_substitution"
-  },
-  {
-   "slug": "melagiri",
-   "point_id": "f16cdd69-67a1-4f75-ac82-ac8267ca01f3#83",
-   "repo": "the project",
-   "real_cat": "inquiry",
-   "pred_cat": "approve",
-   "real_act": "inquiry",
-   "pred_act": "approve",
-   "judge_realism": 5,
-   "judge_content": 0,
-   "real": "explain me what we are building like i am a 15 year old",
-   "generated": "yes",
    "severity": 1.95,
    "reasonable": false,
    "error_type": "task_completion_substitution"
@@ -626,5 +1808,15 @@
    "reasonable": false,
    "error_type": "task_completion_substitution"
   }
- ]
+ ],
+ "E1_adjudication_summary": {
+  "n_adjudicated": 25,
+  "reasonable_rate": 0.16,
+  "error_type_counts": {
+   "task_completion_substitution": 20,
+   "hallucinated_content": 5
+  },
+  "homogeneity_share": 0.8,
+  "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+ }
 }
