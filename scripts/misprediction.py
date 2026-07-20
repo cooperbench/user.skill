@@ -155,27 +155,49 @@ def wilcoxon(diffs):
 
 # ---------- experiments ----------
 
+def skill_score(acc, acc_baseline):
+    """Normalised accuracy (a skill score):  S = (acc - acc_base) / (1 - acc_base).
+
+    0   = exactly as good as always predicting the majority class
+    1   = perfect
+    < 0 = worse than the majority-class predictor
+
+    Same construction as Cohen's kappa and the Murphy/Brier skill score, with the
+    majority-class rate as the reference instead of chance agreement. Reported on a 0-100
+    scale. This is the comparable number: raw accuracy cannot be compared across cohorts
+    with different class balance (folder's baseline is .506, inline's is .512), but skill
+    is normalised by each cohort's own baseline."""
+    denom = 1.0 - acc_baseline
+    return None if denom <= 0 else (acc - acc_baseline) / denom
+
+
 def a_move_accuracy(records):
     """Metric A — individual-level accuracy: how often the predicted move equals the real move,
-    per condition. Reported against the majority-class baseline (always predict the most common
-    real move), because the move distribution is heavily skewed toward `directive`: an accuracy
-    below that baseline means the simulator is worse than a constant predictor."""
+    per condition, plus the normalised skill score against the majority-class baseline (always
+    predict the most common real move). The move distribution is heavily skewed toward
+    `directive`, so raw accuracy flatters the model; skill is the honest headline."""
     labelled = [r for r in records if r.get("real_act") and r.get("pred_act")]
     reals = [cat(r["real_act"]) for r in labelled if cat(r["real_act"])]
     if not reals:
         return None
     top, top_n = Counter(reals).most_common(1)[0]
-    out = {"baseline_class": top, "baseline_accuracy": round(top_n / len(reals), 3), "by_condition": {}}
+    base = top_n / len(reals)
+    out = {"baseline_class": top, "baseline_accuracy": round(base, 3),
+           "skill_definition": "S = (acc - acc_baseline) / (1 - acc_baseline), x100; "
+                               "0 = majority-class predictor, 100 = perfect, negative = worse",
+           "by_condition": {}}
     for cond in CONDS:
         rows = [r for r in labelled if r.get("cond") == cond]
         if not rows:
             continue
         hit = sum(1 for r in rows if cat(r["real_act"]) and cat(r["real_act"]) == cat(r["pred_act"]))
         acc = hit / len(rows)
+        s = skill_score(acc, base)
         out["by_condition"][cond] = {
             "n": len(rows), "accuracy": round(acc, 3),
-            "vs_baseline": round(acc - out["baseline_accuracy"], 3),
-            "beats_baseline": acc > out["baseline_accuracy"],
+            "vs_baseline": round(acc - base, 3),
+            "skill": round(100 * s, 1) if s is not None else None,
+            "beats_baseline": acc > base,
         }
     return out
 

@@ -88,6 +88,10 @@ def main():
     if adj:
         tiles += stat(f'{int(100*adj.get("homogeneity_share"))}%',
                       "worst misses are homogeneity-type", f'task-completion / generic (n={adj.get("n_adjudicated")})')
+    a_best = r.get("A_move_accuracy", {}).get("by_condition", {}).get("distilled", {}) if r.get("A_move_accuracy") else {}
+    if a_best.get("skill") is not None:
+        tiles += stat(f'{a_best["skill"]:+.1f}', "skill score (distilled)",
+                      "0 = majority-class predictor, 100 = perfect")
     tiles += stat(f'<span class="verdict">{esc(e5.get("verdict"))}</span>', "E5: decision vs. surface",
                   "does the folder change the decision?")
 
@@ -224,7 +228,9 @@ def main():
     a_rows = ""
     if a_f:
         for c, v in a_f.get("by_condition", {}).items():
+            sk = v.get("skill")
             a_rows += (f'<tr><td class="k">{esc(c)}</td><td class="num">{v["n"]}</td>'
+                       f'<td class="num"><b>{sk:+.1f}</b></td>'
                        f'<td class="num">{num(v["accuracy"],3)}</td>'
                        f'<td class="num">{signed(v["vs_baseline"], good_negative=False)}</td>'
                        f'<td>{"beats baseline" if v["beats_baseline"] else "below baseline"}</td></tr>')
@@ -235,7 +241,11 @@ def main():
         'makes it explicit what each claim is actually measuring — and they can disagree.</p>'
         '<ul class="defs">'
         '<li><b>A · individual-level accuracy</b> — per held-out point, does the predicted <em>move</em> '
-        'equal the real move? A single right/wrong per turn, averaged.</li>'
+        'equal the real move? Reported as a <b>skill score</b> '
+        '<code>S = (acc − acc_base)/(1 − acc_base)</code> ×100, normalised against the '
+        'majority-class predictor: <b>0</b> = no better than always guessing the most common move, '
+        '<b>100</b> = perfect, <b>negative</b> = worse than that constant predictor. Raw accuracy is not '
+        'comparable across cohorts with different class balance; skill is.</li>'
         '<li><b>B · population-level distribution</b> — total-variation distance (TVD) between two move '
         '<em>distributions</em>: between two developers, between one developer and their own prediction, '
         'or between the whole real population and the whole predicted population. Says nothing about any '
@@ -244,12 +254,12 @@ def main():
         '<em>style</em> (surface voice) and <em>content</em> (intent/substance), plus realism.</li>'
         '</ul>'
         + figure('A')
-        + (('<p style="margin-top:1rem"><b>Metric A, measured.</b> Move accuracy against the '
+        + (('<p style="margin-top:1rem"><b>Metric A, measured.</b> Skill score against the '
             f'majority-class baseline (always predict <code>{esc(a_f["baseline_class"])}</code> = '
             f'{num(a_f["baseline_accuracy"],3)}). The real move distribution is heavily skewed, so this '
             'baseline is the bar that matters — and no condition clears it:</p>'
-            '<table><thead><tr><th>condition</th><th class="num">n</th><th class="num">move accuracy</th>'
-            '<th class="num">vs baseline</th><th>verdict</th></tr></thead>'
+            '<table><thead><tr><th>condition</th><th class="num">n</th><th class="num">skill (0–100)</th>'
+            '<th class="num">raw accuracy</th><th class="num">vs baseline</th><th>verdict</th></tr></thead>'
             f'<tbody>{a_rows}</tbody></table>') if a_f else '')
         + '</section>')
 
@@ -393,7 +403,7 @@ def main():
         border-radius:10px; padding:.75rem 1rem; font-size:.9rem; color:var(--zinc700); }}
  .callout.warn {{ border-left-color:#f59e0b; }}
  .cards {{ display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; margin-top:2rem; }}
- @media(min-width:720px) {{ .cards {{ grid-template-columns:repeat(5,1fr); }} }}
+ @media(min-width:720px) {{ .cards {{ grid-template-columns:repeat(3,1fr); }} }}
  .stat {{ border:1px solid var(--zinc200); background:#fff; border-radius:12px; padding:1rem 1.15rem; }}
  .stat .bn {{ font-size:1.9rem; font-weight:600; letter-spacing:-.02em; }}
  .stat .bn .vs {{ font-size:.9rem; font-weight:500; color:var(--zinc400); margin-left:.35rem; }}

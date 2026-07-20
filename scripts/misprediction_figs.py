@@ -67,38 +67,41 @@ def _legend(items, x=0, y=0):
 # A — individual-level accuracy vs the majority-class baseline
 # --------------------------------------------------------------------------------------
 def fig_a(a_folder, a_inline):
+    """Skill score, diverging from 0 = the majority-class predictor. Skill (not raw accuracy) is
+    the comparable number: the two modes have different class balance, so their raw accuracies
+    are not on the same scale."""
     conds = ["distilled", "generic", "wrong"]
-    W, rowh, lab = 620, 34, 78
-    base = a_folder["baseline_accuracy"]
-    xmax = 0.62
-    px = lambda v: lab + (W - lab - 58) * (v / xmax)
+    W, rowh, lab, mid = 620, 36, 86, 400
+    lo = -26.0                                   # scale floor (all observed skill is negative)
+    px = lambda v: mid + (mid - lab - 20) * (v / abs(lo))
     body, y = "", 8
     for c in conds:
         f = a_folder["by_condition"].get(c, {})
         i = (a_inline or {}).get("by_condition", {}).get(c, {})
         body += _txt(lab - 10, y + 12, c, size=11, fill=INK, anchor="end")
-        for j, (v, color, name) in enumerate([(f.get("accuracy"), PRED, "folder"),
-                                              (i.get("accuracy"), PRED_L, "inline")]):
+        for j, (src, opacity, nm) in enumerate([(f, 1.0, "folder"), (i, 0.45, "inline")]):
+            v = src.get("skill")
             if v is None:
                 continue
-            by = y + j * 12          # 2px gap between the paired bars
-            body += (f'<rect x="{lab}" y="{by}" width="{max(px(v) - lab, 2):.1f}" height="10" '
-                     f'rx="4" fill="{color}"/>')
-            # value sits INSIDE the bar end so it never collides with the baseline rule
-            body += _txt(px(v) - 6, by + 8.5, f"{v:.3f}", size=9.5,
-                         fill="#ffffff" if j == 0 else INK, anchor="end", weight="600")
+            by = y + j * 12                       # 2px gap between the paired bars
+            x0, x1 = (px(v), mid) if v < 0 else (mid, px(v))
+            col = NEG if v < 0 else PRED
+            body += (f'<rect x="{x0:.1f}" y="{by}" width="{max(abs(x1 - x0), 2):.1f}" height="10" '
+                     f'rx="4" fill="{col}" fill-opacity="{opacity}"/>')
+            body += _txt(x0 - 6, by + 8.5, f"{v:+.1f}  {nm}", size=9.5, fill=INK2, anchor="end")
         y += rowh
-    h = y + 26
-    # baseline rule — the bar that matters
-    bx = px(base)
-    body += (f'<line x1="{bx:.1f}" y1="0" x2="{bx:.1f}" y2="{y - 8}" stroke="{INK}" '
-             f'stroke-width="1.5" stroke-dasharray="4 3"/>')
-    body += _txt(bx + 5, y + 2, f"majority-class baseline {base:.3f}", size=10, fill=INK)
-    body += _txt(bx + 5, y + 14, "(always predict “directive”)", size=9.5, fill=MUTED)
-    body += _legend([(PRED, "folder"), (PRED_L, "inline")], x=lab, y=h + 8)
-    return _wrap(W, h + 16, body,
-                 "A · move accuracy never clears the naive baseline",
-                 "share of held-out turns where the predicted move equals the real move")
+    # the zero rule IS the baseline — no separate reference line needed
+    body += f'<line x1="{mid}" y1="0" x2="{mid}" y2="{y - 8}" stroke="{INK}" stroke-width="1.5"/>'
+    body += _txt(mid + 8, 14, "0 = majority-class predictor", size=10, fill=INK, weight="600")
+    body += _txt(mid + 8, 27, f"(always predict “{a_folder['baseline_class']}”)", size=9.5, fill=MUTED)
+    body += _txt(mid + 8, 45, "100 would be perfect", size=9.5, fill=MUTED)
+    body += _txt(lab, y + 14, "every condition scores below zero — worse than a constant predictor",
+                 size=10.5, fill=INK, weight="600")
+    body += _legend([(NEG, "below baseline")], x=lab, y=y + 34)
+    body += _txt(lab + 120, y + 35, "solid = folder, faded = inline", size=10, fill=MUTED)
+    return _wrap(W, y + 46, body,
+                 "A · skill score — normalised move accuracy",
+                 "S = (acc − acc_base) / (1 − acc_base), ×100")
 
 
 # --------------------------------------------------------------------------------------
