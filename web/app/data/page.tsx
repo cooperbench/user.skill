@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import blobs from "./blobs.json";
 
 export const metadata: Metadata = {
-  title: "Data: SWESimBench trial results",
+  title: "Data: UserBench trial results",
   description: "Download the raw experiment data behind the accuracy results. Public, for readers and their agents.",
 };
 
@@ -16,12 +16,10 @@ export default function DataPage() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3">
-          <h1 className="text-sm font-semibold tracking-tight"><a href="/" className="hover:text-zinc-600">SWESimBench</a> · <span className="text-zinc-400">Data</span></h1>
+          <h1 className="text-sm font-semibold tracking-tight"><a href="/" className="hover:text-zinc-600">UserBench</a> · <span className="text-zinc-400">Data</span></h1>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
-            <a href="/" className="hover:text-zinc-900">v2 cohort</a>
-            <a href="/samples" className="hover:text-zinc-900">samples</a>
-            <a href="/v1" className="hover:text-zinc-900">v1 leaderboard</a>
-            <a href="https://github.com/cooperbench/user.skill" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
+            <a href="/" className="hover:text-zinc-900">results</a>
+            <a href="https://github.com/AlienKevin/user-simulator" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
           </div>
         </div>
       </header>
@@ -31,10 +29,9 @@ export default function DataPage() {
           <div className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">download</div>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900">Trial results: public, agent-readable</h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-700">
-            CondAgree artifacts behind the <a href="/v1" className="text-blue-700 underline-offset-2 hover:underline">v1 leaderboard</a>:
-            7 leaderboard simulators × ±profile on a 20-developer, user- and repo-disjoint SWE-chat test split (raw files also include 3 off-leaderboard runs; 10 model conditions total). Files are public on
-            Vercel Blob. Separately, the authoritative v2 harbor cohort aggregates (57 developers / 1216 points) ship as{" "}
-            <a href="/data/v2_cohort.json" className="font-semibold text-blue-700 underline-offset-2 hover:underline">v2_cohort.json</a>.
+            Every artifact behind the <a href="/" className="text-blue-700 underline-offset-2 hover:underline">accuracy results</a> is
+            here: the 7 leaderboard simulators × ±profile on a 20-developer, user- and repo-disjoint SWE-chat test split (the raw files also include 3 off-leaderboard runs: 2 DeepSeek variants and gemini-3.1-pro, which gemini-3.5-flash replaced on the leaderboard; 10 model conditions in total). Files are public on
+            Vercel Blob. Point your agent at the machine-readable index, or download files directly below.
           </p>
         </div>
 
@@ -117,7 +114,7 @@ curl -s ${files.find((f) => f.name === "raw.jsonl")?.url} \\   # every generatio
             <li>
               <span className="font-semibold text-zinc-600">Benchmark code:</span> the eval harness, the 4-way move taxonomy + judge, the
               analysis and ablation scripts, and the Modal serving for the OSim models. Kept in a private repo
-              (<span className="font-mono">AlienKevin/user.skill</span>, <span className="font-mono">swesimbench</span> branch); available on request.
+              (<span className="font-mono">AlienKevin/user.skill</span>); available on request.
             </li>
             <li>
               <span className="font-semibold text-zinc-600">Data:</span> everything on this page, public on Vercel Blob: the files above plus
@@ -133,7 +130,7 @@ curl -s ${files.find((f) => f.name === "raw.jsonl")?.url} \\   # every generatio
         </section>
 
         <footer className="mt-8 border-t border-zinc-200 pt-6 text-xs text-zinc-400">
-          SWESimBench · <a href="/" className="hover:text-zinc-700">results</a> · data on Vercel Blob (public).
+          UserBench · <a href="/" className="hover:text-zinc-700">results</a> · data on Vercel Blob (public).
         </footer>
       </main>
     </div>
