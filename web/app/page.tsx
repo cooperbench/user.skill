@@ -148,6 +148,7 @@ export default function V2Page() {
         <div className="flex flex-wrap gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">Dataset</span>
           <a href="/results" className="hover:text-zinc-900">results →</a>
+          <a href="/misprediction" className="hover:text-zinc-900">misprediction →</a>
           <a href="/annotator" className="hover:text-zinc-900">annotator →</a>
           <a href="/v1" className="hover:text-zinc-900">old leaderboard →</a>
         </div>
