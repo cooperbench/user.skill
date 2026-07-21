@@ -162,8 +162,7 @@ export function LeaderboardSection() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
           UserBench tests whether an agent can predict what a real developer
-          will do next in a coding session. The main score is multilabel mean
-          Jaccard (IoU).
+          will do next in a coding session. The main score is Jaccard (IoU).
         </p>
       </header>
 
