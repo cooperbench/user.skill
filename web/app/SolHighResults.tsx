@@ -1,9 +1,31 @@
 import type { ReactNode } from "react";
 import { SectionHeading } from "./SectionHeading";
 
-const DATASET = "https://hub.harborframework.com/datasets/userbench/UserBench";
-const DATASET_TRAIN =
-  "https://hub.harborframework.com/datasets/userbench/UserBench-train400";
+const HUB_URLS = {
+  datasets: {
+    baseline:
+      "https://hub.harborframework.com/datasets/userbench/UserBench",
+    train400:
+      "https://hub.harborframework.com/datasets/userbench/UserBench-train400",
+  },
+  agentTraces: {
+    baseline:
+      "https://hub.harborframework.com/jobs/4d0dccb6-08d2-4a56-ad47-bf52e7db2e64",
+    train400:
+      "https://hub.harborframework.com/jobs/af42da25-f641-49fe-8983-604839ddfcd5",
+  },
+  judgeTraces: {
+    baseline:
+      "https://hub.harborframework.com/jobs/722b2a3b-032b-494b-96f6-b8febdb54f4f",
+    train400:
+      "https://hub.harborframework.com/jobs/eb870d83-c07f-46b6-b12f-0b937d402d2a",
+    threeRuns:
+      "https://hub.harborframework.com/jobs/92a07167-8858-4316-8dbf-e2200ddf8361",
+  },
+} as const;
+
+const DATASET = HUB_URLS.datasets.baseline;
+const DATASET_TRAIN = HUB_URLS.datasets.train400;
 const DATASET_REF = "userbench/UserBench";
 const DATASET_TRAIN_REF = "userbench/UserBench-train400";
 const HUB_TASKS = 620;
@@ -14,36 +36,36 @@ const ML = {
   baseline: {
     jaccard: 0.445,
     exact: 0.306,
+    exactChance: 0.326,
     nExact: 190,
     chance: 0.439,
     vsChancePp: 0.6,
     macroF1: 0.439,
     n: 620,
-    hub: "https://hub.harborframework.com/jobs/722b2a3b-032b-494b-96f6-b8febdb54f4f",
+    hub: HUB_URLS.judgeTraces.baseline,
   },
   train400: {
     jaccard: 0.48,
     exact: 0.35,
+    exactChance: 0.324,
     nExact: 217,
     chance: 0.434,
     vsChancePp: 4.6,
     macroF1: 0.468,
     n: 620,
-    hub: "https://hub.harborframework.com/jobs/eb870d83-c07f-46b6-b12f-0b937d402d2a",
+    hub: HUB_URLS.judgeTraces.train400,
   },
   archive3x: {
     jaccard: 0.5,
     n: 1386,
-    hub: "https://hub.harborframework.com/jobs/92a07167-8858-4316-8dbf-e2200ddf8361",
+    hub: HUB_URLS.judgeTraces.threeRuns,
   },
 };
 
 /** Agent-trial Hub jobs (gpt-5.6-sol trajectories). */
 const AGENT = {
-  baseline3x:
-    "https://hub.harborframework.com/jobs/4d0dccb6-08d2-4a56-ad47-bf52e7db2e64",
-  train4003x:
-    "https://hub.harborframework.com/jobs/af42da25-f641-49fe-8983-604839ddfcd5",
+  baseline3x: HUB_URLS.agentTraces.baseline,
+  train4003x: HUB_URLS.agentTraces.train400,
 };
 
 function pct(x: number, digits = 1) {
@@ -497,68 +519,92 @@ export function RunDetailsSection() {
     <Section
       id="run-details"
       kicker="Runs and reproducibility"
-      title="Inspect the benchmark"
+      title="Run details"
     >
-      <details className="group rounded-2xl border border-zinc-200 bg-white">
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-zinc-800 marker:content-none">
-          Run details
-          <span
-            aria-hidden="true"
-            className="text-lg font-normal text-zinc-400 transition-transform group-open:rotate-45"
-          >
-            +
-          </span>
-        </summary>
-        <div className="border-t border-zinc-100 px-5 py-5 text-sm text-zinc-600">
-          <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid items-start gap-4 lg:grid-cols-2">
+        <div className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h3 className="font-semibold text-zinc-900">Scores</h3>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[22rem] text-sm tabular-nums">
+              <thead>
+                <tr className="border-b border-zinc-100 text-right text-xs text-zinc-500">
+                  <th className="pb-2 text-left font-medium">Metric</th>
+                  <th className="pb-2 font-medium">Baseline</th>
+                  <th className="pb-2 font-medium">Train400</th>
+                </tr>
+              </thead>
+              <tbody className="text-right text-zinc-700">
+                {(
+                  [
+                    ["Mean Jaccard", ML.baseline.jaccard, ML.train400.jaccard],
+                    ["Exact-set match", ML.baseline.exact, ML.train400.exact],
+                    ["Jaccard chance", ML.baseline.chance, ML.train400.chance],
+                    [
+                      "Exact-set chance",
+                      ML.baseline.exactChance,
+                      ML.train400.exactChance,
+                    ],
+                    ["Macro-F1", ML.baseline.macroF1, ML.train400.macroF1],
+                  ] as const
+                ).map(([label, baseline, train400]) => (
+                  <tr key={label} className="border-b border-zinc-100 last:border-0">
+                    <th className="py-2.5 pr-4 text-left font-medium text-zinc-600">
+                      {label}
+                    </th>
+                    <td className="py-2.5">{pct(baseline)}</td>
+                    <td className="py-2.5">{pct(train400)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs leading-5 text-zinc-500">
+            Paired train400 lift: +3.48 pp, 95% CI +0.26 to +6.64 pp,
+            p≈0.033.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h3 className="font-semibold text-zinc-900">Public artifacts</h3>
+          <div className="mt-4 space-y-4 text-sm text-zinc-600">
             <div>
-              <h3 className="font-semibold text-zinc-900">Current scoring</h3>
-              <dl className="mt-3 grid grid-cols-[1fr_auto] gap-x-5 gap-y-2 tabular-nums">
-                <dt>Baseline exact-set match</dt>
-                <dd>{pct(ML.baseline.exact)}</dd>
-                <dt>Train400 exact-set match</dt>
-                <dd>{pct(ML.train400.exact)}</dd>
-                <dt>Arm-specific chance</dt>
-                <dd>{pct(ML.baseline.chance)} / {pct(ML.train400.chance)}</dd>
-                <dt>Macro-F1</dt>
-                <dd>{pct(ML.baseline.macroF1)} / {pct(ML.train400.macroF1)}</dd>
-                <dt>Paired lift test</dt>
-                <dd>p≈0.033</dd>
-              </dl>
+              <p className="font-medium text-zinc-800">Datasets</p>
+              <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                <ExtLink href={DATASET}>Baseline dataset ↗</ExtLink>
+                <ExtLink href={DATASET_TRAIN}>Train400 dataset ↗</ExtLink>
+              </p>
             </div>
             <div>
-              <h3 className="font-semibold text-zinc-900">Public traces</h3>
-              <ul className="mt-3 space-y-2">
-                <li>
-                  Datasets: <ExtLink href={DATASET}>baseline</ExtLink>
-                  {" · "}
-                  <ExtLink href={DATASET_TRAIN}>train400</ExtLink>
-                </li>
-                <li>
-                  Baseline: <ExtLink href={AGENT.baseline3x}>agent traces</ExtLink>
-                  {" · "}
-                  <ExtLink href={ML.baseline.hub}>judge traces</ExtLink>
-                </li>
-                <li>
-                  Train400: <ExtLink href={AGENT.train4003x}>agent traces</ExtLink>
-                  {" · "}
-                  <ExtLink href={ML.train400.hub}>judge traces</ExtLink>
-                </li>
-                <li>
-                  <ExtLink href={ML.archive3x.hub}>
-                    Judge traces: three independent runs
-                  </ExtLink>{" "}
+              <p className="font-medium text-zinc-800">Baseline</p>
+              <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                <ExtLink href={AGENT.baseline3x}>Agent traces ↗</ExtLink>
+                <ExtLink href={ML.baseline.hub}>Judge traces ↗</ExtLink>
+              </p>
+            </div>
+            <div>
+              <p className="font-medium text-zinc-800">Train400</p>
+              <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                <ExtLink href={AGENT.train4003x}>Agent traces ↗</ExtLink>
+                <ExtLink href={ML.train400.hub}>Judge traces ↗</ExtLink>
+              </p>
+            </div>
+            <div>
+              <p className="font-medium text-zinc-800">Independent runs</p>
+              <p className="mt-1.5">
+                <ExtLink href={ML.archive3x.hub}>
+                  Three-run judge traces ↗
+                </ExtLink>{" "}
+                <span className="text-xs text-zinc-500">
                   ({ML.archive3x.n.toLocaleString()} scored turns)
-                </li>
-              </ul>
-              <p className="mt-3 text-xs leading-5 text-zinc-500">
-                620 held-out turns per condition. Judge: Composer 2.5 using
-                approve, critical, steer, and inquiry act sets.
+                </span>
               </p>
             </div>
           </div>
+          <p className="mt-5 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
+            Composer 2.5 assigns approve, critical, steer, and inquiry act sets
+            across 620 held-out tasks per condition.
+          </p>
         </div>
-      </details>
+      </div>
     </Section>
   );
 }
