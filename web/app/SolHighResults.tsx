@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SectionHeading } from "./SectionHeading";
 
 const DATASET = "https://hub.harborframework.com/datasets/userbench/UserBench";
 const DATASET_TRAIN =
@@ -73,16 +74,30 @@ function Section({
   kicker?: string;
   children: ReactNode;
 }) {
+  const sectionId =
+    id ??
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
   return (
-    <section id={id} className="mt-12 scroll-mt-20">
+    <section
+      id={sectionId}
+      aria-labelledby={`${sectionId}-title`}
+      className="mt-12 scroll-mt-20"
+    >
       {kicker && (
         <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
           {kicker}
         </div>
       )}
-      <h2 className="mt-1 text-xl font-semibold tracking-tight text-zinc-900">
+      <SectionHeading
+        id={sectionId}
+        label={title}
+        className="mt-1 text-xl font-semibold tracking-tight text-zinc-900"
+      >
         {title}
-      </h2>
+      </SectionHeading>
       <div className="mt-4">{children}</div>
     </section>
   );
@@ -176,12 +191,13 @@ export function LeaderboardSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
               Primary result
             </p>
-            <h2
-              id="leaderboard-title"
+            <SectionHeading
+              id="leaderboard"
+              label="leaderboard"
               className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl"
             >
               Training history helps, modestly
-            </h2>
+            </SectionHeading>
             <p className="mt-2 text-sm text-zinc-500">
               GPT-5.6 Sol (high) · mean Jaccard across 620 tasks
             </p>
@@ -592,12 +608,13 @@ export function LabelExamplesSection() {
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
         The labels
       </p>
-      <h2
-        id="labels-title"
+      <SectionHeading
+        id="labels"
+        label="labels"
         className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
       >
         One turn can do more than one thing
-      </h2>
+      </SectionHeading>
       <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">
         <strong className="text-zinc-800">approve</strong> accepts,{" "}
         <strong className="text-zinc-800">critical</strong> flags a problem,{" "}
@@ -665,19 +682,20 @@ export function LabelExamplesSection() {
 export function MethodsSection() {
   return (
     <section
-      id="methods"
-      aria-labelledby="methods-title"
+      id="scoring"
+      aria-labelledby="scoring-title"
       className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12"
     >
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
         Scoring
       </p>
-      <h2
-        id="methods-title"
+      <SectionHeading
+        id="scoring"
+        label="scoring"
         className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
       >
         A score that gives partial credit
-      </h2>
+      </SectionHeading>
       <div className="mt-6 max-w-3xl">
         <article className="rounded-2xl border border-zinc-200 bg-white p-5">
           <h3 className="font-semibold text-zinc-900">How scoring works</h3>
