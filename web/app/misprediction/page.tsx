@@ -120,11 +120,12 @@ export default function MispredictionPage() {
     <main className="mx-auto max-w-4xl px-6 py-14">
       <nav className="flex items-center justify-between text-sm">
         <span className="font-semibold text-zinc-900">UserBench</span>
-        <div className="flex gap-4 text-zinc-500">
+        <div className="flex flex-wrap gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">misprediction</span>
-          <a href="/" className="hover:text-zinc-900">v2 dataset</a>
-          <a href="/samples" className="hover:text-zinc-900">message samples</a>
-          <a href="/v1" className="hover:text-zinc-900">v1 leaderboard →</a>
+          <a href="/" className="hover:text-zinc-900">Dataset →</a>
+          <a href="/results" className="hover:text-zinc-900">results →</a>
+          <a href="/annotator" className="hover:text-zinc-900">annotator →</a>
+          <a href="/v1" className="hover:text-zinc-900">old leaderboard →</a>
         </div>
       </nav>
 
@@ -140,7 +141,7 @@ export default function MispredictionPage() {
           prediction will not be as spread out as the real one.
         </p>
         <p className="mt-3 text-sm text-zinc-500">
-          Powered run: <strong>{m.users}</strong> developers / <strong>{fmt(m.points)}</strong>{" "}
+          Data: <strong>{m.users}</strong> developers / <strong>{fmt(m.points)}</strong>{" "}
           move-labelled held-out points from the in-repo <code className="font-mono">tasks/</code> cohort.
           Folder mode = the agent reads the folder itself; inline pastes it into the prompt.
         </p>
