@@ -33,16 +33,15 @@ const HUB_DEVS = 62;
 
 /**
  * Multilabel judge jobs; mean Jaccard is the benchmark metric.
- * Leaderboard means/SDs: mean of 3 trial-level mean Jaccards ± sample SD
- * across those 3 trial means (see THREE_TRIAL_JACCARD.json).
+ * Leaderboard point: mean over tasks of (mean Jaccard across 3 trials).
+ * Error bars: bootstrap 95% CI over the 620 per-task means (10k
+ * percentile bootstrap of the mean). See THREE_TRIAL_JACCARD.json.
  */
 const ML = {
   baseline: {
     jaccard: 0.445,
-    /** Sample SD across 3 trial-level mean Jaccards. */
-    trialSd: 0.00677,
-    /** mean ± 1 SD over 3 trials. */
-    sdBand: [0.4382, 0.4517] as const,
+    /** Bootstrap 95% CI over 620 per-task means (each task = mean of 3 trials). */
+    ci: [0.415, 0.474] as const,
     exact: 0.306,
     exactChance: 0.326,
     nExact: 190,
@@ -54,8 +53,7 @@ const ML = {
   },
   train400: {
     jaccard: 0.494,
-    trialSd: 0.00277,
-    sdBand: [0.4911, 0.4966] as const,
+    ci: [0.463, 0.524] as const,
     exact: 0.35,
     exactChance: 0.324,
     nExact: 217,
@@ -141,14 +139,14 @@ function ScoreRow({
   label,
   note,
   rate,
-  sdBand,
+  ci,
   featured = false,
 }: {
   label: string;
   note: string;
   rate: number;
-  /** mean − SD … mean + SD across 3 trial-level means */
-  sdBand: readonly [number, number];
+  /** Bootstrap 95% CI over 620 per-task means */
+  ci: readonly [number, number];
   featured?: boolean;
 }) {
   const chance = 0.437;
@@ -167,7 +165,7 @@ function ScoreRow({
       <div
         className="relative col-span-2 row-start-2 h-10 overflow-visible sm:col-span-1 sm:col-start-2 sm:row-start-1"
         role="img"
-        aria-label={`${label}: ${pct(rate)} mean Jaccard over 3 trials; error bars ±1 standard deviation over 3 trials from ${pct(sdBand[0])} to ${pct(sdBand[1])}; chance is about 43.7% (always predict steer)`}
+        aria-label={`${label}: ${pct(rate)} mean Jaccard over 3 trials × 620 tasks; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7% (always predict steer)`}
       >
         <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full bg-zinc-200" />
         <div
@@ -183,7 +181,7 @@ function ScoreRow({
         />
         <span
           className="absolute top-1/2 z-30 h-0.5 -translate-y-1/2 bg-zinc-950"
-          style={{ left: x(sdBand[0]), width: x(sdBand[1] - sdBand[0]) }}
+          style={{ left: x(ci[0]), width: x(ci[1] - ci[0]) }}
           aria-hidden="true"
         >
           <span className="absolute -left-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
@@ -251,13 +249,13 @@ export function LeaderboardSection() {
               label="Baseline"
               note="No developer training history"
               rate={ML.baseline.jaccard}
-              sdBand={ML.baseline.sdBand}
+              ci={ML.baseline.ci}
             />
             <ScoreRow
               label="Train400"
               note="400 prior turns from the same developer"
               rate={ML.train400.jaccard}
-              sdBand={ML.train400.sdBand}
+              ci={ML.train400.ci}
               featured
             />
           </div>
@@ -278,7 +276,8 @@ export function LeaderboardSection() {
             </span>
             <span>
               <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
-              Error bars show ±1 SD over 3 trials
+              Error bars: bootstrap 95% CIs over 620 tasks (10k resamples of
+              the mean; each task uses its mean Jaccard across 3 trials)
             </span>
           </div>
         </div>
@@ -572,10 +571,11 @@ export function RunDetailsSection() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-5 text-zinc-500">
-            Leaderboard means are averages over 3 trials. SD over those 3
-            trial means: baseline ±{(100 * ML.baseline.trialSd).toFixed(2)} pp,
-            train400 ±{(100 * ML.train400.trialSd).toFixed(2)} pp. Lift: +
-            {ML.liftPp.toFixed(2)} pp.
+            Leaderboard means average Jaccard over 3 trials per task, then
+            over 620 tasks. Whiskers are bootstrap 95% CIs over tasks
+            (baseline {pct(ML.baseline.ci[0])}–{pct(ML.baseline.ci[1])};
+            train400 {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}).
+            Lift: +{ML.liftPp.toFixed(2)} pp.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-5">
