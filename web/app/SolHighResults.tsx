@@ -31,10 +31,18 @@ const DATASET_TRAIN_REF = "userbench/UserBench-train400";
 const HUB_TASKS = 620;
 const HUB_DEVS = 62;
 
-/** Multilabel judge jobs; mean Jaccard is the benchmark metric. */
+/**
+ * Multilabel judge jobs; mean Jaccard is the benchmark metric.
+ * Leaderboard means/SDs: mean of 3 trial-level mean Jaccards ± sample SD
+ * across those 3 trial means (see THREE_TRIAL_JACCARD.json).
+ */
 const ML = {
   baseline: {
     jaccard: 0.445,
+    /** Sample SD across 3 trial-level mean Jaccards. */
+    trialSd: 0.00677,
+    /** mean ± 1 SD over 3 trials. */
+    sdBand: [0.4382, 0.4517] as const,
     exact: 0.306,
     exactChance: 0.326,
     nExact: 190,
@@ -45,7 +53,9 @@ const ML = {
     hub: HUB_URLS.judgeTraces.baseline,
   },
   train400: {
-    jaccard: 0.48,
+    jaccard: 0.494,
+    trialSd: 0.00277,
+    sdBand: [0.4911, 0.4966] as const,
     exact: 0.35,
     exactChance: 0.324,
     nExact: 217,
@@ -60,6 +70,8 @@ const ML = {
     n: 1386,
     hub: HUB_URLS.judgeTraces.threeRuns,
   },
+  /** train400 − baseline, from means of 3 trials. */
+  liftPp: 4.89,
 };
 
 /** Agent-trial Hub jobs (gpt-5.6-sol trajectories). */
@@ -129,13 +141,14 @@ function ScoreRow({
   label,
   note,
   rate,
-  ci,
+  sdBand,
   featured = false,
 }: {
   label: string;
   note: string;
   rate: number;
-  ci: readonly [number, number];
+  /** mean − SD … mean + SD across 3 trial-level means */
+  sdBand: readonly [number, number];
   featured?: boolean;
 }) {
   const chance = 0.437;
@@ -154,7 +167,7 @@ function ScoreRow({
       <div
         className="relative col-span-2 row-start-2 h-10 overflow-visible sm:col-span-1 sm:col-start-2 sm:row-start-1"
         role="img"
-        aria-label={`${label}: ${pct(rate)} mean Jaccard; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7%`}
+        aria-label={`${label}: ${pct(rate)} mean Jaccard over 3 trials; error bars ±1 standard deviation over 3 trials from ${pct(sdBand[0])} to ${pct(sdBand[1])}; chance is about 43.7% (always predict steer)`}
       >
         <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full bg-zinc-200" />
         <div
@@ -170,7 +183,7 @@ function ScoreRow({
         />
         <span
           className="absolute top-1/2 z-30 h-0.5 -translate-y-1/2 bg-zinc-950"
-          style={{ left: x(ci[0]), width: x(ci[1] - ci[0]) }}
+          style={{ left: x(sdBand[0]), width: x(sdBand[1] - sdBand[0]) }}
           aria-hidden="true"
         >
           <span className="absolute -left-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
@@ -221,12 +234,12 @@ export function LeaderboardSection() {
               Training history helps, modestly
             </SectionHeading>
             <p className="mt-2 text-sm text-zinc-500">
-              GPT-5.6 Sol (high) · mean Jaccard across 620 tasks
+              GPT-5.6 Sol (high) · mean Jaccard over 3 trials × 620 tasks
             </p>
           </div>
           <div className="sm:text-right">
             <p className="text-4xl font-semibold tracking-tight tabular-nums text-indigo-700">
-              +3.48 pp
+              +{ML.liftPp.toFixed(2)} pp
             </p>
             <p className="mt-1 text-sm text-zinc-500">train400 vs baseline</p>
           </div>
@@ -238,13 +251,13 @@ export function LeaderboardSection() {
               label="Baseline"
               note="No developer training history"
               rate={ML.baseline.jaccard}
-              ci={[0.412, 0.478]}
+              sdBand={ML.baseline.sdBand}
             />
             <ScoreRow
               label="Train400"
               note="400 prior turns from the same developer"
               rate={ML.train400.jaccard}
-              ci={[0.446, 0.513]}
+              sdBand={ML.train400.sdBand}
               featured
             />
           </div>
@@ -261,18 +274,18 @@ export function LeaderboardSection() {
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-100 pt-4 text-xs text-zinc-500">
             <span>
               <span className="mr-2 inline-block h-3 w-0.5 bg-amber-600 align-[-2px]" />
-              Chance ≈43.7%
+              Chance ≈43.7% (always predict {"{steer}"})
             </span>
             <span>
               <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
-              Error bars show bootstrap 95% CIs
+              Error bars show ±1 SD over 3 trials
             </span>
           </div>
         </div>
         <div className="mt-4 text-sm text-zinc-600">
           <p className="tabular-nums">
-            Paired lift: <strong className="text-zinc-800">+3.48 pp</strong> ·
-            95% CI <strong className="text-zinc-800">+0.26 to +6.64 pp</strong>
+            Lift (means of 3 trials):{" "}
+            <strong className="text-zinc-800">+{ML.liftPp.toFixed(2)} pp</strong>
           </p>
         </div>
 
@@ -501,8 +514,8 @@ export function AnalysisSection() {
     >
       <p className="max-w-3xl text-sm leading-6 text-zinc-600">
         Baseline sits near chance. Four hundred prior turns raise mean Jaccard
-        by 3.48 points, with small shifts in act choice and many unchanged
-        tasks.
+        by {ML.liftPp.toFixed(2)} points (mean of 3 trials), with small shifts
+        in act choice and many unchanged tasks.
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <LengthChart />
@@ -559,8 +572,10 @@ export function RunDetailsSection() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-5 text-zinc-500">
-            Paired train400 lift: +3.48 pp, 95% CI +0.26 to +6.64 pp,
-            p≈0.033.
+            Leaderboard means are averages over 3 trials. SD over those 3
+            trial means: baseline ±{(100 * ML.baseline.trialSd).toFixed(2)} pp,
+            train400 ±{(100 * ML.train400.trialSd).toFixed(2)} pp. Lift: +
+            {ML.liftPp.toFixed(2)} pp.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-5">
