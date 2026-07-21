@@ -7,6 +7,7 @@ import {
   LabelExamplesSection,
   LeaderboardSection,
   MethodsSection,
+  RunDetailsSection,
 } from "./SolHighResults";
 
 const EVAL_DEVS = 62;
@@ -154,14 +155,12 @@ export default function V2Page() {
         <a href="/" className="font-semibold tracking-tight text-zinc-950">UserBench</a>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-500">
           <span aria-current="page" className="font-medium text-zinc-950">Dataset</span>
-          <a href="/misprediction" className="hover:text-zinc-950">Mispredictions</a>
           <a href="/annotator/dashboard" className="hover:text-zinc-950">Annotator</a>
           <a href="/v1" className="hover:text-zinc-950">Old leaderboard</a>
         </div>
       </nav>
 
       <LeaderboardSection />
-      <AnalysisSection />
 
       <section id="dataset" className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12">
         <div className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
@@ -183,9 +182,6 @@ export default function V2Page() {
         </div>
         <DatasetHubLinks />
       </section>
-
-      <LabelExamplesSection />
-      <MethodsSection />
 
       <section
         aria-labelledby="dataset-depth-title"
@@ -527,6 +523,11 @@ export default function V2Page() {
 
         </div>
       </section>
+
+      <LabelExamplesSection />
+      <MethodsSection />
+      <AnalysisSection />
+      <RunDetailsSection />
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
         UserBench · {EVAL_DEVS} eval developers · {fmt(EVAL_TASKS)} Hub tasks · Claude Code + Codex full

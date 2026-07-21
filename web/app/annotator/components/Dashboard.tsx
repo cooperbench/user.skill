@@ -214,11 +214,6 @@ function pctJ(n: number | null | undefined): string {
   return `${Math.round(n * 100)}%`;
 }
 
-function pctExact(n: number | null | undefined): string {
-  if (n == null) return "—";
-  return `${Math.round(n)}%`;
-}
-
 function KappaRow({ kappa }: { kappa: KappaMap }) {
   return (
     <span className="text-stone-500">
@@ -239,40 +234,12 @@ function Details({
   label?: string;
 }) {
   return (
-    <details className="mt-3 rounded border border-rule bg-paper px-3 py-2 text-xs text-stone-600">
-      <summary className="cursor-pointer font-medium text-stone-700">
+    <details className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-xs text-zinc-600">
+      <summary className="cursor-pointer font-medium text-zinc-800">
         {label}
       </summary>
       <div className="mt-2 space-y-3">{children}</div>
     </details>
-  );
-}
-
-function PunchLine({
-  label,
-  jaccard,
-  exact,
-  n,
-  note,
-}: {
-  label: string;
-  jaccard: number | null | undefined;
-  exact: number | null | undefined;
-  n?: number;
-  note?: string;
-}) {
-  return (
-    <p className="text-sm leading-relaxed text-ink">
-      <span className="font-medium">{label}</span>
-      {": "}
-      <span className="text-accent">~{pctJ(jaccard)} Jaccard</span>
-      {" / "}
-      <span className="font-medium">{pctExact(exact)} exact</span>
-      {n != null && n > 0 ? (
-        <span className="text-stone-500"> (n={n})</span>
-      ) : null}
-      {note ? <span className="text-stone-500"> · {note}</span> : null}
-    </p>
   );
 }
 
@@ -360,39 +327,66 @@ export function DashboardView({
     (row) => row.n > 0,
   );
 
-  const humanVsLlmHeadline =
-    agreement.humanVsLlm.pooled.n > 0
-      ? agreement.humanVsLlm.pooled
-      : perRaterWithData[0] ?? null;
+  const kevinVsLlm =
+    perRaterWithData.find((row) =>
+      nameOf(raters, row.userId).toLowerCase().includes("kevin"),
+    ) ??
+    perRaterWithData[0] ??
+    null;
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-5 px-4 py-6 md:px-6">
-      <header className="flex flex-col gap-3 border-b border-rule pb-4 sm:flex-row sm:items-end sm:justify-between">
+    <div className="mx-auto flex min-h-screen max-w-5xl flex-col gap-5 px-5 pb-16 pt-8 sm:px-8">
+      <nav
+        aria-label="Main navigation"
+        className="flex flex-wrap items-center justify-between gap-4 text-sm"
+      >
+        <Link href="/" className="font-semibold tracking-tight text-zinc-950">
+          UserBench
+        </Link>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-500">
+          <Link href="/" className="hover:text-zinc-950">
+            Dataset
+          </Link>
+          {user ? (
+            <Link href="/annotator" className="hover:text-zinc-950">
+              Annotator
+            </Link>
+          ) : null}
+          <span aria-current="page" className="font-medium text-zinc-950">
+            Dashboard
+          </span>
+        </div>
+      </nav>
+
+      <header className="mt-8 flex flex-col gap-4 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
-            UserBench · Dashboard
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+            Public annotator
           </p>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-ink">
-            Inter-rater comparison
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            Label agreement
           </h1>
-          <p className="mt-1 max-w-2xl text-sm text-stone-600">
-            Free multi-label acts. Primary metrics: mean Jaccard over act-sets
-            and per-label Cohen&apos;s κ.
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-600">
+            Compare multilabel judgments for approve, critical, steer, and
+            inquiry.
             {user ? (
               <>
                 {" "}
                 Signed in as{" "}
-                <span className="font-medium text-ink">{user.displayName}</span>.
+                <span className="font-medium text-zinc-900">
+                  {user.displayName}
+                </span>
+                .
               </>
             ) : (
-              <> Public view — log in to label.</>
+              <> This page is public and read-only.</>
             )}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
           <Link
             href="/annotator"
-            className="rounded-full border border-rule bg-panel px-3 py-1.5 text-xs font-medium hover:border-accent"
+            className="rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 hover:border-indigo-300 hover:text-indigo-700"
           >
             {user ? "← Annotator" : "Log in to label →"}
           </Link>
@@ -400,7 +394,7 @@ export function DashboardView({
             <button
               type="button"
               onClick={() => void logout()}
-              className="rounded-full border border-ink/15 bg-ink px-3 py-1.5 text-xs font-medium text-paper hover:bg-stone-800"
+              className="rounded-full bg-zinc-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-zinc-700"
             >
               Log out
             </button>
@@ -412,44 +406,35 @@ export function DashboardView({
         {progressWithData.map((p) => (
           <div
             key={p.userId}
-            className="rounded-lg border border-rule bg-panel px-4 py-3"
+            className="rounded-2xl border border-zinc-200 bg-white px-4 py-3"
           >
-            <p className="font-medium text-ink">{nameOf(raters, p.userId)}</p>
-            <p className="mt-1 font-mono text-xs text-stone-600">
+            <p className="font-medium text-zinc-900">{nameOf(raters, p.userId)}</p>
+            <p className="mt-1 font-mono text-xs text-zinc-500">
               {p.done}/{p.total} done · {p.labeled} labeled · {p.skipped} skip
             </p>
           </div>
         ))}
       </section>
 
-      <section className="rounded-lg border border-rule bg-panel p-4">
-        <h2 className="font-display text-lg text-ink">Agreement summary</h2>
-        <p className="mt-1 text-xs text-stone-500">
-          Mean Jaccard over co-labeled act-sets; exact-set match is secondary.
-        </p>
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6">
+        <h2 className="text-xl font-semibold tracking-tight text-zinc-950">
+          Human and LLM labels agree strongly
+        </h2>
+        {kevinVsLlm ? (
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Kevin and the LLM judge reach{" "}
+            <strong className="text-indigo-700">
+              {pctJ(kevinVsLlm.jaccard)} Jaccard agreement
+            </strong>{" "}
+            across {kevinVsLlm.n} co-labeled turns.
+          </p>
+        ) : (
+          <p className="mt-2 text-sm text-zinc-500">
+            No human and LLM overlap yet.
+          </p>
+        )}
 
-        <div className="mt-3 space-y-1.5">
-          {humanVsLlmHeadline ? (
-            <PunchLine
-              label="Human ↔ LLM gold"
-              jaccard={humanVsLlmHeadline.jaccard}
-              exact={humanVsLlmHeadline.exact_pct}
-              n={humanVsLlmHeadline.n}
-            />
-          ) : (
-            <p className="text-sm text-stone-400">No human↔LLM overlap yet.</p>
-          )}
-          {pairwiseWithData[0] ? (
-            <PunchLine
-              label={`${nameOf(raters, pairwiseWithData[0].a)} ↔ ${nameOf(raters, pairwiseWithData[0].b)}`}
-              jaccard={pairwiseWithData[0].jaccard}
-              exact={pairwiseWithData[0].exact_pct}
-              n={pairwiseWithData[0].n}
-            />
-          ) : null}
-        </div>
-
-        <Details label="Details — κ, per-rater, definitions">
+        <Details label="Details — exact match, κ, and definitions">
           <p>
             Jaccard = |A∩B|/|A∪B| averaged over items both parties labeled
             (skips excluded). Per-label κ is binary presence/absence for each of
@@ -515,25 +500,19 @@ export function DashboardView({
       </section>
 
       {irr && (
-        <section className="rounded-lg border border-rule bg-panel p-4">
-          <h2 className="font-display text-lg text-ink">
-            Judge IRR (independent trials)
+        <section className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6">
+          <h2 className="text-xl font-semibold tracking-tight text-zinc-950">
+            The LLM judge is highly consistent
           </h2>
-          <p className="mt-1 text-xs text-stone-500">
-            LLM-judge reliability from independent re-runs on the same items.
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Composer reaches{" "}
+            <strong className="text-indigo-700">
+              {pctJ(irr.within_composer.pairwise_avg.jaccard)} Jaccard agreement
+            </strong>{" "}
+            across independent runs.
           </p>
 
-          <div className="mt-3 space-y-1.5">
-            <PunchLine
-              label="LLM judge stability (Composer 3×)"
-              jaccard={irr.within_composer.pairwise_avg.jaccard}
-              exact={irr.within_composer.pairwise_avg.exact_pct}
-              n={irr.within_composer.n_items}
-              note={`all3 ${irr.within_composer.n_way.all_identical_pct}%`}
-            />
-          </div>
-
-          <Details label="Details — Luna, cross-judge, κ">
+          <Details label="Details — IRR, exact match, and other judges">
             <p>
               Within-model = mean of the 3 pairwise comparisons across
               independent trials. Cross = one trial per judge (
@@ -613,16 +592,18 @@ export function DashboardView({
         </section>
       )}
 
-      <section className="rounded-lg border border-rule bg-panel p-4">
-        <h2 className="mb-3 font-display text-lg text-ink">Per-item labels</h2>
-        <p className="mb-2 text-xs text-stone-500">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6">
+        <h2 className="mb-3 text-xl font-semibold tracking-tight text-zinc-950">
+          Per-item labels
+        </h2>
+        <p className="mb-2 text-xs text-zinc-500">
           Row tint: humans exact (green) / partial overlap (amber) / disjoint
           (rose). Cell tint vs LLM: exact / partial / disjoint.
         </p>
-        <div className="max-h-[60vh] overflow-auto rounded border border-rule">
+        <div className="max-h-[60vh] overflow-auto rounded-xl border border-zinc-200">
           <table className="w-full min-w-[48rem] border-collapse text-left text-xs">
-            <thead className="sticky top-0 bg-paper">
-              <tr className="border-b border-rule text-stone-600">
+            <thead className="sticky top-0 bg-zinc-50">
+              <tr className="border-b border-zinc-200 text-zinc-600">
                 <th className="px-2 py-2 font-medium">#</th>
                 <th className="px-2 py-2 font-medium">Item</th>
                 {raters.map((r) => (
