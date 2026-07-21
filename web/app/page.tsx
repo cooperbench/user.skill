@@ -106,6 +106,62 @@ function Section({ title, kicker, children }: { title: string; kicker?: string; 
   );
 }
 
+function ContextTokenChart() {
+  const max = 300_000;
+  const position = (value: number) =>
+    `${(Math.log10(value) / Math.log10(max)) * 100}%`;
+  const markers = [
+    { label: "Median", short: "2.2k", value: 2_231, color: "bg-indigo-600" },
+    { label: "Mean", short: "6.5k", value: 6_549, color: "bg-sky-600" },
+    { label: "P90", short: "15.1k", value: 15_069, color: "bg-violet-600" },
+    { label: "Max", short: "258k", value: 258_331, color: "bg-zinc-900" },
+  ] as const;
+
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6">
+      <div className="flex items-center justify-between gap-4 text-xs text-zinc-500">
+        <span>Prior context tokens per eval point</span>
+        <span>log scale</span>
+      </div>
+      <div
+        className="relative mt-6 h-14"
+        role="img"
+        aria-label="Prior context tokens per eval point on a log scale: median 2,231, mean 6,549, 90th percentile 15,069, maximum 258,331"
+      >
+        <div className="absolute inset-x-0 top-7 h-1 rounded-full bg-zinc-200" />
+        {markers.map((marker) => (
+          <span
+            key={marker.label}
+            className="absolute top-3 -translate-x-1/2"
+            style={{ left: position(marker.value) }}
+            aria-hidden="true"
+          >
+            <span className={`block h-8 w-1 rounded-full ${marker.color}`} />
+          </span>
+        ))}
+        <span className="absolute left-0 top-10 text-[10px] text-zinc-400">1</span>
+        <span className="absolute left-[36.5%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">100</span>
+        <span className="absolute left-[73%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">10k</span>
+        <span className="absolute right-0 top-10 text-[10px] text-zinc-400">300k</span>
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {markers.map((marker) => (
+          <div key={marker.label}>
+            <p className="text-xl font-semibold tabular-nums text-zinc-950">
+              {marker.short}
+            </p>
+            <p className="text-xs text-zinc-500">{marker.label}</p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-5 text-sm leading-6 text-zinc-600">
+        The distribution has a long tail, but a typical eval point has only a
+        few thousand tokens of prior context. Median depth is 23 prior turns.
+      </p>
+    </figure>
+  );
+}
+
 export default function V2Page() {
   const s = data.summary;
   const h = data.harness as Record<string, { sessions: number; user_turns: number }>;
@@ -177,8 +233,8 @@ export default function V2Page() {
 
         <div className="mt-7 grid gap-3 sm:grid-cols-3">
           <StatCard label="developers" value={fmt(EVAL_DEVS)} sub="real coding-agent users" />
-          <StatCard label="held-out turns" value={fmt(EVAL_TASKS)} sub="10 per developer" />
-          <StatCard label="prior turns in train400" value="400" sub="from the same developer" />
+          <StatCard label="held-out tasks" value={fmt(EVAL_TASKS)} sub="one held-out turn each · 10 per developer" />
+          <StatCard label="training turns" value="24,800" sub="400 per developer × 62 developers" />
         </div>
         <DatasetHubLinks />
       </section>
@@ -256,7 +312,11 @@ export default function V2Page() {
         </p>
       </Section>
 
-      <Section kicker="side by side" title="How the sources differ">
+      <details className="mt-12 rounded-2xl border border-zinc-200 bg-white">
+        <summary className="cursor-pointer px-5 py-4 font-semibold text-zinc-900">
+          Source breakdown
+        </summary>
+        <div className="border-t border-zinc-100 px-5 py-5">
         {(() => {
           const sc = data.source_compare as Record<string, Record<string, string | number>>;
           const cols = ["Entire checkpoints", "GitHub .claude/.codex crawl", "DataClaw"];
@@ -290,15 +350,11 @@ export default function V2Page() {
           );
         })()}
         <p className="mt-3 text-sm text-zinc-500">
-          Three distinct signatures. <strong>Entire</strong> captures the deepest, most agentic
-          sessions (median 4 user turns, 6 assistant turns each) — it fires on real git activity.
-          <strong> The crawl</strong> is a whole <code>~/.claude/projects</code> dump, so it's a sea of
-          shallow one-shots (median 1 user turn) but with the longest pasted prompts (mean 340 tokens)
-          and a long-tailed session mix. <strong>DataClaw</strong> is the most
-          Codex-heavy (38% of turns) and the most train-heavy (98:2). All three are tool-dense
-          (4–6 assistant turns per user turn) — genuine full traces.
+          Entire skews toward deeper sessions, the GitHub crawl toward short
+          sessions, and DataClaw toward Codex.
         </p>
-      </Section>
+        </div>
+      </details>
 
       <Section kicker="agent harness" title="Claude Code vs Codex">
         <div className="grid gap-6 sm:grid-cols-2">
@@ -328,7 +384,11 @@ export default function V2Page() {
         </p>
       </Section>
 
-      <Section kicker="the split" title="Train vs held-out (eval)">
+      <details className="mt-12 rounded-2xl border border-zinc-200 bg-white">
+        <summary className="cursor-pointer px-5 py-4 font-semibold text-zinc-900">
+          Train/eval split
+        </summary>
+        <div className="border-t border-zinc-100 px-5 py-5">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -352,7 +412,8 @@ export default function V2Page() {
           material (rich developer profiles), with a lean-but-sufficient held-out tail (median 11 sessions
           / 108 user turns) that just clears the ≥100 floor.
         </p>
-      </Section>
+        </div>
+      </details>
 
       <Section kicker="per-developer spread" title="How deep is each developer?">
         <div className="grid gap-8 sm:grid-cols-2">
@@ -375,62 +436,11 @@ export default function V2Page() {
         </div>
       </Section>
 
-      <Section kicker="candidate pool" title="All held-out prediction points">
-        {(() => {
-          const e = data.eval_dist;
-          const row = (o: { name: string; median: number; mean: number; p90: number; max: number }) => (
-            <tr key={o.name} className="border-t border-zinc-100">
-              <td className="py-1.5 pr-4 text-zinc-600">{o.name}</td>
-              <td className="py-1.5 pr-4 text-right tabular-nums text-zinc-800">{fmt(Math.round(o.median))}</td>
-              <td className="py-1.5 pr-4 text-right tabular-nums text-zinc-500">{fmt(Math.round(o.mean))}</td>
-              <td className="py-1.5 pr-4 text-right tabular-nums text-zinc-500">{fmt(Math.round(o.p90))}</td>
-              <td className="py-1.5 text-right tabular-nums text-zinc-500">{fmt(Math.round(o.max))}</td>
-            </tr>
-          );
-          const hbins = e.prev_turns_hist.bins as number[];
-          const hlabels = hbins.slice(0, -1).map((b, i) => (i === hbins.length - 2 ? `${b}+` : `${b}–${hbins[i + 1]}`));
-          return (
-            <>
-              <p className="mb-4 max-w-2xl text-sm text-zinc-600">
-                Each held-out point is a moment where the real developer typed a message. The full source pool has{" "}
-                {fmt(e.n_points)} points across {fmt(e.n_devs)} developers; UserBench selects the canonical{" "}
-                {fmt(EVAL_TASKS)}-turn, {EVAL_DEVS}-developer benchmark from this pool.
-              </p>
-              <div className="grid gap-6 sm:grid-cols-2">
-                <table className="text-sm">
-                  <thead>
-                    <tr className="text-left text-xs uppercase tracking-wide text-zinc-400">
-                      <th className="pb-2 pr-4 font-medium">per eval point / developer</th>
-                      <th className="pb-2 pr-4 text-right font-medium">median</th>
-                      <th className="pb-2 pr-4 text-right font-medium">mean</th>
-                      <th className="pb-2 pr-4 text-right font-medium">p90</th>
-                      <th className="pb-2 text-right font-medium">max</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {row(e.prev_turns)}
-                    {row(e.ctx_tokens)}
-                    {row(e.points_per_dev)}
-                    {row(e.sess_per_dev)}
-                  </tbody>
-                </table>
-                <div>
-                  <div className="mb-2 text-sm font-medium text-zinc-700">Previous turns per eval point</div>
-                  <Bars rows={hlabels.map((label, i) => ({ label, value: e.prev_turns_hist.counts[i], color: "bg-fuchsia-400" }))} />
-                </div>
-              </div>
-              <p className="mt-3 text-sm text-zinc-500">
-                The context depth is heavily skewed — median <strong>{fmt(e.prev_turns.median)}</strong> prior
-                turns, but a long tail to <strong>{fmt(e.prev_turns.max)}</strong> (
-                <strong>{fmt(e.ctx_tokens.max)}</strong> tokens). Token counts are{" "}
-                <strong>cl100k</strong> over the <strong>rendered ATIF</strong> transcript for each point
-                (same 4k-char/step cap as the ATIF task builder). That tail is why the eval is run{" "}
-                <strong>agentically</strong>: the model reads the session history from disk rather than
-                having it all stuffed into one prompt.
-              </p>
-            </>
-          );
-        })()}
+      <Section
+        kicker="context depth"
+        title="Most eval points have a few thousand tokens of prior context"
+      >
+        <ContextTokenChart />
       </Section>
 
       <Section kicker="prompt length" title="Tokens per user turn">
