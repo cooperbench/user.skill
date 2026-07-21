@@ -231,7 +231,7 @@ export function LeaderboardSection() {
               label="leaderboard"
               className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl"
             >
-              Training history lifts baseline above chance
+              Conditioning on past sessions lifts baseline above chance
             </SectionHeading>
             <p className="mt-2 text-sm text-zinc-500">
               GPT-5.6 Sol (high) · mean Jaccard over 3 trials × 620 tasks
