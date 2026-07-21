@@ -4,7 +4,9 @@ import data from "./v2data.json";
 import {
   AnalysisSection,
   DatasetHubLinks,
+  LabelExamplesSection,
   LeaderboardSection,
+  MethodsSection,
 } from "./SolHighResults";
 
 const EVAL_DEVS = 62;
@@ -147,52 +149,55 @@ export default function V2Page() {
   );
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-14">
-      <nav className="flex items-center justify-between text-sm">
-        <span className="font-semibold text-zinc-900">UserBench</span>
-        <div className="flex flex-wrap gap-4 text-zinc-500">
-          <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">Dataset</span>
-          <a href="/misprediction" className="hover:text-zinc-900">misprediction →</a>
-          <a href="/annotator/dashboard" className="hover:text-zinc-900">annotator →</a>
-          <a href="/v1" className="hover:text-zinc-900">old leaderboard →</a>
+    <main className="mx-auto max-w-5xl px-5 pb-16 pt-8 sm:px-8">
+      <nav aria-label="Main navigation" className="flex flex-wrap items-center justify-between gap-4 text-sm">
+        <a href="/" className="font-semibold tracking-tight text-zinc-950">UserBench</a>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-500">
+          <span aria-current="page" className="font-medium text-zinc-950">Dataset</span>
+          <a href="/misprediction" className="hover:text-zinc-950">Mispredictions</a>
+          <a href="/annotator/dashboard" className="hover:text-zinc-950">Annotator</a>
+          <a href="/v1" className="hover:text-zinc-950">Old leaderboard</a>
         </div>
       </nav>
 
       <LeaderboardSection />
+      <AnalysisSection />
 
       <section id="dataset" className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12">
-        <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
-          dataset
+        <div className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+          Dataset
         </div>
-        <h2 className="mt-1 text-xl font-semibold tracking-tight text-zinc-900">
-          The {EVAL_DEVS}-developer eval
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
+          Real developers, later turns held out
         </h2>
-        <p className="mt-3 max-w-2xl text-zinc-600">
-          {EVAL_DEVS} real software developers on Harbor Hub (
-          <span className="font-mono text-sm">userbench/UserBench@v2</span>, {fmt(EVAL_TASKS)} tasks —
-          exactly 10 shortest-history held-out points each). Each has a deep <strong>training</strong> history
-          and a strictly-later, non-overlapping <strong>held-out</strong> set, harvested as full-fidelity{" "}
-          <strong>Claude Code</strong> and <strong>Codex</strong> session traces (no lossy IDE-markdown).
-          Every developer clears ≥400 training and ≥100 held-out user turns; the split is leakage-verified
-          (every training session strictly precedes every held-out session). A train-context twin,{" "}
-          <span className="font-mono text-sm">userbench/UserBench-train400@v2</span>, adds leak-safe prior
-          sessions under <span className="font-mono text-sm">/sim/train/</span> (same {fmt(EVAL_TASKS)} held
-          tasks). Restricted to the{" "}
-          <strong>Opus 4.6 era</strong> — only sessions on or after its 2026-02-05 release.
+        <p className="mt-3 max-w-3xl text-base leading-7 text-zinc-600">
+          UserBench uses full Claude Code and Codex session traces. Each
+          developer&apos;s training sessions come before every held-out
+          session, so the model sees past behavior without seeing the answer.
         </p>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <StatCard label="eval developers" value={fmt(EVAL_DEVS)} sub="≥10 points each" />
-          <StatCard label="Hub tasks" value={fmt(EVAL_TASKS)} sub="10 per developer" />
-          <StatCard label="sessions" value={fmt(s.n_sessions)} sub="full traces (cohort)" />
-          <StatCard label="user turns" value={fmt(s.n_user_turns)} sub="cohort" />
+        <div className="mt-7 grid gap-3 sm:grid-cols-3">
+          <StatCard label="developers" value={fmt(EVAL_DEVS)} sub="real coding-agent users" />
+          <StatCard label="held-out turns" value={fmt(EVAL_TASKS)} sub="10 per developer" />
+          <StatCard label="prior turns in train400" value="400" sub="from the same developer" />
         </div>
-        <p className="mt-3 text-sm text-zinc-500">
-          Sessions span <strong>{s.time_min}</strong> → <strong>{s.time_max}</strong>.
-        </p>
         <DatasetHubLinks />
       </section>
 
+      <LabelExamplesSection />
+      <MethodsSection />
+
+      <details className="group mt-16 border-t border-zinc-200 pt-8">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl py-3 text-base font-semibold text-zinc-800 marker:content-none">
+          Explore the dataset in depth
+          <span
+            aria-hidden="true"
+            className="text-xl font-normal text-zinc-400 transition-transform group-open:rotate-45"
+          >
+            +
+          </span>
+        </summary>
+        <div className="pb-4">
       <Section kicker="where it comes from" title="Data provenance">
         {(() => {
           const p = data.provenance;
@@ -371,7 +376,7 @@ export default function V2Page() {
         </div>
       </Section>
 
-      <Section kicker="what gets scored" title="The eval set — held-out prediction points">
+      <Section kicker="candidate pool" title="All held-out prediction points">
         {(() => {
           const e = data.eval_dist;
           const row = (o: { name: string; median: number; mean: number; p90: number; max: number }) => (
@@ -388,9 +393,9 @@ export default function V2Page() {
           return (
             <>
               <p className="mb-4 max-w-2xl text-sm text-zinc-600">
-                Each held-out point is a moment where the real developer typed a message; the model must predict
-                it, conditioned on <strong>all previous turns of that session</strong>. {fmt(e.n_points)} points
-                across {fmt(e.n_devs)} developers.
+                Each held-out point is a moment where the real developer typed a message. The full source pool has{" "}
+                {fmt(e.n_points)} points across {fmt(e.n_devs)} developers; UserBench selects the canonical{" "}
+                {fmt(EVAL_TASKS)}-turn, {EVAL_DEVS}-developer benchmark from this pool.
               </p>
               <div className="grid gap-6 sm:grid-cols-2">
                 <table className="text-sm">
@@ -505,8 +510,7 @@ export default function V2Page() {
           Over the Feb–Jul 2026 window both harnesses march cleanly up their release lines. Claude Code
           stays on the <strong>2.1.x</strong> series throughout, climbing month over month from{" "}
           <strong>2.1.62</strong> to <strong>2.1.198</strong>; Codex climbs <strong>~0.104 → 0.142</strong>.
-          Versions read from the raw traces — all current Opus-4.6-era releases, so the dataset is
-          contemporary, not legacy.
+          Versions come from the raw traces and cover current Opus-4.6-era releases.
         </p>
       </Section>
       ) : null}
@@ -518,7 +522,8 @@ export default function V2Page() {
         </p>
       </Section>
 
-      <AnalysisSection />
+        </div>
+      </details>
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
         UserBench · {EVAL_DEVS} eval developers · {fmt(EVAL_TASKS)} Hub tasks · Claude Code + Codex full
