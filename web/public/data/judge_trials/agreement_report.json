@@ -1,0 +1,257 @@
+{
+  "n_items": 100,
+  "trials": [
+    "trial_1",
+    "trial_2",
+    "trial_3"
+  ],
+  "paths": [
+    "public/data/judge_trials/trial_1.json",
+    "public/data/judge_trials/trial_2.json",
+    "public/data/judge_trials/trial_3.json"
+  ],
+  "pairwise": [
+    {
+      "a": "trial_1",
+      "b": "trial_2",
+      "n": 100,
+      "jaccard": 0.94,
+      "kappa_macro": 0.914,
+      "kappa_per_label": {
+        "approve": 0.885,
+        "critical": 0.928,
+        "directive": 0.884,
+        "inquiry": 0.958
+      },
+      "exact_pct": 90.0
+    },
+    {
+      "a": "trial_1",
+      "b": "trial_3",
+      "n": 100,
+      "jaccard": 0.975,
+      "kappa_macro": 0.962,
+      "kappa_per_label": {
+        "approve": 0.962,
+        "critical": 1.0,
+        "directive": 0.908,
+        "inquiry": 0.979
+      },
+      "exact_pct": 96.0
+    },
+    {
+      "a": "trial_2",
+      "b": "trial_3",
+      "n": 100,
+      "jaccard": 0.955,
+      "kappa_macro": 0.937,
+      "kappa_per_label": {
+        "approve": 0.926,
+        "critical": 0.928,
+        "directive": 0.914,
+        "inquiry": 0.979
+      },
+      "exact_pct": 92.0
+    }
+  ],
+  "pairwise_avg": {
+    "jaccard": 0.957,
+    "kappa_macro": 0.938,
+    "exact_pct": 92.7
+  },
+  "n_way": {
+    "all_identical": 89,
+    "all_identical_pct": 89.0,
+    "unique_set_count_dist": {
+      "1": 89,
+      "2": 11
+    },
+    "n_multi_any_trial": 55,
+    "n_multi_all_identical": 46
+  },
+  "examples_disagree": [
+    {
+      "id": "kevin:gh_KeKs0r__f7d88343",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "directive",
+          "inquiry"
+        ],
+        "trial_2": [
+          "inquiry"
+        ],
+        "trial_3": [
+          "inquiry"
+        ]
+      },
+      "real_snippet": "what about validating the schema of the file? to check if it structurallly follows the session format? and then it would be muhc harder to prompt inject or wouldnt it?"
+    },
+    {
+      "id": "kevin:gh_bradleygibsongit__b83d2e36",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "critical",
+          "directive"
+        ],
+        "trial_2": [
+          "critical"
+        ],
+        "trial_3": [
+          "critical",
+          "directive"
+        ]
+      },
+      "real_snippet": "The logos weem a bit too big"
+    },
+    {
+      "id": "kevin:gh_johyunduk__b15e8506",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "directive"
+        ],
+        "trial_2": [
+          "directive",
+          "inquiry"
+        ],
+        "trial_3": [
+          "directive",
+          "inquiry"
+        ]
+      },
+      "real_snippet": "Hmm, then how about having character-specific rankings only for Extreme Mode?"
+    },
+    {
+      "id": "kevin:gh_malkoG__58805f63",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "critical",
+          "directive"
+        ],
+        "trial_2": [
+          "directive"
+        ],
+        "trial_3": [
+          "critical",
+          "directive"
+        ]
+      },
+      "real_snippet": "Only for see who reactored. we can custom react with reaction button"
+    },
+    {
+      "id": "kevin:gh_singampalliveerendra__3f75b898",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "directive"
+        ],
+        "trial_2": [
+          "approve",
+          "directive"
+        ],
+        "trial_3": [
+          "directive"
+        ]
+      },
+      "real_snippet": "continue the session"
+    },
+    {
+      "id": "v2:t014",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "directive"
+        ],
+        "trial_2": [
+          "critical",
+          "directive"
+        ],
+        "trial_3": [
+          "directive"
+        ]
+      },
+      "real_snippet": "update ten giong nhu cac ten trong files docs/diagrams. Sau do update export_diagrams.sh, build_proposal.sh va cac file md"
+    },
+    {
+      "id": "v2:t017",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "inquiry"
+        ],
+        "trial_2": [
+          "inquiry"
+        ],
+        "trial_3": [
+          "directive",
+          "inquiry"
+        ]
+      },
+      "real_snippet": "I'm thinking if this release gate should be applied to the semantic report generation as well"
+    },
+    {
+      "id": "v2:t018",
+      "mean_pairwise_jaccard": 0.667,
+      "any_multi": true,
+      "trials": {
+        "trial_1": [
+          "approve",
+          "directive"
+        ],
+        "trial_2": [
+          "directive"
+        ],
+        "trial_3": [
+          "approve",
+          "directive"
+        ]
+      },
+      "real_snippet": "please my bad continue reading :("
+    }
+  ],
+  "examples_agree_multi": [
+    {
+      "id": "kevin:dc_dc_010__9ef010fa",
+      "acts": [
+        "directive",
+        "inquiry"
+      ],
+      "real_snippet": "Is the subjective review with Deslopify working well? Can you try to understand if there's anything that needs to be improved? Can you see the logs for it?"
+    },
+    {
+      "id": "kevin:gh_4thwithme__56e34cff",
+      "acts": [
+        "approve",
+        "inquiry"
+      ],
+      "real_snippet": "ok what is the next step?"
+    },
+    {
+      "id": "kevin:gh_ET-NoahDolev__6ab6543d",
+      "acts": [
+        "approve",
+        "critical",
+        "directive"
+      ],
+      "real_snippet": "1, should be fixed from the pyproject.toml and not uv.lock. 4, yes. 5, yes."
+    },
+    {
+      "id": "kevin:gh_ET-NoahDolev__d33c5ef7",
+      "acts": [
+        "critical",
+        "directive"
+      ],
+      "real_snippet": "Devpod is configured in the infra repo. We don't have self-generated datasets. Go through everything and verify what needs verifying."
+    }
+  ]
+}

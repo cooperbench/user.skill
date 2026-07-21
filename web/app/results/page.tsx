@@ -2,23 +2,27 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "UserBench results — 10-dev agentic slice",
+  title: "UserBench results — full 620 agentic eval",
   description:
-    "Agentic next-move match rates on a 226-point UserBench slice (10 cheapest-history-bytes developers from an earlier package). Harbor Hub jobs, dataset links, and methodology.",
+    "Agentic next-move match rates on the full UserBench Hub eval (620 tasks / 62 developers), with and without train400 sessions. Harbor Hub jobs, dataset links, and methodology.",
 };
 
-const CHANCE_MATCH = 110;
-const CHANCE_N = 226;
-const CHANCE = CHANCE_MATCH / CHANCE_N;
 const DATASET = "https://hub.harborframework.com/datasets/userbench/UserBench";
-const DATASET_TASKS = "https://hub.harborframework.com/datasets/userbench/UserBench/tasks";
+const DATASET_TRAIN = "https://hub.harborframework.com/datasets/userbench/UserBench-train400";
 const DATASET_REF = "userbench/UserBench@v2";
+const DATASET_TRAIN_REF = "userbench/UserBench-train400@v2";
 const HUB_TASKS = 620;
 const HUB_DEVS = 62;
+
+/** Prior 226-point slice chance (majority gold) — kept for the archived slice table. */
+const SLICE_CHANCE_MATCH = 110;
+const SLICE_CHANCE_N = 226;
+const SLICE_CHANCE = SLICE_CHANCE_MATCH / SLICE_CHANCE_N;
 
 type Run = {
   id: string;
   model: string;
+  condition: string;
   sandbox: string;
   match: number;
   n: number;
@@ -27,6 +31,7 @@ type Run = {
   cost: string;
   job: string;
   headline: string;
+  note?: string;
 };
 
 /** Binomial SE of a proportion: √(p(1−p)/n), returned in percentage points. */
@@ -52,10 +57,44 @@ function matchHeadline(match: number, n: number) {
   return `${match}/${n} = ${rateLabel(match, n)}`;
 }
 
-const RUNS: Run[] = [
+/** Full Hub-scale Sol high dual eval (2026-07-20). Harbor mean reward → matches. */
+const FULL_RUNS: Run[] = [
   {
-    id: "sol-modal",
+    id: "sol-high-baseline",
+    model: "gpt-5.6-sol [high]",
+    condition: "UserBench (no train)",
+    sandbox: "Modal",
+    match: 288,
+    n: 620,
+    rate: 288 / 620,
+    se: binomialSePp(288, 620),
+    cost: "~$84.07",
+    job: "https://hub.harborframework.com/jobs/c8958ef2-67c9-4116-9e86-b347f0f8f62d",
+    headline: matchHeadline(288, 620),
+    note: "Hub package rev 6 · agent-phase OpenRouter allowlist",
+  },
+  {
+    id: "sol-high-train400",
+    model: "gpt-5.6-sol [high]",
+    condition: "UserBench-train400",
+    sandbox: "Modal",
+    match: 240,
+    n: 620,
+    rate: 240 / 620,
+    se: binomialSePp(240, 620),
+    cost: "~$213.86",
+    job: "https://hub.harborframework.com/jobs/d8501a41-08f7-4945-8a23-f6a9f13e4308",
+    headline: matchHeadline(240, 620),
+    note: "Hub package rev 3 · 146 trial errors (mostly NonZeroAgentExitCode)",
+  },
+];
+
+/** Archived 226-point / 10-dev slice (prior package). */
+const SLICE_RUNS: Run[] = [
+  {
+    id: "sol-modal-slice",
     model: "gpt-5.6-sol",
+    condition: "226-point slice",
     sandbox: "Modal",
     match: 113,
     n: 226,
@@ -66,8 +105,9 @@ const RUNS: Run[] = [
     headline: matchHeadline(113, 226),
   },
   {
-    id: "kimi",
+    id: "kimi-slice",
     model: "kimi-k3",
+    condition: "226-point slice",
     sandbox: "Modal",
     match: 106,
     n: 226,
@@ -76,20 +116,6 @@ const RUNS: Run[] = [
     cost: "~$20.01",
     job: "https://hub.harborframework.com/jobs/bb239f60-6303-4d11-a512-c2f4a0dbd928",
     headline: matchHeadline(106, 226),
-  },
-];
-
-/** Trial links are from the 226-point jobs (prior package task names on Hub job pages). */
-const EXAMPLE_TRIALS = [
-  {
-    label: "match",
-    task: "dc_004__0aba24d1",
-    href: "https://hub.harborframework.com/jobs/f3ca33a9-3e22-4b0b-9fd4-d1a9ccd533d1/trials/0b7f1dd1-46b2-4d1b-b56e-9c6f79959eda",
-  },
-  {
-    label: "miss",
-    task: "dc_004__05fe03e7",
-    href: "https://hub.harborframework.com/jobs/f3ca33a9-3e22-4b0b-9fd4-d1a9ccd533d1/trials/7c1fbe4f-598e-40f4-a75f-5111a979d803",
   },
 ];
 
@@ -110,6 +136,7 @@ function StatCard({ label, value, sub }: { label: string; value: string; sub?: s
     </div>
   );
 }
+
 function Section({ title, kicker, children }: { title: string; kicker?: string; children: ReactNode }) {
   return (
     <section className="mt-12">
@@ -128,15 +155,9 @@ function StatusPill() {
   );
 }
 
-function MatchBar({ rate, se }: { rate: number; se: number }) {
-  const max = 0.65;
+function MatchBar({ rate, se, max = 0.65 }: { rate: number; se: number; max?: number }) {
   return (
     <div className="relative h-7 flex-1 overflow-hidden rounded bg-zinc-100">
-      <div
-        className="absolute bottom-0 top-0 border-l-2 border-dashed border-zinc-500/70"
-        style={{ left: `${(CHANCE / max) * 100}%` }}
-        title={`chance (majority) ${rateLabel(CHANCE_MATCH, CHANCE_N)}`}
-      />
       <div className="h-full rounded bg-indigo-500" style={{ width: `${Math.min(100, (rate / max) * 100)}%` }} />
       <div className="absolute inset-y-0 left-2 flex items-center gap-1.5 font-mono text-xs font-semibold text-zinc-800">
         <span>{pct(rate)}</span>
@@ -147,8 +168,6 @@ function MatchBar({ rate, se }: { rate: number; se: number }) {
 }
 
 export default function ResultsPage() {
-  const maxPrimary = Math.max(...RUNS.map((r) => r.rate), CHANCE);
-
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
       <nav className="flex items-center justify-between text-sm">
@@ -160,6 +179,9 @@ export default function ResultsPage() {
           <a href="/" className="hover:text-zinc-900">
             Dataset →
           </a>
+          <a href="/annotator" className="hover:text-zinc-900">
+            annotator →
+          </a>
           <a href="/v1" className="hover:text-zinc-900">
             old leaderboard →
           </a>
@@ -168,47 +190,47 @@ export default function ResultsPage() {
 
       <header className="mt-8">
         <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
-          Agentic results — 10-dev slice
+          Agentic results — full Hub eval
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          Move-match rates for models standing in for a software engineer mid-session. These complete
-          Modal jobs scored a <strong>226-point / 10-developer</strong> slice (cheapest-history-bytes
-          developers) from an <strong>earlier</strong> package revision —{" "}
-          <strong>not</strong> the full current Hub eval (
-          <ExtLink href={`${DATASET}?tag=v2`}>{DATASET_REF}</ExtLink>, {HUB_DEVS} developers /{" "}
-          {HUB_TASKS} tasks). Agent: <span className="font-mono text-sm">mini-swe-agent</span> via
-          OpenRouter; judge: <strong>Composer 2.5</strong>; sandboxes: <strong>Modal</strong> (kevinli).
+          Move-match rates for <strong>gpt-5.6-sol</strong> (reasoning effort <strong>high</strong>) on the
+          full <ExtLink href={`${DATASET}?tag=v2`}>{DATASET_REF}</ExtLink> cut:{" "}
+          <strong>{HUB_DEVS} developers × 10 = {HUB_TASKS} tasks</strong>. Twin arm adds leak-safe train
+          sessions via <ExtLink href={`${DATASET_TRAIN}?tag=v2`}>{DATASET_TRAIN_REF}</ExtLink>. Agent:{" "}
+          <span className="font-mono text-sm">mini-swe-agent</span> via OpenRouter; judge:{" "}
+          <strong>Composer 2.5</strong>; sandboxes: <strong>Modal</strong>. During agent.run, outbound
+          internet is restricted to an OpenRouter allowlist.
         </p>
       </header>
 
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatCard label="slice points" value="226" sub="10 developers · not full eval" />
+        <StatCard label="eval points" value={String(HUB_TASKS)} sub={`${HUB_DEVS} developers · Hub scale`} />
         <StatCard
-          label="chance (majority)"
-          value={pct(CHANCE)}
-          sub={`${fmtSe(binomialSePp(CHANCE_MATCH, CHANCE_N))} SE · always modal gold`}
+          label="no-train match"
+          value={pct(288 / 620)}
+          sub={`${fmtSe(binomialSePp(288, 620))} SE · sol high`}
         />
         <StatCard
-          label="best complete"
-          value={pct(113 / 226)}
-          sub={`${fmtSe(binomialSePp(113, 226))} SE · gpt-5.6-sol · Modal`}
+          label="train400 match"
+          value={pct(240 / 620)}
+          sub={`${fmtSe(binomialSePp(240, 620))} SE · sol high`}
         />
-        <StatCard label="Hub eval" value="620" sub={`${HUB_DEVS} developers · current package`} />
+        <StatCard label="Δ train400" value="−7.7 pp" sub="train400 below no-train on this run" />
       </div>
 
-      <Section kicker="leaderboard" title="Match rate on the 226-point slice">
+      <Section kicker="leaderboard" title="Match rate on the full 620-task eval">
         <p className="mb-4 text-sm text-zinc-500">
-          Dashed line = chance baseline ({rateLabel(CHANCE_MATCH, CHANCE_N)}). Numbers are{" "}
-          <strong>matches / scored trials</strong> ± binomial SE (
-          <span className="font-mono text-xs">√(p(1−p)/n)</span>) for complete Modal runs on the same
-          226-point slice.
+          Numbers are <strong>Harbor mean reward</strong> as matches / {HUB_TASKS} ± binomial SE (
+          <span className="font-mono text-xs">√(p(1−p)/n)</span>). Same model, judge, and Modal stack on
+          both arms.
         </p>
 
         <div className="space-y-4 rounded-xl border border-zinc-200 bg-white p-5">
-          {RUNS.map((r) => (
+          {FULL_RUNS.map((r) => (
             <div key={r.id}>
               <div className="mb-1.5 flex flex-wrap items-baseline gap-2">
                 <span className="font-mono text-sm font-semibold text-zinc-900">{r.model}</span>
+                <span className="text-xs text-zinc-500">{r.condition}</span>
                 <span className="text-xs text-zinc-400">{r.sandbox}</span>
                 <StatusPill />
                 <span className="ml-auto font-mono text-sm tabular-nums text-zinc-700">{r.headline}</span>
@@ -217,39 +239,38 @@ export default function ResultsPage() {
                 <MatchBar rate={r.rate} se={r.se} />
                 <div className="w-20 shrink-0 text-right text-xs tabular-nums text-zinc-500">{r.cost}</div>
               </div>
-              <div className="mt-1.5 text-xs">
+              <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-zinc-500">
                 <ExtLink href={r.job}>Harbor Hub job → trials</ExtLink>
+                {r.note ? <span>{r.note}</span> : null}
               </div>
             </div>
           ))}
           <p className="border-t border-zinc-100 pt-3 text-xs text-zinc-500">
-            Scale 0–65%. Chance line at {rateLabel(CHANCE_MATCH, CHANCE_N)}. ± is binomial SE in
-            percentage points, not a confidence interval. Cost ≈ OpenRouter + Harbor-reported agent
-            spend.
-            {maxPrimary > CHANCE ? " gpt-5.6-sol clears chance on the complete Modal slice." : null}
+            Scale 0–65%. ± is binomial SE in percentage points, not a confidence interval. Cost ≈
+            OpenRouter + Harbor-reported agent spend. Train400 cost is higher (larger context under{" "}
+            <span className="font-mono">/sim/train/</span>).
           </p>
         </div>
       </Section>
-      <Section kicker="on harbor hub" title="Jobs, dataset, and example trials">
+
+      <Section kicker="on harbor hub" title="Jobs and datasets">
         <div className="overflow-x-auto rounded-xl border border-zinc-200 bg-white">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-zinc-100 text-left text-xs uppercase tracking-wide text-zinc-400">
-                <th className="px-4 py-3 font-medium">model</th>
-                <th className="px-4 py-3 font-medium">sandbox</th>
+                <th className="px-4 py-3 font-medium">arm</th>
                 <th className="px-4 py-3 font-medium">match</th>
                 <th className="px-4 py-3 font-medium">cost</th>
                 <th className="px-4 py-3 font-medium">hub</th>
               </tr>
             </thead>
             <tbody>
-              {RUNS.map((r) => (
+              {FULL_RUNS.map((r) => (
                 <tr key={r.id} className="border-t border-zinc-50">
                   <td className="px-4 py-3">
-                    <div className="font-mono text-xs font-semibold text-zinc-900">{r.model}</div>
-                    <StatusPill />
+                    <div className="font-mono text-xs font-semibold text-zinc-900">{r.condition}</div>
+                    <div className="text-xs text-zinc-500">{r.model}</div>
                   </td>
-                  <td className="px-4 py-3 text-zinc-600">{r.sandbox}</td>
                   <td className="px-4 py-3 font-mono text-xs tabular-nums text-zinc-800">{r.headline}</td>
                   <td className="px-4 py-3 tabular-nums text-zinc-600">{r.cost}</td>
                   <td className="px-4 py-3">
@@ -263,36 +284,50 @@ export default function ResultsPage() {
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">dataset</div>
+            <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">datasets</div>
             <p className="mt-2 text-sm text-zinc-700">
-              Package <span className="font-mono text-xs">{DATASET_REF}</span> —{" "}
-              <strong>{HUB_TASKS}</strong> tasks / <strong>{HUB_DEVS}</strong> developers (exactly 10
-              shortest-history points per developer with ≥10 eval points). Task refs:{" "}
-              <span className="font-mono text-xs">userbench/&lt;username&gt;__&lt;hash&gt;@v2</span>.
+              <span className="font-mono text-xs">{DATASET_REF}</span> and{" "}
+              <span className="font-mono text-xs">{DATASET_TRAIN_REF}</span> —{" "}
+              <strong>{HUB_TASKS}</strong> held tasks / <strong>{HUB_DEVS}</strong> developers. Train twin
+              adds earlier sessions under <span className="font-mono text-xs">/sim/train/</span>.
             </p>
             <div className="mt-3 flex flex-wrap gap-3 text-sm">
-              <ExtLink href={DATASET}>dataset ↗</ExtLink>
-              <ExtLink href={DATASET_TASKS}>tasks ↗</ExtLink>
-              <ExtLink href={`${DATASET}?tag=v2`}>tag v2 ↗</ExtLink>
+              <ExtLink href={DATASET}>UserBench ↗</ExtLink>
+              <ExtLink href={DATASET_TRAIN}>train400 ↗</ExtLink>
             </div>
           </div>
           <div className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">example trials</div>
+            <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">network</div>
             <p className="mt-2 text-sm text-zinc-700">
-              From the gpt-5.6-sol Modal 226-point job (short ids; job pages may still show prior package
-              paths):
+              Environment baseline and verifier are <span className="font-mono text-xs">public</span>{" "}
+              (image build, agent install, Composer judge). Agent phase is an OpenRouter{" "}
+              <span className="font-mono text-xs">allowlist</span> so the sandbox cannot browse the open
+              web while solving.
             </p>
-            <ul className="mt-3 space-y-2 text-sm">
-              {EXAMPLE_TRIALS.map((t) => (
-                <li key={t.href}>
-                  <span className="mr-2 rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase text-zinc-600">
-                    {t.label}
-                  </span>
-                  <ExtLink href={t.href}>{t.task}</ExtLink>
-                </li>
-              ))}
-            </ul>
           </div>
+        </div>
+      </Section>
+
+      <Section kicker="archive" title="Earlier 226-point / 10-dev slice">
+        <p className="mb-4 text-sm text-zinc-500">
+          Complete Modal jobs on a cheaper-history 226-point slice from a prior package revision — not the
+          full current Hub eval. Chance (majority gold) on that slice:{" "}
+          {SLICE_CHANCE_MATCH}/{SLICE_CHANCE_N} = {rateLabel(SLICE_CHANCE_MATCH, SLICE_CHANCE_N)}.
+        </p>
+        <div className="space-y-3 rounded-xl border border-zinc-200 bg-white p-5">
+          {SLICE_RUNS.map((r) => (
+            <div key={r.id} className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="font-mono font-semibold text-zinc-900">{r.model}</span>
+                <span className="text-xs text-zinc-400">{r.sandbox}</span>
+              </div>
+              <span className="font-mono text-xs tabular-nums text-zinc-700">{r.headline}</span>
+              <ExtLink href={r.job}>Hub job ↗</ExtLink>
+            </div>
+          ))}
+          <p className="border-t border-zinc-100 pt-3 text-xs text-zinc-500">
+            Slice chance line at {pct(SLICE_CHANCE)}. Kept for continuity with earlier write-ups.
+          </p>
         </div>
       </Section>
 
@@ -303,35 +338,32 @@ export default function ResultsPage() {
             session history from disk and produces the next user message. A judge labels the predicted
             message into the 4-way move taxonomy (
             <span className="font-mono text-xs">approve / critical / directive / inquiry</span>
-            ). Reward is 1 iff predicted move equals gold move.
+            ). Reward is 1 iff predicted move equals gold move. Published tasks keep{" "}
+            <span className="font-mono text-xs">gold_move = null</span>; the judge classifies gold{" "}
+            <span className="font-mono text-xs">real</span> at verify time.
           </p>
           <p>
-            <strong className="text-zinc-800">Slice (these numbers).</strong> 10 developers with the
-            cheapest history byte footprints → 226 prediction points on a prior package revision. Same
-            points for every complete Modal job below. The current Hub package is the full{" "}
-            {HUB_DEVS}×10 = {HUB_TASKS}-task cut.
+            <strong className="text-zinc-800">Full eval (headline numbers).</strong> Exactly 10
+            shortest-history points per developer with ≥10 eval points → {HUB_DEVS}×10 = {HUB_TASKS}{" "}
+            tasks. Train400 uses the same held points plus earlier train sessions.
           </p>
           <p>
-            <strong className="text-zinc-800">Stack.</strong> Agent = mini-swe-agent (OpenRouter). Judge =
-            Composer 2.5 (cursor-agent). Sandboxes = Modal (kevinli).
+            <strong className="text-zinc-800">Stack.</strong> Agent = mini-swe-agent 2.4.5 (OpenRouter,
+            openai-only pin). Judge = Composer 2.5 (cursor-agent on Modal volume). Sandboxes = Modal
+            (kevinli).
           </p>
           <p>
-            <strong className="text-zinc-800">Chance.</strong> Majority-class baseline on this slice ={" "}
-            {CHANCE_MATCH}/{CHANCE_N} = {rateLabel(CHANCE_MATCH, CHANCE_N)} (always emit the most
-            common gold move). gpt-5.6-sol Modal is slightly above; kimi-k3 is slightly below.
-          </p>
-          <p>
-            <strong className="text-zinc-800">Uncertainty.</strong> Reported ± is the binomial
-            standard error of the match rate,{" "}
-            <span className="font-mono text-xs">SE = √(p(1−p)/n)</span>, in percentage points
-            (rounded to 1 decimal). It is not a Wilson (or other) confidence interval.
+            <strong className="text-zinc-800">Uncertainty.</strong> Reported ± is the binomial standard
+            error of the match rate, <span className="font-mono text-xs">SE = √(p(1−p)/n)</span>, in
+            percentage points. It is not a Wilson confidence interval.
           </p>
         </div>
       </Section>
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
-        UserBench agentic results · 10-dev / 226-point slice (prior package) · current Hub eval{" "}
-        <ExtLink href={DATASET}>{DATASET_REF}</ExtLink> ({HUB_TASKS} tasks) · see the{" "}
+        UserBench agentic results · full Hub eval {HUB_TASKS} tasks ·{" "}
+        <ExtLink href={DATASET}>{DATASET_REF}</ExtLink> ·{" "}
+        <ExtLink href={DATASET_TRAIN}>{DATASET_TRAIN_REF}</ExtLink> · see the{" "}
         <a href="/" className="text-zinc-600 hover:text-zinc-900">
           Dataset
         </a>{" "}

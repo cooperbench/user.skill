@@ -148,6 +148,7 @@ export default function V2Page() {
         <div className="flex flex-wrap gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">Dataset</span>
           <a href="/results" className="hover:text-zinc-900">results →</a>
+          <a href="/annotator" className="hover:text-zinc-900">annotator →</a>
           <a href="/v1" className="hover:text-zinc-900">old leaderboard →</a>
         </div>
       </nav>
@@ -509,8 +510,10 @@ export default function V2Page() {
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
         UserBench · {EVAL_DEVS} eval developers · {fmt(EVAL_TASKS)} Hub tasks · Claude Code + Codex full
         traces · Opus 4.6 era (≥2026-02-05) · leakage-verified train/held-out split. See{" "}
-        <a href="/results" className="text-zinc-600 hover:text-zinc-900">agentic results</a>{" "}
-        and the{" "}
+        <a href="/results" className="text-zinc-600 hover:text-zinc-900">agentic results</a>
+        ,{" "}
+        <a href="/annotator" className="text-zinc-600 hover:text-zinc-900">annotator</a>
+        , and the{" "}
         <a href="/v1" className="text-zinc-600 hover:text-zinc-900">old leaderboard</a>.
       </footer>
     </main>
