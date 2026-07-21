@@ -1,0 +1,45 @@
+{
+  "title": "UserBench gold_acts annotator (MVP)",
+  "n_items": 100,
+  "n_candidates": 104,
+  "label_dist": {
+    "steer": 66,
+    "inquiry": 34,
+    "approve": 18,
+    "critical": 25
+  },
+  "source_dist": {
+    "kevin": 55,
+    "v2tasks": 45
+  },
+  "labels": [
+    "approve",
+    "critical",
+    "steer",
+    "inquiry"
+  ],
+  "judge_model": "composer-2.5",
+  "taxonomy": {
+    "approve": "greenlight the agent's proposal — go ahead / LGTM; no new task",
+    "critical": "asserts something is WRONG — bug/failure/wrong output, or approach mistaken",
+    "steer": "assigns a NEW or DIFFERENT task from what the agent just proposed (not mere go-ahead)",
+    "inquiry": "goal is an answer/explanation, not asking the agent to do work"
+  },
+  "notes": "Blind free multi-label. Approve = proceed with agent's proposal; steer = new/different ask. Primary metrics: Jaccard + per-label κ.",
+  "translated_to_english": false,
+  "translate_model": "gemini-3.5-flash",
+  "still_needing_translation": 3,
+  "n_with_originals": 26,
+  "n_translated": 26,
+  "multi_label": true,
+  "gold_mode": "multi",
+  "n_multi_label_gold": 37,
+  "judge_invoked_via": "cursor-agent-cli",
+  "judge_command": "/home/ubuntu/.local/bin/agent -p --mode ask --model composer-2.5",
+  "judged_at": "2026-07-18T23:20:38Z",
+  "n_judge_ok": 100,
+  "n_judge_fail": 0,
+  "context_full": true,
+  "context_trim": false,
+  "n_context_ellipsis": 0
+}

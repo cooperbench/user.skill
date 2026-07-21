@@ -1,3 +1,14 @@
+# UserBench website (`benchmark-website`)
+
+Next.js site for **UserBench** — live at https://userbench.vercel.app
+
+Source: `web/`. The public Harbor eval and train pools live on branch **`kevin`**
+(`cooperbench/user.skill`). An older next-action leaderboard is at `/v1`.
+The multi-label act annotator lives at [`/annotator`](https://userbench.vercel.app/annotator)
+(dashboard: `/annotator/dashboard`).
+
+---
+
 # User.skill
 
 **Distilling real developers from their AI-coding trajectories into role-playable "user folders".**

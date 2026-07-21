@@ -1,5 +1,5 @@
 import React from "react";
-// SWESimBench — misprediction / homogeneity study.
+// UserBench — misprediction / homogeneity study.
 // Data: ./data.json (regenerated via scripts/misprediction.py -> a compact export).
 // Question: are the user-simulator's mispredictions a failure of *individuation* — does it
 // default to task-completion and give every developer the same move-mix?
@@ -119,7 +119,7 @@ export default function MispredictionPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
       <nav className="flex items-center justify-between text-sm">
-        <span className="font-semibold text-zinc-900">SWESimBench</span>
+        <span className="font-semibold text-zinc-900">UserBench</span>
         <div className="flex gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">misprediction</span>
           <a href="/" className="hover:text-zinc-900">v2 dataset</a>
@@ -558,7 +558,7 @@ export default function MispredictionPage() {
       </Section>
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
-        Reproduce: <code className="font-mono">python3 scripts/misprediction.py --adjudicate</code>. Part of SWESimBench.
+        Reproduce: <code className="font-mono">python3 scripts/misprediction.py --adjudicate</code>. Part of UserBench.
       </footer>
     </main>
   );

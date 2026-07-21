@@ -1,4 +1,4 @@
-// SWESimBench: explanatory walkthrough centered on next-action prediction accuracy.
+// UserBench: explanatory walkthrough centered on next-action prediction accuracy.
 // Content: workflow-drafted + fact-checked against bench/profileopt/experiments/condagree_multi/
 // {summary,manifest,taxonomy,splits,cases}.json. Chart data = summary.json (9 models x ±profile; 7 shown on the leaderboard, 2 deepseek variants hidden).
 
@@ -701,8 +701,11 @@ export default function Page() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3">
-          <h1 className="text-sm font-semibold tracking-tight">SWESimBench</h1>
+          <h1 className="text-sm font-semibold tracking-tight">UserBench</h1>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
+            <a href="/" className="hover:text-zinc-900">Dataset</a>
+            <a href="/results" className="hover:text-zinc-900">agentic results</a>
+            <span className="rounded bg-zinc-900 px-2 py-0.5 text-[10px] font-medium text-white">old leaderboard</span>
             <a href="/data" className="hover:text-zinc-900">data</a>
             <a href="https://github.com/AlienKevin/user-simulator" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
           </div>
@@ -714,7 +717,7 @@ export default function Page() {
         <div className="py-12">
           <div className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">one metric: next-action prediction accuracy · 7 simulators</div>
           <h2 className="mt-2 text-3xl font-semibold leading-tight tracking-tight text-zinc-900">
-            SWESimBench: how well can a model simulate a software engineer using a coding agent?
+            UserBench: how well can a model simulate a software engineer using a coding agent?
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-zinc-700">
             A <span className="font-semibold text-zinc-900">user simulator</span> stands in for the human developer so we can stress-test
@@ -771,7 +774,7 @@ export default function Page() {
         </div>
 
         <div className="space-y-10">
-          <Section id="leaderboard" title="SWESimBench Leaderboard">
+          <Section id="leaderboard" title="UserBench Leaderboard">
             <Leaderboard exclude={["deepseek-v3.1", "deepseek-v4-flash", "gemini-3.1-pro"]} />
           </Section>
 
@@ -799,7 +802,7 @@ export default function Page() {
               0.526)</span> and <span className="font-semibold text-zinc-700">+0.001 without (0.486 to 0.487)</span>, both well inside the ±0.08
               CI. Predicting a developer's next move turns on reading the conversation and persona, not on deliberation, so the cheaper
               low-effort setting (used by the other DeepSeek models) scores the same within noise, and a max-effort reply was if anything a touch
-              terser. Reasoning level is not a lever for SWESimBench; the profile is.
+              terser. Reasoning level is not a lever for UserBench; the profile is.
             </p>
             <p>
               The rest of this section asks the sharper question: what does adding the developer's profile change? The chart below plots each
@@ -925,7 +928,7 @@ export default function Page() {
         </div>
 
         <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-400">
-          SWESimBench · accuracy on real{" "}
+          UserBench · accuracy on real{" "}
           <a href="https://huggingface.co/datasets/SALT-NLP/SWE-chat" className="hover:text-zinc-700">SWE-chat</a> sessions ·
           <a href="/data" className="hover:text-zinc-700"> download the data</a> ·
           built on <a href="https://github.com/cooperbench/user.skill" className="hover:text-zinc-700">cooperbench/user.skill</a>.
