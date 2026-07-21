@@ -9,18 +9,17 @@ const HUB_URLS = {
       "https://hub.harborframework.com/datasets/userbench/UserBench-train400",
   },
   agentTraces: {
+    // 1860 trials; Avg reward = multilabel Jaccard (not exact-match 0/1)
     baseline:
-      "https://hub.harborframework.com/jobs/4d0dccb6-08d2-4a56-ad47-bf52e7db2e64",
+      "https://hub.harborframework.com/jobs/14a20479-5716-4ed6-b3ec-3f4d772d9d34",
     train400:
-      "https://hub.harborframework.com/jobs/af42da25-f641-49fe-8983-604839ddfcd5",
+      "https://hub.harborframework.com/jobs/dc87831c-402b-4d3a-b5ce-9ef4d039bb4a",
   },
   judgeTraces: {
     baseline:
       "https://hub.harborframework.com/jobs/722b2a3b-032b-494b-96f6-b8febdb54f4f",
     train400:
-      "https://hub.harborframework.com/jobs/eb870d83-c07f-46b6-b12f-0b937d402d2a",
-    threeRuns:
-      "https://hub.harborframework.com/jobs/92a07167-8858-4316-8dbf-e2200ddf8361",
+      "https://hub.harborframework.com/jobs/8ab68c38-f335-4adc-90b8-e833f5bc2aa2",
   },
 } as const;
 
@@ -48,7 +47,7 @@ const ML = {
     chance: 0.439,
     vsChancePp: 0.6,
     macroF1: 0.439,
-    n: 620,
+    n: 1860,
     hub: HUB_URLS.judgeTraces.baseline,
   },
   train400: {
@@ -60,13 +59,8 @@ const ML = {
     chance: 0.434,
     vsChancePp: 4.6,
     macroF1: 0.468,
-    n: 620,
+    n: 1860,
     hub: HUB_URLS.judgeTraces.train400,
-  },
-  archive3x: {
-    jaccard: 0.5,
-    n: 1386,
-    hub: HUB_URLS.judgeTraces.threeRuns,
   },
   /** train400 − baseline, from means of 3 trials. */
   liftPp: 4.89,
@@ -594,17 +588,6 @@ export function RunDetailsSection() {
               <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
                 <ExtLink href={AGENT.train4003x}>Agent traces ↗</ExtLink>
                 <ExtLink href={ML.train400.hub}>Judge traces ↗</ExtLink>
-              </p>
-            </div>
-            <div>
-              <p className="font-medium text-zinc-800">Independent runs</p>
-              <p className="mt-1.5">
-                <ExtLink href={ML.archive3x.hub}>
-                  Three-run judge traces ↗
-                </ExtLink>{" "}
-                <span className="text-xs text-zinc-500">
-                  ({ML.archive3x.n.toLocaleString()} scored turns)
-                </span>
               </p>
             </div>
           </div>
