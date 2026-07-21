@@ -9,6 +9,7 @@ import {
   MethodsSection,
   RunDetailsSection,
 } from "./SolHighResults";
+import { SectionHeading } from "./SectionHeading";
 
 const EVAL_DEVS = 62;
 const EVAL_TASKS = 620;
@@ -60,11 +61,37 @@ function Bars({
   );
 }
 
-function Section({ title, kicker, children }: { title: string; kicker?: string; children: React.ReactNode }) {
+function Section({
+  id,
+  title,
+  kicker,
+  children,
+}: {
+  id?: string;
+  title: string;
+  kicker?: string;
+  children: React.ReactNode;
+}) {
+  const sectionId =
+    id ??
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
   return (
-    <section className="mt-12">
+    <section
+      id={sectionId}
+      aria-labelledby={`${sectionId}-title`}
+      className="mt-12 scroll-mt-20"
+    >
       {kicker && <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">{kicker}</div>}
-      <h2 className="mt-1 text-xl font-semibold tracking-tight text-zinc-900">{title}</h2>
+      <SectionHeading
+        id={sectionId}
+        label={title}
+        className="mt-1 text-xl font-semibold tracking-tight text-zinc-900"
+      >
+        {title}
+      </SectionHeading>
       <div className="mt-4">{children}</div>
     </section>
   );
@@ -220,9 +247,13 @@ export default function V2Page() {
         <div className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
           Dataset
         </div>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
+        <SectionHeading
+          id="dataset"
+          label="dataset"
+          className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
+        >
           Real developers, later turns held out
-        </h2>
+        </SectionHeading>
         <p className="mt-3 max-w-3xl text-base leading-7 text-zinc-600">
           UserBench uses full Claude Code and Codex session traces. Each
           developer&apos;s training sessions come before every held-out
@@ -238,18 +269,20 @@ export default function V2Page() {
       </section>
 
       <section
-        aria-labelledby="dataset-depth-title"
-        className="mt-16 border-t border-zinc-200 pt-12"
+        id="dataset-details"
+        aria-labelledby="dataset-details-title"
+        className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12"
       >
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
           Dataset details
         </p>
-        <h2
-          id="dataset-depth-title"
+        <SectionHeading
+          id="dataset-details"
+          label="dataset details"
           className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
         >
           Explore the dataset in depth
-        </h2>
+        </SectionHeading>
         <div className="pb-4">
       <Section kicker="where it comes from" title="Data provenance">
         {(() => {
@@ -413,7 +446,7 @@ export default function V2Page() {
         </div>
       </details>
 
-      <Section kicker="prediction context" title="What the model sees and predicts">
+      <Section id="context" kicker="prediction context" title="What the model sees and predicts">
         <p className="mb-6 max-w-3xl text-sm leading-6 text-zinc-600">
           These figures come from the 620 published tasks: conversation turns
           count the history, context tokens measure its size, and next-message
