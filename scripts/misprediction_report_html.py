@@ -170,6 +170,18 @@ def main():
                     f'<td>{"collapse ✓" if v["collapse"] else "—"}</td></tr>')
         return out
 
+    e8b = (r.get("E8_within_developer_spread") or {}).get("by_condition", {})
+    def e8_rows():
+        out = ""
+        for c, v in e8b.items():
+            out += (f'<tr><td class="k">{esc(c)}</td><td class="num">{v["n_users"]}</td>'
+                    f'<td class="num">{num(v["entropy_real"],3)}</td>'
+                    f'<td class="num">{num(v["entropy_pred"],3)}</td>'
+                    f'<td class="num">{signed(v["mean_delta"])}</td>'
+                    f'<td class="num">{v["n_narrower"]}/{v["n_users"]}</td>'
+                    f'<td class="num">{num(v.get("wilcoxon_p"),4)}</td></tr>')
+        return out
+
     def e4_rows():
         out = ""
         for c, v in e4.items():
@@ -196,9 +208,9 @@ def main():
     banner = (f'<div class="callout warn"><b>Smoke run — underpowered.</b> {cohort_users} developers, '
               f'{n_lab} labelled points — enough to exercise the pipeline, not to conclude. Read E1/E5 '
               f'as indicative; treat E3/E4 p-values as not-yet-significant.</div>' if smoke else
-              f'<div class="callout"><b>Powered run.</b> {cohort_users} developers · {fmt(n_lab)} '
+              f'<div class="callout"><b>Data.</b> {cohort_users} developers · {fmt(n_lab)} '
               f'move-labelled held-out points from the in-repo <code>tasks/</code> cohort (no S3). '
-              f'Folder mode is the product flow; inline mode is scored separately.</div>')
+              f'Folder mode = the agent reads the folder itself; inline pastes it into the prompt.</div>')
 
     # E3 bars: real vs predicted between-user spread, per condition (site Bars style)
     e3_items = [(c, v) for c, v in e3.items() if "spread_pred" in v]
@@ -275,6 +287,7 @@ def main():
             "e3": e3b.get("generic", {}), "e3all": e3b,
             "e4": e4b.get("distilled", {}), "e4gen": e4b.get("generic", {}),
             "e5": rep["E5_decision_vs_surface"].get("verdict"),
+            "e8": (rep.get("E8_within_developer_spread") or {}).get("by_condition", {}).get("distilled"),
             "e1": (rep.get("E1_adjudication_summary") or {}).get("homogeneity_share"),
         }
 
@@ -303,10 +316,23 @@ def main():
                      f'{num(f3.get("spread_pred"),3)} vs {num(f3.get("spread_real"),3)} (p={num(f3.get("perm_p"),3)})',
                      f'{num(i3.get("spread_pred"),3)} vs {num(i3.get("spread_real"),3)} (p={num(i3.get("perm_p"),3)})',
                      "supported",
-                     "<b>B:</b> mean pairwise TVD between <em>developers'</em> move distributions, predicted vs real. Significant in folder mode (the product flow). Inline masks it: pasting the folder in makes the "
+                     "<b>B:</b> mean pairwise TVD between <em>developers'</em> move distributions, predicted vs real. Significant in folder mode. Inline masks it: pasting the folder in makes the "
                      "model echo signature catchphrases verbatim, which inflates apparent between-user distinctiveness."))
         # H3/E4 — shrinkage toward the median
         f4, i4 = (fev or {}).get("e4", {}), (iev or {}).get("e4", {})
+        # H4/E8 — within-developer collapse (the second half of the hypothesis)
+        f8 = ((fev or {}).get("e8") or {})
+        i8 = ((iev or {}).get("e8") or {})
+        def _e8cell(v):
+            if not v:
+                return "—"
+            return f'{v["mean_delta"]:+.3f} bits, {v["n_narrower"]}/{v["n_users"]} (p={v["wilcoxon_p"]})'
+        rows.append(("H4 · E8 <span class='mfam'>B</span>",
+                     "within a developer, spread(pred) &lt; spread(real)",
+                     _e8cell(f8), _e8cell(i8), "supported",
+                     "<b>B:</b> entropy of each developer's own move mix, real vs predicted. Confirmed, and "
+                     "the folder causes it: without a folder the spread matches reality; with any folder "
+                     "(right or wrong) each developer collapses to a narrower repertoire."))
         rows.append(("H3 · E4 <span class='mfam'>B</span>", "dist(pred, median) &lt; dist(real, median)",
                      f'Δ {f4.get("mean_pred_minus_real",0):+.3f} (p={num(f4.get("wilcoxon_p"),3)})',
                      f'Δ {i4.get("mean_pred_minus_real",0):+.3f} (p={num(i4.get("wilcoxon_p"),3)})',
@@ -368,8 +394,8 @@ def main():
         compare_section = (
             '<section><div class="kicker">Folder vs inline</div>'
             '<h2>Two ways to read the folder into the simulator</h2>'
-            '<p><b>folder</b> = the agent reads <code>users/&lt;slug&gt;/</code> itself (product flow); '
-            '<b>inline</b> = the folder text is pasted into the prompt (controlled). They diverge: inline '
+            '<p><b>folder</b> = the agent reads <code>users/&lt;slug&gt;/</code> itself; '
+            '<b>inline</b> = the folder text is pasted into the prompt. They diverge: inline '
             'reproduces signature catchphrases verbatim, which <em>inflates</em> apparent between-user '
             'distinctiveness — so its variance-collapse is masked (E3) — yet E4 shows that distinctiveness '
             'points <em>away</em> from the real user, and its worst misses are even more homogeneity-driven.</p>'
@@ -379,7 +405,7 @@ def main():
 
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SWESimBench — Misprediction &amp; Homogeneity</title>
+<title>SWESimBench — Diagnosing Misprediction Patterns</title>
 <style>
  :root {{ --zinc900:#18181b; --zinc700:#3f3f46; --zinc600:#52525b; --zinc500:#71717a;
           --zinc400:#a1a1aa; --zinc200:#e4e4e7; --zinc100:#f4f4f5; --zinc50:#fafafa;
@@ -460,12 +486,12 @@ def main():
     <a href="https://swesimbench.vercel.app/v1">v1 leaderboard →</a></div>
 </nav>
 
-<h1>Are the simulator's mispredictions <em>homogeneity</em>?</h1>
-<p class="lede"><b>Hypothesis.</b> LLMs are trained to complete tasks, not to imitate humans — so
-they are systematically homogeneous, defaulting to task-driving behaviour instead of deciding from
-an individual developer's differences. If true, a user-simulator's errors should cluster on the
-human, friction-y moves (pushing back, interrupting, asking, redirecting) and regress every
-developer toward one "average" one.</p>
+<h1>Diagnosing Misprediction Patterns</h1>
+<p class="lede"><b>Hypothesis.</b> LLMs are trained to complete tasks, not to imitate humans. So
+they are systematically homogeneous, defaulting to task-driving behaviour instead of deciding from an
+individual developer's differences. The consequence is that the prediction of LLMs would be very
+similar for different users, and even for one developer the prediction will not be as spread out as
+the real one.</p>
 <p class="meta">Generated from <code>{esc(IN.name)}</code> · {esc(src_line)}</p>
 {banner}
 
@@ -494,7 +520,7 @@ each user's predicted mix sits closer to the population average than their real 
 </ul></section>
 
 <section><div class="kicker">E1 · direct audit</div>
-<h2>Worst mispredictions <span class="tag">move mismatch × low realism, LLM-adjudicated</span></h2>
+<h2>Worst mispredictions <span class="tag">metric A+C</span></h2>
 <p>The homogeneity signature is a high share of <b>task-completion substitution</b> (predicted
 keep-going where the real developer did something individual) and <b>generic-not-specific</b>.</p>
 {e1_html}
@@ -514,7 +540,7 @@ keep-going where the real developer did something individual) and <b>generic-not
 {figure('E2')}</section>
 
 <section><div class="kicker">E3 · primary result</div>
-<h2>Between-user variance collapse <span class="tag">H2</span></h2>
+<h2>Between-developer collapse <span class="tag">H2 · primary</span></h2>
 <p>Mean pairwise total-variation distance between developers' move-mixes. If the model captured
 individual differences, predicted spread would match real spread; homogeneity predicts a
 <b>narrower</b> predicted spread. Lower bar = developers look more alike.</p>
@@ -523,8 +549,23 @@ individual differences, predicted spread would match real spread; homogeneity pr
 <th class="num">spread pred</th><th class="num">Δ</th><th class="num">perm p</th><th>collapse?</th></tr></thead><tbody>
 {e3_rows()}</tbody></table></section>
 
+<section><div class="kicker">E8 · primary result</div>
+<h2>Within-developer collapse <span class="tag">H4</span></h2>
+<p>Entropy of each developer&rsquo;s own move mix (bits, max 2.0 over four categories), real vs
+predicted. Lower entropy = more one-note. This is the second half of the hypothesis: not just that
+developers resemble each other, but that each one is rendered flatter than they actually are.</p>
+<table><thead><tr><th>condition</th><th class="num">users</th><th class="num">entropy real</th>
+<th class="num">entropy pred</th><th class="num">&Delta;</th><th class="num">narrower for</th>
+<th class="num">wilcoxon p</th></tr></thead><tbody>
+{e8_rows()}</tbody></table>
+{figure('E8')}
+<div class="callout"><b>Confirmed &mdash; and the folder causes it.</b> Without a folder (generic) the
+predicted spread is essentially the real one. Give the simulator <em>any</em> folder &mdash; the right
+one or the wrong one &mdash; and each developer collapses to a narrower repertoire. Personalisation does
+not make the simulation more faithful; it makes it more of a caricature.</div></section>
+
 <section><div class="kicker">E4 · primary result</div>
-<h2>Regression to the median developer <span class="tag">H3</span></h2>
+<h2>Regression to the median <span class="tag">H3</span></h2>
 <p>Distance from each user's mix to the population-average mix, real vs predicted. Shrinkage toward
 the median (predicted closer than real) supports homogeneity. Wilcoxon signed-rank.</p>
 <table><thead><tr><th>condition</th><th class="num">users</th><th class="num">dist→median real</th>

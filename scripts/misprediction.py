@@ -282,6 +282,39 @@ def e4_median_regression(records):
     return {"hypothesis": "pred closer to population median than real (shrinkage)", "by_condition": out}
 
 
+def entropy(p):
+    """Shannon entropy (bits) of a move mix — how spread out one developer's own behaviour is.
+    0 = always the same move, 2.0 = perfectly even across the four categories."""
+    return -sum(x * math.log2(x) for x in p if x > 0)
+
+
+def e8_within_developer_spread(records):
+    """H4 / E8 — WITHIN-developer spread: is a single developer's predicted behaviour less varied
+    than their real behaviour? Distinct from E3, which compares developers to each other. The
+    hypothesis predicts the simulator renders each person as a narrower, more one-note version of
+    themselves (caricature), so entropy(pred) < entropy(real)."""
+    out = {"unit": "bits (max 2.0 over four move categories)", "by_condition": {}}
+    for cond in CONDS:
+        um = per_user_mixes(records, cond)
+        if len(um) < 6:
+            continue
+        er = {s: entropy(rm) for s, (rm, _) in um.items()}
+        ep = {s: entropy(pm) for s, (_, pm) in um.items()}
+        diffs = [ep[s] - er[s] for s in um]
+        n_narrow = sum(1 for d in diffs if d < 0)
+        p = wilcoxon(diffs)
+        out["by_condition"][cond] = {
+            "n_users": len(um),
+            "entropy_real": round(sum(er.values()) / len(er), 3),
+            "entropy_pred": round(sum(ep.values()) / len(ep), 3),
+            "mean_delta": round(sum(diffs) / len(diffs), 3),
+            "n_narrower": n_narrow,
+            "wilcoxon_p": round(p, 4) if p is not None else None,
+            "narrower": sum(diffs) / len(diffs) < 0,
+        }
+    return out
+
+
 def per_user_detail(records):
     """Per-developer values behind E3/E4, so figures can show the actual spread rather than
     a single summary bar: each user's real/predicted mix and their distance to the population
@@ -484,6 +517,7 @@ def main():
         "E3_variance_collapse": e3_variance_collapse(records),
         "E4_median_regression": e4_median_regression(records),
         "E5_decision_vs_surface": e5_decision_vs_surface(records, meta),
+        "E8_within_developer_spread": e8_within_developer_spread(records),
         "per_user_detail": per_user_detail(records),
     }
     worst = e1_worst_k(records, args.topk)
