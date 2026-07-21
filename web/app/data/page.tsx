@@ -18,7 +18,8 @@ export default function DataPage() {
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3">
           <h1 className="text-sm font-semibold tracking-tight"><a href="/" className="hover:text-zinc-600">UserBench</a> · <span className="text-zinc-400">Data</span></h1>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
-            <a href="/" className="hover:text-zinc-900">results</a>
+            <a href="/" className="hover:text-zinc-900">Dataset</a>
+            <a href="/annotator/dashboard" className="hover:text-zinc-900">annotator</a>
             <a href="https://github.com/AlienKevin/user-simulator" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
           </div>
         </div>
@@ -130,7 +131,7 @@ curl -s ${files.find((f) => f.name === "raw.jsonl")?.url} \\   # every generatio
         </section>
 
         <footer className="mt-8 border-t border-zinc-200 pt-6 text-xs text-zinc-400">
-          UserBench · <a href="/" className="hover:text-zinc-700">results</a> · data on Vercel Blob (public).
+          UserBench · <a href="/" className="hover:text-zinc-700">Dataset</a> · data on Vercel Blob (public).
         </footer>
       </main>
     </div>

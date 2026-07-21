@@ -8,7 +8,7 @@ const DATASET_TRAIN_REF = "userbench/UserBench-train400@v2";
 const HUB_TASKS = 620;
 const HUB_DEVS = 62;
 
-/** Multilabel Hub jobs (offline Composer regrade; mean Jaccard primary). */
+/** Multilabel judge jobs; mean Jaccard is the benchmark metric. */
 const ML = {
   baseline: {
     jaccard: 0.445,
@@ -37,22 +37,12 @@ const ML = {
   },
 };
 
-/** Legacy single-label Harbor mean reward (exact move match) — secondary. */
-const SL = {
-  baseline: {
-    match: 288,
-    n: 620,
-    rate: 288 / 620, // 46.5%
-    cost: "~$84",
-    hub: "https://hub.harborframework.com/jobs/c8958ef2-67c9-4116-9e86-b347f0f8f62d",
-  },
-  train400: {
-    match: 309,
-    n: 620,
-    rate: 309 / 620, // 49.8% after retry429 backfill
-    cost: "~$281",
-    hub: "https://hub.harborframework.com/jobs/d8501a41-08f7-4945-8a23-f6a9f13e4308",
-  },
+/** Agent-trial Hub jobs (gpt-5.6-sol trajectories). */
+const AGENT = {
+  baseline3x:
+    "https://hub.harborframework.com/jobs/87adaae5-6152-4329-b0b1-85bd2a75ec2a",
+  train4003x:
+    "https://hub.harborframework.com/jobs/48321212-f765-48cd-962c-d5b4518a053f",
 };
 
 function pct(x: number, digits = 1) {
@@ -69,26 +59,6 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
     >
       {children}
     </a>
-  );
-}
-
-function StatCard({
-  label,
-  value,
-  sub,
-}: {
-  label: string;
-  value: string;
-  sub?: string;
-}) {
-  return (
-    <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
-      <div className="text-3xl font-semibold tracking-tight text-zinc-900">
-        {value}
-      </div>
-      <div className="mt-1 text-sm font-medium text-zinc-600">{label}</div>
-      {sub && <div className="mt-0.5 text-xs text-zinc-400">{sub}</div>}
-    </div>
   );
 }
 
@@ -118,230 +88,215 @@ function Section({
   );
 }
 
-function JaccardBar({ rate, max = 0.65 }: { rate: number; max?: number }) {
+function ScoreRow({
+  label,
+  note,
+  rate,
+  featured = false,
+}: {
+  label: string;
+  note: string;
+  rate: number;
+  featured?: boolean;
+}) {
+  const chance = 0.437;
   return (
-    <div className="relative h-7 flex-1 overflow-hidden rounded bg-zinc-100">
+    <div
+      className={`rounded-2xl border p-4 sm:p-5 ${
+        featured
+          ? "border-indigo-200 bg-indigo-50/60"
+          : "border-zinc-200 bg-white"
+      }`}
+    >
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <h3 className="font-semibold text-zinc-900">{label}</h3>
+          <p className="mt-0.5 text-sm text-zinc-500">{note}</p>
+        </div>
+        <p className="shrink-0 text-3xl font-semibold tracking-tight tabular-nums text-zinc-950">
+          {pct(rate)}
+        </p>
+      </div>
       <div
-        className="h-full rounded bg-indigo-500"
-        style={{ width: `${Math.min(100, (rate / max) * 100)}%` }}
-      />
-      <div className="absolute inset-y-0 left-2 flex items-center font-mono text-xs font-semibold text-zinc-800">
-        {pct(rate)}
+        className="relative mt-4 h-2.5 rounded-full bg-zinc-200"
+        role="img"
+        aria-label={`${label}: ${pct(rate)} mean Jaccard; chance is about 43.7%`}
+      >
+        <div
+          className={`h-full rounded-full ${
+            featured ? "bg-indigo-600" : "bg-zinc-600"
+          }`}
+          style={{ width: `${rate * 100}%` }}
+        />
+        <span
+          className="absolute -top-1 h-[18px] w-px bg-amber-600"
+          style={{ left: `${chance * 100}%` }}
+          aria-hidden="true"
+        />
       </div>
     </div>
   );
 }
 
-/** Primary Sol-high multilabel leaderboard — sits above dataset intro. */
+/** Primary result: one model, two conditions, current multilabel scoring. */
 export function LeaderboardSection() {
-  const deltaPp = (ML.train400.jaccard - ML.baseline.jaccard) * 100;
   return (
     <>
-      <header className="mt-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
-          UserBench — {HUB_DEVS} developers, {HUB_TASKS} tasks
-        </h1>
-        <p className="mt-3 max-w-2xl text-zinc-600">
-          Agentic next-move prediction for{" "}
-          <strong>gpt-5.6-sol</strong> (reasoning{" "}
-          <strong>high</strong>). Primary score:{" "}
-          <strong>mean Jaccard</strong> over free multi-label acts (
-          <span className="font-mono text-sm">
-            approve / critical / steer / inquiry
-          </span>
-          ).
+      <header className="mt-16 max-w-3xl sm:mt-20">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
+          UserBench
         </p>
-        <p className="mt-2 text-sm text-zinc-500">
-          <a href="#leaderboard" className="hover:text-zinc-800">
-            Leaderboard
-          </a>
-          {" · "}
-          <a href="#dataset" className="hover:text-zinc-800">
-            Dataset
-          </a>
-          {" · "}
-          <a href="#analysis" className="hover:text-zinc-800">
-            Analysis
-          </a>
+        <h1 className="mt-4 text-4xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-6xl sm:leading-[1.02]">
+          How well can agents simulate users?
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
+          UserBench tests whether an agent can predict what a real developer
+          will do next in a coding session. The main score is multilabel mean
+          Jaccard (IoU).
         </p>
       </header>
 
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatCard
-          label="eval points"
-          value={String(HUB_TASKS)}
-          sub={`${HUB_DEVS} developers · Hub scale`}
-        />
-        <StatCard
-          label="baseline Jaccard"
-          value={pct(ML.baseline.jaccard)}
-          sub="sol high · multilabel"
-        />
-        <StatCard
-          label="train400 Jaccard"
-          value={pct(ML.train400.jaccard)}
-          sub="sol high · multilabel"
-        />
-        <StatCard
-          label="Δ train400"
-          value={`${deltaPp >= 0 ? "+" : ""}${deltaPp.toFixed(1)} pp`}
-          sub="train400 above baseline"
-        />
-      </div>
-
-      <Section
+      <section
         id="leaderboard"
-        kicker="leaderboard"
-        title="Sol-high mean Jaccard (multilabel)"
+        aria-labelledby="leaderboard-title"
+        className="mt-14 scroll-mt-20"
       >
-        <p className="mb-4 text-sm text-zinc-500">
-          Offline Composer 2.5 regrade aligned with the annotator. Chance = mean
-          Jaccard of always predicting the modal gold set (
-          <span className="font-mono text-xs">[steer]</span>). Agent
-          trajectories live on the Hub jobs below.
-        </p>
+        <div className="flex flex-col gap-5 border-b border-zinc-200 pb-7 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+              Primary result
+            </p>
+            <h2
+              id="leaderboard-title"
+              className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl"
+            >
+              Training history helps, modestly
+            </h2>
+          </div>
+          <div className="sm:text-right">
+            <p className="text-4xl font-semibold tracking-tight tabular-nums text-indigo-700">
+              +3.48 pp
+            </p>
+            <p className="mt-1 text-sm text-zinc-500">train400 vs baseline</p>
+          </div>
+        </div>
 
-        <div className="space-y-4 rounded-xl border border-zinc-200 bg-white p-5">
-          {(
-            [
-              ["baseline", "UserBench (no train)", ML.baseline],
-              ["train400", "UserBench-train400", ML.train400],
-            ] as const
-          ).map(([id, condition, r]) => (
-            <div key={id}>
-              <div className="mb-1.5 flex flex-wrap items-baseline gap-2">
-                <span className="font-mono text-sm font-semibold text-zinc-900">
-                  gpt-5.6-sol [high]
-                </span>
-                <span className="text-xs text-zinc-500">{condition}</span>
-                <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 ring-1 ring-inset ring-emerald-200">
-                  complete
-                </span>
-                <span className="ml-auto font-mono text-sm tabular-nums text-zinc-700">
-                  {pct(r.jaccard)} Jaccard · exact {pct(r.exact)}
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <JaccardBar rate={r.jaccard} />
-                <div className="w-28 shrink-0 text-right text-xs tabular-nums text-zinc-500">
-                  vs chance {r.vsChancePp >= 0 ? "+" : ""}
-                  {r.vsChancePp.toFixed(1)} pp
-                </div>
-              </div>
-              <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-zinc-500">
-                <ExtLink href={r.hub}>Harbor Hub job → trials</ExtLink>
-                <span>
-                  chance {pct(r.chance)} · macro-F1 {pct(r.macroF1)} · n=
-                  {r.n}
-                </span>
-              </div>
-            </div>
-          ))}
-          <p className="border-t border-zinc-100 pt-3 text-xs text-zinc-500">
-            Scale 0–65%. Hub multilabel jobs:{" "}
-            <ExtLink href={ML.baseline.hub}>baseline</ExtLink>
-            {" · "}
-            <ExtLink href={ML.train400.hub}>train400</ExtLink>
-            {" · "}
-            <ExtLink href={ML.archive3x.hub}>archive 3×</ExtLink>
-            . Datasets:{" "}
-            <ExtLink href={`${DATASET}?tag=v2`}>{DATASET_REF}</ExtLink>
-            {" · "}
-            <ExtLink href={`${DATASET_TRAIN}?tag=v2`}>
-              {DATASET_TRAIN_REF}
-            </ExtLink>
-            .
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <ScoreRow
+            label="Baseline"
+            note="No developer training history"
+            rate={ML.baseline.jaccard}
+          />
+          <ScoreRow
+            label="Train400"
+            note="400 prior turns from the same developer"
+            rate={ML.train400.jaccard}
+            featured
+          />
+        </div>
+        <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            <span className="mr-2 inline-block h-3 w-px bg-amber-600 align-[-1px]" />
+            Chance is about <strong className="text-zinc-800">43.7%</strong>.
+          </p>
+          <p className="tabular-nums">
+            95% CI for lift: <strong className="text-zinc-800">+0.26 to +6.64 pp</strong>
           </p>
         </div>
-      </Section>
+
+        <details className="group mt-6 rounded-2xl border border-zinc-200 bg-white">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-zinc-800 marker:content-none">
+            Run details
+            <span
+              aria-hidden="true"
+              className="text-lg font-normal text-zinc-400 transition-transform group-open:rotate-45"
+            >
+              +
+            </span>
+          </summary>
+          <div className="border-t border-zinc-100 px-5 py-5 text-sm text-zinc-600">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <h3 className="font-semibold text-zinc-900">Current scoring</h3>
+                <dl className="mt-3 grid grid-cols-[1fr_auto] gap-x-5 gap-y-2 tabular-nums">
+                  <dt>Baseline exact-set match</dt>
+                  <dd>{pct(ML.baseline.exact)}</dd>
+                  <dt>Train400 exact-set match</dt>
+                  <dd>{pct(ML.train400.exact)}</dd>
+                  <dt>Arm-specific chance</dt>
+                  <dd>{pct(ML.baseline.chance)} / {pct(ML.train400.chance)}</dd>
+                  <dt>Macro-F1</dt>
+                  <dd>{pct(ML.baseline.macroF1)} / {pct(ML.train400.macroF1)}</dd>
+                  <dt>Paired lift test</dt>
+                  <dd>p≈0.033</dd>
+                </dl>
+              </div>
+              <div>
+                <h3 className="font-semibold text-zinc-900">Runs and artifacts</h3>
+                <ul className="mt-3 space-y-2">
+                  <li>
+                    Baseline: <ExtLink href={AGENT.baseline3x}>agent traces</ExtLink>
+                    {" · "}
+                    <ExtLink href={ML.baseline.hub}>judge traces</ExtLink>
+                  </li>
+                  <li>
+                    Train400: <ExtLink href={AGENT.train4003x}>agent traces</ExtLink>
+                    {" · "}
+                    <ExtLink href={ML.train400.hub}>judge traces</ExtLink>
+                  </li>
+                  <li>
+                    <ExtLink href={ML.archive3x.hub}>
+                      Judge traces: three independent runs
+                    </ExtLink>{" "}
+                    ({ML.archive3x.n.toLocaleString()} scored turns)
+                  </li>
+                </ul>
+                <p className="mt-3 text-xs leading-5 text-zinc-500">
+                  620 held-out turns per condition. Judge: Composer 2.5 using
+                  approve, critical, steer, and inquiry act sets.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </details>
+      </section>
     </>
   );
 }
 
-/** Post-dataset analysis: chance, pairwise, 3-trial variance, legacy SL. */
+/** Plain-language interpretation shown directly after the main result. */
 export function AnalysisSection() {
   return (
     <Section
       id="analysis"
-      kicker="result analysis"
-      title="What the numbers say"
+      kicker="What the result means"
+      title="The model learns a little from a developer’s history"
     >
-      <div className="space-y-6">
-        <div>
-          <h3 className="text-sm font-semibold text-zinc-800">
-            Multilabel vs chance
-          </h3>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-            Best constant predictor is always{" "}
-            <span className="font-mono text-xs">[steer]</span> (modal gold
-            set). Baseline clears chance by only{" "}
-            <strong className="text-zinc-800">+0.6 pp</strong> Jaccard;
-            train400 clears it by{" "}
-            <strong className="text-zinc-800">+4.6 pp</strong>. Exact-set match
-            stays harder ({pct(ML.baseline.exact)} → {pct(ML.train400.exact)}).
+      <div className="grid gap-4 sm:grid-cols-3">
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <p className="text-2xl font-semibold tabular-nums text-zinc-950">+0.6 pp</p>
+          <h3 className="mt-2 font-semibold text-zinc-800">Baseline vs chance</h3>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            With no personal history, the model lands near a fixed steer guess.
           </p>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-semibold text-zinc-800">
-            Train400 vs baseline
-          </h3>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-            On the full {HUB_TASKS}-task multilabel regrade, train400 leads by{" "}
-            <strong className="text-zinc-800">+3.5 pp</strong> mean Jaccard (
-            {pct(ML.train400.jaccard)} vs {pct(ML.baseline.jaccard)}). The older
-            single-label exact-match metric agrees on direction:{" "}
-            {pct(SL.train400.rate)} vs {pct(SL.baseline.rate)} (+
-            {((SL.train400.rate - SL.baseline.rate) * 100).toFixed(1)} pp) after
-            retry backfill.
+        </article>
+        <article className="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-5">
+          <p className="text-2xl font-semibold tabular-nums text-indigo-700">+3.48 pp</p>
+          <h3 className="mt-2 font-semibold text-zinc-800">Training lift</h3>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Four hundred prior turns improve prediction, though the gain is
+            small.
           </p>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-semibold text-zinc-800">
-            3-trial variance
-          </h3>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-            Accidental Harbor replicas (3 per task) check stability. Single-label
-            train400 lanes sit at{" "}
-            <span className="font-mono text-xs">50.6% / 49.0% / 50.3%</span>{" "}
-            (mean of means ≈ 50.0%). Archive 3× multilabel regrade averages{" "}
-            <strong className="text-zinc-800">
-              {pct(ML.archive3x.jaccard)} Jaccard
-            </strong>{" "}
-            (n={ML.archive3x.n}). Aggregate rates barely move across replicas.
+        </article>
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <p className="text-2xl font-semibold tabular-nums text-zinc-950">+4.62 pp</p>
+          <h3 className="mt-2 font-semibold text-zinc-800">Train400 vs chance</h3>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            The stricter fixed-chance test gives p≈0.030 one-sided and p≈0.060
+            two-sided.
           </p>
-          <p className="mt-2 text-xs text-zinc-500">
-            Archive 3× multilabel Hub job:{" "}
-            <ExtLink href={ML.archive3x.hub}>e4a8dcba…</ExtLink>
-          </p>
-        </div>
-
-        <details className="rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-600">
-          <summary className="cursor-pointer font-medium text-zinc-800">
-            Single-label Hub jobs (secondary)
-          </summary>
-          <p className="mt-3 text-xs text-zinc-500">
-            Exact move match — not the primary score. Multilabel Jaccard above
-            is the headline.
-          </p>
-          <ul className="mt-3 space-y-2 font-mono text-xs">
-            <li>
-              baseline {SL.baseline.match}/{SL.baseline.n} ={" "}
-              {pct(SL.baseline.rate)} · {SL.baseline.cost} ·{" "}
-              <ExtLink href={SL.baseline.hub}>job ↗</ExtLink>
-            </li>
-            <li>
-              train400 {SL.train400.match}/{SL.train400.n} ={" "}
-              {pct(SL.train400.rate)} · {SL.train400.cost} ·{" "}
-              <ExtLink href={SL.train400.hub}>job ↗</ExtLink>
-            </li>
-          </ul>
-          <p className="mt-3 text-xs leading-relaxed text-zinc-500">
-            Stack: mini-swe-agent via OpenRouter; judge Composer 2.5; Modal
-            sandboxes; agent-phase OpenRouter allowlist.
-          </p>
-        </details>
+        </article>
       </div>
     </Section>
   );
@@ -349,34 +304,164 @@ export function AnalysisSection() {
 
 export function DatasetHubLinks() {
   return (
-    <div className="mt-4 grid gap-3 sm:grid-cols-2">
-      <div className="rounded-xl border border-zinc-200 bg-white p-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
-          Harbor datasets
-        </div>
-        <p className="mt-2 text-sm text-zinc-700">
-          <span className="font-mono text-xs">{DATASET_REF}</span> and{" "}
-          <span className="font-mono text-xs">{DATASET_TRAIN_REF}</span> —{" "}
-          <strong>{HUB_TASKS}</strong> held tasks / <strong>{HUB_DEVS}</strong>{" "}
-          developers. Train twin adds earlier sessions under{" "}
-          <span className="font-mono text-xs">/sim/train/</span>.
+    <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 sm:flex sm:items-center sm:justify-between sm:gap-8">
+      <div>
+        <h3 className="font-semibold text-zinc-900">Two public dataset views</h3>
+        <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-600">
+          Both use the same 620 held-out turns. Train400 adds 400 earlier turns
+          from each developer as context.
         </p>
-        <div className="mt-3 flex flex-wrap gap-3 text-sm">
-          <ExtLink href={DATASET}>UserBench ↗</ExtLink>
-          <ExtLink href={DATASET_TRAIN}>train400 ↗</ExtLink>
-        </div>
       </div>
-      <div className="rounded-xl border border-zinc-200 bg-white p-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
-          Scoring
-        </div>
-        <p className="mt-2 text-sm text-zinc-700">
-          Primary reward is{" "}
-          <strong>mean Jaccard</strong> of act-sets. Exact-set match and
-          macro-F1 are secondary. Taxonomy matches the annotator (
-          <span className="font-mono text-xs">directive→steer</span>).
-        </p>
+      <div className="mt-4 flex shrink-0 flex-wrap gap-4 text-sm sm:mt-0">
+        <ExtLink href={DATASET}>{DATASET_REF} ↗</ExtLink>
+        <ExtLink href={DATASET_TRAIN}>{DATASET_TRAIN_REF} ↗</ExtLink>
       </div>
     </div>
+  );
+}
+
+const LABEL_STYLES = {
+  approve: "border-emerald-200 bg-emerald-50 text-emerald-800",
+  critical: "border-rose-200 bg-rose-50 text-rose-800",
+  steer: "border-sky-200 bg-sky-50 text-sky-800",
+  inquiry: "border-violet-200 bg-violet-50 text-violet-800",
+};
+
+function LabelChip({ label }: { label: keyof typeof LABEL_STYLES }) {
+  return (
+    <span
+      className={`rounded-full border px-2.5 py-1 font-mono text-xs font-medium ${LABEL_STYLES[label]}`}
+    >
+      {label}
+    </span>
+  );
+}
+
+export function LabelExamplesSection() {
+  return (
+    <section
+      id="labels"
+      aria-labelledby="labels-title"
+      className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12"
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+        The labels
+      </p>
+      <h2
+        id="labels-title"
+        className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
+      >
+        One turn can do more than one thing
+      </h2>
+      <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">
+        <strong className="text-zinc-800">approve</strong> accepts,{" "}
+        <strong className="text-zinc-800">critical</strong> flags a problem,{" "}
+        <strong className="text-zinc-800">steer</strong> directs the next step,
+        and <strong className="text-zinc-800">inquiry</strong> asks for
+        information.
+      </p>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <blockquote className="text-sm leading-6 text-zinc-700">
+            “1, should be fixed from the pyproject.toml and not uv.lock. 4, yes.
+            5, yes.”
+          </blockquote>
+          <figcaption className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="mr-1 text-xs font-medium text-zinc-500">
+              Kevin:
+            </span>
+            <LabelChip label="approve" />
+            <LabelChip label="steer" />
+          </figcaption>
+        </figure>
+        <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <blockquote className="text-sm leading-6 text-zinc-700">
+            “I do not see the changes, did you build the extension?”
+          </blockquote>
+          <figcaption className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="mr-1 text-xs font-medium text-zinc-500">
+              Kevin:
+            </span>
+            <LabelChip label="critical" />
+            <LabelChip label="inquiry" />
+          </figcaption>
+        </figure>
+      </div>
+      <div className="mt-4 flex flex-col gap-2 text-sm leading-6 text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+        <p>
+          A turn can approve one choice and steer another, so one label would
+          drop part of the intent.
+        </p>
+        <a
+          href="/annotator/dashboard"
+          className="shrink-0 font-medium text-indigo-600 underline-offset-4 hover:underline"
+        >
+          Open the public annotator dashboard →
+        </a>
+      </div>
+      <p className="mt-3 text-xs text-zinc-500">
+        On 50 turns, Composer and Kevin agree at about 81% Jaccard and 64%
+        exact-set match. These are agreement rates, not accuracy.
+      </p>
+    </section>
+  );
+}
+
+export function MethodsSection() {
+  return (
+    <section
+      id="methods"
+      aria-labelledby="methods-title"
+      className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12"
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+        Scoring and reproduction
+      </p>
+      <h2
+        id="methods-title"
+        className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
+      >
+        A score that gives partial credit
+      </h2>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h3 className="font-semibold text-zinc-900">How scoring works</h3>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Each turn can contain more than one act: approve, critical, steer,
+            or inquiry. Jaccard divides the overlap between predicted and true
+            act sets by their union, then averages across all 620 turns.
+          </p>
+          <p className="mt-3 text-sm leading-6 text-zinc-600">
+            The chance reference always predicts the most common gold set,{" "}
+            <span className="font-mono text-xs text-zinc-700">[steer]</span>.
+            Its headline mean is about 43.7%.
+          </p>
+        </article>
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h3 className="font-semibold text-zinc-900">Reproduce the result</h3>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            Public Harbor pages hold the datasets, agent trajectories, and
+            judge traces for both conditions.
+          </p>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <ExtLink href={DATASET}>Baseline dataset ↗</ExtLink>
+              {" · "}
+              <ExtLink href={DATASET_TRAIN}>train400 dataset ↗</ExtLink>
+            </li>
+            <li>
+              <ExtLink href={AGENT.baseline3x}>Baseline agent traces ↗</ExtLink>
+              {" · "}
+              <ExtLink href={AGENT.train4003x}>train400 agent traces ↗</ExtLink>
+            </li>
+            <li>
+              <ExtLink href={ML.baseline.hub}>Baseline judge traces ↗</ExtLink>
+              {" · "}
+              <ExtLink href={ML.train400.hub}>train400 judge traces ↗</ExtLink>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
   );
 }
