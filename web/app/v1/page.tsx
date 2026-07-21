@@ -704,7 +704,8 @@ export default function Page() {
           <h1 className="text-sm font-semibold tracking-tight">UserBench</h1>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
             <a href="/" className="hover:text-zinc-900">Dataset</a>
-            <a href="/results" className="hover:text-zinc-900">agentic results</a>
+            <a href="/#leaderboard" className="hover:text-zinc-900">leaderboard</a>
+            <a href="/annotator/dashboard" className="hover:text-zinc-900">annotator</a>
             <span className="rounded bg-zinc-900 px-2 py-0.5 text-[10px] font-medium text-white">old leaderboard</span>
             <a href="/data" className="hover:text-zinc-900">data</a>
             <a href="https://github.com/AlienKevin/user-simulator" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
