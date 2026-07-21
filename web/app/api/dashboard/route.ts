@@ -8,10 +8,8 @@ import { listUsers } from "@/lib/users";
 import items from "@/public/data/items.json";
 
 export async function GET() {
+  // Public read-only: agreement / IRR / per-item labels. Viewer is optional.
   const user = await getSessionUser();
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
 
   const raters = listUsers();
   const raterIds = raters.map((r) => r.id);

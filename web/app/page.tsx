@@ -1,6 +1,11 @@
-// UserBench — exploratory data analysis of the clean Opus-era cohort.
+// UserBench — leaderboard + dataset + analysis (results merged into this page).
 // Data: app/v2data.json (computed from Entire / GitHub crawl / DataClaw full-trace sources).
 import data from "./v2data.json";
+import {
+  AnalysisSection,
+  DatasetHubLinks,
+  LeaderboardSection,
+} from "./SolHighResults";
 
 const EVAL_DEVS = 62;
 const EVAL_TASKS = 620;
@@ -147,17 +152,21 @@ export default function V2Page() {
         <span className="font-semibold text-zinc-900">UserBench</span>
         <div className="flex flex-wrap gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">Dataset</span>
-          <a href="/results" className="hover:text-zinc-900">results →</a>
           <a href="/misprediction" className="hover:text-zinc-900">misprediction →</a>
-          <a href="/annotator" className="hover:text-zinc-900">annotator →</a>
+          <a href="/annotator/dashboard" className="hover:text-zinc-900">annotator →</a>
           <a href="/v1" className="hover:text-zinc-900">old leaderboard →</a>
         </div>
       </nav>
 
-      <header className="mt-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
-          UserBench — the {EVAL_DEVS}-developer eval
-        </h1>
+      <LeaderboardSection />
+
+      <section id="dataset" className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12">
+        <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
+          dataset
+        </div>
+        <h2 className="mt-1 text-xl font-semibold tracking-tight text-zinc-900">
+          The {EVAL_DEVS}-developer eval
+        </h2>
         <p className="mt-3 max-w-2xl text-zinc-600">
           {EVAL_DEVS} real software developers on Harbor Hub (
           <span className="font-mono text-sm">userbench/UserBench@v2</span>, {fmt(EVAL_TASKS)} tasks —
@@ -171,17 +180,18 @@ export default function V2Page() {
           tasks). Restricted to the{" "}
           <strong>Opus 4.6 era</strong> — only sessions on or after its 2026-02-05 release.
         </p>
-      </header>
 
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatCard label="eval developers" value={fmt(EVAL_DEVS)} sub="≥10 points each" />
-        <StatCard label="Hub tasks" value={fmt(EVAL_TASKS)} sub="10 per developer" />
-        <StatCard label="sessions" value={fmt(s.n_sessions)} sub="full traces (cohort)" />
-        <StatCard label="user turns" value={fmt(s.n_user_turns)} sub="cohort" />
-      </div>
-      <p className="mt-3 text-sm text-zinc-500">
-        Sessions span <strong>{s.time_min}</strong> → <strong>{s.time_max}</strong>.
-      </p>
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <StatCard label="eval developers" value={fmt(EVAL_DEVS)} sub="≥10 points each" />
+          <StatCard label="Hub tasks" value={fmt(EVAL_TASKS)} sub="10 per developer" />
+          <StatCard label="sessions" value={fmt(s.n_sessions)} sub="full traces (cohort)" />
+          <StatCard label="user turns" value={fmt(s.n_user_turns)} sub="cohort" />
+        </div>
+        <p className="mt-3 text-sm text-zinc-500">
+          Sessions span <strong>{s.time_min}</strong> → <strong>{s.time_max}</strong>.
+        </p>
+        <DatasetHubLinks />
+      </section>
 
       <Section kicker="where it comes from" title="Data provenance">
         {(() => {
@@ -508,12 +518,14 @@ export default function V2Page() {
         </p>
       </Section>
 
+      <AnalysisSection />
+
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
         UserBench · {EVAL_DEVS} eval developers · {fmt(EVAL_TASKS)} Hub tasks · Claude Code + Codex full
         traces · Opus 4.6 era (≥2026-02-05) · leakage-verified train/held-out split. See{" "}
-        <a href="/results" className="text-zinc-600 hover:text-zinc-900">agentic results</a>
+        <a href="#leaderboard" className="text-zinc-600 hover:text-zinc-900">leaderboard</a>
         ,{" "}
-        <a href="/annotator" className="text-zinc-600 hover:text-zinc-900">annotator</a>
+        <a href="/annotator/dashboard" className="text-zinc-600 hover:text-zinc-900">annotator</a>
         , and the{" "}
         <a href="/v1" className="text-zinc-600 hover:text-zinc-900">old leaderboard</a>.
       </footer>

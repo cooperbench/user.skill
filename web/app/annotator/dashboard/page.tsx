@@ -1,15 +1,41 @@
 "use client";
 
-import { Suspense } from "react";
-import { AuthShell } from "../components/AuthShell";
+import { Suspense, useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import type { PublicUser } from "@/lib/users";
 import { DashboardView } from "../components/Dashboard";
 
-function DashboardAuthed() {
-  return (
-    <AuthShell>
-      {(user, logout) => <DashboardView user={user} logout={logout} />}
-    </AuthShell>
-  );
+function DashboardPublic() {
+  const router = useRouter();
+  const [user, setUser] = useState<PublicUser | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/auth/me", { credentials: "same-origin" });
+        if (!res.ok) return;
+        const data = (await res.json()) as { user: PublicUser | null };
+        if (!cancelled) setUser(data.user ?? null);
+      } catch {
+        // Public page; ignore auth probe failures.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const logout = useCallback(async () => {
+    await fetch("/api/auth/logout", {
+      method: "POST",
+      credentials: "same-origin",
+    });
+    setUser(null);
+    router.refresh();
+  }, [router]);
+
+  return <DashboardView user={user} logout={logout} />;
 }
 
 export default function DashboardPage() {
@@ -21,7 +47,7 @@ export default function DashboardPage() {
         </div>
       }
     >
-      <DashboardAuthed />
+      <DashboardPublic />
     </Suspense>
   );
 }

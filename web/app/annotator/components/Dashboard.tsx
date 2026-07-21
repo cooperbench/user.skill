@@ -16,7 +16,7 @@ const LABEL_COLORS: Record<Move, string> = {
 type KappaMap = Record<Move, number | null>;
 
 type DashData = {
-  viewer: PublicUser;
+  viewer: PublicUser | null;
   raters: PublicUser[];
   progress: {
     userId: string;
@@ -140,6 +140,7 @@ function MetricRow({
   exact_pct,
   kappa_per_label,
   highlight,
+  extra,
 }: {
   title: string;
   n: number;
@@ -148,6 +149,7 @@ function MetricRow({
   exact_pct: number | null;
   kappa_per_label: KappaMap;
   highlight?: boolean;
+  extra?: string;
 }) {
   if (!n || n <= 0) return null;
   return (
@@ -167,6 +169,7 @@ function MetricRow({
         <span className="text-stone-500">
           exact {exact_pct === null ? "—" : `${exact_pct}%`}
         </span>
+        {extra ? <span className="text-stone-500">{extra}</span> : null}
       </div>
       <div className={["mt-0.5", highlight ? "font-normal" : ""].join(" ")}>
         <KappaRow kappa={kappa_per_label} />
@@ -205,6 +208,17 @@ function fmt(n: number | null | undefined, digits = 3): string {
   return n.toFixed(digits);
 }
 
+/** Jaccard 0–1 → whole-percent headline, e.g. 0.807 → "81%". */
+function pctJ(n: number | null | undefined): string {
+  if (n == null) return "—";
+  return `${Math.round(n * 100)}%`;
+}
+
+function pctExact(n: number | null | undefined): string {
+  if (n == null) return "—";
+  return `${Math.round(n)}%`;
+}
+
 function KappaRow({ kappa }: { kappa: KappaMap }) {
   return (
     <span className="text-stone-500">
@@ -217,11 +231,56 @@ function KappaRow({ kappa }: { kappa: KappaMap }) {
   );
 }
 
+function Details({
+  children,
+  label = "Details",
+}: {
+  children: React.ReactNode;
+  label?: string;
+}) {
+  return (
+    <details className="mt-3 rounded border border-rule bg-paper px-3 py-2 text-xs text-stone-600">
+      <summary className="cursor-pointer font-medium text-stone-700">
+        {label}
+      </summary>
+      <div className="mt-2 space-y-3">{children}</div>
+    </details>
+  );
+}
+
+function PunchLine({
+  label,
+  jaccard,
+  exact,
+  n,
+  note,
+}: {
+  label: string;
+  jaccard: number | null | undefined;
+  exact: number | null | undefined;
+  n?: number;
+  note?: string;
+}) {
+  return (
+    <p className="text-sm leading-relaxed text-ink">
+      <span className="font-medium">{label}</span>
+      {": "}
+      <span className="text-accent">~{pctJ(jaccard)} Jaccard</span>
+      {" / "}
+      <span className="font-medium">{pctExact(exact)} exact</span>
+      {n != null && n > 0 ? (
+        <span className="text-stone-500"> (n={n})</span>
+      ) : null}
+      {note ? <span className="text-stone-500"> · {note}</span> : null}
+    </p>
+  );
+}
+
 export function DashboardView({
   user,
   logout,
 }: {
-  user: PublicUser;
+  user: PublicUser | null;
   logout: () => Promise<void>;
 }) {
   const [data, setData] = useState<DashData | null>(null);
@@ -301,6 +360,11 @@ export function DashboardView({
     (row) => row.n > 0,
   );
 
+  const humanVsLlmHeadline =
+    agreement.humanVsLlm.pooled.n > 0
+      ? agreement.humanVsLlm.pooled
+      : perRaterWithData[0] ?? null;
+
   return (
     <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-5 px-4 py-6 md:px-6">
       <header className="flex flex-col gap-3 border-b border-rule pb-4 sm:flex-row sm:items-end sm:justify-between">
@@ -313,8 +377,16 @@ export function DashboardView({
           </h1>
           <p className="mt-1 max-w-2xl text-sm text-stone-600">
             Free multi-label acts. Primary metrics: mean Jaccard over act-sets
-            and per-label Cohen&apos;s κ. Signed in as{" "}
-            <span className="font-medium text-ink">{user.displayName}</span>.
+            and per-label Cohen&apos;s κ.
+            {user ? (
+              <>
+                {" "}
+                Signed in as{" "}
+                <span className="font-medium text-ink">{user.displayName}</span>.
+              </>
+            ) : (
+              <> Public view — log in to label.</>
+            )}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -322,15 +394,17 @@ export function DashboardView({
             href="/annotator"
             className="rounded-full border border-rule bg-panel px-3 py-1.5 text-xs font-medium hover:border-accent"
           >
-            ← Annotator
+            {user ? "← Annotator" : "Log in to label →"}
           </Link>
-          <button
-            type="button"
-            onClick={() => void logout()}
-            className="rounded-full border border-ink/15 bg-ink px-3 py-1.5 text-xs font-medium text-paper hover:bg-stone-800"
-          >
-            Log out
-          </button>
+          {user ? (
+            <button
+              type="button"
+              onClick={() => void logout()}
+              className="rounded-full border border-ink/15 bg-ink px-3 py-1.5 text-xs font-medium text-paper hover:bg-stone-800"
+            >
+              Log out
+            </button>
+          ) : null}
         </div>
       </header>
 
@@ -351,45 +425,57 @@ export function DashboardView({
       <section className="rounded-lg border border-rule bg-panel p-4">
         <h2 className="font-display text-lg text-ink">Agreement summary</h2>
         <p className="mt-1 text-xs text-stone-500">
-          Jaccard = |A∩B|/|A∪B| averaged over items both parties labeled
-          (skips excluded). Per-label κ is binary presence/absence for each of
-          the 4 acts; κ̄ is the macro-average. Exact-set % is secondary.
+          Mean Jaccard over co-labeled act-sets; exact-set match is secondary.
         </p>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="mt-3 space-y-1.5">
+          {humanVsLlmHeadline ? (
+            <PunchLine
+              label="Human ↔ LLM gold"
+              jaccard={humanVsLlmHeadline.jaccard}
+              exact={humanVsLlmHeadline.exact_pct}
+              n={humanVsLlmHeadline.n}
+            />
+          ) : (
+            <p className="text-sm text-stone-400">No human↔LLM overlap yet.</p>
+          )}
+          {pairwiseWithData[0] ? (
+            <PunchLine
+              label={`${nameOf(raters, pairwiseWithData[0].a)} ↔ ${nameOf(raters, pairwiseWithData[0].b)}`}
+              jaccard={pairwiseWithData[0].jaccard}
+              exact={pairwiseWithData[0].exact_pct}
+              n={pairwiseWithData[0].n}
+            />
+          ) : null}
+        </div>
+
+        <Details label="Details — κ, per-rater, definitions">
+          <p>
+            Jaccard = |A∩B|/|A∪B| averaged over items both parties labeled
+            (skips excluded). Per-label κ is binary presence/absence for each of
+            the 4 acts; κ̄ is the macro-average.
+          </p>
+
           <div>
             <h3 className="text-sm font-medium text-stone-700">
               Pairwise human agreement
             </h3>
-            <ul className="mt-2 space-y-2 text-sm">
+            <ul className="mt-2 space-y-2">
               {pairwiseWithData.length === 0 && (
                 <li className="rounded border border-rule/60 bg-paper/60 px-2 py-1.5 font-mono text-xs text-stone-400">
                   No overlapping human pairs yet.
                 </li>
               )}
               {pairwiseWithData.map((pair) => (
-                <li
+                <MetricRow
                   key={`${pair.a}-${pair.b}`}
-                  className="rounded border border-rule/60 bg-paper/60 px-2 py-1.5 font-mono text-xs"
-                >
-                  <div className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-medium text-ink">
-                      {nameOf(raters, pair.a)} ↔ {nameOf(raters, pair.b)}
-                    </span>
-                    <span className="text-stone-500">n={pair.n}</span>
-                    <span className="text-accent">
-                      J={fmt(pair.jaccard)}
-                    </span>
-                    <span>κ̄={fmt(pair.kappa_macro)}</span>
-                    <span className="text-stone-500">
-                      exact{" "}
-                      {pair.exact_pct === null ? "—" : `${pair.exact_pct}%`}
-                    </span>
-                  </div>
-                  <div className="mt-0.5">
-                    <KappaRow kappa={pair.kappa_per_label} />
-                  </div>
-                </li>
+                  title={`${nameOf(raters, pair.a)} ↔ ${nameOf(raters, pair.b)}`}
+                  n={pair.n}
+                  jaccard={pair.jaccard}
+                  kappa_macro={pair.kappa_macro}
+                  exact_pct={pair.exact_pct}
+                  kappa_per_label={pair.kappa_per_label}
+                />
               ))}
             </ul>
           </div>
@@ -398,59 +484,34 @@ export function DashboardView({
             <h3 className="text-sm font-medium text-stone-700">
               Human vs LLM gold
             </h3>
-            <ul className="mt-2 space-y-2 text-sm">
+            <ul className="mt-2 space-y-2">
               {perRaterWithData.map((row) => (
-                <li
+                <MetricRow
                   key={row.userId}
-                  className="rounded border border-rule/60 bg-paper/60 px-2 py-1.5 font-mono text-xs"
-                >
-                  <div className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-medium text-ink">
-                      {nameOf(raters, row.userId)} vs LLM
-                    </span>
-                    <span className="text-stone-500">n={row.n}</span>
-                    <span className="text-accent">J={fmt(row.jaccard)}</span>
-                    <span>κ̄={fmt(row.kappa_macro)}</span>
-                    <span className="text-stone-500">
-                      exact{" "}
-                      {row.exact_pct === null ? "—" : `${row.exact_pct}%`}
-                    </span>
-                  </div>
-                  <div className="mt-0.5">
-                    <KappaRow kappa={row.kappa_per_label} />
-                  </div>
-                </li>
+                  title={`${nameOf(raters, row.userId)} vs LLM`}
+                  n={row.n}
+                  jaccard={row.jaccard}
+                  kappa_macro={row.kappa_macro}
+                  exact_pct={row.exact_pct}
+                  kappa_per_label={row.kappa_per_label}
+                />
               ))}
               {agreement.humanVsLlm.pooled.n > 0 && (
-              <li className="rounded border border-accent/30 bg-teal-50/40 px-2 py-1.5 font-mono text-xs font-medium">
-                <div className="flex flex-wrap items-baseline gap-x-2">
-                  <span>Pooled humans vs LLM</span>
-                  <span className="text-stone-500">
-                    n={agreement.humanVsLlm.pooled.n}
-                  </span>
-                  <span className="text-accent">
-                    J={fmt(agreement.humanVsLlm.pooled.jaccard)}
-                  </span>
-                  <span>
-                    κ̄={fmt(agreement.humanVsLlm.pooled.kappa_macro)}
-                  </span>
-                  <span className="text-stone-500">
-                    exact{" "}
-                    {agreement.humanVsLlm.pooled.exact_pct === null
-                      ? "—"
-                      : `${agreement.humanVsLlm.pooled.exact_pct}%`}
-                  </span>
-                </div>
-                <div className="mt-0.5 font-normal">
-                  <KappaRow
-                    kappa={agreement.humanVsLlm.pooled.kappa_per_label}
-                  />
-                </div>
-              </li>
+                <MetricRow
+                  title="Pooled humans vs LLM"
+                  n={agreement.humanVsLlm.pooled.n}
+                  jaccard={agreement.humanVsLlm.pooled.jaccard}
+                  kappa_macro={agreement.humanVsLlm.pooled.kappa_macro}
+                  exact_pct={agreement.humanVsLlm.pooled.exact_pct}
+                  kappa_per_label={
+                    agreement.humanVsLlm.pooled.kappa_per_label
+                  }
+                  highlight
+                />
               )}
             </ul>
           </div>
-        </div>
+        </Details>
       </section>
 
       {irr && (
@@ -459,21 +520,33 @@ export function DashboardView({
             Judge IRR (independent trials)
           </h2>
           <p className="mt-1 text-xs text-stone-500">
-            LLM-judge reliability from re-running the judge on the same items.
-            Within-model = 3 independent trials of one judge (mean over the 3
-            pairwise comparisons). Cross = one trial per judge on the shared
-            items ({irr.cross.primary_trial}). trial_1 Composer = production
-            gold_acts (post-rejudge), so Composer↔Kevin here matches the
-            live Kevin-vs-gold section. Same J / κ̄ / per-label κ definitions as
-            above.
+            LLM-judge reliability from independent re-runs on the same items.
           </p>
 
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="mt-3 space-y-1.5">
+            <PunchLine
+              label="LLM judge stability (Composer 3×)"
+              jaccard={irr.within_composer.pairwise_avg.jaccard}
+              exact={irr.within_composer.pairwise_avg.exact_pct}
+              n={irr.within_composer.n_items}
+              note={`all3 ${irr.within_composer.n_way.all_identical_pct}%`}
+            />
+          </div>
+
+          <Details label="Details — Luna, cross-judge, κ">
+            <p>
+              Within-model = mean of the 3 pairwise comparisons across
+              independent trials. Cross = one trial per judge (
+              {irr.cross.primary_trial}). trial_1 Composer = production
+              gold_acts, so Composer↔Kevin matches live human↔LLM above. Same J
+              / κ̄ / per-label κ as Agreement.
+            </p>
+
             <div>
               <h3 className="text-sm font-medium text-stone-700">
-                Within-model 3× IRR (mean pairwise, per-label κ averaged)
+                Within-model 3× IRR
               </h3>
-              <ul className="mt-2 space-y-2 text-sm">
+              <ul className="mt-2 space-y-2">
                 <MetricRow
                   title="Composer 3×"
                   n={irr.within_composer.n_items}
@@ -484,6 +557,7 @@ export function DashboardView({
                     irr.within_composer.pairwise,
                   )}
                   highlight
+                  extra={`all3 ${irr.within_composer.n_way.all_identical_pct}%`}
                 />
                 <MetricRow
                   title="Luna 3×"
@@ -493,20 +567,16 @@ export function DashboardView({
                   exact_pct={irr.within_luna.pairwise_avg.exact_pct}
                   kappa_per_label={avgKappaPerLabel(irr.within_luna.pairwise)}
                   highlight
+                  extra={`all3 ${irr.within_luna.n_way.all_identical_pct}%`}
                 />
               </ul>
-              <p className="mt-1.5 font-mono text-[11px] text-stone-500">
-                all-3-identical: Composer{" "}
-                {irr.within_composer.n_way.all_identical_pct}% · Luna{" "}
-                {irr.within_luna.n_way.all_identical_pct}%
-              </p>
             </div>
 
             <div>
               <h3 className="text-sm font-medium text-stone-700">
-                Cross-judge agreement ({irr.cross.primary_trial})
+                Cross-judge ({irr.cross.primary_trial})
               </h3>
-              <ul className="mt-2 space-y-2 text-sm">
+              <ul className="mt-2 space-y-2">
                 <MetricRow
                   title="Luna ↔ Composer"
                   n={irr.cross.pairs.luna_vs_composer.n}
@@ -539,7 +609,7 @@ export function DashboardView({
                 />
               </ul>
             </div>
-          </div>
+          </Details>
         </section>
       )}
 
