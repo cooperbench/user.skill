@@ -3,7 +3,6 @@ import {
   DatasetHubLinks,
   LabelExamplesSection,
   LeaderboardSection,
-  MethodsSection,
   RunDetailsSection,
 } from "./SolHighResults";
 import { SectionHeading } from "./SectionHeading";
@@ -295,7 +294,6 @@ export default function HomePage() {
       </section>
 
       <LabelExamplesSection />
-      <MethodsSection />
       <AnalysisSection />
       <RunDetailsSection />
 
