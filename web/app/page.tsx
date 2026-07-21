@@ -60,42 +60,6 @@ function Bars({
   );
 }
 
-// per-user histogram from a numeric array
-function Hist({ values, bins, unit }: { values: number[]; bins: number[]; unit: string }) {
-  const counts = new Array(bins.length - 1).fill(0);
-  values.forEach((v) => {
-    for (let i = 0; i < bins.length - 1; i++) if (v >= bins[i] && v < bins[i + 1]) { counts[i]++; break; }
-  });
-  const max = Math.max(...counts, 1);
-  return (
-    <div>
-      <div className="flex items-stretch gap-1" style={{ height: 120 }}>
-        {counts.map((c, i) => (
-          <div key={i} className="flex h-full flex-1 flex-col justify-end">
-            <div
-              className="w-full rounded-t bg-indigo-400"
-              style={{ height: `${Math.max((100 * c) / max, c > 0 ? 3 : 0)}%` }}
-              title={`${c} developers`}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="mt-1 flex gap-1 text-[9px] text-zinc-400">
-        {counts.map((_, i) => {
-          const k = (n: number) => (n >= 1000 ? `${n / 1000 % 1 === 0 ? n / 1000 : (n / 1000).toFixed(1)}k` : `${n}`);
-          const lo = bins[i], hi = bins[i + 1];
-          return (
-            <div key={i} className="flex-1 text-center leading-tight">
-              {i === counts.length - 1 ? `${k(lo)}+` : `${k(lo)}–${k(hi)}`}
-            </div>
-          );
-        })}
-      </div>
-      <div className="mt-0.5 text-center text-[11px] text-zinc-400">{unit} per developer</div>
-    </div>
-  );
-}
-
 function Section({ title, kicker, children }: { title: string; kicker?: string; children: React.ReactNode }) {
   return (
     <section className="mt-12">
@@ -106,27 +70,80 @@ function Section({ title, kicker, children }: { title: string; kicker?: string; 
   );
 }
 
+function CompactHistogram({
+  title,
+  subtitle,
+  labels,
+  counts,
+  color,
+  takeaway,
+  ariaLabel,
+}: {
+  title: string;
+  subtitle: string;
+  labels: string[];
+  counts: number[];
+  color: string;
+  takeaway: string;
+  ariaLabel: string;
+}) {
+  const max = Math.max(...counts);
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <figcaption className="font-semibold text-zinc-900">{title}</figcaption>
+      <p className="mt-1 text-xs text-zinc-500">{subtitle}</p>
+      <div
+        className="mt-5 grid h-24 items-end gap-1"
+        style={{ gridTemplateColumns: `repeat(${counts.length}, minmax(0, 1fr))` }}
+        role="img"
+        aria-label={ariaLabel}
+      >
+        {counts.map((count, index) => (
+          <div key={labels[index]} className="flex h-full items-end">
+            <div
+              className={`w-full rounded-t ${color}`}
+              style={{ height: `${(count / max) * 100}%` }}
+            />
+          </div>
+        ))}
+      </div>
+      <div
+        className="mt-1 grid gap-1 text-center text-[9px] text-zinc-400"
+        style={{ gridTemplateColumns: `repeat(${counts.length}, minmax(0, 1fr))` }}
+      >
+        {labels.map((label) => (
+          <span key={label}>{label}</span>
+        ))}
+      </div>
+      <p className="mt-4 text-sm leading-6 text-zinc-600">{takeaway}</p>
+    </figure>
+  );
+}
+
 function ContextTokenChart() {
-  const max = 300_000;
+  const max = 1_500_000;
   const position = (value: number) =>
     `${(Math.log10(value) / Math.log10(max)) * 100}%`;
   const markers = [
-    { label: "Median", short: "2.2k", value: 2_231, color: "bg-indigo-600" },
-    { label: "Mean", short: "6.5k", value: 6_549, color: "bg-sky-600" },
-    { label: "P90", short: "15.1k", value: 15_069, color: "bg-violet-600" },
-    { label: "Max", short: "258k", value: 258_331, color: "bg-zinc-900" },
+    { label: "Median", short: "4.2k", value: 4_214, color: "bg-indigo-600" },
+    { label: "Mean", short: "23.4k", value: 23_399, color: "bg-sky-600" },
+    { label: "P90", short: "25.3k", value: 25_342, color: "bg-violet-600" },
+    { label: "Max", short: "1.34m", value: 1_344_149, color: "bg-zinc-900" },
   ] as const;
 
   return (
-    <figure className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6">
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <figcaption className="font-semibold text-zinc-900">
+        Context available before each prediction
+      </figcaption>
       <div className="flex items-center justify-between gap-4 text-xs text-zinc-500">
-        <span>Prior context tokens per eval point</span>
+        <span>Tokens in the published history file</span>
         <span>log scale</span>
       </div>
       <div
         className="relative mt-6 h-14"
         role="img"
-        aria-label="Prior context tokens per eval point on a log scale: median 2,231, mean 6,549, 90th percentile 15,069, maximum 258,331"
+        aria-label="Prior context tokens per published task on a log scale: median 4,214, mean 23,399, 90th percentile 25,342, maximum 1,344,149"
       >
         <div className="absolute inset-x-0 top-7 h-1 rounded-full bg-zinc-200" />
         {markers.map((marker) => (
@@ -140,9 +157,9 @@ function ContextTokenChart() {
           </span>
         ))}
         <span className="absolute left-0 top-10 text-[10px] text-zinc-400">1</span>
-        <span className="absolute left-[36.5%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">100</span>
-        <span className="absolute left-[73%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">10k</span>
-        <span className="absolute right-0 top-10 text-[10px] text-zinc-400">300k</span>
+        <span className="absolute left-[32.4%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">100</span>
+        <span className="absolute left-[64.8%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">10k</span>
+        <span className="absolute left-[97.2%] top-10 -translate-x-1/2 text-[10px] text-zinc-400">1m</span>
       </div>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {markers.map((marker) => (
@@ -155,8 +172,8 @@ function ContextTokenChart() {
         ))}
       </div>
       <p className="mt-5 text-sm leading-6 text-zinc-600">
-        The distribution has a long tail, but a typical eval point has only a
-        few thousand tokens of prior context. Median depth is 23 prior turns.
+        The distribution has a long tail, but the median published task has
+        4.2k tokens of prior context.
       </p>
     </figure>
   );
@@ -170,29 +187,10 @@ export default function V2Page() {
   const totTurns = cc.user_turns + cx.user_turns;
   const totSess = cc.sessions + cx.sessions;
 
-  // model families: consolidate into a clean set
-  const mfRaw = data.model_families as Record<string, number>;
-  const famMap: Record<string, string> = {
-    "claude-opus": "Claude Opus", "claude-sonnet": "Claude Sonnet", "claude-haiku": "Claude Haiku",
-    "claude (other)": "Claude (other)", "codex (gpt-5-codex/…)": "Codex (gpt-5.x)",
-    "gpt-5.5": "Codex (gpt-5.x)", "gpt-5.4": "Codex (gpt-5.x)", "gpt-5.4-mini": "Codex (gpt-5.x)",
-    "gpt-5.6-sol": "Codex (gpt-5.x)", "gpt-5.6-terra": "Codex (gpt-5.x)",
-    unknown: "Model not recorded", "<synthetic>": "Model not recorded", "?": "Model not recorded",
-  };
-  const famAgg: Record<string, number> = {};
-  Object.entries(mfRaw).forEach(([k, v]) => {
-    const key = famMap[k] ?? "Other proxied backends (GLM/MiniMax/Kimi/…)";
-    famAgg[key] = (famAgg[key] ?? 0) + v;
-  });
-  const famRows = Object.entries(famAgg)
-    .sort((a, b) => b[1] - a[1])
-    .map(([label, value]) => ({ label, value }));
-
   const months = data.months as Record<string, number>;
   const monthRows = Object.entries(months).map(([label, value]) => ({ label, value }));
   const monthMax = Math.max(...monthRows.map((r) => r.value), 1);
 
-  const pu = data.per_user as { train_sess: number; eval_sess: number; train_turns: number; eval_turns: number; tok_mean: number }[];
   const d = data.dist;
 
   const r0 = (n: number) => fmt(Math.round(n));
@@ -415,57 +413,33 @@ export default function V2Page() {
         </div>
       </details>
 
-      <Section kicker="per-developer spread" title="How deep is each developer?">
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="mb-3 text-sm font-medium text-zinc-700">Training user turns</div>
-            <Hist values={pu.map((p) => p.train_turns)} bins={[400, 700, 1000, 1500, 2500, 5000, 100000]} unit="train user turns" />
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="mb-3 text-sm font-medium text-zinc-700">Held-out user turns</div>
-            <Hist values={pu.map((p) => p.eval_turns)} bins={[100, 120, 150, 200, 300, 500, 100000]} unit="held-out user turns" />
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="mb-3 text-sm font-medium text-zinc-700">Total sessions</div>
-            <Hist values={pu.map((p) => p.train_sess + p.eval_sess)} bins={[0, 30, 60, 100, 200, 400, 100000]} unit="sessions" />
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="mb-3 text-sm font-medium text-zinc-700">Mean tokens / user turn</div>
-            <Hist values={pu.map((p) => p.tok_mean)} bins={[0, 40, 70, 100, 150, 250, 100000]} unit="mean tokens/turn" />
-          </div>
+      <Section kicker="prediction context" title="What the model sees and predicts">
+        <p className="mb-6 max-w-3xl text-sm leading-6 text-zinc-600">
+          These figures come from the 620 published tasks: conversation turns
+          count the history, context tokens measure its size, and next-message
+          tokens measure the held-out text to predict.
+        </p>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <CompactHistogram
+            title="Conversation history before each prediction"
+            subtitle="Previous turns before the held-out message"
+            labels={["0–4", "5–9", "10–19", "20–39", "40–79", "80–159", "160+"]}
+            counts={[83, 74, 96, 119, 136, 55, 57]}
+            color="bg-fuchsia-400"
+            takeaway="Median depth is 28 prior turns."
+            ariaLabel="Previous turns across 620 published tasks: 83 have 0 to 4, 74 have 5 to 9, 96 have 10 to 19, 119 have 20 to 39, 136 have 40 to 79, 55 have 80 to 159, and 57 have 160 or more"
+          />
+          <ContextTokenChart />
+          <CompactHistogram
+            title="Length of the developer’s next message"
+            subtitle="Tokens in the held-out message"
+            labels={["1–9", "10–24", "25–49", "50–99", "100–249", "250+"]}
+            counts={[231, 171, 128, 48, 29, 13]}
+            color="bg-emerald-500"
+            takeaway="Median length is 15 tokens, with a long tail from logs and pasted text."
+            ariaLabel="Next-message token lengths across 620 published tasks: 231 have 1 to 9, 171 have 10 to 24, 128 have 25 to 49, 48 have 50 to 99, 29 have 100 to 249, and 13 have 250 or more"
+          />
         </div>
-      </Section>
-
-      <Section
-        kicker="context depth"
-        title="Most eval points have a few thousand tokens of prior context"
-      >
-        <ContextTokenChart />
-      </Section>
-
-      <Section kicker="prompt length" title="Tokens per user turn">
-        <Bars
-          rows={data.tok_hist.labels.map((label, i) => ({ label, value: data.tok_hist.counts[i], color: "bg-emerald-400" }))}
-          fmtVal={(n) => fmt(n)}
-        />
-        <p className="mt-3 text-sm text-zinc-500">
-          Heavily right-skewed: median <strong>{fmt(d.tok_per_turn.pooled_median)}</strong> tokens
-          (short commands like "run it", "fix the test"), mean <strong>{fmt(d.tok_per_turn.pooled_mean)}</strong>{" "}
-          (p90 {fmt(d.tok_per_turn.p90)}, p99 {fmt(d.tok_per_turn.p99)}) — the tail is pasted logs, errors,
-          and file dumps. cl100k tokenizer, {fmt(s.n_user_turns)} user turns.
-        </p>
-      </Section>
-
-      <Section kicker="models" title="Backing model families">
-        <Bars rows={famRows} />
-        <p className="mt-3 text-sm text-zinc-500">
-          The harness (Claude Code / Codex) is always known; the <em>model</em> behind it varies. Most
-          sessions run Claude (Opus / Sonnet / Haiku) or Codex (gpt-5.x); a minority route Claude Code
-          through proxied backends (GLM, MiniMax, Kimi, DeepSeek, Gemini). "Model not recorded" (~27%)
-          means the committed trace didn't preserve a model string — either the Entire checkpoint
-          metadata omitted it, or only Claude Code's <code>&lt;synthetic&gt;</code> auto-compaction
-          label survived. These are genuine sessions; only the model tag is missing.
-        </p>
       </Section>
 
       {(data.versions?.cc_total || data.versions?.cx_total) ? (

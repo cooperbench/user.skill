@@ -182,6 +182,9 @@ export function LeaderboardSection() {
             >
               Training history helps, modestly
             </h2>
+            <p className="mt-2 text-sm text-zinc-500">
+              GPT-5.6 Sol (high) · mean Jaccard across 620 tasks
+            </p>
           </div>
           <div className="sm:text-right">
             <p className="text-4xl font-semibold tracking-tight tabular-nums text-indigo-700">
