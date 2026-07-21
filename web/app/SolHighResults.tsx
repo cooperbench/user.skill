@@ -237,7 +237,7 @@ export function LeaderboardSection() {
           </div>
           <div className="sm:text-right">
             <p className="text-4xl font-semibold tracking-tight tabular-nums text-indigo-700">
-              +{ML.liftPp.toFixed(2)} pp
+              +{ML.liftPp.toFixed(1)} pp
             </p>
             <p className="mt-1 text-sm text-zinc-500">train400 vs baseline</p>
           </div>
@@ -284,7 +284,7 @@ export function LeaderboardSection() {
         <div className="mt-4 text-sm text-zinc-600">
           <p className="tabular-nums">
             Lift (means of 3 trials):{" "}
-            <strong className="text-zinc-800">+{ML.liftPp.toFixed(2)} pp</strong>
+            <strong className="text-zinc-800">+{ML.liftPp.toFixed(1)} pp</strong>
           </p>
         </div>
 
