@@ -716,6 +716,20 @@ export function LabelExamplesSection() {
           drop part of the intent.
         </p>
       </div>
+      <div className="mt-6 max-w-3xl rounded-2xl border border-zinc-200 bg-white p-5 text-sm leading-6 text-zinc-600">
+        <h3 className="font-semibold text-zinc-900">How Jaccard scores a turn</h3>
+        <p className="mt-2">
+          Jaccard = |intersection| / |union| of the predicted and gold label
+          sets. Gold{" "}
+          <span className="font-mono text-xs text-zinc-700">
+            {"{approve, steer}"}
+          </span>{" "}
+          vs pred{" "}
+          <span className="font-mono text-xs text-zinc-700">{"{approve}"}</span>{" "}
+          → 1/2 = 50% (exact match would be 0). The leaderboard above is the
+          mean of that score over turns.
+        </p>
+      </div>
       <aside className="mt-6 flex flex-col gap-4 border-l-2 border-indigo-500 bg-indigo-50/60 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3 className="font-semibold text-zinc-950">
