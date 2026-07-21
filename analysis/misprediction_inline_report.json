@@ -218,6 +218,38 @@
   "verdict": "flat",
   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
  },
+ "E8_within_developer_spread": {
+  "unit": "bits (max 2.0 over four move categories)",
+  "by_condition": {
+   "distilled": {
+    "n_users": 20,
+    "entropy_real": 1.524,
+    "entropy_pred": 1.385,
+    "mean_delta": -0.139,
+    "n_narrower": 13,
+    "wilcoxon_p": 0.099,
+    "narrower": true
+   },
+   "generic": {
+    "n_users": 20,
+    "entropy_real": 1.526,
+    "entropy_pred": 1.597,
+    "mean_delta": 0.071,
+    "n_narrower": 8,
+    "wilcoxon_p": 0.5197,
+    "narrower": false
+   },
+   "wrong": {
+    "n_users": 20,
+    "entropy_real": 1.529,
+    "entropy_pred": 1.354,
+    "mean_delta": -0.175,
+    "n_narrower": 14,
+    "wilcoxon_p": 0.0438,
+    "narrower": true
+   }
+  }
+ },
  "per_user_detail": {
   "distilled": {
    "centroid": [
