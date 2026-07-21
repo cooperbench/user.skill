@@ -187,16 +187,19 @@ export default function V2Page() {
       <LabelExamplesSection />
       <MethodsSection />
 
-      <details className="group mt-16 border-t border-zinc-200 pt-8">
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl py-3 text-base font-semibold text-zinc-800 marker:content-none">
+      <section
+        aria-labelledby="dataset-depth-title"
+        className="mt-16 border-t border-zinc-200 pt-12"
+      >
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+          Dataset details
+        </p>
+        <h2
+          id="dataset-depth-title"
+          className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950"
+        >
           Explore the dataset in depth
-          <span
-            aria-hidden="true"
-            className="text-xl font-normal text-zinc-400 transition-transform group-open:rotate-45"
-          >
-            +
-          </span>
-        </summary>
+        </h2>
         <div className="pb-4">
       <Section kicker="where it comes from" title="Data provenance">
         {(() => {
@@ -523,7 +526,7 @@ export default function V2Page() {
       </Section>
 
         </div>
-      </details>
+      </section>
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
         UserBench · {EVAL_DEVS} eval developers · {fmt(EVAL_TASKS)} Hub tasks · Claude Code + Codex full
