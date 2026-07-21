@@ -19,7 +19,7 @@ const ML = {
     vsChancePp: 0.6,
     macroF1: 0.439,
     n: 620,
-    hub: "https://hub.harborframework.com/jobs/07243479-5d98-41e4-b9a9-4a9316fbaf33",
+    hub: "https://hub.harborframework.com/jobs/722b2a3b-032b-494b-96f6-b8febdb54f4f",
   },
   train400: {
     jaccard: 0.48,
@@ -29,21 +29,21 @@ const ML = {
     vsChancePp: 4.6,
     macroF1: 0.468,
     n: 620,
-    hub: "https://hub.harborframework.com/jobs/6eaeab92-f6b0-4e78-9304-3dc118040807",
+    hub: "https://hub.harborframework.com/jobs/eb870d83-c07f-46b6-b12f-0b937d402d2a",
   },
   archive3x: {
     jaccard: 0.5,
     n: 1386,
-    hub: "https://hub.harborframework.com/jobs/e4a8dcba-53d4-483b-af58-e823d5d3a18a",
+    hub: "https://hub.harborframework.com/jobs/92a07167-8858-4316-8dbf-e2200ddf8361",
   },
 };
 
 /** Agent-trial Hub jobs (gpt-5.6-sol trajectories). */
 const AGENT = {
   baseline3x:
-    "https://hub.harborframework.com/jobs/87adaae5-6152-4329-b0b1-85bd2a75ec2a",
+    "https://hub.harborframework.com/jobs/4d0dccb6-08d2-4a56-ad47-bf52e7db2e64",
   train4003x:
-    "https://hub.harborframework.com/jobs/48321212-f765-48cd-962c-d5b4518a053f",
+    "https://hub.harborframework.com/jobs/af42da25-f641-49fe-8983-604839ddfcd5",
 };
 
 function pct(x: number, digits = 1) {
