@@ -279,6 +279,43 @@ def fig_e5(e5_folder):
                  "each point is one condition, folder mode")
 
 
+def fig_e8(e8):
+    """Within-developer spread: dumbbell from real -> predicted entropy, one row per condition.
+    Dumbbell is the prescribed form for before->after per item; 1 hue, 2 shades + gray context."""
+    by = e8.get("by_condition", {})
+    if not by:
+        return ""
+    W, rowh, lab = 620, 42, 92
+    lo, hi = 0.9, 1.75
+    px = lambda v: lab + (W - lab - 150) * ((v - lo) / (hi - lo))
+    body, y = "", 14
+    for c in ["distilled", "generic", "wrong"]:
+        v = by.get(c)
+        if not v:
+            continue
+        xr, xp = px(v["entropy_real"]), px(v["entropy_pred"])
+        body += _txt(lab - 10, y + 4, c, size=11, fill=INK, anchor="end")
+        body += (f'<line x1="{xp:.1f}" y1="{y}" x2="{xr:.1f}" y2="{y}" stroke="{PRED}" '
+                 f'stroke-width="2" stroke-opacity="0.35"/>')
+        body += (f'<circle cx="{xr:.1f}" cy="{y}" r="5.5" fill="{REAL}" stroke="{SURFACE}" stroke-width="2"/>')
+        body += (f'<circle cx="{xp:.1f}" cy="{y}" r="5.5" fill="{PRED}" stroke="{SURFACE}" stroke-width="2"/>')
+        sig = "p<.01" if (v.get("wilcoxon_p") or 1) < 0.01 else (
+              "p<.05" if (v.get("wilcoxon_p") or 1) < 0.05 else "n.s.")
+        body += _txt(W - 142, y + 4, f'{v["n_narrower"]}/{v["n_users"]} narrower · {sig}',
+                     size=10, fill=INK if sig != "n.s." else MUTED,
+                     weight="600" if sig != "n.s." else "400")
+        y += rowh
+    body += f'<line x1="{lab}" y1="{y - 18}" x2="{W - 150}" y2="{y - 18}" stroke="{AXIS}" stroke-width="1"/>'
+    for t in (1.0, 1.25, 1.5, 1.75):
+        body += _txt(px(t), y - 4, f"{t:g}", size=9.5, fill=MUTED, anchor="middle")
+    body += _txt(lab, y + 14, "entropy of one developer’s own move mix (bits) — lower = more one-note",
+                 size=10, fill=MUTED)
+    body += _legend([(REAL, "real developer"), (PRED, "predicted")], x=lab, y=y + 34)
+    return _wrap(W, y + 44, body,
+                 "E8 · with a folder, each developer is rendered more one-note than they are",
+                 "within-developer spread, real vs predicted (folder mode)")
+
+
 def build_figures(folder, inline):
     """-> {name: svg}. `folder`/`inline` are misprediction report dicts."""
     cats = folder.get("categories") or ["approve", "critical", "directive", "inquiry"]
@@ -293,4 +330,6 @@ def build_figures(folder, inline):
         figs["E3"] = fig_e3(folder["per_user_detail"])
         figs["E4"] = fig_e4(folder["per_user_detail"])
     figs["E5"] = fig_e5(folder["E5_decision_vs_surface"])
+    if folder.get("E8_within_developer_spread"):
+        figs["E8"] = fig_e8(folder["E8_within_developer_spread"])
     return {k: v for k, v in figs.items() if v}

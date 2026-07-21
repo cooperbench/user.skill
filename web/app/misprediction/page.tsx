@@ -130,19 +130,19 @@ export default function MispredictionPage() {
 
       <header className="mt-8">
         <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
-          Are the simulator&rsquo;s mispredictions <em>homogeneity</em>?
+          Diagnosing Misprediction Patterns
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          <strong>Hypothesis.</strong>{" "}LLMs are trained to complete tasks, not to imitate humans — so
-          they are systematically homogeneous, defaulting to task-driving behaviour instead of deciding
-          from an individual developer&rsquo;s differences. If true, a user-simulator&rsquo;s errors
-          should cluster on the human, friction-y moves (pushing back, interrupting, asking, redirecting)
-          and regress every developer toward one &ldquo;average&rdquo; one.
+          <strong>Hypothesis.</strong>{" "}LLMs are trained to complete tasks, not to imitate humans.
+          So they are systematically homogeneous, defaulting to task-driving behaviour instead of
+          deciding from an individual developer&rsquo;s differences. The consequence is that the
+          prediction of LLMs would be very similar for different users, and even for one developer the
+          prediction will not be as spread out as the real one.
         </p>
         <p className="mt-3 text-sm text-zinc-500">
           Powered run: <strong>{m.users}</strong> developers / <strong>{fmt(m.points)}</strong>{" "}
           move-labelled held-out points from the in-repo <code className="font-mono">tasks/</code> cohort.
-          Folder mode is the product flow.
+          Folder mode = the agent reads the folder itself; inline pastes it into the prompt.
         </p>
       </header>
 
@@ -379,8 +379,7 @@ export default function MispredictionPage() {
         <Section kicker="Folder vs inline" title="Two ways to read the folder into the simulator">
           <p className="text-zinc-600">
             <strong>folder</strong> = the agent reads <code className="font-mono text-xs">users/&lt;slug&gt;/</code>{" "}
-            itself (product flow); <strong>inline</strong> = the folder text is pasted into the prompt
-            (controlled). They diverge: inline reproduces signature catchphrases verbatim, which{" "}
+            itself; <strong>inline</strong> = the folder text is pasted into the prompt. They diverge: inline reproduces signature catchphrases verbatim, which{" "}
             <em>inflates</em> apparent between-user distinctiveness — masking the variance-collapse (E3) —
             yet E4 shows that distinctiveness points <em>away</em> from the real user, and its worst
             misses are even more homogeneity-driven.
@@ -422,7 +421,7 @@ export default function MispredictionPage() {
         </Section>
       )}
 
-      <Section kicker="E3 · primary result" title="Between-user variance collapse">
+      <Section kicker="E3 · primary result" title="Between-developer collapse">
         <p className="text-zinc-600">
           Mean pairwise total-variation distance between developers&rsquo; move-mixes. If the model captured
           individual differences, predicted spread would match real spread; homogeneity predicts a{" "}
@@ -458,6 +457,53 @@ export default function MispredictionPage() {
           </table>
         </div>
       </Section>
+
+      {d.e8?.folder && (
+        <Section kicker="E8 · primary result" title="Within-developer collapse">
+          <p className="text-zinc-600">
+            Entropy of each developer&rsquo;s own move mix (bits, max 2.0 over four categories), real
+            vs predicted. Lower entropy = more one-note. This is the second half of the hypothesis:
+            not just that developers resemble each other, but that each one is rendered flatter than
+            they actually are.
+          </p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs text-zinc-500">
+                  <th className="py-1 text-left font-semibold">condition</th>
+                  <th className="py-1 text-right font-semibold">entropy real</th>
+                  <th className="py-1 text-right font-semibold">entropy pred</th>
+                  <th className="py-1 text-right font-semibold">Δ</th>
+                  <th className="py-1 text-right font-semibold">narrower for</th>
+                  <th className="py-1 text-right font-semibold">wilcoxon p</th>
+                </tr>
+              </thead>
+              <tbody>
+                {conds.map((c) => {
+                  const v = d.e8.folder.by_condition?.[c];
+                  return v ? (
+                    <tr key={c} className="border-t border-zinc-100">
+                      <td className="py-2 font-medium text-zinc-700">{c}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">{n3(v.entropy_real)}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">{n3(v.entropy_pred)}</td>
+                      <td className="py-2 text-right tabular-nums">{signed(v.mean_delta)}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">{v.n_narrower}/{v.n_users}</td>
+                      <td className="py-2 text-right tabular-nums text-zinc-600">{v.wilcoxon_p}</td>
+                    </tr>
+                  ) : null;
+                })}
+              </tbody>
+            </table>
+          </div>
+          <Figure svg={d.figures?.E8} />
+          <div className="mt-4 rounded-xl border border-zinc-200 border-l-[3px] border-l-indigo-500 bg-white px-4 py-3 text-sm text-zinc-700">
+            <strong>Confirmed — and the folder causes it.</strong> Without a folder (generic) the
+            predicted spread is essentially the real one. Give the simulator <em>any</em> folder — the
+            right one or the wrong one — and each developer collapses to a narrower repertoire.
+            Personalisation does not make the simulation more faithful; it makes it more of a caricature.
+          </div>
+        </Section>
+      )}
 
       <Section kicker="E5 · decision vs. surface" title="Does the folder change the decision or only the voice?">
         <p className="text-zinc-600">
@@ -502,7 +548,7 @@ export default function MispredictionPage() {
         <Figure svg={d.figures?.E2} />
       </Section>
 
-      <Section kicker="E4 · primary result" title="Regression to the median developer">
+      <Section kicker="E4 · primary result" title="Regression to the median">
         <p className="text-zinc-600">
           Distance from each developer&rsquo;s move-mix to the human population average, real vs
           predicted. The hypothesis predicted <em>shrinkage</em> toward the average; the data show the
