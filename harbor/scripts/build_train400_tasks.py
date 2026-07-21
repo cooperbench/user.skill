@@ -3,7 +3,8 @@
 
 Reads full leak-safe pools from user-simulator/train_pools/ (or --pools),
 allocates B human-turns via sqrt_two_stage, and writes Harbor tasks under
-datasets/eval-train400/. Same held history/gold as eval-620; adds /sim/train/.
+datasets/eval-train400/. Same held history, dynamic Composer 2.5 multi-label
+verifier, and gold as eval-620; adds /sim/train/.
 
 Future budgets (1000+) use the same pools + sampler with --budget N.
 """
@@ -77,13 +78,19 @@ Write ONLY that literal message to `/sim/answer.txt` (overwrite it). No commenta
 DOCKERFILE = """\
 FROM python:3.12-slim
 
+RUN apt-get update \\
+ && apt-get install -y --no-install-recommends curl build-essential git \\
+ && rm -rf /var/lib/apt/lists/*
+
 # Non-root agent user (matches task.toml [agent] user = "agent")
 RUN useradd --create-home --shell /bin/bash agent \\
  && mkdir -p /sim && chown -R agent:agent /sim
 
 WORKDIR /sim
-COPY --chown=agent:agent history.md /sim/history.md
-COPY --chown=agent:agent train/ /sim/train/
+COPY history.md /sim/history.md
+RUN chown -R agent:agent /sim/history.md
+COPY train/ /sim/train/
+RUN chown -R agent:agent /sim/train
 # Seed an empty answer file the agent will overwrite.
 RUN touch /sim/answer.txt && chown agent:agent /sim/answer.txt
 """
@@ -271,6 +278,15 @@ def main() -> None:
     task_dirs = sorted(
         p for p in a.src.iterdir() if p.is_dir() and (p / "task.toml").exists()
     )
+    for task_dir in task_dirs:
+        verifier = task_dir / "tests" / "verify.py"
+        if (
+            not verifier.exists()
+            or '"scoring": "multilabel_jaccard_v1"' not in verifier.read_text()
+        ):
+            raise RuntimeError(
+                f"{task_dir.name} lacks the canonical multi-label verifier"
+            )
     by_dev: dict[str, list[Path]] = defaultdict(list)
     for td in task_dirs:
         by_dev[task_developer(td)].append(td)
