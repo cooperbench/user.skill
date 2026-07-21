@@ -1,19 +1,15 @@
-/* Scoped to .annotator-shell so the main UserBench site keeps its own chrome. */
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
-
+/* Scoped to .annotator-shell; values match the main UserBench page. */
 .annotator-shell {
   min-height: 100vh;
   color-scheme: light;
-  background:
-    radial-gradient(1200px 500px at 10% -10%, #efe6d6 0%, transparent 55%),
-    radial-gradient(900px 400px at 100% 0%, #d9ebe7 0%, transparent 50%),
-    #f7f3eb;
-  color: #1c1917;
-  font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  background: #fafafa;
+  color: #18181b;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, sans-serif;
 }
 
 .annotator-shell ::selection {
-  background: #99f6e4;
+  background: #e0e7ff;
 }
 
 @keyframes next-pulse-ring {

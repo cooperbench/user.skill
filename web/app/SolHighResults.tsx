@@ -92,48 +92,62 @@ function ScoreRow({
   label,
   note,
   rate,
+  ci,
   featured = false,
 }: {
   label: string;
   note: string;
   rate: number;
+  ci: readonly [number, number];
   featured?: boolean;
 }) {
   const chance = 0.437;
+  const max = 0.6;
+  const x = (value: number) => `${(value / max) * 100}%`;
   return (
     <div
-      className={`rounded-2xl border p-4 sm:p-5 ${
-        featured
-          ? "border-indigo-200 bg-indigo-50/60"
-          : "border-zinc-200 bg-white"
+      className={`grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4 ${
+        featured ? "bg-indigo-50/70" : "bg-zinc-50"
       }`}
     >
-      <div className="flex items-end justify-between gap-4">
-        <div>
-          <h3 className="font-semibold text-zinc-900">{label}</h3>
-          <p className="mt-0.5 text-sm text-zinc-500">{note}</p>
-        </div>
-        <p className="shrink-0 text-3xl font-semibold tracking-tight tabular-nums text-zinc-950">
-          {pct(rate)}
-        </p>
+      <div className="sm:col-start-1 sm:row-start-1">
+        <h3 className="font-semibold text-zinc-900">{label}</h3>
+        <p className="mt-0.5 text-xs leading-5 text-zinc-500">{note}</p>
       </div>
       <div
-        className="relative mt-4 h-2.5 rounded-full bg-zinc-200"
+        className="relative col-span-2 row-start-2 h-10 overflow-visible sm:col-span-1 sm:col-start-2 sm:row-start-1"
         role="img"
-        aria-label={`${label}: ${pct(rate)} mean Jaccard; chance is about 43.7%`}
+        aria-label={`${label}: ${pct(rate)} mean Jaccard; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7%`}
       >
+        <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full bg-zinc-200" />
         <div
-          className={`h-full rounded-full ${
+          className={`absolute left-0 top-1/2 h-3 -translate-y-1/2 rounded-full ${
             featured ? "bg-indigo-600" : "bg-zinc-600"
           }`}
-          style={{ width: `${rate * 100}%` }}
+          style={{ width: x(rate) }}
         />
         <span
-          className="absolute -top-1 h-[18px] w-px bg-amber-600"
-          style={{ left: `${chance * 100}%` }}
+          className="absolute inset-y-1 z-20 w-0.5 bg-amber-600"
+          style={{ left: x(chance) }}
+          aria-hidden="true"
+        />
+        <span
+          className="absolute top-1/2 z-30 h-0.5 -translate-y-1/2 bg-zinc-950"
+          style={{ left: x(ci[0]), width: x(ci[1] - ci[0]) }}
+          aria-hidden="true"
+        >
+          <span className="absolute -left-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
+          <span className="absolute -right-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
+        </span>
+        <span
+          className="absolute top-1/2 z-40 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-zinc-950 shadow-sm"
+          style={{ left: x(rate) }}
           aria-hidden="true"
         />
       </div>
+      <p className="col-start-2 row-start-1 text-right text-2xl font-semibold tracking-tight tabular-nums text-zinc-950 sm:col-start-3">
+        {pct(rate)}
+      </p>
     </div>
   );
 }
@@ -142,11 +156,8 @@ function ScoreRow({
 export function LeaderboardSection() {
   return (
     <>
-      <header className="mt-16 max-w-3xl sm:mt-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
-          UserBench
-        </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-6xl sm:leading-[1.02]">
+      <header className="mt-10 max-w-3xl sm:mt-12">
+        <h1 className="text-4xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-6xl sm:leading-[1.02]">
           How well can agents simulate users?
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
@@ -181,123 +192,355 @@ export function LeaderboardSection() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <ScoreRow
-            label="Baseline"
-            note="No developer training history"
-            rate={ML.baseline.jaccard}
-          />
-          <ScoreRow
-            label="Train400"
-            note="400 prior turns from the same developer"
-            rate={ML.train400.jaccard}
-            featured
-          />
-        </div>
-        <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            <span className="mr-2 inline-block h-3 w-px bg-amber-600 align-[-1px]" />
-            Chance is about <strong className="text-zinc-800">43.7%</strong>.
-          </p>
-          <p className="tabular-nums">
-            95% CI for lift: <strong className="text-zinc-800">+0.26 to +6.64 pp</strong>
-          </p>
-        </div>
-
-        <details className="group mt-6 rounded-2xl border border-zinc-200 bg-white">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-zinc-800 marker:content-none">
-            Run details
-            <span
-              aria-hidden="true"
-              className="text-lg font-normal text-zinc-400 transition-transform group-open:rotate-45"
-            >
-              +
-            </span>
-          </summary>
-          <div className="border-t border-zinc-100 px-5 py-5 text-sm text-zinc-600">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <h3 className="font-semibold text-zinc-900">Current scoring</h3>
-                <dl className="mt-3 grid grid-cols-[1fr_auto] gap-x-5 gap-y-2 tabular-nums">
-                  <dt>Baseline exact-set match</dt>
-                  <dd>{pct(ML.baseline.exact)}</dd>
-                  <dt>Train400 exact-set match</dt>
-                  <dd>{pct(ML.train400.exact)}</dd>
-                  <dt>Arm-specific chance</dt>
-                  <dd>{pct(ML.baseline.chance)} / {pct(ML.train400.chance)}</dd>
-                  <dt>Macro-F1</dt>
-                  <dd>{pct(ML.baseline.macroF1)} / {pct(ML.train400.macroF1)}</dd>
-                  <dt>Paired lift test</dt>
-                  <dd>p≈0.033</dd>
-                </dl>
-              </div>
-              <div>
-                <h3 className="font-semibold text-zinc-900">Runs and artifacts</h3>
-                <ul className="mt-3 space-y-2">
-                  <li>
-                    Baseline: <ExtLink href={AGENT.baseline3x}>agent traces</ExtLink>
-                    {" · "}
-                    <ExtLink href={ML.baseline.hub}>judge traces</ExtLink>
-                  </li>
-                  <li>
-                    Train400: <ExtLink href={AGENT.train4003x}>agent traces</ExtLink>
-                    {" · "}
-                    <ExtLink href={ML.train400.hub}>judge traces</ExtLink>
-                  </li>
-                  <li>
-                    <ExtLink href={ML.archive3x.hub}>
-                      Judge traces: three independent runs
-                    </ExtLink>{" "}
-                    ({ML.archive3x.n.toLocaleString()} scored turns)
-                  </li>
-                </ul>
-                <p className="mt-3 text-xs leading-5 text-zinc-500">
-                  620 held-out turns per condition. Judge: Composer 2.5 using
-                  approve, critical, steer, and inquiry act sets.
-                </p>
-              </div>
-            </div>
-
+        <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
+          <div className="space-y-3">
+            <ScoreRow
+              label="Baseline"
+              note="No developer training history"
+              rate={ML.baseline.jaccard}
+              ci={[0.412, 0.478]}
+            />
+            <ScoreRow
+              label="Train400"
+              note="400 prior turns from the same developer"
+              rate={ML.train400.jaccard}
+              ci={[0.446, 0.513]}
+              featured
+            />
           </div>
-        </details>
+          <div className="mt-2 hidden grid-cols-[11rem_minmax(0,1fr)_5rem] px-4 text-[11px] tabular-nums text-zinc-400 sm:grid">
+            <span />
+            <div className="flex justify-between">
+              <span>0%</span>
+              <span>20%</span>
+              <span>40%</span>
+              <span>60%</span>
+            </div>
+            <span />
+          </div>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-100 pt-4 text-xs text-zinc-500">
+            <span>
+              <span className="mr-2 inline-block h-3 w-0.5 bg-amber-600 align-[-2px]" />
+              Chance ≈43.7%
+            </span>
+            <span>
+              <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
+              Error bars show bootstrap 95% CIs
+            </span>
+          </div>
+        </div>
+        <div className="mt-4 text-sm text-zinc-600">
+          <p className="tabular-nums">
+            Paired lift: <strong className="text-zinc-800">+3.48 pp</strong> ·
+            95% CI <strong className="text-zinc-800">+0.26 to +6.64 pp</strong>
+          </p>
+        </div>
+
       </section>
     </>
   );
 }
 
-/** Plain-language interpretation shown directly after the main result. */
+const LENGTH_ROWS = [
+  { label: "Real turn", value: 53, color: "bg-zinc-900" },
+  { label: "Baseline", value: 32.5, color: "bg-zinc-500" },
+  { label: "Train400", value: 29.5, color: "bg-indigo-600" },
+] as const;
+
+const ACT_ROWS = [
+  { label: "approve", gold: 28.4, baseline: 52.7, train400: 49.0 },
+  { label: "critical", gold: 21.5, baseline: 15.8, train400: 16.1 },
+  { label: "steer", gold: 56.1, baseline: 46.9, train400: 48.4 },
+  { label: "inquiry", gold: 27.7, baseline: 10.8, train400: 14.2 },
+] as const;
+
+function LengthChart() {
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <figcaption className="font-semibold text-zinc-900">
+        Predicted turns stay shorter
+      </figcaption>
+      <p className="mt-1 text-xs text-zinc-500">Median characters per turn</p>
+      <div className="mt-5 space-y-3">
+        {LENGTH_ROWS.map((row) => (
+          <div
+            key={row.label}
+            className="grid grid-cols-[5rem_minmax(0,1fr)_3rem] items-center gap-3 text-xs"
+          >
+            <span className="text-zinc-600">{row.label}</span>
+            <div className="h-3 rounded-full bg-zinc-100">
+              <div
+                className={`h-3 rounded-full ${row.color}`}
+                style={{ width: `${(row.value / 60) * 100}%` }}
+              />
+            </div>
+            <span className="text-right font-medium tabular-nums text-zinc-800">
+              {row.value}
+            </span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-5 text-sm leading-6 text-zinc-600">
+        The median absolute length gap changes little: 36 characters at
+        baseline and 35 with train400. Training history does not make output
+        length much more human-like.
+      </p>
+    </figure>
+  );
+}
+
+function ActMixChart() {
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <figcaption className="font-semibold text-zinc-900">
+        Training narrows the act-mix gap
+      </figcaption>
+      <p className="mt-1 text-xs text-zinc-500">
+        Share of 620 turns containing each act
+      </p>
+      <div className="mt-5 space-y-4">
+        {ACT_ROWS.map((row) => (
+          <div key={row.label}>
+            <div className="mb-1.5 flex items-center justify-between text-xs">
+              <span className="font-mono text-zinc-700">{row.label}</span>
+              <span className="text-zinc-400">0–60%</span>
+            </div>
+            <div
+              className="space-y-1"
+              role="img"
+              aria-label={`${row.label}: gold ${row.gold}%, baseline ${row.baseline}%, train400 ${row.train400}%`}
+            >
+              {(
+                [
+                  ["Gold", row.gold, "bg-zinc-900"],
+                  ["Baseline", row.baseline, "bg-zinc-400"],
+                  ["Train400", row.train400, "bg-indigo-600"],
+                ] as const
+              ).map(([label, value, color]) => (
+                <div
+                  key={label}
+                  className="grid grid-cols-[3.5rem_minmax(0,1fr)_2.75rem] items-center gap-2 text-[11px]"
+                >
+                  <span className="text-zinc-500">{label}</span>
+                  <div className="h-1.5 rounded-full bg-zinc-100">
+                    <div
+                      className={`h-1.5 rounded-full ${color}`}
+                      style={{ width: `${(value / 60) * 100}%` }}
+                    />
+                  </div>
+                  <span className="text-right tabular-nums text-zinc-600">
+                    {value.toFixed(1)}%
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="mt-5 text-sm leading-6 text-zinc-600">
+        Both conditions overpredict approval and miss inquiries. Train400 cuts
+        those two gaps by about 3 percentage points each.
+      </p>
+    </figure>
+  );
+}
+
+function TaskDeltaChart() {
+  const total = 620;
+  const segments = [
+    { label: "Improved", value: 135, color: "bg-indigo-600" },
+    { label: "Tied", value: 384, color: "bg-zinc-300" },
+    { label: "Worsened", value: 101, color: "bg-rose-400" },
+  ] as const;
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-5 sm:col-span-2">
+      <figcaption className="font-semibold text-zinc-900">
+        Most tasks tie; gains outnumber losses
+      </figcaption>
+      <div
+        className="mt-5 flex h-5 overflow-hidden rounded-full"
+        role="img"
+        aria-label="Task-level Jaccard change: 135 improved, 384 tied, 101 worsened"
+      >
+        {segments.map((segment) => (
+          <span
+            key={segment.label}
+            className={segment.color}
+            style={{ width: `${(segment.value / total) * 100}%` }}
+          />
+        ))}
+      </div>
+      <div className="mt-4 grid grid-cols-3 gap-3">
+        {segments.map((segment) => (
+          <div key={segment.label}>
+            <p className="text-xl font-semibold tabular-nums text-zinc-950">
+              {segment.value}
+            </p>
+            <p className="text-xs text-zinc-500">{segment.label}</p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-5 text-sm leading-6 text-zinc-600">
+        Train400 improves Jaccard on 135 tasks and worsens it on 101; the other
+        384 are unchanged. The mean gain comes from a minority of tasks.
+      </p>
+    </figure>
+  );
+}
+
+function QualitativeComparison() {
+  return (
+    <article className="rounded-2xl border border-zinc-200 bg-white p-5 sm:col-span-2 sm:p-6">
+      <h3 className="font-semibold text-zinc-950">When history helps</h3>
+      <p className="mt-2 text-sm leading-6 text-zinc-600">
+        The agent proposed shrinking several leaderboard elements; the
+        developer&apos;s next turn pushed back on making everything smaller.
+      </p>
+      <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <div className="rounded-xl bg-zinc-50 p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+            No history
+          </p>
+          <blockquote className="mt-3 text-sm leading-6 text-zinc-700">
+            “yeah go ahead and apply it”
+          </blockquote>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <LabelChip label="approve" />
+            <span className="ml-auto text-sm font-semibold tabular-nums text-rose-700">
+              Jaccard 0
+            </span>
+          </div>
+        </div>
+        <div className="rounded-xl bg-indigo-50/70 p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+            400 prior turns
+          </p>
+          <blockquote className="mt-3 text-sm leading-6 text-zinc-700">
+            “wait i dont want everything to be smaller..the second image still
+            has big text. i want more spacing and balance so it doesnt feel like
+            everything is crowded at the top”
+          </blockquote>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <LabelChip label="critical" />
+            <LabelChip label="steer" />
+            <span className="ml-auto text-sm font-semibold tabular-nums text-indigo-700">
+              Jaccard 1
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="mt-4 border-l-2 border-zinc-300 pl-4">
+        <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+          Real next turn
+        </p>
+        <blockquote className="mt-2 text-sm leading-6 text-zinc-700">
+          “i dont think thats part of the overcrowding to be honest..i think the
+          letters might be a little too big and the the section where it says i
+          got to level 1 2/5 20..thats way too much”
+        </blockquote>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <LabelChip label="critical" />
+          <LabelChip label="steer" />
+        </div>
+      </div>
+      <p className="mt-4 text-sm leading-6 text-zinc-600">
+        With history, the model captured both the correction and the requested
+        direction. This case illustrates the pattern; the 620-task comparison
+        above measures it.
+      </p>
+    </article>
+  );
+}
+
 export function AnalysisSection() {
   return (
     <Section
       id="analysis"
-      kicker="What the result means"
-      title="The model learns a little from a developer’s history"
+      kicker="Results analysis"
+      title="Where the modest gain comes from"
     >
-      <div className="grid gap-4 sm:grid-cols-3">
-        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
-          <p className="text-2xl font-semibold tabular-nums text-zinc-950">+0.6 pp</p>
-          <h3 className="mt-2 font-semibold text-zinc-800">Baseline vs chance</h3>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            With no personal history, the model lands near a fixed steer guess.
-          </p>
-        </article>
-        <article className="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-5">
-          <p className="text-2xl font-semibold tabular-nums text-indigo-700">+3.48 pp</p>
-          <h3 className="mt-2 font-semibold text-zinc-800">Training lift</h3>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            Four hundred prior turns improve prediction, though the gain is
-            small.
-          </p>
-        </article>
-        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
-          <p className="text-2xl font-semibold tabular-nums text-zinc-950">+4.62 pp</p>
-          <h3 className="mt-2 font-semibold text-zinc-800">Train400 vs chance</h3>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            The stricter fixed-chance test gives p≈0.030 one-sided and p≈0.060
-            two-sided.
-          </p>
-        </article>
+      <p className="max-w-3xl text-sm leading-6 text-zinc-600">
+        Baseline sits near chance. Four hundred prior turns raise mean Jaccard
+        by 3.48 points, with small shifts in act choice and many unchanged
+        tasks.
+      </p>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <LengthChart />
+        <ActMixChart />
+        <TaskDeltaChart />
+        <QualitativeComparison />
       </div>
+    </Section>
+  );
+}
+
+export function RunDetailsSection() {
+  return (
+    <Section
+      id="run-details"
+      kicker="Runs and reproducibility"
+      title="Inspect the benchmark"
+    >
+      <details className="group rounded-2xl border border-zinc-200 bg-white">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-zinc-800 marker:content-none">
+          Run details
+          <span
+            aria-hidden="true"
+            className="text-lg font-normal text-zinc-400 transition-transform group-open:rotate-45"
+          >
+            +
+          </span>
+        </summary>
+        <div className="border-t border-zinc-100 px-5 py-5 text-sm text-zinc-600">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div>
+              <h3 className="font-semibold text-zinc-900">Current scoring</h3>
+              <dl className="mt-3 grid grid-cols-[1fr_auto] gap-x-5 gap-y-2 tabular-nums">
+                <dt>Baseline exact-set match</dt>
+                <dd>{pct(ML.baseline.exact)}</dd>
+                <dt>Train400 exact-set match</dt>
+                <dd>{pct(ML.train400.exact)}</dd>
+                <dt>Arm-specific chance</dt>
+                <dd>{pct(ML.baseline.chance)} / {pct(ML.train400.chance)}</dd>
+                <dt>Macro-F1</dt>
+                <dd>{pct(ML.baseline.macroF1)} / {pct(ML.train400.macroF1)}</dd>
+                <dt>Paired lift test</dt>
+                <dd>p≈0.033</dd>
+              </dl>
+            </div>
+            <div>
+              <h3 className="font-semibold text-zinc-900">Public traces</h3>
+              <ul className="mt-3 space-y-2">
+                <li>
+                  Datasets: <ExtLink href={DATASET}>baseline</ExtLink>
+                  {" · "}
+                  <ExtLink href={DATASET_TRAIN}>train400</ExtLink>
+                </li>
+                <li>
+                  Baseline: <ExtLink href={AGENT.baseline3x}>agent traces</ExtLink>
+                  {" · "}
+                  <ExtLink href={ML.baseline.hub}>judge traces</ExtLink>
+                </li>
+                <li>
+                  Train400: <ExtLink href={AGENT.train4003x}>agent traces</ExtLink>
+                  {" · "}
+                  <ExtLink href={ML.train400.hub}>judge traces</ExtLink>
+                </li>
+                <li>
+                  <ExtLink href={ML.archive3x.hub}>
+                    Judge traces: three independent runs
+                  </ExtLink>{" "}
+                  ({ML.archive3x.n.toLocaleString()} scored turns)
+                </li>
+              </ul>
+              <p className="mt-3 text-xs leading-5 text-zinc-500">
+                620 held-out turns per condition. Judge: Composer 2.5 using
+                approve, critical, steer, and inquiry act sets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
     </Section>
   );
 }
@@ -387,22 +630,32 @@ export function LabelExamplesSection() {
           </figcaption>
         </figure>
       </div>
-      <div className="mt-4 flex flex-col gap-2 text-sm leading-6 text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-4 text-sm leading-6 text-zinc-600">
         <p>
           A turn can approve one choice and steer another, so one label would
           drop part of the intent.
         </p>
+      </div>
+      <aside className="mt-6 flex flex-col gap-4 border-l-2 border-indigo-500 bg-indigo-50/60 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 className="font-semibold text-zinc-950">
+            Composer closely matches Kevin&apos;s labels
+          </h3>
+          <p className="mt-1 text-2xl font-semibold tracking-tight text-indigo-700">
+            81% Jaccard agreement
+          </p>
+          <p className="mt-1 text-sm text-zinc-600">
+            64% exact-set agreement across 50 co-labeled turns.{" "}
+            <span className="text-zinc-500">Agreement, not accuracy.</span>
+          </p>
+        </div>
         <a
           href="/annotator/dashboard"
           className="shrink-0 font-medium text-indigo-600 underline-offset-4 hover:underline"
         >
           Open the public annotator dashboard →
         </a>
-      </div>
-      <p className="mt-3 text-xs text-zinc-500">
-        On 50 turns, Composer and Kevin agree at about 81% Jaccard and 64%
-        exact-set match. These are agreement rates, not accuracy.
-      </p>
+      </aside>
     </section>
   );
 }
@@ -415,7 +668,7 @@ export function MethodsSection() {
       className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12"
     >
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
-        Scoring and reproduction
+        Scoring
       </p>
       <h2
         id="methods-title"
@@ -423,7 +676,7 @@ export function MethodsSection() {
       >
         A score that gives partial credit
       </h2>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+      <div className="mt-6 max-w-3xl">
         <article className="rounded-2xl border border-zinc-200 bg-white p-5">
           <h3 className="font-semibold text-zinc-900">How scoring works</h3>
           <p className="mt-2 text-sm leading-6 text-zinc-600">
@@ -436,30 +689,6 @@ export function MethodsSection() {
             <span className="font-mono text-xs text-zinc-700">[steer]</span>.
             Its headline mean is about 43.7%.
           </p>
-        </article>
-        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
-          <h3 className="font-semibold text-zinc-900">Reproduce the result</h3>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
-            Public Harbor pages hold the datasets, agent trajectories, and
-            judge traces for both conditions.
-          </p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <ExtLink href={DATASET}>Baseline dataset ↗</ExtLink>
-              {" · "}
-              <ExtLink href={DATASET_TRAIN}>train400 dataset ↗</ExtLink>
-            </li>
-            <li>
-              <ExtLink href={AGENT.baseline3x}>Baseline agent traces ↗</ExtLink>
-              {" · "}
-              <ExtLink href={AGENT.train4003x}>train400 agent traces ↗</ExtLink>
-            </li>
-            <li>
-              <ExtLink href={ML.baseline.hub}>Baseline judge traces ↗</ExtLink>
-              {" · "}
-              <ExtLink href={ML.train400.hub}>train400 judge traces ↗</ExtLink>
-            </li>
-          </ul>
         </article>
       </div>
     </section>
