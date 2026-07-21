@@ -281,12 +281,6 @@ export function LeaderboardSection() {
             </span>
           </div>
         </div>
-        <div className="mt-4 text-sm text-zinc-600">
-          <p className="tabular-nums">
-            Lift (means of 3 trials):{" "}
-            <strong className="text-zinc-800">+{ML.liftPp.toFixed(1)} pp</strong>
-          </p>
-        </div>
 
       </section>
     </>
