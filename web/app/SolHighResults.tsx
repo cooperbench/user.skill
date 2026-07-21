@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 const DATASET = "https://hub.harborframework.com/datasets/userbench/UserBench";
 const DATASET_TRAIN =
   "https://hub.harborframework.com/datasets/userbench/UserBench-train400";
-const DATASET_REF = "userbench/UserBench@v2";
-const DATASET_TRAIN_REF = "userbench/UserBench-train400@v2";
+const DATASET_REF = "userbench/UserBench";
+const DATASET_TRAIN_REF = "userbench/UserBench-train400";
 const HUB_TASKS = 620;
 const HUB_DEVS = 62;
 
