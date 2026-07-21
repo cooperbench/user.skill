@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Harbor verifier: classify predicted + gold move with Composer 2.5 (Cursor Agent CLI).
+"""Harbor verifier for UserBench multi-label act scoring.
 
-Env:
-  CURSOR_API_KEY   required
-  CURSOR_AGENT_BIN optional path to `agent` / cursor-agent binary
-  SIMBENCH_JUDGE   model slug (default composer-2.5)
+Composer 2.5 classifies both the held-out developer message and the predicted
+message into non-empty subsets of {approve, critical, steer, inquiry}. The
+primary reward is Jaccard/IoU over those sets. Invalid or empty output scores 0.
 
-Writes /logs/verifier/{verdict.json,reward.txt}.
+The evaluator must provide CURSOR_API_KEY. No task contains credentials.
 """
 from __future__ import annotations
 
@@ -17,59 +16,105 @@ import shutil
 import subprocess
 import time
 
-VDIR = "/logs/verifier"
+VDIR = os.environ.get("SIMBENCH_VERIFIER_LOG_DIR", "/logs/verifier")
+TESTS_DIR = os.environ.get("SIMBENCH_TESTS_DIR", "/tests")
+SIM_DIR = os.environ.get("SIMBENCH_SIM_DIR", "/sim")
 os.makedirs(VDIR, exist_ok=True)
 
 JUDGE = os.environ.get("SIMBENCH_JUDGE", "composer-2.5")
 AGENT_BIN = (
     os.environ.get("CURSOR_AGENT_BIN")
     or shutil.which("agent")
+    or shutil.which("cursor-agent")
     or "/opt/cursor-agent/versions/current/cursor-agent"
 )
 if not os.path.isfile(AGENT_BIN) and not shutil.which(AGENT_BIN):
     versions = "/opt/cursor-agent/versions"
     if os.path.isdir(versions):
-        cands = sorted(
+        candidates = sorted(
             (
-                os.path.join(versions, d, "cursor-agent")
-                for d in os.listdir(versions)
-                if os.path.isfile(os.path.join(versions, d, "cursor-agent"))
+                os.path.join(versions, version, "cursor-agent")
+                for version in os.listdir(versions)
+                if os.path.isfile(
+                    os.path.join(versions, version, "cursor-agent")
+                )
             ),
             reverse=True,
         )
-        if cands:
-            AGENT_BIN = cands[0]
+        if candidates:
+            AGENT_BIN = candidates[0]
 
-CATS = ["approve", "critical", "directive", "inquiry"]
-BODY = (
-    "Classify the developer's MOVE by the observable function of their message "
-    "toward the agent's previous turn. Choose exactly one:\n"
-    "- approve: acceptance/permission, no new content, no complaint "
-    "(yes/ok/lgtm/go ahead/thanks).\n"
-    "- critical: asserts something is WRONG — a bug/failure/wrong output, "
-    "or the approach is mistaken/unwanted.\n"
-    "- directive: tells the agent what to DO next with no fault stated — "
-    "a new task/addition/forward steer.\n"
-    "- inquiry: primarily asks for information/explanation, expecting an ANSWER.\n"
-    "DECISION RULE (first match): 1 fault/error/dissatisfaction -> critical; "
-    "2 asks for info -> inquiry; 3 requests action/change -> directive; 4 else -> approve."
-)
+ACTS = ["approve", "critical", "steer", "inquiry"]
+ACT_SET = set(ACTS)
+TAXONOMY_PROMPT = """\
+Classify the developer's communicative ACTS by the observable function(s) of their message toward the agent's previous turn. Free multi-label: select EVERY act that applies (non-empty subset). Multiple acts are OK when a turn does several things (e.g. asks a question AND assigns a new task).
+
+Acts:
+- approve: greenlight the *current* proposal — proceed with what was already offered. Examples: go ahead; LGTM; "can you work on this/these?"; yes/ok/thanks as go-ahead; conditional "fine if X". No new task beyond that proposal.
+- critical: asserts fault (something is WRONG) — not merely proposing an alternative. Examples: bug; wrong output; still failing; wrong approach; correcting a misunderstanding. Proposing a different plan without asserting fault → steer, not critical.
+- steer: change *what to build/do* next — a NEW or DIFFERENT task from the current proposal (not mere go-ahead; not "go verify a fact"). May be phrased as a question ("can you…?"); still steer, not inquiry, when the ask is new/different work.
+- inquiry: want information or confirmation (an answer), not a new build/do ask. Examples: status/why/what happened; "confirm after searching". "Go verify a fact" without changing what to build → inquiry, not steer.
+
+Soft guidance (not hard exclusivity):
+- Prefer including critical whenever fault/error/dissatisfaction is clearly asserted, even if the message also steers or asks.
+- approve vs steer: go-ahead on the agent's plan (incl. "fine if X", "can you work on these?") → approve; new/changed ask → steer. Do not tag go-ahead as steer.
+- Picking an option the agent already offered → approve, not steer. If the agent presents multiple options (e.g. A or B) and the user selects one (e.g. *"Yes it should be started automatically as part of the MCP fleet"*), that greenlights an already-offered option → approve.
+- critical vs steer: assert fault → critical; propose alternative without asserting fault → steer.
+- Decide steer vs inquiry by goal (new action vs answer/confirmation), not punctuation. "Confirm after searching" → inquiry; changing what to build/do → steer.
+- Use both inquiry and steer only when both goals are genuinely present.
+- approve+critical together is rare/contradictory; only use if both are genuinely present (e.g. the agent proposes a listed plan and the user approves parts of it but pushes back on other parts).
+- Do NOT force a single winner via a first-match ladder.
+
+Respond with ONLY JSON: {"acts":["<label>",...]} with labels from {approve,critical,steer,inquiry}, deduplicated."""
 
 
-def tw(t, n):
-    return " ".join((t or "").split()[:n])
+def truncate_words(text: str, limit: int) -> str:
+    return " ".join((text or "").split()[:limit])
 
 
-def composer(prompt: str, retries: int = 4) -> str:
+def canonicalize_act(value: str) -> str:
+    value = (value or "").strip().lower()
+    return "steer" if value == "directive" else value
+
+
+def normalize_acts(raw: object) -> list[str] | None:
+    if isinstance(raw, str):
+        raw = [raw]
+    if not isinstance(raw, (list, tuple)) or not raw:
+        return None
+
+    found: set[str] = set()
+    for value in raw:
+        if not isinstance(value, str):
+            return None
+        act = canonicalize_act(value)
+        if act not in ACT_SET:
+            return None
+        found.add(act)
+    return [act for act in ACTS if act in found] or None
+
+
+def jaccard(predicted: list[str] | None, gold: list[str] | None) -> float:
+    if not predicted or not gold:
+        return 0.0
+    predicted_set = set(predicted)
+    gold_set = set(gold)
+    union = predicted_set | gold_set
+    return len(predicted_set & gold_set) / len(union) if union else 0.0
+
+
+def run_composer(prompt: str, retries: int = 4) -> str:
     if not os.environ.get("CURSOR_API_KEY", "").strip():
         print("ERROR: CURSOR_API_KEY unset", flush=True)
         return ""
-    bin_path = AGENT_BIN if os.path.isfile(AGENT_BIN) else shutil.which(AGENT_BIN)
-    if not bin_path:
-        print(f"ERROR: agent binary not found: {AGENT_BIN}", flush=True)
+
+    binary = AGENT_BIN if os.path.isfile(AGENT_BIN) else shutil.which(AGENT_BIN)
+    if not binary:
+        print(f"ERROR: Cursor agent binary not found: {AGENT_BIN}", flush=True)
         return ""
-    cmd = [
-        bin_path,
+
+    command = [
+        binary,
         "-p",
         "--mode",
         "ask",
@@ -83,103 +128,138 @@ def composer(prompt: str, retries: int = 4) -> str:
         prompt,
     ]
     env = os.environ.copy()
-    # cursor-agent often needs its install dir on PATH/LD path
-    agent_dir = os.path.dirname(os.path.realpath(bin_path))
-    env["PATH"] = agent_dir + ":" + env.get("PATH", "")
-    for a in range(retries):
+    env["PATH"] = os.path.dirname(os.path.realpath(binary)) + ":" + env.get(
+        "PATH", ""
+    )
+    for attempt in range(retries):
         try:
-            proc = subprocess.run(
-                cmd, capture_output=True, text=True, timeout=240, env=env
+            result = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                timeout=240,
+                env=env,
             )
-            text = (proc.stdout or "").strip()
-            if proc.returncode == 0 and text:
-                return text
-            err = (proc.stderr or "")[:400]
-            print(f"composer attempt {a}: rc={proc.returncode} err={err!r}", flush=True)
-            if a < retries - 1:
-                time.sleep(3 * (a + 1))
-        except Exception as e:
-            print(f"composer attempt {a}: {e}", flush=True)
-            if a < retries - 1:
-                time.sleep(3)
+            output = (result.stdout or "").strip()
+            if result.returncode == 0 and output:
+                return output
+            error = (result.stderr or "")[:400]
+            print(
+                f"composer attempt {attempt + 1}: "
+                f"rc={result.returncode} err={error!r}",
+                flush=True,
+            )
+        except Exception as exc:
+            print(f"composer attempt {attempt + 1}: {exc}", flush=True)
+        if attempt < retries - 1:
+            time.sleep(3 * (attempt + 1))
     return ""
 
 
-def parse_act(out: str):
-    if not out:
+def parse_acts(output: str) -> list[str] | None:
+    if not output:
         return None
-    out = out.strip()
-    out = re.sub(r"^```(?:json)?\s*", "", out)
-    out = re.sub(r"\s*```$", "", out)
-    m = re.search(r'"act"\s*:\s*"(\w+)"', out)
-    if m:
-        a = m.group(1).lower()
-        if a == "steer":
-            a = "directive"
-        return a if a in CATS else None
-    found = re.findall(r'"(\w+)"', out)
-    for a in found:
-        a = a.lower()
-        if a == "steer":
-            a = "directive"
-        if a in CATS:
-            return a
-    return None
+    cleaned = re.sub(r"^```(?:json)?\s*", "", output.strip())
+    cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        value = json.loads(cleaned)
+    except json.JSONDecodeError:
+        match = re.search(r'\{[^{}]*"acts"\s*:\s*\[[^\]]*\][^{}]*\}', cleaned, re.S)
+        if not match:
+            return None
+        try:
+            value = json.loads(match.group(0))
+        except json.JSONDecodeError:
+            return None
+    if not isinstance(value, dict) or set(value) != {"acts"}:
+        return None
+    return normalize_acts(value.get("acts"))
 
 
-def classify(text: str, prev: str):
+def classify(text: str, previous_agent: str) -> list[str] | None:
     if not (text or "").strip():
         return None
-    out = composer(
+    prompt = (
         "A developer is using an AI coding agent. The agent just said:\n"
-        f"<agent>{tw(prev, 120)}</agent>\n\n"
+        f"<agent>{truncate_words(previous_agent, 120)}</agent>\n\n"
         "The developer's next message was:\n"
-        f"<message>{tw(text, 150)}</message>\n\n"
-        f"{BODY}\n\n"
-        'Respond with ONLY JSON: {"act":"<one label>"}'
+        f"<message>{truncate_words(text, 150)}</message>\n\n"
+        f"{TAXONOMY_PROMPT}\n\n"
+        'Respond with ONLY JSON: {"acts":["<label>",...]}'
     )
-    return parse_act(out)
+    return parse_acts(run_composer(prompt))
 
 
-def main() -> None:
-    gold = json.load(open("/tests/gold.json"))
-    prev = gold.get("prev_agent", "")
-    gold_move = gold.get("gold_move") or classify(gold.get("real", ""), prev)
-
-    pred_text = ""
-    for p in (
-        "/sim/answer.txt",
+def read_prediction() -> str:
+    for path in (
+        os.path.join(SIM_DIR, "answer.txt"),
         "/workspace/prediction.txt",
         "/logs/artifacts/prediction.txt",
     ):
-        if os.path.exists(p):
-            pred_text = open(p, encoding="utf-8", errors="replace").read().strip()
-            break
-    pred_move = classify(pred_text, prev) if pred_text else None
+        if os.path.exists(path):
+            with open(path, encoding="utf-8", errors="replace") as handle:
+                return handle.read().strip()
+    return ""
 
-    match = bool(pred_move and gold_move and pred_move == gold_move)
-    reward = 1.0 if match else 0.0
+
+def main() -> None:
+    with open(
+        os.path.join(TESTS_DIR, "gold.json"), encoding="utf-8"
+    ) as handle:
+        gold = json.load(handle)
+    previous_agent = gold.get("prev_agent", "")
+
+    gold_acts = normalize_acts(gold.get("gold_acts"))
+    if not gold_acts:
+        gold_acts = classify(gold.get("real", ""), previous_agent)
+
+    predicted_text = read_prediction()
+    pred_acts = (
+        classify(predicted_text, previous_agent) if predicted_text else None
+    )
+
+    reward = jaccard(pred_acts, gold_acts)
+    exact = bool(
+        pred_acts and gold_acts and set(pred_acts) == set(gold_acts)
+    )
+    per_label = {
+        act: {
+            "pred": int(bool(pred_acts and act in pred_acts)),
+            "gold": int(bool(gold_acts and act in gold_acts)),
+        }
+        for act in ACTS
+    }
     verdict = {
         "point_id": gold.get("point_id"),
         "developer": gold.get("developer") or gold.get("dev"),
         "condition": gold.get("condition") or gold.get("variant"),
         "judge": JUDGE,
         "judge_backend": "cursor-agent",
-        "agent_bin": AGENT_BIN,
-        "predicted_msg": pred_text,
-        "pred_move": pred_move,
-        "gold_move": gold_move,
+        "scoring": "multilabel_jaccard_v1",
+        "taxonomy": ACTS,
+        "taxonomy_map": {"directive": "steer"},
+        "predicted_msg": predicted_text,
+        "pred_acts": pred_acts,
+        "gold_acts": gold_acts,
+        "pred_move": pred_acts[0] if pred_acts else None,
+        "gold_move": gold_acts[0] if gold_acts else None,
         "real_msg": gold.get("real", ""),
-        "match": match,
+        "match": exact,
+        "exact_match": exact,
+        "per_label": per_label,
+        "jaccard": reward,
         "reward": reward,
     }
-    json.dump(verdict, open(f"{VDIR}/verdict.json", "w"), indent=1)
-    open(f"{VDIR}/reward.txt", "w").write(str(reward))
+    with open(f"{VDIR}/verdict.json", "w", encoding="utf-8") as handle:
+        json.dump(verdict, handle, indent=1, ensure_ascii=False)
+        handle.write("\n")
+    with open(f"{VDIR}/reward.txt", "w", encoding="utf-8") as handle:
+        handle.write(str(reward))
     print(
-        f"pred_move={pred_move} gold_move={gold_move} match={match} reward={reward}",
+        f"pred_acts={pred_acts} gold_acts={gold_acts} "
+        f"jaccard={reward:.4f} exact={exact}",
         flush=True,
     )
-    print(f"predicted: {pred_text[:200]!r}", flush=True)
 
 
 if __name__ == "__main__":

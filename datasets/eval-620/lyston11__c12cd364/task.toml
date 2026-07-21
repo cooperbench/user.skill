@@ -17,10 +17,13 @@ legacy_task_id = "gh_lyston11__c12cd364"
 
 [verifier]
 timeout_sec = 600.0
+network_mode = "public"
 
 [agent]
 timeout_sec = 900.0
 user = "agent"
+network_mode = "allowlist"
+allowed_hosts = ["openrouter.ai", "*.openrouter.ai"]
 
 [environment]
 build_timeout_sec = 600.0
@@ -28,5 +31,5 @@ cpus = 1
 memory_mb = 2048
 storage_mb = 10240
 gpus = 0
-allow_internet = true
+network_mode = "public"
 mcp_servers = []
