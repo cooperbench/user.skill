@@ -563,12 +563,23 @@ export function RunDetailsSection() {
             over 620 tasks. Whiskers are bootstrap 95% CIs over tasks
             (baseline {pct(ML.baseline.ci[0])}–{pct(ML.baseline.ci[1])};
             train400 {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}).
-            Lift: +{ML.liftPp.toFixed(2)} pp.
+            Lift: +{ML.liftPp.toFixed(1)} pp.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-5">
           <h3 className="font-semibold text-zinc-900">Public artifacts</h3>
           <div className="mt-4 space-y-4 text-sm text-zinc-600">
+            <div>
+              <p className="font-medium text-zinc-800">Source</p>
+              <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                <ExtLink href="https://github.com/cooperbench/user.skill/tree/kevin">
+                  Benchmark code (kevin) ↗
+                </ExtLink>
+                <ExtLink href="https://github.com/cooperbench/user.skill/tree/benchmark-website">
+                  Website source (benchmark-website) ↗
+                </ExtLink>
+              </p>
+            </div>
             <div>
               <p className="font-medium text-zinc-800">Datasets</p>
               <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
@@ -712,12 +723,12 @@ export function LabelExamplesSection() {
           ; that baseline is about 43.7%.
         </p>
       </div>
-      <aside className="mt-6 flex flex-col gap-4 border-l-2 border-indigo-500 bg-indigo-50/60 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <aside className="mt-6 flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3 className="font-semibold text-zinc-950">
+          <h3 className="font-semibold text-zinc-900">
             Composer closely matches Kevin&apos;s labels
           </h3>
-          <p className="mt-1 text-2xl font-semibold tracking-tight text-indigo-700">
+          <p className="mt-1 text-2xl font-semibold tracking-tight text-zinc-950">
             81% Jaccard agreement
           </p>
           <p className="mt-1 text-sm text-zinc-600">
@@ -727,7 +738,7 @@ export function LabelExamplesSection() {
         </div>
         <a
           href="/annotator/dashboard"
-          className="shrink-0 font-medium text-indigo-600 underline-offset-4 hover:underline"
+          className="shrink-0 text-sm font-medium text-indigo-600 underline-offset-2 hover:underline"
         >
           Open the public annotator dashboard →
         </a>
