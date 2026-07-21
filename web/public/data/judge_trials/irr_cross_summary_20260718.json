@@ -1,0 +1,354 @@
+{
+  "composer_dir": "/data/swesimbench-annotator/public/data/judge_trials/composer_irr_3x_20260718T233043Z",
+  "luna_dir": "/data/swesimbench-annotator/public/data/judge_trials/luna_max_irr_3x_20260718T233043Z",
+  "within_composer": {
+    "n_items": 100,
+    "trials": [
+      "trial_1",
+      "trial_2",
+      "trial_3"
+    ],
+    "pairwise": [
+      {
+        "a": "trial_1",
+        "b": "trial_2",
+        "n": 100,
+        "jaccard": 0.908,
+        "kappa_macro": 0.859,
+        "kappa_per_label": {
+          "approve": 0.827,
+          "critical": 0.896,
+          "steer": 0.845,
+          "inquiry": 0.866
+        },
+        "exact_pct": 84.0
+      },
+      {
+        "a": "trial_1",
+        "b": "trial_3",
+        "n": 100,
+        "jaccard": 0.927,
+        "kappa_macro": 0.89,
+        "kappa_per_label": {
+          "approve": 0.932,
+          "critical": 0.896,
+          "steer": 0.912,
+          "inquiry": 0.819
+        },
+        "exact_pct": 84.0
+      },
+      {
+        "a": "trial_2",
+        "b": "trial_3",
+        "n": 100,
+        "jaccard": 0.922,
+        "kappa_macro": 0.883,
+        "kappa_per_label": {
+          "approve": 0.827,
+          "critical": 0.949,
+          "steer": 0.891,
+          "inquiry": 0.864
+        },
+        "exact_pct": 86.0
+      }
+    ],
+    "pairwise_avg": {
+      "jaccard": 0.919,
+      "kappa_macro": 0.877,
+      "exact_pct": 84.7
+    },
+    "n_way": {
+      "all_identical": 78,
+      "all_identical_pct": 78.0,
+      "unique_set_count_dist": {
+        "1": 78,
+        "2": 20,
+        "3": 2
+      },
+      "n_multi_any_trial": 42,
+      "n_multi_all_identical": 23
+    }
+  },
+  "within_luna": {
+    "n_items": 100,
+    "trials": [
+      "trial_1",
+      "trial_2",
+      "trial_3"
+    ],
+    "pairwise": [
+      {
+        "a": "trial_1",
+        "b": "trial_2",
+        "n": 100,
+        "jaccard": 0.925,
+        "kappa_macro": 0.9,
+        "kappa_per_label": {
+          "approve": 1.0,
+          "critical": 0.819,
+          "steer": 0.915,
+          "inquiry": 0.868
+        },
+        "exact_pct": 88.0
+      },
+      {
+        "a": "trial_1",
+        "b": "trial_3",
+        "n": 100,
+        "jaccard": 0.91,
+        "kappa_macro": 0.889,
+        "kappa_per_label": {
+          "approve": 1.0,
+          "critical": 0.852,
+          "steer": 0.832,
+          "inquiry": 0.872
+        },
+        "exact_pct": 84.0
+      },
+      {
+        "a": "trial_2",
+        "b": "trial_3",
+        "n": 100,
+        "jaccard": 0.912,
+        "kappa_macro": 0.885,
+        "kappa_per_label": {
+          "approve": 1.0,
+          "critical": 0.799,
+          "steer": 0.871,
+          "inquiry": 0.872
+        },
+        "exact_pct": 82.0
+      }
+    ],
+    "pairwise_avg": {
+      "jaccard": 0.916,
+      "kappa_macro": 0.891,
+      "exact_pct": 84.7
+    },
+    "n_way": {
+      "all_identical": 79,
+      "all_identical_pct": 79.0,
+      "unique_set_count_dist": {
+        "1": 79,
+        "2": 17,
+        "3": 4
+      },
+      "n_multi_any_trial": 37,
+      "n_multi_all_identical": 18
+    }
+  },
+  "cross": {
+    "primary_trial": "trial_1",
+    "primary_note": "trial_1 Composer = production gold_acts (composer-2.5 rejudge 2026-07-18). trial_1 Luna = first independent luna-max pass.",
+    "pairs": {
+      "luna_vs_composer": {
+        "n": 100,
+        "jaccard": 0.837,
+        "kappa_macro": 0.776,
+        "kappa_per_label": {
+          "approve": 0.819,
+          "critical": 0.743,
+          "steer": 0.786,
+          "inquiry": 0.757
+        },
+        "exact_pct": 71.0
+      },
+      "luna_vs_kevin": {
+        "n": 50,
+        "jaccard": 0.75,
+        "kappa_macro": 0.639,
+        "kappa_per_label": {
+          "approve": 0.703,
+          "critical": 0.555,
+          "steer": 0.545,
+          "inquiry": 0.752
+        },
+        "exact_pct": 60.0
+      },
+      "composer_vs_kevin": {
+        "n": 50,
+        "jaccard": 0.807,
+        "kappa_macro": 0.697,
+        "kappa_per_label": {
+          "approve": 0.788,
+          "critical": 0.552,
+          "steer": 0.701,
+          "inquiry": 0.746
+        },
+        "exact_pct": 64.0
+      }
+    },
+    "label_stats": {
+      "luna_primary": {
+        "n": 100,
+        "presence": {
+          "steer": 60,
+          "inquiry": 35,
+          "approve": 15,
+          "critical": 20
+        },
+        "multi_label_items": 25,
+        "multi_pct": 25.0,
+        "mean_labels_per_item": 1.3
+      },
+      "composer_primary": {
+        "n": 100,
+        "presence": {
+          "steer": 66,
+          "inquiry": 34,
+          "approve": 18,
+          "critical": 25
+        },
+        "multi_label_items": 37,
+        "multi_pct": 37.0,
+        "mean_labels_per_item": 1.43
+      },
+      "kevin": {
+        "n": 50,
+        "presence": {
+          "steer": 30,
+          "inquiry": 18,
+          "approve": 9,
+          "critical": 7
+        },
+        "multi_label_items": 14,
+        "multi_pct": 28.0,
+        "mean_labels_per_item": 1.28
+      },
+      "luna_on_kevin_subset": {
+        "n": 50,
+        "presence": {
+          "steer": 29,
+          "inquiry": 22,
+          "approve": 7,
+          "critical": 9
+        },
+        "multi_label_items": 14,
+        "multi_pct": 28.0,
+        "mean_labels_per_item": 1.34
+      },
+      "composer_on_kevin_subset": {
+        "n": 50,
+        "presence": {
+          "steer": 33,
+          "inquiry": 20,
+          "approve": 8,
+          "critical": 12
+        },
+        "multi_label_items": 20,
+        "multi_pct": 40.0,
+        "mean_labels_per_item": 1.46
+      }
+    },
+    "commentary": {
+      "closer_to_kevin": "Composer closer to Kevin on mean Jaccard",
+      "luna_mean_labels": 1.3,
+      "composer_mean_labels": 1.43,
+      "kevin_mean_labels": 1.28,
+      "luna_mean_labels_on_kevin_subset": 1.34,
+      "composer_mean_labels_on_kevin_subset": 1.46
+    },
+    "within_composer_irr": {
+      "jaccard": 0.919,
+      "kappa_macro": 0.877,
+      "exact_pct": 84.7
+    },
+    "within_luna_irr": {
+      "jaccard": 0.916,
+      "kappa_macro": 0.891,
+      "exact_pct": 84.7
+    },
+    "within_composer_n_way": {
+      "all_identical": 78,
+      "all_identical_pct": 78.0,
+      "unique_set_count_dist": {
+        "1": 78,
+        "2": 20,
+        "3": 2
+      },
+      "n_multi_any_trial": 42,
+      "n_multi_all_identical": 23
+    },
+    "within_luna_n_way": {
+      "all_identical": 79,
+      "all_identical_pct": 79.0,
+      "unique_set_count_dist": {
+        "1": 79,
+        "2": 17,
+        "3": 4
+      },
+      "n_multi_any_trial": 37,
+      "n_multi_all_identical": 18
+    }
+  },
+  "run_meta": {
+    "composer_dir": "/data/swesimbench-annotator/public/data/judge_trials/composer_irr_3x_20260718T233043Z",
+    "luna_dir": "/data/swesimbench-annotator/public/data/judge_trials/luna_max_irr_3x_20260718T233043Z",
+    "items_json_untouched": true,
+    "trials": [
+      {
+        "model": "luna",
+        "trial": "trial_1",
+        "n_ok": 100,
+        "n_fail": 0,
+        "wall_s": 212.208,
+        "usd": 2.442585,
+        "retries": 0,
+        "failed_ids": []
+      },
+      {
+        "model": "luna",
+        "trial": "trial_2",
+        "n_ok": 100,
+        "n_fail": 0,
+        "wall_s": 210.999,
+        "usd": 2.441793,
+        "retries": 0,
+        "failed_ids": []
+      },
+      {
+        "model": "luna",
+        "trial": "trial_3",
+        "n_ok": 100,
+        "n_fail": 0,
+        "wall_s": 212.83,
+        "usd": 2.451555,
+        "retries": 0,
+        "failed_ids": []
+      },
+      {
+        "model": "composer",
+        "trial": "trial_1",
+        "n_ok": 100,
+        "n_fail": 0,
+        "wall_s": null,
+        "usd": null,
+        "retries": null,
+        "failed_ids": null
+      },
+      {
+        "model": "composer",
+        "trial": "trial_2",
+        "n_ok": 100,
+        "n_fail": 0,
+        "wall_s": 274.653,
+        "usd": null,
+        "retries": 0,
+        "failed_ids": []
+      },
+      {
+        "model": "composer",
+        "trial": "trial_3",
+        "n_ok": 100,
+        "n_fail": 0,
+        "wall_s": 281.354,
+        "usd": null,
+        "retries": 1,
+        "failed_ids": []
+      }
+    ],
+    "luna_total_usd_est": 7.3359,
+    "luna_sum_wall_s": 636.0,
+    "composer_fresh_sum_wall_s": 556.0
+  }
+}
