@@ -535,7 +535,6 @@ const SESSION_PAIR = {
   },
   baseline: {
     trial: "melagiri__25b8f546__77edbTD",
-    steps: 5,
     tools: 9,
     inputTokens: 40415,
     costUsd: 0.147,
@@ -543,6 +542,7 @@ const SESSION_PAIR = {
     predMsg: "Fix both issues..",
     predActs: ["approve"] as const,
     strategy: "history only",
+    /** One entry per agent turn (n_agent_steps in the source traj). */
     timeline: [
       {
         label: "Read history",
@@ -580,7 +580,6 @@ const SESSION_PAIR = {
   },
   train400: {
     trial: "melagiri__25b8f546__JQBmNSy",
-    steps: 7,
     tools: 16,
     inputTokens: 143151,
     costUsd: 0.373,
@@ -589,6 +588,7 @@ const SESSION_PAIR = {
     predActs: ["approve", "steer"] as const,
     strategy: "index_then_pool_scan",
     namedSessions: 2,
+    /** One entry per agent turn (n_agent_steps in the source traj). */
     timeline: [
       {
         label: "History + index",
@@ -607,11 +607,20 @@ const SESSION_PAIR = {
         ],
       },
       {
+        label: "Finish history + skim pool",
+        kind: "history" as const,
+        cmds: [
+          "sed -n '1,180p' /sim/history.md",
+          "tail -c 3000 /sim/history.md | cat -A",
+          "Path('/sim/train').glob('*.md')  # python skim of developer turns",
+        ],
+      },
+      {
         label: "Pool-scan train/*.md",
         kind: "scan" as const,
         cmds: [
-          "Path('/sim/train').glob('*.md')  # python skim of developer turns",
           "for f in /sim/train/*.md; do grep -H -A4 '^> DEVELOPER$' …",
+          "python skim of last sessions + named sessions again",
         ],
       },
       {
@@ -654,6 +663,7 @@ function SessionTimeline({
   featured?: boolean;
 }) {
   const isTrain = "namedSessions" in arm;
+  const stepCount = arm.timeline.length;
   return (
     <article
       className={`rounded-2xl border p-5 ${
@@ -683,7 +693,7 @@ function SessionTimeline({
             Jaccard {arm.jaccard === 1 ? "1" : arm.jaccard}
           </p>
           <p className="text-xs text-zinc-500">
-            {arm.steps} steps · {arm.tools} tools
+            {stepCount} steps · {arm.tools} tools
           </p>
         </div>
       </header>
@@ -797,13 +807,17 @@ export function TypicalSessionsSection() {
         reads two named sessions, then pool-scans{" "}
         <span className="font-mono text-xs text-zinc-700">/sim/train</span>.
         Chosen near the cohort medians ({cohort.baselineSteps} vs{" "}
-        {cohort.trainSteps} steps; train tokens ~{cohort.tokenRatio} baseline).
+        {cohort.trainSteps} agent turns; train tokens ~{cohort.tokenRatio}{" "}
+        baseline). Each numbered timeline item is one agent turn.
       </p>
 
       <aside className="mt-5 grid gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:grid-cols-4 sm:p-5">
         {(
           [
-            ["Steps", `${baseline.steps} → ${train400.steps}`],
+            [
+              "Steps",
+              `${baseline.timeline.length} → ${train400.timeline.length}`,
+            ],
             ["Tools", `${baseline.tools} → ${train400.tools}`],
             ["Input tokens", `${tokenMult}×`],
             ["Jaccard", `${baseline.jaccard} → ${train400.jaccard}`],
