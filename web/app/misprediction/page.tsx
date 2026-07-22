@@ -32,13 +32,14 @@ function Chip({ cat }: { cat: string }) {
   );
 }
 
-function Figure({ svg }: { svg?: string }) {
-  if (!svg) return null;
+function Figure({ fig }: { fig?: { svg: string; title: string; subtitle?: string } }) {
+  if (!fig?.svg) return null;
   return (
-    <figure
-      className="my-5 overflow-x-auto rounded-2xl border border-zinc-200 bg-white p-5"
-      dangerouslySetInnerHTML={{ __html: svg }}
-    />
+    <figure className="my-6 overflow-x-auto rounded-2xl border border-zinc-200 bg-white p-5">
+      <figcaption className="font-semibold text-zinc-900">{fig.title}</figcaption>
+      {fig.subtitle && <p className="mt-1 text-xs text-zinc-500">{fig.subtitle}</p>}
+      <div className="mt-5" dangerouslySetInnerHTML={{ __html: fig.svg }} />
+    </figure>
   );
 }
 
@@ -219,7 +220,7 @@ export default function MispredictionPage() {
               </div>
             </>
           )}
-          <Figure svg={d.figures?.A} />
+          <Figure fig={d.figures?.A} />
         </Section>
       )}
 
@@ -351,7 +352,7 @@ export default function MispredictionPage() {
             </table>
           </div>
         )}
-        <Figure svg={d.figures?.E1} />
+        <Figure fig={d.figures?.E1} />
         <div className="mt-6 space-y-3">
           {d.worst.map((x: any, i: number) => (
             <div key={i} className="grid grid-cols-1 gap-3 rounded-lg border border-zinc-200 bg-white p-3 sm:grid-cols-[7rem_1fr_1fr]">
@@ -429,7 +430,7 @@ export default function MispredictionPage() {
           individual differences, predicted spread would match real spread; homogeneity predicts a{" "}
           <strong>narrower</strong> predicted spread. Shorter bar = developers look more alike.
         </p>
-        <Figure svg={d.figures?.E3} />
+        <Figure fig={d.figures?.E3} />
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -497,7 +498,7 @@ export default function MispredictionPage() {
               </tbody>
             </table>
           </div>
-          <Figure svg={d.figures?.E8} />
+          <Figure fig={d.figures?.E8} />
           <div className="mt-4 rounded-xl border border-zinc-200 border-l-[3px] border-l-indigo-500 bg-white px-4 py-3 text-sm text-zinc-700">
             <strong>Confirmed — and the folder causes it.</strong> Without a folder (generic) the
             predicted spread is essentially the real one. Give the simulator <em>any</em> folder — the
@@ -538,7 +539,7 @@ export default function MispredictionPage() {
             </tbody>
           </table>
         </div>
-        <Figure svg={d.figures?.E5} />
+        <Figure fig={d.figures?.E5} />
       </Section>
 
       <Section kicker="E2 · marginals" title="Marginal skew across move categories">
@@ -547,7 +548,7 @@ export default function MispredictionPage() {
           <strong>critical</strong> — the move where a developer asserts something is wrong — is the
           consistent signature in both modes. {d.e2?.note}
         </p>
-        <Figure svg={d.figures?.E2} />
+        <Figure fig={d.figures?.E2} />
       </Section>
 
       <Section kicker="E4 · primary result" title="Regression to the median">
@@ -556,7 +557,7 @@ export default function MispredictionPage() {
           predicted. The hypothesis predicted <em>shrinkage</em> toward the average; the data show the
           opposite — most developers&rsquo; predictions move <em>away</em> from it.
         </p>
-        <Figure svg={d.figures?.E4} />
+        <Figure fig={d.figures?.E4} />
       </Section>
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
