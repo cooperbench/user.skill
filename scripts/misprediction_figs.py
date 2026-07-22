@@ -64,45 +64,85 @@ def _legend(items, x=0, y=0):
     return out
 
 
+
+# ---- his row-chart anatomy (see web/app/SolHighResults.tsx ScoreRow) --------------------
+# Each row is a tinted card: [label+note | full-width rounded track with fill | value].
+ROW_BG = "#fafafa"        # bg-zinc-50
+ROW_BG_HI = "#eef2ff"     # bg-indigo-50
+TRACK_FULL = "#e4e4e7"    # bg-zinc-200
+LABEL_W = 200
+VALUE_W = 92
+ROW_H = 56
+BAR_H = 12
+
+
+def _row_card(y, w, featured=False):
+    return (f'<rect x="0" y="{y}" width="{w}" height="{ROW_H - 8}" rx="12" '
+            f'fill="{ROW_BG_HI if featured else ROW_BG}"/>')
+
+
+def _row_label(y, label, note=""):
+    out = _txt(16, y + (22 if note else 27), label, size=14, fill=INK, weight="600")
+    if note:
+        out += _txt(16, y + 38, note, size=12, fill=MUTED)
+    return out
+
+
+def _row_track(x0, x1, y, frac, color, origin=0.0):
+    """Full-width rounded track with a proportional fill. `origin` (0..1) allows a
+    centre-anchored fill for diverging values."""
+    cy = y + (ROW_H - 8) / 2
+    out = (f'<rect x="{x0}" y="{cy - BAR_H/2:.1f}" width="{x1 - x0}" height="{BAR_H}" '
+           f'rx="{BAR_H/2}" fill="{TRACK_FULL}"/>')
+    span = x1 - x0
+    a = x0 + span * min(origin, origin + frac)
+    b = x0 + span * max(origin, origin + frac)
+    if b - a > 0.5:
+        out += (f'<rect x="{a:.1f}" y="{cy - BAR_H/2:.1f}" width="{b - a:.1f}" height="{BAR_H}" '
+                f'rx="{BAR_H/2}" fill="{color}"/>')
+    return out
+
+
+def _row_value(x, y, text, color=INK):
+    cy = y + (ROW_H - 8) / 2 + 6
+    return _txt(x, cy, text, size=17, fill=color, anchor="end", weight="600")
+
+
 # --------------------------------------------------------------------------------------
 # A — individual-level accuracy vs the majority-class baseline
 # --------------------------------------------------------------------------------------
 def fig_a(a_folder, a_inline):
-    """Skill score, diverging from 0 = the majority-class predictor. Skill (not raw accuracy) is
-    the comparable number: the two modes have different class balance, so their raw accuracies
-    are not on the same scale."""
-    conds = ["distilled", "generic", "wrong"]
-    W, rowh, lab, mid = 980, 36, 140, 640
-    lo = -26.0                                   # scale floor (all observed skill is negative)
-    px = lambda v: mid + (mid - lab - 20) * (v / abs(lo))
-    body, y = "", 8
-    for c in conds:
+    """Skill score as row cards (his ScoreRow anatomy). Skill is the comparable number: the
+    two modes differ in class balance, so raw accuracies are not on the same scale."""
+    W = 980
+    x0, x1 = LABEL_W, W - VALUE_W - 24
+    lo, hi = -26.0, 4.0                       # scale spans the observed range plus a little headroom
+    zero = (0 - lo) / (hi - lo)               # where the baseline sits along the track
+    body, y = "", 0
+    for c in ["distilled", "generic", "wrong"]:
         f = a_folder["by_condition"].get(c, {})
         i = (a_inline or {}).get("by_condition", {}).get(c, {})
-        body += _txt(lab - 10, y + 12, c, size=12, fill=INK, anchor="end")
-        for j, (src, opacity, nm) in enumerate([(f, 1.0, "folder"), (i, 0.45, "inline")]):
-            v = src.get("skill")
-            if v is None:
-                continue
-            by = y + j * 12                       # 2px gap between the paired bars
-            x0, x1 = (px(v), mid) if v < 0 else (mid, px(v))
-            col = NEG if v < 0 else PRED
-            body += (f'<rect x="{x0:.1f}" y="{by}" width="{max(abs(x1 - x0), 2):.1f}" height="10" '
-                     f'rx="4" fill="{col}" fill-opacity="{opacity}"/>')
-            body += _txt(x0 - 6, by + 8.5, f"{v:+.1f}  {nm}", size=12, fill=INK2, anchor="end")
-        y += rowh
-    # the zero rule IS the baseline — no separate reference line needed
-    body += f'<line x1="{mid}" y1="0" x2="{mid}" y2="{y - 8}" stroke="{INK}" stroke-width="1.5"/>'
-    body += _txt(mid + 8, 14, "0 = majority-class predictor", size=11.5, fill=INK, weight="600")
-    body += _txt(mid + 8, 27, f"(always predict “{a_folder['baseline_class']}”)", size=12, fill=MUTED)
-    body += _txt(mid + 8, 45, "100 would be perfect", size=12, fill=MUTED)
-    body += _txt(lab, y + 14, "every condition scores below zero — worse than a constant predictor",
-                 size=12, fill=INK, weight="600")
-    body += _legend([(NEG, "below baseline")], x=lab, y=y + 34)
-    body += _txt(lab + 120, y + 35, "solid = folder, faded = inline", size=11.5, fill=MUTED)
-    return _wrap(W, y + 46, body,
+        v, vi = f.get("skill"), i.get("skill")
+        if v is None:
+            continue
+        feat = c == "distilled"
+        body += _row_card(y, W, feat)
+        body += _row_label(y, c, f"inline {vi:+.1f}" if vi is not None else "")
+        body += _row_track(x0, x1, y, (v / (hi - lo)), NEG if v < 0 else PRED, origin=zero)
+        # the baseline tick sits at zero on every row
+        cy = y + (ROW_H - 8) / 2
+        zx = x0 + (x1 - x0) * zero
+        body += (f'<line x1="{zx:.1f}" y1="{cy - 11:.1f}" x2="{zx:.1f}" y2="{cy + 11:.1f}" '
+                 f'stroke="{INK}" stroke-width="2"/>')
+        body += _row_value(W - 16, y, f"{v:+.1f}", NEG if v < 0 else PRED)
+        y += ROW_H
+    body += _txt(x0, y + 14, "0 = majority-class predictor (always predict “"
+                 + a_folder["baseline_class"] + "”) · 100 would be perfect", size=12, fill=MUTED)
+    body += _txt(x0, y + 32, "every condition scores below zero — worse than a constant predictor",
+                 size=12.5, fill=INK, weight="600")
+    return _wrap(W, y + 42, body,
                  "A · skill score — normalised move accuracy",
-                 "S = (acc − acc_base) / (1 − acc_base), ×100")
+                 "S = (acc − acc_base) / (1 − acc_base), ×100 · label note shows the inline arm")
 
 
 # --------------------------------------------------------------------------------------
@@ -114,24 +154,21 @@ def fig_e1(adj):
         return ""
     homog = {"task_completion_substitution", "generic_not_specific"}
     rows = sorted(cts.items(), key=lambda kv: -kv[1])
-    W, rowh, lab = 980, 28, 300
+    W = 980
+    x0, x1 = LABEL_W + 90, W - VALUE_W - 24
     vmax = max(cts.values())
-    px = lambda v: (W - lab - 46) * (v / vmax)
-    body, y = "", 6
+    body, y = "", 0
     for k, v in rows:
         on = k in homog
-        body += _txt(lab - 10, y + 11, k, size=12, fill=INK if on else MUTED, anchor="end",
-                     weight="600" if on else "400")
-        body += f'<rect x="{lab}" y="{y}" width="{W - lab - 46}" height="14" rx="4" fill="{TRACK}"/>'
-        body += (f'<rect x="{lab}" y="{y}" width="{max(px(v), 3):.1f}" height="14" rx="4" '
-                 f'fill="{PRED if on else MUTED}"/>')
-        body += _txt(lab + px(v) + 7, y + 11, str(v), size=12, fill=INK2, weight="600" if on else "400")
-        y += rowh
+        body += _row_card(y, W, on)
+        body += _row_label(y, k, "failure of individuation" if on else "ordinary failure mode")
+        body += _row_track(x0, x1, y, v / vmax, PRED if on else MUTED)
+        body += _row_value(W - 16, y, str(v), PRED if on else INK2)
+        y += ROW_H
     share = adj.get("homogeneity_share")
-    body += _txt(lab, y + 12, f"homogeneity-type share: {int(100 * share)}% of the worst {adj.get('n_adjudicated')} misses",
-                 size=12, fill=INK, weight="600")
-    body += _legend([(PRED, "failure of individuation"), (MUTED, "ordinary failure mode")], x=lab, y=y + 32)
-    return _wrap(W, y + 44, body,
+    body += _txt(x0, y + 16, f"homogeneity-type share: {int(100 * share)}% of the worst "
+                 f"{adj.get('n_adjudicated')} misses", size=12.5, fill=INK, weight="600")
+    return _wrap(W, y + 26, body,
                  "E1 · the worst misses are failures of individuation",
                  "adjudicated error type for each of the worst mispredictions (folder mode)")
 
@@ -140,35 +177,33 @@ def fig_e1(adj):
 # E2 — diverging: predicted minus real share, per move category
 # --------------------------------------------------------------------------------------
 def fig_e2(e2_folder, e2_inline, cats):
+    """Diverging row cards: predicted-minus-real share per move. Colour encodes SIGN only;
+    the mode is carried by the sub-note and the paired inline value."""
     f = e2_folder["by_condition"]["generic"]["pred_minus_real"]
     i = e2_inline["by_condition"]["generic"]["pred_minus_real"] if e2_inline else {}
-    W, rowh, lab, mid = 980, 36, 140, 520
-    span = 0.20
-    px = lambda v: mid + (W - mid - 70) * (v / span)
-    body, y = "", 8
+    W = 980
+    x0, x1 = LABEL_W, W - VALUE_W - 24
+    span = 0.26                                # symmetric scale around 0
+    body, y = "", 0
     for c in cats:
-        body += _txt(lab - 10, y + 12, c, size=12, fill=INK, anchor="end")
-        # Colour encodes SIGN only (diverging); the mode is encoded by row position + opacity,
-        # so no channel carries two meanings.
-        for j, (src, opacity, nm) in enumerate([(f, 1.0, "folder"), (i, 0.45, "inline")]):
-            v = src.get(c)
-            if v is None:
-                continue
-            by = y + j * 12
-            x0, x1 = (mid, px(v)) if v >= 0 else (px(v), mid)
-            col = PRED if v >= 0 else NEG
-            body += (f'<rect x="{x0:.1f}" y="{by}" width="{max(abs(x1 - x0), 2):.1f}" height="10" '
-                     f'rx="4" fill="{col}" fill-opacity="{opacity}"/>')
-            tx = x1 + 6 if v >= 0 else x0 - 6
-            body += _txt(tx, by + 8.5, f"{v:+.3f}  {nm}", size=12, fill=INK2,
-                         anchor="start" if v >= 0 else "end")
-        y += rowh
-    body += f'<line x1="{mid}" y1="0" x2="{mid}" y2="{y - 8}" stroke="{AXIS}" stroke-width="2"/>'
-    body += _txt(mid, y + 12, "0 = predicted share matches real", size=11.5, fill=MUTED, anchor="middle")
-    body += _legend([(PRED, "over-produced"), (NEG, "under-produced")], x=lab, y=y + 32)
-    body += _txt(lab, y + 48, "solid = folder, faded = inline (each pair shares a row)",
-                 size=11.5, fill=MUTED)
-    return _wrap(W, y + 60, body,
+        v = f.get(c)
+        if v is None:
+            continue
+        vi = i.get(c)
+        feat = c == "critical"                 # the signature finding
+        body += _row_card(y, W, feat)
+        body += _row_label(y, c, f"inline {vi:+.3f}" if vi is not None else "")
+        body += _row_track(x0, x1, y, v / (2 * span), NEG if v < 0 else PRED, origin=0.5)
+        cy = y + (ROW_H - 8) / 2
+        zx = x0 + (x1 - x0) * 0.5
+        body += (f'<line x1="{zx:.1f}" y1="{cy - 11:.1f}" x2="{zx:.1f}" y2="{cy + 11:.1f}" '
+                 f'stroke="{INK}" stroke-width="2"/>')
+        body += _row_value(W - 16, y, f"{v:+.3f}", NEG if v < 0 else PRED)
+        y += ROW_H
+    body += _txt(x0, y + 16, "0 = predicted share matches real · bars show the folder arm, "
+                 "the note shows inline", size=12, fill=MUTED)
+    body += _legend([(PRED, "over-produced"), (NEG, "under-produced")], x=x0, y=y + 38)
+    return _wrap(W, y + 48, body,
                  "E2 · the simulator under-produces “critical” in both modes",
                  "predicted minus real share of each move (generic condition)")
 
@@ -281,38 +316,35 @@ def fig_e5(e5_folder):
 
 
 def fig_e8(e8):
-    """Within-developer spread: dumbbell from real -> predicted entropy, one row per condition.
-    Dumbbell is the prescribed form for before->after per item; 1 hue, 2 shades + gray context."""
+    """Within-developer spread as row cards: real vs predicted entropy per condition."""
     by = e8.get("by_condition", {})
     if not by:
         return ""
-    W, rowh, lab = 980, 42, 150
-    lo, hi = 0.9, 1.75
-    px = lambda v: lab + (W - lab - 150) * ((v - lo) / (hi - lo))
-    body, y = "", 14
+    W = 980
+    x0, x1 = LABEL_W, W - VALUE_W - 24
+    hi = 2.0                                   # entropy max over four categories
+    body, y = "", 0
     for c in ["distilled", "generic", "wrong"]:
         v = by.get(c)
         if not v:
             continue
-        xr, xp = px(v["entropy_real"]), px(v["entropy_pred"])
-        body += _txt(lab - 10, y + 4, c, size=12, fill=INK, anchor="end")
-        body += (f'<line x1="{xp:.1f}" y1="{y}" x2="{xr:.1f}" y2="{y}" stroke="{PRED}" '
-                 f'stroke-width="2" stroke-opacity="0.35"/>')
-        body += (f'<circle cx="{xr:.1f}" cy="{y}" r="5.5" fill="{REAL}" stroke="{SURFACE}" stroke-width="2"/>')
-        body += (f'<circle cx="{xp:.1f}" cy="{y}" r="5.5" fill="{PRED}" stroke="{SURFACE}" stroke-width="2"/>')
-        sig = "p<.01" if (v.get("wilcoxon_p") or 1) < 0.01 else (
-              "p<.05" if (v.get("wilcoxon_p") or 1) < 0.05 else "n.s.")
-        body += _txt(W - 142, y + 4, f'{v["n_narrower"]}/{v["n_users"]} narrower · {sig}',
-                     size=11.5, fill=INK if sig != "n.s." else MUTED,
-                     weight="600" if sig != "n.s." else "400")
-        y += rowh
-    body += f'<line x1="{lab}" y1="{y - 18}" x2="{W - 150}" y2="{y - 18}" stroke="{AXIS}" stroke-width="1"/>'
-    for t in (1.0, 1.25, 1.5, 1.75):
-        body += _txt(px(t), y - 4, f"{t:g}", size=12, fill=MUTED, anchor="middle")
-    body += _txt(lab, y + 14, "entropy of one developer’s own move mix (bits) — lower = more one-note",
-                 size=11.5, fill=MUTED)
-    body += _legend([(REAL, "real developer"), (PRED, "predicted")], x=lab, y=y + 34)
-    return _wrap(W, y + 44, body,
+        feat = c == "distilled"
+        sig = ("p<.01" if (v.get("wilcoxon_p") or 1) < 0.01
+               else "p<.05" if (v.get("wilcoxon_p") or 1) < 0.05 else "n.s.")
+        body += _row_card(y, W, feat)
+        body += _row_label(y, c, f'{v["n_narrower"]}/{v["n_users"]} narrower · {sig}')
+        # real = context bar behind, predicted = focus bar in front (same track)
+        body += _row_track(x0, x1, y, v["entropy_real"] / hi, REAL)
+        cy = y + (ROW_H - 8) / 2
+        pw = (x1 - x0) * (v["entropy_pred"] / hi)
+        body += (f'<rect x="{x0}" y="{cy - BAR_H/2 + 3:.1f}" width="{pw:.1f}" height="{BAR_H - 6}" '
+                 f'rx="{(BAR_H-6)/2}" fill="{PRED}"/>')
+        body += _row_value(W - 16, y, f'{v["mean_delta"]:+.2f}', PRED)
+        y += ROW_H
+    body += _legend([(REAL, "real developer"), (PRED, "predicted")], x=x0, y=y + 16)
+    body += _txt(x0, y + 38, "entropy of one developer’s own move mix (bits, max 2.0) — "
+                 "lower = more one-note", size=12, fill=MUTED)
+    return _wrap(W, y + 48, body,
                  "E8 · with a folder, each developer is rendered more one-note than they are",
                  "within-developer spread, real vs predicted (folder mode)")
 
