@@ -53,9 +53,9 @@ function StatCard({ label, value, sub }: { label: string; value: React.ReactNode
   );
 }
 
-function Section({ title, kicker, children }: { title: string; kicker?: string; children: React.ReactNode }) {
+function Section({ id, title, kicker, children }: { id?: string; title: string; kicker?: string; children: React.ReactNode }) {
   return (
-    <section className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12">
+    <section id={id} className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12">
       {kicker && <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">{kicker}</p>}
       <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">{title}</h2>
       <div className="mt-4">{children}</div>
@@ -170,7 +170,7 @@ export default function MispredictionPage() {
       </div>
 
       {d.metric_families && (
-        <Section kicker="Metrics" title="Three families of measurement">
+        <Section id="metrics" kicker="Metrics" title="Three families of measurement">
           <p className="text-zinc-600">
             Every experiment below is expressed in one of three metric families. Naming them up front
             makes it explicit what each claim is actually measuring — and they can disagree.
@@ -225,7 +225,7 @@ export default function MispredictionPage() {
       )}
 
       {d.scoreboard && (
-        <Section kicker="Scoreboard" title="Which claims survived the data?">
+        <Section id="scoreboard" kicker="Scoreboard" title="Which claims survived the data?">
           <p className="text-zinc-600">
             Each experiment made a falsifiable prediction before the run. Evidence columns are the{" "}
             <strong>generic</strong> condition for E2/E3 and <strong>distilled</strong> for E4 (the
@@ -276,7 +276,7 @@ export default function MispredictionPage() {
         </Section>
       )}
 
-      <Section kicker="Method" title="Three falsifiable claims">
+      <Section id="method" kicker="Method" title="Three falsifiable claims">
         <p className="text-zinc-600">
           Each held-out point carries the real next message plus a simulated one under three conditions —{" "}
           <strong>distilled</strong> (the user&rsquo;s own folder), <strong>generic</strong> (no folder /
@@ -304,7 +304,7 @@ export default function MispredictionPage() {
         </ul>
       </Section>
 
-      <Section kicker="E1 · direct audit" title="Worst mispredictions">
+      <Section id="e1" kicker="E1 · direct audit" title="Worst mispredictions">
         <p className="text-zinc-600">
           The worst mispredictions (move mismatch × low realism), each LLM-adjudicated with one error
           type. The two marked{" "}
@@ -379,7 +379,7 @@ export default function MispredictionPage() {
       </Section>
 
       {modes.length === 2 && (
-        <Section kicker="Folder vs inline" title="Two ways to read the folder into the simulator">
+        <Section id="folder-vs-inline" kicker="Folder vs inline" title="Two ways to read the folder into the simulator">
           <p className="text-zinc-600">
             <strong>folder</strong> = the agent reads <code className="font-mono text-xs">users/&lt;slug&gt;/</code>{" "}
             itself; <strong>inline</strong> = the folder text is pasted into the prompt. They diverge: inline reproduces signature catchphrases verbatim, which{" "}
@@ -424,7 +424,7 @@ export default function MispredictionPage() {
         </Section>
       )}
 
-      <Section kicker="E3 · primary result" title="Between-developer collapse">
+      <Section id="e3" kicker="E3 · primary result" title="Between-developer collapse">
         <p className="text-zinc-600">
           Mean pairwise total-variation distance between developers&rsquo; move-mixes. If the model captured
           individual differences, predicted spread would match real spread; homogeneity predicts a{" "}
@@ -462,7 +462,7 @@ export default function MispredictionPage() {
       </Section>
 
       {d.e8?.folder && (
-        <Section kicker="E8 · primary result" title="Within-developer collapse">
+        <Section id="e8" kicker="E8 · primary result" title="Within-developer collapse">
           <p className="text-zinc-600">
             Entropy of each developer&rsquo;s own move mix (bits, max 2.0 over four categories), real
             vs predicted. Lower entropy = more one-note. This is the second half of the hypothesis:
@@ -508,7 +508,7 @@ export default function MispredictionPage() {
         </Section>
       )}
 
-      <Section kicker="E5 · decision vs. surface" title="Does the folder change the decision or only the voice?">
+      <Section id="e5" kicker="E5 · decision vs. surface" title="Does the folder change the decision or only the voice?">
         <p className="text-zinc-600">
           Verdict: <strong>{d.e5.verdict}</strong>. {d.e5.reading} <code className="font-mono text-xs">move dist→real</code>{" "}
           is the move-mix distance to the real user (lower = better decisions); <code className="font-mono text-xs">judge style</code> is surface voice.
@@ -542,7 +542,7 @@ export default function MispredictionPage() {
         <Figure fig={d.figures?.E5} />
       </Section>
 
-      <Section kicker="E2 · marginals" title="Marginal skew across move categories">
+      <Section id="e2" kicker="E2 · marginals" title="Marginal skew across move categories">
         <p className="text-zinc-600">
           Predicted-minus-real share of each move (generic condition). Under-producing{" "}
           <strong>critical</strong> — the move where a developer asserts something is wrong — is the
@@ -551,7 +551,7 @@ export default function MispredictionPage() {
         <Figure fig={d.figures?.E2} />
       </Section>
 
-      <Section kicker="E4 · primary result" title="Regression to the median">
+      <Section id="e4" kicker="E4 · primary result" title="Regression to the median">
         <p className="text-zinc-600">
           Distance from each developer&rsquo;s move-mix to the human population average, real vs
           predicted. The hypothesis predicted <em>shrinkage</em> toward the average; the data show the
