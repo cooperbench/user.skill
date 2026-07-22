@@ -4,6 +4,7 @@ import {
   LabelExamplesSection,
   LeaderboardSection,
   RunDetailsSection,
+  TypicalSessionsSection,
 } from "./SolHighResults";
 import { SectionHeading } from "./SectionHeading";
 
@@ -159,6 +160,15 @@ export default function HomePage() {
           <span aria-current="page" className="font-medium text-zinc-950">
             Dataset
           </span>
+          <a href="#leaderboard" className="hover:text-zinc-950">
+            Leaderboard
+          </a>
+          <a href="#sessions" className="hover:text-zinc-950">
+            Sessions
+          </a>
+          <a href="#analysis" className="hover:text-zinc-950">
+            Analysis
+          </a>
           <a href="/annotator/dashboard" className="hover:text-zinc-950">
             Annotator
           </a>
@@ -295,6 +305,7 @@ export default function HomePage() {
 
       <LabelExamplesSection />
       <AnalysisSection />
+      <TypicalSessionsSection />
       <RunDetailsSection />
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
@@ -302,6 +313,10 @@ export default function HomePage() {
         training turns. See{" "}
         <a href="#leaderboard" className="text-zinc-600 hover:text-zinc-900">
           leaderboard
+        </a>
+        ,{" "}
+        <a href="#sessions" className="text-zinc-600 hover:text-zinc-900">
+          sessions
         </a>
         ,{" "}
         <a

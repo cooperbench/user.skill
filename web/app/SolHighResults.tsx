@@ -502,13 +502,350 @@ export function AnalysisSection() {
       <p className="max-w-3xl text-sm leading-6 text-zinc-600">
         Baseline sits near chance. Four hundred prior turns raise mean Jaccard
         by {ML.liftPp.toFixed(2)} points (mean of 3 trials), with small shifts
-        in act choice and many unchanged tasks.
+        in act choice and many unchanged tasks. For a step-by-step look at how
+        the agent spends its tools, see{" "}
+        <a
+          href="#sessions"
+          className="text-indigo-600 underline-offset-2 hover:underline"
+        >
+          typical sessions
+        </a>
+        .
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <LengthChart />
         <ActMixChart />
         <TaskDeltaChart />
         <QualitativeComparison />
+      </div>
+    </Section>
+  );
+}
+
+/** Real Sol-high pair: median-like baseline vs index_then_pool_scan train400. */
+const SESSION_PAIR = {
+  taskKey: "melagiri__25b8f546",
+  goldMsg:
+    "create feature branch and work on it.. but before that, try looking for similar errors that we may have introduced recently due the changes we made to codebase",
+  goldActs: ["approve", "steer"] as const,
+  cohort: {
+    baselineSteps: 5,
+    trainSteps: 7,
+    tokenRatio: "4.3×",
+  },
+  baseline: {
+    trial: "melagiri__25b8f546__77edbTD",
+    steps: 5,
+    tools: 9,
+    inputTokens: 40415,
+    costUsd: 0.147,
+    jaccard: 0.5,
+    predMsg: "Fix both issues..",
+    predActs: ["approve"] as const,
+    strategy: "history only",
+    timeline: [
+      {
+        label: "Read history",
+        kind: "history" as const,
+        cmds: ["wc -l /sim/history.md && tail -n 240 /sim/history.md"],
+      },
+      {
+        label: "Map roles + pages",
+        kind: "history" as const,
+        cmds: [
+          "grep -n '^> ' /sim/history.md",
+          "sed -n '320,430p' /sim/history.md",
+          "sed -n '1,180p' /sim/history.md",
+        ],
+      },
+      {
+        label: "Finish the transcript",
+        kind: "history" as const,
+        cmds: [
+          "nl -ba /sim/history.md | sed -n '180,397p'",
+          "tail -c 3000 /sim/history.md | cat -A",
+        ],
+      },
+      {
+        label: "Write answer",
+        kind: "answer" as const,
+        cmds: ["printf '%s' 'Fix both issues..' > /sim/answer.txt"],
+      },
+      {
+        label: "Submit",
+        kind: "submit" as const,
+        cmds: ["echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT"],
+      },
+    ],
+  },
+  train400: {
+    trial: "melagiri__25b8f546__JQBmNSy",
+    steps: 7,
+    tools: 16,
+    inputTokens: 143151,
+    costUsd: 0.373,
+    jaccard: 1.0,
+    predMsg: "fix both issues and add tests to cover them",
+    predActs: ["approve", "steer"] as const,
+    strategy: "index_then_pool_scan",
+    namedSessions: 2,
+    timeline: [
+      {
+        label: "History + index",
+        kind: "index" as const,
+        cmds: [
+          "wc -l /sim/history.md && tail -n 240 /sim/history.md",
+          "cat /sim/train/_index.json",
+        ],
+      },
+      {
+        label: "Named session reads",
+        kind: "named" as const,
+        cmds: [
+          "sed -n '300,397p' /sim/history.md",
+          "cat /sim/train/4b4b6503-….md; cat /sim/train/8ce492ed-….md",
+        ],
+      },
+      {
+        label: "Pool-scan train/*.md",
+        kind: "scan" as const,
+        cmds: [
+          "Path('/sim/train').glob('*.md')  # python skim of developer turns",
+          "for f in /sim/train/*.md; do grep -H -A4 '^> DEVELOPER$' …",
+        ],
+      },
+      {
+        label: "Phrase hunt in pool",
+        kind: "scan" as const,
+        cmds: [
+          "grep -Rin -E '^fix (it|them|both)|…|add tests' /sim/train/*.md",
+        ],
+      },
+      {
+        label: "Write answer",
+        kind: "answer" as const,
+        cmds: [
+          "cat <<'EOF' > /sim/answer.txt  # fix both issues and add tests…",
+        ],
+      },
+      {
+        label: "Submit",
+        kind: "submit" as const,
+        cmds: ["echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT"],
+      },
+    ],
+  },
+} as const;
+
+const STEP_KIND_STYLE = {
+  history: "bg-zinc-200 text-zinc-700",
+  index: "bg-indigo-100 text-indigo-800",
+  named: "bg-sky-100 text-sky-800",
+  scan: "bg-amber-100 text-amber-900",
+  answer: "bg-emerald-100 text-emerald-800",
+  submit: "bg-zinc-100 text-zinc-500",
+} as const;
+
+function SessionTimeline({
+  arm,
+  featured = false,
+}: {
+  arm: typeof SESSION_PAIR.baseline | typeof SESSION_PAIR.train400;
+  featured?: boolean;
+}) {
+  const isTrain = "namedSessions" in arm;
+  return (
+    <article
+      className={`rounded-2xl border p-5 ${
+        featured
+          ? "border-indigo-200 bg-indigo-50/40"
+          : "border-zinc-200 bg-white"
+      }`}
+    >
+      <header className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p
+            className={`text-xs font-semibold uppercase tracking-wide ${
+              featured ? "text-indigo-600" : "text-zinc-500"
+            }`}
+          >
+            {isTrain ? "Train400" : "Baseline"}
+          </p>
+          <h3 className="mt-1 font-semibold text-zinc-950">{arm.strategy}</h3>
+          <p className="mt-1 font-mono text-[11px] text-zinc-400">{arm.trial}</p>
+        </div>
+        <div className="text-right">
+          <p
+            className={`text-2xl font-semibold tabular-nums ${
+              arm.jaccard === 1 ? "text-indigo-700" : "text-zinc-800"
+            }`}
+          >
+            Jaccard {arm.jaccard === 1 ? "1" : arm.jaccard}
+          </p>
+          <p className="text-xs text-zinc-500">
+            {arm.steps} steps · {arm.tools} tools
+          </p>
+        </div>
+      </header>
+
+      <dl className="mt-4 grid grid-cols-3 gap-2 text-center">
+        <div className="rounded-xl bg-white/80 px-2 py-2 ring-1 ring-zinc-200/80">
+          <dt className="text-[10px] uppercase tracking-wide text-zinc-400">
+            Input tok
+          </dt>
+          <dd className="mt-0.5 text-sm font-semibold tabular-nums text-zinc-900">
+            {(arm.inputTokens / 1000).toFixed(0)}k
+          </dd>
+        </div>
+        <div className="rounded-xl bg-white/80 px-2 py-2 ring-1 ring-zinc-200/80">
+          <dt className="text-[10px] uppercase tracking-wide text-zinc-400">
+            Cost
+          </dt>
+          <dd className="mt-0.5 text-sm font-semibold tabular-nums text-zinc-900">
+            ${arm.costUsd.toFixed(2)}
+          </dd>
+        </div>
+        <div className="rounded-xl bg-white/80 px-2 py-2 ring-1 ring-zinc-200/80">
+          <dt className="text-[10px] uppercase tracking-wide text-zinc-400">
+            /sim/train
+          </dt>
+          <dd className="mt-0.5 text-sm font-semibold tabular-nums text-zinc-900">
+            {isTrain ? "yes" : "no"}
+          </dd>
+        </div>
+      </dl>
+
+      <ol className="mt-5 space-y-3">
+        {arm.timeline.map((step, index) => (
+          <li key={step.label} className="flex gap-3">
+            <div className="flex w-6 shrink-0 flex-col items-center">
+              <span
+                className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-semibold tabular-nums ${
+                  featured
+                    ? "bg-indigo-600 text-white"
+                    : "bg-zinc-800 text-white"
+                }`}
+              >
+                {index + 1}
+              </span>
+              {index < arm.timeline.length - 1 && (
+                <span className="mt-1 w-px flex-1 bg-zinc-200" aria-hidden />
+              )}
+            </div>
+            <div className="min-w-0 flex-1 pb-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm font-medium text-zinc-900">
+                  {step.label}
+                </span>
+                <span
+                  className={`rounded-md px-1.5 py-0.5 text-[10px] font-medium ${STEP_KIND_STYLE[step.kind]}`}
+                >
+                  {step.kind}
+                </span>
+              </div>
+              <ul className="mt-1.5 space-y-1">
+                {step.cmds.map((cmd) => (
+                  <li
+                    key={cmd}
+                    className="truncate font-mono text-[11px] leading-5 text-zinc-500"
+                    title={cmd}
+                  >
+                    <span className="text-zinc-300">$ </span>
+                    {cmd}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-5 border-t border-zinc-200/80 pt-4">
+        <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+          Predicted next turn
+        </p>
+        <blockquote className="mt-2 text-sm leading-6 text-zinc-700">
+          “{arm.predMsg}”
+        </blockquote>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          {arm.predActs.map((act) => (
+            <LabelChip key={act} label={act} />
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+/** Side-by-side typical Sol-high trajectories on one paired task. */
+export function TypicalSessionsSection() {
+  const { baseline, train400, goldMsg, goldActs, taskKey, cohort } =
+    SESSION_PAIR;
+  const tokenMult = (train400.inputTokens / baseline.inputTokens).toFixed(1);
+
+  return (
+    <Section
+      id="sessions"
+      kicker="Agent trajectories"
+      title="A typical session, side by side"
+    >
+      <p className="max-w-3xl text-sm leading-6 text-zinc-600">
+        Same held-out task ({taskKey}). Baseline stays in{" "}
+        <span className="font-mono text-xs text-zinc-700">/sim/history.md</span>
+        ; train400 opens{" "}
+        <span className="font-mono text-xs text-zinc-700">_index.json</span>,
+        reads two named sessions, then pool-scans{" "}
+        <span className="font-mono text-xs text-zinc-700">/sim/train</span>.
+        Chosen near the cohort medians ({cohort.baselineSteps} vs{" "}
+        {cohort.trainSteps} steps; train tokens ~{cohort.tokenRatio} baseline).
+      </p>
+
+      <aside className="mt-5 grid gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:grid-cols-4 sm:p-5">
+        {(
+          [
+            ["Steps", `${baseline.steps} → ${train400.steps}`],
+            ["Tools", `${baseline.tools} → ${train400.tools}`],
+            ["Input tokens", `${tokenMult}×`],
+            ["Jaccard", `${baseline.jaccard} → ${train400.jaccard}`],
+          ] as const
+        ).map(([label, value]) => (
+          <div key={label}>
+            <p className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
+              {label}
+            </p>
+            <p className="mt-1 text-lg font-semibold tabular-nums text-zinc-950">
+              {value}
+            </p>
+          </div>
+        ))}
+      </aside>
+      <p className="mt-2 text-xs leading-5 text-zinc-500">
+        Train also costs ~
+        {(train400.costUsd / baseline.costUsd).toFixed(1)}× more on this trial
+        (${baseline.costUsd.toFixed(2)} → ${train400.costUsd.toFixed(2)}).
+        Across active trials, median input tokens rise about {cohort.tokenRatio}.
+      </p>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+        <SessionTimeline arm={baseline} />
+        <SessionTimeline arm={train400} featured />
+      </div>
+
+      <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+          Gold next turn (shared)
+        </p>
+        <blockquote className="mt-2 text-sm leading-6 text-zinc-700">
+          “{goldMsg}”
+        </blockquote>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          {goldActs.map((act) => (
+            <LabelChip key={act} label={act} />
+          ))}
+          <span className="ml-auto text-xs text-zinc-500">
+            Train matched the act set; baseline caught approve only.
+          </span>
+        </div>
       </div>
     </Section>
   );
