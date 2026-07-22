@@ -169,6 +169,9 @@ export default function HomePage() {
           <a href="#analysis" className="hover:text-zinc-950">
             Analysis
           </a>
+          <a href="/misprediction" className="hover:text-zinc-950">
+            Misprediction
+          </a>
           <a href="/annotator/dashboard" className="hover:text-zinc-950">
             Annotator
           </a>
