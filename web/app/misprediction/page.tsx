@@ -36,7 +36,7 @@ function Figure({ svg }: { svg?: string }) {
   if (!svg) return null;
   return (
     <figure
-      className="my-4 overflow-x-auto rounded-xl border border-zinc-200 bg-white px-4 py-3"
+      className="my-5 overflow-x-auto rounded-2xl border border-zinc-200 bg-white p-5"
       dangerouslySetInnerHTML={{ __html: svg }}
     />
   );
@@ -44,7 +44,7 @@ function Figure({ svg }: { svg?: string }) {
 
 function StatCard({ label, value, sub }: { label: string; value: React.ReactNode; sub?: string }) {
   return (
-    <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
+    <div className="rounded-2xl border border-zinc-200 bg-white p-5">
       <div className="text-2xl font-semibold tracking-tight text-zinc-900">{value}</div>
       <div className="mt-1 text-sm font-medium text-zinc-600">{label}</div>
       {sub && <div className="mt-0.5 text-xs text-zinc-400">{sub}</div>}
@@ -54,9 +54,9 @@ function StatCard({ label, value, sub }: { label: string; value: React.ReactNode
 
 function Section({ title, kicker, children }: { title: string; kicker?: string; children: React.ReactNode }) {
   return (
-    <section className="mt-12">
-      {kicker && <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">{kicker}</div>}
-      <h2 className="mt-1 text-xl font-semibold tracking-tight text-zinc-900">{title}</h2>
+    <section className="mt-16 scroll-mt-20 border-t border-zinc-200 pt-12">
+      {kicker && <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">{kicker}</p>}
+      <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
   );
@@ -117,7 +117,7 @@ export default function MispredictionPage() {
     : [];
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-14">
+    <main className="mx-auto max-w-5xl px-5 pb-16 pt-8 sm:px-8">
       <nav className="flex items-center justify-between text-sm">
         <a href="/" className="font-semibold tracking-tight text-zinc-950">UserBench</a>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-500">
@@ -131,10 +131,10 @@ export default function MispredictionPage() {
       </nav>
 
       <header className="mt-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
+        <h1 className="text-4xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-6xl sm:leading-[1.02]">
           Diagnosing Misprediction Patterns
         </h1>
-        <p className="mt-3 max-w-2xl text-zinc-600">
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
           <strong>Hypothesis.</strong>{" "}LLMs are trained to complete tasks, not to imitate humans.
           So they are systematically homogeneous, defaulting to task-driving behaviour instead of
           deciding from an individual developer&rsquo;s differences. The consequence is that the
