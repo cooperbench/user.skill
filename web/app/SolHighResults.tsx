@@ -91,6 +91,20 @@ const ML_LOW = {
   nTrialsLabel: "1 trial × 620 tasks",
 } as const;
 
+/**
+ * Sol-max (reasoning_effort=max): Train400 only, 1×620.
+ * No baseline-max arm; no public Hub job yet.
+ * Source: jobs/sol-max-userbench/STATUS.md (mean 0.5048387…; exact 0.377419…).
+ * vsHighPp = max − Sol-high train400 mean-of-3 (0.493862…); not significant.
+ */
+const ML_MAX = {
+  train400: { jaccard: 0.5048, exact: 0.3774 },
+  /** vs Sol-high train400 mean-of-3 (49.39%). */
+  vsHighPp: 1.1,
+  nTrialsLabel: "1 trial × 620 tasks",
+  highTrain400MeanOf3: 0.4939,
+} as const;
+
 /** Trajectory cohort (active trials): sol-high vs sol-low train400. */
 const EFFORT_TRAJ = {
   high: {
@@ -193,6 +207,7 @@ function ScoreRow({
   ci,
   featured = false,
   trialsNote = "3 trials × 620 tasks",
+  digits = 1,
 }: {
   label: string;
   note: string;
@@ -201,13 +216,15 @@ function ScoreRow({
   ci?: readonly [number, number];
   featured?: boolean;
   trialsNote?: string;
+  /** Percent display digits (default 1; max uses 2 for 50.48%). */
+  digits?: number;
 }) {
   const chance = 0.437;
   const max = 0.6;
   const x = (value: number) => `${(value / max) * 100}%`;
   const aria = ci
-    ? `${label}: ${pct(rate)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7% (always predict steer)`
-    : `${label}: ${pct(rate)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about 43.7% (always predict steer)`;
+    ? `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7% (always predict steer)`
+    : `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about 43.7% (always predict steer)`;
   return (
     <div
       className={`grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4 ${
@@ -252,7 +269,7 @@ function ScoreRow({
         />
       </div>
       <p className="col-start-2 row-start-1 text-right text-2xl font-semibold tracking-tight tabular-nums text-zinc-950 sm:col-start-3">
-        {pct(rate)}
+        {pct(rate, digits)}
       </p>
     </div>
   );
@@ -375,6 +392,49 @@ export function LeaderboardSection() {
             At low effort, baseline stays near high ({pct(ML_LOW.baseline.jaccard)}{" "}
             vs {pct(ML.baseline.jaccard)}), but train400 barely moves (+
             {ML_LOW.liftPp.toFixed(1)} pp vs +{ML.liftPp.toFixed(1)} pp). See{" "}
+            <a
+              href="#reasoning-effort"
+              className="text-indigo-600 underline-offset-2 hover:underline"
+            >
+              impact of reasoning effort
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                Same model · effort max
+              </p>
+              <p className="mt-1 text-sm text-zinc-600">
+                GPT-5.6 Sol (max) · {ML_MAX.nTrialsLabel} · train400 only · no
+                multi-trial CI
+              </p>
+            </div>
+            <div className="sm:text-right">
+              <p className="text-2xl font-semibold tracking-tight tabular-nums text-zinc-700">
+                +{ML_MAX.vsHighPp.toFixed(1)} pp
+              </p>
+              <p className="text-xs text-zinc-500">vs high train400</p>
+            </div>
+          </div>
+          <div className="mt-4 space-y-3">
+            <ScoreRow
+              label="Train400 · max"
+              note="400 prior turns · effort max · no baseline arm"
+              rate={ML_MAX.train400.jaccard}
+              trialsNote={ML_MAX.nTrialsLabel}
+              digits={2}
+            />
+          </div>
+          <p className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
+            Max reaches {pct(ML_MAX.train400.jaccard, 2)} on train400 vs{" "}
+            {pct(ML_MAX.highTrain400MeanOf3, 2)} high (mean of 3) — about +
+            {ML_MAX.vsHighPp.toFixed(1)} pp, not significant. Exact-set{" "}
+            {pct(ML_MAX.train400.exact)}. One unrecovered AgentTimeoutError; no
+            baseline-max run. See{" "}
             <a
               href="#reasoning-effort"
               className="text-indigo-600 underline-offset-2 hover:underline"
@@ -619,7 +679,7 @@ export function AnalysisSection() {
         >
           typical sessions
         </a>
-        . For high vs low effort on the same tasks, see{" "}
+        . For low / high / max effort on the same tasks, see{" "}
         <a
           href="#reasoning-effort"
           className="text-indigo-600 underline-offset-2 hover:underline"
@@ -638,7 +698,7 @@ export function AnalysisSection() {
   );
 }
 
-/** High vs low effort: scores + train400 read depth (from REASONING_EFFORT_ANALYSIS). */
+/** Low / high / max effort: scores + train400 read depth (high vs low). */
 export function ReasoningEffortSection() {
   const rows = [
     {
@@ -683,18 +743,21 @@ export function ReasoningEffortSection() {
         <li>
           Baseline is about the same at low vs high (
           {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}; chance
-          ≈43.7%).
+          ≈43.7%). No baseline-max arm was run.
         </li>
         <li>
-          Train400 lift collapses at low effort: +{ML_LOW.liftPp.toFixed(1)} pp
-          vs +{ML.liftPp.toFixed(1)} pp at high (low is {ML_LOW.nTrialsLabel};
-          high is 3-trial means).
+          Train400 lift is flat at low (+{ML_LOW.liftPp.toFixed(1)} pp), clear at
+          high (+{ML.liftPp.toFixed(1)} pp; 3-trial means), and max adds a small
+          further bump on train400 only: {pct(ML_MAX.train400.jaccard, 2)} vs{" "}
+          {pct(ML_MAX.highTrain400MeanOf3, 2)} high (+{ML_MAX.vsHighPp.toFixed(1)}{" "}
+          pp; not significant).
         </li>
         <li>
           Effort matters more for using history than for cold next-act: low
           still opens{" "}
           <span className="font-mono text-xs">/sim/train</span> on every
-          active trial, but runs fewer tools and weaker pool scans.
+          active trial, but runs fewer tools and weaker pool scans. Max does not
+          clearly beat high on this 1×620 pass.
         </li>
       </ul>
 
@@ -1231,7 +1294,10 @@ export function RunDetailsSection() {
             {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}). Lift: +
             {ML.liftPp.toFixed(1)} pp. Sol-low: single trial × 620 — baseline{" "}
             {pct(ML_LOW.baseline.jaccard)}, train400 {pct(ML_LOW.train400.jaccard)}{" "}
-            (+{ML_LOW.liftPp.toFixed(1)} pp); no multi-trial CI.
+            (+{ML_LOW.liftPp.toFixed(1)} pp); no multi-trial CI. Sol-max: train400
+            only, 1×620 — {pct(ML_MAX.train400.jaccard, 2)} (exact-set{" "}
+            {pct(ML_MAX.train400.exact)}; +{ML_MAX.vsHighPp.toFixed(1)} pp vs high
+            mean-of-3, not significant); ~$600 of a $1000 OpenRouter budget.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-5">
@@ -1287,7 +1353,8 @@ export function RunDetailsSection() {
           <p className="mt-5 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
             Composer 2.5 assigns approve, critical, steer, and inquiry act sets
             across 620 held-out tasks per condition. Sol-high Hub jobs are 3×620;
-            Sol-low are 1×620 (reasoning_effort=low).
+            Sol-low are 1×620 (reasoning_effort=low). Sol-max train400 is 1×620
+            (reasoning_effort=max); Hub links not published yet.
           </p>
         </div>
       </div>
