@@ -652,7 +652,7 @@ export function ReasoningEffortSection() {
       low: String(EFFORT_TRAJ.low.trainCmds),
     },
     {
-      label: "Pool-scan rate",
+      label: "Search coverage",
       high: `${EFFORT_TRAJ.high.poolScanPct}%`,
       low: `${EFFORT_TRAJ.low.poolScanPct}%`,
     },
@@ -705,6 +705,10 @@ export function ReasoningEffortSection() {
           </h3>
           <p className="mt-1 text-xs text-zinc-500">
             Same held-out tasks. High: 1,587 active of 1,860. Low: 620 of 620.
+            Active = ≥1 agent step + ≥1 tool call. Search coverage = share of
+            active trials with a pool-wide search over{" "}
+            <span className="font-mono">/sim/train</span> (grep/glob/listdir),
+            not just opening a named session file.
           </p>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full min-w-[18rem] text-sm tabular-nums">
