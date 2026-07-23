@@ -652,7 +652,7 @@ export function ReasoningEffortSection() {
       low: String(EFFORT_TRAJ.low.trainCmds),
     },
     {
-      label: "Search coverage",
+      label: "Pool-scan rate",
       high: `${EFFORT_TRAJ.high.poolScanPct}%`,
       low: `${EFFORT_TRAJ.low.poolScanPct}%`,
     },
@@ -705,10 +705,12 @@ export function ReasoningEffortSection() {
           </h3>
           <p className="mt-1 text-xs text-zinc-500">
             Same held-out tasks. High: 1,587 active of 1,860. Low: 620 of 620.
-            Active = ≥1 agent step + ≥1 tool call. Search coverage = share of
-            active trials with a pool-wide search over{" "}
-            <span className="font-mono">/sim/train</span> (grep/glob/listdir),
-            not just opening a named session file.
+            Active = ≥1 agent step + ≥1 tool call. Pool-scan rate = share of
+            active trials with a pool-wide{" "}
+            <span className="font-mono">/sim/train</span> command (e.g.{" "}
+            <span className="font-mono">grep -R</span>,{" "}
+            <span className="font-mono">*.md</span> globs, listdir)—not merely
+            opening a named session file.
           </p>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full min-w-[18rem] text-sm tabular-nums">
@@ -736,9 +738,9 @@ export function ReasoningEffortSection() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-5 text-zinc-500">
-            Low also shifts strategy: more{" "}
-            <span className="font-mono">index_then_few_named</span> (22% vs
-            &lt;1% at high) and less deep pool-scan. Over-approve barely moves.
+            Low also shifts strategy: more often reads the train index then a
+            few named sessions (22% vs &lt;1%), with less pack-wide search.
+            Over-approve barely moves.
           </p>
         </div>
 
