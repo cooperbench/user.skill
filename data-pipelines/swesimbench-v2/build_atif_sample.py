@@ -73,13 +73,23 @@ assert clean_manifest["policy_fingerprint"]==policy_fingerprint()
 man=clean_manifest["users"]
 
 # ---- collect valid held-out points per dev (deterministic) ----
+# Compaction summaries may appear as role=user in raw traces; never predict them.
 COMPACT = ("This session is being continued", "<system-reminder>")
+def is_compaction_target(t):
+    txt = (t.get("text") or "").strip()
+    return txt.startswith(COMPACT) or (
+        "ran out of context" in txt[:240]
+        and "summary below covers" in txt[:400].lower()
+    )
+
 def dev_points(u):
     held = sorted([x for x in u["held_sessions"] if x["sid"] in IDX], key=lambda x: x["ts"])
     pts = []
     for x in held:
         turns = IDX[x["sid"]]
         for i, t in enumerate(turns):
+            if is_compaction_target(t):
+                continue
             if is_action(t) and any(p.get("role") == "assistant" for p in turns[:i]):
                 pts.append((x["sid"], i))
     return pts
