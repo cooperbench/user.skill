@@ -9,7 +9,7 @@ const HUB_URLS = {
       "https://hub.harborframework.com/datasets/userbench/UserBench-train400",
   },
   agentTraces: {
-    // 1860 trials; Avg reward = multilabel Jaccard (not exact-match 0/1)
+    // Sol-high: 1860 trials; Avg reward = multilabel Jaccard (not exact-match 0/1)
     baseline:
       "https://hub.harborframework.com/jobs/14a20479-5716-4ed6-b3ec-3f4d772d9d34",
     train400:
@@ -20,6 +20,19 @@ const HUB_URLS = {
       "https://hub.harborframework.com/jobs/722b2a3b-032b-494b-96f6-b8febdb54f4f",
     train400:
       "https://hub.harborframework.com/jobs/8ab68c38-f335-4adc-90b8-e833f5bc2aa2",
+  },
+  // Sol-low: 1×620; same multilabel Jaccard scoring
+  agentTracesLow: {
+    baseline:
+      "https://hub.harborframework.com/jobs/fca0f1bb-87d0-4c5e-94e3-3a1e266efdf7",
+    train400:
+      "https://hub.harborframework.com/jobs/2947aead-6b34-4a6e-a0f4-30d84af7e655",
+  },
+  judgeTracesLow: {
+    baseline:
+      "https://hub.harborframework.com/jobs/91587726-5621-4a54-9659-b1ff343dfc4a",
+    train400:
+      "https://hub.harborframework.com/jobs/61078e64-1a3a-459c-b7bc-96e61caad127",
   },
 } as const;
 
@@ -104,6 +117,16 @@ const EFFORT_TRAJ = {
 const AGENT = {
   baseline3x: HUB_URLS.agentTraces.baseline,
   train4003x: HUB_URLS.agentTraces.train400,
+};
+
+/** Sol-low (reasoning_effort=low) public Hub traces — 1×620. */
+const AGENT_LOW = {
+  baseline: HUB_URLS.agentTracesLow.baseline,
+  train400: HUB_URLS.agentTracesLow.train400,
+};
+const JUDGE_LOW = {
+  baseline: HUB_URLS.judgeTracesLow.baseline,
+  train400: HUB_URLS.judgeTracesLow.train400,
 };
 
 function pct(x: number, digits = 1) {
@@ -1230,23 +1253,38 @@ export function RunDetailsSection() {
               </p>
             </div>
             <div>
-              <p className="font-medium text-zinc-800">Baseline</p>
+              <p className="font-medium text-zinc-800">Sol-high baseline</p>
               <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
                 <ExtLink href={AGENT.baseline3x}>Agent traces ↗</ExtLink>
                 <ExtLink href={ML.baseline.hub}>Judge traces ↗</ExtLink>
               </p>
             </div>
             <div>
-              <p className="font-medium text-zinc-800">Train400</p>
+              <p className="font-medium text-zinc-800">Sol-high train400</p>
               <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
                 <ExtLink href={AGENT.train4003x}>Agent traces ↗</ExtLink>
                 <ExtLink href={ML.train400.hub}>Judge traces ↗</ExtLink>
               </p>
             </div>
+            <div>
+              <p className="font-medium text-zinc-800">Sol-low baseline</p>
+              <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                <ExtLink href={AGENT_LOW.baseline}>Agent traces ↗</ExtLink>
+                <ExtLink href={JUDGE_LOW.baseline}>Judge traces ↗</ExtLink>
+              </p>
+            </div>
+            <div>
+              <p className="font-medium text-zinc-800">Sol-low train400</p>
+              <p className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                <ExtLink href={AGENT_LOW.train400}>Agent traces ↗</ExtLink>
+                <ExtLink href={JUDGE_LOW.train400}>Judge traces ↗</ExtLink>
+              </p>
+            </div>
           </div>
           <p className="mt-5 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
             Composer 2.5 assigns approve, critical, steer, and inquiry act sets
-            across 620 held-out tasks per condition.
+            across 620 held-out tasks per condition. Sol-high Hub jobs are 3×620;
+            Sol-low are 1×620 (reasoning_effort=low).
           </p>
         </div>
       </div>
