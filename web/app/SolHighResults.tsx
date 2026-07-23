@@ -522,17 +522,32 @@ export function AnalysisSection() {
   );
 }
 
+/**
+ * Cohort means over active Sol-high trajectories
+ * (AGENT_READ_PATTERNS.json, distributions_active_only).
+ * Baseline: 1860 active / 1860. Train400: 1587 active / 1860
+ * (273 empty trajectories excluded from train means).
+ */
+const SESSION_COHORT = {
+  baselineN: 1860,
+  trainActiveN: 1587,
+  trainSelectedN: 1860,
+  steps: { baseline: 5.2, train400: 7.7 },
+  tools: { baseline: 6.8, train400: 15.8 },
+  inputTokensK: { baseline: 42, train400: 182 },
+  tokenRatio: "4.3×",
+  /** Active-trial means; leaderboard uses 3-trial task means (44.5% / 49.4%). */
+  jaccard: { baseline: "0.44", train400: "0.50" },
+  costUsd: { baseline: 0.14, train400: 0.45 },
+  costRatio: "3×",
+} as const;
+
 /** Real Sol-high pair: median-like baseline vs index_then_pool_scan train400. */
 const SESSION_PAIR = {
   taskKey: "melagiri__25b8f546",
   goldMsg:
     "create feature branch and work on it.. but before that, try looking for similar errors that we may have introduced recently due the changes we made to codebase",
   goldActs: ["approve", "steer"] as const,
-  cohort: {
-    baselineSteps: 5,
-    trainSteps: 7,
-    tokenRatio: "4.3×",
-  },
   baseline: {
     trial: "melagiri__25b8f546__77edbTD",
     tools: 9,
@@ -787,40 +802,38 @@ function SessionTimeline({
   );
 }
 
-/** Side-by-side typical Sol-high trajectories on one paired task. */
+/** Cohort trend strip + one paired Sol-high trajectory example. */
 export function TypicalSessionsSection() {
-  const { baseline, train400, goldMsg, goldActs, taskKey, cohort } =
-    SESSION_PAIR;
-  const tokenMult = (train400.inputTokens / baseline.inputTokens).toFixed(1);
+  const { baseline, train400, goldMsg, goldActs, taskKey } = SESSION_PAIR;
+  const exampleTokenMult = (
+    train400.inputTokens / baseline.inputTokens
+  ).toFixed(1);
 
   return (
     <Section
       id="sessions"
       kicker="Agent trajectories"
-      title="A typical session, side by side"
+      title="How sessions change with train400"
     >
-      <p className="max-w-3xl text-sm leading-6 text-zinc-600">
-        Same held-out task ({taskKey}). Baseline stays in{" "}
-        <span className="font-mono text-xs text-zinc-700">/sim/history.md</span>
-        ; train400 opens{" "}
-        <span className="font-mono text-xs text-zinc-700">_index.json</span>,
-        reads two named sessions, then pool-scans{" "}
-        <span className="font-mono text-xs text-zinc-700">/sim/train</span>.
-        Chosen near the cohort medians ({cohort.baselineSteps} vs{" "}
-        {cohort.trainSteps} agent turns; train tokens ~{cohort.tokenRatio}{" "}
-        baseline). Each numbered timeline item is one agent turn.
-      </p>
-
-      <aside className="mt-5 grid gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:grid-cols-4 sm:p-5">
+      <aside className="grid gap-3 rounded-2xl border border-zinc-200 bg-white p-4 sm:grid-cols-4 sm:p-5">
         {(
           [
             [
               "Steps",
-              `${baseline.timeline.length} → ${train400.timeline.length}`,
+              `${SESSION_COHORT.steps.baseline} → ${SESSION_COHORT.steps.train400}`,
             ],
-            ["Tools", `${baseline.tools} → ${train400.tools}`],
-            ["Input tokens", `${tokenMult}×`],
-            ["Jaccard", `${baseline.jaccard} → ${train400.jaccard}`],
+            [
+              "Tools",
+              `${SESSION_COHORT.tools.baseline} → ${SESSION_COHORT.tools.train400}`,
+            ],
+            [
+              "Input tokens",
+              `${SESSION_COHORT.inputTokensK.baseline}k → ${SESSION_COHORT.inputTokensK.train400}k`,
+            ],
+            [
+              "Jaccard",
+              `${SESSION_COHORT.jaccard.baseline} → ${SESSION_COHORT.jaccard.train400}`,
+            ],
           ] as const
         ).map(([label, value]) => (
           <div key={label}>
@@ -833,14 +846,35 @@ export function TypicalSessionsSection() {
           </div>
         ))}
       </aside>
-      <p className="mt-2 text-xs leading-5 text-zinc-500">
-        Train also costs ~
-        {(train400.costUsd / baseline.costUsd).toFixed(1)}× more on this trial
-        (${baseline.costUsd.toFixed(2)} → ${train400.costUsd.toFixed(2)}).
-        Across active trials, median input tokens rise about {cohort.tokenRatio}.
+      <p className="mt-2 max-w-3xl text-xs leading-5 text-zinc-500">
+        {`Means over active Sol-high trials (baseline ${SESSION_COHORT.baselineN.toLocaleString()}; train400 ${SESSION_COHORT.trainActiveN.toLocaleString()} of ${SESSION_COHORT.trainSelectedN.toLocaleString()}, excluding empty trajectories). Input tokens rise about ${SESSION_COHORT.tokenRatio}; mean cost about $${SESSION_COHORT.costUsd.baseline.toFixed(2)} → $${SESSION_COHORT.costUsd.train400.toFixed(2)} (~${SESSION_COHORT.costRatio}).`}
       </p>
 
-      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+      <div className="mt-8">
+        <h3 className="text-sm font-semibold text-zinc-900">
+          One paired example
+        </h3>
+        <p className="mt-1 font-mono text-[11px] text-zinc-400">{taskKey}</p>
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-600">
+          Same held-out task. Baseline stays in{" "}
+          <span className="font-mono text-xs text-zinc-700">
+            /sim/history.md
+          </span>
+          ; train400 opens{" "}
+          <span className="font-mono text-xs text-zinc-700">_index.json</span>,
+          reads two named sessions, then pool-scans{" "}
+          <span className="font-mono text-xs text-zinc-700">/sim/train</span>.
+          Each numbered timeline item is one agent turn.
+        </p>
+        <p className="mt-2 text-xs leading-5 text-zinc-500">
+          This trial: {baseline.timeline.length} → {train400.timeline.length}{" "}
+          steps · {baseline.tools} → {train400.tools} tools · {exampleTokenMult}
+          × input tokens · Jaccard {baseline.jaccard} →{" "}
+          {train400.jaccard === 1 ? "1" : train400.jaccard}.
+        </p>
+      </div>
+
+      <div className="mt-5 grid gap-4 lg:grid-cols-2">
         <SessionTimeline arm={baseline} />
         <SessionTimeline arm={train400} featured />
       </div>
