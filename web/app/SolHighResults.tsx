@@ -105,7 +105,11 @@ const ML_MAX = {
   highTrain400MeanOf3: 0.4939,
 } as const;
 
-/** Trajectory cohort (active trials): sol-high vs sol-low train400. */
+/**
+ * Trajectory cohort (active trials): sol-high / sol-low / sol-max train400.
+ * Method: AGENT_READ_PATTERNS (active = ≥1 agent step + ≥1 tool call).
+ * Max source: jobs/sol-max-userbench/MAX_READ_DEPTH.json (sol-max-full-train400).
+ */
 const EFFORT_TRAJ = {
   high: {
     tools: 15.8,
@@ -124,6 +128,15 @@ const EFFORT_TRAJ = {
     trainObsK: 26,
     inputTokensK: 52,
     overApprovePp: 24.0,
+  },
+  max: {
+    tools: 20.1,
+    steps: 9.2,
+    trainCmds: 12.8,
+    poolScanPct: 99.7,
+    trainObsK: 109,
+    inputTokensK: 310,
+    overApprovePp: 19.0,
   },
 } as const;
 
@@ -698,38 +711,44 @@ export function AnalysisSection() {
   );
 }
 
-/** Low / high / max effort: scores + train400 read depth (high vs low). */
+/** Low / high / max effort: scores + train400 read depth. */
 export function ReasoningEffortSection() {
   const rows = [
     {
       label: "Mean tools",
       high: String(EFFORT_TRAJ.high.tools),
       low: String(EFFORT_TRAJ.low.tools),
+      max: String(EFFORT_TRAJ.max.tools),
     },
     {
       label: "Mean train cmds",
       high: String(EFFORT_TRAJ.high.trainCmds),
       low: String(EFFORT_TRAJ.low.trainCmds),
+      max: String(EFFORT_TRAJ.max.trainCmds),
     },
     {
       label: "Search coverage",
       high: `${EFFORT_TRAJ.high.poolScanPct}%`,
       low: `${EFFORT_TRAJ.low.poolScanPct}%`,
+      max: `${EFFORT_TRAJ.max.poolScanPct}%`,
     },
     {
       label: "Train obs (mean)",
       high: `~${EFFORT_TRAJ.high.trainObsK}kB`,
       low: `~${EFFORT_TRAJ.low.trainObsK}kB`,
+      max: `~${EFFORT_TRAJ.max.trainObsK}kB`,
     },
     {
       label: "Input tokens (mean)",
       high: `~${EFFORT_TRAJ.high.inputTokensK}k`,
       low: `~${EFFORT_TRAJ.low.inputTokensK}k`,
+      max: `~${EFFORT_TRAJ.max.inputTokensK}k`,
     },
     {
       label: "Over-approve gap",
       high: `+${EFFORT_TRAJ.high.overApprovePp.toFixed(0)} pp`,
       low: `+${EFFORT_TRAJ.low.overApprovePp.toFixed(0)} pp`,
+      max: `+${EFFORT_TRAJ.max.overApprovePp.toFixed(0)} pp`,
     },
   ] as const;
 
@@ -768,18 +787,19 @@ export function ReasoningEffortSection() {
           </h3>
           <p className="mt-1 text-xs text-zinc-500">
             Same held-out tasks. High: 1,587 active of 1,860. Low: 620 of 620.
-            Active = ≥1 agent step + ≥1 tool call. Search coverage = share of
-            active trials with a pool-wide search over{" "}
+            Max: 620 of 620. Active = ≥1 agent step + ≥1 tool call. Search
+            coverage = share of active trials with a pool-wide search over{" "}
             <span className="font-mono">/sim/train</span> (grep/glob/listdir),
             not just opening a named session file.
           </p>
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[18rem] text-sm tabular-nums">
+            <table className="w-full min-w-[22rem] text-sm tabular-nums">
               <thead>
                 <tr className="border-b border-zinc-100 text-right text-xs text-zinc-500">
                   <th className="pb-2 text-left font-medium">Metric</th>
                   <th className="pb-2 font-medium">High</th>
                   <th className="pb-2 font-medium">Low</th>
+                  <th className="pb-2 font-medium">Max</th>
                 </tr>
               </thead>
               <tbody className="text-right text-zinc-700">
@@ -793,6 +813,7 @@ export function ReasoningEffortSection() {
                     </th>
                     <td className="py-2">{row.high}</td>
                     <td className="py-2">{row.low}</td>
+                    <td className="py-2">{row.max}</td>
                   </tr>
                 ))}
               </tbody>
@@ -800,8 +821,9 @@ export function ReasoningEffortSection() {
           </div>
           <p className="mt-4 text-xs leading-5 text-zinc-500">
             Low also shifts strategy: more often reads the train index then a
-            few named sessions (22% vs &lt;1%), with less pack-wide search.
-            Over-approve barely moves.
+            few named sessions (22% vs &lt;1%), with less pack-wide search. Max
+            reads deeper than high (more tools and tokens) with similar search
+            coverage. Over-approve barely moves.
           </p>
         </div>
 
