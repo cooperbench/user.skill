@@ -7,6 +7,9 @@ Source: `web/`. The public Harbor eval and train pools live on branch **`kevin`*
 The multi-label act annotator lives at [`/annotator`](https://userbench.vercel.app/annotator)
 (dashboard: `/annotator/dashboard`).
 
+Compaction/continuation summaries (e.g. "This session is being continued…") are filtered out of labeling targets at sample build time (`web/scripts/build_annotator_sample.py`).
+
+
 ---
 
 # User.skill
