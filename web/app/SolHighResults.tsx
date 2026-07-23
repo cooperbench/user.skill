@@ -66,6 +66,40 @@ const ML = {
   liftPp: 4.89,
 };
 
+/**
+ * Sol-low (reasoning_effort=low): 1 trial × 620 per arm.
+ * No bootstrap CI / 3-trial SD — single-trial means only.
+ * Source: jobs/sol-low-userbench/STATUS.md + REASONING_EFFORT_ANALYSIS.md
+ */
+const ML_LOW = {
+  baseline: { jaccard: 0.4543, exact: 0.3274 },
+  train400: { jaccard: 0.4591, exact: 0.3355 },
+  liftPp: 0.48,
+  nTrialsLabel: "1 trial × 620 tasks",
+} as const;
+
+/** Trajectory cohort (active trials): sol-high vs sol-low train400. */
+const EFFORT_TRAJ = {
+  high: {
+    tools: 15.8,
+    steps: 7.7,
+    trainCmds: 9.4,
+    poolScanPct: 99.6,
+    trainObsK: 73,
+    inputTokensK: 182,
+    overApprovePp: 21.0,
+  },
+  low: {
+    tools: 7.3,
+    steps: 5.2,
+    trainCmds: 3.3,
+    poolScanPct: 76.1,
+    trainObsK: 26,
+    inputTokensK: 52,
+    overApprovePp: 24.0,
+  },
+} as const;
+
 /** Agent-trial Hub jobs (gpt-5.6-sol trajectories). */
 const AGENT = {
   baseline3x: HUB_URLS.agentTraces.baseline,
@@ -135,17 +169,22 @@ function ScoreRow({
   rate,
   ci,
   featured = false,
+  trialsNote = "3 trials × 620 tasks",
 }: {
   label: string;
   note: string;
   rate: number;
-  /** Bootstrap 95% CI over 620 per-task means */
-  ci: readonly [number, number];
+  /** Bootstrap 95% CI over 620 per-task means; omit for single-trial rows */
+  ci?: readonly [number, number];
   featured?: boolean;
+  trialsNote?: string;
 }) {
   const chance = 0.437;
   const max = 0.6;
   const x = (value: number) => `${(value / max) * 100}%`;
+  const aria = ci
+    ? `${label}: ${pct(rate)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7% (always predict steer)`
+    : `${label}: ${pct(rate)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about 43.7% (always predict steer)`;
   return (
     <div
       className={`grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4 ${
@@ -159,7 +198,7 @@ function ScoreRow({
       <div
         className="relative col-span-2 row-start-2 h-10 overflow-visible sm:col-span-1 sm:col-start-2 sm:row-start-1"
         role="img"
-        aria-label={`${label}: ${pct(rate)} mean Jaccard over 3 trials × 620 tasks; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7% (always predict steer)`}
+        aria-label={aria}
       >
         <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full bg-zinc-200" />
         <div
@@ -173,14 +212,16 @@ function ScoreRow({
           style={{ left: x(chance) }}
           aria-hidden="true"
         />
-        <span
-          className="absolute top-1/2 z-30 h-0.5 -translate-y-1/2 bg-zinc-950"
-          style={{ left: x(ci[0]), width: x(ci[1] - ci[0]) }}
-          aria-hidden="true"
-        >
-          <span className="absolute -left-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
-          <span className="absolute -right-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
-        </span>
+        {ci && (
+          <span
+            className="absolute top-1/2 z-30 h-0.5 -translate-y-1/2 bg-zinc-950"
+            style={{ left: x(ci[0]), width: x(ci[1] - ci[0]) }}
+            aria-hidden="true"
+          >
+            <span className="absolute -left-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
+            <span className="absolute -right-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
+          </span>
+        )}
         <span
           className="absolute top-1/2 z-40 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-zinc-950 shadow-sm"
           style={{ left: x(rate) }}
@@ -240,14 +281,14 @@ export function LeaderboardSection() {
         <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
           <div className="space-y-3">
             <ScoreRow
-              label="Baseline"
-              note="No developer training history"
+              label="Baseline · high"
+              note="No developer training history · effort high"
               rate={ML.baseline.jaccard}
               ci={ML.baseline.ci}
             />
             <ScoreRow
-              label="Train400"
-              note="400 prior turns from the same developer"
+              label="Train400 · high"
+              note="400 prior turns · effort high · primary"
               rate={ML.train400.jaccard}
               ci={ML.train400.ci}
               featured
@@ -270,10 +311,55 @@ export function LeaderboardSection() {
             </span>
             <span>
               <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
-              Error bars: bootstrap 95% CIs over 620 tasks (10k resamples of
-              the mean; each task uses its mean Jaccard across 3 trials)
+              Error bars (high only): bootstrap 95% CIs over 620 tasks (10k
+              resamples; each task = mean of 3 trials)
             </span>
           </div>
+        </div>
+
+        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                Same model · effort low
+              </p>
+              <p className="mt-1 text-sm text-zinc-600">
+                GPT-5.6 Sol (low) · {ML_LOW.nTrialsLabel} · no multi-trial CI
+              </p>
+            </div>
+            <div className="sm:text-right">
+              <p className="text-2xl font-semibold tracking-tight tabular-nums text-zinc-700">
+                +{ML_LOW.liftPp.toFixed(1)} pp
+              </p>
+              <p className="text-xs text-zinc-500">train400 vs baseline</p>
+            </div>
+          </div>
+          <div className="mt-4 space-y-3">
+            <ScoreRow
+              label="Baseline · low"
+              note="No developer training history · effort low"
+              rate={ML_LOW.baseline.jaccard}
+              trialsNote={ML_LOW.nTrialsLabel}
+            />
+            <ScoreRow
+              label="Train400 · low"
+              note="400 prior turns · effort low"
+              rate={ML_LOW.train400.jaccard}
+              trialsNote={ML_LOW.nTrialsLabel}
+            />
+          </div>
+          <p className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
+            At low effort, baseline stays near high ({pct(ML_LOW.baseline.jaccard)}{" "}
+            vs {pct(ML.baseline.jaccard)}), but train400 barely moves (+
+            {ML_LOW.liftPp.toFixed(1)} pp vs +{ML.liftPp.toFixed(1)} pp). See{" "}
+            <a
+              href="#reasoning-effort"
+              className="text-indigo-600 underline-offset-2 hover:underline"
+            >
+              impact of reasoning effort
+            </a>
+            .
+          </p>
         </div>
 
       </section>
@@ -510,6 +596,13 @@ export function AnalysisSection() {
         >
           typical sessions
         </a>
+        . For high vs low effort on the same tasks, see{" "}
+        <a
+          href="#reasoning-effort"
+          className="text-indigo-600 underline-offset-2 hover:underline"
+        >
+          reasoning effort
+        </a>
         .
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -517,6 +610,168 @@ export function AnalysisSection() {
         <ActMixChart />
         <TaskDeltaChart />
         <QualitativeComparison />
+      </div>
+    </Section>
+  );
+}
+
+/** High vs low effort: scores + train400 read depth (from REASONING_EFFORT_ANALYSIS). */
+export function ReasoningEffortSection() {
+  const rows = [
+    {
+      label: "Mean tools",
+      high: String(EFFORT_TRAJ.high.tools),
+      low: String(EFFORT_TRAJ.low.tools),
+    },
+    {
+      label: "Mean train cmds",
+      high: String(EFFORT_TRAJ.high.trainCmds),
+      low: String(EFFORT_TRAJ.low.trainCmds),
+    },
+    {
+      label: "Pool-scan rate",
+      high: `${EFFORT_TRAJ.high.poolScanPct}%`,
+      low: `${EFFORT_TRAJ.low.poolScanPct}%`,
+    },
+    {
+      label: "Train obs (mean)",
+      high: `~${EFFORT_TRAJ.high.trainObsK}kB`,
+      low: `~${EFFORT_TRAJ.low.trainObsK}kB`,
+    },
+    {
+      label: "Input tokens (mean)",
+      high: `~${EFFORT_TRAJ.high.inputTokensK}k`,
+      low: `~${EFFORT_TRAJ.low.inputTokensK}k`,
+    },
+    {
+      label: "Over-approve gap",
+      high: `+${EFFORT_TRAJ.high.overApprovePp.toFixed(0)} pp`,
+      low: `+${EFFORT_TRAJ.low.overApprovePp.toFixed(0)} pp`,
+    },
+  ] as const;
+
+  return (
+    <Section
+      id="reasoning-effort"
+      kicker="Ablation"
+      title="Impact of reasoning effort"
+    >
+      <ul className="max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-700">
+        <li>
+          Baseline is about the same at low vs high (
+          {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}; chance
+          ≈43.7%).
+        </li>
+        <li>
+          Train400 lift collapses at low effort: +{ML_LOW.liftPp.toFixed(1)} pp
+          vs +{ML.liftPp.toFixed(1)} pp at high (low is {ML_LOW.nTrialsLabel};
+          high is 3-trial means).
+        </li>
+        <li>
+          Effort matters more for using history than for cold next-act: low
+          still opens{" "}
+          <span className="font-mono text-xs">/sim/train</span> on every
+          active trial, but runs fewer tools and weaker pool scans.
+        </li>
+      </ul>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+        <div className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h3 className="font-semibold text-zinc-900">
+            Train400 read depth (active trials)
+          </h3>
+          <p className="mt-1 text-xs text-zinc-500">
+            Same held-out tasks. High: 1,587 active of 1,860. Low: 620 of 620.
+          </p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[18rem] text-sm tabular-nums">
+              <thead>
+                <tr className="border-b border-zinc-100 text-right text-xs text-zinc-500">
+                  <th className="pb-2 text-left font-medium">Metric</th>
+                  <th className="pb-2 font-medium">High</th>
+                  <th className="pb-2 font-medium">Low</th>
+                </tr>
+              </thead>
+              <tbody className="text-right text-zinc-700">
+                {rows.map((row) => (
+                  <tr
+                    key={row.label}
+                    className="border-b border-zinc-100 last:border-0"
+                  >
+                    <th className="py-2 pr-4 text-left font-medium text-zinc-600">
+                      {row.label}
+                    </th>
+                    <td className="py-2">{row.high}</td>
+                    <td className="py-2">{row.low}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs leading-5 text-zinc-500">
+            Low also shifts strategy: more{" "}
+            <span className="font-mono">index_then_few_named</span> (22% vs
+            &lt;1% at high) and less deep pool-scan. Over-approve barely moves.
+          </p>
+        </div>
+
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h3 className="font-semibold text-zinc-900">
+            Same task, different effort
+          </h3>
+          <p className="mt-2 text-sm leading-6 text-zinc-600">
+            <span className="font-mono text-xs text-zinc-700">
+              admarble__dbb54fbd
+            </span>
+            : gold next turn is a short approve (“proceed”). High train400
+            pool-scans interruption phrasing and answers correctly; low skims
+            the index, then steers to “docs 574”.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-xl bg-indigo-50/70 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+                High · train400
+              </p>
+              <p className="mt-2 text-xs leading-5 text-zinc-600">
+                11 tools · 8 train cmds · pool-scan
+              </p>
+              <blockquote className="mt-3 text-sm leading-6 text-zinc-700">
+                “proceed”
+              </blockquote>
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <LabelChip label="approve" />
+                <span className="ml-auto text-sm font-semibold tabular-nums text-indigo-700">
+                  J ↑
+                </span>
+              </div>
+            </div>
+            <div className="rounded-xl bg-zinc-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Low · train400
+              </p>
+              <p className="mt-2 text-xs leading-5 text-zinc-600">
+                5 tools · 3 train cmds · thinner scan
+              </p>
+              <blockquote className="mt-3 text-sm leading-6 text-zinc-700">
+                “docs 574”
+              </blockquote>
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <LabelChip label="steer" />
+                <span className="ml-auto text-sm font-semibold tabular-nums text-rose-700">
+                  J 0
+                </span>
+              </div>
+            </div>
+          </div>
+          <p className="mt-4 text-xs leading-5 text-zinc-500">
+            Second pattern on{" "}
+            <span className="font-mono">alishakawaguchi__bd8cd4f9</span>: both
+            say “commit”, but low skips pool-scan (
+            <span className="font-mono">index_then_few_named</span>) and loses
+            the approve label that high recovers. One-trial anecdotes; the
+            620-task means above measure the gap.
+          </p>
+        </article>
       </div>
     </Section>
   );
@@ -944,11 +1199,13 @@ export function RunDetailsSection() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-5 text-zinc-500">
-            Leaderboard means average Jaccard over 3 trials per task, then
-            over 620 tasks. Whiskers are bootstrap 95% CIs over tasks
-            (baseline {pct(ML.baseline.ci[0])}–{pct(ML.baseline.ci[1])};
-            train400 {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}).
-            Lift: +{ML.liftPp.toFixed(1)} pp.
+            Sol-high (primary): mean Jaccard over 3 trials per task, then 620
+            tasks. Whiskers are bootstrap 95% CIs (baseline{" "}
+            {pct(ML.baseline.ci[0])}–{pct(ML.baseline.ci[1])}; train400{" "}
+            {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}). Lift: +
+            {ML.liftPp.toFixed(1)} pp. Sol-low: single trial × 620 — baseline{" "}
+            {pct(ML_LOW.baseline.jaccard)}, train400 {pct(ML_LOW.train400.jaccard)}{" "}
+            (+{ML_LOW.liftPp.toFixed(1)} pp); no multi-trial CI.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-5">

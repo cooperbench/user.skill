@@ -3,6 +3,7 @@ import {
   DatasetHubLinks,
   LabelExamplesSection,
   LeaderboardSection,
+  ReasoningEffortSection,
   RunDetailsSection,
   TypicalSessionsSection,
 } from "./SolHighResults";
@@ -169,6 +170,9 @@ export default function HomePage() {
           <a href="#analysis" className="hover:text-zinc-950">
             Analysis
           </a>
+          <a href="#reasoning-effort" className="hover:text-zinc-950">
+            Effort
+          </a>
           <a href="/misprediction" className="hover:text-zinc-950">
             Misprediction
           </a>
@@ -308,6 +312,7 @@ export default function HomePage() {
 
       <LabelExamplesSection />
       <AnalysisSection />
+      <ReasoningEffortSection />
       <TypicalSessionsSection />
       <RunDetailsSection />
 
@@ -320,6 +325,13 @@ export default function HomePage() {
         ,{" "}
         <a href="#sessions" className="text-zinc-600 hover:text-zinc-900">
           sessions
+        </a>
+        ,{" "}
+        <a
+          href="#reasoning-effort"
+          className="text-zinc-600 hover:text-zinc-900"
+        >
+          effort
         </a>
         ,{" "}
         <a
