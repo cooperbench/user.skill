@@ -16,6 +16,26 @@ is a post-pass: `pii_redaction/scrub_artifacts.py` (see
 `SWE-chat-private/release/pii_redaction/`). Reports land in
 `meta/pii_scrub_report.json` and `meta/pii_scrub_verify.json`.
 
+## Compaction / continuation summaries — never prediction targets (2026-07-22)
+
+**Rule:** Skip harness compaction continuation summaries as user-prediction /
+annotator gold targets. Typical prefix:
+
+`This session is being continued from a previous conversation that ran out of context.`
+
+Also treat near-variants (`This conversation is being continued…`,
+`The conversation was compacted…`) and bodies that combine `ran out of context`
+with `summary below covers` in the opening. These are injected system context,
+not typed developer moves (`injected_role` → `system` in `cohort_policy`).
+
+**Where enforced**
+- Clean-cohort role rewrite / `is_human_target` / `is_predictable_human_turn`
+- `build_atif_sample.py` point selection (explicit skip)
+- Annotator sample builder (`build_sample.py` / website `build_annotator_sample.py`)
+
+eval-620 was already clean (0 such golds). Stale v2 sample point `t010` had one;
+annotator `items.json` replaces it and filters at rebuild.
+
 ## Maximum human user-turn length (1000 cl100k tokens) — 2026-07-14
 
 **Rule:** When selecting eval / prediction points (`prepare.py`, ATIF sample
