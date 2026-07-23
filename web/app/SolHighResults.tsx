@@ -786,7 +786,7 @@ export function ReasoningEffortSection() {
             Train400 read depth (active trials)
           </h3>
           <p className="mt-1 text-xs text-zinc-500">
-            Same held-out tasks. High: 1,587 active of 1,860. Low: 620 of 620.
+            Same held-out tasks. Low: 620 of 620. High: 1,587 active of 1,860.
             Max: 620 of 620. Active = ≥1 agent step + ≥1 tool call. Search
             coverage = share of active trials with a pool-wide search over{" "}
             <span className="font-mono">/sim/train</span> (grep/glob/listdir),
@@ -797,8 +797,8 @@ export function ReasoningEffortSection() {
               <thead>
                 <tr className="border-b border-zinc-100 text-right text-xs text-zinc-500">
                   <th className="pb-2 text-left font-medium">Metric</th>
-                  <th className="pb-2 font-medium">High</th>
                   <th className="pb-2 font-medium">Low</th>
+                  <th className="pb-2 font-medium">High</th>
                   <th className="pb-2 font-medium">Max</th>
                 </tr>
               </thead>
@@ -811,8 +811,8 @@ export function ReasoningEffortSection() {
                     <th className="py-2 pr-4 text-left font-medium text-zinc-600">
                       {row.label}
                     </th>
-                    <td className="py-2">{row.high}</td>
                     <td className="py-2">{row.low}</td>
+                    <td className="py-2">{row.high}</td>
                     <td className="py-2">{row.max}</td>
                   </tr>
                 ))}
