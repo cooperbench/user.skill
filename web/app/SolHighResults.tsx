@@ -793,10 +793,9 @@ export function ReasoningEffortSection() {
           <p className="mt-4 text-xs leading-5 text-zinc-500">
             Second pattern on{" "}
             <span className="font-mono">alishakawaguchi__bd8cd4f9</span>: both
-            say “commit”, but low skips pool-scan (
-            <span className="font-mono">index_then_few_named</span>) and loses
-            the approve label that high recovers. One-trial anecdotes; the
-            620-task means above measure the gap.
+            say “commit”, but low only reads the index and a few named sessions
+            and loses the approve label that high recovers. One-trial anecdotes;
+            the 620-task means above measure the gap.
           </p>
         </article>
       </div>
