@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "UserBench — How well can agents simulate users?",
   description:
-    "UserBench asks how well agents can simulate real software developers on coding-agent sessions. Harbor eval: 62 developers × 10 held-out tasks (620), scored by multilabel mean Jaccard. Leaderboard and analysis live on the dataset home.",
+    "UserBench asks how well agents can simulate real software developers on coding-agent sessions. Harbor eval: 58 scored developers × 10 held-out tasks (580), scored by multilabel mean Jaccard. Leaderboard and analysis live on the dataset home.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

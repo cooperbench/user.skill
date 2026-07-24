@@ -9,7 +9,9 @@ const HUB_URLS = {
       "https://hub.harborframework.com/datasets/userbench/UserBench-train400",
   },
   agentTraces: {
-    // Sol-high: 1860 trials; Avg reward = multilabel Jaccard (not exact-match 0/1)
+    // Sol-high: 1860 trials over all 62 developers; Avg reward = multilabel
+    // Jaccard (not exact-match 0/1). Scores on this page use the 58-developer
+    // subset (1740 trials); Hub jobs are left whole.
     baseline:
       "https://hub.harborframework.com/jobs/14a20479-5716-4ed6-b3ec-3f4d772d9d34",
     train400:
@@ -21,7 +23,7 @@ const HUB_URLS = {
     train400:
       "https://hub.harborframework.com/jobs/8ab68c38-f335-4adc-90b8-e833f5bc2aa2",
   },
-  // Sol-low: 1×620; same multilabel Jaccard scoring
+  // Sol-low: 1×620 on Hub; same multilabel Jaccard scoring
   agentTracesLow: {
     baseline:
       "https://hub.harborframework.com/jobs/fca0f1bb-87d0-4c5e-94e3-3a1e266efdf7",
@@ -40,103 +42,121 @@ const DATASET = HUB_URLS.datasets.baseline;
 const DATASET_TRAIN = HUB_URLS.datasets.train400;
 const DATASET_REF = "userbench/UserBench";
 const DATASET_TRAIN_REF = "userbench/UserBench-train400";
+/** Hub packages and Hub jobs still hold every developer. */
 const HUB_TASKS = 620;
 const HUB_DEVS = 62;
 
 /**
+ * Scored cohort. The four DataClaw donors are dropped from every number on
+ * this page: their `repo` is the HuggingFace donation slug rather than a real
+ * project, and three of the four are one person split by donor clustering.
+ * Their traces stay published in the Hub.
+ * Source: jobs/dataclaw-exclusion/DATACLAW_EXCLUSION_REPORT.md
+ */
+const EVAL_DEVS = 58;
+const EVAL_TASKS = 580;
+const CHANCE = 0.435;
+
+/**
  * Multilabel judge jobs; mean Jaccard is the benchmark metric.
  * Leaderboard point: mean over tasks of (mean Jaccard across 3 trials).
- * Error bars: bootstrap 95% CI over the 620 per-task means (10k
- * percentile bootstrap of the mean). See THREE_TRIAL_JACCARD.json.
+ * Error bars: bootstrap 95% CI over the 580 per-task means (10k
+ * percentile bootstrap of the mean). See jobs/dataclaw-exclusion/SCORES.json.
  */
 const ML = {
   baseline: {
-    jaccard: 0.445,
-    /** Bootstrap 95% CI over 620 per-task means (each task = mean of 3 trials). */
-    ci: [0.415, 0.474] as const,
-    exact: 0.306,
+    jaccard: 0.459,
+    /** Bootstrap 95% CI over 580 per-task means (each task = mean of 3 trials). */
+    ci: [0.429, 0.491] as const,
+    exact: 0.322,
     exactChance: 0.326,
-    nExact: 190,
-    chance: 0.439,
-    vsChancePp: 0.6,
-    macroF1: 0.439,
-    n: 1860,
+    nExact: 187,
+    chance: 0.437,
+    vsChancePp: 2.1,
+    macroF1: 0.449,
+    n: 1740,
     hub: HUB_URLS.judgeTraces.baseline,
   },
   train400: {
-    jaccard: 0.494,
-    ci: [0.463, 0.524] as const,
-    exact: 0.35,
-    exactChance: 0.324,
-    nExact: 217,
-    chance: 0.434,
-    vsChancePp: 4.6,
-    macroF1: 0.468,
-    n: 1860,
+    jaccard: 0.5,
+    ci: [0.467, 0.532] as const,
+    exact: 0.36,
+    exactChance: 0.326,
+    nExact: 209,
+    chance: 0.432,
+    vsChancePp: 5.3,
+    macroF1: 0.469,
+    n: 1740,
     hub: HUB_URLS.judgeTraces.train400,
   },
   /** train400 − baseline, from means of 3 trials. */
-  liftPp: 4.89,
+  liftPp: 4.02,
 };
 
 /**
- * Sol-low (reasoning_effort=low): 1 trial × 620 per arm.
+ * Sol-low (reasoning_effort=low): 1 trial × 580 per arm.
  * No bootstrap CI / 3-trial SD — single-trial means only.
- * Source: jobs/sol-low-userbench/STATUS.md + REASONING_EFFORT_ANALYSIS.md
+ * Source: jobs/dataclaw-exclusion/SCORES.json (sol_low).
  */
 const ML_LOW = {
-  baseline: { jaccard: 0.4543, exact: 0.3274 },
-  train400: { jaccard: 0.4591, exact: 0.3355 },
-  liftPp: 0.48,
-  nTrialsLabel: "1 trial × 620 tasks",
+  baseline: { jaccard: 0.4674, exact: 0.3431 },
+  train400: { jaccard: 0.4631, exact: 0.3414 },
+  liftPp: -0.43,
+  nTrialsLabel: "1 trial × 580 tasks",
 } as const;
 
 /**
- * Sol-max (reasoning_effort=max): Train400 only, 1×620.
+ * Sol-max (reasoning_effort=max): Train400 only, 1×580.
  * No baseline-max arm; no public Hub job yet.
- * Source: jobs/sol-max-userbench/STATUS.md (mean 0.5048387…; exact 0.377419…).
- * vsHighPp = max − Sol-high train400 mean-of-3 (0.493862…); not significant.
+ * Source: jobs/dataclaw-exclusion/SCORES.json (mean 0.513218…; exact 0.389655…).
+ * vsHighPp = max − Sol-high train400 mean-of-3 (0.499665…); not significant.
  */
 const ML_MAX = {
-  train400: { jaccard: 0.5048, exact: 0.3774 },
-  /** vs Sol-high train400 mean-of-3 (49.39%). */
-  vsHighPp: 1.1,
-  nTrialsLabel: "1 trial × 620 tasks",
-  highTrain400MeanOf3: 0.4939,
+  train400: { jaccard: 0.5132, exact: 0.3897 },
+  /** vs Sol-high train400 mean-of-3 (49.97%). */
+  vsHighPp: 1.4,
+  nTrialsLabel: "1 trial × 580 tasks",
+  highTrain400MeanOf3: 0.4997,
 } as const;
 
 /**
  * Trajectory cohort (active trials): sol-high / sol-low / sol-max train400.
  * Method: AGENT_READ_PATTERNS (active = ≥1 agent step + ≥1 tool call).
- * Max source: jobs/sol-max-userbench/MAX_READ_DEPTH.json (sol-max-full-train400).
+ * Source: jobs/dataclaw-exclusion/READ_DEPTH.json (filtered).
  */
 const EFFORT_TRAJ = {
   high: {
     tools: 15.8,
     steps: 7.7,
-    trainCmds: 9.4,
-    poolScanPct: 99.6,
-    trainObsK: 73,
-    inputTokensK: 182,
-    overApprovePp: 21.0,
+    trainCmds: 9.3,
+    poolScanPct: 99.5,
+    trainObsK: 72,
+    inputTokensK: 180,
+    overApprovePp: 20.5,
+    active: 1467,
+    selected: 1740,
   },
   low: {
-    tools: 7.3,
+    tools: 7.4,
     steps: 5.2,
     trainCmds: 3.3,
-    poolScanPct: 76.1,
+    poolScanPct: 76.4,
     trainObsK: 26,
-    inputTokensK: 52,
-    overApprovePp: 24.0,
+    inputTokensK: 53,
+    overApprovePp: 24.1,
+    active: 580,
+    selected: 580,
   },
   max: {
-    tools: 20.1,
-    steps: 9.2,
-    trainCmds: 12.8,
+    tools: 20.0,
+    steps: 9.1,
+    trainCmds: 12.6,
     poolScanPct: 99.7,
-    trainObsK: 109,
-    inputTokensK: 310,
-    overApprovePp: 19.0,
+    trainObsK: 106,
+    inputTokensK: 300,
+    overApprovePp: 18.1,
+    active: 580,
+    selected: 580,
   },
 } as const;
 
@@ -158,6 +178,11 @@ const JUDGE_LOW = {
 
 function pct(x: number, digits = 1) {
   return `${(100 * x).toFixed(digits)}%`;
+}
+
+/** Percentage-point delta with an explicit sign, e.g. "+4.0 pp" / "−0.4 pp". */
+function signedPp(x: number, digits = 1) {
+  return `${x < 0 ? "−" : "+"}${Math.abs(x).toFixed(digits)} pp`;
 }
 
 function ExtLink({ href, children }: { href: string; children: ReactNode }) {
@@ -219,25 +244,25 @@ function ScoreRow({
   rate,
   ci,
   featured = false,
-  trialsNote = "3 trials × 620 tasks",
+  trialsNote = "3 trials × 580 tasks",
   digits = 1,
 }: {
   label: string;
   note: string;
   rate: number;
-  /** Bootstrap 95% CI over 620 per-task means; omit for single-trial rows */
+  /** Bootstrap 95% CI over 580 per-task means; omit for single-trial rows */
   ci?: readonly [number, number];
   featured?: boolean;
   trialsNote?: string;
-  /** Percent display digits (default 1; max uses 2 for 50.48%). */
+  /** Percent display digits (default 1; max uses 2 for 51.32%). */
   digits?: number;
 }) {
-  const chance = 0.437;
+  const chance = CHANCE;
   const max = 0.6;
   const x = (value: number) => `${(value / max) * 100}%`;
   const aria = ci
-    ? `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about 43.7% (always predict steer)`
-    : `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about 43.7% (always predict steer)`;
+    ? `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about ${pct(CHANCE)} (always predict steer)`
+    : `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about ${pct(CHANCE)} (always predict steer)`;
   return (
     <div
       className={`grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4 ${
@@ -320,7 +345,8 @@ export function LeaderboardSection() {
               Conditioning on past sessions lifts baseline above chance
             </SectionHeading>
             <p className="mt-2 text-sm text-zinc-500">
-              GPT-5.6 Sol (high) · mean Jaccard over 3 trials × 620 tasks
+              GPT-5.6 Sol (high) · mean Jaccard over 3 trials × {EVAL_TASKS}{" "}
+              tasks from {EVAL_DEVS} developers
             </p>
           </div>
           <div className="sm:text-right">
@@ -360,12 +386,12 @@ export function LeaderboardSection() {
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-100 pt-4 text-xs text-zinc-500">
             <span>
               <span className="mr-2 inline-block h-3 w-0.5 bg-amber-600 align-[-2px]" />
-              Chance ≈43.7% (always predict {"{steer}"})
+              Chance ≈{pct(CHANCE)} (always predict {"{steer}"})
             </span>
             <span>
               <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
-              Error bars (high only): bootstrap 95% CIs over 620 tasks (10k
-              resamples; each task = mean of 3 trials)
+              Error bars (high only): bootstrap 95% CIs over {EVAL_TASKS} tasks
+              (10k resamples; each task = mean of 3 trials)
             </span>
           </div>
         </div>
@@ -382,7 +408,7 @@ export function LeaderboardSection() {
             </div>
             <div className="sm:text-right">
               <p className="text-2xl font-semibold tracking-tight tabular-nums text-zinc-700">
-                +{ML_LOW.liftPp.toFixed(1)} pp
+                {signedPp(ML_LOW.liftPp)}
               </p>
               <p className="text-xs text-zinc-500">train400 vs baseline</p>
             </div>
@@ -402,9 +428,10 @@ export function LeaderboardSection() {
             />
           </div>
           <p className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
-            At low effort, baseline stays near high ({pct(ML_LOW.baseline.jaccard)}{" "}
-            vs {pct(ML.baseline.jaccard)}), but train400 barely moves (+
-            {ML_LOW.liftPp.toFixed(1)} pp vs +{ML.liftPp.toFixed(1)} pp). See{" "}
+            At low effort, baseline lands where high does (
+            {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}), and
+            train400 buys nothing: {signedPp(ML_LOW.liftPp)} against{" "}
+            {signedPp(ML.liftPp)} at high effort. See{" "}
             <a
               href="#reasoning-effort"
               className="text-indigo-600 underline-offset-2 hover:underline"
@@ -428,7 +455,7 @@ export function LeaderboardSection() {
             </div>
             <div className="sm:text-right">
               <p className="text-2xl font-semibold tracking-tight tabular-nums text-zinc-700">
-                +{ML_MAX.vsHighPp.toFixed(1)} pp
+                {signedPp(ML_MAX.vsHighPp)}
               </p>
               <p className="text-xs text-zinc-500">vs high train400</p>
             </div>
@@ -444,8 +471,8 @@ export function LeaderboardSection() {
           </div>
           <p className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
             Max reaches {pct(ML_MAX.train400.jaccard, 2)} on train400 vs{" "}
-            {pct(ML_MAX.highTrain400MeanOf3, 2)} high (mean of 3) — about +
-            {ML_MAX.vsHighPp.toFixed(1)} pp, not significant. Exact-set{" "}
+            {pct(ML_MAX.highTrain400MeanOf3, 2)} high (mean of 3) — about{" "}
+            {signedPp(ML_MAX.vsHighPp)}, not significant. Exact-set{" "}
             {pct(ML_MAX.train400.exact)}. One unrecovered AgentTimeoutError; no
             baseline-max run. See{" "}
             <a
@@ -463,17 +490,19 @@ export function LeaderboardSection() {
   );
 }
 
+/** Median characters per turn; jobs/sol-high-userbench/OUTPUT_ANALYSIS.json. */
 const LENGTH_ROWS = [
-  { label: "Real turn", value: 53, color: "bg-zinc-900" },
+  { label: "Real turn", value: 50, color: "bg-zinc-900" },
   { label: "Baseline", value: 32.5, color: "bg-zinc-500" },
-  { label: "Train400", value: 29.5, color: "bg-indigo-600" },
+  { label: "Train400", value: 29, color: "bg-indigo-600" },
 ] as const;
 
+/** Gold = mean of the two arms' gold rates on the same 580 tasks. */
 const ACT_ROWS = [
-  { label: "approve", gold: 28.4, baseline: 52.7, train400: 49.0 },
-  { label: "critical", gold: 21.5, baseline: 15.8, train400: 16.1 },
-  { label: "steer", gold: 56.1, baseline: 46.9, train400: 48.4 },
-  { label: "inquiry", gold: 27.7, baseline: 10.8, train400: 14.2 },
+  { label: "approve", gold: 29.3, baseline: 53.5, train400: 49.5 },
+  { label: "critical", gold: 20.9, baseline: 15.2, train400: 15.3 },
+  { label: "steer", gold: 55.6, baseline: 46.4, train400: 47.9 },
+  { label: "inquiry", gold: 26.7, baseline: 11.0, train400: 14.5 },
 ] as const;
 
 function LengthChart() {
@@ -503,8 +532,8 @@ function LengthChart() {
         ))}
       </div>
       <p className="mt-5 text-sm leading-6 text-zinc-600">
-        The median absolute length gap changes little: 36 characters at
-        baseline and 35 with train400. Training history does not make output
+        The median absolute length gap changes little: 35.5 characters at
+        baseline and 33 with train400. Training history does not make output
         length much more human-like.
       </p>
     </figure>
@@ -518,7 +547,7 @@ function ActMixChart() {
         Training narrows the act-mix gap
       </figcaption>
       <p className="mt-1 text-xs text-zinc-500">
-        Share of 620 turns containing each act
+        Share of {EVAL_TASKS} turns containing each act
       </p>
       <div className="mt-5 space-y-4">
         {ACT_ROWS.map((row) => (
@@ -561,18 +590,18 @@ function ActMixChart() {
       </div>
       <p className="mt-5 text-sm leading-6 text-zinc-600">
         Both conditions overpredict approval and miss inquiries. Train400 cuts
-        those two gaps by about 3 percentage points each.
+        those two gaps by about 4 percentage points each.
       </p>
     </figure>
   );
 }
 
 function TaskDeltaChart() {
-  const total = 620;
+  const total = EVAL_TASKS;
   const segments = [
-    { label: "Improved", value: 135, color: "bg-indigo-600" },
-    { label: "Tied", value: 384, color: "bg-zinc-300" },
-    { label: "Worsened", value: 101, color: "bg-rose-400" },
+    { label: "Improved", value: 120, color: "bg-indigo-600" },
+    { label: "Tied", value: 363, color: "bg-zinc-300" },
+    { label: "Worsened", value: 97, color: "bg-rose-400" },
   ] as const;
   return (
     <figure className="rounded-2xl border border-zinc-200 bg-white p-5 sm:col-span-2">
@@ -582,7 +611,7 @@ function TaskDeltaChart() {
       <div
         className="mt-5 flex h-5 overflow-hidden rounded-full"
         role="img"
-        aria-label="Task-level Jaccard change: 135 improved, 384 tied, 101 worsened"
+        aria-label="Task-level Jaccard change: 120 improved, 363 tied, 97 worsened"
       >
         {segments.map((segment) => (
           <span
@@ -603,8 +632,8 @@ function TaskDeltaChart() {
         ))}
       </div>
       <p className="mt-5 text-sm leading-6 text-zinc-600">
-        Train400 improves Jaccard on 135 tasks and worsens it on 101; the other
-        384 are unchanged. The mean gain comes from a minority of tasks.
+        Train400 improves Jaccard on 120 tasks and worsens it on 97; the other
+        363 are unchanged. The mean gain comes from a minority of tasks.
       </p>
     </figure>
   );
@@ -667,8 +696,8 @@ function QualitativeComparison() {
       </div>
       <p className="mt-4 text-sm leading-6 text-zinc-600">
         With history, the model captured both the correction and the requested
-        direction. This case illustrates the pattern; the 620-task comparison
-        above measures it.
+        direction. This case illustrates the pattern; the {EVAL_TASKS}-task
+        comparison above measures it.
       </p>
     </article>
   );
@@ -761,22 +790,23 @@ export function ReasoningEffortSection() {
       <ul className="max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-700">
         <li>
           Baseline is about the same at low vs high (
-          {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}; chance
-          ≈43.7%). No baseline-max arm was run.
+          {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}; chance ≈
+          {pct(CHANCE)}). No baseline-max arm was run.
         </li>
         <li>
-          Train400 lift is flat at low (+{ML_LOW.liftPp.toFixed(1)} pp), clear at
-          high (+{ML.liftPp.toFixed(1)} pp; 3-trial means), and max adds a small
-          further bump on train400 only: {pct(ML_MAX.train400.jaccard, 2)} vs{" "}
-          {pct(ML_MAX.highTrain400MeanOf3, 2)} high (+{ML_MAX.vsHighPp.toFixed(1)}{" "}
-          pp; not significant).
+          Train400 gains nothing at low ({signedPp(ML_LOW.liftPp)}), clearly
+          helps at high ({signedPp(ML.liftPp)}; 3-trial means), and max adds a
+          small further bump on train400 only:{" "}
+          {pct(ML_MAX.train400.jaccard, 2)} vs{" "}
+          {pct(ML_MAX.highTrain400MeanOf3, 2)} high ({signedPp(ML_MAX.vsHighPp)};
+          not significant).
         </li>
         <li>
           Effort matters more for using history than for cold next-act: low
           still opens{" "}
           <span className="font-mono text-xs">/sim/train</span> on every
           active trial, but runs fewer tools and weaker pool scans. Max does not
-          clearly beat high on this 1×620 pass.
+          clearly beat high on this 1×{EVAL_TASKS} pass.
         </li>
       </ul>
 
@@ -786,9 +816,13 @@ export function ReasoningEffortSection() {
             Train400 read depth (active trials)
           </h3>
           <p className="mt-1 text-xs text-zinc-500">
-            Same held-out tasks. Low: 620 of 620. High: 1,587 active of 1,860.
-            Max: 620 of 620. Active = ≥1 agent step + ≥1 tool call. Search
-            coverage = share of active trials with a pool-wide search over{" "}
+            Same held-out tasks. Low: {EFFORT_TRAJ.low.active} of{" "}
+            {EFFORT_TRAJ.low.selected}. High:{" "}
+            {EFFORT_TRAJ.high.active.toLocaleString()} active of{" "}
+            {EFFORT_TRAJ.high.selected.toLocaleString()}. Max:{" "}
+            {EFFORT_TRAJ.max.active} of {EFFORT_TRAJ.max.selected}. Active = ≥1
+            agent step + ≥1 tool call. Search coverage = share of active trials
+            with a pool-wide search over{" "}
             <span className="font-mono">/sim/train</span> (grep/glob/listdir),
             not just opening a named session file.
           </p>
@@ -880,7 +914,7 @@ export function ReasoningEffortSection() {
             <span className="font-mono">alishakawaguchi__bd8cd4f9</span>: both
             say “commit”, but low only reads the index and a few named sessions
             and loses the approve label that high recovers. One-trial anecdotes;
-            the 620-task means above measure the gap.
+            the {EVAL_TASKS}-task means above measure the gap.
           </p>
         </article>
       </div>
@@ -890,21 +924,21 @@ export function ReasoningEffortSection() {
 
 /**
  * Cohort means over active Sol-high trajectories
- * (AGENT_READ_PATTERNS.json, distributions_active_only).
- * Baseline: 1860 active / 1860. Train400: 1587 active / 1860
+ * (jobs/dataclaw-exclusion/READ_DEPTH.json, filtered).
+ * Baseline: 1740 active / 1740. Train400: 1467 active / 1740
  * (273 empty trajectories excluded from train means).
  */
 const SESSION_COHORT = {
-  baselineN: 1860,
-  trainActiveN: 1587,
-  trainSelectedN: 1860,
-  steps: { baseline: 5.2, train400: 7.7 },
-  tools: { baseline: 6.8, train400: 15.8 },
-  inputTokensK: { baseline: 42, train400: 182 },
-  tokenRatio: "4.3×",
-  /** Active-trial means; leaderboard uses 3-trial task means (44.5% / 49.4%). */
-  jaccard: { baseline: "0.44", train400: "0.50" },
-  costUsd: { baseline: 0.14, train400: 0.45 },
+  baselineN: 1740,
+  trainActiveN: 1467,
+  trainSelectedN: 1740,
+  steps: { baseline: 5.3, train400: 7.7 },
+  tools: { baseline: 6.9, train400: 15.8 },
+  inputTokensK: { baseline: 43, train400: 180 },
+  tokenRatio: "4.2×",
+  /** Active-trial means; leaderboard uses 3-trial task means (45.9% / 50.0%). */
+  jaccard: { baseline: "0.46", train400: "0.50" },
+  costUsd: { baseline: 0.14, train400: 0.44 },
   costRatio: "3×",
 } as const;
 
@@ -1310,15 +1344,16 @@ export function RunDetailsSection() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-5 text-zinc-500">
-            Sol-high (primary): mean Jaccard over 3 trials per task, then 620
-            tasks. Whiskers are bootstrap 95% CIs (baseline{" "}
+            Sol-high (primary): mean Jaccard over 3 trials per task, then{" "}
+            {EVAL_TASKS} tasks. Whiskers are bootstrap 95% CIs (baseline{" "}
             {pct(ML.baseline.ci[0])}–{pct(ML.baseline.ci[1])}; train400{" "}
-            {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}). Lift: +
-            {ML.liftPp.toFixed(1)} pp. Sol-low: single trial × 620 — baseline{" "}
-            {pct(ML_LOW.baseline.jaccard)}, train400 {pct(ML_LOW.train400.jaccard)}{" "}
-            (+{ML_LOW.liftPp.toFixed(1)} pp); no multi-trial CI. Sol-max: train400
-            only, 1×620 — {pct(ML_MAX.train400.jaccard, 2)} (exact-set{" "}
-            {pct(ML_MAX.train400.exact)}; +{ML_MAX.vsHighPp.toFixed(1)} pp vs high
+            {pct(ML.train400.ci[0])}–{pct(ML.train400.ci[1])}). Lift:{" "}
+            {signedPp(ML.liftPp)}. Sol-low: single trial × {EVAL_TASKS} —
+            baseline {pct(ML_LOW.baseline.jaccard)}, train400{" "}
+            {pct(ML_LOW.train400.jaccard)} ({signedPp(ML_LOW.liftPp)}); no
+            multi-trial CI. Sol-max: train400 only, 1×{EVAL_TASKS} —{" "}
+            {pct(ML_MAX.train400.jaccard, 2)} (exact-set{" "}
+            {pct(ML_MAX.train400.exact)}; {signedPp(ML_MAX.vsHighPp)} vs high
             mean-of-3, not significant); ~$600 of a $1000 OpenRouter budget.
           </p>
         </div>
@@ -1374,9 +1409,12 @@ export function RunDetailsSection() {
           </div>
           <p className="mt-5 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
             Composer 2.5 assigns approve, critical, steer, and inquiry act sets
-            across 620 held-out tasks per condition. Sol-high Hub jobs are 3×620;
-            Sol-low are 1×620 (reasoning_effort=low). Sol-max train400 is 1×620
-            (reasoning_effort=max); Hub links not published yet.
+            across {HUB_TASKS} held-out tasks per condition. Every Hub link
+            above covers all {HUB_DEVS} developers: Sol-high jobs are 3×
+            {HUB_TASKS}, Sol-low 1×{HUB_TASKS} (reasoning_effort=low). Sol-max
+            train400 is 1×{HUB_TASKS} (reasoning_effort=max); Hub links not
+            published yet. The scores on this page read those same trials back
+            over {EVAL_TASKS} tasks, dropping the DataClaw developers.
           </p>
         </div>
       </div>
@@ -1390,8 +1428,10 @@ export function DatasetHubLinks() {
       <div>
         <h3 className="font-semibold text-zinc-900">Two public dataset views</h3>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-600">
-          Both use the same 620 held-out turns. Train400 adds 400 earlier turns
-          from each developer as context.
+          Both use the same {HUB_TASKS} held-out turns from all {HUB_DEVS}{" "}
+          developers. Train400 adds 400 earlier turns from each developer as
+          context. Scores on this page cover the {EVAL_TASKS} turns that remain
+          after the DataClaw developers are set aside.
         </p>
       </div>
       <div className="mt-4 flex shrink-0 flex-wrap gap-4 text-sm sm:mt-0">
@@ -1408,10 +1448,10 @@ export function DatasetHubLinks() {
  * Source: jobs/sol-high-userbench/TRAIN_SAME_REPO_OVERLAP.json
  */
 const SAME_REPO = {
-  meanSessionPct: 76.5,
+  meanSessionPct: 79.6,
   medianSessionPct: 100,
-  meanTurnPct: 77.0,
-  bucketPct: { mostlySame: 71.3, mixed: 12.7, mostlyOther: 16.0 },
+  meanTurnPct: 79.9,
+  bucketPct: { mostlySame: 76.2, mixed: 10.7, mostlyOther: 13.1 },
   histLabels: [
     "0–10",
     "10–20",
@@ -1424,9 +1464,9 @@ const SAME_REPO = {
     "80–90",
     "90–100",
   ],
-  histCounts: [66, 24, 15, 40, 10, 0, 10, 13, 33, 409],
-  nTasks: 620,
-  nDevs: 62,
+  histCounts: [50, 23, 9, 40, 10, 0, 3, 3, 33, 409],
+  nTasks: EVAL_TASKS,
+  nDevs: EVAL_DEVS,
 } as const;
 
 export function TrainSameRepoOverlap() {
@@ -1635,12 +1675,12 @@ export function LabelExamplesSection() {
           vs pred{" "}
           <span className="font-mono text-xs text-zinc-700">{"{approve}"}</span>{" "}
           → 1/2 = 50% (exact match would be 0). The leaderboard is the mean of
-          that score over 620 turns.
+          that score over {EVAL_TASKS} turns.
         </p>
         <p className="mt-3">
           Chance always predicts the most common gold set,{" "}
           <span className="font-mono text-xs text-zinc-700">{"{steer}"}</span>
-          ; that baseline is about 43.7%.
+          ; that baseline is about {pct(CHANCE)}.
         </p>
       </div>
       <aside className="mt-6 flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
@@ -1649,11 +1689,11 @@ export function LabelExamplesSection() {
             Composer closely matches Kevin&apos;s labels
           </h3>
           <p className="mt-1 text-2xl font-semibold tracking-tight text-zinc-950">
-            81% Jaccard agreement
+            76% Jaccard agreement
           </p>
           <p className="mt-1 text-sm text-zinc-600">
-            64% exact-set agreement across 50 co-labeled turns.{" "}
-            <span className="text-zinc-500">Agreement, not accuracy.</span>
+            59% exact-set agreement across 54 co-labeled turns, DataClaw turns
+            excluded. <span className="text-zinc-500">Agreement, not accuracy.</span>
           </p>
         </div>
         <a
