@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { humanVsLlm, pairwiseAgreements } from "@/lib/agreement";
 import { itemGoldActs, normalizeActs, overlapKind } from "@/lib/acts";
 import { getSessionUser } from "@/lib/auth";
+import { EXCLUDED_DEVELOPERS, isExcludedDeveloper } from "@/lib/cohort";
 import { getAllJudgments } from "@/lib/store";
 import type { Item, Move } from "@/lib/types";
 import { listUsers } from "@/lib/users";
@@ -16,10 +17,17 @@ export async function GET() {
   const allJudgments = await getAllJudgments(raterIds);
   const typedItems = items as Item[];
 
+  // Agreement runs over the published cohort only; every item still ships in
+  // `rows` and still counts toward rater progress.
   const goldByItem: Record<string, Move[]> = {};
   const byItem: Record<string, Record<string, Move[] | null | undefined>> = {};
+  let excludedItems = 0;
 
   for (const item of typedItems) {
+    if (isExcludedDeveloper(item.developer)) {
+      excludedItems++;
+      continue;
+    }
     goldByItem[item.id] = itemGoldActs(item);
     byItem[item.id] = {};
     for (const r of raterIds) {
@@ -90,6 +98,7 @@ export async function GET() {
       llm,
       labels,
       humansOverlap,
+      excluded: isExcludedDeveloper(item.developer),
     };
   });
 
@@ -124,6 +133,13 @@ export async function GET() {
       pairwise,
       humanVsLlm: vsLlm,
       metrics: "jaccard + per-label kappa",
+    },
+    exclusion: {
+      developers: [...EXCLUDED_DEVELOPERS],
+      items: excludedItems,
+      totalItems: typedItems.length,
+      reason:
+        "DataClaw donors, excluded from published metrics per COHORT_POLICY.md",
     },
   });
 }

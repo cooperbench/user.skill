@@ -32,6 +32,7 @@ type DashData = {
     point_id: string;
     llm: Move[];
     humansOverlap: "exact" | "partial" | "disjoint" | "empty" | "single";
+    excluded: boolean;
     labels: Record<
       string,
       {
@@ -69,6 +70,12 @@ type DashData = {
         exact_pct: number | null;
       };
     };
+  };
+  exclusion: {
+    developers: string[];
+    items: number;
+    totalItems: number;
+    reason: string;
   };
 };
 
@@ -285,7 +292,7 @@ export function DashboardView({
     (async () => {
       try {
         const res = await fetch(
-          "/data/judge_trials/irr_cross_summary_20260718.json",
+          "/data/judge_trials/irr_cross_summary_20260718_no_dataclaw.json",
         );
         if (!res.ok) return;
         const json = (await res.json()) as IrrSummary;
@@ -318,7 +325,7 @@ export function DashboardView({
     );
   }
 
-  const { raters, rows, agreement, progress } = data;
+  const { raters, rows, agreement, progress, exclusion } = data;
 
   // Hide empty rows: only show cards / agreement rows that actually have data.
   const progressWithData = progress.filter((p) => p.done > 0);
@@ -426,7 +433,7 @@ export function DashboardView({
             <strong className="text-indigo-700">
               {pctJ(kevinVsLlm.jaccard)} Jaccard agreement
             </strong>{" "}
-            across {kevinVsLlm.n} co-labeled turns.
+            across {kevinVsLlm.n} co-labeled turns, DataClaw turns excluded.
           </p>
         ) : (
           <p className="mt-2 text-sm text-zinc-500">
@@ -434,11 +441,22 @@ export function DashboardView({
           </p>
         )}
 
+        {exclusion.items > 0 && (
+          <p className="mt-2 text-sm leading-6 text-zinc-500">
+            {exclusion.items} of the {exclusion.totalItems} items come from
+            DataClaw donors, who are left out of every published UserBench
+            number. Keep labeling them: they count toward your progress, not
+            toward the agreement figures here.
+          </p>
+        )}
+
         <Details label="Details — exact match, κ, and definitions">
           <p>
             Jaccard = |A∩B|/|A∪B| averaged over items both parties labeled
             (skips excluded). Per-label κ is binary presence/absence for each of
-            the 4 acts; κ̄ is the macro-average.
+            the 4 acts; κ̄ is the macro-average. Turns from{" "}
+            {exclusion.developers.join(", ")} are dropped before any of this is
+            computed.
           </p>
 
           <div>
@@ -517,8 +535,10 @@ export function DashboardView({
               Within-model = mean of the 3 pairwise comparisons across
               independent trials. Cross = one trial per judge (
               {irr.cross.primary_trial}). trial_1 Composer = production
-              gold_acts, so Composer↔Kevin matches live human↔LLM above. Same J
-              / κ̄ / per-label κ as Agreement.
+              gold_acts. Same J / κ̄ / per-label κ as Agreement, over the same
+              cohort: DataClaw turns are dropped here too. Kevin&apos;s side is
+              the labels frozen when the trials ran, so Composer↔Kevin covers
+              fewer turns than the live count above.
             </p>
 
             <div>
@@ -598,7 +618,9 @@ export function DashboardView({
         </h2>
         <p className="mb-2 text-xs text-zinc-500">
           Row tint: humans exact (green) / partial overlap (amber) / disjoint
-          (rose). Cell tint vs LLM: exact / partial / disjoint.
+          (rose). Cell tint vs LLM: exact / partial / disjoint. Rows tagged{" "}
+          <span className="font-mono">excl</span> are DataClaw turns; they stay
+          labelable but sit outside the figures above.
         </p>
         <div className="max-h-[60vh] overflow-auto rounded-xl border border-zinc-200">
           <table className="w-full min-w-[48rem] border-collapse text-left text-xs">
@@ -617,8 +639,10 @@ export function DashboardView({
             </thead>
             <tbody>
               {rows.map((row) => {
-                const rowTint =
-                  row.humansOverlap === "exact"
+                // Excluded turns feed no statistic, so no agreement tint.
+                const rowTint = row.excluded
+                  ? "bg-zinc-50 text-zinc-400"
+                  : row.humansOverlap === "exact"
                     ? "bg-emerald-50/30"
                     : row.humansOverlap === "partial"
                       ? "bg-amber-50/40"
@@ -636,12 +660,21 @@ export function DashboardView({
                     </td>
                     <td className="max-w-[10rem] truncate px-2 py-1.5 font-mono text-stone-600">
                       {row.developer || row.point_id}
+                      {row.excluded ? (
+                        <span
+                          className="ml-1 rounded border border-zinc-300 px-1 text-[10px] uppercase tracking-wide text-zinc-500"
+                          title="DataClaw donor — outside the published cohort"
+                        >
+                          excl
+                        </span>
+                      ) : null}
                     </td>
                     {raters.map((r) => {
                       const cell = row.labels[r.id]!;
                       const vs = cell.vs_llm;
-                      const tint =
-                        vs === "exact"
+                      const tint = row.excluded
+                        ? ""
+                        : vs === "exact"
                           ? "bg-emerald-50/60"
                           : vs === "partial"
                             ? "bg-amber-50/50"
