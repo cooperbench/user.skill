@@ -1,0 +1,287 @@
+{
+  "within_composer": {
+    "n_items": 92,
+    "trials": [
+      "trial_1",
+      "trial_2",
+      "trial_3"
+    ],
+    "pairwise": [
+      {
+        "a": "trial_1",
+        "b": "trial_2",
+        "n": 92,
+        "jaccard": 0.906,
+        "kappa_macro": 0.859,
+        "kappa_per_label": {
+          "approve": 0.824,
+          "critical": 0.919,
+          "steer": 0.836,
+          "inquiry": 0.856
+        },
+        "exact_pct": 83.7
+      },
+      {
+        "a": "trial_1",
+        "b": "trial_3",
+        "n": 92,
+        "jaccard": 0.926,
+        "kappa_macro": 0.891,
+        "kappa_per_label": {
+          "approve": 0.931,
+          "critical": 0.919,
+          "steer": 0.907,
+          "inquiry": 0.805
+        },
+        "exact_pct": 83.7
+      },
+      {
+        "a": "trial_2",
+        "b": "trial_3",
+        "n": 92,
+        "jaccard": 0.915,
+        "kappa_macro": 0.877,
+        "kappa_per_label": {
+          "approve": 0.824,
+          "critical": 0.946,
+          "steer": 0.884,
+          "inquiry": 0.854
+        },
+        "exact_pct": 84.8
+      }
+    ],
+    "pairwise_avg": {
+      "jaccard": 0.916,
+      "kappa_macro": 0.876,
+      "exact_pct": 84.1
+    },
+    "n_way": {
+      "all_identical": 71,
+      "all_identical_pct": 77.2,
+      "unique_set_count_dist": {
+        "1": 71,
+        "2": 19,
+        "3": 2
+      },
+      "n_multi_any_trial": 40,
+      "n_multi_all_identical": 22
+    }
+  },
+  "within_luna": {
+    "n_items": 92,
+    "trials": [
+      "trial_1",
+      "trial_2",
+      "trial_3"
+    ],
+    "pairwise": [
+      {
+        "a": "trial_1",
+        "b": "trial_2",
+        "n": 92,
+        "jaccard": 0.918,
+        "kappa_macro": 0.895,
+        "kappa_per_label": {
+          "approve": 1.0,
+          "critical": 0.815,
+          "steer": 0.91,
+          "inquiry": 0.856
+        },
+        "exact_pct": 87.0
+      },
+      {
+        "a": "trial_1",
+        "b": "trial_3",
+        "n": 92,
+        "jaccard": 0.902,
+        "kappa_macro": 0.882,
+        "kappa_per_label": {
+          "approve": 1.0,
+          "critical": 0.848,
+          "steer": 0.821,
+          "inquiry": 0.86
+        },
+        "exact_pct": 82.6
+      },
+      {
+        "a": "trial_2",
+        "b": "trial_3",
+        "n": 92,
+        "jaccard": 0.904,
+        "kappa_macro": 0.879,
+        "kappa_per_label": {
+          "approve": 1.0,
+          "critical": 0.794,
+          "steer": 0.863,
+          "inquiry": 0.86
+        },
+        "exact_pct": 80.4
+      }
+    ],
+    "pairwise_avg": {
+      "jaccard": 0.908,
+      "kappa_macro": 0.885,
+      "exact_pct": 83.3
+    },
+    "n_way": {
+      "all_identical": 71,
+      "all_identical_pct": 77.2,
+      "unique_set_count_dist": {
+        "1": 71,
+        "2": 17,
+        "3": 4
+      },
+      "n_multi_any_trial": 35,
+      "n_multi_all_identical": 16
+    }
+  },
+  "cross": {
+    "primary_trial": "trial_1",
+    "primary_note": "trial_1 Composer = production gold_acts (composer-2.5 rejudge 2026-07-18). trial_1 Luna = first independent luna-max pass. Kevin = labels frozen with the trials.",
+    "pairs": {
+      "luna_vs_composer": {
+        "n": 92,
+        "jaccard": 0.828,
+        "kappa_macro": 0.771,
+        "kappa_per_label": {
+          "approve": 0.816,
+          "critical": 0.736,
+          "steer": 0.773,
+          "inquiry": 0.76
+        },
+        "exact_pct": 69.6
+      },
+      "luna_vs_kevin": {
+        "n": 45,
+        "jaccard": 0.722,
+        "kappa_macro": 0.617,
+        "kappa_per_label": {
+          "approve": 0.697,
+          "critical": 0.545,
+          "steer": 0.503,
+          "inquiry": 0.724
+        },
+        "exact_pct": 55.6
+      },
+      "composer_vs_kevin": {
+        "n": 45,
+        "jaccard": 0.785,
+        "kappa_macro": 0.679,
+        "kappa_per_label": {
+          "approve": 0.783,
+          "critical": 0.541,
+          "steer": 0.674,
+          "inquiry": 0.717
+        },
+        "exact_pct": 60.0
+      }
+    },
+    "label_stats": {
+      "luna_primary": {
+        "n": 92,
+        "presence": {
+          "steer": 53,
+          "inquiry": 32,
+          "approve": 15,
+          "critical": 20
+        },
+        "multi_label_items": 23,
+        "multi_pct": 25.0,
+        "mean_labels_per_item": 1.304
+      },
+      "composer_primary": {
+        "n": 92,
+        "presence": {
+          "approve": 18,
+          "steer": 59,
+          "inquiry": 32,
+          "critical": 25
+        },
+        "multi_label_items": 36,
+        "multi_pct": 39.1,
+        "mean_labels_per_item": 1.457
+      },
+      "kevin": {
+        "n": 45,
+        "presence": {
+          "steer": 26,
+          "inquiry": 16,
+          "approve": 9,
+          "critical": 7
+        },
+        "multi_label_items": 13,
+        "multi_pct": 28.9,
+        "mean_labels_per_item": 1.289
+      },
+      "luna_on_kevin_subset": {
+        "n": 45,
+        "presence": {
+          "steer": 25,
+          "inquiry": 20,
+          "approve": 7,
+          "critical": 9
+        },
+        "multi_label_items": 13,
+        "multi_pct": 28.9,
+        "mean_labels_per_item": 1.356
+      },
+      "composer_on_kevin_subset": {
+        "n": 45,
+        "presence": {
+          "approve": 8,
+          "steer": 29,
+          "inquiry": 18,
+          "critical": 12
+        },
+        "multi_label_items": 19,
+        "multi_pct": 42.2,
+        "mean_labels_per_item": 1.489
+      }
+    },
+    "within_composer_irr": {
+      "jaccard": 0.916,
+      "kappa_macro": 0.876,
+      "exact_pct": 84.1
+    },
+    "within_luna_irr": {
+      "jaccard": 0.908,
+      "kappa_macro": 0.885,
+      "exact_pct": 83.3
+    },
+    "within_composer_n_way": {
+      "all_identical": 71,
+      "all_identical_pct": 77.2,
+      "unique_set_count_dist": {
+        "1": 71,
+        "2": 19,
+        "3": 2
+      },
+      "n_multi_any_trial": 40,
+      "n_multi_all_identical": 22
+    },
+    "within_luna_n_way": {
+      "all_identical": 71,
+      "all_identical_pct": 77.2,
+      "unique_set_count_dist": {
+        "1": 71,
+        "2": 17,
+        "3": 4
+      },
+      "n_multi_any_trial": 35,
+      "n_multi_all_identical": 16
+    }
+  },
+  "exclusion": {
+    "developers": [
+      "dc:dc_000",
+      "dc:dc_001",
+      "dc:dc_004",
+      "dc:dc_010"
+    ],
+    "items": 8,
+    "reason": "DataClaw donors, excluded from published metrics per COHORT_POLICY.md",
+    "unfiltered_source": "/data/swesimbench-annotator/public/data/judge_trials/irr_cross_summary_20260718.json"
+  },
+  "composer_dir": "/data/swesimbench-annotator/public/data/judge_trials/composer_irr_3x_20260718T233043Z",
+  "luna_dir": "/data/swesimbench-annotator/public/data/judge_trials/luna_max_irr_3x_20260718T233043Z"
+}
