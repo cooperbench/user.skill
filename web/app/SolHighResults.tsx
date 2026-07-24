@@ -1470,10 +1470,8 @@ export function TrainSameRepoOverlap() {
       </SectionHeading>
       <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">
         For each of {SAME_REPO.nTasks} tasks, compare the held session&apos;s{" "}
-        <span className="font-mono text-xs">repo</span> (from the clean
-        manifest) to every prior session in that developer&apos;s train pack (
-        <span className="font-mono text-xs">/sim/train/_index.json</span>).
-        Match = equal normalized{" "}
+        <span className="font-mono text-xs">repo</span> to every prior session
+        in that developer&apos;s train pack. Match = same normalized{" "}
         <span className="font-mono text-xs">owner/repo</span>.
       </p>
 
