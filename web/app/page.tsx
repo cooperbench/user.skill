@@ -10,8 +10,13 @@ import {
 } from "./SolHighResults";
 import { SectionHeading } from "./SectionHeading";
 
-const EVAL_DEVS = 62;
-const EVAL_TASKS = 620;
+/** Scored cohort: the four DataClaw donors are excluded (see ExclusionNote). */
+const EVAL_DEVS = 58;
+const EVAL_TASKS = 580;
+const EVAL_TRAIN_TURNS = "23,200";
+/** Hub packages still ship every developer. */
+const HUB_DEVS = 62;
+const HUB_TASKS = 620;
 
 function StatCard({
   label,
@@ -88,9 +93,9 @@ function ContextTokenChart() {
   const position = (value: number) =>
     `${(Math.log10(value) / Math.log10(max)) * 100}%`;
   const markers = [
-    { label: "Median", short: "4.2k", value: 4_214, color: "bg-indigo-600" },
-    { label: "Mean", short: "23.4k", value: 23_398.503, color: "bg-sky-600" },
-    { label: "P90", short: "25.3k", value: 25_281.7, color: "bg-violet-600" },
+    { label: "Median", short: "4.4k", value: 4_411, color: "bg-indigo-600" },
+    { label: "Mean", short: "24.6k", value: 24_593.179, color: "bg-sky-600" },
+    { label: "P90", short: "25.4k", value: 25_415, color: "bg-violet-600" },
     { label: "Max", short: "1.34m", value: 1_344_149, color: "bg-zinc-900" },
   ] as const;
 
@@ -106,7 +111,7 @@ function ContextTokenChart() {
       <div
         className="relative mt-6 h-14"
         role="img"
-        aria-label="Prior context tokens per published task on a log scale: median 4,214, mean 23,398.503, 90th percentile 25,281.7, maximum 1,344,149"
+        aria-label="Prior context tokens per scored task on a log scale: median 4,411, mean 24,593.179, 90th percentile 25,415, maximum 1,344,149"
       >
         <div className="absolute inset-x-0 top-7 h-1 rounded-full bg-zinc-200" />
         {markers.map((marker) => (
@@ -141,10 +146,30 @@ function ContextTokenChart() {
         ))}
       </div>
       <p className="mt-5 text-sm leading-6 text-zinc-600">
-        The distribution has a long tail, but the median published task has
-        4.2k tokens of prior context.
+        The distribution has a long tail, but the median scored task has 4.4k
+        tokens of prior context.
       </p>
     </figure>
+  );
+}
+
+function ExclusionNote() {
+  return (
+    <aside className="mt-6 rounded-2xl border border-amber-200 bg-amber-50/60 p-5">
+      <h3 className="font-semibold text-zinc-900">
+        DataClaw donors are left out of the scores
+      </h3>
+      <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-700">
+        Four of the {HUB_DEVS} developers came from a DataClaw HuggingFace
+        donation. Their <span className="font-mono text-xs">repo</span> field
+        names the donation, not the project they worked in, and three of the
+        four are one person that donor clustering split into three. Both quirks
+        push same-repo overlap up and count one human three times, so every
+        number on this page leaves all four out: {EVAL_DEVS} developers,{" "}
+        {EVAL_TASKS} held-out tasks. Their sessions and trial traces stay
+        published in the Hub packages below, so anyone can add them back.
+      </p>
+    </aside>
   );
 }
 
@@ -207,27 +232,30 @@ export default function HomePage() {
           Same held-out tasks, with or without history
         </SectionHeading>
         <p className="mt-3 max-w-3xl text-base leading-7 text-zinc-600">
-          The two public packages contain the same 620 coding-agent
+          The two public packages contain the same {HUB_TASKS} coding-agent
           conversation tasks. Train400 adds an earlier, developer-specific
-          history pack without changing the held-out message.
+          history pack without changing the held-out message. Scores use the{" "}
+          {EVAL_TASKS} of those tasks that belong to the {EVAL_DEVS} scored
+          developers.
         </p>
         <div className="mt-7 grid gap-3 sm:grid-cols-3">
           <StatCard
-            label="developer IDs"
+            label="scored developer IDs"
             value={String(EVAL_DEVS)}
             sub="exactly 10 tasks each"
           />
           <StatCard
-            label="held-out tasks"
+            label="scored held-out tasks"
             value={String(EVAL_TASKS)}
             sub="one next message per task"
           />
           <StatCard
             label="unique training turns"
-            value="24,800"
-            sub="400 per developer × 62 packs"
+            value={EVAL_TRAIN_TURNS}
+            sub={`400 per developer × ${EVAL_DEVS} packs`}
           />
         </div>
+        <ExclusionNote />
         <DatasetHubLinks />
         <TrainSameRepoOverlap />
       </section>
@@ -258,14 +286,14 @@ export default function HomePage() {
           <div className="rounded-2xl border border-zinc-200 bg-white p-5">
             <h3 className="font-semibold text-zinc-900">Unique train packs</h3>
             <p className="mt-2 text-sm leading-6 text-zinc-600">
-              Each of 62 packs contains 400 developer turns and is reused
-              across that developer&apos;s 10 tasks.
+              Each of the {EVAL_DEVS} scored packs contains 400 developer turns
+              and is reused across that developer&apos;s 10 tasks.
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-white p-5">
             <h3 className="font-semibold text-zinc-900">Time ordering</h3>
             <p className="mt-2 text-sm leading-6 text-zinc-600">
-              All 1,913 mounted training sessions end before their
+              All 1,788 mounted training sessions end before their
               developer-specific cutoff.
             </p>
           </div>
@@ -288,29 +316,29 @@ export default function HomePage() {
           What the model sees and predicts
         </SectionHeading>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">
-          These figures come from the 620 published tasks. Conversation blocks
-          count the history, context tokens measure its size, and next-message
-          tokens measure the text to predict.
+          These figures come from the {EVAL_TASKS} scored tasks. Conversation
+          blocks count the history, context tokens measure its size, and
+          next-message tokens measure the text to predict.
         </p>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           <CompactHistogram
             title="Conversation history before each prediction"
             subtitle="All prior role blocks: developer, agent, tool, system, metadata"
             labels={["0–4", "5–9", "10–19", "20–39", "40–79", "80–159", "160+"]}
-            counts={[83, 74, 96, 119, 136, 55, 57]}
+            counts={[72, 72, 92, 113, 127, 51, 53]}
             color="bg-fuchsia-400"
-            takeaway="Median depth is 28 prior role blocks."
-            ariaLabel="All prior role blocks across 620 published tasks: 83 have 0 to 4, 74 have 5 to 9, 96 have 10 to 19, 119 have 20 to 39, 136 have 40 to 79, 55 have 80 to 159, and 57 have 160 or more"
+            takeaway="Median depth is about 28 prior role blocks."
+            ariaLabel="All prior role blocks across 580 scored tasks: 72 have 0 to 4, 72 have 5 to 9, 92 have 10 to 19, 113 have 20 to 39, 127 have 40 to 79, 51 have 80 to 159, and 53 have 160 or more"
           />
           <ContextTokenChart />
           <CompactHistogram
             title="Length of the developer’s next message"
             subtitle="cl100k tokens in the held-out message"
             labels={["1–9", "10–24", "25–49", "50–99", "100–249", "250+"]}
-            counts={[231, 171, 128, 48, 29, 13]}
+            counts={[222, 167, 113, 39, 27, 12]}
             color="bg-emerald-500"
-            takeaway="Median length is 15 tokens, with a long tail from logs and pasted text."
-            ariaLabel="Next-message token lengths across 620 published tasks: 231 have 1 to 9, 171 have 10 to 24, 128 have 25 to 49, 48 have 50 to 99, 29 have 100 to 249, and 13 have 250 or more"
+            takeaway="Median length is 14 tokens, with a long tail from logs and pasted text."
+            ariaLabel="Next-message token lengths across 580 scored tasks: 222 have 1 to 9, 167 have 10 to 24, 113 have 25 to 49, 39 have 50 to 99, 27 have 100 to 249, and 12 have 250 or more"
           />
         </div>
       </section>
@@ -322,8 +350,8 @@ export default function HomePage() {
       <RunDetailsSection />
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
-        UserBench · 62 developer IDs · 620 held-out tasks · 24,800 unique
-        training turns. See{" "}
+        UserBench · {EVAL_DEVS} scored developer IDs · {EVAL_TASKS} held-out
+        tasks · {EVAL_TRAIN_TURNS} unique training turns. See{" "}
         <a href="#leaderboard" className="text-zinc-600 hover:text-zinc-900">
           leaderboard
         </a>
