@@ -1411,10 +1411,6 @@ const SAME_REPO = {
   meanSessionPct: 70.9,
   medianSessionPct: 91.4,
   meanTurnPct: 69.8,
-  medianTurnPct: 91.0,
-  anySamePct: 97.7,
-  majoritySamePct: 67.4,
-  zeroSamePct: 2.3,
   bucketPct: { mostlySame: 61.3, mixed: 23.4, mostlyOther: 15.3 },
   histLabels: [
     "0–10",
@@ -1477,53 +1473,14 @@ export function TrainSameRepoOverlap() {
         <span className="font-mono text-xs">repo</span> (from the clean
         manifest) to every prior session in that developer&apos;s train pack (
         <span className="font-mono text-xs">/sim/train/_index.json</span>).
-        Match = equal normalized <span className="font-mono text-xs">owner/repo</span>.
-        Workflow beyond repo is not scored.
+        Match = equal normalized{" "}
+        <span className="font-mono text-xs">owner/repo</span>.
       </p>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
-          <div className="text-3xl font-semibold tracking-tight tabular-nums text-zinc-900">
-            {SAME_REPO.medianSessionPct}%
-          </div>
-          <div className="mt-1 text-sm font-medium text-zinc-600">
-            median pack sessions same-repo
-          </div>
-          <div className="mt-0.5 text-xs text-zinc-400">
-            mean {SAME_REPO.meanSessionPct}% · turns median{" "}
-            {SAME_REPO.medianTurnPct}%
-          </div>
-        </div>
-        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
-          <div className="text-3xl font-semibold tracking-tight tabular-nums text-zinc-900">
-            {SAME_REPO.anySamePct}%
-          </div>
-          <div className="mt-1 text-sm font-medium text-zinc-600">
-            tasks with ≥1 same-repo session
-          </div>
-          <div className="mt-0.5 text-xs text-zinc-400">
-            {SAME_REPO.zeroSamePct}% have none · {SAME_REPO.majoritySamePct}%
-            majority same
-          </div>
-        </div>
-        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
-          <div className="text-3xl font-semibold tracking-tight tabular-nums text-zinc-900">
-            {SAME_REPO.bucketPct.mostlySame}%
-          </div>
-          <div className="mt-1 text-sm font-medium text-zinc-600">
-            packs mostly same-repo
-          </div>
-          <div className="mt-0.5 text-xs text-zinc-400">
-            {SAME_REPO.bucketPct.mixed}% mixed ·{" "}
-            {SAME_REPO.bucketPct.mostlyOther}% mostly other
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
           <figcaption className="font-semibold text-zinc-900">
-            Pack composition vs held task
+            Most packs are mostly the same repo as the held-out task
           </figcaption>
           <p className="mt-1 text-xs text-zinc-500">
             Share of {SAME_REPO.nTasks} tasks by same-repo session fraction (
