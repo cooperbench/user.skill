@@ -1467,10 +1467,10 @@ export function TrainSameRepoOverlap() {
       </p>
       <SectionHeading
         id="same-repo"
-        label="same repo overlap"
+        label="same repo"
         className="mt-2 text-xl font-semibold tracking-tight text-zinc-900"
       >
-        How often Train400 is the same repo as the held-out task
+        Most Train400 sessions are from the same repo as the held-out task
       </SectionHeading>
       <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">
         For each of {SAME_REPO.nTasks} tasks, compare the held session&apos;s{" "}
