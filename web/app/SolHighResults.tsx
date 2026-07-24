@@ -1402,6 +1402,199 @@ export function DatasetHubLinks() {
   );
 }
 
+/**
+ * Same-repo overlap: share of Train400 pack sessions whose `repo` matches the
+ * held-out task's session repo (clean_manifest ↔ /sim/train/_index.json).
+ * Source: jobs/sol-high-userbench/TRAIN_SAME_REPO_OVERLAP.json
+ */
+const SAME_REPO = {
+  meanSessionPct: 70.9,
+  medianSessionPct: 91.4,
+  meanTurnPct: 69.8,
+  medianTurnPct: 91.0,
+  anySamePct: 97.7,
+  majoritySamePct: 67.4,
+  zeroSamePct: 2.3,
+  bucketPct: { mostlySame: 61.3, mixed: 23.4, mostlyOther: 15.3 },
+  histLabels: [
+    "0–10",
+    "10–20",
+    "20–30",
+    "30–40",
+    "40–50",
+    "50–60",
+    "60–70",
+    "70–80",
+    "80–90",
+    "90–100",
+  ],
+  histCounts: [59, 33, 9, 73, 28, 10, 5, 23, 59, 321],
+  nTasks: 620,
+  nDevs: 62,
+} as const;
+
+export function TrainSameRepoOverlap() {
+  const maxHist = Math.max(...SAME_REPO.histCounts);
+  const buckets = [
+    {
+      label: "Mostly same",
+      sub: "≥80% of pack sessions",
+      pct: SAME_REPO.bucketPct.mostlySame,
+      color: "bg-indigo-600",
+    },
+    {
+      label: "Mixed",
+      sub: "20–80%",
+      pct: SAME_REPO.bucketPct.mixed,
+      color: "bg-sky-500",
+    },
+    {
+      label: "Mostly other",
+      sub: "≤20%",
+      pct: SAME_REPO.bucketPct.mostlyOther,
+      color: "bg-zinc-400",
+    },
+  ] as const;
+
+  return (
+    <section
+      id="same-repo"
+      aria-labelledby="same-repo-title"
+      className="mt-10 scroll-mt-20"
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600">
+        Train pack · project match
+      </p>
+      <SectionHeading
+        id="same-repo"
+        label="same repo overlap"
+        className="mt-2 text-xl font-semibold tracking-tight text-zinc-900"
+      >
+        How often Train400 is the same repo as the held-out task
+      </SectionHeading>
+      <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600">
+        For each of {SAME_REPO.nTasks} tasks, compare the held session&apos;s{" "}
+        <span className="font-mono text-xs">repo</span> (from the clean
+        manifest) to every prior session in that developer&apos;s train pack (
+        <span className="font-mono text-xs">/sim/train/_index.json</span>).
+        Match = equal normalized <span className="font-mono text-xs">owner/repo</span>.
+        Workflow beyond repo is not scored.
+      </p>
+
+      <div className="mt-6 grid gap-3 sm:grid-cols-3">
+        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
+          <div className="text-3xl font-semibold tracking-tight tabular-nums text-zinc-900">
+            {SAME_REPO.medianSessionPct}%
+          </div>
+          <div className="mt-1 text-sm font-medium text-zinc-600">
+            median pack sessions same-repo
+          </div>
+          <div className="mt-0.5 text-xs text-zinc-400">
+            mean {SAME_REPO.meanSessionPct}% · turns median{" "}
+            {SAME_REPO.medianTurnPct}%
+          </div>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
+          <div className="text-3xl font-semibold tracking-tight tabular-nums text-zinc-900">
+            {SAME_REPO.anySamePct}%
+          </div>
+          <div className="mt-1 text-sm font-medium text-zinc-600">
+            tasks with ≥1 same-repo session
+          </div>
+          <div className="mt-0.5 text-xs text-zinc-400">
+            {SAME_REPO.zeroSamePct}% have none · {SAME_REPO.majoritySamePct}%
+            majority same
+          </div>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white px-5 py-4">
+          <div className="text-3xl font-semibold tracking-tight tabular-nums text-zinc-900">
+            {SAME_REPO.bucketPct.mostlySame}%
+          </div>
+          <div className="mt-1 text-sm font-medium text-zinc-600">
+            packs mostly same-repo
+          </div>
+          <div className="mt-0.5 text-xs text-zinc-400">
+            {SAME_REPO.bucketPct.mixed}% mixed ·{" "}
+            {SAME_REPO.bucketPct.mostlyOther}% mostly other
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+        <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <figcaption className="font-semibold text-zinc-900">
+            Pack composition vs held task
+          </figcaption>
+          <p className="mt-1 text-xs text-zinc-500">
+            Share of {SAME_REPO.nTasks} tasks by same-repo session fraction (
+            {SAME_REPO.nDevs} developers).
+          </p>
+          <div className="mt-5 space-y-3">
+            {buckets.map((b) => (
+              <div key={b.label}>
+                <div className="flex items-baseline justify-between gap-3 text-sm">
+                  <div>
+                    <span className="font-medium text-zinc-800">{b.label}</span>
+                    <span className="ml-2 text-xs text-zinc-400">{b.sub}</span>
+                  </div>
+                  <span className="tabular-nums text-zinc-700">{b.pct}%</span>
+                </div>
+                <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-zinc-100">
+                  <div
+                    className={`h-full rounded-full ${b.color}`}
+                    style={{ width: `${b.pct}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </figure>
+
+        <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <figcaption className="font-semibold text-zinc-900">
+            Same-repo session share per task
+          </figcaption>
+          <p className="mt-1 text-xs text-zinc-500">
+            Distribution of pack session fraction matching the held repo (%).
+          </p>
+          <div
+            className="mt-5 grid h-28 items-end gap-1"
+            style={{
+              gridTemplateColumns: `repeat(${SAME_REPO.histCounts.length}, minmax(0, 1fr))`,
+            }}
+            role="img"
+            aria-label={`Histogram of same-repo session share across ${SAME_REPO.nTasks} tasks: median ${SAME_REPO.medianSessionPct}%, mean ${SAME_REPO.meanSessionPct}%. Peak bin 90 to 100% has ${SAME_REPO.histCounts[9]} tasks.`}
+          >
+            {SAME_REPO.histCounts.map((count, index) => (
+              <div key={SAME_REPO.histLabels[index]} className="flex h-full items-end">
+                <div
+                  className="w-full rounded-t bg-indigo-600"
+                  style={{ height: `${(count / maxHist) * 100}%` }}
+                />
+              </div>
+            ))}
+          </div>
+          <div
+            className="mt-1 grid gap-1 text-center text-[9px] text-zinc-400"
+            style={{
+              gridTemplateColumns: `repeat(${SAME_REPO.histLabels.length}, minmax(0, 1fr))`,
+            }}
+          >
+            {SAME_REPO.histLabels.map((label) => (
+              <span key={label}>{label}</span>
+            ))}
+          </div>
+          <p className="mt-4 text-sm leading-6 text-zinc-600">
+            Most packs sit near 100% same-repo; a long left tail pulls the mean
+            down to {SAME_REPO.meanSessionPct}% (turn-weighted mean{" "}
+            {SAME_REPO.meanTurnPct}%).
+          </p>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
 const LABEL_STYLES = {
   approve: "border-emerald-200 bg-emerald-50 text-emerald-800",
   critical: "border-rose-200 bg-rose-50 text-rose-800",

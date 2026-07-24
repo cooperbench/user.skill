@@ -5,6 +5,7 @@ import {
   LeaderboardSection,
   ReasoningEffortSection,
   RunDetailsSection,
+  TrainSameRepoOverlap,
   TypicalSessionsSection,
 } from "./SolHighResults";
 import { SectionHeading } from "./SectionHeading";
@@ -164,6 +165,9 @@ export default function HomePage() {
           <a href="#leaderboard" className="hover:text-zinc-950">
             Leaderboard
           </a>
+          <a href="#same-repo" className="hover:text-zinc-950">
+            Same repo
+          </a>
           <a href="#sessions" className="hover:text-zinc-950">
             Sessions
           </a>
@@ -225,6 +229,7 @@ export default function HomePage() {
           />
         </div>
         <DatasetHubLinks />
+        <TrainSameRepoOverlap />
       </section>
 
       <section
