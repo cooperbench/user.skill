@@ -1408,10 +1408,10 @@ export function DatasetHubLinks() {
  * Source: jobs/sol-high-userbench/TRAIN_SAME_REPO_OVERLAP.json
  */
 const SAME_REPO = {
-  meanSessionPct: 80.9,
+  meanSessionPct: 76.5,
   medianSessionPct: 100,
-  meanTurnPct: 81.2,
-  bucketPct: { mostlySame: 77.7, mixed: 10.0, mostlyOther: 12.3 },
+  meanTurnPct: 77.0,
+  bucketPct: { mostlySame: 71.3, mixed: 12.7, mostlyOther: 16.0 },
   histLabels: [
     "0–10",
     "10–20",
@@ -1424,7 +1424,7 @@ const SAME_REPO = {
     "80–90",
     "90–100",
   ],
-  histCounts: [50, 23, 9, 40, 10, 0, 3, 3, 33, 449],
+  histCounts: [66, 24, 15, 40, 10, 0, 10, 13, 33, 409],
   nTasks: 620,
   nDevs: 62,
 } as const;
