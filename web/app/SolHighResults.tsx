@@ -1509,7 +1509,7 @@ export function TrainSameRepoOverlap() {
 
         <figure className="rounded-2xl border border-zinc-200 bg-white p-5">
           <figcaption className="font-semibold text-zinc-900">
-            Same-repo session share per task
+            Most tasks draw nearly all train sessions from the same repo
           </figcaption>
           <p className="mt-1 text-xs text-zinc-500">
             Distribution of pack session fraction matching the held repo (%).
