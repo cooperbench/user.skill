@@ -71,7 +71,8 @@ const ML = {
     exact: 0.322,
     exactChance: 0.326,
     nExact: 187,
-    chance: 0.437,
+    /** Four decimals: 0.4375 sits on a rounding boundary and 0.437 renders 43.7%. */
+    chance: 0.4375,
     vsChancePp: 2.1,
     macroF1: 0.449,
     n: 1740,

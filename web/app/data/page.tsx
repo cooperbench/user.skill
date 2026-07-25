@@ -3,7 +3,7 @@ import blobs from "./blobs.json";
 
 export const metadata: Metadata = {
   title: "Data: UserBench trial results",
-  description: "Download the raw experiment data behind the accuracy results. Public, for readers and their agents.",
+  description: "Download the raw experiment data from the v1 simulator study. Public, for readers and their agents.",
 };
 
 function human(b: number) {
@@ -30,8 +30,7 @@ export default function DataPage() {
           <div className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">download</div>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900">Trial results: public, agent-readable</h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-700">
-            Every artifact behind the <a href="/" className="text-blue-700 underline-offset-2 hover:underline">accuracy results</a> is
-            here: the 7 leaderboard simulators × ±profile on a 20-developer, user- and repo-disjoint SWE-chat test split (the raw files also include 3 off-leaderboard runs: 2 DeepSeek variants and gemini-3.1-pro, which gemini-3.5-flash replaced on the leaderboard; 10 model conditions in total). Files are public on
+            Raw files from the earlier v1 study: the 7 leaderboard simulators × ±profile over 480 held-out moments on a 20-developer, user- and repo-disjoint SWE-chat test split (the raw files also include 3 off-leaderboard runs: 2 DeepSeek variants and gemini-3.1-pro, which gemini-3.5-flash replaced on the leaderboard; 10 model conditions in total). The <a href="/" className="text-blue-700 underline-offset-2 hover:underline">Sol-high results</a> on the front page come from a later run; nothing here backs them. Files are public on
             Vercel Blob. Point your agent at the machine-readable index, or download files directly below.
           </p>
         </div>
@@ -108,14 +107,14 @@ curl -s ${files.find((f) => f.name === "raw.jsonl")?.url} \\   # every generatio
           <h3 className="mb-2 text-sm font-semibold text-zinc-900">Where everything lives</h3>
           <ul className="max-w-3xl space-y-1.5 text-xs leading-relaxed text-zinc-500">
             <li>
-              <span className="font-semibold text-zinc-600">Website:</span> this site, open source at{" "}
-              <a href="https://github.com/AlienKevin/user-simulator" className="text-blue-700 hover:underline">github.com/AlienKevin/user-simulator</a>{" "}
-              (a Next.js static export under <span className="font-mono">web/</span>).
+              <span className="font-semibold text-zinc-600">Website:</span> this site, a Next.js static export under{" "}
+              <span className="font-mono">web/</span> on the <span className="font-mono">benchmark-website</span> branch of{" "}
+              <span className="font-mono">cooperbench/user.skill</span>.
             </li>
             <li>
               <span className="font-semibold text-zinc-600">Benchmark code:</span> the eval harness, the 4-way move taxonomy + judge, the
               analysis and ablation scripts, and the Modal serving for the OSim models. Kept in a private repo
-              (<span className="font-mono">AlienKevin/user.skill</span>); available on request.
+              (<span className="font-mono">cooperbench/user.skill</span>); available on request.
             </li>
             <li>
               <span className="font-semibold text-zinc-600">Data:</span> everything on this page, public on Vercel Blob: the files above plus
