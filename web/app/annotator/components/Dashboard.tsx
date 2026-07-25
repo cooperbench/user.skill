@@ -215,7 +215,7 @@ function fmt(n: number | null | undefined, digits = 3): string {
   return n.toFixed(digits);
 }
 
-/** Jaccard 0–1 → whole-percent headline, e.g. 0.807 → "81%". */
+/** Jaccard 0–1 → whole-percent headline, rounded: 0.6667 → "67%". */
 function pctJ(n: number | null | undefined): string {
   if (n == null) return "—";
   return `${Math.round(n * 100)}%`;
