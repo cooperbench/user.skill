@@ -244,9 +244,15 @@ const BAR_MAX = 0.6;
 const barX = (value: number) => `${(value / BAR_MAX) * 100}%`;
 
 /** Tick labels under a stack of score bars; matches the ScoreRow grid. */
-function BarAxis() {
+function BarAxis({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="mt-2 hidden grid-cols-[11rem_minmax(0,1fr)_5rem] px-4 text-[11px] tabular-nums text-zinc-400 sm:grid">
+    <div
+      className={`mt-1.5 hidden text-[11px] tabular-nums text-zinc-400 sm:grid ${
+        compact
+          ? "grid-cols-[4.5rem_minmax(0,1fr)_3.75rem] px-2"
+          : "grid-cols-[11rem_minmax(0,1fr)_5rem] px-4"
+      }`}
+    >
       <span />
       <div className="flex justify-between">
         <span>0%</span>
@@ -267,6 +273,8 @@ function ScoreRow({
   featured = false,
   trialsNote = "3 trials × 580 tasks",
   digits = 1,
+  compact = false,
+  ariaName,
 }: {
   label: string;
   note: string;
@@ -277,32 +285,61 @@ function ScoreRow({
   trialsNote?: string;
   /** Percent display digits (default 1; max uses 2 for 51.32%). */
   digits?: number;
+  /** Denser row for stacked effort ladders. */
+  compact?: boolean;
+  /** Screen-reader name when the visible label is abbreviated. */
+  ariaName?: string;
 }) {
   const chance = CHANCE;
   const x = barX;
+  const name = ariaName ?? label;
   const aria = ci
-    ? `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about ${pct(CHANCE)} (always predict steer)`
-    : `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about ${pct(CHANCE)} (always predict steer)`;
+    ? `${name}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about ${pct(CHANCE)} (always predict steer)`
+    : `${name}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about ${pct(CHANCE)} (always predict steer)`;
   return (
     <div
-      className={`grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4 ${
-        featured ? "bg-indigo-50/70" : "bg-zinc-50"
-      }`}
+      className={`grid grid-cols-[1fr_auto] items-center gap-x-3 ${
+        compact
+          ? "gap-y-1 rounded-lg px-2 py-1.5 sm:grid-cols-[4.5rem_minmax(0,1fr)_3.75rem]"
+          : "gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4"
+      } ${featured ? "bg-indigo-50/70" : "bg-zinc-50"}`}
     >
       <div className="sm:col-start-1 sm:row-start-1">
-        <h3 className="font-semibold text-zinc-900">{label}</h3>
-        <p className="mt-0.5 text-xs leading-5 text-zinc-500">{note}</p>
+        <h3
+          className={`font-semibold text-zinc-900 ${
+            compact ? "text-sm leading-5" : ""
+          }`}
+        >
+          {label}
+        </h3>
+        {note ? (
+          <p
+            className={`text-zinc-500 ${
+              compact
+                ? "mt-0 text-[11px] leading-4"
+                : "mt-0.5 text-xs leading-5"
+            }`}
+          >
+            {note}
+          </p>
+        ) : null}
       </div>
       <div
-        className="relative col-span-2 row-start-2 h-10 overflow-visible sm:col-span-1 sm:col-start-2 sm:row-start-1"
+        className={`relative col-span-2 row-start-2 overflow-visible sm:col-span-1 sm:col-start-2 sm:row-start-1 ${
+          compact ? "h-7" : "h-10"
+        }`}
         role="img"
         aria-label={aria}
       >
-        <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full bg-zinc-200" />
         <div
-          className={`absolute left-0 top-1/2 h-3 -translate-y-1/2 rounded-full ${
-            featured ? "bg-indigo-600" : "bg-zinc-600"
+          className={`absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-full bg-zinc-200 ${
+            compact ? "h-2.5" : "h-3"
           }`}
+        />
+        <div
+          className={`absolute left-0 top-1/2 -translate-y-1/2 rounded-full ${
+            compact ? "h-2.5" : "h-3"
+          } ${featured ? "bg-indigo-600" : "bg-zinc-600"}`}
           style={{ width: x(rate) }}
         />
         <span
@@ -316,17 +353,31 @@ function ScoreRow({
             style={{ left: x(ci[0]), width: x(ci[1] - ci[0]) }}
             aria-hidden="true"
           >
-            <span className="absolute -left-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
-            <span className="absolute -right-px top-1/2 h-4 w-0.5 -translate-y-1/2 bg-zinc-950" />
+            <span
+              className={`absolute -left-px top-1/2 w-0.5 -translate-y-1/2 bg-zinc-950 ${
+                compact ? "h-3" : "h-4"
+              }`}
+            />
+            <span
+              className={`absolute -right-px top-1/2 w-0.5 -translate-y-1/2 bg-zinc-950 ${
+                compact ? "h-3" : "h-4"
+              }`}
+            />
           </span>
         )}
         <span
-          className="absolute top-1/2 z-40 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-zinc-950 shadow-sm"
+          className={`absolute top-1/2 z-40 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-zinc-950 shadow-sm ${
+            compact ? "h-2.5 w-2.5" : "h-3 w-3"
+          }`}
           style={{ left: x(rate) }}
           aria-hidden="true"
         />
       </div>
-      <p className="col-start-2 row-start-1 text-right text-2xl font-semibold tracking-tight tabular-nums text-zinc-950 sm:col-start-3">
+      <p
+        className={`col-start-2 row-start-1 text-right font-semibold tracking-tight tabular-nums text-zinc-950 sm:col-start-3 ${
+          compact ? "text-base" : "text-2xl"
+        }`}
+      >
         {pct(rate, digits)}
       </p>
     </div>
@@ -341,30 +392,67 @@ function MissingScoreRow({
   label,
   note,
   reason,
+  compact = false,
+  ariaName,
 }: {
   label: string;
   note: string;
   reason: string;
+  compact?: boolean;
+  ariaName?: string;
 }) {
+  const name = ariaName ?? label;
   return (
-    <div className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl border border-dashed border-zinc-300 p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4">
+    <div
+      className={`grid grid-cols-[1fr_auto] items-center gap-x-3 border border-dashed border-zinc-300 ${
+        compact
+          ? "gap-y-1 rounded-lg px-2 py-1 sm:grid-cols-[4.5rem_minmax(0,1fr)_3.75rem]"
+          : "gap-y-2 rounded-xl p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4"
+      }`}
+    >
       <div className="sm:col-start-1 sm:row-start-1">
-        <h3 className="font-semibold text-zinc-500">{label}</h3>
-        <p className="mt-0.5 text-xs leading-5 text-zinc-400">{note}</p>
+        <h3
+          className={`font-semibold text-zinc-500 ${
+            compact ? "text-sm leading-5" : ""
+          }`}
+        >
+          {label}
+        </h3>
+        {note ? (
+          <p
+            className={`text-zinc-400 ${
+              compact
+                ? "mt-0 text-[11px] leading-4"
+                : "mt-0.5 text-xs leading-5"
+            }`}
+          >
+            {note}
+          </p>
+        ) : null}
       </div>
       <div
-        className="relative col-span-2 row-start-2 h-10 sm:col-span-1 sm:col-start-2 sm:row-start-1"
+        className={`relative col-span-2 row-start-2 sm:col-span-1 sm:col-start-2 sm:row-start-1 ${
+          compact ? "h-5" : "h-10"
+        }`}
         role="img"
-        aria-label={`${label}: no score. ${reason}`}
+        aria-label={`${name}: no score. ${reason}`}
       >
-        <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full border border-dashed border-zinc-300" />
+        <div
+          className={`absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-full border border-dashed border-zinc-300 ${
+            compact ? "h-2" : "h-3"
+          }`}
+        />
         <span
           className="absolute inset-y-1 w-0.5 bg-amber-600/40"
           style={{ left: barX(CHANCE) }}
           aria-hidden="true"
         />
       </div>
-      <p className="col-start-2 row-start-1 text-right text-sm font-medium text-zinc-400 sm:col-start-3">
+      <p
+        className={`col-start-2 row-start-1 text-right font-medium text-zinc-400 sm:col-start-3 ${
+          compact ? "text-xs" : "text-sm"
+        }`}
+      >
         not run
       </p>
     </div>
@@ -720,24 +808,31 @@ function EffortScoreLadders() {
   const ladders = [
     {
       key: "baseline",
-      heading: "Baseline · no training history",
+      heading: "Baseline",
+      sub: "no training history",
       rows: (
         <>
           <ScoreRow
-            label="Baseline · low"
-            note="Effort low · 1 trial"
+            compact
+            label="low"
+            ariaName="Baseline low"
+            note="1 trial"
             rate={ML_LOW.baseline.jaccard}
             trialsNote={ML_LOW.nTrialsLabel}
           />
           <ScoreRow
-            label="Baseline · high"
-            note="Effort high · mean of 3 trials · from the leaderboard"
+            compact
+            label="high"
+            ariaName="Baseline high"
+            note="3 trials · leaderboard"
             rate={ML.baseline.jaccard}
             ci={ML.baseline.ci}
           />
           <MissingScoreRow
-            label="Baseline · max"
-            note="Effort max · never run"
+            compact
+            label="max"
+            ariaName="Baseline max"
+            note=""
             reason={`No baseline arm exists at max effort, so this condition has no measured score over the ${EVAL_TASKS} tasks.`}
           />
         </>
@@ -745,25 +840,32 @@ function EffortScoreLadders() {
     },
     {
       key: "train400",
-      heading: "Train400 · 400 prior turns",
+      heading: "Train400",
+      sub: "400 prior turns",
       rows: (
         <>
           <ScoreRow
-            label="Train400 · low"
-            note="Effort low · 1 trial"
+            compact
+            label="low"
+            ariaName="Train400 low"
+            note="1 trial"
             rate={ML_LOW.train400.jaccard}
             trialsNote={ML_LOW.nTrialsLabel}
           />
           <ScoreRow
-            label="Train400 · high"
-            note="Effort high · mean of 3 trials · from the leaderboard"
+            compact
+            label="high"
+            ariaName="Train400 high"
+            note="3 trials · leaderboard"
             rate={ML.train400.jaccard}
             ci={ML.train400.ci}
             featured
           />
           <ScoreRow
-            label="Train400 · max"
-            note={`Effort max · 1 trial · ${signedPp(ML_MAX.vsHighPp)} vs high`}
+            compact
+            label="max"
+            ariaName="Train400 max"
+            note={`1 trial · ${signedPp(ML_MAX.vsHighPp)} vs high`}
             rate={ML_MAX.train400.jaccard}
             trialsNote={ML_MAX.nTrialsLabel}
             digits={2}
@@ -777,7 +879,7 @@ function EffortScoreLadders() {
     {
       effort: "Low",
       value: signedPp(ML_LOW.liftPp),
-      note: "1 trial per arm",
+      note: "1 trial",
     },
     {
       effort: "High",
@@ -787,56 +889,59 @@ function EffortScoreLadders() {
     {
       effort: "Max",
       value: "not measured",
-      note: "no baseline arm at max",
+      note: "no baseline-max",
     },
   ] as const;
 
   return (
-    <figure className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-3 sm:p-5">
       <figcaption className="font-semibold text-zinc-900">
-        Mean Jaccard across low, high and max effort
+        History only helps when effort is high enough
       </figcaption>
       <p className="mt-1 max-w-2xl text-xs leading-5 text-zinc-500">
         GPT-5.6 Sol on the same {EVAL_TASKS} held-out tasks, two ladders on one
-        0–60% scale. The high rows repeat the leaderboard trials for
-        comparison; they are not a second run.
+        0–60% scale. High rows repeat the leaderboard trials; they are not a
+        second run.
       </p>
 
       {ladders.map((ladder) => (
-        <div key={ladder.key} className="mt-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
-            {ladder.heading}
+        <div key={ladder.key} className="mt-3">
+          <p className="flex flex-wrap items-baseline gap-x-2 text-xs">
+            <span className="font-semibold uppercase tracking-[0.14em] text-zinc-500">
+              {ladder.heading}
+            </span>
+            <span className="text-zinc-400">{ladder.sub}</span>
           </p>
-          <div className="mt-2 space-y-3">{ladder.rows}</div>
+          <div className="mt-1.5 space-y-1">{ladder.rows}</div>
         </div>
       ))}
 
-      <BarAxis />
+      <BarAxis compact />
 
-      <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-100 pt-4 text-xs text-zinc-500">
+      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-zinc-100 pt-3 text-xs text-zinc-500">
         <span>
           <span className="mr-2 inline-block h-3 w-0.5 bg-amber-600 align-[-2px]" />
           Chance ≈{pct(CHANCE)} (always predict {"{steer}"})
         </span>
         <span>
           <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
-          Error bars (high only): bootstrap 95% CIs over {EVAL_TASKS} tasks
+          Whiskers (high only): bootstrap 95% CIs
         </span>
         <span>
-          <span className="mr-2 inline-block h-3 w-5 rounded-full border border-dashed border-zinc-300 align-[-3px]" />
-          Dashed = arm never run
+          <span className="mr-2 inline-block h-2.5 w-4 rounded-full border border-dashed border-zinc-300 align-[-2px]" />
+          Dashed = not run
         </span>
       </div>
 
-      <div className="mt-4 border-t border-zinc-100 pt-4">
+      <div className="mt-3 border-t border-zinc-100 pt-3">
         <p
           id="effort-lift-label"
           className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500"
         >
-          Train400 − baseline, by effort
+          Train400 − baseline
         </p>
         <dl
-          className="mt-2 grid gap-3 sm:grid-cols-3"
+          className="mt-1.5 grid gap-2 sm:grid-cols-3"
           aria-labelledby="effort-lift-label"
         >
           {lifts.map((lift) => (
@@ -844,7 +949,7 @@ function EffortScoreLadders() {
               <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
                 {lift.effort}
               </dt>
-              <dd className="mt-1 text-lg font-semibold tabular-nums text-zinc-950">
+              <dd className="mt-0.5 text-base font-semibold tabular-nums text-zinc-950">
                 {lift.value}{" "}
                 <span className="text-xs font-normal text-zinc-500">
                   {lift.note}
@@ -855,7 +960,7 @@ function EffortScoreLadders() {
         </dl>
       </div>
 
-      <p className="mt-4 text-xs leading-5 text-zinc-500">
+      <p className="mt-3 text-xs leading-5 text-zinc-500">
         Low and max are single trials over {EVAL_TASKS} tasks, so neither
         carries a confidence interval; only high has bootstrap 95% CIs over
         3-trial task means. Max reaches {pct(ML_MAX.train400.jaccard, 2)}{" "}
