@@ -239,6 +239,26 @@ function Section({
   );
 }
 
+/** Every score bar on this page shares one 0–60% scale. */
+const BAR_MAX = 0.6;
+const barX = (value: number) => `${(value / BAR_MAX) * 100}%`;
+
+/** Tick labels under a stack of score bars; matches the ScoreRow grid. */
+function BarAxis() {
+  return (
+    <div className="mt-2 hidden grid-cols-[11rem_minmax(0,1fr)_5rem] px-4 text-[11px] tabular-nums text-zinc-400 sm:grid">
+      <span />
+      <div className="flex justify-between">
+        <span>0%</span>
+        <span>20%</span>
+        <span>40%</span>
+        <span>60%</span>
+      </div>
+      <span />
+    </div>
+  );
+}
+
 function ScoreRow({
   label,
   note,
@@ -259,8 +279,7 @@ function ScoreRow({
   digits?: number;
 }) {
   const chance = CHANCE;
-  const max = 0.6;
-  const x = (value: number) => `${(value / max) * 100}%`;
+  const x = barX;
   const aria = ci
     ? `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; bootstrap 95% confidence interval ${pct(ci[0])} to ${pct(ci[1])}; chance is about ${pct(CHANCE)} (always predict steer)`
     : `${label}: ${pct(rate, digits)} mean Jaccard over ${trialsNote}; no multi-trial confidence interval; chance is about ${pct(CHANCE)} (always predict steer)`;
@@ -309,6 +328,44 @@ function ScoreRow({
       </div>
       <p className="col-start-2 row-start-1 text-right text-2xl font-semibold tracking-tight tabular-nums text-zinc-950 sm:col-start-3">
         {pct(rate, digits)}
+      </p>
+    </div>
+  );
+}
+
+/**
+ * Placeholder for an arm nobody ran. Holds the row's slot with an empty
+ * dashed track so the gap reads as missing rather than as a zero.
+ */
+function MissingScoreRow({
+  label,
+  note,
+  reason,
+}: {
+  label: string;
+  note: string;
+  reason: string;
+}) {
+  return (
+    <div className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 rounded-xl border border-dashed border-zinc-300 p-3 sm:grid-cols-[11rem_minmax(0,1fr)_5rem] sm:p-4">
+      <div className="sm:col-start-1 sm:row-start-1">
+        <h3 className="font-semibold text-zinc-500">{label}</h3>
+        <p className="mt-0.5 text-xs leading-5 text-zinc-400">{note}</p>
+      </div>
+      <div
+        className="relative col-span-2 row-start-2 h-10 sm:col-span-1 sm:col-start-2 sm:row-start-1"
+        role="img"
+        aria-label={`${label}: no score. ${reason}`}
+      >
+        <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 rounded-full border border-dashed border-zinc-300" />
+        <span
+          className="absolute inset-y-1 w-0.5 bg-amber-600/40"
+          style={{ left: barX(CHANCE) }}
+          aria-hidden="true"
+        />
+      </div>
+      <p className="col-start-2 row-start-1 text-right text-sm font-medium text-zinc-400 sm:col-start-3">
+        not run
       </p>
     </div>
   );
@@ -374,16 +431,7 @@ export function LeaderboardSection() {
               featured
             />
           </div>
-          <div className="mt-2 hidden grid-cols-[11rem_minmax(0,1fr)_5rem] px-4 text-[11px] tabular-nums text-zinc-400 sm:grid">
-            <span />
-            <div className="flex justify-between">
-              <span>0%</span>
-              <span>20%</span>
-              <span>40%</span>
-              <span>60%</span>
-            </div>
-            <span />
-          </div>
+          <BarAxis />
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-100 pt-4 text-xs text-zinc-500">
             <span>
               <span className="mr-2 inline-block h-3 w-0.5 bg-amber-600 align-[-2px]" />
@@ -391,101 +439,23 @@ export function LeaderboardSection() {
             </span>
             <span>
               <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
-              Error bars (high only): bootstrap 95% CIs over {EVAL_TASKS} tasks
-              (10k resamples; each task = mean of 3 trials)
+              Error bars: bootstrap 95% CIs over {EVAL_TASKS} tasks (10k
+              resamples; each task = mean of 3 trials)
             </span>
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
-                Same model · effort low
-              </p>
-              <p className="mt-1 text-sm text-zinc-600">
-                GPT-5.6 Sol (low) · {ML_LOW.nTrialsLabel} · no multi-trial CI
-              </p>
-            </div>
-            <div className="sm:text-right">
-              <p className="text-2xl font-semibold tracking-tight tabular-nums text-zinc-700">
-                {signedPp(ML_LOW.liftPp)}
-              </p>
-              <p className="text-xs text-zinc-500">train400 vs baseline</p>
-            </div>
-          </div>
-          <div className="mt-4 space-y-3">
-            <ScoreRow
-              label="Baseline · low"
-              note="No developer training history · effort low"
-              rate={ML_LOW.baseline.jaccard}
-              trialsNote={ML_LOW.nTrialsLabel}
-            />
-            <ScoreRow
-              label="Train400 · low"
-              note="400 prior turns · effort low"
-              rate={ML_LOW.train400.jaccard}
-              trialsNote={ML_LOW.nTrialsLabel}
-            />
-          </div>
-          <p className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
-            At low effort, baseline lands where high does (
-            {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}), and
-            train400 buys nothing: {signedPp(ML_LOW.liftPp)} against{" "}
-            {signedPp(ML.liftPp)} at high effort. See{" "}
-            <a
-              href="#reasoning-effort"
-              className="text-indigo-600 underline-offset-2 hover:underline"
-            >
-              impact of reasoning effort
-            </a>
-            .
-          </p>
-        </div>
-
-        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
-                Same model · effort max
-              </p>
-              <p className="mt-1 text-sm text-zinc-600">
-                GPT-5.6 Sol (max) · {ML_MAX.nTrialsLabel} · train400 only · no
-                multi-trial CI
-              </p>
-            </div>
-            <div className="sm:text-right">
-              <p className="text-2xl font-semibold tracking-tight tabular-nums text-zinc-700">
-                {signedPp(ML_MAX.vsHighPp)}
-              </p>
-              <p className="text-xs text-zinc-500">vs high train400</p>
-            </div>
-          </div>
-          <div className="mt-4 space-y-3">
-            <ScoreRow
-              label="Train400 · max"
-              note="400 prior turns · effort max · no baseline arm"
-              rate={ML_MAX.train400.jaccard}
-              trialsNote={ML_MAX.nTrialsLabel}
-              digits={2}
-            />
-          </div>
-          <p className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
-            Max reaches {pct(ML_MAX.train400.jaccard, 2)} on train400 vs{" "}
-            {pct(ML_MAX.highTrain400MeanOf3, 2)} high (mean of 3) — about{" "}
-            {signedPp(ML_MAX.vsHighPp)}, not significant. Exact-set{" "}
-            {pct(ML_MAX.train400.exact)}. One unrecovered AgentTimeoutError; no
-            baseline-max run. See{" "}
-            <a
-              href="#reasoning-effort"
-              className="text-indigo-600 underline-offset-2 hover:underline"
-            >
-              impact of reasoning effort
-            </a>
-            .
-          </p>
-        </div>
-
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-500">
+          The same model also ran at low and max reasoning effort on these
+          tasks, one trial each.{" "}
+          <a
+            href="#reasoning-effort"
+            className="text-indigo-600 underline-offset-2 hover:underline"
+          >
+            Impact of reasoning effort
+          </a>{" "}
+          lines all three up on one scale.
+        </p>
       </section>
     </>
   );
@@ -741,6 +711,164 @@ export function AnalysisSection() {
   );
 }
 
+/**
+ * Two effort ladders on one shared scale: what the same model scores without
+ * history and with train400 as reasoning effort rises. The high rows restate
+ * the leaderboard trials; low and max are separate single-trial runs.
+ */
+function EffortScoreLadders() {
+  const ladders = [
+    {
+      key: "baseline",
+      heading: "Baseline · no training history",
+      rows: (
+        <>
+          <ScoreRow
+            label="Baseline · low"
+            note="Effort low · 1 trial"
+            rate={ML_LOW.baseline.jaccard}
+            trialsNote={ML_LOW.nTrialsLabel}
+          />
+          <ScoreRow
+            label="Baseline · high"
+            note="Effort high · mean of 3 trials · from the leaderboard"
+            rate={ML.baseline.jaccard}
+            ci={ML.baseline.ci}
+          />
+          <MissingScoreRow
+            label="Baseline · max"
+            note="Effort max · never run"
+            reason={`No baseline arm exists at max effort, so this condition has no measured score over the ${EVAL_TASKS} tasks.`}
+          />
+        </>
+      ),
+    },
+    {
+      key: "train400",
+      heading: "Train400 · 400 prior turns",
+      rows: (
+        <>
+          <ScoreRow
+            label="Train400 · low"
+            note="Effort low · 1 trial"
+            rate={ML_LOW.train400.jaccard}
+            trialsNote={ML_LOW.nTrialsLabel}
+          />
+          <ScoreRow
+            label="Train400 · high"
+            note="Effort high · mean of 3 trials · from the leaderboard"
+            rate={ML.train400.jaccard}
+            ci={ML.train400.ci}
+            featured
+          />
+          <ScoreRow
+            label="Train400 · max"
+            note={`Effort max · 1 trial · ${signedPp(ML_MAX.vsHighPp)} vs high`}
+            rate={ML_MAX.train400.jaccard}
+            trialsNote={ML_MAX.nTrialsLabel}
+            digits={2}
+          />
+        </>
+      ),
+    },
+  ] as const;
+
+  const lifts = [
+    {
+      effort: "Low",
+      value: signedPp(ML_LOW.liftPp),
+      note: "1 trial per arm",
+    },
+    {
+      effort: "High",
+      value: signedPp(ML.liftPp),
+      note: "3-trial means",
+    },
+    {
+      effort: "Max",
+      value: "not measured",
+      note: "no baseline arm at max",
+    },
+  ] as const;
+
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-6">
+      <figcaption className="font-semibold text-zinc-900">
+        Mean Jaccard across low, high and max effort
+      </figcaption>
+      <p className="mt-1 max-w-2xl text-xs leading-5 text-zinc-500">
+        GPT-5.6 Sol on the same {EVAL_TASKS} held-out tasks, two ladders on one
+        0–60% scale. The high rows repeat the leaderboard trials for
+        comparison; they are not a second run.
+      </p>
+
+      {ladders.map((ladder) => (
+        <div key={ladder.key} className="mt-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+            {ladder.heading}
+          </p>
+          <div className="mt-2 space-y-3">{ladder.rows}</div>
+        </div>
+      ))}
+
+      <BarAxis />
+
+      <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-100 pt-4 text-xs text-zinc-500">
+        <span>
+          <span className="mr-2 inline-block h-3 w-0.5 bg-amber-600 align-[-2px]" />
+          Chance ≈{pct(CHANCE)} (always predict {"{steer}"})
+        </span>
+        <span>
+          <span className="mr-2 inline-block h-0.5 w-5 bg-zinc-950 align-middle" />
+          Error bars (high only): bootstrap 95% CIs over {EVAL_TASKS} tasks
+        </span>
+        <span>
+          <span className="mr-2 inline-block h-3 w-5 rounded-full border border-dashed border-zinc-300 align-[-3px]" />
+          Dashed = arm never run
+        </span>
+      </div>
+
+      <div className="mt-4 border-t border-zinc-100 pt-4">
+        <p
+          id="effort-lift-label"
+          className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500"
+        >
+          Train400 − baseline, by effort
+        </p>
+        <dl
+          className="mt-2 grid gap-3 sm:grid-cols-3"
+          aria-labelledby="effort-lift-label"
+        >
+          {lifts.map((lift) => (
+            <div key={lift.effort}>
+              <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-400">
+                {lift.effort}
+              </dt>
+              <dd className="mt-1 text-lg font-semibold tabular-nums text-zinc-950">
+                {lift.value}{" "}
+                <span className="text-xs font-normal text-zinc-500">
+                  {lift.note}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <p className="mt-4 text-xs leading-5 text-zinc-500">
+        Low and max are single trials over {EVAL_TASKS} tasks, so neither
+        carries a confidence interval; only high has bootstrap 95% CIs over
+        3-trial task means. Max reaches {pct(ML_MAX.train400.jaccard, 2)}{" "}
+        against {pct(ML_MAX.highTrain400MeanOf3, 2)} at high (
+        {signedPp(ML_MAX.vsHighPp)}), a gap one trial cannot separate from
+        noise, with exact-set {pct(ML_MAX.train400.exact)}; one max trial ended
+        in an unrecovered AgentTimeoutError. Max has no baseline arm, so its
+        train400 gain stays unmeasured rather than zero.
+      </p>
+    </figure>
+  );
+}
+
 /** Low / high / max effort: scores + train400 read depth. */
 export function ReasoningEffortSection() {
   const rows = [
@@ -790,28 +918,28 @@ export function ReasoningEffortSection() {
     >
       <ul className="max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-700">
         <li>
-          Baseline is about the same at low vs high (
-          {pct(ML_LOW.baseline.jaccard)} vs {pct(ML.baseline.jaccard)}; chance ≈
-          {pct(CHANCE)}). No baseline-max arm was run.
+          Effort barely changes the cold read. Without history the model lands
+          in the same place at low and high, a couple of points over chance
+          either way.
         </li>
         <li>
-          Train400 gains nothing at low ({signedPp(ML_LOW.liftPp)}), clearly
-          helps at high ({signedPp(ML.liftPp)}; 3-trial means), and max adds a
-          small further bump on train400 only:{" "}
-          {pct(ML_MAX.train400.jaccard, 2)} vs{" "}
-          {pct(ML_MAX.highTrain400MeanOf3, 2)} high ({signedPp(ML_MAX.vsHighPp)};
-          not significant).
+          Effort decides whether history pays. Train400 buys nothing at low,
+          clearly helps at high, and adds a small bump at max that one trial
+          cannot confirm.
         </li>
         <li>
-          Effort matters more for using history than for cold next-act: low
-          still opens{" "}
-          <span className="font-mono text-xs">/sim/train</span> on every
-          active trial, but runs fewer tools and weaker pool scans. Max does not
-          clearly beat high on this 1×{EVAL_TASKS} pass.
+          The trajectories say why: low opens{" "}
+          <span className="font-mono text-xs">/sim/train</span> on every active
+          trial but runs half the tools and scans the pack far less. Max reads
+          deeper than high for no clear score gain.
         </li>
       </ul>
 
-      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+      <div className="mt-6">
+        <EffortScoreLadders />
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
         <div className="rounded-2xl border border-zinc-200 bg-white p-5">
           <h3 className="font-semibold text-zinc-900">
             Train400 read depth (active trials)
