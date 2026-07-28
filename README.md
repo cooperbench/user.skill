@@ -25,7 +25,7 @@ users/                 Distilled developer folders (persona/style/skills)
 simulator/             Generic simulator skills (push-back, interrupt, …)
 bench/                 CondAgree / next-action prediction harness + taxonomy
 analysis/              Misprediction / homogeneity analysis + report source
-scripts/               Distill / validate / report drivers
+scripts/               Distill / validate / report drivers (incl. ghost_predict.py baseline)
 modal_app/             Modal training + serving for OSim models
 web/                   Next.js site (userbench.vercel.app)
 results/               Validation outputs
@@ -138,6 +138,7 @@ conditions:
 | `distilled` | the user's own distilled folder |
 | `generic` | none (a generic developer) |
 | `wrong` | a different user's folder (specificity control) |
+| `ghost` | none — the opencode ghost-text predictor (`scripts/ghost_predict.py`), opt in with `--ghost` |
 
 **Metrics** (per generated vs. real message):
 
