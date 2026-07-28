@@ -1,0 +1,94 @@
+{
+ "index": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/index.json",
+ "files": [
+  {
+   "name": "summary.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/summary.json",
+   "bytes": 7641,
+   "description": "Headline results: per (model, condition) next-action prediction accuracy (macro) mean + 95% CI + per-user array; lucky_guess line; real move distribution."
+  },
+  {
+   "name": "manifest.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/manifest.json",
+   "bytes": 2112,
+   "description": "Experiment config: the 10 models with backend ids (OpenRouter / Gemini API / Modal) + reasoning efforts + concurrency, split file, taxonomy, judge model, n_per_user, n_points, git sha, timestamp."
+  },
+  {
+   "name": "taxonomy.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/taxonomy.json",
+   "bytes": 2762,
+   "description": "The v2 4-way move taxonomy: categories (approve/critical/directive/inquiry), the exact classifier prompt body, OLD->NEW remap from the legacy 7-way, and inter-judge kappa."
+  },
+  {
+   "name": "splits.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/splits.json",
+   "bytes": 8341,
+   "description": "Train/val/test split with NON-OVERLAPPING users AND repos (connected components of the user<->repo graph); qualifying eval-users per split."
+  },
+  {
+   "name": "points.jsonl",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/points.jsonl",
+   "bytes": 695881,
+   "description": "The 480 frozen held-out prediction points (one JSON per line): {point_id, slug, repo, turn_index, prev_agent, real_text}."
+  },
+  {
+   "name": "raw.jsonl",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/raw.jsonl",
+   "bytes": 6893514,
+   "description": "Every trial (one JSON per line). Generation: {key, kind:'gen', point_id, slug, model, model_id, backend, effort, cond('distilled'|'generic'), text, ts, seed?}. Move label: {key:'lab:haiku:<hash>', move}. Join gens to labels via the 4-way classifier on (prev_agent, text)."
+  },
+  {
+   "name": "cases.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/cases.json",
+   "bytes": 555599,
+   "description": "Case-study data for glm-5.2 / gemini-3.1-pro / osim-4b: per-developer accuracy ±profile (delta), and every moment where the profile flipped the move (with the agent turn, real message+move, and both ±profile generations+moves)."
+  },
+  {
+   "name": "category_recall.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/category_recall.json",
+   "bytes": 4684,
+   "description": "Per-move agree-rate (recall) for all models, both conditions: of moments whose real move was X, the fraction the sim matched. Includes the profile delta per category. Drives the by-category heatmap."
+  },
+  {
+   "name": "verbosity.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/verbosity.json",
+   "bytes": 2050,
+   "description": "Average + median message length (words) per model, both conditions, vs the real developers; plus each model's accuracy no-profile/with-profile. Drives the verbosity chart."
+  },
+  {
+   "name": "ablation.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/ablation.json",
+   "bytes": 2227,
+   "description": "Contrastive-prefix ablation for glm-5.2 + gpt-5.5: accuracy under no-profile vs the real persona vs a content-free terse style prefix, with spurious-inquiry rate, word count, and per-move recall."
+  },
+  {
+   "name": "scaling_context.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/scaling_context.json",
+   "bytes": 12819,
+   "description": "Context-window ablation for gemini-3.5-flash (no profile): accuracy per N=1..10 prior session turns plus the full 14-turn anchor, per-developer values, on all 480 moments and the 166-moment constant-dose (>=10 prior turns) subset. Drives the context-window chart."
+  },
+  {
+   "name": "scaling_flash_k.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/scaling_flash_k.json",
+   "bytes": 6000,
+   "description": "Cross-session history sweep for gemini-3.5-flash (no profile): accuracy per K in {0,2,4,8,16,32,64} most recent train turns prepended at the full 14-turn live window (K=0 = the leaderboard generic run), plus K in {8,64} at a 1-turn live window (substitution test), per-developer values and paired tests. Drives the cross-session chart."
+  },
+  {
+   "name": "scaling_grid.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/scaling_grid.json",
+   "bytes": 12231,
+   "description": "The completed coarse N x K surface for gemini-3.5-flash (no profile): accuracy at every (N in {1,2,4,8,14} live turns) x (K in {0,4,16,64} history turns) cell, per-developer values, paired K-effect tests at each N and the N1-vs-N14 interaction test. Drives the grid table."
+  }
+ ],
+ "models": [
+  "deepseek-v3.1",
+  "deepseek-v4-flash",
+  "deepseek-v4-pro",
+  "gpt-5.5",
+  "claude-opus-4.8",
+  "glm-5.2",
+  "gemini-3.1-pro",
+  "osim-4b",
+  "osim-8b"
+ ]
+}

@@ -17,3 +17,7 @@ bench/profileopt/experiments/condagree_multi/train_turns.json
 users_atK/
 results/scores_tasks_*.jsonl
 results/realacts_tasks_*.json
+web/node_modules/
+web/.next/
+web/out/
+.vercel

@@ -1,0 +1,1217 @@
+{
+ "cats": [
+  "approve",
+  "critical",
+  "directive",
+  "inquiry"
+ ],
+ "folder": {
+  "meta": {
+   "users": 20,
+   "points": 1511,
+   "mode": "folder"
+  },
+  "adjudication": {
+   "n_adjudicated": 25,
+   "reasonable_rate": 0.12,
+   "error_type_counts": {
+    "hallucinated_content": 5,
+    "generic_not_specific": 3,
+    "task_completion_substitution": 17
+   },
+   "homogeneity_share": 0.8,
+   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+  },
+  "worst": [
+   {
+    "slug": "cyyeh",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m\nduckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m",
+    "generated": "commit and push",
+    "judge_realism": 2,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "フローチャートの例のmermaidが表示されていません",
+    "generated": "/commit",
+    "judge_realism": 2,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "malkoG",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "Commit fine-grained",
+    "generated": "1",
+    "judge_realism": 0,
+    "error_type": "generic_not_specific",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "actually we have not yet released anything. I am tempted to manually wipe the db. (delete everything) generate new migrations from scratch (so we have only 1 single migration) and then rbeuild db, and via the CLI manually upload all previous sessions.w hat do you think?",
+    "generated": "commit, push and create a PR, merge when passed",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "create pr",
+    "generated": "わかりました",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "hutusi",
+    "real_cat": "critical",
+    "pred_cat": "approve",
+    "real": "A few more issues I'm noticing:\n\nProfile ownership is ambiguous in the UI. There's no visual indication of whether a given profile belongs to an online account or is a purely local player. From the user's side, the two are indistinguishable.\nOnline profiles appear to be visible without signing in. When not logged in, I can still see online profiles — they shouldn't be reachable in a signed-out state. Please verify whether this is a real leak or just a display issue.\nJoining an online world fails with a timeout: couldn't join: join timed out. This looks like a server-side / deployment problem on Fly.io rather than a client bug. Please investigate the Fly.io deployment — check whether the game server is actually running, reachable, and accepting WebSocket connections (logs, health, region, and whether the machine has scaled/stopped).",
+    "generated": "ok",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "malkoG",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "For article detail page, do we render image assets??????",
+    "generated": "/ghpr",
+    "judge_realism": 3,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
+    "generated": "yes, and then commit, push and create a PR, merge when passed",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "nosman",
+    "real_cat": "critical",
+    "pred_cat": "approve",
+    "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
+    "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "FSM1",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "I think that the full desktop e2e in CI should also be added as one of the gates for this phase",
+    "generated": "you good bro?",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context` and restarted the api server, but I dont seem to see the logfile",
+    "generated": "commit, push and create a PR, merge when passed",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "cyyeh",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "now the issue is that query result content is too wide",
+    "generated": "commit",
+    "judge_realism": 5,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   }
+  ],
+  "e2": {
+   "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
+   "by_condition": {
+    "distilled": {
+     "n": 503,
+     "real_marginal": {
+      "approve": 0.151,
+      "critical": 0.175,
+      "directive": 0.507,
+      "inquiry": 0.167
+     },
+     "pred_marginal": {
+      "approve": 0.185,
+      "critical": 0.058,
+      "directive": 0.654,
+      "inquiry": 0.103
+     },
+     "pred_minus_real": {
+      "approve": 0.034,
+      "critical": -0.117,
+      "directive": 0.147,
+      "inquiry": -0.064
+     },
+     "human->task": 131,
+     "task->human": 40,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 91
+    },
+    "generic": {
+     "n": 505,
+     "real_marginal": {
+      "approve": 0.15,
+      "critical": 0.174,
+      "directive": 0.505,
+      "inquiry": 0.17
+     },
+     "pred_marginal": {
+      "approve": 0.16,
+      "critical": 0.059,
+      "directive": 0.521,
+      "inquiry": 0.259
+     },
+     "pred_minus_real": {
+      "approve": 0.01,
+      "critical": -0.115,
+      "directive": 0.016,
+      "inquiry": 0.089
+     },
+     "human->task": 95,
+     "task->human": 82,
+     "flow_sign_test_p": 0.3671,
+     "net_toward_task": 13
+    },
+    "wrong": {
+     "n": 503,
+     "real_marginal": {
+      "approve": 0.151,
+      "critical": 0.175,
+      "directive": 0.505,
+      "inquiry": 0.169
+     },
+     "pred_marginal": {
+      "approve": 0.276,
+      "critical": 0.05,
+      "directive": 0.588,
+      "inquiry": 0.085
+     },
+     "pred_minus_real": {
+      "approve": 0.125,
+      "critical": -0.125,
+      "directive": 0.083,
+      "inquiry": -0.083
+     },
+     "human->task": 133,
+     "task->human": 28,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 105
+    }
+   },
+   "real_act_marginal_all": {
+    "approve": 0.151,
+    "critical": 0.175,
+    "directive": 0.507,
+    "inquiry": 0.167
+   }
+  },
+  "e3": {
+   "distilled": {
+    "n_users": 20,
+    "spread_real": 0.2793,
+    "spread_pred": 0.2435,
+    "pred_minus_real": -0.0358,
+    "perm_p": 0.3535,
+    "collapse": true
+   },
+   "generic": {
+    "n_users": 20,
+    "spread_real": 0.2801,
+    "spread_pred": 0.1995,
+    "pred_minus_real": -0.0806,
+    "perm_p": 0.0117,
+    "collapse": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "spread_real": 0.2793,
+    "spread_pred": 0.2552,
+    "pred_minus_real": -0.0241,
+    "perm_p": 0.5017,
+    "collapse": true
+   }
+  },
+  "e4": {
+   "distilled": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1973,
+    "mean_dist_to_median_pred": 0.2509,
+    "mean_pred_minus_real": 0.0536,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0386,
+    "shrinks_to_median": false
+   },
+   "generic": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1991,
+    "mean_dist_to_median_pred": 0.1856,
+    "mean_pred_minus_real": -0.0135,
+    "n_users_shrinking": 10,
+    "wilcoxon_p": 0.6274,
+    "shrinks_to_median": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1982,
+    "mean_dist_to_median_pred": 0.2525,
+    "mean_pred_minus_real": 0.0543,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0364,
+    "shrinks_to_median": false
+   }
+  },
+  "e5": {
+   "by_condition": {
+    "distilled": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2512,
+     "judge_style": 38.391,
+     "judge_realism": 34.332,
+     "judge_content": 31.013
+    },
+    "generic": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2149,
+     "judge_style": 36.63,
+     "judge_realism": 38.719,
+     "judge_content": 31.786
+    },
+    "wrong": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2679,
+     "judge_style": 34.209,
+     "judge_realism": 31.283,
+     "judge_content": 29.106
+    }
+   },
+   "verdict": "surface_only",
+   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
+  }
+ },
+ "inline": {
+  "meta": {
+   "users": 20,
+   "points": 1482,
+   "mode": "inline"
+  },
+  "adjudication": {
+   "n_adjudicated": 25,
+   "reasonable_rate": 0.12,
+   "error_type_counts": {
+    "task_completion_substitution": 22,
+    "generic_not_specific": 1,
+    "hallucinated_content": 2
+   },
+   "homogeneity_share": 0.92,
+   "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+  },
+  "worst": [
+   {
+    "slug": "jeevanpillay",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "omit anything any related to the core dev-lifecycle changes",
+    "generated": "proceed",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": true
+   },
+   {
+    "slug": "jdsingh122918",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "lets start with approach A",
+    "generated": "B",
+    "judge_realism": 0,
+    "error_type": "task_completion_substitution",
+    "reasonable": true
+   },
+   {
+    "slug": "FSM1",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "/compact",
+    "generated": "ok",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": true
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "前回と同一の内容です。変更点がありません。\n\n前回挙げた3点の未対処事項を改めて整理します。対処していただければ公開できる水準になると思います。\n\n---\n\n**1. 素朴アプローチとポリシーの認可ルールが暗黙に変わっている（269行目付近）**\n\n素朴版の `authorizeUpdate` は「作成者 or プロジェクトメンバー（メンバーであれば誰でもOK）」です。改善版の `TaskPolicy` は「作成者 or オーナー or エディター（閲覧者は不可）」です。これは認可ルール自体のリファクタではなく、ルールの厳格化です。読者は「ポリシーオブジェクトに移しただけ」と思って読むのに、実は判定基準が変わっている。素朴→改善の接続部分に「ポリシーオブジェクトに移行する際に、メンバーシップの有無ではなくロールに基づく判定に変更しています」と一文入れてください。\n\n**2. クエリ側の Handler コードがない（448〜501行目）**\n\n`TaskVisibility` をどこで生成して Handler に渡すのかが不明です。コマンド側では `Delete` Handler のコードで claims → actor の変換と UseCase 呼び出しまで示しています。クエリ側にも同等の Handler コード（role取得 → `NewTaskVisibility(role)` → `toTaskResponse` の呼び出し）を足せば、記事全体の対称性が揃います。\n\n**3. まとめの散文が6主張を1段落に詰め込んでいる（618行目）**\n\nテーブルで3レベルの整理はできているので、その後の散文は「各層の責務を分けることが最も重要」という一点に絞って、残りは削るか別文に分けると、締まりが良くなります。\n\n---\n\nこの3点以外は公開に問題ないレベルです。",
+    "generated": "確認しました。PRをマージしてください。",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "jeevanpillay",
+    "real_cat": "inquiry",
+    "pred_cat": "approve",
+    "real": "question, consiering that we havent gotten apple dev account setup how can we deploy?",
+    "generated": "okay got it. proceed",
+    "judge_realism": 2,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "robouden",
+    "real_cat": "critical",
+    "pred_cat": "approve",
+    "real": "Can you fix this?",
+    "generated": "Great!!",
+    "judge_realism": 3,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "alishakawaguchi",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "do I need to increment the versions so it doesn't mess with current users?",
+    "generated": "push",
+    "judge_realism": 3,
+    "error_type": "generic_not_specific",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "No, I'm actually thinking that we're trying because most of the dashboards are powered by the analytics table, and whenever we want to add a new agent we need to still have a single source for all analytical queries in the frontend. So we need to have the base session, and then we have agent-specific sessions that add specific fields. The analytics session, or the analytics table, basically only gets from the agent-specific sessions materialized from there, so everything is still in an MV. And if there are some analytical things that are specific to an agent, we just add them as specific columns, and then not all analytic sessions have that trait.",
+    "generated": "yes do it",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "KeKs0r",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "shuold we also delete/Users/marc/conductor/workspaces/rudel/tunis-v1/packages/ch-schema/chx/meta/backfill",
+    "generated": "apply to CI first",
+    "judge_realism": 5,
+    "error_type": "hallucinated_content",
+    "reasonable": false
+   },
+   {
+    "slug": "135yshr",
+    "real_cat": "directive",
+    "pred_cat": "approve",
+    "real": "PRにレビューコメントがあるので確認して修正してください",
+    "generated": "はい",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "Soph",
+    "real_cat": "critical",
+    "pred_cat": "directive",
+    "real": "target: error: GH013: Repository rule violations found for refs/entire/checkpoints/5T/01KVBJD96J55PB4WRH2EADBE5T.\ntarget:\ntarget: - GITHUB PUSH PROTECTION\ntarget:   —————————————————————————————————————————\ntarget:     Resolve the following violations before pushing again\ntarget:\ntarget:     - Timed out validating Secrets detected, please try again\ntarget:\ntarget: error: GH013: Repository rule violations found for refs/entire/checkpoints/5T/01KVBJD9ZCNC48MJD4DSRGPN5T.\ntarget:\ntarget: - GITHUB PUSH PROTECTION\ntarget:   —————————————————————————————————————————\ntarget:     Resolve the following violations before pushing again\ntarget:\ntarget:     - Timed out validating Secrets detected, please try again\ntarget:\nerror: replicate: replicate: bootstrap execute: push target refs: report-status: command error on refs/entire/checkpoints/2Y/01KVBHQG88946KVY2MYW6RKW2Y: push declined due to repository rule violations\nexit status 1",
+    "generated": "let's do both",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   },
+   {
+    "slug": "cyyeh",
+    "real_cat": "inquiry",
+    "pred_cat": "directive",
+    "real": "docker build -t YOUR_REGISTRY/duckdb-data-agent:latest -f backend/Dockerfile .\ndocker build -t REDACTED:latest ./sidecar\ndocker push YOUR_REGISTRY/duckdb-data-agent:latest\ndocker push REDACTED:latest\n\nhow to setup local registry in mac for k8s deployment",
+    "generated": "create a PR",
+    "judge_realism": 5,
+    "error_type": "task_completion_substitution",
+    "reasonable": false
+   }
+  ],
+  "e2": {
+   "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
+   "by_condition": {
+    "distilled": {
+     "n": 495,
+     "real_marginal": {
+      "approve": 0.135,
+      "critical": 0.172,
+      "directive": 0.515,
+      "inquiry": 0.178
+     },
+     "pred_marginal": {
+      "approve": 0.275,
+      "critical": 0.057,
+      "directive": 0.527,
+      "inquiry": 0.141
+     },
+     "pred_minus_real": {
+      "approve": 0.139,
+      "critical": -0.115,
+      "directive": 0.012,
+      "inquiry": -0.036
+     },
+     "human->task": 126,
+     "task->human": 51,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 75
+    },
+    "generic": {
+     "n": 491,
+     "real_marginal": {
+      "approve": 0.136,
+      "critical": 0.175,
+      "directive": 0.511,
+      "inquiry": 0.177
+     },
+     "pred_marginal": {
+      "approve": 0.253,
+      "critical": 0.067,
+      "directive": 0.442,
+      "inquiry": 0.238
+     },
+     "pred_minus_real": {
+      "approve": 0.116,
+      "critical": -0.108,
+      "directive": -0.069,
+      "inquiry": 0.061
+     },
+     "human->task": 105,
+     "task->human": 82,
+     "flow_sign_test_p": 0.1074,
+     "net_toward_task": 23
+    },
+    "wrong": {
+     "n": 496,
+     "real_marginal": {
+      "approve": 0.135,
+      "critical": 0.175,
+      "directive": 0.51,
+      "inquiry": 0.179
+     },
+     "pred_marginal": {
+      "approve": 0.312,
+      "critical": 0.048,
+      "directive": 0.508,
+      "inquiry": 0.131
+     },
+     "pred_minus_real": {
+      "approve": 0.177,
+      "critical": -0.127,
+      "directive": -0.002,
+      "inquiry": -0.048
+     },
+     "human->task": 131,
+     "task->human": 44,
+     "flow_sign_test_p": 0.0,
+     "net_toward_task": 87
+    }
+   },
+   "real_act_marginal_all": {
+    "approve": 0.135,
+    "critical": 0.172,
+    "directive": 0.515,
+    "inquiry": 0.178
+   }
+  },
+  "e3": {
+   "distilled": {
+    "n_users": 20,
+    "spread_real": 0.282,
+    "spread_pred": 0.3133,
+    "pred_minus_real": 0.0313,
+    "perm_p": 0.2635,
+    "collapse": false
+   },
+   "generic": {
+    "n_users": 20,
+    "spread_real": 0.2828,
+    "spread_pred": 0.2587,
+    "pred_minus_real": -0.0241,
+    "perm_p": 0.4148,
+    "collapse": true
+   },
+   "wrong": {
+    "n_users": 20,
+    "spread_real": 0.2859,
+    "spread_pred": 0.3093,
+    "pred_minus_real": 0.0235,
+    "perm_p": 0.6157,
+    "collapse": false
+   }
+  },
+  "e4": {
+   "distilled": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1939,
+    "mean_dist_to_median_pred": 0.2816,
+    "mean_pred_minus_real": 0.0877,
+    "n_users_shrinking": 3,
+    "wilcoxon_p": 0.0025,
+    "shrinks_to_median": false
+   },
+   "generic": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1927,
+    "mean_dist_to_median_pred": 0.2235,
+    "mean_pred_minus_real": 0.0308,
+    "n_users_shrinking": 11,
+    "wilcoxon_p": 0.3317,
+    "shrinks_to_median": false
+   },
+   "wrong": {
+    "n_users": 20,
+    "mean_dist_to_median_real": 0.1968,
+    "mean_dist_to_median_pred": 0.3006,
+    "mean_pred_minus_real": 0.1038,
+    "n_users_shrinking": 4,
+    "wilcoxon_p": 0.0057,
+    "shrinks_to_median": false
+   }
+  },
+  "e5": {
+   "by_condition": {
+    "distilled": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2469,
+     "judge_style": 39.065,
+     "judge_realism": 34.565,
+     "judge_content": 31.901
+    },
+    "generic": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2547,
+     "judge_style": 38.525,
+     "judge_realism": 36.945,
+     "judge_content": 33.287
+    },
+    "wrong": {
+     "n_users": 20,
+     "move_dist_to_real": 0.2793,
+     "judge_style": 34.319,
+     "judge_realism": 31.869,
+     "judge_content": 30.381
+    }
+   },
+   "verdict": "flat",
+   "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
+  }
+ },
+ "meta": {
+  "users": 20,
+  "points": 1511,
+  "mode": "folder"
+ },
+ "adjudication": {
+  "n_adjudicated": 25,
+  "reasonable_rate": 0.12,
+  "error_type_counts": {
+   "hallucinated_content": 5,
+   "generic_not_specific": 3,
+   "task_completion_substitution": 17
+  },
+  "homogeneity_share": 0.8,
+  "reading": "high reasonable_rate + high homogeneity_share = misses are 'plausible in general, wrong for this person' (supports the hypothesis)"
+ },
+ "worst": [
+  {
+   "slug": "cyyeh",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real": "seems duckdb-agent-sidecar-pool-27725                           0/1     ImagePullBackOff   0          4m\nduckdb-agent-sidecar-pool-9j2mb                           0/1     ImagePullBackOff   0          4m",
+   "generated": "commit and push",
+   "judge_realism": 2,
+   "error_type": "hallucinated_content",
+   "reasonable": false
+  },
+  {
+   "slug": "135yshr",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real": "フローチャートの例のmermaidが表示されていません",
+   "generated": "/commit",
+   "judge_realism": 2,
+   "error_type": "hallucinated_content",
+   "reasonable": false
+  },
+  {
+   "slug": "malkoG",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real": "Commit fine-grained",
+   "generated": "1",
+   "judge_realism": 0,
+   "error_type": "generic_not_specific",
+   "reasonable": false
+  },
+  {
+   "slug": "KeKs0r",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real": "actually we have not yet released anything. I am tempted to manually wipe the db. (delete everything) generate new migrations from scratch (so we have only 1 single migration) and then rbeuild db, and via the CLI manually upload all previous sessions.w hat do you think?",
+   "generated": "commit, push and create a PR, merge when passed",
+   "judge_realism": 2,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "135yshr",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real": "create pr",
+   "generated": "わかりました",
+   "judge_realism": 2,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "hutusi",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real": "A few more issues I'm noticing:\n\nProfile ownership is ambiguous in the UI. There's no visual indication of whether a given profile belongs to an online account or is a purely local player. From the user's side, the two are indistinguishable.\nOnline profiles appear to be visible without signing in. When not logged in, I can still see online profiles — they shouldn't be reachable in a signed-out state. Please verify whether this is a real leak or just a display issue.\nJoining an online world fails with a timeout: couldn't join: join timed out. This looks like a server-side / deployment problem on Fly.io rather than a client bug. Please investigate the Fly.io deployment — check whether the game server is actually running, reachable, and accepting WebSocket connections (logs, health, region, and whether the machine has scaled/stopped).",
+   "generated": "ok",
+   "judge_realism": 2,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "malkoG",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real": "For article detail page, do we render image assets??????",
+   "generated": "/ghpr",
+   "judge_realism": 3,
+   "error_type": "hallucinated_content",
+   "reasonable": false
+  },
+  {
+   "slug": "KeKs0r",
+   "real_cat": "inquiry",
+   "pred_cat": "directive",
+   "real": "i kinda also updated chkit with your findings. would fixing the root cause in chkit, make some of your changes in here obsolete?",
+   "generated": "yes, and then commit, push and create a PR, merge when passed",
+   "judge_realism": 3,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "nosman",
+   "real_cat": "critical",
+   "pred_cat": "approve",
+   "real": "When you say \"a checkpoint taller than the terminal\", what exactly does that mean? the green bars should only be 1 row regardless.",
+   "generated": "good, i have enough context. nosman is an expert nitpicker who corrects 51% of the time, reports failures 13.8%, and only approves 35%. The bug fix for checkpoint rendering just landed. Given this is a UI fix and he tests by observation, he'd likely try it out and either report it still failing (failure_report) or move to new work. The conversation has had a mix of bug reports and fixes around the pager/checkpoint UI. Given the rates, he'd lean toward either testing and reporting another issue, or moving to new work.\n\nThe fix just got installed. He tests by observation. A natural next move here would be a new_work or a follow-on bug_report. Given that the session has been dealing with navigation/UI issues, and his median message is 19 words, he might quickly pivot to another task or ask about something related. Let me think about what's plausible in gossamer - he's working on checkpoint navigation, TUI pager, sessions...\n\nok looks good",
+   "judge_realism": 2,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "FSM1",
+   "real_cat": "directive",
+   "pred_cat": "approve",
+   "real": "I think that the full desktop e2e in CI should also be added as one of the gates for this phase",
+   "generated": "you good bro?",
+   "judge_realism": 5,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "KeKs0r",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real": "okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context` and restarted the api server, but I dont seem to see the logfile",
+   "generated": "commit, push and create a PR, merge when passed",
+   "judge_realism": 5,
+   "error_type": "task_completion_substitution",
+   "reasonable": false
+  },
+  {
+   "slug": "cyyeh",
+   "real_cat": "critical",
+   "pred_cat": "directive",
+   "real": "now the issue is that query result content is too wide",
+   "generated": "commit",
+   "judge_realism": 5,
+   "error_type": "hallucinated_content",
+   "reasonable": false
+  }
+ ],
+ "e2": {
+  "note": "direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm",
+  "by_condition": {
+   "distilled": {
+    "n": 503,
+    "real_marginal": {
+     "approve": 0.151,
+     "critical": 0.175,
+     "directive": 0.507,
+     "inquiry": 0.167
+    },
+    "pred_marginal": {
+     "approve": 0.185,
+     "critical": 0.058,
+     "directive": 0.654,
+     "inquiry": 0.103
+    },
+    "pred_minus_real": {
+     "approve": 0.034,
+     "critical": -0.117,
+     "directive": 0.147,
+     "inquiry": -0.064
+    },
+    "human->task": 131,
+    "task->human": 40,
+    "flow_sign_test_p": 0.0,
+    "net_toward_task": 91
+   },
+   "generic": {
+    "n": 505,
+    "real_marginal": {
+     "approve": 0.15,
+     "critical": 0.174,
+     "directive": 0.505,
+     "inquiry": 0.17
+    },
+    "pred_marginal": {
+     "approve": 0.16,
+     "critical": 0.059,
+     "directive": 0.521,
+     "inquiry": 0.259
+    },
+    "pred_minus_real": {
+     "approve": 0.01,
+     "critical": -0.115,
+     "directive": 0.016,
+     "inquiry": 0.089
+    },
+    "human->task": 95,
+    "task->human": 82,
+    "flow_sign_test_p": 0.3671,
+    "net_toward_task": 13
+   },
+   "wrong": {
+    "n": 503,
+    "real_marginal": {
+     "approve": 0.151,
+     "critical": 0.175,
+     "directive": 0.505,
+     "inquiry": 0.169
+    },
+    "pred_marginal": {
+     "approve": 0.276,
+     "critical": 0.05,
+     "directive": 0.588,
+     "inquiry": 0.085
+    },
+    "pred_minus_real": {
+     "approve": 0.125,
+     "critical": -0.125,
+     "directive": 0.083,
+     "inquiry": -0.083
+    },
+    "human->task": 133,
+    "task->human": 28,
+    "flow_sign_test_p": 0.0,
+    "net_toward_task": 105
+   }
+  },
+  "real_act_marginal_all": {
+   "approve": 0.151,
+   "critical": 0.175,
+   "directive": 0.507,
+   "inquiry": 0.167
+  }
+ },
+ "e3": {
+  "distilled": {
+   "n_users": 20,
+   "spread_real": 0.2793,
+   "spread_pred": 0.2435,
+   "pred_minus_real": -0.0358,
+   "perm_p": 0.3535,
+   "collapse": true
+  },
+  "generic": {
+   "n_users": 20,
+   "spread_real": 0.2801,
+   "spread_pred": 0.1995,
+   "pred_minus_real": -0.0806,
+   "perm_p": 0.0117,
+   "collapse": true
+  },
+  "wrong": {
+   "n_users": 20,
+   "spread_real": 0.2793,
+   "spread_pred": 0.2552,
+   "pred_minus_real": -0.0241,
+   "perm_p": 0.5017,
+   "collapse": true
+  }
+ },
+ "e4": {
+  "distilled": {
+   "n_users": 20,
+   "mean_dist_to_median_real": 0.1973,
+   "mean_dist_to_median_pred": 0.2509,
+   "mean_pred_minus_real": 0.0536,
+   "n_users_shrinking": 4,
+   "wilcoxon_p": 0.0386,
+   "shrinks_to_median": false
+  },
+  "generic": {
+   "n_users": 20,
+   "mean_dist_to_median_real": 0.1991,
+   "mean_dist_to_median_pred": 0.1856,
+   "mean_pred_minus_real": -0.0135,
+   "n_users_shrinking": 10,
+   "wilcoxon_p": 0.6274,
+   "shrinks_to_median": true
+  },
+  "wrong": {
+   "n_users": 20,
+   "mean_dist_to_median_real": 0.1982,
+   "mean_dist_to_median_pred": 0.2525,
+   "mean_pred_minus_real": 0.0543,
+   "n_users_shrinking": 4,
+   "wilcoxon_p": 0.0364,
+   "shrinks_to_median": false
+  }
+ },
+ "e5": {
+  "by_condition": {
+   "distilled": {
+    "n_users": 20,
+    "move_dist_to_real": 0.2512,
+    "judge_style": 38.391,
+    "judge_realism": 34.332,
+    "judge_content": 31.013
+   },
+   "generic": {
+    "n_users": 20,
+    "move_dist_to_real": 0.2149,
+    "judge_style": 36.63,
+    "judge_realism": 38.719,
+    "judge_content": 31.786
+   },
+   "wrong": {
+    "n_users": 20,
+    "move_dist_to_real": 0.2679,
+    "judge_style": 34.209,
+    "judge_realism": 31.283,
+    "judge_content": 29.106
+   }
+  },
+  "verdict": "surface_only",
+  "reading": "surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user"
+ },
+ "scoreboard": [
+  {
+   "id": "E1",
+   "claim": "Worst misses are task-completion / generic substitution",
+   "folder": "80%",
+   "inline": "92%",
+   "verdict": "supported",
+   "note": "Both modes: the dominant error is predicting keep-going where the developer did something individual.",
+   "metric": "A+C",
+   "metric_note": "misses are ranked by move mismatch (A) weighted by low judge-realism (C), then labelled."
+  },
+  {
+   "id": "H1 · E2",
+   "claim": "approve% pred > real and critical% pred < real",
+   "folder": "approve +0.010, critical -0.115",
+   "inline": "approve +0.116, critical -0.108",
+   "verdict": "mixed",
+   "note": "Holds on the low-prompt inline arm (clear approve-collapse). Folder mode is explicitly told not to default to approving, so the mass diverts to inquiry — as the plan predicted, H1 is only clean on a low-prompt baseline.",
+   "metric": "B",
+   "metric_note": "compares the whole real population's move distribution to the whole predicted one."
+  },
+  {
+   "id": "H2 · E3",
+   "claim": "between-user spread(pred) < spread(real)",
+   "folder": "0.200 vs 0.280 (p=0.0117)",
+   "inline": "0.259 vs 0.283 (p=0.4148)",
+   "verdict": "supported",
+   "note": "Significant in folder mode. Inline masks it: pasting the folder in makes the model echo signature catchphrases verbatim, inflating apparent between-user distinctiveness.",
+   "metric": "B",
+   "metric_note": "mean pairwise TVD between developers' move distributions, predicted vs real."
+  },
+  {
+   "id": "H4 · E8",
+   "metric": "B",
+   "claim": "within a developer, spread(pred) < spread(real)",
+   "folder": "-0.381 bits, 17/20 (p=0.0002)",
+   "inline": "-0.139 bits, 13/20 (p=0.099)",
+   "verdict": "supported",
+   "metric_note": "entropy of each developer's own move mix, real vs predicted.",
+   "note": "Confirmed, and the folder causes it: without a folder the spread matches reality; with any folder (right or wrong) each developer collapses to a narrower repertoire."
+  },
+  {
+   "id": "H3 · E4",
+   "claim": "dist(pred, median) < dist(real, median)",
+   "folder": "Δ +0.054 (p=0.0386)",
+   "inline": "Δ +0.088 (p=0.0025)",
+   "verdict": "refuted",
+   "note": "The opposite, significantly: with a folder, predictions sit FARTHER from the real population average than the developers themselves do. Homogeneity is not shrinkage toward the human mean.",
+   "metric": "B",
+   "metric_note": "TVD from each developer's distribution to the population-average distribution."
+  },
+  {
+   "id": "E5",
+   "claim": "Folder changes the voice but not the decision",
+   "folder": "surface_only",
+   "inline": "flat",
+   "verdict": "supported",
+   "note": "Folder reads surface_only: judge-style rises while move-mix distance to the real user does not improve.",
+   "metric": "B+C",
+   "metric_note": "per-developer TVD (own distribution vs own prediction) set against judge style/content (C)."
+  },
+  {
+   "id": "E6",
+   "claim": "Claims survive on the underdetermined-point control",
+   "folder": "—",
+   "inline": "—",
+   "verdict": "not run",
+   "note": "Needs k-fold resampling of the generic simulator; not yet generated.",
+   "metric": "A+B",
+   "metric_note": "would re-run the accuracy and distribution tests on determined points only."
+  },
+  {
+   "id": "E7",
+   "claim": "Low-prompt / move-conditioned arms restore between-user variance",
+   "folder": "—",
+   "inline": "—",
+   "verdict": "not run",
+   "note": "The causal probe of the mechanism; not yet generated.",
+   "metric": "B",
+   "metric_note": "would re-measure between-developer spread under low-prompt / move-conditioned arms."
+  }
+ ],
+ "error_types": [
+  {
+   "id": "task_completion_substitution",
+   "homogeneity": true,
+   "desc": "predicted a keep-going / approve / new-task move where the real developer pushed back, interrupted, or redirected"
+  },
+  {
+   "id": "generic_not_specific",
+   "homogeneity": true,
+   "desc": "the right kind of move, but not how this developer would have made it"
+  },
+  {
+   "id": "hallucinated_content",
+   "homogeneity": false,
+   "desc": "invents facts or requests that are not grounded in the session"
+  },
+  {
+   "id": "underdetermined",
+   "homogeneity": false,
+   "desc": "both messages are equally plausible — the real one was genuinely unpredictable"
+  },
+  {
+   "id": "other",
+   "homogeneity": false,
+   "desc": "anything else"
+  }
+ ],
+ "metric_families": [
+  {
+   "id": "A",
+   "name": "individual-level accuracy",
+   "desc": "per held-out point, does the predicted move equal the real move? Reported as a skill score S = (acc − acc_base)/(1 − acc_base) ×100, normalised against the majority-class predictor: 0 = no better than always guessing the most common move, 100 = perfect, negative = worse than that constant predictor. Raw accuracy is not comparable across cohorts with different class balance; skill is."
+  },
+  {
+   "id": "B",
+   "name": "population-level distribution",
+   "desc": "total-variation distance (TVD) between two move distributions: between two developers, between one developer and their own prediction, or between the whole real population and the whole predicted population. Says nothing about any individual turn."
+  },
+  {
+   "id": "C",
+   "name": "LLM-as-a-judge",
+   "desc": "a judge scores each predicted message against the real one for style (surface voice) and content (intent/substance), plus realism."
+  }
+ ],
+ "metric_a": {
+  "folder": {
+   "baseline_class": "directive",
+   "baseline_accuracy": 0.506,
+   "skill_definition": "S = (acc - acc_baseline) / (1 - acc_baseline), x100; 0 = majority-class predictor, 100 = perfect, negative = worse",
+   "by_condition": {
+    "distilled": {
+     "n": 503,
+     "accuracy": 0.465,
+     "vs_baseline": -0.04,
+     "skill": -8.2,
+     "beats_baseline": false
+    },
+    "generic": {
+     "n": 505,
+     "accuracy": 0.43,
+     "vs_baseline": -0.076,
+     "skill": -15.4,
+     "beats_baseline": false
+    },
+    "wrong": {
+     "n": 503,
+     "accuracy": 0.445,
+     "vs_baseline": -0.06,
+     "skill": -12.2,
+     "beats_baseline": false
+    }
+   }
+  },
+  "inline": {
+   "baseline_class": "directive",
+   "baseline_accuracy": 0.512,
+   "skill_definition": "S = (acc - acc_baseline) / (1 - acc_baseline), x100; 0 = majority-class predictor, 100 = perfect, negative = worse",
+   "by_condition": {
+    "distilled": {
+     "n": 495,
+     "accuracy": 0.446,
+     "vs_baseline": -0.066,
+     "skill": -13.5,
+     "beats_baseline": false
+    },
+    "generic": {
+     "n": 491,
+     "accuracy": 0.399,
+     "vs_baseline": -0.113,
+     "skill": -23.2,
+     "beats_baseline": false
+    },
+    "wrong": {
+     "n": 496,
+     "accuracy": 0.446,
+     "vs_baseline": -0.067,
+     "skill": -13.6,
+     "beats_baseline": false
+    }
+   }
+  }
+ },
+ "figures": {
+  "A": {
+   "svg": "<svg viewBox=\"0 0 980 218\" width=\"100%\" height=\"218\" role=\"img\" aria-label=\"A · skill score — normalised move accuracy. S = (acc − acc_base) / (1 − acc_base), ×100 · label note shows the inline arm\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><rect x=\"0\" y=\"0\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#eef2ff\"/><text x=\"16.0\" y=\"22.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">distilled</text><text x=\"16.0\" y=\"38.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline -13.5</text><rect x=\"200\" y=\"18.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"594.0\" y=\"18.0\" width=\"181.5\" height=\"12\" rx=\"6.0\" fill=\"#e11d48\"/><line x1=\"775.5\" y1=\"13.0\" x2=\"775.5\" y2=\"35.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"30.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#e11d48\" text-anchor=\"end\" font-weight=\"600\">-8.2</text><rect x=\"0\" y=\"56\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"78.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">generic</text><text x=\"16.0\" y=\"94.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline -23.2</text><rect x=\"200\" y=\"74.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"434.6\" y=\"74.0\" width=\"340.9\" height=\"12\" rx=\"6.0\" fill=\"#e11d48\"/><line x1=\"775.5\" y1=\"69.0\" x2=\"775.5\" y2=\"91.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"86.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#e11d48\" text-anchor=\"end\" font-weight=\"600\">-15.4</text><rect x=\"0\" y=\"112\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"134.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">wrong</text><text x=\"16.0\" y=\"150.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline -13.6</text><rect x=\"200\" y=\"130.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"505.4\" y=\"130.0\" width=\"270.0\" height=\"12\" rx=\"6.0\" fill=\"#e11d48\"/><line x1=\"775.5\" y1=\"125.0\" x2=\"775.5\" y2=\"147.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"142.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#e11d48\" text-anchor=\"end\" font-weight=\"600\">-12.2</text><text x=\"200.0\" y=\"182.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">0 = majority-class predictor (always predict “directive”) · 100 would be perfect</text><text x=\"200.0\" y=\"200.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12.5\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">every condition scores below zero — worse than a constant predictor</text></g></svg>",
+   "title": "A · skill score — normalised move accuracy",
+   "subtitle": "S = (acc − acc_base) / (1 − acc_base), ×100 · label note shows the inline arm"
+  },
+  "E1": {
+   "svg": "<svg viewBox=\"0 0 980 202\" width=\"100%\" height=\"202\" role=\"img\" aria-label=\"E1 · the worst misses are failures of individuation. adjudicated error type for each of the worst mispredictions (folder mode)\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><rect x=\"0\" y=\"0\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#eef2ff\"/><text x=\"16.0\" y=\"22.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">task_completion_substitution</text><text x=\"16.0\" y=\"38.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">failure of individuation</text><rect x=\"290\" y=\"18.0\" width=\"574\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"290.0\" y=\"18.0\" width=\"574.0\" height=\"12\" rx=\"6.0\" fill=\"#4f46e5\"/><text x=\"964.0\" y=\"30.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">18</text><rect x=\"0\" y=\"56\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"78.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">hallucinated_content</text><text x=\"16.0\" y=\"94.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">ordinary failure mode</text><rect x=\"290\" y=\"74.0\" width=\"574\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"290.0\" y=\"74.0\" width=\"127.6\" height=\"12\" rx=\"6.0\" fill=\"#a1a1aa\"/><text x=\"964.0\" y=\"86.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#52525b\" text-anchor=\"end\" font-weight=\"600\">4</text><rect x=\"0\" y=\"112\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#eef2ff\"/><text x=\"16.0\" y=\"134.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">generic_not_specific</text><text x=\"16.0\" y=\"150.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">failure of individuation</text><rect x=\"290\" y=\"130.0\" width=\"574\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"290.0\" y=\"130.0\" width=\"95.7\" height=\"12\" rx=\"6.0\" fill=\"#4f46e5\"/><text x=\"964.0\" y=\"142.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">3</text><text x=\"290.0\" y=\"184.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12.5\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">homogeneity-type share: 84% of the worst 25 misses</text></g></svg>",
+   "title": "E1 · the worst misses are failures of individuation",
+   "subtitle": "adjudicated error type for each of the worst mispredictions (folder mode)"
+  },
+  "E2": {
+   "svg": "<svg viewBox=\"0 0 980 280\" width=\"100%\" height=\"280\" role=\"img\" aria-label=\"E2 · the simulator under-produces “critical” in both modes. predicted minus real share of each move (generic condition)\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><rect x=\"0\" y=\"0\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"22.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">approve</text><text x=\"16.0\" y=\"38.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline +0.116</text><rect x=\"200\" y=\"18.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"532.0\" y=\"18.0\" width=\"12.8\" height=\"12\" rx=\"6.0\" fill=\"#4f46e5\"/><line x1=\"532.0\" y1=\"13.0\" x2=\"532.0\" y2=\"35.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"30.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">+0.010</text><rect x=\"0\" y=\"56\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#eef2ff\"/><text x=\"16.0\" y=\"78.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">critical</text><text x=\"16.0\" y=\"94.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline -0.108</text><rect x=\"200\" y=\"74.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"385.2\" y=\"74.0\" width=\"146.8\" height=\"12\" rx=\"6.0\" fill=\"#e11d48\"/><line x1=\"532.0\" y1=\"69.0\" x2=\"532.0\" y2=\"91.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"86.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#e11d48\" text-anchor=\"end\" font-weight=\"600\">-0.115</text><rect x=\"0\" y=\"112\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"134.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">directive</text><text x=\"16.0\" y=\"150.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline -0.069</text><rect x=\"200\" y=\"130.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"532.0\" y=\"130.0\" width=\"20.4\" height=\"12\" rx=\"6.0\" fill=\"#4f46e5\"/><line x1=\"532.0\" y1=\"125.0\" x2=\"532.0\" y2=\"147.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"142.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">+0.016</text><rect x=\"0\" y=\"168\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"190.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">inquiry</text><text x=\"16.0\" y=\"206.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">inline +0.061</text><rect x=\"200\" y=\"186.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"532.0\" y=\"186.0\" width=\"113.6\" height=\"12\" rx=\"6.0\" fill=\"#4f46e5\"/><line x1=\"532.0\" y1=\"181.0\" x2=\"532.0\" y2=\"203.0\" stroke=\"#18181b\" stroke-width=\"2\"/><text x=\"964.0\" y=\"198.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">+0.089</text><text x=\"200.0\" y=\"240.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">0 = predicted share matches real · bars show the folder arm, the note shows inline</text><rect x=\"200\" y=\"255\" width=\"9\" height=\"9\" rx=\"2\" fill=\"#4f46e5\"/><text x=\"213.0\" y=\"263.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">over-produced</text><rect x=\"312.8\" y=\"255\" width=\"9\" height=\"9\" rx=\"2\" fill=\"#e11d48\"/><text x=\"325.8\" y=\"263.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">under-produced</text></g></svg>",
+   "title": "E2 · the simulator under-produces “critical” in both modes",
+   "subtitle": "predicted minus real share of each move (generic condition)"
+  },
+  "E3": {
+   "svg": "<svg viewBox=\"0 0 980 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"E3 · predicted developers cluster more tightly than real ones. spread of per-developer move-mixes, folder mode / generic condition\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><line x1=\"150\" y1=\"26\" x2=\"924\" y2=\"26\" stroke=\"#e4e4e7\" stroke-width=\"1\"/><text x=\"140.0\" y=\"30.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"end\" font-weight=\"400\">real developers</text><circle cx=\"366.2\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"414.5\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"388.8\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"266.2\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"414.5\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"544.1\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"459.3\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"841.1\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"378.5\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"445.2\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"380.2\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"304.0\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"447.0\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"295.9\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"350.6\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"376.1\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"653.4\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"318.1\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"560.7\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"350.6\" cy=\"26\" r=\"5\" fill=\"#52525b\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"427.7\" y1=\"11\" x2=\"427.7\" y2=\"41\" stroke=\"#52525b\" stroke-width=\"2\"/><text x=\"427.7\" y=\"6.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#18181b\" text-anchor=\"middle\" font-weight=\"600\">mean 0.199</text><line x1=\"150\" y1=\"78\" x2=\"924\" y2=\"78\" stroke=\"#e4e4e7\" stroke-width=\"1\"/><text x=\"140.0\" y=\"82.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"end\" font-weight=\"400\">predicted</text><circle cx=\"424.9\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"359.7\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"237.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"265.9\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"459.1\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"283.4\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"405.4\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"481.3\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"200.5\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"265.9\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"389.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"312.4\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"262.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"330.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"378.5\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"273.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"509.6\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"538.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"279.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"220.2\" cy=\"78\" r=\"5\" fill=\"#4f46e5\" fill-opacity=\"0.55\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"343.8\" y1=\"63\" x2=\"343.8\" y2=\"93\" stroke=\"#4f46e5\" stroke-width=\"2\"/><text x=\"343.8\" y=\"58.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#18181b\" text-anchor=\"middle\" font-weight=\"600\">mean 0.139</text><text x=\"150.0\" y=\"116.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">each dot = one developer’s distance from the centre of its own group</text><text x=\"150.0\" y=\"130.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"400\">predicted developers sit in a tighter band — they look more alike than real ones</text></g></svg>",
+   "title": "E3 · predicted developers cluster more tightly than real ones",
+   "subtitle": "spread of per-developer move-mixes, folder mode / generic condition"
+  },
+  "E4": {
+   "svg": "<svg viewBox=\"0 0 980 254\" width=\"100%\" height=\"254\" role=\"img\" aria-label=\"E4 · predictions move away from the average developer, not toward it. distance to the human population centre, real vs predicted (distilled condition)\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><line x1=\"300\" y1=\"200.0\" x2=\"300\" y2=\"32.0\" stroke=\"#e4e4e7\" stroke-width=\"1\"/><text x=\"300.0\" y=\"218.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"middle\" font-weight=\"400\">real developer</text><line x1=\"680\" y1=\"200.0\" x2=\"680\" y2=\"32.0\" stroke=\"#e4e4e7\" stroke-width=\"1\"/><text x=\"680.0\" y=\"218.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"middle\" font-weight=\"400\">its prediction</text><line x1=\"300\" y1=\"157.0\" x2=\"680\" y2=\"105.3\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"157.0\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"105.3\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"141.5\" x2=\"680\" y2=\"149.2\" stroke=\"#4f46e5\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"141.5\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"149.2\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"148.0\" x2=\"680\" y2=\"127.9\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"148.0\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"127.9\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"173.9\" x2=\"680\" y2=\"125.4\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"173.9\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"125.4\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"141.5\" x2=\"680\" y2=\"94.7\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"141.5\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"94.7\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"113.9\" x2=\"680\" y2=\"113.9\" stroke=\"#4f46e5\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"113.9\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"113.9\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"131.3\" x2=\"680\" y2=\"117.7\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"131.3\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"117.7\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"47.3\" x2=\"680\" y2=\"100.5\" stroke=\"#4f46e5\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"47.3\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"100.5\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"149.2\" x2=\"680\" y2=\"121.0\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"149.2\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"121.0\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"135.7\" x2=\"680\" y2=\"105.0\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"135.7\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"105.0\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"149.2\" x2=\"680\" y2=\"108.7\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"149.2\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"108.7\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"166.4\" x2=\"680\" y2=\"135.7\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"166.4\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"135.7\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"135.2\" x2=\"680\" y2=\"122.8\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"135.2\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"122.8\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"168.5\" x2=\"680\" y2=\"135.7\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"168.5\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"135.7\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"156.2\" x2=\"680\" y2=\"127.9\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"156.2\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"127.9\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"154.9\" x2=\"680\" y2=\"126.5\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"154.9\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"126.5\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"88.5\" x2=\"680\" y2=\"136.4\" stroke=\"#4f46e5\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"88.5\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"136.4\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"163.6\" x2=\"680\" y2=\"163.6\" stroke=\"#4f46e5\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"163.6\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"163.6\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"110.2\" x2=\"680\" y2=\"59.4\" stroke=\"#e11d48\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"110.2\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"59.4\" r=\"4.5\" fill=\"#e11d48\" stroke=\"#fafafa\" stroke-width=\"2\"/><line x1=\"300\" y1=\"156.2\" x2=\"680\" y2=\"182.0\" stroke=\"#4f46e5\" stroke-width=\"2\" stroke-opacity=\"0.5\"/><circle cx=\"300\" cy=\"156.2\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"182.0\" r=\"4.5\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><text x=\"6.0\" y=\"24.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">farther from the average developer →</text><text x=\"696.0\" y=\"24.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">14 of 20 developers</text><text x=\"696.0\" y=\"38.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">move AWAY from the</text><text x=\"696.0\" y=\"51.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">human average</text><rect x=\"240\" y=\"229\" width=\"9\" height=\"9\" rx=\"2\" fill=\"#e11d48\"/><text x=\"253.0\" y=\"237.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">moves away</text><rect x=\"333.0\" y=\"229\" width=\"9\" height=\"9\" rx=\"2\" fill=\"#4f46e5\"/><text x=\"346.0\" y=\"237.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">moves toward</text></g></svg>",
+   "title": "E4 · predictions move away from the average developer, not toward it",
+   "subtitle": "distance to the human population centre, real vs predicted (distilled condition)"
+  },
+  "E5": {
+   "svg": "<svg viewBox=\"0 0 980 258\" width=\"100%\" height=\"258\" role=\"img\" aria-label=\"E5 · personalisation moves the surface, not the choice. each point is one condition, folder mode\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><rect x=\"230\" y=\"16\" width=\"690\" height=\"188\" fill=\"#f4f4f5\" fill-opacity=\"0.6\" rx=\"6\"/><circle cx=\"647.7\" cy=\"62.0\" r=\"7\" fill=\"#4f46e5\" stroke=\"#fafafa\" stroke-width=\"2\"/><text x=\"659.7\" y=\"66.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">distilled</text><circle cx=\"378.4\" cy=\"102.4\" r=\"7\" fill=\"#52525b\" stroke=\"#fafafa\" stroke-width=\"2\"/><text x=\"390.4\" y=\"106.4\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">generic</text><circle cx=\"771.6\" cy=\"158.0\" r=\"7\" fill=\"#52525b\" stroke=\"#fafafa\" stroke-width=\"2\"/><text x=\"783.6\" y=\"162.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">wrong</text><text x=\"230.0\" y=\"224.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">worse decisions →</text><text x=\"220.0\" y=\"22.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#a1a1aa\" text-anchor=\"end\" font-weight=\"400\">better</text><text x=\"220.0\" y=\"34.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"11.5\" fill=\"#a1a1aa\" text-anchor=\"end\" font-weight=\"400\">voice</text><text x=\"6.0\" y=\"110.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">judge style (surface)</text><text x=\"230.0\" y=\"240.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">move-mix distance to the real developer (decision)</text><text x=\"238.0\" y=\"30.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">the distilled folder buys voice, not decisions</text></g></svg>",
+   "title": "E5 · personalisation moves the surface, not the choice",
+   "subtitle": "each point is one condition, folder mode"
+  },
+  "E8": {
+   "svg": "<svg viewBox=\"0 0 980 224\" width=\"100%\" height=\"224\" role=\"img\" aria-label=\"E8 · with a folder, each developer is rendered more one-note than they are. within-developer spread, real vs predicted (folder mode)\" style=\"max-width:100%\"><g transform=\"translate(0,4)\"><rect x=\"0\" y=\"0\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#eef2ff\"/><text x=\"16.0\" y=\"22.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">distilled</text><text x=\"16.0\" y=\"38.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">17/20 narrower · p&lt;.01</text><rect x=\"200\" y=\"18.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"200.0\" y=\"18.0\" width=\"524.6\" height=\"12\" rx=\"6.0\" fill=\"#52525b\"/><rect x=\"200\" y=\"21.0\" width=\"398.1\" height=\"6\" rx=\"3.0\" fill=\"#4f46e5\"/><text x=\"964.0\" y=\"30.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">-0.38</text><rect x=\"0\" y=\"56\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"78.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">generic</text><text x=\"16.0\" y=\"94.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">12/20 narrower · n.s.</text><rect x=\"200\" y=\"74.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"200.0\" y=\"74.0\" width=\"524.9\" height=\"12\" rx=\"6.0\" fill=\"#52525b\"/><rect x=\"200\" y=\"77.0\" width=\"512.9\" height=\"6\" rx=\"3.0\" fill=\"#4f46e5\"/><text x=\"964.0\" y=\"86.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">-0.04</text><rect x=\"0\" y=\"112\" width=\"980\" height=\"48\" rx=\"12\" fill=\"#fafafa\"/><text x=\"16.0\" y=\"134.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"14\" fill=\"#18181b\" text-anchor=\"start\" font-weight=\"600\">wrong</text><text x=\"16.0\" y=\"150.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">15/20 narrower · p&lt;.01</text><rect x=\"200\" y=\"130.0\" width=\"664\" height=\"12\" rx=\"6.0\" fill=\"#e4e4e7\"/><rect x=\"200.0\" y=\"130.0\" width=\"524.9\" height=\"12\" rx=\"6.0\" fill=\"#52525b\"/><rect x=\"200\" y=\"133.0\" width=\"435.9\" height=\"6\" rx=\"3.0\" fill=\"#4f46e5\"/><text x=\"964.0\" y=\"142.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"17\" fill=\"#4f46e5\" text-anchor=\"end\" font-weight=\"600\">-0.27</text><rect x=\"200\" y=\"177\" width=\"9\" height=\"9\" rx=\"2\" fill=\"#52525b\"/><text x=\"213.0\" y=\"185.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">real developer</text><rect x=\"319.4\" y=\"177\" width=\"9\" height=\"9\" rx=\"2\" fill=\"#4f46e5\"/><text x=\"332.4\" y=\"185.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#52525b\" text-anchor=\"start\" font-weight=\"400\">predicted</text><text x=\"200.0\" y=\"206.0\" font-family=\"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif\" font-size=\"12\" fill=\"#a1a1aa\" text-anchor=\"start\" font-weight=\"400\">entropy of one developer’s own move mix (bits, max 2.0) — lower = more one-note</text></g></svg>",
+   "title": "E8 · with a folder, each developer is rendered more one-note than they are",
+   "subtitle": "within-developer spread, real vs predicted (folder mode)"
+  }
+ },
+ "e8": {
+  "folder": {
+   "unit": "bits (max 2.0 over four move categories)",
+   "by_condition": {
+    "distilled": {
+     "n_users": 20,
+     "entropy_real": 1.58,
+     "entropy_pred": 1.199,
+     "mean_delta": -0.381,
+     "n_narrower": 17,
+     "wilcoxon_p": 0.0002,
+     "narrower": true
+    },
+    "generic": {
+     "n_users": 20,
+     "entropy_real": 1.581,
+     "entropy_pred": 1.545,
+     "mean_delta": -0.036,
+     "n_narrower": 12,
+     "wilcoxon_p": 0.3958,
+     "narrower": true
+    },
+    "wrong": {
+     "n_users": 20,
+     "entropy_real": 1.581,
+     "entropy_pred": 1.313,
+     "mean_delta": -0.267,
+     "n_narrower": 15,
+     "wilcoxon_p": 0.0038,
+     "narrower": true
+    }
+   }
+  },
+  "inline": {
+   "unit": "bits (max 2.0 over four move categories)",
+   "by_condition": {
+    "distilled": {
+     "n_users": 20,
+     "entropy_real": 1.524,
+     "entropy_pred": 1.385,
+     "mean_delta": -0.139,
+     "n_narrower": 13,
+     "wilcoxon_p": 0.099,
+     "narrower": true
+    },
+    "generic": {
+     "n_users": 20,
+     "entropy_real": 1.526,
+     "entropy_pred": 1.597,
+     "mean_delta": 0.071,
+     "n_narrower": 8,
+     "wilcoxon_p": 0.5197,
+     "narrower": false
+    },
+    "wrong": {
+     "n_users": 20,
+     "entropy_real": 1.529,
+     "entropy_pred": 1.354,
+     "mean_delta": -0.175,
+     "n_narrower": 14,
+     "wilcoxon_p": 0.0438,
+     "narrower": true
+    }
+   }
+  }
+ }
+}

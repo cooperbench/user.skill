@@ -233,7 +233,17 @@ def main():
     folder_rep = r if this_mode == "folder" else cr
     inline_rep = cr if this_mode == "folder" else r
     figs = FIGS.build_figures(folder_rep or r, inline_rep)
-    figure = lambda k: (f'<figure class="fig">{figs[k]}</figure>' if figs.get(k) else "")
+    # build_figures returns {name: {svg, title, subtitle}} — the titles live outside the SVG so
+    # the host page controls the type scale, so render them as a <figcaption> here.
+    def figure(k):
+        f = figs.get(k)
+        if not f:
+            return ""
+        cap = ""
+        if f.get("title"):
+            sub = f'<span class="figsub">{esc(f["subtitle"])}</span>' if f.get("subtitle") else ""
+            cap = f'<figcaption>{esc(f["title"])}{sub}</figcaption>'
+        return f'<figure class="fig">{cap}{f["svg"]}</figure>'
 
     # ---- metrics primer: the three families every experiment is expressed in ----
     a_f = r.get("A_move_accuracy")
@@ -451,6 +461,8 @@ def main():
  .flag {{ display:inline-block; font-size:.7rem; padding:0 .35rem; border-radius:4px; background:#eef2ff; color:var(--indigo); }}
  figure.fig {{ margin:1.1rem 0 .4rem; padding:.9rem 1rem; background:#fff; border:1px solid var(--zinc200);
         border-radius:12px; overflow-x:auto; }}
+ figure.fig figcaption {{ font-size:.78rem; font-weight:600; color:var(--zinc900); margin-bottom:.55rem; }}
+ figure.fig .figsub {{ display:block; font-size:.72rem; font-weight:400; color:var(--zinc500); margin-top:.12rem; }}
  ul.defs {{ margin:.6rem 0 0; padding-left:1.1rem; font-size:.85rem; }}
  .mfam {{ display:inline-block; margin-left:.3rem; font-size:.62rem; font-weight:700; letter-spacing:.04em;
         background:var(--zinc100); color:var(--zinc500); border-radius:4px; padding:0 .3rem; vertical-align:middle; }}
