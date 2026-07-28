@@ -1,0 +1,92 @@
+{
+ "name": "axes4-defect-test",
+ "n_categories": 4,
+ "mean_kappa": 0.779,
+ "pairwise": {
+  "haiku-sonnet": {
+   "kappa": 0.775,
+   "raw": 0.842,
+   "n": 120
+  },
+  "haiku-opus": {
+   "kappa": 0.753,
+   "raw": 0.825,
+   "n": 120
+  },
+  "sonnet-opus": {
+   "kappa": 0.808,
+   "raw": 0.867,
+   "n": 120
+  }
+ },
+ "coverage": {
+  "haiku": 120,
+  "sonnet": 120,
+  "opus": 120
+ },
+ "n_items": 120,
+ "label_dist": {
+  "haiku": {
+   "directive": 48,
+   "inquiry": 28,
+   "approve": 18,
+   "critical": 26
+  },
+  "sonnet": {
+   "directive": 55,
+   "inquiry": 29,
+   "approve": 17,
+   "critical": 19
+  },
+  "opus": {
+   "directive": 52,
+   "inquiry": 28,
+   "approve": 14,
+   "critical": 26
+  }
+ },
+ "top_confusions": [
+  {
+   "pair": [
+    "critical",
+    "inquiry"
+   ],
+   "n": 12
+  },
+  {
+   "pair": [
+    "approve",
+    "directive"
+   ],
+   "n": 12
+  },
+  {
+   "pair": [
+    "critical",
+    "directive"
+   ],
+   "n": 11
+  },
+  {
+   "pair": [
+    "directive",
+    "inquiry"
+   ],
+   "n": 11
+  },
+  {
+   "pair": [
+    "approve",
+    "critical"
+   ],
+   "n": 7
+  },
+  {
+   "pair": [
+    "approve",
+    "inquiry"
+   ],
+   "n": 3
+  }
+ ]
+}

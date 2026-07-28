@@ -1,0 +1,1142 @@
+#!/usr/bin/env python3
+"""Build a coverage-complete, deduplicated cohort manifest and session store."""
+from __future__ import annotations
+
+import glob
+import hashlib
+import json
+import os
+import pickle
+import re
+import sqlite3
+import sys
+import tempfile
+from collections import defaultdict
+from pathlib import Path
+
+sys.path.insert(0, "/data/claude-crawl")
+from cohort_policy import (  # noqa: E402
+    EXCLUDED_USERS,
+    POLICY_VERSION,
+    RECONSTRUCTION_THRESHOLDS,
+    canonical_session_id,
+    clean_turn,
+    command_expansion_payloads,
+    human_turn_count,
+    is_extreme_session_fragmentation,
+    is_incomplete_dialogue,
+    normalize_text,
+    ordered_trace_sequence,
+    policy_fingerprint,
+    reconstructed_session_evidence,
+    specstory_session_id,
+    specstory_timestamp,
+    substantial_human_count,
+    substantial_user_events,
+    transcript_hash,
+)
+
+ROOT = Path(
+    os.environ.get("SWESIMBENCH_V2_ROOT", "/data/swesimbench-v2-harbor")
+)
+SOURCE_MANIFEST = Path(
+    os.environ.get(
+        "SOURCE_MANIFEST", "/data/claude-crawl/meta/users_cc.json"
+    )
+)
+CLEAN_MANIFEST = ROOT / "clean_manifest.json"
+CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
+BUILD_REPORT = ROOT / "clean_build_report.json"
+CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
+CANDIDATE_CACHE_VERSION = 6
+ENTIRE_CORPUS_GLOB = os.environ.get(
+    "ENTIRE_CORPUS_GLOB",
+    "/data/entire-backfill/corpus-full-v4/*.jsonl",
+)
+CRAWL_CORPUS_GLOB = os.environ.get(
+    "CRAWL_CORPUS_GLOB",
+    "/data/claude-crawl/corpus/*.jsonl",
+)
+SWECHAT_PARQUET = os.environ.get(
+    "SWECHAT_PARQUET",
+    "/data/with-user/data_cache/hf/"
+    "datasets--SALT-NLP--SWE-chat/snapshots/"
+    "f66cca95b14caaa4177f7ed5eaa424608dadcffa/"
+    "conversations.parquet",
+)
+SPECSTORY_CORPUS = Path(
+    os.environ.get(
+        "SPECSTORY_CORPUS", "/data/specstory/meta/corpus_redacted.jsonl"
+    )
+)
+SWECHAT_ROLES = {
+    "user_prompt": "user",
+    "assistant_response": "assistant",
+    "assistant_thinking": "metadata",
+    "tool_use": "tool",
+    "tool_result": "tool",
+    "file_snapshot": "metadata",
+    "system_event": "system",
+    "system_injected": "system",
+    "summary": "system",
+}
+UUID_ALIAS_RE = re.compile(
+    r"(?<![0-9a-f])"
+    r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"
+    r"(?![0-9a-f])",
+    re.I,
+)
+
+
+def session_aliases(session_id: str | None) -> set[str]:
+    """Exact ID plus any embedded native UUID aliases used by crawl wrappers."""
+    value = (session_id or "").strip()
+    if not value:
+        return set()
+    aliases = {value, canonical_session_id(value)}
+    aliases.update(match.lower() for match in UUID_ALIAS_RE.findall(value))
+    return {alias for alias in aliases if alias}
+
+
+def embedded_uuids(session_id: str | None) -> set[str]:
+    return {match.lower() for match in UUID_ALIAS_RE.findall(session_id or "")}
+
+
+def lookup_candidates(session_id: str, by_alias: dict[str, list[dict]]) -> list[dict]:
+    """Resolve manifest IDs against corpus records via exact, canonical, and UUID aliases."""
+    seen: set[int] = set()
+    found: list[dict] = []
+    for alias in session_aliases(session_id):
+        for record in by_alias.get(alias, []):
+            marker = id(record)
+            if marker in seen:
+                continue
+            seen.add(marker)
+            found.append(record)
+    return found
+
+
+MIN_TRAIN = 400
+MIN_HELD = 100
+# Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
+SOURCE_PRIORITY = {
+    "entire": 5,
+    "crawl": 4,
+    "dataclaw": 3,
+    "swechat": 2,
+    "specstory": 1,
+}
+
+FULL_TURN_DB: sqlite3.Connection | None = None
+FULL_TURN_DB_PATH: Path | None = None
+SESSION_SPILL_DIR: Path | None = None
+
+
+def open_full_turn_store() -> sqlite3.Connection:
+    global FULL_TURN_DB, FULL_TURN_DB_PATH, SESSION_SPILL_DIR
+    if FULL_TURN_DB is not None:
+        return FULL_TURN_DB
+    base = ROOT if ROOT.exists() else Path(tempfile.gettempdir())
+    temporary = Path(tempfile.mkdtemp(prefix="clean-full-turns-", dir=str(base)))
+    FULL_TURN_DB_PATH = temporary / "full_turns.sqlite"
+    SESSION_SPILL_DIR = temporary / "sessions"
+    SESSION_SPILL_DIR.mkdir(parents=True, exist_ok=True)
+    FULL_TURN_DB = sqlite3.connect(FULL_TURN_DB_PATH)
+    FULL_TURN_DB.execute(
+        "CREATE TABLE turns (key TEXT PRIMARY KEY, payload BLOB NOT NULL)"
+    )
+    return FULL_TURN_DB
+
+
+def store_full_turns(key: str, turns: list[dict]) -> None:
+    open_full_turn_store().execute(
+        "INSERT OR REPLACE INTO turns VALUES (?, ?)",
+        (
+            key,
+            json.dumps(turns, ensure_ascii=False)
+            .encode("utf-8", "surrogatepass"),
+        ),
+    )
+
+
+def load_full_turns(key: str | None) -> list[dict] | None:
+    if not key or FULL_TURN_DB is None:
+        return None
+    row = FULL_TURN_DB.execute(
+        "SELECT payload FROM turns WHERE key = ?", (key,)
+    ).fetchone()
+    if row is None:
+        return None
+    return json.loads(row[0].decode("utf-8"))
+
+
+def spill_clean_session(session: dict) -> Path:
+    """Persist the full-fidelity clean session outside the in-memory store."""
+    if SESSION_SPILL_DIR is None:
+        open_full_turn_store()
+    assert SESSION_SPILL_DIR is not None
+    path = SESSION_SPILL_DIR / f"{session['session_id']}.json"
+    path.write_text(json.dumps(session, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def load_spilled_session(session_id: str) -> dict:
+    assert SESSION_SPILL_DIR is not None
+    return json.loads(
+        (SESSION_SPILL_DIR / f"{session_id}.json").read_text(encoding="utf-8")
+    )
+
+
+def memory_turns(turns: list[dict]) -> list[dict]:
+    """Keep dialogue rows used by policy checks; omit bulky tool/metadata text."""
+    return [
+        turn
+        for turn in turns
+        if turn.get("role") in {"user", "assistant", "system"}
+    ]
+
+
+def memory_session_view(session: dict) -> dict:
+    """Dialogue-only view for reconstruction / substantial-turn checks."""
+    light = dict(session)
+    light["turns"] = memory_turns(session.get("turns") or [])
+    return light
+
+
+def compact_trace_sequence(turns: list[dict]) -> tuple[str, ...]:
+    """Prefix-collapse key that preserves equality without retaining raw tool text."""
+    compacted = []
+    for item in ordered_trace_sequence(turns):
+        role, _, text = item.partition("\0")
+        compacted.append(
+            f"{role}\0{hashlib.sha256(text.encode('utf-8', 'surrogatepass')).hexdigest()}"
+        )
+    return tuple(compacted)
+
+
+def candidate(session: dict, source: str, owner: str | None = None) -> dict:
+    sid = session.get("session_id")
+    turns = session.get("turns") or []
+    fidelity = session.get("text_fidelity")
+    if fidelity is None:
+        if source == "swechat":
+            fidelity = "full"
+        elif source == "specstory":
+            fidelity = "lossy"
+        else:
+            fidelity = "legacy_unknown"
+    full_key = f"{source}:{owner}:{sid}"
+    store_full_turns(full_key, turns)
+    return {
+        "sid": sid,
+        "canonical": canonical_session_id(sid),
+        "source": source,
+        "owner": owner,
+        "repo": session.get("repo") or "?",
+        "ts": str(session.get("created_at") or session.get("start_time") or ""),
+        "turns": memory_turns(turns),
+        "turn_count": len(turns),
+        "trace_hash": transcript_hash(turns),
+        "sequence": compact_trace_sequence(turns),
+        "human_turns": human_turn_count(turns),
+        "substantial_human_turns": substantial_human_count(turns),
+        "content_chars": sum(len(turn.get("text") or "") for turn in turns),
+        "text_fidelity": fidelity,
+        "parser_version": session.get("parser_version"),
+        "full_key": full_key,
+    }
+
+
+def apply_command_expansion_policy(records: list[dict]) -> tuple[set[str], int]:
+    """Reclassify payloads proven by a slash-command marker in any source copy."""
+    payloads = {
+        payload
+        for record in records
+        for payload in command_expansion_payloads(record["turns"])
+    }
+    reclassified = 0
+    for record in records:
+        changed = False
+        for turn in record["turns"]:
+            if (
+                turn.get("role") == "user"
+                and normalize_text(turn.get("text") or "") in payloads
+            ):
+                turn["role"] = "system"
+                reclassified += 1
+                changed = True
+        if changed:
+            full_turns = load_full_turns(record.get("full_key")) or record["turns"]
+            for turn in full_turns:
+                if (
+                    turn.get("role") == "user"
+                    and normalize_text(turn.get("text") or "") in payloads
+                ):
+                    turn["role"] = "system"
+            if record.get("full_key"):
+                store_full_turns(record["full_key"], full_turns)
+                open_full_turn_store().commit()
+            record["trace_hash"] = transcript_hash(full_turns)
+            record["sequence"] = compact_trace_sequence(full_turns)
+            record["human_turns"] = human_turn_count(full_turns)
+            record["substantial_human_turns"] = substantial_human_count(
+                full_turns
+            )
+    return payloads, reclassified
+
+
+def richness(record: dict) -> tuple:
+    return (
+        record["human_turns"],
+        record.get("turn_count", len(record["turns"])),
+        record["content_chars"],
+        SOURCE_PRIORITY.get(record["source"], 0),
+        record["sid"],
+    )
+
+
+def reconstruction_richness(record: dict) -> tuple:
+    return (
+        record.get("turn_count", len(record["turns"])),
+        record["content_chars"],
+        record["human_turns"],
+        SOURCE_PRIORITY.get(record["source"], 0),
+        record["sid"],
+    )
+
+
+def load_candidates(
+    target_ids: set[str],
+    target_canonical: set[str],
+    target_uuids: set[str] | None = None,
+) -> list[dict]:
+    result = []
+    uuid_targets = target_uuids or set()
+
+    def wanted(sid: str | None) -> bool:
+        aliases = session_aliases(sid)
+        return bool(
+            aliases
+            and (
+                aliases & target_ids
+                or aliases & uuid_targets
+                or any(
+                    canonical_session_id(alias) in target_canonical
+                    for alias in aliases
+                )
+            )
+        )
+
+    print("indexing Entire candidates...", flush=True)
+    for filename in glob.glob(ENTIRE_CORPUS_GLOB):
+        with open(filename, errors="replace") as handle:
+            for line in handle:
+                try:
+                    session = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if wanted(session.get("session_id")):
+                    result.append(candidate(session, "entire", "gh:" + session.get("actor", "?")))
+    open_full_turn_store().commit()
+
+    print("indexing Crawl candidates...", flush=True)
+    for filename in glob.glob(CRAWL_CORPUS_GLOB):
+        with open(filename, errors="replace") as handle:
+            for line in handle:
+                try:
+                    session = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if wanted(session.get("session_id")):
+                    result.append(candidate(session, "crawl", session.get("user")))
+    open_full_turn_store().commit()
+
+    print("indexing DataClaw candidates...", flush=True)
+    dataclaw_path = Path(
+        os.environ.get(
+            "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+        )
+    )
+    if dataclaw_path.exists():
+        with dataclaw_path.open(errors="replace") as handle:
+            for line in handle:
+                try:
+                    session = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if wanted(session.get("session_id")):
+                    result.append(candidate(session, "dataclaw", "dc:" + session.get("donor", "?")))
+        open_full_turn_store().commit()
+
+    # Census includes SWE-chat, so preparation must index it as well.
+    import pyarrow.parquet as pq
+
+    grouped: dict[str, dict] = {}
+    print("streaming SWE-chat candidates...", flush=True)
+    parquet_file = pq.ParquetFile(SWECHAT_PARQUET)
+    columns = [
+        "user_id",
+        "session_id",
+        "turn_number",
+        "turn_type",
+        "content",
+        "timestamp",
+    ]
+    for batch in parquet_file.iter_batches(batch_size=65_536, columns=columns):
+        values = {name: batch.column(name).to_pylist() for name in columns}
+        for uid, sid, turn_number, turn_type, content, timestamp in zip(
+            values["user_id"],
+            values["session_id"],
+            values["turn_number"],
+            values["turn_type"],
+            values["content"],
+            values["timestamp"],
+        ):
+            if not wanted(sid):
+                continue
+            role = SWECHAT_ROLES.get(turn_type)
+            if role is None:
+                continue
+            record = grouped.setdefault(
+                sid,
+                {
+                    "session_id": sid,
+                    "user_id": uid,
+                    "start_time": timestamp,
+                    "turns": [],
+                    "text_fidelity": "full",
+                    "parser_version": (
+                        "SALT-NLP/SWE-chat@f66cca95+full-context"
+                    ),
+                },
+            )
+            record["turns"].append(
+                {
+                    "role": role,
+                    "text": content or "",
+                    "ts": timestamp.isoformat() if timestamp is not None else None,
+                    "_order": turn_number,
+                }
+            )
+            if timestamp is not None and (
+                record["start_time"] is None or timestamp < record["start_time"]
+            ):
+                record["start_time"] = timestamp
+    for session in grouped.values():
+        if session["start_time"] is not None:
+            session["start_time"] = session["start_time"].isoformat()
+        session["turns"].sort(
+            key=lambda turn: (
+                turn.get("_order") is None,
+                turn.get("_order"),
+                turn.get("ts") or "",
+            )
+        )
+        for turn in session["turns"]:
+            turn.pop("_order", None)
+        result.append(candidate(session, "swechat", "gh:" + str(session["user_id"] or "?")))
+    open_full_turn_store().commit()
+
+    print("indexing SpecStory candidates...", flush=True)
+    specstory_path = SPECSTORY_CORPUS
+    if specstory_path.exists():
+        with specstory_path.open(errors="replace") as handle:
+            for line in handle:
+                try:
+                    session = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                sid = specstory_session_id(session)
+                if not wanted(sid):
+                    continue
+                owner = session.get("owner") or (session.get("repo") or "?").split("/")[0]
+                normalized = {
+                    "session_id": sid,
+                    "repo": session.get("repo") or "?",
+                    "start_time": specstory_timestamp(session),
+                    "turns": session.get("turns") or [],
+                }
+                result.append(candidate(normalized, "specstory", "gh:" + owner))
+        open_full_turn_store().commit()
+
+    print(f"indexed {len(result)} candidate records", flush=True)
+    return result
+
+
+def materialize_turns(record: dict, command_payloads: set[str]) -> list[dict]:
+    """Restore full-fidelity turns and re-apply command-expansion labels."""
+    turns = load_full_turns(record.get("full_key")) or record["turns"]
+    materialized = []
+    for turn in turns:
+        item = dict(turn)
+        if (
+            item.get("role") == "user"
+            and normalize_text(item.get("text") or "") in command_payloads
+        ):
+            item["role"] = "system"
+        materialized.append(item)
+    return materialized
+
+
+def choose_candidate(candidates: list[dict]) -> dict:
+    full_fidelity = [
+        record for record in candidates if record.get("text_fidelity") == "full"
+    ]
+    if not full_fidelity:
+        sources = sorted({record["source"] for record in candidates})
+        raise RuntimeError(
+            "session has no full-fidelity candidate; refresh source parsers first "
+            f"(sources={sources})"
+        )
+    return max(full_fidelity, key=richness)
+
+
+def candidate_cache_key(target_ids: set[str]) -> str:
+    files = (
+        glob.glob(ENTIRE_CORPUS_GLOB)
+        + glob.glob(CRAWL_CORPUS_GLOB)
+        + [
+            os.environ.get(
+                "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+            )
+        ]
+        + [SWECHAT_PARQUET]
+        + [str(SPECSTORY_CORPUS)]
+    )
+    source_state = []
+    for filename in sorted(files):
+        path = Path(filename)
+        if path.exists():
+            stat = path.stat()
+            source_state.append((filename, stat.st_size, stat.st_mtime_ns))
+    payload = {
+        "cache_version": CANDIDATE_CACHE_VERSION,
+        "targets": sorted(target_ids),
+        "sources": source_state,
+        "policy": policy_fingerprint(),
+    }
+    return hashlib.sha256(
+        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+
+
+def merge_record_metadata(keep: dict, group: list[dict], rule: str) -> dict:
+    merged = dict(keep)
+    merged["original_ids"] = sorted(
+        {sid for record in group for sid in record["original_ids"]}
+    )
+    merged["dedup_rules"] = sorted(
+        {item for record in group for item in record["dedup_rules"]} | {rule}
+    )
+    merged["split"] = (
+        "train" if any(record["split"] == "train" for record in group) else "held"
+    )
+    timestamps = [record["ts"] for record in group if record.get("ts")]
+    if timestamps:
+        merged["ts"] = min(timestamps)
+    merged["source_aliases"] = sorted(
+        {record["source"] for record in group}
+        | {
+            source
+            for record in group
+            for source in record.get("source_aliases", [])
+        }
+    )
+    return merged
+
+
+def collapse_content(records: list[dict], developer: str) -> tuple[list[dict], list[dict]]:
+    """Collapse exact and strict-prefix snapshots across train and held-out."""
+    provenance = []
+    by_hash: dict[str, list[dict]] = defaultdict(list)
+    for record in records:
+        by_hash[record["trace_hash"]].append(record)
+    exact_kept = []
+    for trace_hash, group in sorted(by_hash.items()):
+        keep = dict(max(group, key=richness))
+        if len(group) > 1:
+            keep = merge_record_metadata(keep, group, "exact_transcript")
+            provenance.append(
+                {
+                    "developer": developer,
+                    "rule": "exact_transcript",
+                    "kept": keep["sid"],
+                    "collapsed": sorted(
+                        item["sid"] for item in group if item["sid"] != keep["sid"]
+                    ),
+                    "trace_hash": trace_hash,
+                    "crossed_split": len({item["split"] for item in group}) > 1,
+                }
+            )
+        exact_kept.append(keep)
+
+    removed: set[str] = set()
+    prefix_groups: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for record in exact_kept:
+        if record["repo"] != "?":
+            prefix_groups[(record["repo"], record["ts"])].append(record)
+    for group in prefix_groups.values():
+        ordered = sorted(group, key=lambda record: (len(record["sequence"]), record["sid"]))
+        for index, shorter in enumerate(ordered):
+            if shorter["sid"] in removed or shorter["substantial_human_turns"] < 3:
+                continue
+            for longer in ordered[index + 1 :]:
+                if longer["sid"] in removed:
+                    continue
+                sequence = shorter["sequence"]
+                if (
+                    len(sequence) < len(longer["sequence"])
+                    and longer["sequence"][: len(sequence)] == sequence
+                ):
+                    original_splits = {shorter["split"], longer["split"]}
+                    merged = merge_record_metadata(
+                        longer, [longer, shorter], "strict_transcript_prefix"
+                    )
+                    longer.clear()
+                    longer.update(merged)
+                    removed.add(shorter["sid"])
+                    provenance.append(
+                        {
+                            "developer": developer,
+                            "rule": "strict_transcript_prefix",
+                            "kept": longer["sid"],
+                            "collapsed": [shorter["sid"]],
+                            "trace_hash": shorter["trace_hash"],
+                            "crossed_split": len(original_splits) > 1,
+                        }
+                    )
+                    break
+    collapsed = [record for record in exact_kept if record["sid"] not in removed]
+    return collapsed, provenance
+
+
+def reconstruction_candidate_pairs(records: list[dict]) -> set[tuple[int, int]]:
+    events = [substantial_user_events(record["turns"]) for record in records]
+    first_postings: dict[str, list[int]] = defaultdict(list)
+    text_postings: dict[str, list[int]] = defaultdict(list)
+    timestamp_postings: dict[tuple[str, int], list[int]] = defaultdict(list)
+    distinctive_chars = RECONSTRUCTION_THRESHOLDS["distinctive_event_chars"]
+    tolerance = RECONSTRUCTION_THRESHOLDS["timestamp_tolerance_seconds"]
+    for index, sequence in enumerate(events):
+        if sequence and len(sequence[0]["text"]) >= distinctive_chars:
+            first_postings[sequence[0]["text"]].append(index)
+        for text in {
+            event["text"] for event in sequence if len(event["text"]) >= distinctive_chars
+        }:
+            text_postings[text].append(index)
+        for event in sequence:
+            if (
+                len(event["text"]) < distinctive_chars
+                or event["timestamp"] is None
+            ):
+                continue
+            second = int(round(event["timestamp"]))
+            for offset in range(-tolerance, tolerance + 1):
+                timestamp_postings[(event["text"], second + offset)].append(index)
+
+    pairs: set[tuple[int, int]] = set()
+    for postings in first_postings.values():
+        if len(postings) > 100:
+            continue
+        for offset, left in enumerate(postings):
+            for right in postings[offset + 1 :]:
+                pairs.add((left, right))
+    for postings in text_postings.values():
+        if len(postings) > 25:
+            continue
+        for offset, left in enumerate(postings):
+            for right in postings[offset + 1 :]:
+                pairs.add((left, right))
+    for postings in timestamp_postings.values():
+        unique = sorted(set(postings))
+        for offset, left in enumerate(unique):
+            for right in unique[offset + 1 :]:
+                pairs.add((left, right))
+    return pairs
+
+
+def record_reconstruction_evidence(left: dict, right: dict) -> dict | None:
+    evidence = reconstructed_session_evidence(left["turns"], right["turns"])
+    concrete_repos = {
+        record["repo"]
+        for record in (left, right)
+        if record.get("repo") and record["repo"] != "?"
+    }
+    if (
+        evidence is not None
+        and len(concrete_repos) > 1
+        and evidence["anchor"] == "content"
+    ):
+        return None
+    return evidence
+
+
+def collapse_reconstructed_sessions(
+    records: list[dict], developer: str
+) -> tuple[list[dict], list[dict], int]:
+    pairs = reconstruction_candidate_pairs(records)
+    parent = list(range(len(records)))
+    evidence_by_pair = {}
+
+    def root(index: int) -> int:
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root, right_root = root(left), root(right)
+        if left_root != right_root:
+            parent[right_root] = left_root
+
+    for left, right in sorted(pairs):
+        evidence = record_reconstruction_evidence(records[left], records[right])
+        if evidence is not None:
+            evidence_by_pair[(left, right)] = evidence
+            union(left, right)
+
+    components: dict[int, list[int]] = defaultdict(list)
+    for index in range(len(records)):
+        components[root(index)].append(index)
+
+    kept = []
+    provenance = []
+    for indices in components.values():
+        group = [records[index] for index in indices]
+        winner = dict(max(group, key=reconstruction_richness))
+        if len(group) > 1:
+            winner = merge_record_metadata(winner, group, "reconstructed_session")
+            component_edges = [
+                {
+                    "left": records[left]["sid"],
+                    "right": records[right]["sid"],
+                    "evidence": evidence,
+                }
+                for (left, right), evidence in evidence_by_pair.items()
+                if left in indices and right in indices
+            ]
+            provenance.append(
+                {
+                    "developer": developer,
+                    "rule": "reconstructed_session",
+                    "kept": winner["sid"],
+                    "collapsed": sorted(
+                        record["sid"]
+                        for record in group
+                        if record["sid"] != winner["sid"]
+                    ),
+                    "crossed_split": len({record["split"] for record in group}) > 1,
+                    "sources": sorted({record["source"] for record in group}),
+                    "evidence": component_edges,
+                }
+            )
+        kept.append(winner)
+
+    survivors = [
+        (kept[left]["sid"], kept[right]["sid"])
+        for left, right in reconstruction_candidate_pairs(kept)
+        if record_reconstruction_evidence(kept[left], kept[right]) is not None
+    ]
+    if survivors:
+        raise RuntimeError(
+            f"{developer}: reconstructed-session duplicates survived collapse: "
+            f"{survivors[:10]}"
+        )
+    return kept, provenance, len(pairs)
+
+
+def main() -> None:
+    source_users = json.loads(SOURCE_MANIFEST.read_text())
+    users = [user for user in source_users if user["user"] not in EXCLUDED_USERS]
+    target_ids = {
+        session["sid"]
+        for user in users
+        for split in ("train_sessions", "held_sessions")
+        for session in user[split]
+    }
+    target_canonical = {canonical_session_id(sid) for sid in target_ids}
+    target_uuids = {uuid for sid in target_ids for uuid in embedded_uuids(sid)}
+    cache_key = candidate_cache_key(target_ids)
+    # Candidate turns are externalized to SQLite; skip pickle caches that would
+    # otherwise lose the full-fidelity payloads across process restarts.
+    if CANDIDATE_CACHE.exists():
+        CANDIDATE_CACHE.unlink()
+    candidates = load_candidates(target_ids, target_canonical, target_uuids)
+    command_payloads, command_turns = apply_command_expansion_policy(candidates)
+    print(f"indexed cache key {cache_key[:12]}", flush=True)
+    print(
+        f"classified {command_turns} command-expansion turns "
+        f"from {len(command_payloads)} proven payloads",
+        flush=True,
+    )
+    by_exact: dict[str, list[dict]] = defaultdict(list)
+    by_canonical: dict[str, list[dict]] = defaultdict(list)
+    for record in candidates:
+        for alias in session_aliases(record["sid"]):
+            by_exact[alias].append(record)
+        by_canonical[record["canonical"]].append(record)
+    candidate_count = len(candidates)
+    # Candidate objects remain reachable via by_exact; drop the dense list handle.
+    del candidates
+    import gc
+
+    gc.collect()
+
+    missing = sorted(
+        sid for sid in target_ids if not lookup_candidates(sid, by_exact)
+    )
+    missing_set = set(missing)
+    print(
+        f"resolved {len(target_ids) - len(missing)}/{len(target_ids)} manifest sessions; "
+        f"{len(missing)} unhydrated (SpecStory/harvest gaps tolerated)",
+        flush=True,
+    )
+
+    canonical_owners: dict[str, set[str]] = defaultdict(set)
+    for user in users:
+        for split in ("train_sessions", "held_sessions"):
+            for session in user[split]:
+                if session["sid"] in missing_set:
+                    continue
+                canonical_owners[canonical_session_id(session["sid"])].add(
+                    user["user"]
+                )
+    cross_user = {
+        key: sorted(value)
+        for key, value in canonical_owners.items()
+        if len(value) > 1
+    }
+    if cross_user:
+        raise RuntimeError(f"canonical session IDs cross developers: {cross_user}")
+
+    clean_users = []
+    session_store: dict[str, dict] = {}
+    provenance = []
+    dropped_threshold = []
+    dropped_incomplete_dialogue = []
+    dropped_unhydrated = []
+    dropped_no_full_fidelity = []
+    reconstruction_candidate_pairs_checked = 0
+    for user in users:
+        dev = user["user"]
+        grouped: dict[str, list[dict]] = defaultdict(list)
+        manifest_entries: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+        for split_name, source_key in (("train", "train_sessions"), ("held", "held_sessions")):
+            for session in user[source_key]:
+                key = canonical_session_id(session["sid"])
+                found = lookup_candidates(session["sid"], by_exact)
+                if not found:
+                    dropped_unhydrated.append(
+                        {
+                            "user": dev,
+                            "sid": session["sid"],
+                            "split": split_name,
+                            "sources": user.get("sources", []),
+                            "reason": "unhydrated_source",
+                        }
+                    )
+                    continue
+                grouped[key].extend(found)
+                manifest_entries[key].append((split_name, session))
+
+        records = []
+        for key, group in grouped.items():
+            entries = manifest_entries[key]
+            try:
+                selected = dict(choose_candidate(group))
+            except RuntimeError as exc:
+                if "no full-fidelity candidate" not in str(exc):
+                    raise
+                dropped_no_full_fidelity.append(
+                    {
+                        "user": dev,
+                        "sid": key,
+                        "sources": sorted({record["source"] for record in group}),
+                        "reason": "no_full_fidelity_candidate",
+                    }
+                )
+                continue
+            aliases = sorted(
+                {entry["sid"] for _, entry in entries}
+                | {record["sid"] for record in group}
+            )
+            splits = {split for split, _ in entries}
+            selected["sid"] = key
+            selected["canonical"] = key
+            selected["original_ids"] = aliases
+            selected["dedup_rules"] = ["canonical_uuid"] if len(aliases) > 1 else []
+            selected["source_aliases"] = sorted({record["source"] for record in group})
+            selected["split"] = "train" if "train" in splits else "held"
+            selected["ts"] = min(
+                str(entry["ts"]) for _, entry in entries if entry.get("ts")
+            )
+            records.append(selected)
+            if len(aliases) > 1 or len(splits) > 1:
+                provenance.append(
+                    {
+                        "developer": dev,
+                        "rule": "canonical_uuid",
+                        "kept": key,
+                        "collapsed": aliases,
+                        "trace_hash": selected["trace_hash"],
+                        "crossed_split": len(splits) > 1,
+                    }
+                )
+
+        records, events = collapse_content(records, dev)
+        provenance.extend(events)
+        records, events, checked = collapse_reconstructed_sessions(records, dev)
+        provenance.extend(events)
+        reconstruction_candidate_pairs_checked += checked
+
+        complete_records = []
+        for record in records:
+            if is_incomplete_dialogue(record["turns"]):
+                dropped_incomplete_dialogue.append(
+                    {
+                        "user": dev,
+                        "sid": record["sid"],
+                        "source": record["source"],
+                        "split": record["split"],
+                        "human_turns": record["human_turns"],
+                        "assistant_turns": sum(
+                            1
+                            for turn in record["turns"]
+                            if turn.get("role") == "assistant"
+                        ),
+                        "reason": "incomplete_dialogue",
+                    }
+                )
+            else:
+                complete_records.append(record)
+        records = complete_records
+
+        split_records = {
+            "train": [record for record in records if record["split"] == "train"],
+            "held": [record for record in records if record["split"] == "held"],
+        }
+
+        train_hashes = {record["trace_hash"] for record in split_records["train"]}
+        held_hashes = {record["trace_hash"] for record in split_records["held"]}
+        overlap = train_hashes & held_hashes
+        if overlap:
+            raise RuntimeError(f"{dev}: {len(overlap)} exact transcripts cross train/held")
+
+        train_turns = sum(record["human_turns"] for record in split_records["train"])
+        held_turns = sum(record["human_turns"] for record in split_records["held"])
+        session_count = len(split_records["train"]) + len(split_records["held"])
+        if train_turns < MIN_TRAIN or held_turns < MIN_HELD:
+            dropped_threshold.append(
+                {
+                    "user": dev,
+                    "train_turns": train_turns,
+                    "held_turns": held_turns,
+                    "reason": "below_clean_threshold",
+                }
+            )
+            continue
+        if is_extreme_session_fragmentation(
+            session_count, train_turns + held_turns
+        ):
+            dropped_threshold.append(
+                {
+                    "user": dev,
+                    "train_turns": train_turns,
+                    "held_turns": held_turns,
+                    "sessions": session_count,
+                    "mean_human_turns_per_session": round(
+                        (train_turns + held_turns) / session_count, 3
+                    ),
+                    "reason": "extreme_session_fragmentation",
+                }
+            )
+            continue
+
+        train_ts = [record["ts"] for record in split_records["train"]]
+        held_ts = [record["ts"] for record in split_records["held"]]
+        if max(train_ts) >= min(held_ts):
+            raise RuntimeError(f"{dev}: invalid chronological train/held boundary")
+
+        manifest_record = {
+            "user": dev,
+            "sources": user.get("sources", []),
+            "train_turns": train_turns,
+            "held_turns": held_turns,
+            "train_sessions": [],
+            "held_sessions": [],
+        }
+        for split_name, output_key in (("train", "train_sessions"), ("held", "held_sessions")):
+            for record in sorted(split_records[split_name], key=lambda item: (item["ts"], item["sid"])):
+                full_turns = materialize_turns(record, command_payloads)
+                clean = [clean_turn(turn) for turn in full_turns]
+                stored = {
+                    "session_id": record["sid"],
+                    "user": dev,
+                    "source": record["source"],
+                    "source_aliases": record.get("source_aliases", [record["source"]]),
+                    "repo": record["repo"],
+                    "start_time": record["ts"],
+                    "original_ids": record["original_ids"],
+                    "dedup_rules": record["dedup_rules"],
+                    "trace_hash": transcript_hash(full_turns),
+                    "text_fidelity": record["text_fidelity"],
+                    "parser_version": record.get("parser_version"),
+                    "turns": clean,
+                }
+                existing = session_store.get(record["sid"])
+                if existing and existing["user"] != dev:
+                    raise RuntimeError(f"session store collision: {record['sid']}")
+                spill_clean_session(stored)
+                # Keep dialogue-only rows in RAM; full tool context stays on disk.
+                session_store[record["sid"]] = memory_session_view(stored)
+                manifest_record[output_key].append(
+                    {
+                        "sid": record["sid"],
+                        "ts": record["ts"],
+                        "n": record["human_turns"],
+                        "repo": record["repo"],
+                        "source": record["source"],
+                        "source_aliases": record.get("source_aliases", [record["source"]]),
+                        "original_ids": record["original_ids"],
+                        "dedup_rules": record["dedup_rules"],
+                        "trace_hash": stored["trace_hash"],
+                        "text_fidelity": record["text_fidelity"],
+                        "parser_version": record.get("parser_version"),
+                    }
+                )
+        clean_users.append(manifest_record)
+
+    # Full-trace equality across developers is always suspicious.
+    hash_owners: dict[str, set[str]] = defaultdict(set)
+    hash_sessions: dict[str, list[dict]] = defaultdict(list)
+    for session in session_store.values():
+        hash_owners[session["trace_hash"]].add(session["user"])
+        hash_sessions[session["trace_hash"]].append(session)
+    cross_user_hashes = {
+        trace_hash: {
+            "owners": sorted(owners),
+            "sessions": sorted(session["session_id"] for session in hash_sessions[trace_hash]),
+            "max_substantial_human_turns": max(
+                substantial_human_count(session["turns"])
+                for session in hash_sessions[trace_hash]
+            ),
+        }
+        for trace_hash, owners in hash_owners.items()
+        if len(owners) > 1
+    }
+    strong_cross_user_hashes = {
+        trace_hash: detail
+        for trace_hash, detail in cross_user_hashes.items()
+        if detail["max_substantial_human_turns"] >= 3
+    }
+    if strong_cross_user_hashes:
+        raise RuntimeError(
+            f"{len(strong_cross_user_hashes)} substantial exact transcripts occur across developers: "
+            f"{strong_cross_user_hashes}"
+        )
+
+    stored_records = list(session_store.values())
+    cross_user_reconstructed = []
+    for left, right in reconstruction_candidate_pairs(stored_records):
+        if stored_records[left]["user"] == stored_records[right]["user"]:
+            continue
+        evidence = record_reconstruction_evidence(
+            stored_records[left], stored_records[right]
+        )
+        if evidence is not None:
+            cross_user_reconstructed.append(
+                {
+                    "left": stored_records[left]["session_id"],
+                    "left_user": stored_records[left]["user"],
+                    "right": stored_records[right]["session_id"],
+                    "right_user": stored_records[right]["user"],
+                    "evidence": evidence,
+                }
+            )
+    if cross_user_reconstructed:
+        raise RuntimeError(
+            f"{len(cross_user_reconstructed)} reconstructed sessions cross developers: "
+            f"{cross_user_reconstructed[:10]}"
+        )
+
+    clean_users.sort(key=lambda item: item["user"])
+    cohort_payload = {
+        "policy_version": POLICY_VERSION,
+        "policy_fingerprint": policy_fingerprint(),
+        "users": clean_users,
+    }
+    cohort_fingerprint = hashlib.sha256(
+        json.dumps(cohort_payload, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    cohort_payload["cohort_fingerprint"] = cohort_fingerprint
+    CLEAN_MANIFEST.write_text(json.dumps(cohort_payload, indent=2, ensure_ascii=False))
+    with CLEAN_SESSIONS.open("w") as handle:
+        for sid in sorted(session_store):
+            handle.write(
+                json.dumps(load_spilled_session(sid), ensure_ascii=False) + "\n"
+            )
+    report = {
+        "policy_version": POLICY_VERSION,
+        "policy_fingerprint": policy_fingerprint(),
+        "cohort_fingerprint": cohort_fingerprint,
+        "source_manifest_users": len(source_users),
+        "excluded_users": sorted(set(EXCLUDED_USERS) & {user["user"] for user in source_users}),
+        "retained_users": len(clean_users),
+        "dropped_below_clean_threshold": dropped_threshold,
+        "dropped_incomplete_dialogue_sessions": len(dropped_incomplete_dialogue),
+        "dropped_incomplete_dialogue": dropped_incomplete_dialogue,
+        "source_manifest_sessions": len(target_ids),
+        "candidate_records": candidate_count,
+        "resolved_manifest_sessions": len(target_ids) - len(missing),
+        "dropped_unhydrated_sessions": len(dropped_unhydrated),
+        "dropped_unhydrated": dropped_unhydrated[:200],
+        "dropped_no_full_fidelity_sessions": len(dropped_no_full_fidelity),
+        "dropped_no_full_fidelity": dropped_no_full_fidelity,
+        "command_expansion_payloads": len(command_payloads),
+        "command_expansion_turns": command_turns,
+        "command_expansion_payload_hashes": sorted(
+            hashlib.sha256(payload.encode()).hexdigest()
+            for payload in command_payloads
+        ),
+        "clean_sessions": len(session_store),
+        "dedup_events": len(provenance),
+        "reconstruction_candidate_pairs_checked": reconstruction_candidate_pairs_checked,
+        "reconstructed_session_events": sum(
+            event["rule"] == "reconstructed_session" for event in provenance
+        ),
+        "cross_split_dedup_events": sum(
+            bool(event.get("crossed_split")) for event in provenance
+        ),
+        "dedup_rule_counts": dict(
+            sorted(
+                {
+                    rule: sum(event["rule"] == rule for event in provenance)
+                    for rule in {event["rule"] for event in provenance}
+                }.items()
+            )
+        ),
+        "weak_cross_user_exact_transcripts": cross_user_hashes,
+        "cross_user_reconstructed_sessions": cross_user_reconstructed,
+        "provenance": provenance,
+    }
+    BUILD_REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=False))
+    print(
+        json.dumps(
+            {
+                key: value
+                for key, value in report.items()
+                if key
+                not in {
+                    "provenance",
+                    "dropped_incomplete_dialogue",
+                    "dropped_unhydrated",
+                    "dropped_no_full_fidelity",
+                }
+            },
+            indent=2,
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

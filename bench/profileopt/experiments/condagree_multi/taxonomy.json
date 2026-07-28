@@ -1,0 +1,26 @@
+{
+ "version": "v2-4way",
+ "categories": [
+  "approve",
+  "critical",
+  "directive",
+  "inquiry"
+ ],
+ "classifier_prompt_body": "Classify the developer's MOVE by the observable function of their message toward the agent's previous turn. Judge what the message DOES, not its topic. Choose exactly one:\n\n- approve: Signals acceptance or permission with no new content and no complaint \u2014 praise, agreement, 'yes/ok/lgtm/go ahead/perfect', a bare go-ahead, or standalone thanks/greetings. The message could be deleted and the agent would just continue.\n- critical: Asserts something is WRONG \u2014 reports a bug, failure, or wrong output, or says the approach/answer is mistaken or unwanted ('no/that's wrong/you misunderstood/this is broken').\n- directive: Tells the agent what to DO next without asserting prior work was wrong \u2014 a new task, an addition, or a forward steer/refinement. Imperative or action request with no fault stated.\n- inquiry: Primarily asks for information or explanation, expecting an ANSWER rather than an action ('why/how/what/can it...?').\n\nDECISION RULE (top-down, first match wins):\n1. States or implies a fault/error/dissatisfaction, or calls the result wrong/unwanted -> critical (even if it also says what to do, and even if phrased as a question like 'why is this still broken?'). NOTE: 'instead/rather/don't' alone do NOT make it critical \u2014 a neutral swap of approach with no stated problem is directive.\n2. Else asks for information and expects an answer -> inquiry.\n3. Else requests/commands any action, new task, or change -> directive.\n4. Else (only acceptance/permission/praise/thanks/greeting) -> approve.\n\nEXAMPLES:\nAgent: 'I refactored auth into a service.' -> Dev: 'Now also add rate limiting.' -> directive\nAgent: 'Switched the parser to regex.' -> Dev: 'Use the AST approach instead.' -> directive (swap, no defect stated)\nAgent: 'Switched the parser to regex.' -> Dev: 'Regex misses nested cases \u2014 use AST.' -> critical (defect named)\nAgent: 'Returns the sorted list.' -> Dev: 'It still returns them unsorted.' -> critical\nAgent: 'I added retries with backoff.' -> Dev: 'Why exponential over fixed?' -> inquiry\nAgent: 'Tests pass.' -> Dev: 'Great, ship it.' -> approve\nAgent: 'Done.' -> Dev: 'Thanks!' -> approve",
+ "old_to_new": {
+  "approve_proceed": "approve",
+  "pushback": "critical",
+  "bug_report": "critical",
+  "interrupt": "critical",
+  "new_work": "directive",
+  "refine_redirect": "directive",
+  "question": "inquiry",
+  "other": null
+ },
+ "inter_judge_kappa": {
+  "cross_family_haiku_opus_gpt5": 0.805,
+  "claude_family": 0.79,
+  "old_7way": 0.681
+ },
+ "note": "interrupt detected by regex; bare interrupt -> critical. Single Haiku judge is reliable at this kappa."
+}

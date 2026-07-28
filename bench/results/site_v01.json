@@ -1,0 +1,257 @@
+{
+ "nUsers": 10,
+ "nPerUser": 50,
+ "users": [
+  "abiswas-elastio-com",
+  "alienkevin",
+  "gtrrz-victor",
+  "henryph24",
+  "hutusi",
+  "khaong",
+  "melagiri",
+  "oddessentials",
+  "pc035860",
+  "tarasyarema"
+ ],
+ "real": {
+  "approve": [
+   20.508,
+   8.648
+  ],
+  "critical": [
+   23.667,
+   5.902
+  ],
+  "moveMix": {
+   "approve_proceed": 20.5,
+   "new_work": 13.1,
+   "refine_redirect": 19.5,
+   "bug_report": 5.6,
+   "pushback": 10.6,
+   "interrupt": 7.4,
+   "question": 20.6,
+   "other": 2.6
+  }
+ },
+ "luckyGuess": 0.272,
+ "cells": {
+  "deepseek-v3.1/distilled": {
+   "moveFid": [
+    43.879,
+    9.415
+   ],
+   "condAgree": [
+    0.247,
+    0.038
+   ],
+   "approve": [
+    30.633,
+    13.761
+   ],
+   "critical": [
+    14.067,
+    8.532
+   ]
+  },
+  "deepseek-v3.1/generic": {
+   "moveFid": [
+    41.174,
+    7.501
+   ],
+   "condAgree": [
+    0.231,
+    0.034
+   ],
+   "approve": [
+    29.958,
+    10.641
+   ],
+   "critical": [
+    5.608,
+    6.768
+   ]
+  },
+  "gpt-5/distilled": {
+   "moveFid": [
+    40.636,
+    7.731
+   ],
+   "condAgree": [
+    0.261,
+    0.064
+   ],
+   "approve": [
+    32.825,
+    16.362
+   ],
+   "critical": [
+    9.2,
+    8.126
+   ]
+  },
+  "gpt-5/generic": {
+   "moveFid": [
+    39.201,
+    8.313
+   ],
+   "condAgree": [
+    0.246,
+    0.117
+   ],
+   "approve": [
+    16.478,
+    10.627
+   ],
+   "critical": [
+    8.852,
+    8.607
+   ]
+  },
+  "gemini-3.1-pro/distilled": {
+   "moveFid": [
+    38.172,
+    6.695
+   ],
+   "condAgree": [
+    0.241,
+    0.064
+   ],
+   "approve": [
+    50.333,
+    18.262
+   ],
+   "critical": [
+    8.2,
+    5.497
+   ]
+  },
+  "gemini-3.1-pro/generic": {
+   "moveFid": [
+    37.905,
+    6.412
+   ],
+   "condAgree": [
+    0.305,
+    0.122
+   ],
+   "approve": [
+    51.292,
+    15.96
+   ],
+   "critical": [
+    4.0,
+    3.755
+   ]
+  },
+  "osim-8b/distilled": {
+   "moveFid": [
+    47.17,
+    9.392
+   ],
+   "condAgree": [
+    0.257,
+    0.063
+   ],
+   "approve": [
+    36.017,
+    13.568
+   ],
+   "critical": [
+    11.808,
+    8.484
+   ]
+  },
+  "osim-8b/generic": {
+   "moveFid": [
+    51.993,
+    12.148
+   ],
+   "condAgree": [
+    0.272,
+    0.091
+   ],
+   "approve": [
+    24.95,
+    11.358
+   ],
+   "critical": [
+    11.633,
+    4.499
+   ]
+  },
+  "osim-4b/distilled": {
+   "moveFid": [
+    50.293,
+    10.421
+   ],
+   "condAgree": [
+    0.257,
+    0.064
+   ],
+   "approve": [
+    32.608,
+    12.822
+   ],
+   "critical": [
+    13.825,
+    6.975
+   ]
+  },
+  "osim-4b/generic": {
+   "moveFid": [
+    55.609,
+    9.339
+   ],
+   "condAgree": [
+    0.239,
+    0.067
+   ],
+   "approve": [
+    28.167,
+    9.569
+   ],
+   "critical": [
+    10.467,
+    5.714
+   ]
+  }
+ },
+ "refs": {
+  "prior_sampler": {
+   "moveFid": [
+    81.41,
+    7.597
+   ],
+   "condAgree": [
+    0.289,
+    0.142
+   ],
+   "approve": [
+    21.708,
+    9.126
+   ],
+   "critical": [
+    24.067,
+    8.682
+   ]
+  },
+  "always_approve": {
+   "moveFid": [
+    4.564,
+    1.817
+   ],
+   "condAgree": [
+    0.205,
+    0.086
+   ],
+   "approve": [
+    100.0,
+    0.0
+   ],
+   "critical": [
+    0.0,
+    0.0
+   ]
+  }
+ }
+}
