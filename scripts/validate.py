@@ -275,6 +275,14 @@ _CLI_FAILURE_MARKERS = (
     "overloaded",
     "service unavailable",
     "internal server error",
+    # transport / connectivity errors the CLI prints as the "response" (not model text)
+    "api error",
+    "connection closed mid-response",
+    "unable to connect to api",
+    "the response above may be incomplete",
+    "request timed out",
+    "econnreset",
+    "socket hang up",
 )
 
 
@@ -510,16 +518,38 @@ def main():
     repos_dir = Path(args.repos_dir) if args.repos_dir else None
 
     RESULTS.mkdir(exist_ok=True)
-    manifest = json.loads((ROOT / "data" / "manifest.json").read_text())
+    # manifest.json (slug -> volumes) is written by prepare_data.py from raw SWE-chat; it is
+    # NOT part of the S3 hydrate, so on a hydrate-only host (e.g. Cloud Agent) it is absent.
+    # It is only used to RANK users by session volume for stratified subsampling — optional.
+    manifest_path = ROOT / "data" / "manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+
+    def has_data(s):
+        """A user is validatable only if its held-out sessions AND style digest are hydrated.
+        The 99 distilled folders are a superset of the ~57-dev v2 cohort that has holdout data."""
+        return ((ROOT / "data" / "holdout" / f"{s}.json").exists()
+                and (ROOT / "data" / "digests" / f"{s}.json").exists())
 
     if args.slugs:
         slugs = args.slugs
-    else:  # stratified by session count among users with a distilled folder
-        have_folder = [s for s in manifest if (ROOT / "users" / s / "USER.md").exists()]
-        ranked = sorted(have_folder, key=lambda s: -manifest[s]["n_sessions"])
+        missing = [s for s in slugs if not has_data(s)]
+        if missing:
+            raise SystemExit(f"no hydrated holdout/digest data for: {missing}")
+    else:  # stratified by session count among users with a distilled folder AND hydrated data
+        have_folder = sorted(p.parent.name for p in (ROOT / "users").glob("*/USER.md"))
+        candidates = [s for s in have_folder if has_data(s)]
+        skipped = len(have_folder) - len(candidates)
+        if skipped:
+            print(f"note: {skipped}/{len(have_folder)} distilled users lack hydrated "
+                  f"holdout+digest data and are excluded (cohort superset)")
+        # rank by session volume when the manifest is present, else stably by slug
+        ranked = (sorted(candidates, key=lambda s: -manifest.get(s, {}).get("n_sessions", 0))
+                  if manifest else candidates)
         step = max(1, len(ranked) // args.users)
         slugs = ranked[::step][:args.users]
-    print(f"validation users: {slugs}")
+    if not slugs:
+        raise SystemExit("no validatable users (no hydrated holdout/digest data found under data/)")
+    print(f"validation users ({len(slugs)}): {slugs}")
 
     # wrong-folder pairing: rotate by one (derangement)
     wrong_of = {s: slugs[(i + 1) % len(slugs)] for i, s in enumerate(slugs)}
