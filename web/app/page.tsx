@@ -1,6 +1,7 @@
 import {
   AnalysisSection,
   DatasetHubLinks,
+  DeepSeekFlashSection,
   LabelExamplesSection,
   LeaderboardSection,
   ReasoningEffortSection,
@@ -202,6 +203,9 @@ export default function HomePage() {
           <a href="#reasoning-effort" className="hover:text-zinc-950">
             Effort
           </a>
+          <a href="#deepseek-flash" className="hover:text-zinc-950">
+            DeepSeek
+          </a>
           <a href="/misprediction" className="hover:text-zinc-950">
             Misprediction
           </a>
@@ -346,6 +350,7 @@ export default function HomePage() {
       <LabelExamplesSection />
       <AnalysisSection />
       <ReasoningEffortSection />
+      <DeepSeekFlashSection />
       <TypicalSessionsSection />
       <RunDetailsSection />
 

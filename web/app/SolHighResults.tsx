@@ -121,6 +121,58 @@ const ML_MAX = {
 } as const;
 
 /**
+ * DeepSeek V4 Flash 0731 via OpenRouter (DeepInfra pin), mini-swe-agent,
+ * Composer multilabel Jaccard. Baseline-only matrix: train400 skipped because
+ * baseline-max failed the above-chance gate.
+ * Source: jobs/ds-v4-flash-userbench/score_and_gate_out.json (filtered).
+ */
+const DS_HUB = {
+  smoke:
+    "https://hub.harborframework.com/jobs/38c4d18f-13ad-47ce-af0c-ef241c97ab35",
+  baselineLow:
+    "https://hub.harborframework.com/jobs/c55454b7-80bf-4502-a5e2-83b954bdf8aa",
+  baselineHigh:
+    "https://hub.harborframework.com/jobs/eb741ddc-bad8-4de5-840b-cee724d6ee71",
+  baselineMax:
+    "https://hub.harborframework.com/jobs/53baee8d-8e91-400a-9593-e328d535a62e",
+} as const;
+
+const DS_FLASH = {
+  model: "DeepSeek V4 Flash 0731",
+  providerPin: "DeepInfra",
+  baseline: {
+    low: {
+      jaccard: 0.4263,
+      chance: 0.4336,
+      vsChancePp: -0.73,
+      exact: 0.26,
+      nTrialsLabel: "1 trial × ~580 tasks",
+      cacheHit: 0.733,
+      hub: DS_HUB.baselineLow,
+    },
+    high: {
+      jaccard: 0.2993,
+      chance: 0.4291,
+      vsChancePp: -12.97,
+      nTrialsLabel: "3 trials × ~580 tasks",
+      cacheHit: 0.75,
+      hub: DS_HUB.baselineHigh,
+    },
+    max: {
+      jaccard: 0.0826,
+      chance: 0.425,
+      vsChancePp: -34.24,
+      nTrialsLabel: "1 trial × ~580 tasks",
+      cacheHit: 0.721,
+      hub: DS_HUB.baselineMax,
+    },
+  },
+  train400Skipped: true,
+  train400SkipReason:
+    "baseline-max (8.3%) far below chance (~42.5%); train400 not run",
+} as const;
+
+/**
  * Trajectory cohort (active trials): sol-high / sol-low / sol-max train400.
  * Method: AGENT_READ_PATTERNS (active = ≥1 agent step + ≥1 tool call).
  * Source: jobs/dataclaw-exclusion/READ_DEPTH.json (filtered).
@@ -1152,6 +1204,120 @@ export function ReasoningEffortSection() {
           </p>
         </article>
       </div>
+    </Section>
+  );
+}
+
+/** DeepSeek V4 Flash baseline effort matrix (GPT-5.6 Sol left intact above). */
+export function DeepSeekFlashSection() {
+  const rows = [
+    {
+      label: "low",
+      note: "1 trial",
+      ...DS_FLASH.baseline.low,
+    },
+    {
+      label: "high",
+      note: "3 trials",
+      ...DS_FLASH.baseline.high,
+    },
+    {
+      label: "max",
+      note: "1 trial · train400 gate",
+      ...DS_FLASH.baseline.max,
+    },
+  ] as const;
+
+  return (
+    <Section
+      id="deepseek-flash"
+      kicker="Second model"
+      title={`${DS_FLASH.model} · baseline only`}
+    >
+      <p className="max-w-3xl text-sm leading-6 text-zinc-700">
+        Same UserBench setup as GPT-5.6 Sol (mini-swe-agent, Composer multilabel
+        Jaccard, Modal, DataClaw-filtered {EVAL_TASKS} tasks), but the agent is{" "}
+        {DS_FLASH.model} via OpenRouter with a {DS_FLASH.providerPin}-only
+        provider pin. Train400 was{" "}
+        <span className="font-medium text-zinc-900">not run</span>: the
+        baseline-max arm landed far below chance, which was the stop gate.
+      </p>
+
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
+        <table className="w-full min-w-[32rem] text-sm tabular-nums">
+          <thead>
+            <tr className="border-b border-zinc-100 text-left text-xs text-zinc-500">
+              <th className="px-4 py-3 font-medium">Effort</th>
+              <th className="px-4 py-3 font-medium">Mean Jaccard</th>
+              <th className="px-4 py-3 font-medium">Chance</th>
+              <th className="px-4 py-3 font-medium">vs chance</th>
+              <th className="px-4 py-3 font-medium">Cache hit</th>
+              <th className="px-4 py-3 font-medium">Hub</th>
+            </tr>
+          </thead>
+          <tbody className="text-zinc-800">
+            {rows.map((row) => (
+              <tr
+                key={row.label}
+                className="border-b border-zinc-100 last:border-0"
+              >
+                <td className="px-4 py-3">
+                  <span className="font-medium">{row.label}</span>
+                  <span className="ml-2 text-xs text-zinc-500">{row.note}</span>
+                </td>
+                <td className="px-4 py-3 font-semibold">
+                  {pct(row.jaccard, 2)}
+                </td>
+                <td className="px-4 py-3">{pct(row.chance, 1)}</td>
+                <td
+                  className={`px-4 py-3 ${
+                    row.vsChancePp < 0 ? "text-rose-700" : "text-emerald-700"
+                  }`}
+                >
+                  {signedPp(row.vsChancePp)}
+                </td>
+                <td className="px-4 py-3">{pct(row.cacheHit, 1)}</td>
+                <td className="px-4 py-3">
+                  <a
+                    href={row.hub}
+                    className="text-indigo-700 underline-offset-2 hover:underline"
+                  >
+                    job
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <ul className="mt-5 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-700">
+        <li>
+          Baseline low sits near chance ({pct(DS_FLASH.baseline.low.jaccard, 2)}{" "}
+          vs {pct(DS_FLASH.baseline.low.chance, 1)}), slightly under GPT-5.6
+          Sol-low ({pct(ML_LOW.baseline.jaccard, 2)}).
+        </li>
+        <li>
+          Raising effort hurts: high falls to {pct(DS_FLASH.baseline.high.jaccard, 2)};
+          max collapses to {pct(DS_FLASH.baseline.max.jaccard, 2)} with most
+          trials scoring 0. Prompt-cache stayed healthy (~72–75%).
+        </li>
+        <li>
+          {DS_FLASH.train400SkipReason}. GPT-5.6 Sol numbers above are unchanged.
+        </li>
+      </ul>
+
+      <p className="mt-4 text-xs text-zinc-500">
+        Smoke:{" "}
+        <a
+          href={DS_HUB.smoke}
+          className="text-indigo-700 underline-offset-2 hover:underline"
+        >
+          10-task Hub job
+        </a>
+        . Concurrency 100. OpenRouter model{" "}
+        <span className="font-mono">deepseek/deepseek-v4-flash-0731</span>.
+      </p>
     </Section>
   );
 }
