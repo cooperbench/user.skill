@@ -123,8 +123,9 @@ const ML_MAX = {
 /**
  * DeepSeek V4 Flash 0731 via OpenRouter (DeepInfra pin), mini-swe-agent,
  * Composer multilabel Jaccard. Baseline-only matrix: train400 skipped because
- * baseline-max failed the above-chance gate.
- * Source: jobs/ds-v4-flash-userbench/score_and_gate_out.json (filtered).
+ * baseline-max failed the above-chance gate (+0.5 pp margin) after offline
+ * re-judge corrected the rate-limit artifact on high/max.
+ * Source: jobs/ds-v4-flash-userbench/score_filtered_rejudge.json (filtered).
  */
 const DS_HUB = {
   smoke:
@@ -142,26 +143,26 @@ const DS_FLASH = {
   providerPin: "DeepInfra",
   baseline: {
     low: {
-      jaccard: 0.4263,
-      chance: 0.4336,
-      vsChancePp: -0.73,
-      exact: 0.26,
+      jaccard: 0.4307,
+      chance: 0.4321,
+      vsChancePp: -0.14,
+      exact: 0.262,
       nTrialsLabel: "1 trial × ~580 tasks",
       cacheHit: 0.733,
       hub: DS_HUB.baselineLow,
     },
     high: {
-      jaccard: 0.2993,
-      chance: 0.4291,
-      vsChancePp: -12.97,
+      jaccard: 0.431,
+      chance: 0.4288,
+      vsChancePp: 0.22,
       nTrialsLabel: "3 trials × ~580 tasks",
       cacheHit: 0.75,
       hub: DS_HUB.baselineHigh,
     },
     max: {
-      jaccard: 0.0826,
-      chance: 0.425,
-      vsChancePp: -34.24,
+      jaccard: 0.4348,
+      chance: 0.4335,
+      vsChancePp: 0.13,
       nTrialsLabel: "1 trial × ~580 tasks",
       cacheHit: 0.721,
       hub: DS_HUB.baselineMax,
@@ -169,7 +170,7 @@ const DS_FLASH = {
   },
   train400Skipped: true,
   train400SkipReason:
-    "baseline-max (8.3%) far below chance (~42.5%); train400 not run",
+    "baseline-max (43.5%) only +0.13 pp over chance (~43.4%); below +0.5 pp gate; train400 not run",
 } as const;
 
 /**
@@ -1238,9 +1239,10 @@ export function DeepSeekFlashSection() {
         Same UserBench setup as GPT-5.6 Sol (mini-swe-agent, Composer multilabel
         Jaccard, Modal, DataClaw-filtered {EVAL_TASKS} tasks), but the agent is{" "}
         {DS_FLASH.model} via OpenRouter with a {DS_FLASH.providerPin}-only
-        provider pin. Train400 was{" "}
-        <span className="font-medium text-zinc-900">not run</span>: the
-        baseline-max arm landed far below chance, which was the stop gate.
+        provider pin. Scores below are from an offline Composer re-judge (the
+        first publish undercounted high/max when the judge hit rate limits).
+        Train400 was <span className="font-medium text-zinc-900">not run</span>:
+        baseline-max stays within +0.5 pp of chance.
       </p>
 
       <div className="mt-6 overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
@@ -1293,14 +1295,16 @@ export function DeepSeekFlashSection() {
 
       <ul className="mt-5 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-700">
         <li>
-          Baseline low sits near chance ({pct(DS_FLASH.baseline.low.jaccard, 2)}{" "}
-          vs {pct(DS_FLASH.baseline.low.chance, 1)}), slightly under GPT-5.6
-          Sol-low ({pct(ML_LOW.baseline.jaccard, 2)}).
+          All three efforts sit near chance (~43%): low{" "}
+          {pct(DS_FLASH.baseline.low.jaccard, 2)}, high{" "}
+          {pct(DS_FLASH.baseline.high.jaccard, 2)}, max{" "}
+          {pct(DS_FLASH.baseline.max.jaccard, 2)}. No effort ladder after the
+          re-judge.
         </li>
         <li>
-          Raising effort hurts: high falls to {pct(DS_FLASH.baseline.high.jaccard, 2)};
-          max collapses to {pct(DS_FLASH.baseline.max.jaccard, 2)} with most
-          trials scoring 0. Prompt-cache stayed healthy (~72–75%).
+          First publish showed a fake collapse (high 29.9%, max 8.3%) from
+          Cursor judge rate limits at concurrency 100 — null acts scored as 0.
+          Agent answers were fine; prompt-cache stayed ~72–75%.
         </li>
         <li>
           {DS_FLASH.train400SkipReason}. GPT-5.6 Sol numbers above are unchanged.
