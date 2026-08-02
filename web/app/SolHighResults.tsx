@@ -122,20 +122,26 @@ const ML_MAX = {
 
 /**
  * DeepSeek V4 Flash 0731 via OpenRouter (DeepInfra pin), mini-swe-agent,
- * Composer multilabel Jaccard. Baseline-only matrix: train400 skipped because
- * baseline-max failed the above-chance gate (+0.5 pp margin) after offline
- * re-judge corrected the rate-limit artifact on high/max.
- * Source: jobs/ds-v4-flash-userbench/score_filtered_rejudge.json (filtered).
+ * Composer multilabel Jaccard. Offline re-judge fixed rate-limit nulls on
+ * high/max. Hub links point at post-rejudge materialized jobs (fresh UUIDs).
+ * Train400 authorized by user (chance gate overridden); max running first.
+ * Source: jobs/ds-v4-flash-userbench/SUMMARY-rejudge.json (post-resume).
  */
 const DS_HUB = {
   smoke:
-    "https://hub.harborframework.com/jobs/38c4d18f-13ad-47ce-af0c-ef241c97ab35",
+    "https://hub.harborframework.com/jobs/c0a6f865-fa9e-4d70-8c4d-069fe9e98f94",
   baselineLow:
-    "https://hub.harborframework.com/jobs/c55454b7-80bf-4502-a5e2-83b954bdf8aa",
+    "https://hub.harborframework.com/jobs/7934429f-60ae-4489-bec9-1dca17e99d7a",
   baselineHigh:
-    "https://hub.harborframework.com/jobs/eb741ddc-bad8-4de5-840b-cee724d6ee71",
+    "https://hub.harborframework.com/jobs/06957023-c5e4-4c4a-94a7-6a6974308e8a",
   baselineMax:
-    "https://hub.harborframework.com/jobs/53baee8d-8e91-400a-9593-e328d535a62e",
+    "https://hub.harborframework.com/jobs/96627439-c688-486f-a1a9-23dbf7924ab8",
+  train400Max:
+    "https://hub.harborframework.com/jobs/92d91277-3aa6-42d5-83ad-0273362a9714",
+  train400High:
+    "https://hub.harborframework.com/jobs/235a0003-0bc5-4e76-9808-15ff544e5d72",
+  train400Low:
+    "https://hub.harborframework.com/jobs/64fe97e1-cb21-468b-8f3a-a56b339da31e",
 } as const;
 
 const DS_FLASH = {
@@ -143,34 +149,60 @@ const DS_FLASH = {
   providerPin: "DeepInfra",
   baseline: {
     low: {
-      jaccard: 0.4307,
-      chance: 0.4321,
-      vsChancePp: -0.14,
-      exact: 0.262,
+      jaccard: 0.4302,
+      chance: 0.4351,
+      vsChancePp: -0.49,
+      exact: 0.26,
       nTrialsLabel: "1 trial × ~580 tasks",
       cacheHit: 0.733,
       hub: DS_HUB.baselineLow,
     },
     high: {
-      jaccard: 0.431,
-      chance: 0.4288,
-      vsChancePp: 0.22,
+      jaccard: 0.4309,
+      chance: 0.4283,
+      vsChancePp: 0.26,
       nTrialsLabel: "3 trials × ~580 tasks",
       cacheHit: 0.75,
       hub: DS_HUB.baselineHigh,
     },
     max: {
-      jaccard: 0.4348,
-      chance: 0.4335,
+      jaccard: 0.4341,
+      chance: 0.4328,
       vsChancePp: 0.13,
       nTrialsLabel: "1 trial × ~580 tasks",
       cacheHit: 0.721,
       hub: DS_HUB.baselineMax,
     },
   },
-  train400Skipped: true,
-  train400SkipReason:
-    "baseline-max (43.5%) only +0.13 pp over chance (~43.4%); below +0.5 pp gate; train400 not run",
+  train400: {
+    low: {
+      jaccard: 0.4647,
+      chance: 0.4259,
+      vsChancePp: 3.88,
+      nTrialsLabel: "1 trial × ~580 tasks",
+      hub: DS_HUB.train400Low,
+    },
+    high: {
+      jaccard: 0.4691,
+      chance: 0.4331,
+      vsChancePp: 3.59,
+      nTrialsLabel: "3 trials × ~580 tasks",
+      hub: DS_HUB.train400High,
+    },
+    max: {
+      jaccard: 0.4677,
+      chance: 0.4282,
+      vsChancePp: 3.94,
+      nTrialsLabel: "1 trial × ~580 tasks",
+      hub: DS_HUB.train400Max,
+    },
+  },
+  /** train400 − baseline, percentage points (filtered means). */
+  liftPp: {
+    low: 3.45,
+    high: 3.82,
+    max: 3.36,
+  },
 } as const;
 
 /**
@@ -1209,97 +1241,213 @@ export function ReasoningEffortSection() {
   );
 }
 
-/** DeepSeek V4 Flash baseline effort matrix (GPT-5.6 Sol left intact above). */
-export function DeepSeekFlashSection() {
-  const rows = [
+/**
+ * Grouped bars: effort on x-axis; DeepSeek baseline / train400 next to
+ * GPT-5.6 Sol cells from the reasoning-effort section (same 0–60% scale).
+ */
+function DeepSeekCompareChart() {
+  type SeriesKey = "dsBase" | "dsTrain" | "gptBase" | "gptTrain";
+  const seriesMeta: {
+    key: SeriesKey;
+    label: string;
+    color: string;
+  }[] = [
+    { key: "dsBase", label: "DeepSeek baseline", color: "bg-zinc-500" },
+    { key: "dsTrain", label: "DeepSeek train400", color: "bg-indigo-600" },
+    { key: "gptBase", label: "GPT-5.6 Sol baseline", color: "bg-zinc-300" },
+    { key: "gptTrain", label: "GPT-5.6 Sol train400", color: "bg-sky-600" },
+  ];
+
+  const columns: {
+    effort: "low" | "high" | "max";
+    note: string;
+    values: Record<SeriesKey, number | null>;
+  }[] = [
     {
-      label: "low",
+      effort: "low",
       note: "1 trial",
-      ...DS_FLASH.baseline.low,
+      values: {
+        dsBase: DS_FLASH.baseline.low.jaccard,
+        dsTrain: DS_FLASH.train400.low.jaccard,
+        gptBase: ML_LOW.baseline.jaccard,
+        gptTrain: ML_LOW.train400.jaccard,
+      },
     },
     {
-      label: "high",
+      effort: "high",
       note: "3 trials",
-      ...DS_FLASH.baseline.high,
+      values: {
+        dsBase: DS_FLASH.baseline.high.jaccard,
+        dsTrain: DS_FLASH.train400.high.jaccard,
+        gptBase: ML.baseline.jaccard,
+        gptTrain: ML.train400.jaccard,
+      },
     },
     {
-      label: "max",
-      note: "1 trial · train400 gate",
-      ...DS_FLASH.baseline.max,
+      effort: "max",
+      note: "1 trial",
+      values: {
+        dsBase: DS_FLASH.baseline.max.jaccard,
+        dsTrain: DS_FLASH.train400.max.jaccard,
+        gptBase: null,
+        gptTrain: ML_MAX.train400.jaccard,
+      },
     },
+  ];
+
+  const yTicks = [0, 0.2, 0.4, 0.6] as const;
+
+  return (
+    <figure className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
+      <figcaption className="font-semibold text-zinc-900">
+        Train400 vs baseline by effort
+      </figcaption>
+      <p className="mt-1 max-w-2xl text-xs leading-5 text-zinc-500">
+        Mean Jaccard on the same {EVAL_TASKS} held-out tasks. GPT-5.6 Sol bars
+        restate the{" "}
+        <a
+          href="#reasoning-effort"
+          className="text-indigo-600 underline-offset-2 hover:underline"
+        >
+          reasoning-effort
+        </a>{" "}
+        numbers; GPT baseline-max was not run.
+      </p>
+
+      <div
+        className="mt-5"
+        role="img"
+        aria-label={`DeepSeek and GPT-5.6 Sol mean Jaccard by effort. DeepSeek baseline low ${pct(DS_FLASH.baseline.low.jaccard, 2)}, high ${pct(DS_FLASH.baseline.high.jaccard, 2)}, max ${pct(DS_FLASH.baseline.max.jaccard, 2)}. DeepSeek train400 low ${pct(DS_FLASH.train400.low.jaccard, 2)}, high ${pct(DS_FLASH.train400.high.jaccard, 2)}, max ${pct(DS_FLASH.train400.max.jaccard, 2)}. GPT baseline low ${pct(ML_LOW.baseline.jaccard)}, high ${pct(ML.baseline.jaccard)}; GPT train400 low ${pct(ML_LOW.train400.jaccard)}, high ${pct(ML.train400.jaccard)}, max ${pct(ML_MAX.train400.jaccard, 2)}.`}
+      >
+        <div className="relative h-52 pl-7 sm:h-56 sm:pl-9">
+          <div className="pointer-events-none absolute inset-0">
+            {yTicks.map((tick) => (
+              <div
+                key={tick}
+                className="absolute inset-x-0 border-t border-zinc-100"
+                style={{ bottom: barX(tick) }}
+              >
+                <span className="absolute -top-2 left-0 text-[10px] tabular-nums text-zinc-400">
+                  {pct(tick, 0)}
+                </span>
+              </div>
+            ))}
+            <div
+              className="absolute inset-x-0 border-t border-dashed border-amber-500/70"
+              style={{ bottom: barX(CHANCE) }}
+            />
+          </div>
+
+          <div className="absolute inset-0 flex items-end justify-around gap-2">
+            {columns.map((col) => (
+              <div
+                key={col.effort}
+                className="flex h-full min-w-0 flex-1 items-end justify-center gap-0.5 sm:gap-1"
+              >
+                {seriesMeta.map((s) => {
+                  const value = col.values[s.key];
+                  if (value == null) {
+                    return (
+                      <div
+                        key={s.key}
+                        className="flex h-full w-3 items-end sm:w-4"
+                        title={`${s.label} · ${col.effort}: not run`}
+                      >
+                        <div className="h-8 w-full rounded-sm border border-dashed border-zinc-300" />
+                      </div>
+                    );
+                  }
+                  return (
+                    <div
+                      key={s.key}
+                      className={`w-3 rounded-t-sm sm:w-4 ${s.color}`}
+                      style={{ height: barX(value) }}
+                      title={`${s.label} · ${col.effort}: ${pct(value, 2)}`}
+                    />
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-2 flex justify-around gap-2 pl-7 sm:pl-9">
+          {columns.map((col) => (
+            <div key={col.effort} className="min-w-0 flex-1 text-center">
+              <p className="text-sm font-semibold text-zinc-900">{col.effort}</p>
+              <p className="text-[11px] text-zinc-500">{col.note}</p>
+              <p className="mt-0.5 text-[11px] font-medium tabular-nums text-indigo-700">
+                DS {signedPp(DS_FLASH.liftPp[col.effort])}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-zinc-100 pt-3 text-xs text-zinc-500">
+        {seriesMeta.map((s) => (
+          <span key={s.key} className="inline-flex items-center gap-1.5">
+            <span className={`inline-block h-2.5 w-2.5 rounded-sm ${s.color}`} />
+            {s.label}
+          </span>
+        ))}
+        <span>
+          <span className="mr-1.5 inline-block h-0.5 w-4 border-t border-dashed border-amber-500 align-middle" />
+          Chance ≈{pct(CHANCE)}
+        </span>
+        <span>
+          <span className="mr-1.5 inline-block h-2.5 w-2.5 rounded-sm border border-dashed border-zinc-300 align-[-2px]" />
+          Not run
+        </span>
+      </div>
+    </figure>
+  );
+}
+
+/** DeepSeek V4 Flash vs GPT-5.6 Sol (GPT cards above stay intact). */
+export function DeepSeekFlashSection() {
+  const dsHubLinks = [
+    { label: "Baseline low", href: DS_HUB.baselineLow },
+    { label: "Baseline high", href: DS_HUB.baselineHigh },
+    { label: "Baseline max", href: DS_HUB.baselineMax },
+    { label: "Train400 low", href: DS_HUB.train400Low },
+    { label: "Train400 high", href: DS_HUB.train400High },
+    { label: "Train400 max", href: DS_HUB.train400Max },
+    { label: "Smoke (10 tasks)", href: DS_HUB.smoke },
+  ] as const;
+
+  const gptHubLinks = [
+    { label: "Sol-low baseline", href: AGENT_LOW.baseline },
+    { label: "Sol-low train400", href: AGENT_LOW.train400 },
+    { label: "Sol-high baseline", href: AGENT.baseline3x },
+    { label: "Sol-high train400", href: AGENT.train4003x },
   ] as const;
 
   return (
     <Section
       id="deepseek-flash"
       kicker="Second model"
-      title={`${DS_FLASH.model} · baseline only`}
+      title={`${DS_FLASH.model} · train400 vs baseline`}
     >
       <p className="max-w-3xl text-sm leading-6 text-zinc-700">
         Same UserBench setup as GPT-5.6 Sol (mini-swe-agent, Composer multilabel
         Jaccard, Modal, DataClaw-filtered {EVAL_TASKS} tasks), but the agent is{" "}
         {DS_FLASH.model} via OpenRouter with a {DS_FLASH.providerPin}-only
-        provider pin. Scores below are from an offline Composer re-judge (the
-        first publish undercounted high/max when the judge hit rate limits).
-        Train400 was <span className="font-medium text-zinc-900">not run</span>:
-        baseline-max stays within +0.5 pp of chance.
+        provider pin. Scores are from an offline Composer re-judge after the
+        first publish undercounted high/max on judge rate limits. GPT-5.6 Sol
+        numbers in the chart restate the section above; they are unchanged.
       </p>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
-        <table className="w-full min-w-[32rem] text-sm tabular-nums">
-          <thead>
-            <tr className="border-b border-zinc-100 text-left text-xs text-zinc-500">
-              <th className="px-4 py-3 font-medium">Effort</th>
-              <th className="px-4 py-3 font-medium">Mean Jaccard</th>
-              <th className="px-4 py-3 font-medium">Chance</th>
-              <th className="px-4 py-3 font-medium">vs chance</th>
-              <th className="px-4 py-3 font-medium">Cache hit</th>
-              <th className="px-4 py-3 font-medium">Hub</th>
-            </tr>
-          </thead>
-          <tbody className="text-zinc-800">
-            {rows.map((row) => (
-              <tr
-                key={row.label}
-                className="border-b border-zinc-100 last:border-0"
-              >
-                <td className="px-4 py-3">
-                  <span className="font-medium">{row.label}</span>
-                  <span className="ml-2 text-xs text-zinc-500">{row.note}</span>
-                </td>
-                <td className="px-4 py-3 font-semibold">
-                  {pct(row.jaccard, 2)}
-                </td>
-                <td className="px-4 py-3">{pct(row.chance, 1)}</td>
-                <td
-                  className={`px-4 py-3 ${
-                    row.vsChancePp < 0 ? "text-rose-700" : "text-emerald-700"
-                  }`}
-                >
-                  {signedPp(row.vsChancePp)}
-                </td>
-                <td className="px-4 py-3">{pct(row.cacheHit, 1)}</td>
-                <td className="px-4 py-3">
-                  <a
-                    href={row.hub}
-                    className="text-indigo-700 underline-offset-2 hover:underline"
-                  >
-                    job
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="mt-6">
+        <DeepSeekCompareChart />
       </div>
 
       <ul className="mt-5 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-700">
         <li>
-          All three efforts sit near chance (~43%): low{" "}
-          {pct(DS_FLASH.baseline.low.jaccard, 2)}, high{" "}
-          {pct(DS_FLASH.baseline.high.jaccard, 2)}, max{" "}
-          {pct(DS_FLASH.baseline.max.jaccard, 2)}. No effort ladder after the
-          re-judge.
+          DeepSeek baseline sits near chance (~43%) at every effort. Train400
+          lifts it by {signedPp(DS_FLASH.liftPp.low)} /{" "}
+          {signedPp(DS_FLASH.liftPp.high)} / {signedPp(DS_FLASH.liftPp.max)}{" "}
+          (low / high / max), clearing chance by ~+3.6–3.9 pp.
         </li>
         <li>
           First publish showed a fake collapse (high 29.9%, max 8.3%) from
@@ -1307,21 +1455,51 @@ export function DeepSeekFlashSection() {
           Agent answers were fine; prompt-cache stayed ~72–75%.
         </li>
         <li>
-          {DS_FLASH.train400SkipReason}. GPT-5.6 Sol numbers above are unchanged.
+          GPT-5.6 Sol still leads at high and max with history (
+          {pct(ML.train400.jaccard)} / {pct(ML_MAX.train400.jaccard, 2)}); at
+          low, DeepSeek train400 ({pct(DS_FLASH.train400.low.jaccard, 2)})
+          matches GPT train400 ({pct(ML_LOW.train400.jaccard)}) within noise.
         </li>
       </ul>
 
-      <p className="mt-4 text-xs text-zinc-500">
-        Smoke:{" "}
-        <a
-          href={DS_HUB.smoke}
-          className="text-indigo-700 underline-offset-2 hover:underline"
-        >
-          10-task Hub job
-        </a>
-        . Concurrency 100. OpenRouter model{" "}
-        <span className="font-mono">deepseek/deepseek-v4-flash-0731</span>.
-      </p>
+      <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h3 className="font-semibold text-zinc-900">Harbor Hub jobs</h3>
+        <p className="mt-1 text-xs text-zinc-500">
+          DeepSeek agent jobs (post-rejudge). GPT links match the Sol agent
+          traces in Run details; Sol-max Hub is not published yet.
+        </p>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              DeepSeek V4 Flash
+            </p>
+            <ul className="mt-2 space-y-1.5 text-sm text-zinc-700">
+              {dsHubLinks.map((link) => (
+                <li key={link.href}>
+                  <ExtLink href={link.href}>{link.label} ↗</ExtLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              GPT-5.6 Sol
+            </p>
+            <ul className="mt-2 space-y-1.5 text-sm text-zinc-700">
+              {gptHubLinks.map((link) => (
+                <li key={link.href}>
+                  <ExtLink href={link.href}>{link.label} ↗</ExtLink>
+                </li>
+              ))}
+              <li className="text-zinc-400">Sol-max — not published</li>
+            </ul>
+          </div>
+        </div>
+        <p className="mt-4 border-t border-zinc-100 pt-3 text-xs text-zinc-500">
+          Concurrency 100. OpenRouter model{" "}
+          <span className="font-mono">deepseek/deepseek-v4-flash-0731</span>.
+        </p>
+      </div>
     </Section>
   );
 }
